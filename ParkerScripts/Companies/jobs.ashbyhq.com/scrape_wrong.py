@@ -1,0 +1,1 @@
+The updated Python + Selenium script has been created and saved to `/mnt/data/scrape_job_listings.py`.

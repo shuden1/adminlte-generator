@@ -17,14 +17,7 @@
                             Before proceeding, please check your email for a verification link.If you did not receive
                             the email,
                         </p>
-
-                        <a href="#"
-                           onclick="event.preventDefault(); document.getElementById('resend-form').submit();">
-                            click here to request another
-                        </a>
-                        <form id="resend-form" action="{{ route('verification.resend') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
+                        <a href="{{ route('verification.resend') }}">click here to request another'</a>.
                     </div>
                 </div>
             </div>

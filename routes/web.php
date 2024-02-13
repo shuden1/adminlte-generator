@@ -20,3 +20,23 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// In your web.php or api.php
+Route::get('/companies/get/{id}', 'CompanyController@getCompanyData');
+
+
+Route::get('companies/upload', [App\Http\Controllers\CompanyController::class, 'upload'])->name('companies.upload');
+
+Route::post('companies/import', [App\Http\Controllers\CompanyController::class, 'import'])->name('companies.import');
+
+Route::post('companies/regenerate/{id}', [App\Http\Controllers\CompanyController::class, 'regenerate'])->name('companies.regenerate');
+
+Route::resource('companies', App\Http\Controllers\CompanyController::class);
+
+
+Route::resource('jobs', App\Http\Controllers\JobController::class);
+
+
+Route::resource('decisionMakers', App\Http\Controllers\DecisionMakerController::class);
+
+Route::resource('suitableTitles', App\Http\Controllers\SuitableTitleController::class);

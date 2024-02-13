@@ -15,8 +15,14 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        //crontab -e
+        //cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+        $schedule->command('run:companyscripts')->daily();
     }
+
+    protected $commands = [
+        Commands\RenameCompanyScript::class,
+    ];
 
     /**
      * Register the commands for the application.

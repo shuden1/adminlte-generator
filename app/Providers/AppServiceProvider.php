@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use BeyondCode\LaravelWebSockets\Facades\WebSocketsRouter;
 
 class AppServiceProvider extends ServiceProvider
 {
