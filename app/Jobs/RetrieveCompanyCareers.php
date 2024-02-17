@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Mail\JobPostedNotification;
 use App\Models\Company;
 use App\Models\DecisionMaker;
 use App\Models\Job;
@@ -15,6 +16,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 
 // php artisan queue:work --queue=RetrieveCareersQueue
 
@@ -154,6 +156,7 @@ class RetrieveCompanyCareers implements ShouldQueue
                     $existingJob = Job::where('url', $jobData['URL'])
                         ->where('title', $jobData['Job-title'])
                         ->first();
+
                     if (!$existingJob) {
                         var_dump($jobData);
                         $newJob = Job::create([
@@ -163,9 +166,9 @@ class RetrieveCompanyCareers implements ShouldQueue
                             'date' => Carbon::now(),
                         ]);
 
-                        if (is_null($company->contacted) || $company->contacted->lessThan(Carbon::now()->subMonths(3))) {
-                            //                   $this->checkAndTrigger($company, $newJob);
-                        }
+ //                       if (is_null($company->contacted) || $company->contacted->lessThan(Carbon::now()->subMonths(3))) {
+                        $this->triggered($company, $newJob);
+   //                     }
                     } else {
                         $existingJob->touch();
                     }
@@ -206,23 +209,16 @@ class RetrieveCompanyCareers implements ShouldQueue
 
     protected function triggered($company, $job)
     {
-        $decisionMaker = DecisionMaker::where('company_id', $company->id)->first();
-        $previousJob = Job::where('date', '<', $job->date)
-            ->orderBy('date', 'desc')
-            ->first();
-
-        $payload = [
-            'profile_link'   => $decisionMaker->profile_url ?? '',
-            'first_name'     => $decisionMaker->firstName ?? '',
-            'company_name'   => $company->name ?? '',
-            'job_title'      => $job->title ?? '',
-            'previous_title' => $previousJob->title ?? '',
-        ];
-
-        $this->sendWebhook($payload);
+        $this->sendMail($job);
 
         $company->contacted = Carbon::now();
         $company->save();
+    }
+
+    protected function sendMail($job){
+        foreach ($job->company->users as $user) {
+            Mail::to($user->email)->queue(new JobPostedNotification($job));
+        }
     }
 
     protected function sendWebhook($payload)

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Job;
 use App\Repositories\BaseRepository;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class JobRepository
@@ -44,12 +45,23 @@ class JobRepository extends BaseRepository
 
     public function allWithNonDeletedCompanies()
     {
-        return Job::with('company')
-            ->whereHas('company', function ($query) {
-                $query->whereNull('deleted_at');
+        if (!Auth::check()) {
+            // Handle the case for unauthenticated users appropriately
+            return []; // Or however you wish to handle this scenario
+        }
+
+        $userId = Auth::id(); // Get the current authenticated user's ID
+
+        $jobs = Job::with('company')
+            ->whereHas('company', function ($query) use ($userId) {
+                $query->whereNull('deleted_at') // Ensure the company is not soft-deleted
+                ->whereHas('users', function ($subQuery) use ($userId) {
+                    $subQuery->where('users.id', $userId); // Filter companies by the current user
+                });
             })
-        ->get();
-  //          ->paginate(25);
+            ->get(); // Or ->paginate(25) if you want pagination
+
+        return $jobs;
     }
 
     public function findByCompanyId($companyId)

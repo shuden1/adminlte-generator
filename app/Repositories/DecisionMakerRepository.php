@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\DecisionMaker;
 use App\Repositories\BaseRepository;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class DecisionMakerRepository
@@ -44,12 +45,24 @@ class DecisionMakerRepository extends BaseRepository
 
     public function allWithNonDeletedCompanies()
     {
+        if (!Auth::check()) {
+            // Handle unauthenticated user case, possibly redirect or throw an exception
+            return redirect()->route('login')->with('error', 'You must be logged in to access this data.');
+        }
+
+        $userId = Auth::id(); // Get the current authenticated user's ID
+
         return DecisionMaker::with('company')
-            ->whereHas('company', function ($query) {
-                $query->whereNull('deleted_at');
+            ->whereHas('company', function ($query) use ($userId) {
+                // Filter to include only companies that are not soft deleted
+                $query->whereNull('deleted_at')
+                    // Further filter to include only companies associated with the current user
+                    ->whereHas('users', function ($query) use ($userId) {
+                        $query->where('users.id', $userId);
+                    });
             })
             ->get();
-        //    ->paginate(25);
+        // ->paginate(25); // Uncomment to paginate results
     }
 
     public function findByCompanyId($companyId)

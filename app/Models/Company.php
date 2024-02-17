@@ -75,4 +75,9 @@ class Company extends Model
         return $this->hasMany(JobStatus::class);
     }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
 }

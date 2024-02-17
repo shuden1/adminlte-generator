@@ -120,6 +120,7 @@ return [
     */
 
     'key' => env('APP_KEY'),
+    'openai_key' => env('OPENAI_KEY', 'default_value'),
 
     'cipher' => 'AES-256-CBC',
 

@@ -7,6 +7,7 @@ use App\Models\Job;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
 use OpenAI;
 use OpenAI\Exceptions\ErrorException;
 use Symfony\Component\Process\Process;
@@ -46,8 +47,17 @@ class CompanyController extends AppBaseController
 //        $companies = $this->companyRepository->all();
 //        return view('companies.index')->with('companies', $companies);
 
-        $companies = Company::paginate(25);
-        return view('companies.index',compact('companies'));
+        if (Auth::check()) { // Ensure there is an authenticated user
+            $user = Auth::user(); // Get the authenticated user
+
+            // Fetch companies associated with the authenticated user
+            $companies = $user->companies()->paginate(25);
+
+            return view('companies.index', compact('companies'));
+        } else {
+            // Handle the case where there is no authenticated user, or redirect to login
+            return redirect()->route('login')->with('error', 'You must be logged in to see this page.');
+        }
     }
 
     /**
@@ -107,6 +117,11 @@ class CompanyController extends AppBaseController
             $domain = str_replace('www.', '', $domain);
             $company->scripted = file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py");
             $company->save();
+
+            if (Auth::check()) { // Ensure there is an authenticated user
+                $user = Auth::user(); // Get the authenticated user
+                $user->companies()->attach($company->id); // Attach the new company to the user
+            }
         }
 
         return redirect(route('companies.index'));
@@ -126,6 +141,11 @@ class CompanyController extends AppBaseController
         $company = $this->companyRepository->create($input);
 
         Flash::success('Company saved successfully.');
+
+        if (Auth::check()) { // Ensure there is an authenticated user
+            $user = Auth::user(); // Get the authenticated user
+            $user->companies()->attach($company->id); // Attach the new company to the user
+        }
 
         //     Execute Python scripts after creating the company
         $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);

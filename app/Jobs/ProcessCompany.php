@@ -153,7 +153,7 @@ class ProcessCompany implements ShouldQueue
 
     public function generateScript($input_file, $output_file, $careerPage)
     {
-        $apiKey = "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";
+        $apiKey = config("openai_key");
         $client = OpenAI::client($apiKey);
 
         try {
