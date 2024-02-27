@@ -15,7 +15,7 @@
         @foreach($companies as $company)
             <tr id="company-row-{{ $company->id }}" style="{{ !$company->scripted ? 'background-color: #e57373' : ($company->jobs()->exists() ? 'background-color: #97d5a3' : 'background-color: #ece287') }}">
                 <td>{{ $company->name }}</td>
-                <td>{{ $company->careerPageUrl }}</td>
+                <td class="col-5">{{ $company->careerPageUrl }}</td>
                 <td>{{ $company->contacted }}</td>
                 <td>{{ $company->sauroned }}</td>
                 <td>{{ $company->scripted }} </td>

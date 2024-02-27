@@ -12,6 +12,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 use OpenAI;
 use OpenAI\Exceptions\ErrorException;
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -25,6 +26,8 @@ class ProcessCompany implements ShouldQueue
 
     protected $company;
     protected $forced;
+
+    public $timeout = 1200;
 
     /**
      * Create a new job instance.
@@ -41,30 +44,35 @@ class ProcessCompany implements ShouldQueue
 
     public function getCleanHTML($inputFile, $outputFile, $careerPageURL)
     {
-        $command = "C:\Python3\python.exe"." D:\Mind\CRA\AI_Experiments\Job_Crawlers\Peter\adminlte-generator\ParkerScripts\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
-        shell_exec($command);
+        $command = "C:\\Python3\\python.exe"." D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
+        exec($command, $output1, $returnStatus1);
 
 
         // Call sculpting.py
-        $process = new Process(['C:\Python3\python.exe', 'D:\Mind\CRA\AI_Experiments\Job_Crawlers\Peter\adminlte-generator\ParkerScripts\sculpting.py', $inputFile, $outputFile]);
-        $process->run();
+        $command2 = "C:\\Python3\\python.exe D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\sculpting.py \"" . $inputFile . "\" \"" . $outputFile . "\"";
 
-        if (!$process->isSuccessful()) {
-            throw new ProcessFailedException($process);
+// Execute the second script and wait for it to finish
+        exec($command2, $output2, $returnStatus2);
+
+        if ($returnStatus2 !==0 ) {
+            throw new \Exception($returnStatus2);
         }
 
         $filesizeKB = filesize($outputFile) / 1024;
-        if ($filesizeKB<5){
-            $command = "C:\Python3\python.exe"." D:\Mind\CRA\AI_Experiments\Job_Crawlers\Peter\adminlte-generator\ParkerScripts\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
-            shell_exec($command);
+        if ($filesizeKB<3){
+            $command = "C:\\Python3\\python.exe"." D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
+            exec($command, $output1, $returnStatus1);
 
             // Call sculpting.py
-            $process = new Process(['C:\Python3\python.exe', 'D:\Mind\CRA\AI_Experiments\Job_Crawlers\Peter\adminlte-generator\ParkerScripts\sculpting.py', $inputFile, $outputFile]);
-            $process->run();
+            $command2 = "C:\\Python3\\python.exe D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\sculpting.py \"" . $inputFile . "\" \"" . $outputFile . "\"";
 
-            if (!$process->isSuccessful()) {
-                throw new ProcessFailedException($process);
+            // Execute the second script and wait for it to finish
+            exec($command2, $output2, $returnStatus2);
+
+            if ($returnStatus2 !==0 ) {
+                throw new \Exception($returnStatus2);
             }
+
 
         }
 
@@ -153,7 +161,10 @@ class ProcessCompany implements ShouldQueue
 
     public function generateScript($input_file, $output_file, $careerPage)
     {
-        $apiKey = config("openai_key");
+        $apiKey = env('OPENAI_KEY');
+        Log::info('OPENAI_KEY : '.$apiKey);
+        Log::info('APP_KEY : '.env('APP_KEY'));
+
         $client = OpenAI::client($apiKey);
 
         try {
@@ -189,7 +200,7 @@ class ProcessCompany implements ShouldQueue
 
         $validScript = false;
         $i = 0;
-        while (!$validScript && $i < 3){
+        while (!$validScript && $i < 5){
             $i++;
             var_dump($runId);
             $lastMessage = $this->getGptResponse($client, $threadId, $runId);
@@ -210,9 +221,10 @@ class ProcessCompany implements ShouldQueue
                 var_dump($runId);
 
             } else {
+                $limitedJson = $this->getLimitedJson($result["jsonData"]);
                 $client->threads()->messages()->create($threadId, [
                     'role' => 'user',
-                    'content' => "I will now provide you with the result I received launching this script. I need you to tell me whether the content seems to be a valid Job title - URL pairs. Reply with ONE WORD ONLY: 'YES' or 'NO'. Result: " . json_encode($result["jsonData"]),
+                    'content' => "I will now provide you with the result I received launching this script. I need you to tell me whether the content seems to be a valid Job title - URL pairs. Reply with ONE WORD ONLY: 'YES' or 'NO'. Result: " . $limitedJson,
                 ]);
 
                 $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_oeImsIdj5jJkDOH5WBhxBagT"]);
@@ -282,6 +294,8 @@ class ProcessCompany implements ShouldQueue
             $outputFile = $basePathHtmls . "/cleaned.html";
             $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
             //     Call GenerateScripts
+
+
             $success = $this->generateScript($outputFile, $basePath . "/scrape.py", $inputFile);
 
             $this->company->scripted = $success;
@@ -296,11 +310,24 @@ class ProcessCompany implements ShouldQueue
             //      $jobStatus->update(['status' => 'completed']);
             //      JobStatusUpdated::dispatch($this->company->id, "completed");
 
-        }
-        else{
+        } else{
             $this->company->scripted = 1;
             RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
         }
         $this->company->save();
+    }
+
+    private function getLimitedJson($originalArray)
+    {
+        if ($originalArray !== null) {
+            // Shuffle the array to randomize the order of elements
+            shuffle($originalArray);
+
+            // Slice the array to get no more than 10 elements
+            $randomElements = array_slice($originalArray, 0, 10);
+
+            // Encode the resulting array back into a JSON object
+            return(json_encode($randomElements));
+        }
     }
 }

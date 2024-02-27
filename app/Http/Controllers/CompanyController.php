@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\ProcessCompany;
+use App\Jobs\RetrieveCompanyCareers;
 use App\Models\Job;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
@@ -84,8 +85,8 @@ class CompanyController extends AppBaseController
     {
         $file = $request->file('file');
         $csv = Reader::createFromPath($file->getRealPath(), 'r');
-        $csv->setHeaderOffset(0); // Assumes the first row in CSV is the header
-
+        $csv->setHeaderOffset(0);
+        // Assumes the first row in CSV is the header
         foreach ($csv as $record) {
             $company = Company::where("careerPageUrl", $record["careerPageUrl"])->firstOr( function() use ($record) {
 
@@ -95,33 +96,42 @@ class CompanyController extends AppBaseController
                     'sauroned' => 1
                 ]);
 
+                if (Auth::check()) { // Ensure there is an authenticated user
+                    $user = Auth::user(); // Get the authenticated user
+                    $user->companies()->attach($c->id); // Attach the new company to the user
+                }
+
                 $domain = parse_url($c->careerPageUrl, PHP_URL_HOST);
                 $domain = str_replace('www.', '', $domain);
 
-                if (!file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
-                    ProcessCompany::dispatch($c, false);
+                if (file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
+                    RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
                 }
                 return $c;
-
             });
-            DecisionMaker::firstOrCreate([
-                'company_id' => $company->id,
-                'firstName' => $record["first_name"],
-                'lastName' => $record["last_name"],
-                'profile_url' => rawurlencode($record["linkedin"]),
-                'email' => $record["email"]
-            ]);
+
+            $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
+            $domain = str_replace('www.', '', $domain);
+
+            if (!file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
+                ProcessCompany::dispatch($company, false);
+            }
+
+            if (isset($record["first_name"])) {
+                DecisionMaker::firstOrCreate([
+                    'company_id' => $company->id,
+                    'firstName' => $record["first_name"],
+                    'lastName' => $record["last_name"],
+                    'profile_url' => rawurlencode($record["linkedin"]),
+                    'email' => $record["email"]
+                ]);
+            }
 
 
             $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
             $domain = str_replace('www.', '', $domain);
             $company->scripted = file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py");
             $company->save();
-
-            if (Auth::check()) { // Ensure there is an authenticated user
-                $user = Auth::user(); // Get the authenticated user
-                $user->companies()->attach($company->id); // Attach the new company to the user
-            }
         }
 
         return redirect(route('companies.index'));

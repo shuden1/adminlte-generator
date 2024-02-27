@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 import sys
 import time
 import os
+import uuid
 import shutil
 
 import threading
@@ -30,14 +31,15 @@ def remove_script_tags(input_html_file):
 
 def get_dynamic_html(url, output_file, scrolls=4):
     options = Options()
-    options.headless = True  # Run in headless mode
-    options.add_argument("--no-sandbox")  # Recommended for running in headless mode in certain environments
-    options.add_argument("--disable-gpu")  # Recommended for running in headless mode
 
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\"+str(threading.get_ident())
 
     os.makedirs(profile_folder_path, exist_ok=True)
-    options.add_argument(f"--user-data-dir={profile_folder_path}")
+
+    options.add_argument(f"user-data-dir={profile_folder_path}")
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
 
     browser = webdriver.Chrome(service=service, options=options)
@@ -53,28 +55,48 @@ def get_dynamic_html(url, output_file, scrolls=4):
         html_content = browser.page_source
         soup = BeautifulSoup(html_content, 'html.parser')
 
-        # Fetch and replace content in iframes
         iframe_elements = browser.find_elements(By.TAG_NAME, "iframe")
-        for index, iframe in enumerate(iframe_elements):
-            # Switch to the iframe
-            try:
-                browser.switch_to.frame(iframe)
-                iframe_content = browser.page_source
-                iframe_soup = BeautifulSoup('<div class="replaced-iframe">' + iframe_content + '</div>', 'html.parser')
 
-                # Locate the original iframe in the soup and replace it
-                original_iframe = soup.find_all('iframe')[index]
-                original_iframe.replace_with(iframe_soup)
+        # Assign a unique ID to each iframe for later identification
+        for iframe in iframe_elements:
+            unique_id = str(uuid.uuid4())
+            browser.execute_script(f"arguments[0].setAttribute('data-unique-id', '{unique_id}');", iframe)
 
-                # Switch back to the main document context
-                browser.switch_to.default_content()
-            except Exception as e:
-                print(f"Error processing iframe {index}: {e}")
+        # Now, reload the page content with the unique IDs applied
+        # This is to ensure our BeautifulSoup object includes the iframes with their unique IDs
+        main_page_content = browser.page_source
+        soup = BeautifulSoup(main_page_content, 'html.parser')
 
-        # Write the modified HTML content to a file
+        # Iterate through each iframe by its unique ID
+        for iframe in soup.find_all('iframe', attrs={"data-unique-id": True}):
+            unique_id = iframe['data-unique-id']
+            src = iframe['src'] if iframe.has_attr('src') else None
+            if src:
+                try:
+                    # Switch to the iframe using its unique ID
+                    browser.switch_to.frame(browser.find_element(By.XPATH, f"//iframe[@data-unique-id='{unique_id}']"))
+                    iframe_content = browser.page_source
+                    iframe_soup = BeautifulSoup(iframe_content, 'html.parser')
+                    new_div = soup.new_tag("div", **{"class": "replaced-iframe"})
+
+                    iframe_body = iframe_soup.find('body')
+                    if iframe_body:
+                        html_content = ''.join(str(content) for content in iframe_body.contents)
+                        new_div.append(BeautifulSoup(html_content, 'html.parser'))
+                    # Replace the original iframe in soup with new_div
+                    iframe.replace_with(new_div)
+
+                    # Switch back to the main content
+                    browser.switch_to.default_content()
+
+                except Exception as e:
+                    print(f"Error processing iframe {unique_id}: {e}")
+
+                # Write the modified HTML content to a file
+                with open(output_file, 'w', encoding='utf-8') as file:
+                    file.write(str(soup))
         with open(output_file, 'w', encoding='utf-8') as file:
             file.write(str(soup))
-
     finally:
         browser.quit()
         remove_script_tags(output_filename)

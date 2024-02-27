@@ -14,7 +14,7 @@ return [
     */
 
     'default' => env('QUEUE_CONNECTION', 'sync'),
-
+    'OPENAI_KEY' => env('AWS_ACCESS_KEY_ID'),
     /*
     |--------------------------------------------------------------------------
     | Queue Connections

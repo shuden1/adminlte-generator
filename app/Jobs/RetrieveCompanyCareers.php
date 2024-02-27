@@ -141,9 +141,6 @@ class RetrieveCompanyCareers implements ShouldQueue
             print_r($baseUrl);
             if ($jsonData) {
                 foreach ($jsonData as $jobData) {
-                    var_dump($jobData);
-
-
                     if (strpos($jobData['URL'], "file:///".$basePathHtmls) !== false) {
                         $jobData['URL'] = str_replace("file:///".$basePathHtmls, $baseUrl, $jobData['URL']);
                     }
@@ -158,7 +155,6 @@ class RetrieveCompanyCareers implements ShouldQueue
                         ->first();
 
                     if (!$existingJob) {
-                        var_dump($jobData);
                         $newJob = Job::create([
                             'company_id' => $company->id,
                             'title' => $jobData['Job-title'],
@@ -166,9 +162,11 @@ class RetrieveCompanyCareers implements ShouldQueue
                             'date' => Carbon::now(),
                         ]);
 
- //                       if (is_null($company->contacted) || $company->contacted->lessThan(Carbon::now()->subMonths(3))) {
-                        $this->triggered($company, $newJob);
-   //                     }
+ //                       if (is_null($company->contacted) || $company->contacted->lessThan(Carbon::now()->subMonths(3)))
+                        if ($latestFile !== false){
+                            $this->checkAndTrigger($company, $newJob);
+                        }
+
                     } else {
                         $existingJob->touch();
                     }
@@ -196,23 +194,24 @@ class RetrieveCompanyCareers implements ShouldQueue
         RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue')->delay($when);
     }
 
-    protected function checkAndTrigger($company, $job)
+    protected function checkAndTrigger($job)
     {
         $suitableTitles = SuitableTitle::all();
         foreach ($suitableTitles as $suitableTitle) {
             if (stripos($job->title, $suitableTitle->title) !== false) {
-                $this->triggered($company, $job);
+                var_dump($job->title);
+        //        $this->triggered($job);
                 break; // Break the loop if a match is found
             }
         }
     }
 
-    protected function triggered($company, $job)
+    protected function triggered($job)
     {
         $this->sendMail($job);
 
-        $company->contacted = Carbon::now();
-        $company->save();
+        $job->company->contacted = Carbon::now();
+        $job->company->save();
     }
 
     protected function sendMail($job){
