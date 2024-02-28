@@ -1,25 +1,25 @@
 <div class="table-responsive">
     {{ $companies->links() }}
-    <table class="table" id="companies-table">
+    <table class="table table-fixed" id="companies-table">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Careerpageurl</th>
-            <th>Contacted</th>
-            <th>Sauroned</th>
-            <th>Scripted</th>
-            <th colspan="3">Action</th>
+            <th class="col-1">Name</th>
+            <th class="col-4">Careerpageurl</th>
+            <th class="col-1">Contacted</th>
+            <th class="col-1">Sauroned</th>
+            <th class="col-1">Scripted</th>
+            <th class="col-4" colspan="3">Action</th>
         </tr>
         </thead>
         <tbody>
         @foreach($companies as $company)
             <tr id="company-row-{{ $company->id }}" style="{{ !$company->scripted ? 'background-color: #e57373' : ($company->jobs()->exists() ? 'background-color: #97d5a3' : 'background-color: #ece287') }}">
-                <td>{{ $company->name }}</td>
-                <td class="col-5">{{ $company->careerPageUrl }}</td>
-                <td>{{ $company->contacted }}</td>
-                <td>{{ $company->sauroned }}</td>
-                <td>{{ $company->scripted }} </td>
-                <td width="120">
+                <td class="col-2">{{ $company->name }}</td>
+                <td class="col-2" style="word-break: break-word">{{ $company->careerPageUrl }}</td>
+                <td class="col-2">{{ $company->contacted }}</td>
+                <td class="col-2">{{ $company->sauroned }}</td>
+                <td class="col-2">{{ $company->scripted }} </td>
+                <td  class="col-2">
                     <div class='btn-group'>
                         <a href="{{ route('companies.show', [$company->id]) }}"
                            class='btn btn-default btn-xs'>

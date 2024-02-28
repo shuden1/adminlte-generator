@@ -1,34 +1,47 @@
-from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import sys
 import json
+import shutil
+import os
+import sys
+import threading
 
-# Retrieve target HTML file name from command line argument
-target_html_file_name = sys.argv[1]
+# Retrieve HTML file path from arguments
+html_file_path = sys.argv[1]
 
-# Initialize WebDriver
-driver = webdriver.Chrome()
-driver.get(f"file:///{target_html_file_name}")
+# Set up Chrome Driver options and service
+profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+options = webdriver.ChromeOptions()
+options.add_argument(f"user-data-dir={profile_folder_path}")
+options.add_argument("--headless")
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
+service = webdriver.chrome.service.Service(executable_path=r"C:\Python3\chromedriver.exe")
 
-# Read the content of the file using BeautifulSoup
-soup = BeautifulSoup(driver.page_source, 'html.parser')
+# Initialize driver with options and service
+driver = webdriver.Chrome(options=options, service=service)
 
-# Find job opening blocks and job titles with URLs
-job_opening_selectors = {
-    "blocks": "div.opening",
-    "title": "a[data-mapped='true']"
-}
+# Open the local HTML file
+driver.get(f"file:///{html_file_path}")
 
+# Selectors identified from BeautifulSoup in step 1
+job_opening_selectors = ".opening"
+job_title_and_url_selectors = "a[data-mapped='true']"
+
+# Find all job openings using the identified selectors
+job_openings = driver.find_elements(By.CSS_SELECTOR, job_opening_selectors)
+
+# Scraping job titles and their associated URLs
 job_listings = []
-for job_block in soup.select(job_opening_selectors["blocks"]):
-    job_title_tag = job_block.select_one(job_opening_selectors["title"])
-    if job_title_tag:
-        job_title = job_title_tag.text.strip()
-        job_url = job_title_tag['href'].strip()
-        job_listings.append({"Job-title": job_title, "URL": job_url})
+for job in job_openings:
+    title_element = job.find_element(By.CSS_SELECTOR, job_title_and_url_selectors)
+    job_title = title_element.text
+    job_url = title_element.get_attribute("href")
+    job_listings.append({"Job-title": job_title, "URL": job_url})
 
-driver.quit()
-
-# Print the result in JSON format
+# Return the job listings in JSON format
 print(json.dumps(job_listings))
+
+# Clean up: Close driver and remove profile folder
+driver.quit()
+shutil.rmtree(profile_folder_path)

@@ -105,7 +105,7 @@ class CompanyController extends AppBaseController
                 $domain = str_replace('www.', '', $domain);
 
                 if (file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
-                    RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+                    RetrieveCompanyCareers::dispatch($c)->onQueue('RetrieveCareersQueue');
                 }
                 return $c;
             });

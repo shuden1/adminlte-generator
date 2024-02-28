@@ -1,0 +1,3 @@
+The content visible in the document preview does not include any job listings. To proceed with creating a script for scraping job listings, it is crucial to have an HTML document that contains job-related information, including job opening blocks.
+
+Without such data, a scraping script cannot be generated. If the uploaded HTML file does contain job listings, please scroll to the specific section or provide direct instructions to access them to enable the creation of a scraping script.
