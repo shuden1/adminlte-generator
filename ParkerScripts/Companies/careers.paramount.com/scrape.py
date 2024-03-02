@@ -28,8 +28,8 @@ def scrape_job_listings(html_file_name):
         jobs.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
-    shutil.rmtree(profile_folder_path)
-    
+
+
     return json.dumps(jobs)
 
 # The actual command-line argument would be taken from sys.argv[1], but for this example, we'll set it manually

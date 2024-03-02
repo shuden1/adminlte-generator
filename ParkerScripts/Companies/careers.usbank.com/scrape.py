@@ -34,4 +34,4 @@ for job in job_listings:
 print(json.dumps(jobs_json))
 
 driver.quit()
-shutil.rmtree(profile_folder_path)
+

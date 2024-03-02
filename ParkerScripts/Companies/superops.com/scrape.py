@@ -34,7 +34,7 @@ for job_block in driver.find_elements(By.CSS_SELECTOR, "section.jobs a.no-deco")
 driver.quit()
 
 # Remove the profile folder
-shutil.rmtree(profile_folder_path)
+
 
 # Output the result as JSON
 print(json.dumps(job_listings))

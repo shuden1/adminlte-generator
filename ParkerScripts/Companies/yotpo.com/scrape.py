@@ -29,7 +29,7 @@ job_url_selector = "a.job"
 
 # Scrape all job listings using the above selectors
 job_elements = driver.find_elements(By.CSS_SELECTOR, f"{job_opening_block_selector} {job_url_selector}")
-jobs = [{"Job-title": job_el.find_element(By.CSS_SELECTOR, job_title_selector).text, 
+jobs = [{"Job-title": job_el.find_element(By.CSS_SELECTOR, job_title_selector).text,
          "URL": job_el.get_attribute('href')} for job_el in job_elements]
 
 # Cast the list of dictionaries to JSON format
@@ -39,4 +39,3 @@ print(jobs_json)
 
 # Clean up: Close the browser and remove the user profile folder
 driver.quit()
-shutil.rmtree(profile_folder_path)

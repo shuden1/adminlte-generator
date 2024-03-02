@@ -29,7 +29,7 @@ try:
     # Extract job titles and URLs
     jobs = []
     job_listings = driver.find_elements(By.CSS_SELECTOR, "li[class*='job-opening']")
-    
+
     for job_listing in job_listings:
         title_element = job_listing.find_element(By.CSS_SELECTOR, "h3[data-id='job-item']")
         job_title = title_element.text.strip()
@@ -46,4 +46,3 @@ try:
 finally:
     # Clean up by closing the browser and removing the profile directory
     driver.quit()
-    shutil.rmtree(profile_folder_path)

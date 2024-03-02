@@ -46,7 +46,7 @@ def scrape_jobs(target_html_file):
     print(json_output)  # Directly printing the result, not writing to a file
 
     # At the very end, remove the profile folder
-    shutil.rmtree(profile_folder_path, ignore_errors=True)
+    # shutil.rmtree(profile_folder_path, ignore_errors=True)
 
 # Assuming the script is called externally with the HTML filename as an argument
 if __name__ == '__main__':

@@ -20,7 +20,7 @@ def scrape_job_listings(html_file_name):
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_path}")
     options.add_argument("--headless")
-    
+
     # Set ChromeDriver service
     service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
 
@@ -38,7 +38,7 @@ def scrape_job_listings(html_file_name):
 
     # Close WebDriver and clean up profile folder
     driver.quit()
-    shutil.rmtree(profile_path)
+    # shutil.rmtree(profile_path)
 
     # Output job listings as JSON
     return json.dumps(job_listings)

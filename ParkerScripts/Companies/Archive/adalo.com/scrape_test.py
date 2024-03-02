@@ -34,7 +34,7 @@ jobs = [{"Job-title": job_element.find_element(By.CSS_SELECTOR, job_title_select
 driver.quit()
 
 # Remove the user profile directory for the current thread
-shutil.rmtree(profile_folder_path)
+
 
 # Output scraped job listings in JSON format
 print(json.dumps(jobs))

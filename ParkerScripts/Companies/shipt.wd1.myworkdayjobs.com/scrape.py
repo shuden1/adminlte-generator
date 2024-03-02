@@ -28,11 +28,11 @@ def scrape_job_listings(html_file_path):
         title_element = job_element.find_element(By.CSS_SELECTOR, job_title_selector)
         job_title = title_element.text.strip()
         job_url = title_element.get_attribute('href').strip()
-        
+
         job_listings.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
-    shutil.rmtree(profile_folder_path)
+
 
     return json.dumps(job_listings)
 

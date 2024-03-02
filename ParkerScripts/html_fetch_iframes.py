@@ -37,6 +37,7 @@ def get_dynamic_html(url, output_file, scrolls=4):
     os.makedirs(profile_folder_path, exist_ok=True)
 
     options.add_argument(f"user-data-dir={profile_folder_path}")
+    options.add_argument('--remote-allow-origins="*"')
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
@@ -66,6 +67,12 @@ def get_dynamic_html(url, output_file, scrolls=4):
         # This is to ensure our BeautifulSoup object includes the iframes with their unique IDs
         main_page_content = browser.page_source
         soup = BeautifulSoup(main_page_content, 'html.parser')
+
+        tags_to_remove = ['script', 'meta', 'style']
+        # Remove specified tags
+        for tag in tags_to_remove:
+            for element in soup.find_all(tag):
+                element.decompose()
 
         # Iterate through each iframe by its unique ID
         for iframe in soup.find_all('iframe', attrs={"data-unique-id": True}):
@@ -100,11 +107,10 @@ def get_dynamic_html(url, output_file, scrolls=4):
     finally:
         browser.quit()
         remove_script_tags(output_filename)
-        if os.path.exists(profile_folder_path) and os.path.isdir(profile_folder_path):
-            shutil.rmtree(profile_folder_path)
+#        if os.path.exists(profile_folder_path) and os.path.isdir(profile_folder_path):
+#            shutil.rmtree(profile_folder_path)
 
 if __name__ == "__main__":
-
     url = sys.argv[1]
     output_filename = sys.argv[2]
 

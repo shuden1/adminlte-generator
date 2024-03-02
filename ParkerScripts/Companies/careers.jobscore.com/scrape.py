@@ -47,7 +47,7 @@ for job_block in job_listings:
 driver.quit()
 
 # Remove the profile folder
-shutil.rmtree(profile_folder_path)
+
 
 # Output the result as JSON
 print(json.dumps(jobs_data))

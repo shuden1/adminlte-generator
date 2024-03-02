@@ -37,7 +37,7 @@ def main(html_file):
         })
 
     driver.quit()
-    shutil.rmtree(profile_folder_path)
+
 
     return json.dumps(job_listings)
 

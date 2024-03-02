@@ -1,0 +1,51 @@
+import json
+import shutil
+import sys
+import threading
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
+# Accept the HTML file name as a command line argument.
+html_file_name = sys.argv[1]
+
+# Define the selectors for job openings based on class, not ID.
+job_block_selector = '.opening'
+job_title_selector = '.opening a'
+job_url_selector = '.opening a'
+
+# Set up a headless ChromeDriver.
+profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{str(threading.get_ident())}"
+service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+
+options = Options()
+options.add_argument(f"user-data-dir={profile_folder_path}")
+options.add_argument("--headless")
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
+
+driver = webdriver.Chrome(service=service, options=options)
+
+# Initialize a list to store job listings.
+job_listings = []
+
+try:
+    # Load the HTML file locally.
+    driver.get(f"file:///{html_file_name}")
+
+    # Find elements representing job openings using defined selectors.
+    job_elements = driver.find_elements(By.CSS_SELECTOR, job_block_selector)
+
+    # Iterate over job elements to extract job titles and URLs.
+    for job_element in job_elements:
+        job_title = job_element.find_element(By.CSS_SELECTOR, job_title_selector).text.strip()
+        job_url = job_element.find_element(By.CSS_SELECTOR, job_url_selector).get_attribute('href').strip()
+        job_listings.append({"Job-title": job_title, "URL": job_url})
+finally:
+    # Clean up by closing the browser and deleting the user data directory.
+    driver.quit()
+    # shutil.rmtree(profile_folder_path, ignore_errors=True)
+
+# Print the job listings in JSON format.
+print(json.dumps(job_listings))

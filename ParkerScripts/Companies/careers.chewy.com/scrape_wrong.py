@@ -33,8 +33,8 @@ try:
 
     # Scrape all job listings
     jobs_elements = driver.find_elements(By.CSS_SELECTOR, jobs_selector)
-    jobs_data = [{"Job-title": elem.get_attribute("aria-label"), "URL": elem.get_attribute("href")} 
-                 for elem in jobs_elements 
+    jobs_data = [{"Job-title": elem.get_attribute("aria-label"), "URL": elem.get_attribute("href")}
+                 for elem in jobs_elements
                  if elem.get_attribute("href").startswith("https")]
 
     # Output the scraped job listings as JSON
@@ -42,7 +42,7 @@ try:
 
 finally:
     # Remove the profile folder path
-    shutil.rmtree(profile_folder_path, onerror=lambda function, path, excinfo: None)
+    # shutil.rmtree(profile_folder_path, onerror=lambda function, path, excinfo: None)
 
     # Close the browser
     driver.quit()

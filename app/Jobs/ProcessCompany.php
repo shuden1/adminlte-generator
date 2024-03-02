@@ -19,6 +19,15 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
 // php artisan queue:work --queue=ScriptGenerationQueue
+// pm2 start ecosystem.config.js
+/*
+
+List all processes: pm2 list
+Monitor processes: pm2 monit
+Stop a process: pm2 stop <id|name>
+Restart a process: pm2 restart <id|name>
+Delete a process: pm2 delete <id|name>
+ */
 
 class ProcessCompany implements ShouldQueue
 {
@@ -273,14 +282,14 @@ class ProcessCompany implements ShouldQueue
         $domain = str_replace('www.','',$domain);
 
 
-        if ((!file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py"))||($this->forced)) {
+        if ((!file_exists("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape.py"))||($this->forced)) {
 
-            if (file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
-                rename("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py", "D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape_old.py");
+            if (file_exists("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape.py")) {
+                rename("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape.py", "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape_old.py");
             }
 
-            $basePath = "D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}";
-            $basePathHtmls = "D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/HTMLs";
+            $basePath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}";
+            $basePathHtmls = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\HTMLs";
 
             if (!is_dir($basePath)) {
                 mkdir($basePath, 0777, true); // The 0777 specifies the permissions, and true enables recursive creation
@@ -290,20 +299,20 @@ class ProcessCompany implements ShouldQueue
             }
 
             //     Call fetch_html.py
-            $inputFile = $basePathHtmls . "/template.html";
-            $outputFile = $basePathHtmls . "/cleaned.html";
+            $inputFile = $basePathHtmls . "\\template.html";
+            $outputFile = $basePathHtmls . "\\cleaned.html";
             $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
             //     Call GenerateScripts
 
 
-            $success = $this->generateScript($outputFile, $basePath . "/scrape.py", $inputFile);
+            $success = $this->generateScript($outputFile, $basePath . "\\scrape_temp.py", $inputFile);
 
             $this->company->scripted = $success;
             if (!$success){
-                rename("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py", "D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape_wrong.py");
+                rename("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape.py", "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape_wrong.py");
             } else {
+                rename("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape_temp.py", "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape.py");
                 RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
-
             }
 
             //      sleep(10);

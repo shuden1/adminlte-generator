@@ -13,14 +13,17 @@ job_title_selector = 'h2.card-title.blue-text a'
 
 # Step 2: Script to scrape job listings
 def scrape_job_listings(html_file):
-    # Set up Chrome options for headless execution
-    options = Options()
-    options.headless = True
-    options.add_argument("--disable-gpu")
-    options.add_argument("--disable-extensions")
 
     # Set up a new Chrome profile for the current thread
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+
+    # Set up Chrome options for headless execution
+    options = Options()
+    options.add_argument(f"user-data-dir={profile_folder_path}")
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+
 
     # Set the service with the ChromeDriver path
     service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
@@ -44,7 +47,7 @@ def scrape_job_listings(html_file):
     driver.quit()
 
     # Remove the profile folder
-    shutil.rmtree(profile_folder_path)
+
 
     # Return the JSON containing job listings
     return json.dumps(job_listings)

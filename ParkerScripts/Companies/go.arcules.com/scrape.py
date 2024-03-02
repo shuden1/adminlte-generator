@@ -24,7 +24,7 @@ def scrape_job_listings(file_name):
     jobs = [{"Job-title": e.text, "URL": e.get_attribute("href")} for e in job_elements]
 
     driver.quit()
-    shutil.rmtree(profile_folder_path, ignore_errors=True)
+    # shutil.rmtree(profile_folder_path, ignore_errors=True)
     return json.dumps(jobs)
 
 if __name__ == "__main__":

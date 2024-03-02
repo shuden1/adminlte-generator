@@ -24,11 +24,11 @@ def main(html_file):
         job_url = job_title_element.get_attribute('href')
         job_title = job_title_element.text.strip()
         job_listings.append({"Job-title": job_title, "URL": job_url})
-    
+
     print(json.dumps(job_listings))
 
     driver.quit()
-    shutil.rmtree(profile_folder_path)
+
 
 if __name__ == "__main__":
     html_file_argument = sys.argv[1]

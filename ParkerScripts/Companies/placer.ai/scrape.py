@@ -34,4 +34,3 @@ if __name__ == '__main__':
         print(json.dumps(job_listings))
     finally:
         driver.quit()
-        shutil.rmtree(profile_folder_path)

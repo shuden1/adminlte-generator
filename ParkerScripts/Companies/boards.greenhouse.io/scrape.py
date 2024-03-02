@@ -44,4 +44,3 @@ print(json.dumps(job_listings))
 
 # Clean up: Close driver and remove profile folder
 driver.quit()
-shutil.rmtree(profile_folder_path)

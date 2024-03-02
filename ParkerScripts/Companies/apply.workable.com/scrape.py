@@ -18,14 +18,14 @@ def scrape_job_listings(html_file):
     service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
 
     driver = webdriver.Chrome(service=service, options=options)
-    
+
     driver.get("file://" + html_file)
 
     # Revised selectors based on provided HTML structure
     job_listing_selector = ".job-listing"
     job_title_selector = ".job-title"
     job_url_selector = 'a'  # Assuming <a> is the first or the only <a> tag inside the job listing block
-    
+
     # Scrape job listings
     job_elements = driver.find_elements(By.CSS_SELECTOR, job_listing_selector)
     jobs_list = []
@@ -38,8 +38,8 @@ def scrape_job_listings(html_file):
         jobs_list.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
-    shutil.rmtree(profile_folder_path)
-    
+
+
     return json.dumps(jobs_list)
 
 if __name__ == "__main__":

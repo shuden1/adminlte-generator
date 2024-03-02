@@ -32,10 +32,10 @@ def scrape_job_listings(html_file_name):
             job_listings.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
-    
+
     # Cleanup: Remove the profile folder
-    shutil.rmtree(profile_folder_path, ignore_errors=True)
-    
+    # shutil.rmtree(profile_folder_path, ignore_errors=True)
+
     return json.dumps(job_listings)
 
 if __name__ == "__main__":

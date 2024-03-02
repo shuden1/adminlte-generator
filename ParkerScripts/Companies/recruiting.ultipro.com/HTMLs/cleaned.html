@@ -1,0 +1,1116 @@
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths no-ipad no-iphone no-ipod no-appleios ukg-focus-visible dj_webkit dj_chrome dj_contentbox hydrated" data-ukg-focus-visible="" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/122.0.6261.70 Safari/537.36" id="PageHtml" lang="en-US"><body class="jobboardview-controller candidate-layout">
+
+
+
+
+
+
+<!-- Google Tag Manager -->
+<!-- End Google Tag Manager -->
+<ukg-ignite-shell asset-base-url="https://ignite.cdn.ultipro.com/dls-cdn/ignite/v5.6.4" class="sc-ukg-ignite-shell-h sc-ukg-ignite-shell-s hydrated" data-ignite-version="5.4.1" default-translation-path="" language="en-US"><!-- -->
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="sr-only sr-only-focusable" data-i18n="Common.SkipLink" id="skipLink" tabindex="0">Skip to main content</a>
+<div id="PageContent" style="">
+<header role="banner">
+<nav aria-label="Global" class="navbar navbar-candidate navbar-static-top" data-automation="navbar" data-i18n="[aria-label]Layout.NavigationAriaLabel">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="http://www.astound.com" target="_blank">
+
+
+</a>
+<button aria-labelledby="navbar-menu-label" class="navbar-toggle" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+
+
+
+</button>
+<span class="sr-only" data-i18n="Layout.Menu.MenuLabel" id="navbar-menu-label">Toggle Navigation</span>
+</div>
+<div class="collapse navbar-collapse" id="navbar-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="find-opps-link">
+<ukg-button class="brandingbutton ukg-color ukg-button-medium ukg-button-low-emphasis ukg-on-light ukg-no-min-width hydrated" data-automation="opportunities-menu-button" data-bind="attr: {'aria-label': $.t('Layout.Menu.Opportunities') }" data-i18n="Layout.Menu.Opportunities" data-ukg-focus-visible="" emphasis="low" id="OpportunitiesMenuButton" manual-color="true" onclick="window.location='/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3'" size="medium">Find Opportunities</ukg-button>
+</li>
+<li id="LanguagePicker">
+<ukg-button child-icon="menu-caret-down" class="brandingbutton ukg-color ukg-button-medium ukg-button-low-emphasis ukg-on-light ukg-no-min-width hydrated" data-automation="selected-language-picker-link" data-bind="menudropdownListener: { targetId: 'languageMenuContainer' }" data-ukg-focus-visible="" emphasis="low" id="languageMenubutton" manual-color="true" size="medium">
+<span class="brandingbutton" data-bind="text: selectedLanguage().Name">U.S. English</span>
+</ukg-button>
+<ukg-menu class="sc-ukg-menu-h sc-ukg-menu-s hydrated" data-bind="foreach: languages" id="languageMenuContainer" selectable=""><!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="en-GB" value="en-GB">British English</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="de-DE" value="de-DE">Deutsch</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="es-ES" value="es-ES">Español</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="fr-CA" value="fr-CA">Français canadien</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="pt-BR" value="pt-BR">Português do Brasil</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'-->
+
+<!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'--><!--/ko-->
+</ukg-menu>
+</li>
+<li>
+<ukg-button class="brandingbutton ukg-color ukg-button-medium ukg-button-low-emphasis ukg-on-light ukg-no-min-width hydrated" data-bind="attr: {'aria-label': $.t('Layout.Menu.LogIn') }" data-i18n="Layout.Menu.LogIn" data-ukg-focus-visible="" emphasis="low" id="SignInButton" manual-color="true" onclick="window.location='/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/Account/Login?cancelUrl=https%3A%2F%2Frecruiting.ultipro.com%2FRCN1000RCN%2FJobBoard%2F624d6141-f4fa-4f19-8493-34034c8044c3%2F%3Fq%3DEngineering%26o%3Drelevance%26w%3D%26wc%3D%26we%3D%26wpst%3D'" size="medium">Sign In</ukg-button>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<div class="index-action">
+<div class="container" id="PageContainer">
+<div id="GlobalNotificationContainer">
+<global-notification><div class="alert alert-success" data-automation="global-notification" data-bind="visible: visible, css: level" role="alert" style="display: none;"> </div></global-notification>
+</div>
+
+<div id="OpportunitiesContainer">
+<div>
+<react-ko-bridge params="component:'Recruiting.Rct.Containers.Candidate.CandidateConsentBanner',
+                         props:{
+                            'showAlert': false,
+                            'consentUrl': '/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/CandidateConsent'
+                         }"></react-ko-bridge>
+<div class="row">
+<div class="col-md-24">
+<h1 class="job-board-title" data-automation="job-board-title" data-bind="text: jobBoard.Name">Astound Broadband Job Postings</h1>
+</div>
+</div>
+<div class="row" role="search">
+<div class="col-md-12" data-bind="css: { 'col-md-24': !shouldShowMap() || geoServiceUnavailable(), 'col-md-12': shouldShowMap() &amp;&amp; !geoServiceUnavailable() }">
+<div class="form-group">
+<!-- ko if: shouldShowMap() -->
+<label class="search-label" data-i18n="Opportunity.Opportunities.SearchLabel" for="SearchInput" id="searchInputLabel">What</label>
+<!-- /ko -->
+<span class="typeahead-group typeahead-group-right search-input-group">
+<div class="right-inner-addon dropdown">
+<!-- onmouseup event is needed in order set focus because the filter components steal the mousedown event and thus prevent ie from properly setting focus on input element -->
+
+<div class="search-tips-target" data-bind="component: {
+                                         name: 'react-ko-bridge',
+                                         params: { 'component': 'Recruiting.Rct.Components.Atoms.SearchTips', 'props' :{ 'dropdownClassName': 'jobboard-dropdown' } }
+                                     }"><div class="searchtip-root"><span aria-expanded="false" class="dropdown-toggle bulb-icon tooltip-button" data-toggle="dropdown" id="tips-and-tricks-button-tooltip" role="button" tabindex="0"><ukg-tooltip aria-hidden="true" class="sc-ukg-tooltip-h sc-ukg-tooltip-s hydrated" htmlfor="tips-and-tricks-button-tooltip" role="tooltip" tabindex="-1" text="Tips &amp; Tricks"><div class="tooltip-wrapper sc-ukg-tooltip"><div class="tooltip-content sc-ukg-tooltip"><div class="tooltip-text sc-ukg-tooltip">Tips &amp; Tricks</div></div></div></ukg-tooltip></span><div class="dropdown-menu tips-dropdown jobboard-dropdown" data-automation="search-tips-dropdown-menu"><div aria-labelledby="TipsTricksHeader" class="modal-dialog mt-0 mb-0" role="dialog"><div class="modal-content"><div class="modal-header"><button aria-label="Close" class="close" data-automation="search-tips-close-button" data-bind="attr: { 'aria-label': $.t('Common.Close') }" data-dismiss="modal" type="button"> <span aria-hidden="true">× </span></button><h4 class="modal-title" id="TipsTricksHeader"> <span class="fa fa-lightbulb-o"> </span>  Tips &amp; Tricks</h4></div><div class="modal-body"><div class="mobile-view-content"><h4>Search Modifier</h4><dl><dt><b>Either terms</b></dt><label class="label label-default">word1 word2</label><dd>Manager Supervisor retrieves an opportunity for a Manager or a Supervisor when searching for an opportunity.</dd></dl><dl><dt><b>Exact phrase</b></dt><label class="label label-default">"word1 word2"</label><dd>"Customer Service Manager""Customer Service Supervisor" retrieves an opportunity for a Customer Service Manager or a Customer Service Supervisor.</dd></dl><dl><dt><b>Include terms</b></dt><label class="label label-default">word1 + word2</label><dd>Manager + Accounting returns opportunities for Manager and Accounting.</dd></dl><dl><dt><b>Exclude terms</b></dt><label class="label label-default">-word1</label><dd>-Sales returns all opportunities that do not have the term Sales associated to them.</dd></dl><dl><dt><b>Either OR</b></dt><label class="label label-default">word1 | word2</label><dd>Developer + (apache | weblogic | websphere) returns Developer opportunities with at least one of the 3 relevant terms.</dd></dl></div><div class="normal-content"><table class="table" role="grid"><caption class="sr-only">Tips &amp; Tricks</caption><thead><tr><th colspan="2" id="SearchTipsHeader1" scope="col" style="width: 33%;"><b>Search Modifier</b></th><th id="SearchTipsHeader3" scope="col" style="width: 33%;"><b>Description</b></th><th id="SearchTipsHeader4" scope="col" style="width: 33%;"><b>Example </b></th></tr></thead><tbody><tr><td headers="SearchTipsHeader1"><b>Either terms</b></td><td headers="SearchTipsHeader1"><label class="label label-default">word1 word2</label></td><td headers="SearchTipsHeader3"> Either search term value.</td><td headers="SearchTipsHeader4"> Manager Supervisor retrieves an opportunity for a Manager or a Supervisor when searching for an opportunity.</td></tr><tr><td headers="SearchTipsHeader1"><b>Exact phrase</b></td><td headers="SearchTipsHeader1"><label class="label label-default">"word1 word2"</label></td><td headers="SearchTipsHeader3"> Returns the exact phrase match within quotes.</td><td headers="SearchTipsHeader4">"Customer Service Manager""Customer Service Supervisor" retrieves an opportunity for a Customer Service Manager or a Customer Service Supervisor.</td></tr><tr><td headers="SearchTipsHeader1"><b>Include terms</b></td><td headers="SearchTipsHeader1"><label class="label label-default">word1 + word2</label></td><td headers="SearchTipsHeader3"> The '+' indicates that both terms must be present.</td><td headers="SearchTipsHeader4"> Manager + Accounting returns opportunities for Manager and Accounting.</td></tr><tr><td headers="SearchTipsHeader1"><b>Exclude terms</b></td><td headers="SearchTipsHeader1"><label class="label label-default">-word1</label></td><td headers="SearchTipsHeader3"> The '-' indicates that the term must not be present.</td><td headers="SearchTipsHeader4">-Sales returns all opportunities that do not have the term Sales associated to them.</td></tr><tr><td headers="SearchTipsHeader1"><b>Either OR</b> </td><td headers="SearchTipsHeader1"><label class="label label-default">word1 | word2</label></td><td headers="SearchTipsHeader3"> Offers flexible inclusion, and typically broadens your search results.You may use parentheses to encapsulate OR statements.</td><td headers="SearchTipsHeader4">Developer + (apache | weblogic | websphere) returns Developer opportunities with at least one of the 3 relevant terms.</td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+
+<span class="typeahead-addon typeahead-addon-right" data-automation="searchinput-clear" data-bind="visible: showClearButton,click: clearSearchInput, event: { keypress: clearSearchInput }" role="button" style="" tabindex="0">
+
+</span>
+</span>
+</div>
+</div>
+<!-- ko if: shouldShowMap() && !geoServiceUnavailable() -->
+<div class="col-md-12">
+<div class="form-group">
+<label class="search-label" data-i18n="Opportunity.Opportunities.WhereLabel" for="WhereInput">Where</label>
+<!-- onmouseup event is needed in order set focus because the filter components steal the mousedown event and thus prevent ie from properly setting focus on input element -->
+<span class="twitter-typeahead typeahead-group typeahead-group-right" style="position: relative; display: inline-block; direction: ltr;"><span class="tt-dropdown-menu" id="search-results" role="listbox" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"></span><span class="typeahead-addon typeahead-button-addon-right" data-automation="typeahead-clear" style="display: none;"><!-- please see typeahead.js to view the bindings on this span and button --><button aria-label="Clear search" class="btn btn-default"></button></span><span class="typeahead-addon typeahead-addon-right" data-automation="typeahead-search"></span></span>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+<div aria-label="Map" data-bind="visible: shouldShowMap(), attr: { 'aria-label': $.t('Opportunity.Opportunities.Map') }" role="region">
+<div class="esri-view esri-view-height-xsmall esri-view-height-less-than-small esri-view-height-less-than-medium esri-view-height-less-than-large esri-view-height-less-than-xlarge esri-view-width-small esri-view-width-greater-than-xsmall esri-view-width-less-than-medium esri-view-width-less-than-large esri-view-width-less-than-xlarge esri-view-orientation-landscape" data-automation="map" id="viewDiv"><div class="esri-view-root" style="width: 720px; height: 296px;"><div class="esri-view-surface" style="user-select: none; width: 720px; height: 296px; touch-action: none; display: block; opacity: 1;" tabindex="0"></div><div class="esri-invisible esri-popup esri-widget" id="esri_widgets_Popup_0" role="presentation" widgetid="esri_widgets_Popup_0">
+<!-- Popup Container -->
+<div class="esri-popup__position-container esri-popup--shadow esri-popup--feature-updated esri-popup--top-aligned" data-dojo-attach-point="_containerNode" data-layer-id="" data-layer-title="">
+<div class="esri-popup__main-container">
+<!-- Popup Docked Pagination -->
+<section class="esri-popup__pagination-docked">
+<div class="esri-popup__loading-container" role="presentation" title="Loading">
+
+<span class="esri-icon-font-fallback-text">Loading</span>
+</div>
+<div class="esri-popup__pagination-docked-buttons">
+<div class="esri-popup__button esri-popup__pagination-previous" data-dojo-attach-point="_previousDockedNode" role="button" tabindex="0" title="Previous feature">
+
+
+<span class="esri-icon-font-fallback-text">Previous feature</span>
+</div>
+
+<div class="esri-popup__button esri-popup__pagination-next" data-dojo-attach-point="_nextDockedNode" role="button" tabindex="0" title="Next feature">
+
+
+<span class="esri-icon-font-fallback-text">Next feature</span>
+</div>
+<div class="esri-popup__button esri-popup__feature-menu-button" data-dojo-attach-point="_pageMenuDockedNode" role="button" tabindex="0" title="Menu">
+
+<span class="esri-icon-font-fallback-text">Menu</span>
+</div>
+</div>
+</section>
+<!-- /Popup Docked Pagination -->
+<!-- Popup Header -->
+<header class="esri-popup__header">
+
+<div class="esri-popup__header-buttons">
+<div class="esri-popup__button esri-popup__button--dock" data-dojo-attach-point="_dockNode" role="button" tabindex="0" title="Dock">
+
+
+
+
+<span class="esri-icon-font-fallback-text">Dock</span>
+
+<span class="esri-icon-font-fallback-text">Undock</span>
+</div>
+<div class="esri-popup__button" data-dojo-attach-point="_closeNode" role="button" tabindex="0" title="Close">
+
+<span class="esri-icon-font-fallback-text">Close</span>
+</div>
+</div>
+</header>
+<!-- /Popup Header -->
+<!-- Popup Content -->
+
+<!-- /Popup Content -->
+<!-- Popup Footer -->
+
+<!-- /Popup Footer -->
+<!-- Popup Menu -->
+<section aria-hidden="true" class="esri-popup__feature-menu" data-dojo-attach-point="_pageMenuSectionNode">
+
+<nav class="esri-popup__feature-menu-viewport">
+
+</nav>
+</section>
+<!-- /Popup Menu -->
+</div>
+<!-- Popup Pointer -->
+<div class="esri-popup__pointer" role="presentation">
+
+</div>
+<!-- /Popup Pointer -->
+</div>
+<!-- /Popup Container -->
+</div><div class="esri-ui" style="inset: 0px;"><div class="esri-ui-inner-container esri-ui-manual-container"><div class="esri-component esri-attribution esri-widget"><div class="esri-attribution__sources" tabindex="-1">Esri, HERE, Garmin, NGA, USGS</div><div class="esri-attribution__powered-by">Powered by <a class="esri-attribution__link" href="http://www.esri.com/" target="_blank">Esri</a></div></div></div><div class="esri-ui-inner-container esri-ui-corner-container" style="inset: 15px 15px 30px;"><div class="esri-ui-bottom-right esri-ui-corner"><div class="esri-component esri-zoom esri-widget"><div class="esri-widget-button esri-widget esri-interactive" role="button" tabindex="0" title="Zoom In"><span class="esri-icon-font-fallback-text">Zoom In</span></div><div class="esri-widget-button esri-widget esri-disabled" role="button" tabindex="-1" title="Zoom Out"><span class="esri-icon-font-fallback-text">Zoom Out</span></div></div></div></div></div></div></div>
+</div>
+<div>
+<div class="row">
+<div aria-label="Filter Opportunities" class="pl-0 pr-0 col-md-16 col-sm-24 col-xs-24" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.FilterOpportunities') }, css: { 'col-md-24 col-sm-24 col-xs-24': showFullWidth(), 'col-md-16 col-sm-24 col-xs-24': !showFullWidth() }" role="region">
+<div class="col-md-21 col-sm-24 col-xs-24">
+<jobboard-filter-panel params="filtersUrl: '/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/JobBoardView/GetFilters',
+                        typeaheadOptionsUrl: '/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/JobBoardView/GetTypeaheadOptions',
+                        parentQuery: opportunityQuery,
+                        shouldInvalidate: shouldInvalidateSubscribers,
+                        onFiltersReady: filtersUpdated.bind($root),
+                        onFiltersChange: filtersUpdated.bind($root),
+                        getFilterIdentifierCallback: getFilterIdentifier.bind($root),
+                        getSearchFilterSearchFragmentCallback: getSearchFilterSearchFragment.bind($root),
+                        hydratedFilterValues: hydratedFilterValues,
+                        shouldRehydrate: shouldRehydrate,
+                        shouldReset: shouldReset,
+                        maxSelectedFilter: 10">
+<div class="filter-panel jobboard-filter-panel" data-automation="filter-panel-control" id="FilterPanel">
+<div class="row">
+<div class="col-md-24" data-bind="visible: shouldShowFilter()" style="">
+<div class="row">
+<div class="col-md-24">
+<!-- ko foreach: searchFiltersOptions -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) --><!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) -->
+<typeahead-filter params="
+                                            searchFilter: $data,
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            taOptionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            onViewMoreOptionsClickedCallback: $parent.onViewMoreOptionsClicked,
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+                                            getCurrentSelectionsThreshold: $parent.currentSelectionsThreshold,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter typeahead-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunityPhysicalLocation">
+<button aria-describedby="OpportunityPhysicalLocation" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;">
+
+</button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'id': identifier + 'Button',
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" id="OpportunityPhysicalLocationButton" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel(), attr: { id: 'Dropdown' + $index() }" id="Dropdown0">Company Location</span>
+
+</button>
+<div aria-labelledby="OpportunityPhysicalLocationButton" class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() },
+                        attr: {
+                            'id': identifier + 'FilterDropdown',
+                            'aria-labelledby': identifier + 'Button',
+                            'role': isOpen() ? 'region' : null
+                        }" id="OpportunityPhysicalLocationFilterDropdown" style="display: none;">
+<div class="text-input">
+
+</div>
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+
+
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: !isFetching() &amp;&amp; emptyResults() &amp;&amp; !instantaneousQueryStringChanging()">
+
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div aria-label="Select" class="options" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<div class="opts results" data-automation="results-section" data-bind="visible: isSearching() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+<div class="opts selected" data-automation="selected-section" data-bind="visible: !isSearching() &amp;&amp; selectedGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: selectedGroup --><!-- /ko -->
+</div>
+<div class="opts recent" data-automation="recent-section" data-bind="visible: !isSearching() &amp;&amp; recentGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: recentGroup --><!-- /ko -->
+</div>
+<div class="opts top" data-automation="top-results-section" data-bind="visible: !isSearching() &amp;&amp; topGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: topGroup --><!-- /ko -->
+</div>
+</div>
+<div class="view-more">
+<!-- ko if: shouldShowViewMoreLink()-->
+<a class="btn btn-link" data-automation="view-all-link" data-bind="visible: shouldShowViewMoreLink(), click: onViewMoreOptionsClicked.bind($data), text: getViewMoreTextLabel()" href="#" role="button">View Locations</a>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</typeahead-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) --><!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) -->
+<typeahead-filter params="
+                                            searchFilter: $data,
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            taOptionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            onViewMoreOptionsClickedCallback: $parent.onViewMoreOptionsClicked,
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+                                            getCurrentSelectionsThreshold: $parent.currentSelectionsThreshold,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter typeahead-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunityJobCategory">
+<button aria-describedby="OpportunityJobCategory" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;">
+
+</button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'id': identifier + 'Button',
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" id="OpportunityJobCategoryButton" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel(), attr: { id: 'Dropdown' + $index() }" id="Dropdown1">Job Category</span>
+
+</button>
+<div aria-labelledby="OpportunityJobCategoryButton" class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() },
+                        attr: {
+                            'id': identifier + 'FilterDropdown',
+                            'aria-labelledby': identifier + 'Button',
+                            'role': isOpen() ? 'region' : null
+                        }" id="OpportunityJobCategoryFilterDropdown" style="display: none;">
+<div class="text-input">
+
+</div>
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+
+
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: !isFetching() &amp;&amp; emptyResults() &amp;&amp; !instantaneousQueryStringChanging()">
+
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div aria-label="Select" class="options" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<div class="opts results" data-automation="results-section" data-bind="visible: isSearching() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+<div class="opts selected" data-automation="selected-section" data-bind="visible: !isSearching() &amp;&amp; selectedGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: selectedGroup --><!-- /ko -->
+</div>
+<div class="opts recent" data-automation="recent-section" data-bind="visible: !isSearching() &amp;&amp; recentGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: recentGroup --><!-- /ko -->
+</div>
+<div class="opts top" data-automation="top-results-section" data-bind="visible: !isSearching() &amp;&amp; topGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: topGroup --><!-- /ko -->
+</div>
+</div>
+<div class="view-more">
+<!-- ko if: shouldShowViewMoreLink()-->
+<a class="btn btn-link" data-automation="view-all-link" data-bind="visible: shouldShowViewMoreLink(), click: onViewMoreOptionsClicked.bind($data), text: getViewMoreTextLabel()" href="#" role="button">View Job Categories</a>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</typeahead-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) -->
+<select-list-filter params="
+                                            searchFilter: $data,
+                                            isSingleSelect : $parent.shouldBeSingleSelect($data),
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            optionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunitySchedule">
+<button aria-describedby="OpportunitySchedule" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;"></button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel()">Schedule</span>
+
+</button>
+<div class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() }" style="display: none;">
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+
+
+</div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: resultsGroup().length == 0">
+
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div aria-label="Select" class="opts results options" data-automation="results-section" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div>
+</select-list-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</jobboard-filter-panel>
+</div>
+<div class="col-md-3 no-left-gutter">
+<div class="pull-right reset">
+<react-ko-bridge params="component: 'Recruiting.Rct.Components.Atoms.Button',
+                            props: {
+                                'buttonType': 'link',
+                                'text': $.t('Recruiter.Candidates.ResetSearch'),
+                                'onClick': resetSearch,
+                                'icon': 'fa-refresh',
+                                'dataAutomation': 'reset-button'
+                            }"><button class="btn btn-link" data-automation="reset-button"><span>Reset</span></button></react-ko-bridge>
+</div>
+</div>
+</div>
+<div data-bind="if: !showFullWidth()">
+<div class="col-xs-12 col-md-8">
+<p class="hidden-xs hidden-sm" data-bind="visible: showAddJobSearchAgent" style="">
+<button class="btn btn-primary btn-block" data-automation="create-job-search-agent-link" data-bind="disable: disableCreateJobAlert(), click: createJobSearchAgent"> <span data-i18n="Opportunity.Opportunities.JobSearchAgent.Activate">Activate job alerts for this search</span></button>
+</p>
+</div>
+</div>
+<!-- ko if: showAddJobSearchAgent() && showFullWidth() --><!-- /ko -->
+<div class="col-sm-24 col-xs-24 col-md-16" data-bind="css: { 'col-md-24': showFullWidth(), 'col-md-16': !showFullWidth() } ">
+<p class="hidden-md hidden-lg" data-bind="visible: showAddJobSearchAgent" style="">
+<button class="btn btn-primary btn-block full-width" data-automation="create-job-search-agent-link" data-bind="disable: disableCreateJobAlert(), click: createJobSearchAgent"> <span data-i18n="Opportunity.Opportunities.JobSearchAgent.Activate">Activate job alerts for this search</span></button>
+</p>
+<div class="search-count" data-automation="opportunities-search-container">
+<div class="row" id="SearchCount">
+<div class="col-md-15">
+<h2 aria-live="polite" class="count m-0" data-automation="opportunities-count" data-bind="text: $.t('Opportunity.Opportunities.ResultJobCountShowingXOfY', { loadedCount: loadedCount(), allCount: totalCount() }), visible: hasLoadedOpportunities()" style="">Showing 14 of 14 opportunities</h2>
+</div>
+<div class="col-md-9">
+<div class="sort-by pull-right">
+<select-list params="options: orderByOptions,
+                                    rightAligned: true,
+                                    selectedOption: orderBy,
+                                    onChangeCallback: sortUpdated.bind($root)">
+<div class="base-filter select-list-filter" data-automation="terms-filter" data-bind="
+                attr: { id: 'sort-by' },
+            " id="sort-by">
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="selected-option" data-bind="click: toggleDropdown" data-toggle="dropdown">
+<span class="sr-only" data-bind="text: $.t('Common.Sort.Sort')">Sort</span>
+<span data-bind="text: dropdownLabel()">By Relevance</span>
+
+</button>
+<div class="filter-dropdown filter-small right-aligned" data-automation="options-dropdown" data-bind="
+                    visible: isOpen(),
+                    css: { 'right-aligned': isRightAligned }
+                " style="display: none;">
+<div aria-label="Select" class="opts results" data-automation="options-section" data-bind="attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<!-- ko foreach: options -->
+<div class="select-list-option clearfix" data-automation="filter-option" data-bind="event: { keypress: $parent.onOptionClicked.bind($parent, $data) }, click: $parent.onOptionClicked.bind($parent, $data), attr: { id: $data.Value }" id="relevance" role="listitem" tabindex="0">
+
+<div class="option-label" data-automation="option-name">
+<span data-bind="text: $data.Text">By Relevance</span>
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="filter-option" data-bind="event: { keypress: $parent.onOptionClicked.bind($parent, $data) }, click: $parent.onOptionClicked.bind($parent, $data), attr: { id: $data.Value }" id="postedDateDesc" role="listitem" tabindex="0">
+
+<div class="option-label" data-automation="option-name">
+<span data-bind="text: $data.Text">By Newest</span>
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="filter-option" data-bind="event: { keypress: $parent.onOptionClicked.bind($parent, $data) }, click: $parent.onOptionClicked.bind($parent, $data), attr: { id: $data.Value }" id="postedDateAsc" role="listitem" tabindex="0">
+
+<div class="option-label" data-automation="option-name">
+<span data-bind="text: $data.Text">By Oldest</span>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</select-list>
+</div>
+</div>
+</div>
+</div>
+<div class="alert alert-danger" data-automation="personalized-search-error-list" data-bind="with: personalizedSearch.personalizedSearchHandler, visible: personalizedSearch.personalizedSearchHandler.serverErrors().length &gt; 0" style="display: none;">
+<ul>
+<!-- ko foreach: serverErrors --><!-- /ko -->
+</ul>
+</div>
+<div data-bind="activity: { trigger: loadOpportunities.isExecuting, resize: true, valign: 'top', padding: 32 }, overlay: { trigger: loadOpportunities.isExecuting, resize: true }" id="Opportunities">
+<div data-bind="foreach: opportunities">
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity0">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=f5d6890b-5d52-4c2b-ac5c-3c46c91dc776">Optical Engineer I</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Feb 19, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Engineering</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">OPTIC007900</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">CA- Concord- O,W</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">215 Mason Circle</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Concord, CA 94520, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">CA- Concord- O,W</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">215 Mason Circle</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Concord, CA 94520, USA</span></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">Astound Broadband is currently searching for an Optical Engineer I in our Concord, CA office. This is a hybrid position with some travel as requested. This position is responsible for capacity planning, network design, network device maintenance and implementation, as well as serving as an escalation point for network events. Your skills will be called to review and create test scenarios prior to implementing changes to the network. You will act as an escalation point for network issues, combining superior troubleshooting, communication, and network management skills, to expedite problem resolution and act as a key point of contact between internal groups, vendors, and network peers.</div>
+
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity1">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=52206ab6-54b6-4950-be8f-e5117e243955">OSP Estimator</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Feb 22, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Construction</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">OSPES007910</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)"><span data-automation="location-description" data-bind="text: LocalizedDescription()">MD-Derekwood,Lanham</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">10000 Derekwood Lane</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Lanham, MD 20706, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)"><span data-automation="location-description" data-bind="text: LocalizedDescription()">MD-Derekwood,Lanham</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">10000 Derekwood Lane</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Lanham, MD 20706, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)"><span data-automation="location-description" data-bind="text: LocalizedDescription()">DC-Brookland C-Washington</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">3734 10th Street NE</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Washington, DC 20017, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)"><span data-automation="location-description" data-bind="text: LocalizedDescription()">DC-Brookland C-Washington</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">3734 10th Street NE</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Washington, DC 20017, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)"><span data-automation="location-description" data-bind="text: LocalizedDescription()">VA-Wash St,Falls Church</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">100 N Washington Street</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Falls Church, VA 22046, USA</span></span></address></candidate-physical-location>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" tabindex="0">+16 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">The OSP estimator plays a vital role in ensuring quality and timely deliveries of our fiber estimates to our customers.  Skilled in OSP construction with an understanding of network design and engineering.  This position will have strong construction management skills, ability to work independently, knowledge of construction practices for outside plant cable placement and sufficient experience with computers.  The position requires telecommunications construction experience and a financial background. This position can sit near any of our locations Astound has a footprint.</div>
+
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity2">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=28ebbca3-a0c7-4925-acc8-4b3ef8ca2e40">OSP Estimator</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Feb 22, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Construction</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">OSPES007909</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)"><span data-automation="location-description" data-bind="text: LocalizedDescription()">MD-Derekwood,Lanham</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">10000 Derekwood Lane</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Lanham, MD 20706, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)"><span data-automation="location-description" data-bind="text: LocalizedDescription()">MD-Derekwood,Lanham</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">10000 Derekwood Lane</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Lanham, MD 20706, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)"><span data-automation="location-description" data-bind="text: LocalizedDescription()">DC-Brookland C-Washington</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">3734 10th Street NE</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Washington, DC 20017, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)"><span data-automation="location-description" data-bind="text: LocalizedDescription()">DC-Brookland C-Washington</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">3734 10th Street NE</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Washington, DC 20017, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)"><span data-automation="location-description" data-bind="text: LocalizedDescription()">VA-Wash St,Falls Church</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">100 N Washington Street</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Falls Church, VA 22046, USA</span></span></address></candidate-physical-location>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" tabindex="0">+16 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">The OSP estimator plays a vital role in ensuring quality and timely deliveries of our fiber estimates to our customers.  Skilled in OSP construction with an understanding of network design and engineering.  This position will have strong construction management skills, ability to work independently, knowledge of construction practices for outside plant cable placement and sufficient experience with computers.  The position requires telecommunications construction experience and a financial background. This position can sit near any of our locations Astound has a footprint.</div>
+
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity3">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=7cc0c5c1-192b-44f9-8d0b-de3cfb000058">Permit Technician I, II or III</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Dec 7, 2023</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Construction</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">PERMI007800</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">CA- Rocklin- O</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">4121 Citrus Ave</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Ste. 1</span></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Rocklin, CA 95677, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">CA- Rocklin- O</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">4121 Citrus Ave</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Ste. 1</span></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Rocklin, CA 95677, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">CA- Rocklin/Lonetree- O</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">5701 Lonetree Blvd</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Suite 310</span></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Rocklin, CA 95765, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">CA- Rocklin/Lonetree- O</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">5701 Lonetree Blvd</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Suite 310</span></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Rocklin, CA 95765, USA</span></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" tabindex="0">+1 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">Astound Broadband is currently searching for a Fiber Permit Technician I, II or III in our Rocklin office and region.  This position is responsible for ensuring quality and timely deliverables of our services to our customers by ensuring that permits are cost effectively attained and processed in a timely manner.</div>
+
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity4">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=6345a7e2-bb19-4998-8464-31491eb3fd4a">Lead, Construction</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Sep 25, 2023</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Construction</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">LEADC007613</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">OR- Portland- Office</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">5331 S. Macadam Ave</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Suite 350</span></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Portland, OR 97239, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">OR- Portland- Office</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">5331 S. Macadam Ave</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Suite 350</span></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Portland, OR 97239, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">OR-Wilsonville</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">10075 SW Commerce Cir</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Wilsonville, OR 970708699, USA</span></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">OR-Wilsonville</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">10075 SW Commerce Cir</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Wilsonville, OR 970708699, USA</span></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" tabindex="0">+1 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">Astound Broadband Powered by Wave is currently searching for a Lead, Construction in our Oregon market  This position is responsible ensuring quality and timely deliverables of our services building fiber to our customers.</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+<div class="row">
+<div class="col-md-24 text-center">
+<span class="h5" data-bind="visible: skip() + pageSize &lt; totalCount() &amp;&amp; totalCount() &gt; 0" style="display: none;"><a data-automation="load-more-jobs-link" data-bind="click: loadMore, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? loadMore : null}" data-i18n="Opportunity.Opportunities.LoadMoreOpportunities" href="#" id="LoadMoreJobs">View More Opportunities</a></span>
+</div>
+</div>
+<div class="alert alert-block alert-danger" data-automation="no-jobs-message" data-bind="visible: hasLoadedOpportunities() &amp;&amp; totalCount() == 0" style="display: none;">
+<span data-bind="if: hasSearchDefined()" role="alert">
+<strong data-i18n="Opportunity.Opportunities.NoOpportunities.Title">There were no opportunities matching your criteria.</strong>
+<span data-i18n="Opportunity.Opportunities.NoOpportunities.Description">Try removing some filters or searching on different keywords to broaden your results.</span>
+</span>
+
+</div>
+</div>
+</div>
+<div class="col-sm-24 col-xs-24 col-md-8" data-bind="css: { 'col-md-16': showFullWidth(), 'col-md-8': !showFullWidth() }">
+
+<div data-bind="if: shouldShowFeaturedOpportunities">
+<div aria-label="Featured Opportunities" class="featured-opportunities well well-sm" data-automation="featured-opportunities" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.FeaturedOpportunitiesTitle') }" role="complementary">
+<h2 class="section-title h4" data-automation="featured-section-title" data-i18n="Opportunity.Opportunities.FeaturedOpportunitiesTitle">Featured Opportunities</h2>
+<table class="table table-hover" data-bind="foreach: featuredOpportunities" id="FeaturedOpportunities" role="presentation">
+<tbody><tr data-automation="featured-opportunity">
+<td data-bind="popover: { title: Title, content: BriefDescription, placement: 'bottom', trigger: 'hover' }" data-original-title="" title="">
+<a class="opportunity-link break-word" data-bind="attr: { href: OpportunityDetailLink }, popover: { title: Title, content: BriefDescription, placement: 'bottom', trigger: 'focus' }" data-original-title="" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=5b1c93c1-319b-4216-8668-2dcbde8cbf95" tabindex="0" title="">
+<div aria-level="3" role="heading">
+<strong data-automation="job-title" data-bind="text: Title">Customer Care Specialist (Remote)</strong>
+</div>
+<div class="clearfix featured-opportunity-details">
+<div class="pull-left">
+<div>
+<small class="opportunity-title-subheader" data-automation="job-category" data-bind="text: JobCategoryName, attr: { href: OpportunityDetailLink }" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=5b1c93c1-319b-4216-8668-2dcbde8cbf95">Customer Care</small>
+</div>
+<div data-bind="if: Locations().length &gt; 0">
+<small data-bind="with: Locations()[0]">
+<candidate-physical-location params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)"><span data-automation="location-description" data-bind="text: LocalizedDescription()">PA-Avenue C,Bethlehem</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">2124 Avenue C</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Bethlehem, PA 18017, USA</span></span></address></candidate-physical-location>
+</small>
+<small class="muted" data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 })" style="display: none;">+0 more</small>
+</div>
+</div>
+<div class="pull-right text-right">
+<div class="job-post-date">
+<small class="text-normal" data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Feb 26, 2024</small>
+</div>
+<small class="label-with-icon">
+<span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</small>
+</div>
+</div>
+</a>
+</td>
+</tr>
+</tbody>
+<tbody><tr data-automation="featured-opportunity">
+<td data-bind="popover: { title: Title, content: BriefDescription, placement: 'bottom', trigger: 'hover' }" data-original-title="" title="">
+<a class="opportunity-link break-word" data-bind="attr: { href: OpportunityDetailLink }, popover: { title: Title, content: BriefDescription, placement: 'bottom', trigger: 'focus' }" data-original-title="" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=012eedaf-ad28-4454-a9dc-04b4c005360f" tabindex="0" title="">
+<div aria-level="3" role="heading">
+<strong data-automation="job-title" data-bind="text: Title">Customer Care Specialist (Remote)</strong>
+</div>
+<div class="clearfix featured-opportunity-details">
+<div class="pull-left">
+<div>
+<small class="opportunity-title-subheader" data-automation="job-category" data-bind="text: JobCategoryName, attr: { href: OpportunityDetailLink }" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=012eedaf-ad28-4454-a9dc-04b4c005360f">Customer Care</small>
+</div>
+<div data-bind="if: Locations().length &gt; 0">
+<small data-bind="with: Locations()[0]">
+<candidate-physical-location params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)"><span data-automation="location-description" data-bind="text: LocalizedDescription()">PA-Baltimore Drive, WB</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">100 Baltimore Drive</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Wilkes Barre, PA 18702, USA</span></span></address></candidate-physical-location>
+</small>
+<small class="muted" data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 })" style="display: none;">+0 more</small>
+</div>
+</div>
+<div class="pull-right text-right">
+<div class="job-post-date">
+<small class="text-normal" data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Feb 26, 2024</small>
+</div>
+<small class="label-with-icon">
+<span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</small>
+</div>
+</div>
+</a>
+</td>
+</tr>
+</tbody>
+<tbody><tr data-automation="featured-opportunity">
+<td data-bind="popover: { title: Title, content: BriefDescription, placement: 'bottom', trigger: 'hover' }" data-original-title="" title="">
+<a class="opportunity-link break-word" data-bind="attr: { href: OpportunityDetailLink }, popover: { title: Title, content: BriefDescription, placement: 'bottom', trigger: 'focus' }" data-original-title="" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=c0ffc032-e000-460f-af1e-02ece04d1873" tabindex="0" title="">
+<div aria-level="3" role="heading">
+<strong data-automation="job-title" data-bind="text: Title">Door to Door Direct Sales Rep</strong>
+</div>
+<div class="clearfix featured-opportunity-details">
+<div class="pull-left">
+<div>
+<small class="opportunity-title-subheader" data-automation="job-category" data-bind="text: JobCategoryName, attr: { href: OpportunityDetailLink }" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=c0ffc032-e000-460f-af1e-02ece04d1873">Sales</small>
+</div>
+<div data-bind="if: Locations().length &gt; 0">
+<small data-bind="with: Locations()[0]">
+<candidate-physical-location params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">WA- Seattle/SoDo</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">4786 1st  Ave S</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Ste. 101</span></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Seattle, WA 98134, USA</span></span></address></candidate-physical-location>
+</small>
+<small class="muted" data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 })" style="display: none;">+0 more</small>
+</div>
+</div>
+<div class="pull-right text-right">
+<div class="job-post-date">
+<small class="text-normal" data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Feb 15, 2024</small>
+</div>
+<small class="label-with-icon">
+<span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</small>
+</div>
+</div>
+</a>
+</td>
+</tr>
+</tbody>
+<tbody><tr data-automation="featured-opportunity">
+<td data-bind="popover: { title: Title, content: BriefDescription, placement: 'bottom', trigger: 'hover' }" data-original-title="" title="">
+<a class="opportunity-link break-word" data-bind="attr: { href: OpportunityDetailLink }, popover: { title: Title, content: BriefDescription, placement: 'bottom', trigger: 'focus' }" data-original-title="" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=2dbd187c-8083-4e41-bef0-87ddc6d98f39" tabindex="0" title="">
+<div aria-level="3" role="heading">
+<strong data-automation="job-title" data-bind="text: Title">Broadband Technician I, II, or III +  Sign On Bonus $1,500</strong>
+</div>
+<div class="clearfix featured-opportunity-details">
+<div class="pull-left">
+<div>
+<small class="opportunity-title-subheader" data-automation="job-category" data-bind="text: JobCategoryName, attr: { href: OpportunityDetailLink }" href="/RCN1000RCN/JobBoard/624d6141-f4fa-4f19-8493-34034c8044c3/OpportunityDetail?opportunityId=2dbd187c-8083-4e41-bef0-87ddc6d98f39">Technical Operations</small>
+</div>
+<div data-bind="if: Locations().length &gt; 0">
+<small data-bind="with: Locations()[0]">
+<candidate-physical-location params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">WA- Snohomish- O,W</span></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())" style="display: none;"></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">21819 Echo Lake Road</span></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Snohomish, WA 98296, USA</span></span></address></candidate-physical-location>
+</small>
+<small class="muted" data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 })" style="display: none;">+0 more</small>
+</div>
+</div>
+<div class="pull-right text-right">
+<div class="job-post-date">
+<small class="text-normal" data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jan 30, 2024</small>
+</div>
+<small class="label-with-icon">
+<span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</small>
+</div>
+</div>
+</a>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+<div id="unsupported-browsers" style="display: none">
+<h2>You are using an unsupported browser.</h2>
+<div>To use this site, please use a supported browser.</div>
+<div class="browser-list">
+<strong class="download-browser download-mozilla-firefox">
+<a href="https://www.mozilla.org/en-US/firefox/new/">
+
+                Download Firefox
+            </a>
+</strong>
+<strong class="download-browser download-google-chrome">
+<a href="https://www.google.com/chrome/browser/">
+
+                Download Chrome
+            </a>
+</strong>
+<strong class="download-browser download-internet-explorer">
+<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+
+                Download Internet Explorer
+            </a>
+</strong>
+</div>
+</div>
+</ukg-ignite-shell>
+</body></html>

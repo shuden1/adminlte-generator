@@ -40,4 +40,3 @@ print(json.dumps(job_listings, ensure_ascii=False))
 
 # Clean up
 driver.quit()
-shutil.rmtree(profile_folder_path)

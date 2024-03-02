@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,6 @@ Route::resource('jobs', App\Http\Controllers\JobController::class);
 Route::resource('decisionMakers', App\Http\Controllers\DecisionMakerController::class);
 
 Route::resource('suitableTitles', App\Http\Controllers\SuitableTitleController::class);
+
+Route::get('/auth/google', [EmailController::class, 'redirectToGoogle']);
+Route::get('/auth/google/callback', [EmailController::class, 'handleGoogleCallback']);

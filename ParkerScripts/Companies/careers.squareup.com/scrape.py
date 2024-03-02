@@ -36,7 +36,7 @@ def scrape_jobs(html_file_name):
         jobs_list.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
-    shutil.rmtree(profile_folder_path)
+
 
     return json.dumps(jobs_list)
 

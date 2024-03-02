@@ -11,7 +11,7 @@ def scrape_job_listings(html_file_path):
     # Define selectors for job blocks
     job_block_selector = ".jobs-list-item"
     job_title_url_selector = "[data-ph-at-id='job-link']"
-    
+
     # Step 2: Initialize Chrome in headless mode.
     chrome_options = Options()
     chrome_options.add_argument("--headless")
@@ -42,7 +42,7 @@ def scrape_job_listings(html_file_path):
 
     # Step 6: Clean up by closing the driver and removing the profile folder.
     driver.quit()
-    shutil.rmtree(profile_folder_path)
+
 
     return job_listings_json
 

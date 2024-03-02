@@ -40,4 +40,3 @@ print(json.dumps(job_listings))
 driver.quit()
 
 # Remove the profile folder
-shutil.rmtree(profile_folder_path)

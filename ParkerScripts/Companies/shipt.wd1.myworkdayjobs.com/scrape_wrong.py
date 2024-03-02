@@ -19,7 +19,7 @@ if __name__ == "__main__":
     options = Options()
     options.headless = True
     options.add_argument(f"user-data-dir={profile_folder_path}")
-    
+
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
 
     driver = webdriver.Chrome(service=service, options=options)
@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     job_listings = []
     job_elements = driver.find_elements(By.CSS_SELECTOR, job_block_selector)
-    
+
     for job_element in job_elements:
         job_title_elem = job_element.find_elements(By.CSS_SELECTOR, job_title_selector)
         for title_elem in job_title_elem:
@@ -38,4 +38,3 @@ if __name__ == "__main__":
     print(json.dumps(job_listings))
 
     driver.quit()
-    shutil.rmtree(profile_folder_path)

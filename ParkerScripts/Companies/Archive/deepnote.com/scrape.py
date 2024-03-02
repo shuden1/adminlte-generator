@@ -32,7 +32,7 @@ def scrape_job_listings(html_file):
         return json.dumps(job_listings)
     finally:
         driver.quit()
-        shutil.rmtree(profile_folder_path)
+
 
 if __name__ == '__main__':
     html_file = sys.argv[1]

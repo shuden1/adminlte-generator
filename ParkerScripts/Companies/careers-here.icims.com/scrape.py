@@ -1,44 +1,52 @@
-import sys
+import threading
+import shutil
+import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service as ChromeService
-import shutil
-import threading
-import json
+from selenium.webdriver.chrome.service import Service
+import sys
 
-# STEP 1
-job_openings_selector = '.iCIMS_JobSearchTable'
-job_title_and_url_selector = 'a.iCIMS_Anchor'
+# STEP 2: Selenium automation script
+def scrape_job_listings(html_file_path):
+    # Create a profile folder path based on the current thread id
+    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
 
-# The target HTML file name should be an input argument.
-target_html_file = sys.argv[1]
+    # Set up Chrome service and options for headless browsing
+    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    options = webdriver.ChromeOptions()
+    options.add_argument(f"user-data-dir={profile_folder_path}")
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
 
-# STEP 2
-profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-options = webdriver.ChromeOptions()
-options.add_argument(f"user-data-dir={profile_folder_path}")
-options.headless = True
-service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
-driver = webdriver.Chrome(service=service, options=options)
+    # Initialize and configure the headless webdriver
+    driver = webdriver.Chrome(service=service, options=options)
+    driver.get(f"file:///{html_file_path}")
 
-# Load the HTML page from the file system.
-driver.get(f"file://{target_html_file}")
+    # Define the CSS selectors for job titles and URLs
+    job_listing_selector = 'div.navigation-link:not(.overview)'
+    job_title_selector = 'span.link-text'
+    job_url_selector = 'a.link-only'
 
-# Scrape all job listings using the selectors from STEP 1.
-job_listings = driver.find_elements(By.CSS_SELECTOR, job_openings_selector)
-jobs = []
+    # Scrape all job listings based on the defined selectors
+    jobs = []
+    job_elements = driver.find_elements(By.CSS_SELECTOR, job_listing_selector)
+    for job_element in job_elements:
+        title_element = job_element.find_element(By.CSS_SELECTOR, job_title_selector)
+        url_element = job_element.find_element(By.CSS_SELECTOR, job_url_selector)
+        jobs.append({
+            "Job-title": title_element.get_attribute('data-title').strip(),
+            "URL": url_element.get_attribute('href')
+        })
 
-for job_listing in job_listings:
-    titles_and_urls = job_listing.find_elements(By.CSS_SELECTOR, job_title_and_url_selector)
-    for title_and_url in titles_and_urls:
-        jobs.append({"Job-title": title_and_url.text, "URL": title_and_url.get_attribute('href')})
+    # Quit the driver and clean up the profile folder
+    driver.quit()
+    # shutil.rmtree(profile_folder_path, ignore_errors=True)
 
-# Convert the list of jobs to JSON.
-json_output = json.dumps(jobs)
+    # Return the list of jobs in JSON format
+    return json.dumps(jobs)
 
-# Close the driver and remove the profile folder.
-driver.quit()
-shutil.rmtree(profile_folder_path)
-
-# Return the JSON output.
-print(json_output)
+# Get the target HTML file name from command line argument
+if __name__ == "__main__":
+    html_file_path = sys.argv[1]
+    print(scrape_job_listings(html_file_path))

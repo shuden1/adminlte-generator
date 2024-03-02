@@ -27,4 +27,3 @@ print(json.dumps(jobs))
 
 # Remove the folder profile_folder_path
 driver.quit()
-shutil.rmtree(profile_folder_path)

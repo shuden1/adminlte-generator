@@ -39,7 +39,7 @@ def main(html_file_path):
     driver.quit()
 
     # Remove the profile folder
-    shutil.rmtree(profile_folder_path)
+
 
     # Print results as JSON
     print(json.dumps(listings, indent=2))

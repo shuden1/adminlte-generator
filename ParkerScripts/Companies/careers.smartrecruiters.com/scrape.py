@@ -21,7 +21,7 @@ driver = webdriver.Chrome(service=service, options=options)
 driver.get(f"file:///{target_html_file}")
 
 job_listings = []
-opening_section_selector = 'section.opening.opening--grouped.js-group'
+opening_section_selector = '.openings-body'
 job_title_and_url_selector = 'a.link--block.details'
 
 openings = driver.find_elements(By.CSS_SELECTOR, opening_section_selector)
@@ -35,4 +35,4 @@ for opening in openings:
 print(json.dumps(job_listings))
 
 driver.quit()
-shutil.rmtree(profile_folder_path)
+

@@ -8,13 +8,13 @@ from selenium.webdriver.chrome.options import Options
 
 def scrape_job_listings(html_file):
     profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
-    shutil.rmtree(profile_folder_path, ignore_errors=True)
+    # shutil.rmtree(profile_folder_path, ignore_errors=True)
     service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
     options = Options()
     options.add_argument(f"--user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     driver = webdriver.Chrome(service=service, options=options)
-    
+
     driver.get(f"file:///{html_file}")
 
     job_elements = driver.find_elements(By.CSS_SELECTOR, '.rt-tr-group')
@@ -27,7 +27,7 @@ def scrape_job_listings(html_file):
         job_data.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
-    shutil.rmtree(profile_folder_path, ignore_errors=True)
+    # shutil.rmtree(profile_folder_path, ignore_errors=True)
     return job_data
 
 if __name__ == "__main__":

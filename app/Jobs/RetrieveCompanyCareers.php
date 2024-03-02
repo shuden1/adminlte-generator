@@ -82,7 +82,7 @@ class RetrieveCompanyCareers implements ShouldQueue
         $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
         $domain = str_replace('www.','',$domain);
         // Creating a recent page image
-        $basePathHtmls = "D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/".$domain."/HTMLs/".$company->id;
+        $basePathHtmls = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\".$domain."\\HTMLs\\".$company->id;
 
 
         if (!is_dir($basePathHtmls)) {
@@ -91,21 +91,20 @@ class RetrieveCompanyCareers implements ShouldQueue
 
         $latestFile = $this->getLatestFile($basePathHtmls);
 
-        $pythonExecutable = "C:/Python3/python.exe";
-        $scriptPath = "D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/html_fetch_iframes.py";
-        $careerPageUrl = escapeshellarg($company->careerPageUrl);
-        $filePath = escapeshellarg($basePathHtmls."/".date("d-m-y").".html");
+        $pythonExecutable = "C:\\Python3\\python.exe";
+        $scriptPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py";
+        $careerPageUrl = $company->careerPageUrl;
+        $filePath = escapeshellarg($basePathHtmls."\\".date("d-m-y").".html");
 
-        $command = "{$pythonExecutable} {$scriptPath} {$careerPageUrl} {$filePath}";
-
+        $command = "{$pythonExecutable} {$scriptPath} \"{$careerPageUrl}\" {$filePath}";
+        var_dump($command);
         shell_exec($command);
-
-        $scriptPath = base_path("/ParkerScripts/Companies/".$domain."/scrape.py");
+        $scriptPath = base_path("\\ParkerScripts\\Companies\\".$domain."\\scrape.py");
 
 
         if ($latestFile){
-            $html1 = file_get_contents($basePathHtmls."/".$latestFile);
-            $html2 = file_get_contents($basePathHtmls."/".date("d-m-y").".html");
+            $html1 = file_get_contents($basePathHtmls."\\".$latestFile);
+            $html2 = file_get_contents($basePathHtmls."\\".date("d-m-y").".html");
 
             if ($html1 === $html2) {
                 $updateTrigger = false;
@@ -116,8 +115,11 @@ class RetrieveCompanyCareers implements ShouldQueue
             $updateTrigger = true;
         }
         if (file_exists($scriptPath) && ($updateTrigger)) {
-            $process = shell_exec('python ' . escapeshellarg($scriptPath) . ' "' . escapeshellarg($basePathHtmls . "/" . date("d-m-y") . '.html"'));
+            $process = shell_exec('python ' . escapeshellarg($scriptPath) . ' "' . $basePathHtmls . "\\" . date("d-m-y") . '.html"');
+            file_put_contents("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\coro.net\\HTMLs\\log.txt", 'python ' . escapeshellarg($scriptPath) . ' "' . $basePathHtmls . "\\" . date("d-m-y") . '.html"');
             $jsonData = json_decode($process, true);
+            file_put_contents("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\coro.net\\HTMLs\\log.txt", $process);
+
                 /*
                  * ZERO POSTINGS CHECK
 
@@ -184,10 +186,10 @@ class RetrieveCompanyCareers implements ShouldQueue
 
         } else {
             if (!file_exists($scriptPath)){
-                $this->error("Script for {$company->name} not found.");
+                throw new \Exception("Script for {$company->name} not found.");
             } else {
-                unlink($basePathHtmls."/".date("d-m-y").".html");
-                $this->info("No updates on the webpage");
+                unlink($basePathHtmls."\\".date("d-m-y").".html");
+                var_dump("No updates on the webpage");
             }
         }
         $when = Carbon::now()->addDay();
