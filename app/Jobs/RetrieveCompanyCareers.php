@@ -2,7 +2,6 @@
 
 namespace App\Jobs;
 
-use App\Mail\JobPostedNotification;
 use App\Models\Company;
 use App\Models\DecisionMaker;
 use App\Models\Job;
@@ -62,7 +61,7 @@ class RetrieveCompanyCareers implements ShouldQueue
                     $latestDate = $date;
                     $latestFile = $file;
                 }
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 // Handle exception if the date format is incorrect
                 continue;
             }
@@ -74,6 +73,28 @@ class RetrieveCompanyCareers implements ShouldQueue
             return false;
         }
 
+    }
+
+    function safeDeleteFile($filePath) {
+        $maxAttempts = 5;
+        for ($attempt = 1; $attempt <= $maxAttempts; $attempt++) {
+            // Generate a temporary file name for renaming. This assumes the file is in the same directory.
+            $tempFileName = dirname($filePath) . '/temp_delete_' . uniqid() . '.tmp';
+
+            // Try to rename the file. If successful, delete it.
+            if (@rename($filePath, $tempFileName)) {
+                @unlink($tempFileName); // Attempt to delete the renamed file.
+                echo "File successfully deleted on attempt $attempt.\n";
+                return true;
+            } else {
+                // If renaming (and thus deletion) failed, wait for 3 seconds before retrying.
+                sleep(3);
+            }
+        }
+
+        // If the code reaches this point, it means all attempts failed.
+        echo "Failed to delete the file after $maxAttempts attempts.\n";
+        return false;
     }
 
     public function handle()
@@ -114,11 +135,11 @@ class RetrieveCompanyCareers implements ShouldQueue
         } else {
             $updateTrigger = true;
         }
+        $hasUpdate = false;
         if (file_exists($scriptPath) && ($updateTrigger)) {
+            $hasUpdate = false;
             $process = shell_exec('python ' . escapeshellarg($scriptPath) . ' "' . $basePathHtmls . "\\" . date("d-m-y") . '.html"');
-            file_put_contents("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\coro.net\\HTMLs\\log.txt", 'python ' . escapeshellarg($scriptPath) . ' "' . $basePathHtmls . "\\" . date("d-m-y") . '.html"');
             $jsonData = json_decode($process, true);
-            file_put_contents("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\coro.net\\HTMLs\\log.txt", $process);
 
                 /*
                  * ZERO POSTINGS CHECK
@@ -166,9 +187,9 @@ class RetrieveCompanyCareers implements ShouldQueue
 
  //                       if (is_null($company->contacted) || $company->contacted->lessThan(Carbon::now()->subMonths(3)))
                         if ($latestFile !== false){
-                            $this->checkAndTrigger($company, $newJob);
+                            $this->triggered($newJob);
                         }
-
+                        $hasUpdate = true;
                     } else {
                         $existingJob->touch();
                     }
@@ -181,16 +202,23 @@ class RetrieveCompanyCareers implements ShouldQueue
 
                 // Loop through the jobs and safely delete each one
             foreach ($jobsToDelete as $job) {
+                $hasUpdate = true;
                 $job->delete(); // This will soft delete if SoftDeletes trait is used in Job model
             }
 
-        } else {
+        }    else {
             if (!file_exists($scriptPath)){
                 throw new \Exception("Script for {$company->name} not found.");
             } else {
-                unlink($basePathHtmls."\\".date("d-m-y").".html");
+                $this->safeDeleteFile($basePathHtmls."\\".date("d-m-y").".html");
                 var_dump("No updates on the webpage");
             }
+        }
+
+        if (!$hasUpdate){
+            $this->safeDeleteFile($basePathHtmls."\\".date("d-m-y").".html");
+            var_dump("No updates on the webpage");
+
         }
         $when = Carbon::now()->addDay();
         RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue')->delay($when);
@@ -218,7 +246,7 @@ class RetrieveCompanyCareers implements ShouldQueue
 
     protected function sendMail($job){
         foreach ($job->company->users as $user) {
-            Mail::to($user->email)->queue(new JobPostedNotification($job));
+            SendEmailViaGmail::dispatch( $user->email, 'Wow! A new job posting!', $job->id);
         }
     }
 

@@ -14,3 +14,4 @@ yarn-error.log
 /.idea
 /.vscode
 /chrome_profile
+/config/google_credentials.json
