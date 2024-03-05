@@ -3,22 +3,23 @@
     <table class="table table-fixed" id="companies-table">
         <thead>
         <tr>
-            <th class="col-1">Name</th>
+            <th class="col-2">Name</th>
             <th class="col-4">Careerpageurl</th>
-            <th class="col-1">Contacted</th>
+            <th class="col-2">Contacted</th>
             <th class="col-1">Sauroned</th>
             <th class="col-1">Scripted</th>
-            <th class="col-4" colspan="3">Action</th>
+            <th class="col-2" colspan="3">Action</th>
         </tr>
         </thead>
         <tbody>
         @foreach($companies as $company)
             <tr id="company-row-{{ $company->id }}" style="{{ !$company->scripted ? 'background-color: #e57373' : ($company->jobs()->exists() ? 'background-color: #97d5a3' : 'background-color: #ece287') }}">
                 <td class="col-2">{{ $company->name }}</td>
-                <td class="col-2" style="word-break: break-word">{{ $company->careerPageUrl }}</td>
+                <td class="col-4" style="word-break: break-word">
+                    <a href="{{ $company->careerPageUrl }}" target="_blank">{{ $company->careerPageUrl }}</a></td>
                 <td class="col-2">{{ $company->contacted }}</td>
-                <td class="col-2">{{ $company->sauroned }}</td>
-                <td class="col-2">{{ $company->scripted }} </td>
+                <td class="col-1">{{ $company->sauroned }}</td>
+                <td class="col-1">{{ $company->scripted }} </td>
                 <td  class="col-2">
                     <div class='btn-group'>
                         <a href="{{ route('companies.show', [$company->id]) }}"

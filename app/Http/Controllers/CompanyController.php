@@ -52,7 +52,7 @@ class CompanyController extends AppBaseController
             $user = Auth::user(); // Get the authenticated user
 
             // Fetch companies associated with the authenticated user
-            $companies = $user->companies()->paginate(25);
+            $companies = $user->companies()->paginate(50);
 
             return view('companies.index', compact('companies'));
         } else {

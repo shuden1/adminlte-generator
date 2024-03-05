@@ -7,7 +7,7 @@
 <!-- Careerpageurl Field -->
 <div class="col-sm-8">
     {!! Form::label('careerPageUrl', 'Careerpageurl:') !!}
-    <p>{{ $company->careerPageUrl }}</p>
+    <p><a href="{{ $company->careerPageUrl }}" target="_blank">{{ $company->careerPageUrl }}</a></p>
 </div>
 
 <!-- Sauroned Field -->
