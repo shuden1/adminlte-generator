@@ -26,7 +26,7 @@
     <!-- Example Block for a Company -->
         <div class="company-block">
             <div class="company-header">{{$company->name}}</div>
-            <div>Last time we emailed you about CompanyName {{$company->contacted->format('m-d-Y')}}</div>
+            <div>Last time we emailed you about {{$company->name}} {{$company->contacted->format('m-d-Y')}}</div>
             <table class="jobs-table">
                 <thead>
                 <tr>
@@ -44,12 +44,12 @@
                 <tr>
                     <td>This week</td>
                     <td>{{count($newJobs[$company->id]['week']['relevant'])}}</td>
-                    <td>{{count($newJobs[$company->id]['week']['relevant'])}}</td>
+                    <td>{{count($newJobs[$company->id]['week']['all'])}}</td>
                 </tr>
                 <tr>
                     <td>This month</td>
                     <td>{{count($newJobs[$company->id]['month']['relevant'])}}</td>
-                    <td>{{count($newJobs[$company->id]['month']['relevant'])}}</td>
+                    <td>{{count($newJobs[$company->id]['month']['all'])}}</td>
                 </tr>
                 </tbody>
             </table>

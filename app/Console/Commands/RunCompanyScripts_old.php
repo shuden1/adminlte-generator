@@ -15,7 +15,7 @@ use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Carbon\Carbon;
 
-class RunCompanyScripts extends Command
+class RunCompanyScriptsOld extends Command
 {
     protected $signature = 'run:companyscripts';
     protected $description = 'Run Python scripts for each company where sauroned is 1 and process job data';

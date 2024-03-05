@@ -17,7 +17,6 @@ class Kernel extends ConsoleKernel
     {
         //crontab -e
         //cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
-        $schedule->command('run:companyscripts')->daily();
     }
 
     protected $commands = [
