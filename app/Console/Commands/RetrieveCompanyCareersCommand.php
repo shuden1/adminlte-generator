@@ -66,12 +66,23 @@ class RetrieveCompanyCareersCommand extends Command
                     $companyProperty = $reflectionObject->getProperty('company');
                     $companyProperty->setAccessible(true);
                     $company = $companyProperty->getValue($command);
-                    $companyJobs[$company['id']] = $job->id; // Store job ID alongside company ID
-                }
+//                    $companyJobs[$company['id']][] = $job->id; // Store job ID alongside company ID
+                      $companyJobs[$company['id']] = $job->id; // Store job ID alongside company ID
+              }
             } catch (Exception $e) {
                 error_log('Error accessing company ID: ' . $e->getMessage());
             }
         }
+/*
+        $temp_results = [];
+        foreach ($companyJobs as $key => $companyJob){
+            if (count($companyJob)>1){
+                $temp_results[$key] = $companyJob;
+            }
+        }
+        var_dump($temp_results);
+        die();
+*/
         return $companyJobs; // Return associative array of company IDs and their job IDs
     }
 
