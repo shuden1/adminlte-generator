@@ -187,7 +187,7 @@ class RetrieveCompanyCareers implements ShouldQueue
 
  //                       if (is_null($company->contacted) || $company->contacted->lessThan(Carbon::now()->subMonths(3)))
                         if ($latestFile !== false){
-                            $this->triggered($newJob);
+   //                         $this->triggered($newJob);
                         }
                         $hasUpdate = true;
                     } else {

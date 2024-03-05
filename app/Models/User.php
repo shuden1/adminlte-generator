@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Company::class);
     }
+
+    public function suitableTitles(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(SuitableTitle::class, 'suitable_title_user', 'user_id', 'suitable_title_id');
+    }
 }

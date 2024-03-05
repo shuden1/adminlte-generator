@@ -60,6 +60,8 @@ class SuitableTitleController extends AppBaseController
 
         Flash::success('Suitable Title saved successfully.');
 
+        auth()->user()->suitableTitles()->syncWithoutDetaching([$suitableTitle->id]);
+
         return redirect(route('suitableTitles.index'));
     }
 

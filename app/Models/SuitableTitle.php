@@ -21,7 +21,7 @@ class SuitableTitle extends Model
     use HasFactory;
 
     public $table = 'suitable_titles';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -51,5 +51,9 @@ class SuitableTitle extends Model
         'title' => 'required'
     ];
 
-    
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'suitable_title_user', 'suitable_title_id', 'user_id');
+    }
+
 }
