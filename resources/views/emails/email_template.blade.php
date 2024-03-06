@@ -13,8 +13,12 @@
     <!-- Example Block for a Company -->
         <div style="background-color: #ffffff; padding: 15px; border-radius: 5px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
             <div style="color: #327ab7; font-size: 20px; font-weight: bold; margin-bottom: 15px;">{{$company->name}}</div>
+            @if ($company->contacted)
             <div>Last time we emailed you about {{$company->name}} {{$company->contacted->format('m-d-Y')}}</div>
-            <table style="width: 100%; border-collapse: collapse;">
+            @else
+                <div></div>
+            @endif
+                <table style="width: 100%; border-collapse: collapse;">
                 <thead>
                 <tr>
                     <th style="padding: 8px; text-align: left; border-bottom: 1px solid #eee;"></th>

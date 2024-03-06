@@ -25,8 +25,8 @@ driver.get(f"file://{html_file_name}")
 
 # Define the selectors from Step 1 (Based on the HTML file provided)
 job_blocks_selector = "ul > div > li"
-job_title_selector = "div > a.jss-f63"
-job_url_selector = "div > a.jss-f63"
+job_title_selector = ".css-7ebljt > a"
+job_url_selector = ".css-7ebljt > a"
 
 # Scrape all job listings
 job_listings = []
