@@ -1,0 +1,302 @@
+<html><head>
+<title>
+    Careers
+ | Content Guru Careers </title>
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet"/>
+<link href="https://postingpanda.blob.core.windows.net/assetstore/default/system/jsp/css/jsp-branding.css" rel="stylesheet"/>
+<link href="https://postingpanda.blob.core.windows.net/assetstore/a8a411d1-5bf2-4732-a120-1f8f25957af2/system/jsp/css/jsp-branding.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" rel="stylesheet"/>
+</head>
+<body class="JSPContainer ng-scope" ng-app="JobSearch">
+<nav class="navbar navbar-expand-md bar-branding fixed-top">
+<div class="container">
+<a class="logo" href="/"></a>
+<button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" data-target="#navbarResponsive" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item"><a class="nav-link" href="https://www.contentguru.com/">Home</a>
+</li>
+<li class="nav-item"><a class="nav-link" href="mailto:Recruitment@contentguru.com">Recruitment@contentguru.com</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<main class="container" role="main">
+<div class="ng-scope" ng-controller="JobSearchController">
+<!-- Begin Search Widget -->
+<div class="row mt-4">
+<div class="col">
+<div id="JobSearchWidget">
+<div class="row">
+<div class="col-12">
+<div class="card">
+<div class="card-body pb-0 mb-0">
+<h4 class="mb-0">Search Jobs</h4>
+</div>
+</div>
+</div>
+<div class="col-12">
+<div class="card">
+<div class="card-body">
+<div class="row">
+<div class="col-lg-4 col-sm-12">
+<div class="form-group">
+<input class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="searchTerm" placeholder="Keywords" type="text"/>
+</div>
+</div>
+<div class="col-lg-4 col-sm-12">
+<div class="form-group">
+<input class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="location" placeholder="Location" type="text"/>
+</div>
+</div>
+<div class="col-lg-2 col-sm-12">
+<div class="form-group">
+<select class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" ng-model="modelMiles">
+<option value="5">5 miles</option>
+<option selected="selected" value="10">10 miles</option>
+<option value="25">25 miles</option>
+<option value="50">50 miles</option>
+<option value="100">100 miles</option>
+</select>
+</div>
+</div>
+<div class="col-lg-2 col-sm-12">
+<button class="btn btn-search-jobs float-right" ng-click="performSearch()" type="button">Search Jobs</button>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-8 col-sm-12">
+</div>
+<div class="col-lg-4 col-sm-12">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End Search Widget -->
+<div class="row ng-hide" ng-show="showLoader">
+<div class="col">
+<div class="lds-dual-ring" style="margin-left: auto; margin-right: auto;"><div></div></div>
+</div>
+</div>
+<div class="row mt-1" id="ResultsPane" ng-show="!showLoader">
+<!-- Begin Results Pane -->
+<div class="col">
+<div class="row mt-3">
+<div class="col-lg-10 col-sm">
+<h4>Search Results</h4>
+</div>
+<div class="col-lg-2 col-sm">
+<select class="form-control small-text ng-pristine ng-untouched ng-valid ng-not-empty" ng-change="pageSizeChange()" ng-model="pageSize" ng-show="jobs.length &gt; 0">
+<option selected="selected" value="5">Show 5 per page</option>
+<option value="10">Show 10 per page</option>
+<option value="15">Show 15 per page</option>
+<option value="20">Show 20 per page</option>
+</select>
+</div>
+</div>
+<div class="row mt-3 ng-hide" ng-show="jobs.length == 0 &amp;&amp; pageLoaded">
+<div class="col">
+<div class="alert alert-info">
+<p><i class="fa fa-info-circle"></i> No Results</p>
+<p>There are no roles currently available for the search criteria provided above. </p>
+</div>
+</div>
+</div>
+<!-- ngRepeat: job in jobs | itemsPerPage: pageSize --><div class="row mt-3 ng-scope" ng-repeat="job in jobs | itemsPerPage: pageSize">
+<!-- Begin Result Row-->
+<div class="col">
+<div class="result">
+<div class="card">
+<div class="card-header ng-binding">Project Manager <span class="jobreference ng-binding">R0707</span></div>
+<div class="card-body">
+<ul class="result-properties">
+<li class="ng-binding"><strong>Location:</strong> Bracknell, Berkshire, United Kingdom</li>
+<li class="ng-binding"><strong>Competitive</strong> </li>
+</ul>
+<div class="job-description">
+<p><span class="ng-binding" ng-bind-html="job.JobDescription ">Content Guru is a leading provider of cloud communications solutions. We help businesses across the globe to enhance their customer engagement and experience. 
+
+From our omni-channel cloud contact center</span> <a href="/job/380364">more...</a></p>
+</div>
+<div class="job-action-buttons clearfix">
+<div class="float-right">
+<a class="btn btn-more-info" href="/job/380364">More Info</a>
+<a class="btn btn-apply" href="https://contentguru.talosats-careers.com/Apply/Q0cac468gQXBwbGljYXRpb24gRm9ybSBJbnRlcm5hdGlvbmFsfDMwfDM4MDM2NHwxfHxGYWxzZXwyMjU1fDI5MzcyMjZ8MA%3d%3d?i=K2pSdBuxYhc%3d">Apply</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- end ngRepeat: job in jobs | itemsPerPage: pageSize --><div class="row mt-3 ng-scope" ng-repeat="job in jobs | itemsPerPage: pageSize">
+<!-- Begin Result Row-->
+<div class="col">
+<div class="result">
+<div class="card">
+<div class="card-header ng-binding">Marketing Manager <span class="jobreference ng-binding">R022T</span></div>
+<div class="card-body">
+<ul class="result-properties">
+<li class="ng-binding"><strong>Location:</strong> Tokyo</li>
+<li class="ng-binding"><strong>Competitive</strong> </li>
+</ul>
+<div class="job-description">
+<p><span class="ng-binding" ng-bind-html="job.JobDescription ">Content Guru is a leading provider of cloud communications solutions. We help businesses across the globe to enhance their customer engagement and experience. 
+
+From our omni-channel cloud contact center</span> <a href="/job/529567">more...</a></p>
+</div>
+<div class="job-action-buttons clearfix">
+<div class="float-right">
+<a class="btn btn-more-info" href="/job/529567">More Info</a>
+<a class="btn btn-apply" href="https://contentguru.talosats-careers.com/Apply/Q0cb9b00gQXBwbGljYXRpb24gRm9ybSBJbnRlcm5hdGlvbmFsfDMwfDUyOTU2N3wxfHxGYWxzZXwyMjU1fDI5MzcxNDl8MA%3d%3d?i=hBeJ%2f5wvaa4%3d">Apply</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- end ngRepeat: job in jobs | itemsPerPage: pageSize --><div class="row mt-3 ng-scope" ng-repeat="job in jobs | itemsPerPage: pageSize">
+<!-- Begin Result Row-->
+<div class="col">
+<div class="result">
+<div class="card">
+<div class="card-header ng-binding">Software Developer <span class="jobreference ng-binding">  RO704</span></div>
+<div class="card-body">
+<ul class="result-properties">
+<li class="ng-binding"><strong>Location:</strong> Porto, Portugal</li>
+<li class="ng-binding"><strong>Competitive</strong> </li>
+</ul>
+<div class="job-description">
+<p><span class="ng-binding" ng-bind-html="job.JobDescription ">Content Guru is a leading provider of cloud communications solutions. We help businesses across the globe to enhance their customer engagement and experience. 
+
+From our omni-channel cloud contact center</span> <a href="/job/377957">more...</a></p>
+</div>
+<div class="job-action-buttons clearfix">
+<div class="float-right">
+<a class="btn btn-more-info" href="/job/377957">More Info</a>
+<a class="btn btn-apply" href="https://contentguru.talosats-careers.com/Apply/Q0c2c16egQXBwbGljYXRpb24gRm9ybSBJbnRlcm5hdGlvbmFsfDMwfDM3Nzk1N3wxfHxGYWxzZXwyMjU1fDI5MzU4NjV8MA%3d%3d?i=Vg%2bcPP1YQqU%3d">Apply</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- end ngRepeat: job in jobs | itemsPerPage: pageSize --><div class="row mt-3 ng-scope" ng-repeat="job in jobs | itemsPerPage: pageSize">
+<!-- Begin Result Row-->
+<div class="col">
+<div class="result">
+<div class="card">
+<div class="card-header ng-binding">Business Development Manager  <span class="jobreference ng-binding">R021T</span></div>
+<div class="card-body">
+<ul class="result-properties">
+<li class="ng-binding"><strong>Location:</strong> Den Haag, Netherlands</li>
+<li class="ng-binding"><strong>Competitive</strong> </li>
+</ul>
+<div class="job-description">
+<p><span class="ng-binding" ng-bind-html="job.JobDescription ">Content Guru is a leading provider of cloud communications solutions. We help businesses across the globe to enhance their customer engagement and experience. 
+
+From our omni-channel cloud contact center</span> <a href="/job/420510">more...</a></p>
+</div>
+<div class="job-action-buttons clearfix">
+<div class="float-right">
+<a class="btn btn-more-info" href="/job/420510">More Info</a>
+<a class="btn btn-apply" href="https://contentguru.talosats-careers.com/Apply/Q0cacfdegQXBwbGljYXRpb24gRm9ybSBJbnRlcm5hdGlvbmFsfDMwfDQyMDUxMHwxfHxGYWxzZXwyMjU1fDI5MzU4NTF8MA%3d%3d?i=cRNUjRkbIGc%3d">Apply</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- end ngRepeat: job in jobs | itemsPerPage: pageSize --><div class="row mt-3 ng-scope" ng-repeat="job in jobs | itemsPerPage: pageSize">
+<!-- Begin Result Row-->
+<div class="col">
+<div class="result">
+<div class="card">
+<div class="card-header ng-binding">Channel Sales Manager <span class="jobreference ng-binding">R0551</span></div>
+<div class="card-body">
+<ul class="result-properties">
+<li class="ng-binding"><strong>Location:</strong> Tokyo, Japan</li>
+<li class="ng-binding"><strong>Competitive</strong> </li>
+</ul>
+<div class="job-description">
+<p><span class="ng-binding" ng-bind-html="job.JobDescription ">Content Guru is a leading provider of cloud communications solutions. We help businesses across the globe to enhance their customer engagement and experience. 
+
+From our omni-channel cloud contact center</span> <a href="/job/368639">more...</a></p>
+</div>
+<div class="job-action-buttons clearfix">
+<div class="float-right">
+<a class="btn btn-more-info" href="/job/368639">More Info</a>
+<a class="btn btn-apply" href="https://contentguru.talosats-careers.com/Apply/Q0caf76egQXBwbGljYXRpb24gRm9ybSBJbnRlcm5hdGlvbmFsfDMwfDM2ODYzOXwxfHxGYWxzZXwyMjU1fDI5MzU3NzR8MA%3d%3d?i=J13vv6uuPPo%3d">Apply</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- end ngRepeat: job in jobs | itemsPerPage: pageSize --> <!-- End Result Row -->
+<div class="row mt-3">
+<div class="col-10">
+                     
+                </div>
+<div class="col-2 text-right">
+<select class="form-control small-text ng-pristine ng-untouched ng-valid ng-not-empty" ng-change="pageSizeChange()" ng-model="pageSize" ng-show="jobs.length &gt; 0">
+<option selected="selected" value="5">Show 5 per page</option>
+<option value="10">Show 10 per page</option>
+<option value="15">Show 15 per page</option>
+<option value="20">Show 20 per page</option>
+</select>
+</div>
+</div>
+</div>
+</div><!-- End Results Pane-->
+</div>
+<div class="angular-pagination-container ng-scope" ng-controller="PaginationController" ng-show="!showLoader">
+<dir-pagination-controls boundary-links="true" class="ng-isolate-scope" max-size="5" on-page-change="pageChangeHandler(newPageNumber)" template-url="/Scripts/AngularJS/Pagination/dirpagination-tpl.html"><!-- ngIf: 1 < pages.length || !autoHide --><ul class="pagination ng-scope" ng-if="1 &lt; pages.length || !autoHide">
+<!-- ngIf: boundaryLinks --><li class="page-item ng-scope disabled" ng-class="{ disabled : pagination.current == 1 }" ng-if="boundaryLinks">
+<a class="page-link" href="" ng-click="setCurrent(1)">«</a>
+</li><!-- end ngIf: boundaryLinks -->
+<!-- ngIf: directionLinks --><li class="page-item ng-scope disabled" ng-class="{ disabled : pagination.current == 1 }" ng-if="directionLinks">
+<a class="page-link" href="" ng-click="setCurrent(pagination.current - 1)">‹</a>
+</li><!-- end ngIf: directionLinks -->
+<!-- ngRepeat: pageNumber in pages track by tracker(pageNumber, $index) --><li class="page-item ng-scope active" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }" ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)">
+<a class="page-link ng-binding" href="" ng-click="setCurrent(pageNumber)">1</a>
+</li><!-- end ngRepeat: pageNumber in pages track by tracker(pageNumber, $index) --><li class="page-item ng-scope" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }" ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)">
+<a class="page-link ng-binding" href="" ng-click="setCurrent(pageNumber)">2</a>
+</li><!-- end ngRepeat: pageNumber in pages track by tracker(pageNumber, $index) --><li class="page-item ng-scope" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }" ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)">
+<a class="page-link ng-binding" href="" ng-click="setCurrent(pageNumber)">3</a>
+</li><!-- end ngRepeat: pageNumber in pages track by tracker(pageNumber, $index) -->
+<!-- ngIf: directionLinks --><li class="page-item ng-scope" ng-class="{ disabled : pagination.current == pagination.last }" ng-if="directionLinks">
+<a class="page-link" href="" ng-click="setCurrent(pagination.current + 1)">›</a>
+</li><!-- end ngIf: directionLinks -->
+<!-- ngIf: boundaryLinks --><li class="page-item ng-scope" ng-class="{ disabled : pagination.current == pagination.last }" ng-if="boundaryLinks">
+<a class="page-link" href="" ng-click="setCurrent(pagination.last)">»</a>
+</li><!-- end ngIf: boundaryLinks -->
+</ul><!-- end ngIf: 1 < pages.length || !autoHide --></dir-pagination-controls>
+</div>
+</main>
+<footer class="footer container-fluid footer-branding mt-5 pb-4">
+<div class="row">
+<div class="container">
+<div class="col mt-4">
+<div class="text-center">
+<div class="address">
+<p><strong>Content Guru</strong></p>
+<p>Radius Court, Eastern Road, Bracknell, Berkshire, RG12 2UP</p>
+</div>
+<div class="privacy mt-2">
+<p>Recruitment Privacy Policy</p>
+<a href="/privacy">View Our Privacy Policy</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Tracking Codes -->
+</body></html>

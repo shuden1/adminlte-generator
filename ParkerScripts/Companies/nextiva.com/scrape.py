@@ -1,46 +1,48 @@
+from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-import shutil
 import threading
 import sys
 import json
 
-job_listings_selector = ".job-listings .visible.opportunity"
-job_title_selector = "h4.listing-title"
-job_url_selector = "a.listing-link"
+# STEP 1: Find exact selectors
+# Based on the provided HTML structure, the job opening blocks are in <div> elements with class 'opening'.
+# The job titles and associated URLs are within <a> tags within these blocks.
+# Define the selector for job opening blocks
+job_opening_block_selector = "div.opening"
+# Define the selector for job titles and URLs within those blocks
+job_title_and_url_selector = "a"
 
-def scrape_jobs(html_file):
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+# STEP 2: Create a Python + Selenium script
+def scrape_job_listings(html_file_path):
+    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{str(threading.get_ident())}"
+    options = webdriver.ChromeOptions()
+    options.add_argument(f"user-data-dir={profile_folder_path}")
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+    
+    driver = webdriver.Chrome(service=service, options=options)
+    
+    # Open the local HTML file
+    driver.get(f"file:///{html_file_path}")
+    
+    # Scrape all job listings using the previously defined selectors
+    job_listings = []
+    openings = driver.find_elements(By.CSS_SELECTOR, job_opening_block_selector)
+    for opening in openings:
+        title_element = opening.find_element(By.CSS_SELECTOR, job_title_and_url_selector)
+        job_title = title_element.text.strip()
+        job_url = title_element.get_attribute('href').strip()
+        job_listings.append({"Job-title": job_title, "URL": job_url})
 
-    try:
-        chrome_options = Options()
-        chrome_options.add_argument(f"user-data-dir={profile_folder_path}")
-        chrome_options.add_argument("--headless")
+    driver.quit()
+    
+    return json.dumps(job_listings)
 
-        service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
-
-        driver = webdriver.Chrome(service=service, options=chrome_options)
-        driver.get(f"file://{html_file}")
-
-        jobs = driver.find_elements(By.CSS_SELECTOR, job_listings_selector)
-
-        job_data = []
-        for job in jobs:
-            title_element = job.find_element(By.CSS_SELECTOR, job_title_selector)
-            url_element = job.find_element(By.CSS_SELECTOR, job_url_selector)
-            job_data.append({
-                "Job-title": title_element.text,
-                "URL": url_element.get_attribute('href')
-            })
-
-        print(json.dumps(job_data))
-
-    finally:
-        driver.quit()
-
-
+# The HTML file path is provided as the first argument to the script
 if __name__ == "__main__":
-    html_file = sys.argv[1]
-    scrape_jobs(html_file)
+    html_file_path = sys.argv[1]
+    print(scrape_job_listings(html_file_path))

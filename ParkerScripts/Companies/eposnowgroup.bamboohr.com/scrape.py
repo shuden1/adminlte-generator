@@ -26,7 +26,7 @@ driver.get(f"file://{html_file}")
 # Use the EXACT selectors defined for job titles and URLs in STEP 1
 selectors = {
     "job_list": "ul > div",
-    "job_title": ".jss-f63",
+    "job_title": " .fabric-5qovnk-root.MuiBox-root.css-7ebljt",
     "job_url": "a",
 }
 
