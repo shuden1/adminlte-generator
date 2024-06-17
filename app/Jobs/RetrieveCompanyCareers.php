@@ -23,6 +23,9 @@ class RetrieveCompanyCareers implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    public $tries = 3; // Maximum number of attempts
+    public $timeout = 300; // Job can run for up to 120 seconds
+
     protected $company;
 
     /**
@@ -357,14 +360,50 @@ class RetrieveCompanyCareers implements ShouldQueue
 
                 // Concatenate them to form the base URL
                 $baseUrl = $scheme . '://' . $domain;
-
                 print_r($baseUrl);
-                $hasUpdate = $this->processJobData($jsonData, $basePathHtmls, $baseUrl);
+                if ($jsonData) {
+                    foreach ($jsonData as $jobData) {
+                        if (strpos($jobData['URL'], "file:///" . $basePathHtmls) !== false) {
+                            $jobData['URL'] = str_replace("file:///" . $basePathHtmls, $baseUrl, $jobData['URL']);
+                        } elseif (strpos($jobData['URL'], "file:///D:") !== false) {
+                            $jobData['URL'] = str_replace("file:///D:", $baseUrl, $jobData['URL']);
+                        } elseif (strpos($jobData['URL'], 'http://') === false && strpos($jobData['URL'], 'https://') === false) {
+                            $jobData['URL'] = rtrim($baseUrl, '/') . '/' . ltrim($jobData['URL'], '/');
+                        }
 
+                        $existingJob = Job::withTrashed()
+                            ->where('url', $jobData['URL'])
+                            ->where('title', $jobData['Job-title'])
+                            ->latest('deleted_at')
+                            ->first();
+
+                        if ($existingJob) {
+                            if ($existingJob->trashed()) {
+                                $deletedAt = $existingJob->deleted_at; // assuming 'deleted_at' is the name of your soft delete timestamp column
+                                if ($deletedAt->isToday() || $deletedAt->isYesterday()) {
+                                    $existingJob->restore(); // Restore the soft-deleted job
+                                }
+                            } else {
+                                // If the job exists and is not soft-deleted, simply update its timestamp.
+                                $existingJob->touch();
+                            }
+                        } else {
+                            // Create a new job if no existing (including soft-deleted) job is found.
+                            $newJob = Job::create([
+                                'company_id' => $company->id,
+                                'title' => $jobData['Job-title'],
+                                'url' => $jobData['URL'],
+                                'date' => Carbon::now(),
+                            ]);
+                            $hasUpdate = true; // Assuming this is a flag indicating that an update occurred.
+                        }
+                    }
+                }
                 $yesterday = Carbon::yesterday();
                 $jobsToDelete = $company->jobs()
                     ->whereDate('updated_at', '<=', $yesterday)
                     ->get();
+
 
                 // Loop through the jobs and safely delete each one
                 foreach ($jobsToDelete as $job) {

@@ -19,8 +19,8 @@ file_name = sys.argv[1]
 driver.get(f"file:///{file_name}")
 
 job_blocks_selector = "ul > div"
-job_title_selector = ".jss-f63"
-job_url_selector = ".jss-f63"
+job_title_selector = ".fabric-5qovnk-root.MuiBox-root.css-7ebljt"
+job_url_selector = "a"
 
 job_elements = driver.find_elements(By.CSS_SELECTOR, job_blocks_selector)
 result = []
