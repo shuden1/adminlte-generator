@@ -6,6 +6,7 @@ use App\Events\JobStatusUpdated;
 use App\Models\Company;
 use App\Models\DomainFolder;
 use App\Models\JobStatus;
+use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -35,6 +36,7 @@ class ProcessCompany implements ShouldQueue
 
     protected $company;
     protected $forced;
+    protected $hasJobs;
 
     public $timeout = 1200;
 
@@ -43,22 +45,25 @@ class ProcessCompany implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(Company $company, $forced = false)
+    public function __construct(Company $company, $forced = 0, $hasJobs = 1)
     {
         $this->company = $company;
         $this->forced = $forced;
+        $this->hasJobs = $hasJobs;
         $this->queue = 'ScriptGenerationQueue';
     }
 
 
     public function getCleanHTML($inputFile, $outputFile, $careerPageURL)
     {
-        $command = "C:\\Python3\\python.exe"." D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
+        $pythonPath = "C:\\Users\\shuga\\AppData\\Local\\Programs\\Python\\Python312";
+
+        $command = $pythonPath."\\python.exe"." D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
         exec($command, $output1, $returnStatus1);
 
 
         // Call sculpting.py
-        $command2 = "C:\\Python3\\python.exe D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\sculpting.py \"" . $inputFile . "\" \"" . $outputFile . "\"";
+        $command2 = $pythonPath."\\python.exe D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\sculpting.py \"" . $inputFile . "\" \"" . $outputFile . "\"";
 
 // Execute the second script and wait for it to finish
         exec($command2, $output2, $returnStatus2);
@@ -69,11 +74,11 @@ class ProcessCompany implements ShouldQueue
 
         $filesizeKB = filesize($outputFile) / 1024;
         if ($filesizeKB<3){
-            $command = "C:\\Python3\\python.exe"." D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
+            $command = $pythonPath."\\python.exe"." D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
             exec($command, $output1, $returnStatus1);
 
             // Call sculpting.py
-            $command2 = "C:\\Python3\\python.exe D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\sculpting.py \"" . $inputFile . "\" \"" . $outputFile . "\"";
+            $command2 = $pythonPath."\\python.exe D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\sculpting.py \"" . $inputFile . "\" \"" . $outputFile . "\"";
 
             // Execute the second script and wait for it to finish
             exec($command2, $output2, $returnStatus2);
@@ -209,7 +214,7 @@ class ProcessCompany implements ShouldQueue
 
         $validScript = false;
         $i = 0;
-        while (!$validScript && $i < 5){
+        while (!$validScript && $i < 3){
             $i++;
             var_dump($runId);
             $lastMessage = $this->getGptResponse($client, $threadId, $runId);
@@ -270,60 +275,84 @@ class ProcessCompany implements ShouldQueue
      */
     public function handle()
     {
-/*
-         $jobStatus = JobStatus::create([
-            'company_id' => $this->company->id,
-            'job_id' => $this->job->getJobId(),
-            'status' => 'processing',
-        ]);
-*/
-
         $domain = parse_url($this->company->careerPageUrl, PHP_URL_HOST);
         $domain = str_replace('www.','',$domain);
 
+        if ($domain == "linkedin.com") {
+            $this->company->scripted = 1;
+            $this->company->save();
+            RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+            return;
+        } else {
 
-        if ((!file_exists("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape.py"))||($this->forced)) {
+            $companyPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\{$this->company->id}";
+            $domainPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}";
 
-            if (file_exists("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape.py")) {
-                rename("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape.py", "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape_old.py");
+            $scriptPath = $domainPath . "\\scrape.py";
+            $tempScriptPath = $domainPath . "\\scrape_temp.py";
+            $shouldRegenerate = false;
+
+            if (!is_dir($domainPath)) {
+                mkdir($domainPath, 0777, true);
             }
 
-            $basePath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}";
-            $basePathHtmls = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\HTMLs";
-
-            if (!is_dir($basePath)) {
-                mkdir($basePath, 0777, true); // The 0777 specifies the permissions, and true enables recursive creation
+            if ($this->forced == 1) {
+                $shouldRegenerate = true;
+            } elseif ($this->forced == 2) {
+                if (!is_dir($companyPath)) {
+                    mkdir($companyPath, 0777, true);
+                }
+                $scriptPath = $companyPath . "\\scrape.py";
+                $tempScriptPath = $companyPath . "\\scrape_temp.py";
+                $shouldRegenerate = true;
             }
-            if (!is_dir($basePathHtmls)) {
-                mkdir($basePathHtmls, 0777, true); // The 0777 specifies the permissions, and true enables recursive creation
+
+            if ($shouldRegenerate || !file_exists($scriptPath)) {
+                $basePath = $domainPath;
+                $basePathHtmls = $basePath . "\\HTMLs";
+                if ($this->forced == 2) {
+                    $basePath = $companyPath;
+                    $basePathHtmls = $basePath;
+                }
+
+                if (!is_dir($basePath)) {
+                    mkdir($basePath, 0777, true);
+                }
+                if (!is_dir($basePathHtmls)) {
+                    mkdir($basePathHtmls, 0777, true);
+                }
+
+                $inputFile = $basePathHtmls . "\\template.html";
+                $outputFile = $basePathHtmls . "\\cleaned.html";
+
+
+                $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
+
+                if ($this->hasJobs == 1) {
+                    $success = $this->generateScript($outputFile, $basePath . "\\scrape_temp.py", $inputFile);
+
+                    $this->company->scripted = $success;
+                    if (!$success) {
+                        rename($tempScriptPath, $basePath . "\\scrape_wrong.py");
+                    } else {
+                        if (file_exists($scriptPath)) {
+                            rename($scriptPath, $basePath . "\\scrape_old.py");
+                        }
+                        rename($tempScriptPath, $scriptPath);
+                        RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+                    }
+                } else {
+                    RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+                }
             }
 
-            //     Call fetch_html.py
-            $inputFile = $basePathHtmls . "\\template.html";
-            $outputFile = $basePathHtmls . "\\cleaned.html";
-            $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
-            //     Call GenerateScripts
-
-
-            $success = $this->generateScript($outputFile, $basePath . "\\scrape_temp.py", $inputFile);
-
-            $this->company->scripted = $success;
-            if (!$success){
-                rename("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape.py", "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape_wrong.py");
-            } else {
-                rename("D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape_temp.py", "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\scrape.py");
+            if (!$shouldRegenerate && file_exists($scriptPath)) {
+                $this->company->scripted = 1;
                 RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
             }
 
-            //      sleep(10);
-            //      $jobStatus->update(['status' => 'completed']);
-            //      JobStatusUpdated::dispatch($this->company->id, "completed");
-
-        } else{
-            $this->company->scripted = 1;
-            RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+            $this->company->save();
         }
-        $this->company->save();
     }
 
     private function getLimitedJson($originalArray)

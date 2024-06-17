@@ -31,7 +31,7 @@ class SendEmailViaGmail implements ShouldQueue
         $this->user = User::find($userId);
     }
 
-    protected function checkRelevancy($job)
+    protected function checkRelevance($job)
     {
         if ($this->user) {
             $suitableTitles = $this->user->suitableTitles;
@@ -57,7 +57,7 @@ class SendEmailViaGmail implements ShouldQueue
                 ->get();
             $newJobs[$company->id]['today']['relevant'] = [];
             foreach ($newJobs[$company->id]['today']['all'] as $job){
-                if ($this->checkRelevancy($job)) {
+                if ($this->checkRelevance($job)) {
                     $newJobs[$company->id]['today']['relevant'][] = $job;
                 }
             }
@@ -68,7 +68,7 @@ class SendEmailViaGmail implements ShouldQueue
                     ->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
                     ->get();
                 foreach ($newJobs[$company->id]['week']['all'] as $job) {
-                    if ($this->checkRelevancy($job)) {
+                    if ($this->checkRelevance($job)) {
                         $newJobs[$company->id]['week']['relevant'][] = $job;
                     }
                 }
@@ -79,7 +79,7 @@ class SendEmailViaGmail implements ShouldQueue
                     ->whereYear('created_at', Carbon::now()->year)
                     ->get();
                 foreach ($newJobs[$company->id]['month']['all'] as $job) {
-                    if ($this->checkRelevancy($job)) {
+                    if ($this->checkRelevance($job)) {
                         $newJobs[$company->id]['month']['relevant'][] = $job;
                     }
                 }

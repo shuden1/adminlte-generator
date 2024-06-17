@@ -52,9 +52,14 @@ class CompanyController extends AppBaseController
             $user = Auth::user(); // Get the authenticated user
 
             // Fetch companies associated with the authenticated user
-            $companies = $user->companies()->paginate(50);
 
-            return view('companies.index', compact('companies'));
+            $sort = $request->get('sort', 'id'); // Default sort by 'id'
+            $direction = $request->get('direction', 'asc'); // Default direction is 'asc'
+
+
+            $companies = $user->companies()->orderBy($sort, $direction)->paginate(50);
+
+            return view('companies.index', compact('companies', 'sort', 'direction'));
         } else {
             // Handle the case where there is no authenticated user, or redirect to login
             return redirect()->route('login')->with('error', 'You must be logged in to see this page.');
@@ -104,7 +109,7 @@ class CompanyController extends AppBaseController
                 $domain = parse_url($c->careerPageUrl, PHP_URL_HOST);
                 $domain = str_replace('www.', '', $domain);
 
-                if (file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
+                if (($domain == "linkedin.com")||file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
                     RetrieveCompanyCareers::dispatch($c)->onQueue('RetrieveCareersQueue');
                 }
                 return $c;
@@ -113,10 +118,17 @@ class CompanyController extends AppBaseController
             $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
             $domain = str_replace('www.', '', $domain);
 
-            if (!file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
-                ProcessCompany::dispatch($company, false);
+            if ($domain == "linkedin.com") {
+                ProcessCompany::dispatch($company, 0, 0);
+            } else {
+                if (!file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
+                    if ($record['has_jobs'] == 0) {
+                        ProcessCompany::dispatch($company, 0, 0);
+                    } else {
+                        ProcessCompany::dispatch($company, 0, 1);
+                    }
+                }
             }
-
             if (isset($record["first_name"])) {
                 DecisionMaker::firstOrCreate([
                     'company_id' => $company->id,
@@ -126,12 +138,6 @@ class CompanyController extends AppBaseController
                     'email' => $record["email"]
                 ]);
             }
-
-
-            $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
-            $domain = str_replace('www.', '', $domain);
-            $company->scripted = file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py");
-            $company->save();
         }
 
         return redirect(route('companies.index'));
@@ -162,7 +168,7 @@ class CompanyController extends AppBaseController
         $domain = str_replace('www.', '', $domain);
 
         if (!is_dir("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}")) {
-            ProcessCompany::dispatch($company, false);
+            ProcessCompany::dispatch($company, 0, 1);
         }
         // Run php artisan queue:work to launch the listener
         // Run php artisan websockets:serve to start websockets
@@ -176,11 +182,11 @@ class CompanyController extends AppBaseController
      *
      * @return Response
      */
-    public function regenerate($id)
+    public function regenerate($id, $unique)
     {
         $company = $this->companyRepository->find($id);
 
-        ProcessCompany::dispatch($company, true);
+        ProcessCompany::dispatch($company, $unique, 1);
 
         // php artisan queue:work
 

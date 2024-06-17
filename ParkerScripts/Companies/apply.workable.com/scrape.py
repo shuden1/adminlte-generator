@@ -1,47 +1,46 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.chrome.options import Options
-import shutil
+from selenium.webdriver.common.by import By
 import threading
 import sys
 import json
 
-# Step 2: Python + Selenium script
-def scrape_job_listings(html_file):
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-    options = Options()
-    options.add_argument(f"user-data-dir={profile_folder_path}")
-    options.add_argument("--headless")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--no-sandbox")
-    service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+# Retrieve the target file name from the argument passed via console command
+target_file_name = sys.argv[1]
 
-    driver = webdriver.Chrome(service=service, options=options)
+# Job opening block selector
+job_openings_block_selector = ".styles--3Cb9F"
 
-    driver.get("file://" + html_file)
+# Job title and URL selector
+job_title_selector = "h3"
+job_title_container_selector = "a"
 
-    # Revised selectors based on provided HTML structure
-    job_listing_selector = ".job-listing"
-    job_title_selector = ".job-title"
-    job_url_selector = 'a'  # Assuming <a> is the first or the only <a> tag inside the job listing block
+# Set up webdriver service
+service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
 
-    # Scrape job listings
-    job_elements = driver.find_elements(By.CSS_SELECTOR, job_listing_selector)
-    jobs_list = []
+# Set up options for the webdriver
+options = webdriver.ChromeOptions()
+profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+options.add_argument(f"user-data-dir={profile_folder_path}")
+options.add_argument("--headless")
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
 
-    for job_element in job_elements:
-        title_element = job_element.find_element(By.CSS_SELECTOR, job_title_selector)
-        link_element = job_element.find_element(By.CSS_SELECTOR, job_url_selector)
-        job_title = title_element.text
-        job_url = link_element.get_attribute('href')
-        jobs_list.append({"Job-title": job_title, "URL": job_url})
+# Initialise a headless webdriver
+driver = webdriver.Chrome(service=service, options=options)
+driver.get(f"file:///{target_file_name}")
 
-    driver.quit()
+# Scrape all job listings using the defined selectors from STEP 1
+job_listings = []
+job_blocks = driver.find_elements(By.CSS_SELECTOR, job_openings_block_selector)
+for block in job_blocks:
+    job_title_element = block.find_element(By.CSS_SELECTOR, job_title_selector)
+    job_title = job_title_element.text
+    link_element = block.find_element(By.CSS_SELECTOR, job_title_container_selector)
+    job_url = link_element.get_attribute("href")
+    job_listings.append({"Job-title": job_title, "URL": job_url})
 
+driver.quit()
 
-    return json.dumps(jobs_list)
-
-if __name__ == "__main__":
-    html_file_path = sys.argv[1]
-    print(scrape_job_listings(html_file_path))
+# Return a JSON of the job listings
+print(json.dumps(job_listings))

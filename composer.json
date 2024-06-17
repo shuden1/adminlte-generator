@@ -16,6 +16,7 @@
         "guzzlehttp/guzzle": "^7.8",
         "infyomlabs/adminlte-templates": "^3.0",
         "infyomlabs/laravel-generator": "^3.0",
+        "irazasyed/telegram-bot-sdk": "^3.9",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/socialite": "^5.12",

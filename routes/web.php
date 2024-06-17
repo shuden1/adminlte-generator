@@ -30,7 +30,7 @@ Route::get('companies/upload', [App\Http\Controllers\CompanyController::class, '
 
 Route::post('companies/import', [App\Http\Controllers\CompanyController::class, 'import'])->name('companies.import');
 
-Route::post('companies/regenerate/{id}', [App\Http\Controllers\CompanyController::class, 'regenerate'])->name('companies.regenerate');
+Route::post('companies/regenerate/{id}/{unique}', [App\Http\Controllers\CompanyController::class, 'regenerate'])->name('companies.regenerate');
 
 Route::resource('companies', App\Http\Controllers\CompanyController::class);
 

@@ -4,8 +4,13 @@
     <p>{{ $company->name }}</p>
 </div>
 
+<div class="col-sm-4">
+    {!! Form::label('website', 'Website:') !!}
+    <p>{{ $company->website }}</p>
+</div>
+
 <!-- Careerpageurl Field -->
-<div class="col-sm-8">
+<div class="col-sm-10">
     {!! Form::label('careerPageUrl', 'Careerpageurl:') !!}
     <p><a href="{{ $company->careerPageUrl }}" target="_blank">{{ $company->careerPageUrl }}</a></p>
 </div>

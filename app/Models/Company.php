@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @version December 9, 2023, 12:22 pm UTC
  *
  * @property string $name
+ * @property string $website
  * @property string $careerPageUrl
  * @property string $contacted
  * @property boolean $sauroned
@@ -31,6 +32,7 @@ class Company extends Model
 
     public $fillable = [
         'name',
+        'website',
         'careerPageUrl',
         'contacted',
         'sauroned',
@@ -44,6 +46,7 @@ class Company extends Model
      */
     protected $casts = [
         'name' => 'string',
+        'website' => 'string',
         'careerPageUrl' => 'string',
         'contacted' => 'date',
         'sauroned' => 'boolean',
