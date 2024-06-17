@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "URL Opener",
+    "description": "This extension opens a list of URLs, collects specific data, and closes the tab.",
+    "version": "1.0",
+    "permissions": ["tabs", "activeTab", "storage", "*://*.clutch.co/*"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+}

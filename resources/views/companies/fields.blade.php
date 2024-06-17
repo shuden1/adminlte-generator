@@ -4,6 +4,11 @@
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
+<div class="form-group col-sm-6">
+    {!! Form::label('website', 'Website:') !!}
+    {!! Form::text('website', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Careerpageurl Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('careerPageUrl', 'Careerpageurl:') !!}

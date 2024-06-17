@@ -3,18 +3,21 @@
     <table class="table table-fixed" id="companies-table">
         <thead>
         <tr>
-            <th class="col-2">Name</th>
-            <th class="col-4">Careerpageurl</th>
-            <th class="col-2">Contacted</th>
-            <th class="col-1">Sauroned</th>
-            <th class="col-1">Scripted</th>
+            <th class="col-2"><a href="{{ route('companies.index', ['sort' => 'name', 'direction' => $direction == 'asc' ? 'desc' : 'asc']) }}">Name</a></th>
+            <th class="col-2"><a href="{{ route('companies.index', ['sort' => 'website', 'direction' => $direction == 'asc' ? 'desc' : 'asc']) }}">Website</a></th>
+            <th class="col-3"><a href="{{ route('companies.index', ['sort' => 'careerPageUrl', 'direction' => $direction == 'asc' ? 'desc' : 'asc']) }}">Careerpageurl</a></th>
+            <th class="col-2"><a href="{{ route('companies.index', ['sort' => 'contacted', 'direction' => $direction == 'asc' ? 'desc' : 'asc']) }}">Sent</a></th>
+            <th class="col-1" colspan="1"><a href="{{ route('companies.index', ['sort' => 'sauroned', 'direction' => $direction == 'asc' ? 'desc' : 'asc']) }}">Sauroned</a></th>
+            <th class="col-1" colspan="1"><a href="{{ route('companies.index', ['sort' => 'scripted', 'direction' => $direction == 'asc' ? 'desc' : 'asc']) }}">Scripted</a></th>
             <th class="col-2" colspan="3">Action</th>
+
         </tr>
         </thead>
         <tbody>
         @foreach($companies as $company)
             <tr id="company-row-{{ $company->id }}" style="{{ !$company->scripted ? 'background-color: #e57373' : ($company->jobs()->exists() ? 'background-color: #97d5a3' : 'background-color: #ece287') }}">
                 <td class="col-2">{{ $company->name }}</td>
+                <td class="col-2">{{ $company->website }}</td>
                 <td class="col-4" style="word-break: break-word">
                     <a href="{{ $company->careerPageUrl }}" target="_blank">{{ $company->careerPageUrl }}</a></td>
                 <td class="col-2">{{ $company->contacted }}</td>
@@ -30,8 +33,12 @@
                            class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>
                         </a>
-                        {!! Form::open(['route' => ['companies.regenerate', $company->id], 'method' => 'post']) !!}
+                        {!! Form::open(['route' => ['companies.regenerate', $company->id, 1], 'method' => 'post']) !!}
                         {!! Form::button('<i class="fas fa-magic"></i>', ['type' => 'submit', 'class' => 'btn btn-warning btn-xs', 'onclick' => "return confirm('Do you really want to generate another script for this domain?')"]) !!}
+                        {!! Form::close() !!}
+
+                        {!! Form::open(['route' => ['companies.regenerate', $company->id, 2], 'method' => 'post']) !!}
+                        {!! Form::button('<i class="fa fa-solid fa-dog"></i>', ['type' => 'submit', 'class' => 'btn btn-warning btn-xs', 'onclick' => "return confirm('Do you really want to generate another script for this domain?')"]) !!}
                         {!! Form::close() !!}
 
 

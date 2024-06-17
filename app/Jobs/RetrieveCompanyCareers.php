@@ -100,20 +100,206 @@ class RetrieveCompanyCareers implements ShouldQueue
         return false;
     }
 
+
+    public function retrieveLinkedIn()
+    {
+        $company = $this->company;
+        $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
+        $domain = str_replace('www.', '', $domain);
+        // Creating a recent page image
+        preg_match('/company\/(.*?)\/jobs/', $company->careerPageUrl, $matches);
+        $linkedin_name = $matches[1];
+        $url = "https://api.serpdog.io/linkedin_jobs?api_key=".env('SERPDOG_API')."&filter_by_company=".$linkedin_name."&geoId=92000000";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $results = json_decode($response, true);
+        var_dump($results);
+        $jsonData = [];
+        if (isset($results['job_results'])) {
+            foreach ($results['job_results'] as $job) {
+                $jsonData[] = [
+                    'Job-title' => $job['title'],
+                    'URL' => $job['job_link'],
+                ];
+            }
+        }
+        $hasUpdate = $this->processJobData($jsonData, "", "");
+        if ($hasUpdate) {
+            $this->getDecisionMakers($this->company->users->first());
+        }
+        if (!$hasUpdate) {
+            var_dump("No updates on company LinkedIn page");
+        }
+    }
+
+    private function getAccessToken()
+    {
+        $params = [
+            'grant_type'    => 'client_credentials',
+            'client_id'     => env("SNOVIO_CLIENT_ID"),
+            'client_secret' => env("SNOVIO_CLIENT_SECRET")
+        ];
+        $options = [
+            CURLOPT_URL            => 'https://api.snov.io/v1/oauth/access_token',
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => $params,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true
+        ];
+
+        $ch = curl_init();
+
+        curl_setopt_array($ch, $options);
+
+        $res = json_decode(curl_exec($ch), true);
+        curl_close($ch);
+        return $res['access_token'];
+
+    }
+    public function getDecisionMakers($user)
+    {
+        $token = $this->getAccessToken();
+
+        $dmTitles = $user->dmTitles->pluck('title')->toArray();
+        $params = [
+            'access_token' => $token,
+            'domain'       => $this->company->website,
+            'type'         => 'all',
+            'limit'        => 3,
+            'lastId'       => 0,
+            'positions[]'    => $dmTitles,
+        ];
+
+        $params = http_build_query($params);
+        $options = [
+            CURLOPT_URL            => 'https://api.snov.io/v2/domain-emails-with-info?'.$params,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true
+        ];
+
+        $ch = curl_init();
+
+        curl_setopt_array($ch, $options);
+
+
+        $res = json_decode(curl_exec($ch), true);
+        curl_close($ch);
+        if (!isset($res['emails'])||(count($res['emails']) == 0)){
+            $params = [
+                'access_token' => $token,
+                'domain'       => $this->company->website,
+                'type'         => 'generic',
+                'limit'        => 3,
+                'lastId'       => 0
+            ];
+
+            $params = http_build_query($params);
+            $options = [
+                CURLOPT_URL            => 'https://api.snov.io/v2/domain-emails-with-info?'.$params,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FOLLOWLOCATION => true
+            ];
+
+            $ch = curl_init();
+
+            curl_setopt_array($ch, $options);
+
+            $res = json_decode(curl_exec($ch), true);
+            curl_close($ch);
+        }
+        foreach ($res['emails'] as $dm) {
+            if ($dm["status"] == "verified") {
+                if (isset($dm['sourcePage'])) {
+                    DecisionMaker::firstOrCreate([
+                        'company_id' => $this->company->id,
+                        'firstName' => $dm['firstName'],
+                        'lastName' => $dm['lastName'],
+                        'email' => $dm['email'],
+                        'profile_url' => $dm['sourcePage']
+                    ]);
+                } else {
+                    DecisionMaker::firstOrCreate([
+                        'company_id' => $this->company->id,
+                        'firstName' => "Generic",
+                        'lastName' => "Email",
+                        'email' => $dm['email'],
+                    ]);
+                }
+            }
+        }
+
+    }
+
+    public function processJobData($jsonData, $basePathHtmls, $baseUrl)
+    {
+        $hasUpdate = false;
+        if ($jsonData) {
+            foreach ($jsonData as $jobData) {
+                if (strpos($jobData['URL'], "file:///" . $basePathHtmls) !== false) {
+                    $jobData['URL'] = str_replace("file:///" . $basePathHtmls, $baseUrl, $jobData['URL']);
+                } elseif (strpos($jobData['URL'], "file:///D:") !== false) {
+                    $jobData['URL'] = str_replace("file:///D:", $baseUrl, $jobData['URL']);
+                } elseif (strpos($jobData['URL'], 'http://') === false && strpos($jobData['URL'], 'https://') === false) {
+                    $jobData['URL'] = rtrim($baseUrl, '/') . '/' . ltrim($jobData['URL'], '/');
+                }
+                $existingJob = Job::where('url', $jobData['URL'])
+                    ->where('title', $jobData['Job-title'])
+                    ->first();
+
+                if (!$existingJob) {
+                    $newJob = Job::create([
+                        'company_id' => $this->company->id,
+                        'title' => $jobData['Job-title'],
+                        'url' => $jobData['URL'],
+                        'date' => Carbon::now(),
+                    ]);
+
+                    $hasUpdate = true;
+                } else {
+                    $existingJob->touch();
+                }
+            }
+        }
+        $yesterday = Carbon::yesterday();
+        $jobsToDelete = $this->company->jobs()
+            ->whereDate('updated_at', '<=', $yesterday)
+            ->get();
+
+        // Loop through the jobs and safely delete each one
+        foreach ($jobsToDelete as $job) {
+            $hasUpdate = true;
+            $job->delete(); // This will soft delete if SoftDeletes trait is used in Job model
+        }
+
+        return $hasUpdate;
+    }
     public function handle()
     {
         $company = $this->company;
         $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
         $domain = str_replace('www.','',$domain);
-        // Creating a recent page image
-        $basePathHtmls = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\".$domain."\\HTMLs\\".$company->id;
 
 
-        if (!is_dir($basePathHtmls)) {
-            mkdir($basePathHtmls, 0777, true); // The 0777 specifies the permissions, and true enables recursive creation
-        }
+        if ($domain == "linkedin.com") {
+            $this->retrieveLinkedIn();
+            $when = Carbon::now()->addDay();
+            RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue')->delay($when);
+        } else {
+            // Creating a recent page image
+            $basePathHtmls = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\" . $domain . "\\HTMLs\\" . $company->id;
 
-        $latestFile = $this->getLatestFile($basePathHtmls);
+
+            if (!is_dir($basePathHtmls)) {
+                mkdir($basePathHtmls, 0777, true); // The 0777 specifies the permissions, and true enables recursive creation
+            }
+
+            $latestFile = $this->getLatestFile($basePathHtmls);
 
         $pythonExecutable = "C:\\Python3\\python.exe";
         $scriptPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py";
@@ -126,24 +312,33 @@ class RetrieveCompanyCareers implements ShouldQueue
         $scriptPath = base_path("\\ParkerScripts\\Companies\\".$domain."\\scrape.py");
 
         $activeJobs = Job::where('company_id', $company->id)->count();
+            $companyPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\{$company->id}";
+            $domainPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}";
 
-        if (($latestFile)&&($activeJobs>0)){
-            $html1 = file_get_contents($basePathHtmls."\\".$latestFile);
-            $html2 = file_get_contents($basePathHtmls."\\".date("d-m-y").".html");
+            // Check if a scrape.py script exists in the company's folder
+            if (file_exists("{$companyPath}\\scrape.py")) {
+                $scriptPath = $companyPath . "\\scrape.py";
+            } else {
+                // If not, fall back to the scrape.py script in the domain folder
+                $scriptPath = $domainPath . "\\scrape.py";
+            }
+            if (($latestFile) &&($activeJobs>0)){
+                $html1 = file_get_contents($basePathHtmls . "\\" . $latestFile);
+                $html2 = file_get_contents($basePathHtmls . "\\" . date("d-m-y") . ".html");
 
-            if ($html1 === $html2) {
-                $updateTrigger = false;
+                if ($html1 === $html2) {
+                    $updateTrigger = false;
+                } else {
+                    $updateTrigger = true;
+                }
             } else {
                 $updateTrigger = true;
             }
-        } else {
-            $updateTrigger = true;
-        }
-        $hasUpdate = false;
-        if (file_exists($scriptPath) && ($updateTrigger)) {
             $hasUpdate = false;
-            $process = shell_exec('python ' . escapeshellarg($scriptPath) . ' "' . $basePathHtmls . "\\" . date("d-m-y") . '.html"');
-            $jsonData = json_decode($process, true);
+            if (file_exists($scriptPath) && ($updateTrigger)) {
+                $hasUpdate = false;
+                $process = shell_exec('python ' . escapeshellarg($scriptPath) . ' "' . $basePathHtmls . "\\" . date("d-m-y") . '.html"');
+                $jsonData = json_decode($process, true);
 
                 /*
                  * ZERO POSTINGS CHECK
@@ -172,10 +367,10 @@ class RetrieveCompanyCareers implements ShouldQueue
                     }
                     elseif (strpos($jobData['URL'], "file:///D:") !== false) {
                         $jobData['URL'] = str_replace("file:///D:", $baseUrl, $jobData['URL']);
-                    }
-                    elseif (strpos($jobData['URL'], 'http://') === false && strpos($jobData['URL'], 'https://') === false) {
-                        $jobData['URL'] = rtrim($baseUrl, '/') . '/' . ltrim($jobData['URL'], '/');
-                    }
+
+                        } elseif (strpos($jobData['URL'], 'http://') === false && strpos($jobData['URL'], 'https://') === false) {
+                            $jobData['URL'] = rtrim($baseUrl, '/') . '/' . ltrim($jobData['URL'], '/');
+                        }
 
                     $existingJob = Job::withTrashed()
                         ->where('url', $jobData['URL'])
@@ -209,28 +404,26 @@ class RetrieveCompanyCareers implements ShouldQueue
                 ->whereDate('updated_at', '<=', $yesterday)
                 ->get();
 
-                // Loop through the jobs and safely delete each one
-            foreach ($jobsToDelete as $job) {
-                $hasUpdate = true;
-                $job->delete(); // This will soft delete if SoftDeletes trait is used in Job model
-            }
 
-        }    else {
-            if (!file_exists($scriptPath)){
-                throw new \Exception("Script for {$company->name} not found.");
-            } else {
-                $this->safeDeleteFile($basePathHtmls."\\".date("d-m-y").".html");
+                // Loop through the jobs and safely delete each one
+                foreach ($jobsToDelete as $job) {
+                    $hasUpdate = true;
+                    $job->delete(); // This will soft delete if SoftDeletes trait is used in Job model
+                }
+
+            }
+            if (!$hasUpdate) {
+                $this->safeDeleteFile($basePathHtmls . "\\" . date("d-m-y") . ".html");
                 var_dump("No updates on the webpage");
             }
-        }
 
-        if (!$hasUpdate){
-            $this->safeDeleteFile($basePathHtmls."\\".date("d-m-y").".html");
-            var_dump("No updates on the webpage");
-
+            if (!file_exists($scriptPath) && ($updateTrigger)) {
+                ProcessCompany::dispatch($company, 1, 1);
+            } else {
+                $when = Carbon::now()->addDay();
+                RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue')->delay($when);
+            }
         }
-        $when = Carbon::now()->addDay();
-        RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue')->delay($when);
     }
 
     protected function checkAndTrigger($job)
