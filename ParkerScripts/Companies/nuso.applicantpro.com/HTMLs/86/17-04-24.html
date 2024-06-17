@@ -1,0 +1,110 @@
+<html data-theme="light" lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- Load Vue -->
+<!-- Load Component Loader -->
+<!-- Bind the component loading to the window for ease of use -->
+<!-- Load component styles -->
+<link href="/js/web-components/assets/style.css?version=live202404161.0" rel="stylesheet"/>
+<!-- Loader that doesn't require importing or using a 'module' sadly we have to wait until it exists though! -->
+<!--[if lt IE 10]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<![endif]-->
+<link href="/styles/all.min.css?ver=1.2.49890-2&amp;use_vue_flag=1" rel="stylesheet"/>
+<link href="/styles/font-awesome-4.7.0/css/font-awesome.css?ver=" rel="stylesheet"/>
+<link href="/styles/awesomer.css?ver=1.1.46678" rel="stylesheet"/>
+<link href="/favicon-apppro-new-color.ico" rel="shortcut icon" type="image/x-icon"/> <!--[if gte IE 9]>
+			<style type="text/css">
+				.gradient {
+		   			filter: none;
+				}
+			</style>
+		<![endif]-->
+<title>Job Listings - NUSO Jobs</title>
+<!--[if lt IE 9]>
+			<script src="/js/html5shiv.min.js"></script>
+      		<script src="/js/respond.min.js"></script>
+      	<![endif]-->
+<!-- Popper for tooltips -->
+<!--<script type="text/javascript" src="/js/jQl.min.js"></script>-->
+</head>
+<body class="main-body w-app" onload="breakout()">
+<div data-v-app="" id="toaster"><div data-v-212a0fff="" id="toast-container"><div data-v-212a0fff="" id="toast-container-inner"></div></div></div>
+<div class="container-fixed">
+<div class="container" id="content_area">
+<div class="header header-image" id="headerbar">
+<img alt="NUSO" src="/images/4/9326/Nuso_header.jpg" usemap="#headerMap"/>
+</div>
+<div class="panel panel-default" id="mainArea">
+<div class="panel-body">
+<div class="row d-flex" id="career-site-top-header">
+<div class="col-sm-8 text-left">
+<h1 class="font-weight-bold">
+									Current Job Listings									</h1>
+</div>
+<div class="col-sm-4">
+<ul class="nav navbar-nav navbar-right" data-jin="ul1" id="menuLinks"><li data-jin="li"><a data-jin="1" href="/jobs/">Jobs</a></li><li data-jin="li"><a href="/account/login.php" title="Login to Your Account">Login</a></li></ul> </div>
+</div>
+<div class="row text-left">
+<div class="col-md-8">
+<div class="bootstrap-area" data-v-app="" id="job_listings"><div><div class="row"><div class="col pt-2 pb-2"><p>Below is a list of the current openings with our company. Click on the job title to learn more about the opening.</p></div></div><div class="row mt-2"><div class="col"><input data-v-5b5773ad="" id="page" name="page" type="hidden" value="1"/><div class="row" data-v-5b5773ad=""><div class="col filters-div pb-0" data-v-5b5773ad=""><div class="d-flex justify-content-between" data-v-5b5773ad=""><h4 class="font-weight-bold" data-v-5b5773ad="">Search Jobs</h4><div data-v-5b5773ad=""><span class="btn" data-v-5b5773ad="">Hide Filters</span><span class="btn" data-v-5b5773ad="">Clear All</span></div></div><div class="card px-3 pb-3 border-0" data-v-5b5773ad=""><div class="row filters-row d-flex" data-v-5b5773ad=""><div class="keywords-container input-group input-group-lg col-auto filter-column py-1 px-1 order-1 order-sm-1" data-v-5b5773ad=""><span class="input-group-prepend input-group-text bg-transparent" data-v-5b5773ad=""><i class="fa fa-search" data-v-5b5773ad=""></i></span><input class="form-control border-left-0" data-v-5b5773ad="" id="keywords" name="keywords" placeholder="Search Jobs" type="text"/></div><div class="city-container col-auto filter-column py-1 px-1 order-3 order-sm-2" data-v-5b5773ad=""><select class="form-control form-control-lg text-secondary" data-v-5b5773ad="" id="city" name="city"><option data-v-5b5773ad="" value="">City</option><option data-v-5b5773ad="" value="St. Louis">St. Louis</option></select></div><div class="state-container col-auto filter-column py-1 px-1 order-4 order-sm-3" data-v-5b5773ad=""><select class="form-control form-control-lg text-secondary" data-v-5b5773ad="" id="state" name="state_id"><option data-v-5b5773ad="" value="">State</option><option data-v-5b5773ad="" value="26">Missouri</option></select></div><div class="select-container col-auto filter-column py-1 px-1 order-5 order-sm-4" data-v-5b5773ad=""><select class="form-control form-control-lg text-secondary" data-v-5b5773ad="" id="employment_type" name="employment_type_id"><option data-v-5b5773ad="" value="">Employment Type</option><option data-v-5b5773ad="" value="183317">Full Time</option></select></div><!-- --><!-- --><div class="select-container col-auto filter-column py-1 px-1 order-8 order-sm-7" data-v-5b5773ad=""><select class="form-control form-control-lg text-secondary" data-v-5b5773ad="" id="org_unit" name="org_unit_id"><option data-v-5b5773ad="" value="">Department</option><option data-v-5b5773ad="" value="238002">Sales - Operations</option></select></div><!-- --><!-- --><div class="sort-container col-auto filter-column py-1 px-1 order-2 order-sm-10" data-v-5b5773ad=""><select class="form-control form-control-lg text-secondary" data-v-5b5773ad="" id="sort" name="sort"><option data-v-5b5773ad="" value="">Sort By</option><option data-v-5b5773ad="" value="job_title">Job Title</option><option data-v-5b5773ad="" value="city">City</option><option data-v-5b5773ad="" value="employment_type">Employment Type</option><option data-v-5b5773ad="" value="org_unit">Department</option></select></div></div></div></div></div></div></div><div class="row job-results-row mt-2"><div class="col"><div class="col-auto job-count-container pl-0 pr-0 pb-2 border-bottom"><span class="job-count text-secondary" id="job_count">Number of Jobs: 1</span></div><div id="job_results"><div class="job-result card pt-4 pb-4 mb-2 border-top-0 border-right-0 border-left-0" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col-auto pr-0" data-v-589fec2b=""></div><div class="col" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col-12" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="job-name col-auto text-primary pl-0 pr-0" data-v-589fec2b=""><a class="listing-url" data-v-589fec2b="" href="https://nuso.applicantpro.com/jobs/3319749">Project Coordinator</a></div></div><div class="row mt-2" data-v-589fec2b=""><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><!-- --><span class="text-dark pr-1" data-v-589fec2b="">Sales - Operations</span></div></div><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><span class="pr-2" data-v-589fec2b="">|</span><span class="text-dark pr-1" data-v-589fec2b="">St. Louis, MO, USA</span></div></div><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><span class="pr-2" data-v-589fec2b="">|</span><span class="text-dark pr-1" data-v-589fec2b="">Full Time</span></div></div><div data-v-589fec2b=""><!-- --></div><div data-v-589fec2b=""><!-- --></div> </div><div class="row mt-1" data-v-589fec2b=""><div class="col-auto pl-0" data-v-589fec2b=""><span class="text-secondary pr-2" data-v-589fec2b=""> Posted: Apr 16, 2024</span><!-- --></div></div></div></div></div><div class="action-column col-auto" data-v-589fec2b=""><a class="listing-url" data-v-589fec2b="" href="https://nuso.applicantpro.com/jobs/3319749"><button class="btn text-secondary pl-3 pr-3 border-1 border-secondary" data-v-589fec2b="" type="button"> Apply Now </button></a></div></div></div></div></div></div></div></div></div></div>
+</div>
+<div class="col-md-4">
+<div class="bootstrap-area" data-v-app="" id="social_media_widget"><!-- --><!-- --></div>
+</div>
+</div>
+<div class="clearfix"></div>
+</div> <!-- panel-body -->
+<div class="panel-footer">
+<div>
+<div class="footer-links"><a href="http://www.applicantpro.com" target="_blank">Hiring Software</a> Maintained by ApplicantPro - © 2024</div>
+<div class="footer-links">
+<form id="clear_cache" method="post" style="display: inline-block;">
+<input name="clear_session_cache_old_style" type="hidden"/>
+<a href="javascript:void(0);" onclick="$('#clear_cache').submit();" tabindex="-1">Refresh</a>
+</form>
+</div>
+</div>
+<!--[if lt IE 9]>
+						<script type="text/javascript">
+							$(function() {
+								$('.footer-links:last-child').css('border-left', '0');
+								$('.footer-links:last-child a').css('color', $('body .panel-footer').css('background-color'));
+							});
+						</script>
+					<![endif]-->
+</div> <!-- panel-footer -->
+</div> <!-- panel -->
+</div> <!-- container -->
+</div> <!-- container-fixed -->
+<!-- Refer.io Script that will be used throughout the site -->
+<!-- GA4 - Google tag (gtag.js) -->
+<map id="headerMap" name="headerMap">
+<area alt="Company Homepage" coords="2,31,271,96" href="http://www.nuso.cloud/" shape="rect" style="cursor:pointer;" target="_self"/>
+<area alt="Home" coords="407,54,475,82" href="http://www.nuso.cloud/" shape="rect" style="cursor:pointer;" target="_self"/>
+<area alt="Solutions" coords="492,55,595,81" href="http://www.nuso.cloud/solutions" shape="rect" style="cursor:pointer;" target="_self"/>
+<area alt="Partners" coords="633,53,728,79" href="http://www.nuso.cloud/partner" shape="rect" style="cursor:pointer;" target="_self"/>
+<area alt="Support" coords="742,55,840,83" href="http://www.nuso.cloud/support" shape="rect" style="cursor:pointer;" target="_self"/>
+<area alt="About" coords="872,54,946,83" href="http://www.nuso.cloud/about" shape="rect" style="cursor:pointer;" target="_self"/>
+<area alt="marketspace" coords="958,55,1097,85" href="http://www.nuso.cloud/marketspace" shape="rect" style="cursor:pointer;" target="_self"/>
+</map>
+<!-- scripts
+	<script type="text/javascript">
+		jQl.loadjQ('/js/all.min.js?ver=2.3.47194');
+	</script>
+	-->
+<!-- Google Translate For Placeholders -->
+<!--
+	<script type="text/javascript">
+		var pkBaseURL = (("https:" == document.location.protocol) ? "https://nuso.applicantpro.com/stats/" : "http://nuso.applicantpro.com/stats/");
+		document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+		var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 0);
+		piwikTracker.trackPageView();
+		piwikTracker.enableLinkTracking();
+		} catch( err ) {}
+	</script>
+	<noscript><p><img src="https://nuso.applicantpro.com/stats/piwik.php?idsite=0" style="border:0" alt="" /></p></noscript>
+	-->
+<!-- 36840 Add role="combobox" to all available selects-->
+<div class="w-notification-manager"></div></body></html>

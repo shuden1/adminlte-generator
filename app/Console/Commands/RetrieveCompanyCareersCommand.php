@@ -52,7 +52,7 @@ class RetrieveCompanyCareersCommand extends Command
 
     protected function getQueuedCompanyIds()
     {
-        $jobs = DB::table('queue_jobs') // Assuming 'jobs' is the correct table name
+        $jobs = DB::table('queue_jobs')
         ->where('queue', 'RetrieveCareersQueue')
             ->get(['id', 'payload']); // Fetch job ID and payload
         $companyJobs = [];
@@ -67,7 +67,7 @@ class RetrieveCompanyCareersCommand extends Command
                     $companyProperty->setAccessible(true);
                     $company = $companyProperty->getValue($command);
 //                    $companyJobs[$company['id']][] = $job->id; // Store job ID alongside company ID
-                      $companyJobs[$company['id']] = $job->id; // Store job ID alongside company ID
+                    $companyJobs[$company['id']] = $job->id; // Store job ID alongside company ID
               }
             } catch (Exception $e) {
                 error_log('Error accessing company ID: ' . $e->getMessage());
@@ -80,7 +80,14 @@ class RetrieveCompanyCareersCommand extends Command
                 $temp_results[$key] = $companyJob;
             }
         }
-        var_dump($temp_results);
+
+        foreach ($temp_results as $tr){
+            foreach ($tr as $k => $v){
+                if ($k>0){
+                    DB::table('queue_jobs')->where('id', $v)->delete();
+                }
+            }
+        }
         die();
 */
         return $companyJobs; // Return associative array of company IDs and their job IDs

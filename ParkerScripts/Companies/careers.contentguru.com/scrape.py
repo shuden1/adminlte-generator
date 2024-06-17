@@ -11,7 +11,7 @@ import threading
 job_block_selector = "div.result"
 # Exact selectors for job titles and associated URLs
 job_title_selector = ".card-header"
-job_url_selector = ".btn-apply"
+job_url_selector = ".btn-more-info"
 
 # STEP 2:
 if __name__ == "__main__":

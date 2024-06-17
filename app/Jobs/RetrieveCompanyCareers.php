@@ -125,8 +125,9 @@ class RetrieveCompanyCareers implements ShouldQueue
         shell_exec($command);
         $scriptPath = base_path("\\ParkerScripts\\Companies\\".$domain."\\scrape.py");
 
+        $activeJobs = Job::where('company_id', $company->id)->count();
 
-        if ($latestFile){
+        if (($latestFile)&&($activeJobs>0)){
             $html1 = file_get_contents($basePathHtmls."\\".$latestFile);
             $html2 = file_get_contents($basePathHtmls."\\".date("d-m-y").".html");
 
@@ -164,7 +165,6 @@ class RetrieveCompanyCareers implements ShouldQueue
                 // Concatenate them to form the base URL
             $baseUrl = $scheme . '://' . $domain;
 
-            print_r($baseUrl);
             if ($jsonData) {
                 foreach ($jsonData as $jobData) {
                     if (strpos($jobData['URL'], "file:///".$basePathHtmls) !== false) {
@@ -182,7 +182,6 @@ class RetrieveCompanyCareers implements ShouldQueue
                         ->where('title', $jobData['Job-title'])
                         ->latest('deleted_at')
                         ->first();
-
                     if ($existingJob) {
                         if ($existingJob->trashed()) {
                             $deletedAt = $existingJob->deleted_at; // assuming 'deleted_at' is the name of your soft delete timestamp column

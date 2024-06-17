@@ -1,0 +1,1182 @@
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths desktop landscape windows windowsnt windowsnt_0 64bit chrome chrome123 chrome123_0 webkit en-us"><head>
+<!-- THIS IS new GTM IN HEADER -->
+<!--The below code for search engine meta based on the careersite config -->
+<!--End search engine based on the careersite config settings -->
+<title>CBTS Careers</title>
+</head>
+<body class="">
+<!-- THIS IS new GTM IN BODY -->
+<!-- compiled CSS -->
+<link href="/srccar/public/js/ng/assets/srccar-1.0.0.css?buildID=6835" rel="stylesheet" type="text/css"/>
+<link href="/srccar/public/less/290031/ngstyles.jsp" rel="stylesheet" type="text/css"/>
+<!-- compiled JavaScript -->
+<div class="titanium" id="srccar" ng-controller="AppCtrl">
+<div class="background full" style="height:100vh;"></div>
+<!-- ngIf: !uiReady -->
+<!-- ngIf: uiReady --><div class="" ng-if="uiReady" style="min-height: 75vh; min-width: 320px;">
+<!-- uiView: header --><div class="adp-nav-background top-nav clearfix header-container" ui-view="header"><div class="container" id="header-section">
+<div class="clearfix">
+<div class="row adprm-cx-header flex-header">
+<div class="col-sm-3 col-md-4 flex-items-header" id="left-header">
+<div class="logopic" ngshow="true">
+<img a="https://recruiting.adp.com/portal-upload/RMPOD3WebDocument/2020/6/clientdata_1169651/5/0935/bdf43269-3b2e-4a40-91a6-ec00a3202006.png" alt="altafiber" ng-src="https://recruiting.adp.com/portal-upload/RMPOD3WebDocument/2020/6/clientdata_1169651/5/0935/bdf43269-3b2e-4a40-91a6-ec00a3202006.png" src="https://recruiting.adp.com/portal-upload/RMPOD3WebDocument/2020/6/clientdata_1169651/5/0935/bdf43269-3b2e-4a40-91a6-ec00a3202006.png" title="altafiber"/>
+</div>
+</div>
+<div class="col-sm-9 col-md-8 flex-items-header" id="right-header">
+<div class="topmenutopwarper">
+<div class="topmenuwarper" nowrap="nowrap">
+<div class="topmenu">
+<div class="bookmarkwarper" data-ng-click="doSearchByJobIds()" data-toggle="tooltip" title="Bookmarks">
+<i class="fa fa-2x fa-star-o" style=""></i>
+<span class="jobCount ng-hide" ng-show="bookmarkJobcount != ''">0</span>
+</div>
+</div>
+<!-- ngIf: applicationCount>0 -->
+<div class="topmenu">
+<div class="langDropDown">
+<div class="btn-group top-menu-dropdown dropdown" data-ng-controller="langDropdownController" is-open="status.isopen" uib-dropdown="" uib-keyboard-nav="">
+<button aria-expanded="false" aria-haspopup="true" class="btn top-menu-btn-default dropdown-toggle" data-ng-disabled="disabled" ng-keydown="arrowKeyOpenDropdown($event)" type="button" uib-dropdown-toggle="">
+<i class="fa fa-globe"></i><span class="language-name">United States - English</span><i class="fa fa-chevron-down"></i>
+</button>
+<ul class="dropdown-menu" role="menu">
+<!-- ngRepeat: item in languagelist --><li data-ng-repeat="item in languagelist">
+<a data-ng-click="setMaster(item)"><img src="flag_usa.dbrez"/>United States - English</a>
+</li><!-- end ngRepeat: item in languagelist -->
+</ul>
+</div>
+</div>
+</div>
+<div class="topmenu">
+<div class="top-action">
+<div class="adp-avatar-dropdown center-arrow">
+<a adprm-sign-in="{source:'header-avatar'}" class="sign-in-link">
+<div class="adp-avatar adp-avatar-sm pull-left">
+<i class="fa fa-user"></i>
+</div>
+                                        Sign In
+                                        <i class="fa fa-chevron-down"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<!--<div class="adp-carousel-bk" ui-view="carousel"></div>-->
+<!-- uiView: container --><div class="main am-fade-and-scale main-container" ui-view="container"><div class="container">
+<div class="carousel">
+<div>
+<!-- ngIf: bannerTabs.length > 0 --><div class="col-sm-12 landingPageAccordion" ng-if="bannerTabs.length &gt; 0">
+<div class="adp-accordion personal-accordion">
+<uib-accordion close-others="false"><div class="panel-group" ng-transclude="" role="tablist">
+<div class="panel panel-default panel-open" is-open="banner.open" ng-class="panelClass || 'panel-default'">
+<div aria-selected="true" class="panel-heading" id="accordiongroup-111-2636-tab" ng-keypress="toggleOpen($event)" role="tab">
+<h4 class="panel-title">
+<a aria-controls="accordiongroup-111-2636-panel" aria-expanded="true" class="accordion-toggle" data-toggle="collapse" href="" ng-click="toggleOpen()" role="button" tabindex="0" uib-accordion-transclude="heading"><span ng-class="{'text-muted': isDisabled}" uib-accordion-header="">
+<div class="info">About <i class="pull-right glyphicon glyphicon-chevron-up" ng-class="{'glyphicon-chevron-up': banner.open, 'glyphicon-chevron-down': !banner.open}"></i></div>
+</span></a>
+</h4>
+</div>
+<div aria-expanded="true" aria-hidden="false" aria-labelledby="accordiongroup-111-2636-tab" class="panel-collapse collapse in" id="accordiongroup-111-2636-panel" role="tabpanel" style="height: auto;" uib-collapse="!isOpen">
+<div class="panel-body" ng-transclude="">
+<uib-accordion-heading ng-click="banner.open=!banner.open"></uib-accordion-heading>
+<div class="panel-content">
+<div class="adp-tabs horizontal">
+<div class="tabs-container">
+<ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical, 'nav-justified': justified}" ng-transclude="">
+<!-- ngRepeat: bannerTab in bannerTabs --><li class="uib-tab nav-item active" ng-class="[{active: active, disabled: disabled}, classes]" ng-repeat="bannerTab in bannerTabs">
+<a class="nav-link" href="" ng-click="select($event)" uib-tab-heading-transclude=""><uib-tab-heading>
+<div data-ng-bind-html="bannerTab.title">Welcome</div>
+</uib-tab-heading></a>
+</li><!-- end ngRepeat: bannerTab in bannerTabs --><li class="uib-tab nav-item" ng-class="[{active: active, disabled: disabled}, classes]" ng-repeat="bannerTab in bannerTabs">
+<a class="nav-link" href="" ng-click="select($event)" uib-tab-heading-transclude=""><uib-tab-heading>
+<div data-ng-bind-html="bannerTab.title">Follow Us</div>
+</uib-tab-heading></a>
+</li><!-- end ngRepeat: bannerTab in bannerTabs -->
+</ul>
+<div class="tab-content">
+<!-- ngRepeat: tab in tabset.tabs --><div class="tab-pane active" ng-class="{active: tabset.active === tab.index}" ng-repeat="tab in tabset.tabs" uib-tab-content-transclude="tab">
+<!-- ngIf: bannerTab.type!='community' --><div data-ng-bind-html="bannerTab.content" ng-if="bannerTab.type!='community'"><div>Welcome to CBTS's listing of current job openings. We are excited that you have chosen to explore our opportunities and would love to have you as part of our team! We're always looking for talented and driven candidates to take us to the next level. CBTS is growing fast and we look forward to reviewing your application.</div></div><!-- end ngIf: bannerTab.type!='community' -->
+<!-- ngIf: bannerTab.type=='follow' && bannerTab.links.length > 0 -->
+<!-- ngIf: bannerTab.type=='community' && bannerTab.content.length > 0 -->
+</div><!-- end ngRepeat: tab in tabset.tabs --><div class="tab-pane" ng-class="{active: tabset.active === tab.index}" ng-repeat="tab in tabset.tabs" uib-tab-content-transclude="tab">
+<!-- ngIf: bannerTab.type!='community' --><div data-ng-bind-html="bannerTab.content" ng-if="bannerTab.type!='community'"></div><!-- end ngIf: bannerTab.type!='community' -->
+<!-- ngIf: bannerTab.type=='follow' && bannerTab.links.length > 0 --><div class="btngrpfollowus" ng-if="bannerTab.type=='follow' &amp;&amp; bannerTab.links.length &gt; 0">
+<!-- ngRepeat: link in bannerTab.links --><span class="btnfollowus btnlinkedin" ng-click="openSite(link.url);" ng-repeat="link in bannerTab.links">
+<i aria-hidden="true" class="fa fa-linkedin"></i>
+</span><!-- end ngRepeat: link in bannerTab.links --><span class="btnfollowus btnfacebook" ng-click="openSite(link.url);" ng-repeat="link in bannerTab.links">
+<i aria-hidden="true" class="fa fa-facebook"></i>
+</span><!-- end ngRepeat: link in bannerTab.links --><span class="btnfollowus btntwitter" ng-click="openSite(link.url);" ng-repeat="link in bannerTab.links">
+<i aria-hidden="true" class="fa fa-twitter"></i>
+</span><!-- end ngRepeat: link in bannerTab.links --><span class="btnfollowus btnyoutube" ng-click="openSite(link.url);" ng-repeat="link in bannerTab.links">
+<i aria-hidden="true" class="fa fa-youtube"></i>
+</span><!-- end ngRepeat: link in bannerTab.links -->
+</div><!-- end ngIf: bannerTab.type=='follow' && bannerTab.links.length > 0 -->
+<!-- ngIf: bannerTab.type=='community' && bannerTab.content.length > 0 -->
+</div><!-- end ngRepeat: tab in tabset.tabs -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></uib-accordion>
+</div>
+</div><!-- end ngIf: bannerTabs.length > 0 -->
+</div>
+</div>
+<div class="search-container col-sm-12 nopadding nomargin" id="search-section">
+<ng-form class="ng-pristine ng-valid" id="searchForm">
+<div class="row searchFRM">
+<fieldset>
+<div class="col-sm-3 form-group SKWord">
+<div class="inputTextClear">
+<label class="fieldset-label SKWLabel" for="input-keyword_">What</label>
+<input class="fieldset-input ng-pristine ng-untouched ng-valid ng-empty" data-ng-model="searchFrm.keyword" id="input-keyword__" ng-change="keywordChanged()" ng-keyup="(isValidKeywordSearch() &amp;&amp; $event.keyCode == 13) ? (doSearch() | trackEvent:'Keyword - Search Page':'Entered') : (searchFrm.keyword.length &gt; 100 ? searchFrm.keyword=searchFrm.keyword.substr(0,100) : null) " placeholder="Job title or keywords" type="text"/>
+<i class="inputClearIcon icon-close-thin text-mute ng-hide" ng-click="searchFrm.keyword = '';keywordChanged()" ng-show="searchFrm.keyword.length &gt; 0"></i>
+</div>
+<label class="ng-hide" ng-show="!isValidKeywordSearch()">Enter a longer word to start the search</label>
+</div>
+<div class="col-sm-3 form-group SCState">
+<!-- ngIf: showLocationSearch() --><div class="inputTextClear" ng-if="showLocationSearch()">
+<label class="fieldset-label SKWLabel" for="input-location">Where</label>
+<div class="fieldset-label SKWLabel ng-pristine ng-untouched ng-valid ng-empty" default-value="searchFrm.locationStr" id="input-location" ng-autocomplete="" ng-model="searchFrm.locationStr" on-clear="clearLocation" on-place-change="onLocationChange" placeholder="City, state or zip code"><div class="autocomplete">
+<input autocomplete="off" autocorrect="off" class="fieldset-input ng-autocomplete-input ng-pristine ng-untouched ng-valid ng-empty" id="input-location" ng-blur="blurHandler()" ng-change="getResults()" ng-focus="currentIndex = 0" ng-keyup="keyupHandler($event)" ng-model="location" placeholder="City, state or zip code" type="text"/>
+<ul class="dropdown ng-hide" ng-show="showResults" role="menu">
+<!-- ngRepeat: r in results -->
+</ul>
+</div> <i class="inputClearIcon icon-close-thin text-mute ng-hide" ng-click="clear()" ng-show="location != null &amp;&amp; location != ''"></i><div class="hidden"></div></div>
+</div><!-- end ngIf: showLocationSearch() -->
+</div>
+<div class="col-sm-3 searchBtn">
+<button class="btn btn-primary btn-icon-right search-btn" ng-click="isValidKeywordSearch() &amp;&amp; doSearch() | trackEvent:'Search for Jobs - Search Page':'Button Clicked' " type="button">
+                            Search for Jobs!
+                        </button>
+</div>
+<!-- ngIf: isNotifyMe --><div class="col-sm-3 notifyME" ng-if="isNotifyMe" notifyme="" template="notifyme.html"><div class="notifyMEPoper arrowWhite" ng-class="{'arrowDanger': nmeEMessage, 'arrowSuccess': nmeSMessage, 'arrowWhite': (!nmeSMessage &amp;&amp; !nmeEMessage)}">
+<!-- ngIf: isNMOpen -->
+<div class="SKWLabel">Notify Me</div>
+<div class="notifyMELink" ng-click="showNMe()" popover-is-open="isNMOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl" uibmodal="">
+<span aria-hidden="true" class="fa fa-bell-o fa-3x nmBell"></span>
+</div>
+</div></div><!-- end ngIf: isNotifyMe -->
+</fieldset>
+</div>
+<div class="row nopadding">
+<div class="row-height">
+<!-- uiView: filters --><div class="col-sm-3 nopadding" ui-view="filters"><div class="searchfilter col-height">
+<div class="serachsummary">
+<div class="serachsummaryIn">
+<h1>
+<span class="jobLabel">Jobs</span>
+<span class="currentCount">28</span>
+</h1>
+</div>
+<div class="filters ng-hide" ng-show="showClear()">
+<div class="row">
+<span class="filterheader col-sm-12 col-md-6">Your Filters</span>
+<span class="filtersclearall col-sm-12 col-md-6 ng-hide" ng-show="showClear()"><a href="" ng-click="doClear()">CLEAR</a></span>
+</div>
+<div class="row">
+<!-- ngRepeat: (key, value) in searchFrm --><!-- ngIf: showAsPill(key) --><!-- end ngRepeat: (key, value) in searchFrm --><!-- ngIf: showAsPill(key) --><!-- end ngRepeat: (key, value) in searchFrm -->
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div class="adp-accordion personal-accordion" ng-controller="searchFilterAccordionCtrl">
+<uib-accordion close-others="false"><div class="panel-group" ng-transclude="" role="tablist">
+<!-- ngIf: showSearchRadius -->
+<!-- ngRepeat: category in categories --><!-- ngIf: category.items.length>0 --><div class="panel panel-open panel-default" is-open="groups[category.name].open" ng-class="panelClass || 'panel-default'" ng-if="category.items.length&gt;0" ng-init="ctg = category; categoryLabels[category.name] = category.label; groups[category.name].open = true;" ng-repeat="category in categories" style="">
+<div aria-selected="true" class="panel-heading" id="accordiongroup-220-4996-tab" ng-keypress="toggleOpen($event)" role="tab">
+<h4 class="panel-title">
+<a aria-controls="accordiongroup-220-4996-panel" aria-expanded="true" class="accordion-toggle" data-toggle="collapse" href="" ng-click="toggleOpen()" role="button" tabindex="0" uib-accordion-transclude="heading"><span ng-class="{'text-muted': isDisabled}" uib-accordion-header=""><span>
+                            State </span><i class="pull-right glyphicon glyphicon-chevron-up" ng-class="{'glyphicon-chevron-up': groups[category.name].open, 'glyphicon-chevron-down': !groups[category.name].open}"></i>
+</span></a>
+</h4>
+</div>
+<div aria-expanded="true" aria-hidden="false" aria-labelledby="accordiongroup-220-4996-tab" class="panel-collapse in collapse" id="accordiongroup-220-4996-panel" role="tabpanel" style="height: auto;" uib-collapse="!isOpen">
+<div class="panel-body" ng-transclude="">
+<uib-accordion-heading></uib-accordion-heading>
+<div class="panel-content">
+<fieldset>
+<table ng-init="items = getOptions(category)">
+<tbody><tr>
+<td class="filtersclear ng-hide" ng-show="showClearCatagory(category.name)" style="">
+<span>
+<a href="" ng-click="doClearCatagory(category.name)">Clear</a>
+</span>
+</td>
+</tr>
+<!-- ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5" style="">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="state_SU5ELVRO" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'IND-TN'" type="checkbox"/>
+<label for="state_SU5ELVRO">IND-TN (9)</label></td>
+</tr><!-- end ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="state_TkM=" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'NC'" type="checkbox"/>
+<label for="state_TkM=">NC (2)</label></td>
+</tr><!-- end ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="state_T0g=" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'OH'" type="checkbox"/>
+<label for="state_T0g=">OH (17)</label></td>
+</tr><!-- end ngRepeat: item in items -->
+<tr class="ng-hide" ng-show="items.length&gt;5" style="">
+<td>
+<a cat="getCategory(ctg)" category="category" class="filtersseemore" ctg="ctg" href="" label="category.label" options="items" show-more-options=""><span>SEE MORE</span></a>
+</td>
+</tr>
+</tbody></table>
+</fieldset>
+</div>
+</div>
+</div>
+</div><!-- end ngIf: category.items.length>0 --><!-- end ngRepeat: category in categories --><!-- ngIf: category.items.length>0 --><div class="panel panel-open panel-default" is-open="groups[category.name].open" ng-class="panelClass || 'panel-default'" ng-if="category.items.length&gt;0" ng-init="ctg = category; categoryLabels[category.name] = category.label; groups[category.name].open = true;" ng-repeat="category in categories">
+<div aria-selected="true" class="panel-heading" id="accordiongroup-223-895-tab" ng-keypress="toggleOpen($event)" role="tab">
+<h4 class="panel-title">
+<a aria-controls="accordiongroup-223-895-panel" aria-expanded="true" class="accordion-toggle" data-toggle="collapse" href="" ng-click="toggleOpen()" role="button" tabindex="0" uib-accordion-transclude="heading"><span ng-class="{'text-muted': isDisabled}" uib-accordion-header=""><span>
+                            City </span><i class="pull-right glyphicon glyphicon-chevron-up" ng-class="{'glyphicon-chevron-up': groups[category.name].open, 'glyphicon-chevron-down': !groups[category.name].open}"></i>
+</span></a>
+</h4>
+</div>
+<div aria-expanded="true" aria-hidden="false" aria-labelledby="accordiongroup-223-895-tab" class="panel-collapse in collapse" id="accordiongroup-223-895-panel" role="tabpanel" style="height: auto;" uib-collapse="!isOpen">
+<div class="panel-body" ng-transclude="">
+<uib-accordion-heading></uib-accordion-heading>
+<div class="panel-content">
+<fieldset>
+<table ng-init="items = getOptions(category)">
+<tbody><tr>
+<td class="filtersclear ng-hide" ng-show="showClearCatagory(category.name)" style="">
+<span>
+<a href="" ng-click="doClearCatagory(category.name)">Clear</a>
+</span>
+</td>
+</tr>
+<!-- ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5" style="">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="city_TWFuYXBha2thbSwgQ2hlbm5haQ==" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'Manapakkam, Chennai'" type="checkbox"/>
+<label for="city_TWFuYXBha2thbSwgQ2hlbm5haQ==">Manapakkam, Chennai (9)</label></td>
+</tr><!-- end ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="city_Tm9ydGggQ2Fyb2xpbmE=" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'North Carolina'" type="checkbox"/>
+<label for="city_Tm9ydGggQ2Fyb2xpbmE=">North Carolina (2)</label></td>
+</tr><!-- end ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="city_Tm9yd29vZA==" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'Norwood'" type="checkbox"/>
+<label for="city_Tm9yd29vZA==">Norwood (1)</label></td>
+</tr><!-- end ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="city_T2hpbw==" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'Ohio'" type="checkbox"/>
+<label for="city_T2hpbw==">Ohio (15)</label></td>
+</tr><!-- end ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="city_U3ByaW5nZGFsZQ==" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'Springdale'" type="checkbox"/>
+<label for="city_U3ByaW5nZGFsZQ==">Springdale (1)</label></td>
+</tr><!-- end ngRepeat: item in items -->
+<tr class="ng-hide" ng-show="items.length&gt;5" style="">
+<td>
+<a cat="getCategory(ctg)" category="category" class="filtersseemore" ctg="ctg" href="" label="category.label" options="items" show-more-options=""><span>SEE MORE</span></a>
+</td>
+</tr>
+</tbody></table>
+</fieldset>
+</div>
+</div>
+</div>
+</div><!-- end ngIf: category.items.length>0 --><!-- end ngRepeat: category in categories --><!-- ngIf: category.items.length>0 --><div class="panel panel-open panel-default" is-open="groups[category.name].open" ng-class="panelClass || 'panel-default'" ng-if="category.items.length&gt;0" ng-init="ctg = category; categoryLabels[category.name] = category.label; groups[category.name].open = true;" ng-repeat="category in categories">
+<div aria-selected="true" class="panel-heading" id="accordiongroup-226-6298-tab" ng-keypress="toggleOpen($event)" role="tab">
+<h4 class="panel-title">
+<a aria-controls="accordiongroup-226-6298-panel" aria-expanded="true" class="accordion-toggle" data-toggle="collapse" href="" ng-click="toggleOpen()" role="button" tabindex="0" uib-accordion-transclude="heading"><span ng-class="{'text-muted': isDisabled}" uib-accordion-header=""><span>
+                            Area of Interest </span><i class="pull-right glyphicon glyphicon-chevron-up" ng-class="{'glyphicon-chevron-up': groups[category.name].open, 'glyphicon-chevron-down': !groups[category.name].open}"></i>
+</span></a>
+</h4>
+</div>
+<div aria-expanded="true" aria-hidden="false" aria-labelledby="accordiongroup-226-6298-tab" class="panel-collapse in collapse" id="accordiongroup-226-6298-panel" role="tabpanel" style="height: auto;" uib-collapse="!isOpen">
+<div class="panel-body" ng-transclude="">
+<uib-accordion-heading></uib-accordion-heading>
+<div class="panel-content">
+<fieldset>
+<table ng-init="items = getOptions(category)">
+<tbody><tr>
+<td class="filtersclear ng-hide" ng-show="showClearCatagory(category.name)" style="">
+<span>
+<a href="" ng-click="doClearCatagory(category.name)">Clear</a>
+</span>
+</td>
+</tr>
+<!-- ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5" style="">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="grp_QnVzaW5lc3MgYW5kIENvbnN1bWVyIFNhbGVz" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'Business and Consumer Sales'" type="checkbox"/>
+<label for="grp_QnVzaW5lc3MgYW5kIENvbnN1bWVyIFNhbGVz">Business and Consumer Sales (1)</label></td>
+</tr><!-- end ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="grp_Q3VzdG9tZXIgU2VydmljZQ==" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'Customer Service'" type="checkbox"/>
+<label for="grp_Q3VzdG9tZXIgU2VydmljZQ==">Customer Service (1)</label></td>
+</tr><!-- end ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="grp_RmllbGQgT3BlcmF0aW9ucw==" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'Field Operations'" type="checkbox"/>
+<label for="grp_RmllbGQgT3BlcmF0aW9ucw==">Field Operations (1)</label></td>
+</tr><!-- end ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="grp_RmluYW5jZSBhbmQgQWNjb3VudGluZw==" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'Finance and Accounting'" type="checkbox"/>
+<label for="grp_RmluYW5jZSBhbmQgQWNjb3VudGluZw==">Finance and Accounting (6)</label></td>
+</tr><!-- end ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="grp_SVQ=" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'IT'" type="checkbox"/>
+<label for="grp_SVQ=">IT (9)</label></td>
+</tr><!-- end ngRepeat: item in items --><tr class="ng-hide" ng-repeat="item in items" ng-show="$index&lt;5" style="">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="grp_T3BlcmF0aW9ucw==" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'Operations'" type="checkbox"/>
+<label for="grp_T3BlcmF0aW9ucw==">Operations (1)</label></td>
+</tr><!-- end ngRepeat: item in items --><tr class="ng-hide" ng-repeat="item in items" ng-show="$index&lt;5">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="grp_T3RoZXI=" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'Other'" type="checkbox"/>
+<label for="grp_T3RoZXI=">Other (9)</label></td>
+</tr><!-- end ngRepeat: item in items -->
+<tr ng-show="items.length&gt;5">
+<td>
+<a cat="getCategory(ctg)" category="category" class="filtersseemore" ctg="ctg" href="" label="category.label" options="items" show-more-options=""><span>SEE MORE</span></a>
+</td>
+</tr>
+</tbody></table>
+</fieldset>
+</div>
+</div>
+</div>
+</div><!-- end ngIf: category.items.length>0 --><!-- end ngRepeat: category in categories --><!-- ngIf: category.items.length>0 --><div class="panel panel-open panel-default" is-open="groups[category.name].open" ng-class="panelClass || 'panel-default'" ng-if="category.items.length&gt;0" ng-init="ctg = category; categoryLabels[category.name] = category.label; groups[category.name].open = true;" ng-repeat="category in categories">
+<div aria-selected="true" class="panel-heading" id="accordiongroup-229-2437-tab" ng-keypress="toggleOpen($event)" role="tab">
+<h4 class="panel-title">
+<a aria-controls="accordiongroup-229-2437-panel" aria-expanded="true" class="accordion-toggle" data-toggle="collapse" href="" ng-click="toggleOpen()" role="button" tabindex="0" uib-accordion-transclude="heading"><span ng-class="{'text-muted': isDisabled}" uib-accordion-header=""><span>
+                            Position Type </span><i class="pull-right glyphicon glyphicon-chevron-up" ng-class="{'glyphicon-chevron-up': groups[category.name].open, 'glyphicon-chevron-down': !groups[category.name].open}"></i>
+</span></a>
+</h4>
+</div>
+<div aria-expanded="true" aria-hidden="false" aria-labelledby="accordiongroup-229-2437-tab" class="panel-collapse in collapse" id="accordiongroup-229-2437-panel" role="tabpanel" style="height: auto;" uib-collapse="!isOpen">
+<div class="panel-body" ng-transclude="">
+<uib-accordion-heading></uib-accordion-heading>
+<div class="panel-content">
+<fieldset>
+<table ng-init="items = getOptions(category)">
+<tbody><tr>
+<td class="filtersclear ng-hide" ng-show="showClearCatagory(category.name)" style="">
+<span>
+<a href="" ng-click="doClearCatagory(category.name)">Clear</a>
+</span>
+</td>
+</tr>
+<!-- ngRepeat: item in items --><tr class="" ng-repeat="item in items" ng-show="$index&lt;5" style="">
+<td ng-init="id = base64(item.id)">
+<input class="filter-checkbox ng-pristine ng-untouched ng-valid ng-empty" id="typeOfFulltime_RnVsbC10aW1l" ng-change="doSearch(false, getCategory(ctg), this)" ng-click=" dummyplaceholder() | trackEvent: 'Filter - Search Page':'Selected' " ng-false-value="0" ng-init="modelName = ctg.name+ '_' + id; searchDescriptionFrm[modelName] = item.label" ng-model="searchFrm[modelName]" ng-true-value="'Full-time'" type="checkbox"/>
+<label for="typeOfFulltime_RnVsbC10aW1l">Full-time (28)</label></td>
+</tr><!-- end ngRepeat: item in items -->
+<tr class="ng-hide" ng-show="items.length&gt;5" style="">
+<td>
+<a cat="getCategory(ctg)" category="category" class="filtersseemore" ctg="ctg" href="" label="category.label" options="items" show-more-options=""><span>SEE MORE</span></a>
+</td>
+</tr>
+</tbody></table>
+</fieldset>
+</div>
+</div>
+</div>
+</div><!-- end ngIf: category.items.length>0 --><!-- end ngRepeat: category in categories -->
+</div></uib-accordion>
+</div>
+</div>
+</div>
+</div></div>
+<!-- uiView: searchmain --><div class="col-sm-9 nopadding" ui-view="searchmain"><div class="col-height">
+<div class="searchmain">
+<div class="row">
+<div class="col-sm-12 searchresult">
+<div>
+<div class="resulthead">
+<div class="col-sm-4 nopadding">
+<div class="pageNum" do-search="doSearch(true)" page="searchFrm.page" pages="pages">
+<button class="pagenav" ng-click="doPreviousPage()" type="button">
+<span class="backgroundwhite"></span>
+<i class="fa fa-chevron-circle-left fa-2x backgroundcolor"></i>
+</button>
+<span class="pagenavtext"> </span>
+<div class="page">
+<input class="fieldset-input ng-pristine ng-untouched ng-valid ng-not-empty" id="page_" ng-blur="doPageSearch()" ng-keyup="$event.keyCode == 13 ? doPageSearch() : null" ng-model="page" style="" type="text" value="1"/>
+</div>
+<span class="pagenavtext"> of 3</span>
+<button class="pagenav" ng-click="doNextPage()" type="button">
+<span class="backgroundwhite"></span>
+<i class="fa fa-chevron-circle-right fa-2x backgroundcolor"></i>
+</button>
+</div>
+</div>
+<div class="col-sm-1 pull-right"> </div>
+<div class="col-sm-3 pull-right">
+<div data-ng-controller="sortDropdownsController">
+<div class="btn-group dropdown adp-dropdown sortbtn" is-open="status.isopen" keyboard-nav="" uib-dropdown="">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle" data-ng-disabled="disabled" ng-keydown="arrowKeyOpenDropdown($event)" type="button" uib-dropdown-toggle="">SORT BY<span class="caret"></span></button>
+<ul class="dropdown-menu" role="menu">
+<!-- ngRepeat: item in items --><li data-ng-repeat="item in items">
+<a data-ng-click="setMaster(item)">Relevance</a>
+</li><!-- end ngRepeat: item in items --><li data-ng-repeat="item in items">
+<a data-ng-click="setMaster(item)">Posted Date</a>
+</li><!-- end ngRepeat: item in items -->
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- ngIf: !resultsLoaded -->
+<!-- ngIf: resultsLoaded --><div class="searchresultinner" ng-if="resultsLoaded" style="">
+<div class="col-sm-12 nopadding ng-hide" ng-show="jobs.length==0">
+<div class="col-sm-12 resultrow">
+<div class="col-sm-12 jobtitlediv">We're sorry but we have no job openings at this time that match your search criteria. Please try another search.</div>
+</div>
+</div>
+<div class="col-sm-12 nopadding ng-hide" ng-show="searchFailure">
+<div class="col-sm-12 resultrow">
+<div class="col-sm-12 jobtitlediv">Oops! Something went wrong.  Search has encountered a problem. Try searching again</div>
+<div class="col-sm-12 jobtitlediv"></div>
+</div>
+</div>
+<div class="col-sm-12 nopadding" ng-show="jobs.length&gt;0">
+<!-- ngRepeat: job in jobs --><div class="slidedown" ng-repeat="job in jobs">
+<div class="col-sm-12 nopadding resultrow" fields="fields" job="job" ng-mouseenter="toggleJobActions(true)" ng-mouseleave="toggleJobActions(false)">
+<div class="col-sm-12 jobtitlediv">
+<!-- ngIf: job.applied -->
+<!-- ngIf: job.appInProgressStatus -->
+<span><a class="jobtitle job-title-link" href="" ng-click="openJobDetials(job,fields) | trackEvent:'Job Title - Search Page':'Clicked' ">Engineer- Specialized III</a></span>
+<span class="jobnum">BRW5021</span>
+<span class="ng-hide" job="job" job-actions="" ng-show="showActions"><div class="jobactions">
+<span class="jobactionsgroup">
+<span class="jobactionicons">
+<i class="fa fa-star-o" data-toggle="tooltip" job="job" job-book-mark="" ng-click="bookmark(job.id)" title="Bookmark This"></i>
+<span class="" data-toggle="tooltip" job="job" ng-show="!hideERPRAF &amp;&amp; job.isRAFEnabled" refer-a-friend="" title="Refer a Friend"><span class="referafriend rfaArrowNSW rafArrowD" data-ng-class="{'rfaArrowSW': showSM, 'rfaArrowNSW': !showSM, 'rafArrowD': !referAFriendFrm_showSuccessMsg}" ng-mouseleave="$event.stopPropagation();">
+<!-- ngIf: popoverIsOpen -->
+<a popover-is-open="popoverIsOpen" popover-placement="bottom-right-auto" uib-popover-template="dynamicPopover.templateUrl" uibmodal=""><i class="fa fa-share-square-o"></i></a>
+</span></span>
+<span class="showSocialMedia ng-hide" data-toggle="tooltip" job="job" ng-show="showSocialMedia" share-a-req="" title="Share"><span class="shareareq">
+<a popover-is-open="popoverIsOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl"><i class="fa fa-share-alt"></i></a>
+</span></span>
+</span>
+</span>
+</div></span>
+</div>
+<div class="jobrowdescription overflowhide">
+<div class="col-sm-12 job-info" ng-click="showMore()">Title:                            Engineer- Specialized III 
+
+  
+
+Worksite Location:   This position reports to the Cincinnati, Ohio office but requires that the employee be willing to relocate to assigned worksites at various unanticipated locations throu</div>
+<div class="col-sm-12 action">
+<div class="col-sm-12 text-center">
+<div class="btn-group flex-container ng-hide" ng-show="showactionbuttons">
+<div class="col-sm-6 flex-buttons">
+<button class="btn btn-secondary" ng-click=" openJobDetials(job,fields) | trackEvent:'Job Details - Search Page':'Button Clicked' " type="button"><span class="ng-scope">JOB DETAILS</span></button>
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: job.type == 'evergreen' -->
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) --><button adprm-sign-in="{urlBindings:{r:job.id}}" adprm-sign-in-request-args="{_r:job.id}" class="btn btn-primary" ng-click=" dummyplaceholder() | trackEvent:'Apply - Search Page':'Button Clicked' " ng-if="(job.type != 'evergreen' &amp;&amp; !job.submitted &amp;&amp; job.canApply)" type="button">
+<span>Apply</span>
+</button><!-- end ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) -->
+<!-- ngIf: (job.type != 'evergreen' && job.submitted) -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-12 resultrowfooter resultsrow-flex">
+<ul>
+<!-- ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) --><li class="col-sm-4 col-resize3" ng-if="showLocationSearch() &amp;&amp; job.type != 'evergreen' &amp;&amp; (job.city.length || job.state.length)">
+<span googlemaps="" jcity="job.city" jladds="job.locationaddress" jstate="job.state" ng-click=" dummyplaceholder() | trackEvent:'Google Maps - Search Page':'Clicked' " template="googlemaps.html"><span class="googlemap">
+<span class="resultLocationLink" popover-is-open="isMapOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl" uibmodal="">
+<i aria-hidden="true" class="fa fa-map-marker"></i>
+<span class="resultfootervalue">Springdale<!-- ngIf: (jcity.length && jstate.length) --><span ng-if="(jcity.length &amp;&amp; jstate.length)">, </span><!-- end ngIf: (jcity.length && jstate.length) -->OH</span>
+</span>
+</span></span>
+</li><!-- end ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) -->
+<!-- ngIf: job.type == 'evergreen' -->
+<!-- ngRepeat: field in fields --><!-- ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">IT</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Full-time</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields -->
+</ul>
+</div>
+</div></div><!-- end ngRepeat: job in jobs --><div class="slidedown" ng-repeat="job in jobs">
+<div class="col-sm-12 nopadding resultrow" fields="fields" job="job" ng-mouseenter="toggleJobActions(true)" ng-mouseleave="toggleJobActions(false)">
+<div class="col-sm-12 jobtitlediv">
+<!-- ngIf: job.applied -->
+<!-- ngIf: job.appInProgressStatus -->
+<span><a class="jobtitle job-title-link" href="" ng-click="openJobDetials(job,fields) | trackEvent:'Job Title - Search Page':'Clicked' ">Accounts Payable Specialist III</a></span>
+<span class="jobnum">BRW4995</span>
+<span class="ng-hide" job="job" job-actions="" ng-show="showActions"><div class="jobactions">
+<span class="jobactionsgroup">
+<span class="jobactionicons">
+<i class="fa fa-star-o" data-toggle="tooltip" job="job" job-book-mark="" ng-click="bookmark(job.id)" title="Bookmark This"></i>
+<span class="" data-toggle="tooltip" job="job" ng-show="!hideERPRAF &amp;&amp; job.isRAFEnabled" refer-a-friend="" title="Refer a Friend"><span class="referafriend rfaArrowNSW rafArrowD" data-ng-class="{'rfaArrowSW': showSM, 'rfaArrowNSW': !showSM, 'rafArrowD': !referAFriendFrm_showSuccessMsg}" ng-mouseleave="$event.stopPropagation();">
+<!-- ngIf: popoverIsOpen -->
+<a popover-is-open="popoverIsOpen" popover-placement="bottom-right-auto" uib-popover-template="dynamicPopover.templateUrl" uibmodal=""><i class="fa fa-share-square-o"></i></a>
+</span></span>
+<span class="showSocialMedia ng-hide" data-toggle="tooltip" job="job" ng-show="showSocialMedia" share-a-req="" title="Share"><span class="shareareq">
+<a popover-is-open="popoverIsOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl"><i class="fa fa-share-alt"></i></a>
+</span></span>
+</span>
+</span>
+</div></span>
+</div>
+<div class="jobrowdescription overflowhide">
+<div class="col-sm-12 job-info" ng-click="showMore()">Job Purpose :   
+
+This position is responsible for processing invoices, completing complex statement reconciliations, performing various overall dept tasks, as well as assisting Accounts Payable manager. 
+
+Essential Functions: Complete Call back banking va</div>
+<div class="col-sm-12 action">
+<div class="col-sm-12 text-center">
+<div class="btn-group flex-container ng-hide" ng-show="showactionbuttons">
+<div class="col-sm-6 flex-buttons">
+<button class="btn btn-secondary" ng-click=" openJobDetials(job,fields) | trackEvent:'Job Details - Search Page':'Button Clicked' " type="button"><span class="ng-scope">JOB DETAILS</span></button>
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: job.type == 'evergreen' -->
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) --><button adprm-sign-in="{urlBindings:{r:job.id}}" adprm-sign-in-request-args="{_r:job.id}" class="btn btn-primary" ng-click=" dummyplaceholder() | trackEvent:'Apply - Search Page':'Button Clicked' " ng-if="(job.type != 'evergreen' &amp;&amp; !job.submitted &amp;&amp; job.canApply)" type="button">
+<span>Apply</span>
+</button><!-- end ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) -->
+<!-- ngIf: (job.type != 'evergreen' && job.submitted) -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-12 resultrowfooter resultsrow-flex">
+<ul>
+<!-- ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) --><li class="col-sm-4 col-resize3" ng-if="showLocationSearch() &amp;&amp; job.type != 'evergreen' &amp;&amp; (job.city.length || job.state.length)">
+<span googlemaps="" jcity="job.city" jladds="job.locationaddress" jstate="job.state" ng-click=" dummyplaceholder() | trackEvent:'Google Maps - Search Page':'Clicked' " template="googlemaps.html"><span class="googlemap">
+<span class="resultLocationLink" popover-is-open="isMapOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl" uibmodal="">
+<i aria-hidden="true" class="fa fa-map-marker"></i>
+<span class="resultfootervalue">Ohio<!-- ngIf: (jcity.length && jstate.length) --><span ng-if="(jcity.length &amp;&amp; jstate.length)">, </span><!-- end ngIf: (jcity.length && jstate.length) -->OH</span>
+</span>
+</span></span>
+</li><!-- end ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) -->
+<!-- ngIf: job.type == 'evergreen' -->
+<!-- ngRepeat: field in fields --><!-- ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Finance and Accounting</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Full-time</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields -->
+</ul>
+</div>
+</div></div><!-- end ngRepeat: job in jobs --><div class="slidedown" ng-repeat="job in jobs">
+<div class="col-sm-12 nopadding resultrow" fields="fields" job="job" ng-mouseenter="toggleJobActions(true)" ng-mouseleave="toggleJobActions(false)">
+<div class="col-sm-12 jobtitlediv">
+<!-- ngIf: job.applied -->
+<!-- ngIf: job.appInProgressStatus -->
+<span><a class="jobtitle job-title-link" href="" ng-click="openJobDetials(job,fields) | trackEvent:'Job Title - Search Page':'Clicked' ">Technical Solutions Consultant</a></span>
+<span class="jobnum">BRW4994</span>
+<span class="ng-hide" job="job" job-actions="" ng-show="showActions"><div class="jobactions">
+<span class="jobactionsgroup">
+<span class="jobactionicons">
+<i class="fa fa-star-o" data-toggle="tooltip" job="job" job-book-mark="" ng-click="bookmark(job.id)" title="Bookmark This"></i>
+<span class="" data-toggle="tooltip" job="job" ng-show="!hideERPRAF &amp;&amp; job.isRAFEnabled" refer-a-friend="" title="Refer a Friend"><span class="referafriend rfaArrowNSW rafArrowD" data-ng-class="{'rfaArrowSW': showSM, 'rfaArrowNSW': !showSM, 'rafArrowD': !referAFriendFrm_showSuccessMsg}" ng-mouseleave="$event.stopPropagation();">
+<!-- ngIf: popoverIsOpen -->
+<a popover-is-open="popoverIsOpen" popover-placement="bottom-right-auto" uib-popover-template="dynamicPopover.templateUrl" uibmodal=""><i class="fa fa-share-square-o"></i></a>
+</span></span>
+<span class="showSocialMedia ng-hide" data-toggle="tooltip" job="job" ng-show="showSocialMedia" share-a-req="" title="Share"><span class="shareareq">
+<a popover-is-open="popoverIsOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl"><i class="fa fa-share-alt"></i></a>
+</span></span>
+</span>
+</span>
+</div></span>
+</div>
+<div class="jobrowdescription overflowhide">
+<div class="col-sm-12 job-info" ng-click="showMore()">Job Purpose : 
+
+We're seeking a Technical Solutions Consultant to extend our global reach through expert discovery and exploration of new business opportunities within our existing base of strategic customers. Our ideal candidate will be trusted to dive ri</div>
+<div class="col-sm-12 action">
+<div class="col-sm-12 text-center">
+<div class="btn-group flex-container ng-hide" ng-show="showactionbuttons">
+<div class="col-sm-6 flex-buttons">
+<button class="btn btn-secondary" ng-click=" openJobDetials(job,fields) | trackEvent:'Job Details - Search Page':'Button Clicked' " type="button"><span class="ng-scope">JOB DETAILS</span></button>
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: job.type == 'evergreen' -->
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) --><button adprm-sign-in="{urlBindings:{r:job.id}}" adprm-sign-in-request-args="{_r:job.id}" class="btn btn-primary" ng-click=" dummyplaceholder() | trackEvent:'Apply - Search Page':'Button Clicked' " ng-if="(job.type != 'evergreen' &amp;&amp; !job.submitted &amp;&amp; job.canApply)" type="button">
+<span>Apply</span>
+</button><!-- end ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) -->
+<!-- ngIf: (job.type != 'evergreen' && job.submitted) -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-12 resultrowfooter resultsrow-flex">
+<ul>
+<!-- ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) --><li class="col-sm-4 col-resize3" ng-if="showLocationSearch() &amp;&amp; job.type != 'evergreen' &amp;&amp; (job.city.length || job.state.length)">
+<span googlemaps="" jcity="job.city" jladds="job.locationaddress" jstate="job.state" ng-click=" dummyplaceholder() | trackEvent:'Google Maps - Search Page':'Clicked' " template="googlemaps.html"><span class="googlemap">
+<span class="resultLocationLink" popover-is-open="isMapOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl" uibmodal="">
+<i aria-hidden="true" class="fa fa-map-marker"></i>
+<span class="resultfootervalue">Ohio<!-- ngIf: (jcity.length && jstate.length) --><span ng-if="(jcity.length &amp;&amp; jstate.length)">, </span><!-- end ngIf: (jcity.length && jstate.length) -->OH</span>
+</span>
+</span></span>
+</li><!-- end ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) -->
+<!-- ngIf: job.type == 'evergreen' -->
+<!-- ngRepeat: field in fields --><!-- ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Business and Consumer Sales</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Full-time</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields -->
+</ul>
+</div>
+</div></div><!-- end ngRepeat: job in jobs --><div class="slidedown" ng-repeat="job in jobs">
+<div class="col-sm-12 nopadding resultrow" fields="fields" job="job" ng-mouseenter="toggleJobActions(true)" ng-mouseleave="toggleJobActions(false)">
+<div class="col-sm-12 jobtitlediv">
+<!-- ngIf: job.applied -->
+<!-- ngIf: job.appInProgressStatus -->
+<span><a class="jobtitle job-title-link" href="" ng-click="openJobDetials(job,fields) | trackEvent:'Job Title - Search Page':'Clicked' ">Tax Director</a></span>
+<span class="jobnum">BRW4936</span>
+<span class="ng-hide" job="job" job-actions="" ng-show="showActions"><div class="jobactions">
+<span class="jobactionsgroup">
+<span class="jobactionicons">
+<i class="fa fa-star-o" data-toggle="tooltip" job="job" job-book-mark="" ng-click="bookmark(job.id)" title="Bookmark This"></i>
+<span class="" data-toggle="tooltip" job="job" ng-show="!hideERPRAF &amp;&amp; job.isRAFEnabled" refer-a-friend="" title="Refer a Friend"><span class="referafriend rfaArrowNSW rafArrowD" data-ng-class="{'rfaArrowSW': showSM, 'rfaArrowNSW': !showSM, 'rafArrowD': !referAFriendFrm_showSuccessMsg}" ng-mouseleave="$event.stopPropagation();">
+<!-- ngIf: popoverIsOpen -->
+<a popover-is-open="popoverIsOpen" popover-placement="bottom-right-auto" uib-popover-template="dynamicPopover.templateUrl" uibmodal=""><i class="fa fa-share-square-o"></i></a>
+</span></span>
+<span class="showSocialMedia ng-hide" data-toggle="tooltip" job="job" ng-show="showSocialMedia" share-a-req="" title="Share"><span class="shareareq">
+<a popover-is-open="popoverIsOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl"><i class="fa fa-share-alt"></i></a>
+</span></span>
+</span>
+</span>
+</div></span>
+</div>
+<div class="jobrowdescription overflowhide">
+<div class="col-sm-12 job-info" ng-click="showMore()">Job Purpose :   
+
+The Tax Director will report to the CFO and be responsible for all tax matters for the organization. The Tax Director will set and execute the tax strategy and lead a team of six. Also, the Tax Director will work with external advisors to</div>
+<div class="col-sm-12 action">
+<div class="col-sm-12 text-center">
+<div class="btn-group flex-container ng-hide" ng-show="showactionbuttons">
+<div class="col-sm-6 flex-buttons">
+<button class="btn btn-secondary" ng-click=" openJobDetials(job,fields) | trackEvent:'Job Details - Search Page':'Button Clicked' " type="button"><span class="ng-scope">JOB DETAILS</span></button>
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: job.type == 'evergreen' -->
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) --><button adprm-sign-in="{urlBindings:{r:job.id}}" adprm-sign-in-request-args="{_r:job.id}" class="btn btn-primary" ng-click=" dummyplaceholder() | trackEvent:'Apply - Search Page':'Button Clicked' " ng-if="(job.type != 'evergreen' &amp;&amp; !job.submitted &amp;&amp; job.canApply)" type="button">
+<span>Apply</span>
+</button><!-- end ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) -->
+<!-- ngIf: (job.type != 'evergreen' && job.submitted) -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-12 resultrowfooter resultsrow-flex">
+<ul>
+<!-- ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) --><li class="col-sm-4 col-resize3" ng-if="showLocationSearch() &amp;&amp; job.type != 'evergreen' &amp;&amp; (job.city.length || job.state.length)">
+<span googlemaps="" jcity="job.city" jladds="job.locationaddress" jstate="job.state" ng-click=" dummyplaceholder() | trackEvent:'Google Maps - Search Page':'Clicked' " template="googlemaps.html"><span class="googlemap">
+<span class="resultLocationLink" popover-is-open="isMapOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl" uibmodal="">
+<i aria-hidden="true" class="fa fa-map-marker"></i>
+<span class="resultfootervalue">Ohio<!-- ngIf: (jcity.length && jstate.length) --><span ng-if="(jcity.length &amp;&amp; jstate.length)">, </span><!-- end ngIf: (jcity.length && jstate.length) -->OH</span>
+</span>
+</span></span>
+</li><!-- end ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) -->
+<!-- ngIf: job.type == 'evergreen' -->
+<!-- ngRepeat: field in fields --><!-- ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Finance and Accounting</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Full-time</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields -->
+</ul>
+</div>
+</div></div><!-- end ngRepeat: job in jobs --><div class="slidedown" ng-repeat="job in jobs">
+<div class="col-sm-12 nopadding resultrow" fields="fields" job="job" ng-mouseenter="toggleJobActions(true)" ng-mouseleave="toggleJobActions(false)">
+<div class="col-sm-12 jobtitlediv">
+<!-- ngIf: job.applied -->
+<!-- ngIf: job.appInProgressStatus -->
+<span><a class="jobtitle job-title-link" href="" ng-click="openJobDetials(job,fields) | trackEvent:'Job Title - Search Page':'Clicked' ">Senior Director of Cash Management</a></span>
+<span class="jobnum">BRW4934</span>
+<span class="ng-hide" job="job" job-actions="" ng-show="showActions"><div class="jobactions">
+<span class="jobactionsgroup">
+<span class="jobactionicons">
+<i class="fa fa-star-o" data-toggle="tooltip" job="job" job-book-mark="" ng-click="bookmark(job.id)" title="Bookmark This"></i>
+<span class="" data-toggle="tooltip" job="job" ng-show="!hideERPRAF &amp;&amp; job.isRAFEnabled" refer-a-friend="" title="Refer a Friend"><span class="referafriend rfaArrowNSW rafArrowD" data-ng-class="{'rfaArrowSW': showSM, 'rfaArrowNSW': !showSM, 'rafArrowD': !referAFriendFrm_showSuccessMsg}" ng-mouseleave="$event.stopPropagation();">
+<!-- ngIf: popoverIsOpen -->
+<a popover-is-open="popoverIsOpen" popover-placement="bottom-right-auto" uib-popover-template="dynamicPopover.templateUrl" uibmodal=""><i class="fa fa-share-square-o"></i></a>
+</span></span>
+<span class="showSocialMedia ng-hide" data-toggle="tooltip" job="job" ng-show="showSocialMedia" share-a-req="" title="Share"><span class="shareareq">
+<a popover-is-open="popoverIsOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl"><i class="fa fa-share-alt"></i></a>
+</span></span>
+</span>
+</span>
+</div></span>
+</div>
+<div class="jobrowdescription overflowhide">
+<div class="col-sm-12 job-info" ng-click="showMore()">Job Purpose :   
+
+The Senior Director of Cash Management will report to the VP of Finance and  is responsible for overseeing the full cash management lifecycle, including billing, collections, accounts payable and treasury functions. This role involves man</div>
+<div class="col-sm-12 action">
+<div class="col-sm-12 text-center">
+<div class="btn-group flex-container ng-hide" ng-show="showactionbuttons">
+<div class="col-sm-6 flex-buttons">
+<button class="btn btn-secondary" ng-click=" openJobDetials(job,fields) | trackEvent:'Job Details - Search Page':'Button Clicked' " type="button"><span class="ng-scope">JOB DETAILS</span></button>
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: job.type == 'evergreen' -->
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) --><button adprm-sign-in="{urlBindings:{r:job.id}}" adprm-sign-in-request-args="{_r:job.id}" class="btn btn-primary" ng-click=" dummyplaceholder() | trackEvent:'Apply - Search Page':'Button Clicked' " ng-if="(job.type != 'evergreen' &amp;&amp; !job.submitted &amp;&amp; job.canApply)" type="button">
+<span>Apply</span>
+</button><!-- end ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) -->
+<!-- ngIf: (job.type != 'evergreen' && job.submitted) -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-12 resultrowfooter resultsrow-flex">
+<ul>
+<!-- ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) --><li class="col-sm-4 col-resize3" ng-if="showLocationSearch() &amp;&amp; job.type != 'evergreen' &amp;&amp; (job.city.length || job.state.length)">
+<span googlemaps="" jcity="job.city" jladds="job.locationaddress" jstate="job.state" ng-click=" dummyplaceholder() | trackEvent:'Google Maps - Search Page':'Clicked' " template="googlemaps.html"><span class="googlemap">
+<span class="resultLocationLink" popover-is-open="isMapOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl" uibmodal="">
+<i aria-hidden="true" class="fa fa-map-marker"></i>
+<span class="resultfootervalue">Ohio<!-- ngIf: (jcity.length && jstate.length) --><span ng-if="(jcity.length &amp;&amp; jstate.length)">, </span><!-- end ngIf: (jcity.length && jstate.length) -->OH</span>
+</span>
+</span></span>
+</li><!-- end ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) -->
+<!-- ngIf: job.type == 'evergreen' -->
+<!-- ngRepeat: field in fields --><!-- ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Finance and Accounting</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Full-time</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields -->
+</ul>
+</div>
+</div></div><!-- end ngRepeat: job in jobs --><div class="slidedown" ng-repeat="job in jobs">
+<div class="col-sm-12 nopadding resultrow" fields="fields" job="job" ng-mouseenter="toggleJobActions(true)" ng-mouseleave="toggleJobActions(false)">
+<div class="col-sm-12 jobtitlediv">
+<!-- ngIf: job.applied -->
+<!-- ngIf: job.appInProgressStatus -->
+<span><a class="jobtitle job-title-link" href="" ng-click="openJobDetials(job,fields) | trackEvent:'Job Title - Search Page':'Clicked' ">Global Payroll Director</a></span>
+<span class="jobnum">BRW4933</span>
+<span class="ng-hide" job="job" job-actions="" ng-show="showActions"><div class="jobactions">
+<span class="jobactionsgroup">
+<span class="jobactionicons">
+<i class="fa fa-star-o" data-toggle="tooltip" job="job" job-book-mark="" ng-click="bookmark(job.id)" title="Bookmark This"></i>
+<span class="" data-toggle="tooltip" job="job" ng-show="!hideERPRAF &amp;&amp; job.isRAFEnabled" refer-a-friend="" title="Refer a Friend"><span class="referafriend rfaArrowNSW rafArrowD" data-ng-class="{'rfaArrowSW': showSM, 'rfaArrowNSW': !showSM, 'rafArrowD': !referAFriendFrm_showSuccessMsg}" ng-mouseleave="$event.stopPropagation();">
+<!-- ngIf: popoverIsOpen -->
+<a popover-is-open="popoverIsOpen" popover-placement="bottom-right-auto" uib-popover-template="dynamicPopover.templateUrl" uibmodal=""><i class="fa fa-share-square-o"></i></a>
+</span></span>
+<span class="showSocialMedia ng-hide" data-toggle="tooltip" job="job" ng-show="showSocialMedia" share-a-req="" title="Share"><span class="shareareq">
+<a popover-is-open="popoverIsOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl"><i class="fa fa-share-alt"></i></a>
+</span></span>
+</span>
+</span>
+</div></span>
+</div>
+<div class="jobrowdescription overflowhide">
+<div class="col-sm-12 job-info" ng-click="showMore()">Job Purpose : 
+
+The Global Payroll Director is responsible for overseeing and coordinating all aspects of payroll processing and compliance for employees located in the US, Canada, and India. This role involves ensuring accurate and timely payroll processi</div>
+<div class="col-sm-12 action">
+<div class="col-sm-12 text-center">
+<div class="btn-group flex-container ng-hide" ng-show="showactionbuttons">
+<div class="col-sm-6 flex-buttons">
+<button class="btn btn-secondary" ng-click=" openJobDetials(job,fields) | trackEvent:'Job Details - Search Page':'Button Clicked' " type="button"><span class="ng-scope">JOB DETAILS</span></button>
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: job.type == 'evergreen' -->
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) --><button adprm-sign-in="{urlBindings:{r:job.id}}" adprm-sign-in-request-args="{_r:job.id}" class="btn btn-primary" ng-click=" dummyplaceholder() | trackEvent:'Apply - Search Page':'Button Clicked' " ng-if="(job.type != 'evergreen' &amp;&amp; !job.submitted &amp;&amp; job.canApply)" type="button">
+<span>Apply</span>
+</button><!-- end ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) -->
+<!-- ngIf: (job.type != 'evergreen' && job.submitted) -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-12 resultrowfooter resultsrow-flex">
+<ul>
+<!-- ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) --><li class="col-sm-4 col-resize3" ng-if="showLocationSearch() &amp;&amp; job.type != 'evergreen' &amp;&amp; (job.city.length || job.state.length)">
+<span googlemaps="" jcity="job.city" jladds="job.locationaddress" jstate="job.state" ng-click=" dummyplaceholder() | trackEvent:'Google Maps - Search Page':'Clicked' " template="googlemaps.html"><span class="googlemap">
+<span class="resultLocationLink" popover-is-open="isMapOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl" uibmodal="">
+<i aria-hidden="true" class="fa fa-map-marker"></i>
+<span class="resultfootervalue">Ohio<!-- ngIf: (jcity.length && jstate.length) --><span ng-if="(jcity.length &amp;&amp; jstate.length)">, </span><!-- end ngIf: (jcity.length && jstate.length) -->OH</span>
+</span>
+</span></span>
+</li><!-- end ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) -->
+<!-- ngIf: job.type == 'evergreen' -->
+<!-- ngRepeat: field in fields --><!-- ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Finance and Accounting</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Full-time</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields -->
+</ul>
+</div>
+</div></div><!-- end ngRepeat: job in jobs --><div class="slidedown" ng-repeat="job in jobs">
+<div class="col-sm-12 nopadding resultrow" fields="fields" job="job" ng-mouseenter="toggleJobActions(true)" ng-mouseleave="toggleJobActions(false)">
+<div class="col-sm-12 jobtitlediv">
+<!-- ngIf: job.applied -->
+<!-- ngIf: job.appInProgressStatus -->
+<span><a class="jobtitle job-title-link" href="" ng-click="openJobDetials(job,fields) | trackEvent:'Job Title - Search Page':'Clicked' ">Warehouse Coordinator</a></span>
+<span class="jobnum">BRW4932</span>
+<span class="ng-hide" job="job" job-actions="" ng-show="showActions"><div class="jobactions">
+<span class="jobactionsgroup">
+<span class="jobactionicons">
+<i class="fa fa-star-o" data-toggle="tooltip" job="job" job-book-mark="" ng-click="bookmark(job.id)" title="Bookmark This"></i>
+<span class="" data-toggle="tooltip" job="job" ng-show="!hideERPRAF &amp;&amp; job.isRAFEnabled" refer-a-friend="" title="Refer a Friend"><span class="referafriend rfaArrowNSW rafArrowD" data-ng-class="{'rfaArrowSW': showSM, 'rfaArrowNSW': !showSM, 'rafArrowD': !referAFriendFrm_showSuccessMsg}" ng-mouseleave="$event.stopPropagation();">
+<!-- ngIf: popoverIsOpen -->
+<a popover-is-open="popoverIsOpen" popover-placement="bottom-right-auto" uib-popover-template="dynamicPopover.templateUrl" uibmodal=""><i class="fa fa-share-square-o"></i></a>
+</span></span>
+<span class="showSocialMedia ng-hide" data-toggle="tooltip" job="job" ng-show="showSocialMedia" share-a-req="" title="Share"><span class="shareareq">
+<a popover-is-open="popoverIsOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl"><i class="fa fa-share-alt"></i></a>
+</span></span>
+</span>
+</span>
+</div></span>
+</div>
+<div class="jobrowdescription overflowhide">
+<div class="col-sm-12 job-info" ng-click="showMore()">Job Purpose 
+
+Coordinate and perform day to day functions of warehouse operations for both traditional resale and maintenance inventory. 
+
+Essential Functions Daily shipping and receiving of equipment, as well as parts returns into and out of the assigned </div>
+<div class="col-sm-12 action">
+<div class="col-sm-12 text-center">
+<div class="btn-group flex-container ng-hide" ng-show="showactionbuttons">
+<div class="col-sm-6 flex-buttons">
+<button class="btn btn-secondary" ng-click=" openJobDetials(job,fields) | trackEvent:'Job Details - Search Page':'Button Clicked' " type="button"><span class="ng-scope">JOB DETAILS</span></button>
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: job.type == 'evergreen' -->
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) --><button adprm-sign-in="{urlBindings:{r:job.id}}" adprm-sign-in-request-args="{_r:job.id}" class="btn btn-primary" ng-click=" dummyplaceholder() | trackEvent:'Apply - Search Page':'Button Clicked' " ng-if="(job.type != 'evergreen' &amp;&amp; !job.submitted &amp;&amp; job.canApply)" type="button">
+<span>Apply</span>
+</button><!-- end ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) -->
+<!-- ngIf: (job.type != 'evergreen' && job.submitted) -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-12 resultrowfooter resultsrow-flex">
+<ul>
+<!-- ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) --><li class="col-sm-4 col-resize3" ng-if="showLocationSearch() &amp;&amp; job.type != 'evergreen' &amp;&amp; (job.city.length || job.state.length)">
+<span googlemaps="" jcity="job.city" jladds="job.locationaddress" jstate="job.state" ng-click=" dummyplaceholder() | trackEvent:'Google Maps - Search Page':'Clicked' " template="googlemaps.html"><span class="googlemap">
+<span class="resultLocationLink" popover-is-open="isMapOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl" uibmodal="">
+<i aria-hidden="true" class="fa fa-map-marker"></i>
+<span class="resultfootervalue">Norwood<!-- ngIf: (jcity.length && jstate.length) --><span ng-if="(jcity.length &amp;&amp; jstate.length)">, </span><!-- end ngIf: (jcity.length && jstate.length) -->OH</span>
+</span>
+</span></span>
+</li><!-- end ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) -->
+<!-- ngIf: job.type == 'evergreen' -->
+<!-- ngRepeat: field in fields --><!-- ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Field Operations</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Full-time</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields -->
+</ul>
+</div>
+</div></div><!-- end ngRepeat: job in jobs --><div class="slidedown" ng-repeat="job in jobs">
+<div class="col-sm-12 nopadding resultrow" fields="fields" job="job" ng-mouseenter="toggleJobActions(true)" ng-mouseleave="toggleJobActions(false)">
+<div class="col-sm-12 jobtitlediv">
+<!-- ngIf: job.applied -->
+<!-- ngIf: job.appInProgressStatus -->
+<span><a class="jobtitle job-title-link" href="" ng-click="openJobDetials(job,fields) | trackEvent:'Job Title - Search Page':'Clicked' ">Credit &amp; Collections Analyst III</a></span>
+<span class="jobnum">BRW4915</span>
+<span class="ng-hide" job="job" job-actions="" ng-show="showActions"><div class="jobactions">
+<span class="jobactionsgroup">
+<span class="jobactionicons">
+<i class="fa fa-star-o" data-toggle="tooltip" job="job" job-book-mark="" ng-click="bookmark(job.id)" title="Bookmark This"></i>
+<span class="" data-toggle="tooltip" job="job" ng-show="!hideERPRAF &amp;&amp; job.isRAFEnabled" refer-a-friend="" title="Refer a Friend"><span class="referafriend rfaArrowNSW rafArrowD" data-ng-class="{'rfaArrowSW': showSM, 'rfaArrowNSW': !showSM, 'rafArrowD': !referAFriendFrm_showSuccessMsg}" ng-mouseleave="$event.stopPropagation();">
+<!-- ngIf: popoverIsOpen -->
+<a popover-is-open="popoverIsOpen" popover-placement="bottom-right-auto" uib-popover-template="dynamicPopover.templateUrl" uibmodal=""><i class="fa fa-share-square-o"></i></a>
+</span></span>
+<span class="showSocialMedia ng-hide" data-toggle="tooltip" job="job" ng-show="showSocialMedia" share-a-req="" title="Share"><span class="shareareq">
+<a popover-is-open="popoverIsOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl"><i class="fa fa-share-alt"></i></a>
+</span></span>
+</span>
+</span>
+</div></span>
+</div>
+<div class="jobrowdescription overflowhide">
+<div class="col-sm-12 job-info" ng-click="showMore()">Job Purpose :  
+
+The Credit and Collections Analyst III focuses on supporting the Credit - Collections team by being a key point of contact for handling complex issues. In addition, this is a backup for the manager while out of the office for day-to-day is</div>
+<div class="col-sm-12 action">
+<div class="col-sm-12 text-center">
+<div class="btn-group flex-container ng-hide" ng-show="showactionbuttons">
+<div class="col-sm-6 flex-buttons">
+<button class="btn btn-secondary" ng-click=" openJobDetials(job,fields) | trackEvent:'Job Details - Search Page':'Button Clicked' " type="button"><span class="ng-scope">JOB DETAILS</span></button>
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: job.type == 'evergreen' -->
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) --><button adprm-sign-in="{urlBindings:{r:job.id}}" adprm-sign-in-request-args="{_r:job.id}" class="btn btn-primary" ng-click=" dummyplaceholder() | trackEvent:'Apply - Search Page':'Button Clicked' " ng-if="(job.type != 'evergreen' &amp;&amp; !job.submitted &amp;&amp; job.canApply)" type="button">
+<span>Apply</span>
+</button><!-- end ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) -->
+<!-- ngIf: (job.type != 'evergreen' && job.submitted) -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-12 resultrowfooter resultsrow-flex">
+<ul>
+<!-- ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) --><li class="col-sm-4 col-resize3" ng-if="showLocationSearch() &amp;&amp; job.type != 'evergreen' &amp;&amp; (job.city.length || job.state.length)">
+<span googlemaps="" jcity="job.city" jladds="job.locationaddress" jstate="job.state" ng-click=" dummyplaceholder() | trackEvent:'Google Maps - Search Page':'Clicked' " template="googlemaps.html"><span class="googlemap">
+<span class="resultLocationLink" popover-is-open="isMapOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl" uibmodal="">
+<i aria-hidden="true" class="fa fa-map-marker"></i>
+<span class="resultfootervalue">Ohio<!-- ngIf: (jcity.length && jstate.length) --><span ng-if="(jcity.length &amp;&amp; jstate.length)">, </span><!-- end ngIf: (jcity.length && jstate.length) -->OH</span>
+</span>
+</span></span>
+</li><!-- end ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) -->
+<!-- ngIf: job.type == 'evergreen' -->
+<!-- ngRepeat: field in fields --><!-- ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Finance and Accounting</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Full-time</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields -->
+</ul>
+</div>
+</div></div><!-- end ngRepeat: job in jobs --><div class="slidedown" ng-repeat="job in jobs">
+<div class="col-sm-12 nopadding resultrow" fields="fields" job="job" ng-mouseenter="toggleJobActions(true)" ng-mouseleave="toggleJobActions(false)">
+<div class="col-sm-12 jobtitlediv">
+<!-- ngIf: job.applied -->
+<!-- ngIf: job.appInProgressStatus -->
+<span><a class="jobtitle job-title-link" href="" ng-click="openJobDetials(job,fields) | trackEvent:'Job Title - Search Page':'Clicked' ">Voice Systems IV - Technical Team Lead</a></span>
+<span class="jobnum">BRW4911</span>
+<span class="ng-hide" job="job" job-actions="" ng-show="showActions"><div class="jobactions">
+<span class="jobactionsgroup">
+<span class="jobactionicons">
+<i class="fa fa-star-o" data-toggle="tooltip" job="job" job-book-mark="" ng-click="bookmark(job.id)" title="Bookmark This"></i>
+<span class="" data-toggle="tooltip" job="job" ng-show="!hideERPRAF &amp;&amp; job.isRAFEnabled" refer-a-friend="" title="Refer a Friend"><span class="referafriend rfaArrowNSW rafArrowD" data-ng-class="{'rfaArrowSW': showSM, 'rfaArrowNSW': !showSM, 'rafArrowD': !referAFriendFrm_showSuccessMsg}" ng-mouseleave="$event.stopPropagation();">
+<!-- ngIf: popoverIsOpen -->
+<a popover-is-open="popoverIsOpen" popover-placement="bottom-right-auto" uib-popover-template="dynamicPopover.templateUrl" uibmodal=""><i class="fa fa-share-square-o"></i></a>
+</span></span>
+<span class="showSocialMedia ng-hide" data-toggle="tooltip" job="job" ng-show="showSocialMedia" share-a-req="" title="Share"><span class="shareareq">
+<a popover-is-open="popoverIsOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl"><i class="fa fa-share-alt"></i></a>
+</span></span>
+</span>
+</span>
+</div></span>
+</div>
+<div class="jobrowdescription overflowhide">
+<div class="col-sm-12 job-info" ng-click="showMore()">Job Purpose : 
+
+This Voice Technical Team Lead is a Leadership role and requires 7-10+ years of technical and 1-2+ years Team Leadership experience. 
+
+Leadership responsibilities' include, but not limited to: Communicating goals and deadlines to team membe</div>
+<div class="col-sm-12 action">
+<div class="col-sm-12 text-center">
+<div class="btn-group flex-container ng-hide" ng-show="showactionbuttons">
+<div class="col-sm-6 flex-buttons">
+<button class="btn btn-secondary" ng-click=" openJobDetials(job,fields) | trackEvent:'Job Details - Search Page':'Button Clicked' " type="button"><span class="ng-scope">JOB DETAILS</span></button>
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: job.type == 'evergreen' -->
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) --><button adprm-sign-in="{urlBindings:{r:job.id}}" adprm-sign-in-request-args="{_r:job.id}" class="btn btn-primary" ng-click=" dummyplaceholder() | trackEvent:'Apply - Search Page':'Button Clicked' " ng-if="(job.type != 'evergreen' &amp;&amp; !job.submitted &amp;&amp; job.canApply)" type="button">
+<span>Apply</span>
+</button><!-- end ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) -->
+<!-- ngIf: (job.type != 'evergreen' && job.submitted) -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-12 resultrowfooter resultsrow-flex">
+<ul>
+<!-- ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) --><li class="col-sm-4 col-resize3" ng-if="showLocationSearch() &amp;&amp; job.type != 'evergreen' &amp;&amp; (job.city.length || job.state.length)">
+<span googlemaps="" jcity="job.city" jladds="job.locationaddress" jstate="job.state" ng-click=" dummyplaceholder() | trackEvent:'Google Maps - Search Page':'Clicked' " template="googlemaps.html"><span class="googlemap">
+<span class="resultLocationLink" popover-is-open="isMapOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl" uibmodal="">
+<i aria-hidden="true" class="fa fa-map-marker"></i>
+<span class="resultfootervalue">Ohio<!-- ngIf: (jcity.length && jstate.length) --><span ng-if="(jcity.length &amp;&amp; jstate.length)">, </span><!-- end ngIf: (jcity.length && jstate.length) -->OH</span>
+</span>
+</span></span>
+</li><!-- end ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) -->
+<!-- ngIf: job.type == 'evergreen' -->
+<!-- ngRepeat: field in fields --><!-- ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">IT</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Full-time</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields -->
+</ul>
+</div>
+</div></div><!-- end ngRepeat: job in jobs --><div class="slidedown" ng-repeat="job in jobs">
+<div class="col-sm-12 nopadding resultrow" fields="fields" job="job" ng-mouseenter="toggleJobActions(true)" ng-mouseleave="toggleJobActions(false)">
+<div class="col-sm-12 jobtitlediv">
+<!-- ngIf: job.applied -->
+<!-- ngIf: job.appInProgressStatus -->
+<span><a class="jobtitle job-title-link" href="" ng-click="openJobDetials(job,fields) | trackEvent:'Job Title - Search Page':'Clicked' ">Voice Systems Engineer III</a></span>
+<span class="jobnum">BRW4910</span>
+<span class="ng-hide" job="job" job-actions="" ng-show="showActions"><div class="jobactions">
+<span class="jobactionsgroup">
+<span class="jobactionicons">
+<i class="fa fa-star-o" data-toggle="tooltip" job="job" job-book-mark="" ng-click="bookmark(job.id)" title="Bookmark This"></i>
+<span class="" data-toggle="tooltip" job="job" ng-show="!hideERPRAF &amp;&amp; job.isRAFEnabled" refer-a-friend="" title="Refer a Friend"><span class="referafriend rfaArrowNSW rafArrowD" data-ng-class="{'rfaArrowSW': showSM, 'rfaArrowNSW': !showSM, 'rafArrowD': !referAFriendFrm_showSuccessMsg}" ng-mouseleave="$event.stopPropagation();">
+<!-- ngIf: popoverIsOpen -->
+<a popover-is-open="popoverIsOpen" popover-placement="bottom-right-auto" uib-popover-template="dynamicPopover.templateUrl" uibmodal=""><i class="fa fa-share-square-o"></i></a>
+</span></span>
+<span class="showSocialMedia ng-hide" data-toggle="tooltip" job="job" ng-show="showSocialMedia" share-a-req="" title="Share"><span class="shareareq">
+<a popover-is-open="popoverIsOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl"><i class="fa fa-share-alt"></i></a>
+</span></span>
+</span>
+</span>
+</div></span>
+</div>
+<div class="jobrowdescription overflowhide">
+<div class="col-sm-12 job-info" ng-click="showMore()">Job Purpose : 
+
+This Voice Systems Engineer Level III is a strong technical position and should have at least 5-7+ years of senior experience. Will have responsibility for telecommunications infrastructure hardware and related software, such as call manage</div>
+<div class="col-sm-12 action">
+<div class="col-sm-12 text-center">
+<div class="btn-group flex-container ng-hide" ng-show="showactionbuttons">
+<div class="col-sm-6 flex-buttons">
+<button class="btn btn-secondary" ng-click=" openJobDetials(job,fields) | trackEvent:'Job Details - Search Page':'Button Clicked' " type="button"><span class="ng-scope">JOB DETAILS</span></button>
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: job.type == 'evergreen' -->
+</div>
+<div class="col-sm-6 flex-buttons">
+<!-- ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) --><button adprm-sign-in="{urlBindings:{r:job.id}}" adprm-sign-in-request-args="{_r:job.id}" class="btn btn-primary" ng-click=" dummyplaceholder() | trackEvent:'Apply - Search Page':'Button Clicked' " ng-if="(job.type != 'evergreen' &amp;&amp; !job.submitted &amp;&amp; job.canApply)" type="button">
+<span>Apply</span>
+</button><!-- end ngIf: (job.type != 'evergreen' && !job.submitted && job.canApply) -->
+<!-- ngIf: (job.type != 'evergreen' && job.submitted) -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-12 resultrowfooter resultsrow-flex">
+<ul>
+<!-- ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) --><li class="col-sm-4 col-resize3" ng-if="showLocationSearch() &amp;&amp; job.type != 'evergreen' &amp;&amp; (job.city.length || job.state.length)">
+<span googlemaps="" jcity="job.city" jladds="job.locationaddress" jstate="job.state" ng-click=" dummyplaceholder() | trackEvent:'Google Maps - Search Page':'Clicked' " template="googlemaps.html"><span class="googlemap">
+<span class="resultLocationLink" popover-is-open="isMapOpen" popover-placement="bottom" uib-popover-template="dynamicPopover.templateUrl" uibmodal="">
+<i aria-hidden="true" class="fa fa-map-marker"></i>
+<span class="resultfootervalue">Ohio<!-- ngIf: (jcity.length && jstate.length) --><span ng-if="(jcity.length &amp;&amp; jstate.length)">, </span><!-- end ngIf: (jcity.length && jstate.length) -->OH</span>
+</span>
+</span></span>
+</li><!-- end ngIf: showLocationSearch() && job.type != 'evergreen' && (job.city.length || job.state.length) -->
+<!-- ngIf: job.type == 'evergreen' -->
+<!-- ngRepeat: field in fields --><!-- ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">IT</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields --><!-- ngIf: $index > 0 --><span class="jrfields" ng-if="$index &gt; 0" ng-repeat="field in fields">
+<li class="col-sm-4 col-resize3" ng-show="field.name != 'location'">
+<div class="resultfootervalue" data-ng-bind-html="job[field.name]">Full-time</div>
+</li>
+</span><!-- end ngIf: $index > 0 --><!-- end ngRepeat: field in fields -->
+</ul>
+</div>
+</div></div><!-- end ngRepeat: job in jobs -->
+</div>
+</div><!-- end ngIf: resultsLoaded -->
+<div class="col-sm-12 resultheadbottom nopadding">
+<div class="col-sm-12 nopadding">
+<div class="pageNum" do-search="doSearch(true)" page="searchFrm.page" pages="pages">
+<button class="pagenav" ng-click="doPreviousPage()" type="button">
+<span class="backgroundwhite"></span>
+<i class="fa fa-chevron-circle-left fa-2x backgroundcolor"></i>
+</button>
+<span class="pagenavtext"> </span>
+<div class="page">
+<input class="fieldset-input ng-pristine ng-untouched ng-valid ng-not-empty" id="page_" ng-blur="doPageSearch()" ng-keyup="$event.keyCode == 13 ? doPageSearch() : null" ng-model="page" style="" type="text" value="1"/>
+</div>
+<span class="pagenavtext"> of 3</span>
+<button class="pagenav" ng-click="doNextPage()" type="button">
+<span class="backgroundwhite"></span>
+<i class="fa fa-chevron-circle-right fa-2x backgroundcolor"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</ng-form>
+</div>
+</div></div>
+<!-- uiView: footer --><footer class="adp-footer-background clearfix" ui-view="footer"><div>
+<div class="container">
+<div class="adp-footer">
+<div class="footerinner">
+<ul>
+<li class="col-sm-3">
+<div class="eeo"><a class="link" href="https://privacy.adp.com/privacy.html" target="_blank">Privacy Policy</a></div>
+<div class="eeo">
+<p><a class="link" href="https://www.adp.com/candidate-relevancy-FAQs" target="_blank">Artificial Intelligence</a></p>
+</div>
+<div class="eeo">
+<p>This site uses Google Maps in connection with job and applicant location data.   By using this site, you are subject to the <a class="link" href="https://www.google.com/intl/enUS_US/help/terms_maps.html" target="_blank">Google Maps/Google Earth Additional Terms of Service</a>, including the <a class="link" href="https://www.google.com/intl/ALL/policies/privacy/index.html" target="_blank">Google Privacy Policy</a>. </p>
+</div>
+</li>
+<li class="col-sm-6">
+<div class="eeo" ng-bind-html="appSiteLabels.eeocFooter"><div><span><strong><a href="https://www.eeoc.gov/sites/default/files/2022-10/EEOC_KnowYourRights_screen_reader_10_20.pdf" rel="noopener" target="_blank">EEO is The Law - click here for more information</a></strong><br/>We endeavor to make this site accessible to any and all users. If you would like to contact us regarding the accessibility of our website or need assistance completing the application process, please <a href="https://www.cincinnatibell.com/about-us/careers" rel="noopener" target="_blank">contact us</a>.</span></div></div></li>
+<li class="col-sm-3">
+<div class="company">
+<div ng-bind-html="appSiteLabels.copyright">© 2000-2024 ADP, Inc. All Rights Reserved.</div>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+</div></footer>
+</div><!-- end ngIf: uiReady -->
+<adprm-sign-in-popover adprm-popover-position="popoverPosition" class="si-popover-wrapper si-fixed"><div><!-- ngIf: state.isOpen||state.requestInProgress --><div popover-class="si-popover" popover-is-open="state.isOpen" popover-options="{repositionEvent:'/adprm/cx/signin-dialog/reposition'}" popover-placement="bottom" popover-position="positionPopover" popover-trigger="none" uib-popover-template="'common/views/sign-in-popover.tpl.html'"></div></div></adprm-sign-in-popover></div>
+</body></html>

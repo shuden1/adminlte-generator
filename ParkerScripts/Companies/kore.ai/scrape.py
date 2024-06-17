@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 
 # Step 1: Identify the exact HTML selectors
-job_block_selector = ".w-tabs-section-content-h .vc_col-sm-12"  # Blocks with Job Openings
+job_block_selector = ".w-vwrapper.align_none.valign_top"  # Blocks with Job Openings
 job_title_selector = "h6"  # Job Titles
 job_url_selector = ".career-details a"  # URLs
 
