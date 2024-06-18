@@ -52,6 +52,13 @@ def get_dynamic_html(url, output_file, scrolls=4):
             browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(2)  # Wait 2 seconds between scrolls
 
+        browser.refresh()
+        time.sleep(8)  # Wait for the page to load after refresh
+
+        for i in range(scrolls):
+            browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(2)  # Wait 2 seconds between scrolls
+
         # Get main page source
         html_content = browser.page_source
         soup = BeautifulSoup(html_content, 'html.parser')

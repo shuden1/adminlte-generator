@@ -1,0 +1,1 @@
+Since there's no direct access to the content of the uploaded HTML file without actual interaction or specified selectors as a reference, I can't revise the script with specific corrections without any insights into the structure or content of the HTML document. My response will remain unchanged based on the information provided.

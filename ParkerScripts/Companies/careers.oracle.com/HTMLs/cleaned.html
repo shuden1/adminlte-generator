@@ -1,0 +1,2673 @@
+<html class="oj-agent-os-windows oj-agent-browser-chrome" dir="ltr" lang="en">
+<body class="app-loading font-family-primary app-loaded body--scrolled-down" data-bind="loadingIndicator, a11y.toggleFocusIndicator, bodyScrolledDown, currentRoute" data-chatbot-ready="true" data-route="search">
+<div aria-hidden="true" class="preload">
+
+
+
+</div>
+
+<div class="app" data-bind="view: 'layout'"><!--ko [ minimal ]--><!-- ko if: isBrowserUnsupported --><!-- /ko -->
+<!-- ko if: !isBrowserUnsupported -->
+<skip-navigation-link><button class="skip-navigation-link" data-bind="a11y.skipTo: skipTo, i18n: 'general.a11y.skip-navigation-link'" type="button">Skip to main content.</button>
+</skip-navigation-link>
+<div class="app__viewport" style="top: 0px;">
+<div class="app__wrapper">
+<div class="app__main">
+<!-- ko component: 'custom-header' --><!-- ko if: enabled --><!-- /ko -->
+<!-- /ko -->
+<div class="app__top-wrapper">
+<div class="app__top">
+<!-- ko component: 'app-header' --><!-- ko if: isHeaderLoaded() -->
+<header>
+<div class="app-header component-styling-wrapper-default" data-bind="class: uniqueWrapperClass">
+<!-- ko if: isHorizontalMenu --><!-- /ko -->
+<!-- ko ifnot: isHorizontalMenu -->
+<app-header-hamburger params="
+            globalHeaderSettings:globalHeaderSettings,
+            logoImages:logoImages,
+            headerId:headerId,
+            uniqueWrapperClass: uniqueWrapperClass
+        "><div class="app-header-hamburger">
+<company-logo params="isLogoHidden: isLogoHidden, logoImages:logoImages, headerId:headerId"><!-- ko ifnot: isLogoHidden -->
+<!-- ko if: logoMobile -->
+<a aria-label="Go to Home Page" class="app-header__logo app-header__logo--mobile" data-bind="route: 'home-page',
+    i18nAttr: { title: 'general.a11y.go-to-home-page', 'aria-label': 'general.a11y.go-to-home-page' }" href="https://careers.oracle.com/jobs/#en/sites/jobsearch/?mode=location" title="Go to Home Page">
+
+</a>
+<!-- /ko -->
+<!-- ko if: logoDesktop -->
+<a aria-label="Go to Home Page" class="app-header__logo app-header__logo--desktop" data-bind="route: 'home-page',
+    i18nAttr: { title: 'general.a11y.go-to-home-page', 'aria-label': 'general.a11y.go-to-home-page' }" href="https://careers.oracle.com/jobs/#en/sites/jobsearch/?mode=location" title="Go to Home Page">
+
+</a>
+<!-- /ko -->
+<!-- /ko -->
+</company-logo>
+<div class="app-header__actions">
+<favourite-jobs><!-- ko if: hasFavourites --><!-- /ko -->
+</favourite-jobs>
+<user-menu class="user-menu" params="profileText: profileText, isProfileButtonHidden: isProfileButtonHidden"><div class="header-menu user-menu__container" data-bind="css: { 'header-menu--active': isOpened } , clickOutside: { action: closeMenu, when: isOpened}">
+<!-- ko if: !isProfileButtonHidden() || userMenuButtonText() -->
+<a aria-expanded="false" aria-label="Manage profile" class="user-menu__header focused-tooltip" data-bind="click: menuClicked, css: {'theme-color-1': isOpened},
+            attr: {
+                'href': url,
+                'title': userMenuButtonAriaLabel(),
+                'aria-label': userMenuButtonAriaLabel()
+            }, 
+            boolAttr: {'aria-expanded': isOpened}" href="https://careers.oracle.com/jobs/#en/sites/jobsearch/my-profile/sign-in" id="user-menu-header" title="Manage profile">
+<!-- ko ifnot: showUserData -->
+<!-- ko ifnot: isProfileButtonHidden -->
+
+<!-- /ko -->
+<!-- ko if: userMenuButtonText --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: showUserData --><!-- /ko -->
+</a>
+<!-- /ko -->
+<div aria-live="polite" class="header-menu__dropdown user-menu__dropdown">
+
+
+
+<ul>
+<li class="user-menu__action-item">
+<button data-bind="click: goToCss,
+                    i18n: 'candidate-self-service.user-menu.my-profile'">Profile</button>
+</li>
+<li class="user-menu__action-item">
+<button data-bind="i18n: 'candidate-self-service.sign-out',
+                    click: signOut">Sign Out</button>
+</li>
+</ul>
+</div>
+</div>
+</user-menu>
+<!-- ko if: isAppMenuNotEmpty() -->
+<app-menu-toggle class="app-menu-toggle" params="uniqueWrapperClass: uniqueWrapperClass"><button aria-expanded="false" aria-label="Open menu" class="app-toggle-menu__container focused-tooltip" data-bind="
+        click: open,
+        boolAttr: {'aria-expanded': isVisible},
+        i18nAttr: { title: 'general.a11y.open-menu', 'aria-label': 'general.a11y.open-menu' }
+    " title="Open menu">
+<div style="width: 20px">
+
+
+
+</div>
+</button>
+</app-menu-toggle>
+<!-- /ko -->
+</div>
+</div>
+</app-header-hamburger>
+<!-- /ko -->
+</div>
+</header>
+<!-- /ko -->
+<!-- /ko -->
+<div class="app__top-background-wrapper">
+
+</div>
+</div>
+</div>
+<main class="app__content" data-bind="view: 'main'" tabindex="-1"><!--ko [ search ]--><!-- ko ifnot: page --><!-- /ko -->
+<!-- ko if: page -->
+<!-- ko component: { name: 'cc-search', params: { page: page() } } --><div class="app__subpage app__subpage--custom-page">
+<h1 class="oj-helper-hidden-accessible" data-bind="text: searchPageHeading">Search Jobs - Oracle Careers</h1>
+<!-- ko component: { 
+        name: 'cc-page',
+         params: {
+            page: page,
+            pageData: page,
+            classModifier: 'search-page' 
+        }
+        } --><div class="cc-page cc-page--search-page" data-bind="
+        css: {'cc-page--boxed': isPageDisplayBoxed},
+        class: classWithModifier
+    ">
+<div class="cc-page__content">
+<!-- ko foreach: { data: page.sections, as: 'section' } -->
+<!-- ko component: {
+            name: 'cc-section',
+            params: {
+                section: section,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-section cc-section--width-null" data-bind="css: cssClass, style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc }" style="background-color: rgb(255, 255, 255);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: section.params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-section__content">
+<!-- ko foreach: { data: components, as: 'component' } --><!-- /ko -->
+<!-- ko foreach: { data: rows, as: 'row' } -->
+<!-- ko component: { name: 'cc-row', params: { row: row, pageData: $parent.pageData, onMessage: $parent.onMessage } } --><div class="cc-row">
+<div class="cc-row__content cc-columns-count-1" data-bind="class: 'cc-columns-count-' + columns.length">
+<!-- ko foreach: { data: columns, as: 'column' } -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--default" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style='background-color: rgba(255, 255, 255, 0); background-image: url("https://www.oracle.com/a/ocom/img/job-search-background.png");'>
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } -->
+<!-- /ko -->
+<!-- ko component: { name: component.params.type, params: component } --><div class="component-styling-wrapper-113049" data-bind="class: uniqueWrapperClass">
+<!-- ko if: customizationCompactParams && !isCustomSearch() --><!-- /ko -->
+<!-- ko if: isCustomSearch() -->
+<!-- /ko -->
+<div class="search-box-compact font-family-secondary" data-bind="class: customizationParams.commonParams ? customizationParams.commonParams.cssClass : '',
+        css: { 'search-box-compact--admin-mode': isAdminMode },
+        attr: { id: customizationParams.commonParams ? customizationParams.commonParams.cssId : '' },
+        customStyles: customizationParams.commonParams,
+        sticky: {
+            isEnabled: isStickySearchBarEnabled,
+            isReady: isReady,
+            className: 'search-box-compact--sticky'
+        }
+    " role="search">
+<div class="search-box-compact__form text-color-secondary">
+<div class="search-box-compact__fieldset search-box-compact__fieldset--keyword" id="keyword-container">
+<div class="search-box-compact__label text-color-secondary">
+<span data-bind="i18n: searchKeywordLabel">Find</span>
+</div>
+<div class="search-box-compact__field" role="application">
+<label class="oj-helper-hidden-accessible" data-bind="i18n: 'search.keyword-placeholder'" for="keyword">Job title, skill, keyword</label>
+<!-- ko component: { name: 'search-box-keyword',
+                    params: {
+                        value: keyword,
+                        action: performSearch } } -->
+<!-- ko if: isWorking --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+
+<div class="search-box-compact__fieldset search-box-compact__fieldset--location" id="location-container">
+<mode-menu><div class="search-box-compact__label text-color-secondary">
+<!-- ko if: showSearchModeMenu -->
+<button aria-expanded="false" class="search-box-compact__menu-button" data-bind="click: toggleModeMenu, boolAttr: {'aria-expanded': isModeMenuVisible}">
+<span data-bind="text: toggleButtonText">Near Location</span>
+
+</button>
+<!-- /ko -->
+<!-- ko ifnot: showSearchModeMenu --><!-- /ko -->
+</div>
+<div class="search-box-compact__menu" data-bind="
+         css: { 'search-box-compact__menu--active': isModeMenuVisible },
+         a11y.trapFocus,
+         a11y.setInitialFocus: { isVisible: isModeMenuVisible, delay: 400 },
+         a11y.keysHandler: {keys: 'esc', handler: hideModeMenu},
+         clickOutside: { action: hideModeMenu, when: isModeMenuVisible, excludeElement: '.search-box-compact__menu-button' }" tabindex="-1">
+<ul class="search-box-compact__menu-list" role="presentation">
+<!-- ko ifnot: isSearchByRecruitingLocationsModeEnabled -->
+<li class="search-box-compact__menu-item">
+<button aria-selected="true" data-bind="
+                    click: handleModeSet.bind(this, MODES.LOCATION),
+                    attr: {'aria-selected': mode() === 'location' ? 'true' : 'false'},
+                    i18n: 'search.mode-menu.location'">Location</button>
+</li>
+<!-- /ko -->
+<!-- ko if: isSearchByRecruitingLocationsModeEnabled --><!-- /ko -->
+<!-- ko if: isGeolocationEnabled -->
+<li class="search-box-compact__menu-item">
+<button aria-selected="false" data-bind="
+                    click: handleModeSet.bind(this, MODES.GEO_LOCATION),
+                    attr: {'aria-selected': mode() === 'geolocation' ? 'true' : 'false'},
+                    i18n: 'search.mode-menu.geolocation'">My Location</button>
+</li>
+<!-- /ko -->
+<!-- ko if: isZipcodeEnabled -->
+<li class="search-box-compact__menu-item">
+<button aria-selected="false" data-bind="
+                    click: handleModeSet.bind(this, MODES.ZIPCODE),
+                    attr: {'aria-selected': mode() === 'zipcode' ? 'true' : 'false'},
+                    i18n: 'search.mode-menu.zipcode'">Postal Code</button>
+</li>
+<!-- /ko -->
+</ul>
+</div>
+</mode-menu>
+<div class="search-box-compact__field" role="application">
+<label class="oj-helper-hidden-accessible" data-bind="i18n: locationInputLabel" for="location">City, state, country</label>
+<!-- ko if: mode() === MODES.LOCATION -->
+<!-- ko component: { name: 'search-box-location',
+                        params: {
+                            value: location,
+                            action: performSearch,
+                            radiusValue: radiusValue,
+                            radiusUnit: radiusUnit } } -->
+<!-- ko if: isWorking --><!-- /ko -->
+<!-- ko if: showRadiusDisplay --><!-- /ko -->
+<!-- ko component: { name: 'search-box-popup', params: {
+    message: 'location-bar.dropdown.no-results',
+    value: showNoResultsHint,
+    focus: hasFocus,
+    restoreValue: true,
+    autoDismiss: false } } --><!-- ko if: visible --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: mode() === MODES.RECRUITING_LOCATION--><!-- /ko -->
+<!-- ko if: isGeolocationEnabled && mode() === MODES.GEO_LOCATION --><!-- /ko -->
+<!-- ko if: isZipcodeEnabled && mode() === MODES.ZIPCODE --><!-- /ko -->
+</div>
+</div>
+</div>
+<button aria-label="Search for Jobs and Events" class="search-box-compact__button text-color-secondary focused-tooltip" data-bind="
+            click: performSearch,
+            i18nAttr: { title: searchTooltipLabel, 'aria-label': searchTooltipLabel }
+        " data-qa="searchStartBtn" title="Search for Jobs and Events" type="button">
+
+
+
+</button>
+</div>
+</div>
+<!-- /ko -->
+<!-- ko component: { name: component.params.type, params: component } -->
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- ko component: { name: 'cc-row', params: { row: row, pageData: $parent.pageData, onMessage: $parent.onMessage } } --><div class="cc-row">
+<div class="cc-row__content cc-columns-count-1" data-bind="class: 'cc-columns-count-' + columns.length">
+<!-- ko foreach: { data: columns, as: 'column' } -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--default" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } --><!-- ko if: filterPanelVisible-->
+<div class="component-styling-wrapper-113058" data-bind="class: uniqueWrapperClass">
+<!-- ko if: isVerticalStyle --><!-- /ko -->
+<!-- ko ifnot: isVerticalStyle -->
+<search-filters-panel-horizontal params="
+            adminMode: adminMode,
+            loading: loading(),
+            totalCount: totalCount(),
+            totalJobsCount: totalJobsCount,
+            totalEventsCount: totalEventsCount,
+            filters: filters(),
+            customizationParams: customizationParams,
+            uniqueWrapperClass: uniqueWrapperClass,
+            areEventsEnabled: areEventsEnabled,
+            defaultSearchContext: defaultSearchContext,
+            selectedSearchContext: selectedSearchContext
+        "><div class="search-jobs-root-container" data-bind="switchFilterLayout: { popupFiltersOpened: popupFiltersOpened }">
+<div class="search-jobs font-family-secondary search-jobs--horizontal" data-bind="
+            class: customizationParams.commonParams.cssClass,
+            attr: { id: customizationParams.commonParams.cssId },
+            customStyles: customizationParams.commonParams,
+            css: {'search-jobs--admin-mode': adminMode, 'search-box-no-result-tooltip': $parent.totalEventsCount() === 0}">
+<div class="search-jobs__misc-wrapper">
+<h3 class="search-jobs__filters-header" data-bind="i18n: 'search.filters-header-vertical'">Filter Results</h3>
+<div class="search-jobs__misc search-jobs__misc-horizontal-filters search-jobs__misc--events-enabled" data-bind="css: {'search-jobs__misc--events-enabled': areEventsEnabled}">
+<!-- ko if: areEventsEnabled -->
+<search-context-switcher params="counters: {jobs: totalJobsCount, events: totalEventsCount}, 
+                defaultSearchContext: selectedSearchContext,
+                adminMode: adminMode,
+                loading: loading,
+                onChange: onChangeSearchContext"><ul class="search-context-switcher__container">
+<!-- ko foreach: { data: Object.keys(searchContexts), as: 'key' } -->
+<li>
+<search-context-button params="{
+                        name: $parent.searchContexts[key].name,
+                        count: $parent.searchContexts[key].count,
+                        buttonAriaLabel: $parent.searchContexts[key].ariaLabel,
+                        isSelected: $parent.selectedSearchContext() === key,
+                        onClick: () =&gt; $parent.onClick(key),
+                        selectedSearchContext:$parent.selectedSearchContext(),
+                        loading: $parent.loading,
+                        contextKey: key
+                    }"><button aria-pressed="true" class="search-context-button search-context-button--selected" data-bind="css: {'search-context-button--selected': isSelected  },
+    attr: {'aria-pressed': isSelected },
+    click: onClick">
+<span class="search-context-button__title" data-bind="text:name">Jobs</span>
+<span class="search-context-button__pill-counter" data-bind="text: count">5713</span>
+</button>
+<div class="oj-helper-hidden-accessible" role="alert">
+<!-- ko if: !loading() && isSelected() -->
+<span data-bind="text: getSelectedContextValue()">Job search results 5713</span>
+<!-- /ko -->
+</div>
+</search-context-button>
+</li>
+<li>
+<search-context-button params="{
+                        name: $parent.searchContexts[key].name,
+                        count: $parent.searchContexts[key].count,
+                        buttonAriaLabel: $parent.searchContexts[key].ariaLabel,
+                        isSelected: $parent.selectedSearchContext() === key,
+                        onClick: () =&gt; $parent.onClick(key),
+                        selectedSearchContext:$parent.selectedSearchContext(),
+                        loading: $parent.loading,
+                        contextKey: key
+                    }"><button class="search-context-button" data-bind="css: {'search-context-button--selected': isSelected  },
+    attr: {'aria-pressed': isSelected },
+    click: onClick">
+<span class="search-context-button__title" data-bind="text:name">Events</span>
+<span class="search-context-button__pill-counter" data-bind="text: count">1</span>
+</button>
+<div class="oj-helper-hidden-accessible" role="alert">
+<!-- ko if: !loading() && isSelected() --><!-- /ko -->
+</div>
+</search-context-button>
+</li>
+<!-- /ko -->
+</ul>
+</search-context-switcher>
+<!-- /ko -->
+<!-- ko ifnot: areEventsEnabled --><!-- /ko -->
+<!-- ko if: filters().length && (totalCount() || selectedFiltersCount() > 0) -->
+<!-- ko ifnot: areEventsEnabled --><!-- /ko -->
+<button class="search-jobs__toggle-filters search-jobs__toggle-filters--in-popup search-jobs__toggle-filters--events-enabled" data-bind="click: toggleFiltersPopup, css: {'search-jobs__toggle-filters--events-enabled': areEventsEnabled}" type="button">
+<span data-bind="i18n: 'search.filters-header'">Filters</span>
+<!-- ko if: selectedFiltersCount() > 0 --><!-- /ko -->
+</button>
+<!-- /ko -->
+</div>
+</div>
+<search-filters-horizontal params="
+                filters: filters,
+                totalCount: totalCount,
+                adminMode: adminMode,
+                loading: loading,
+                clear: clearFilters,
+                defaultSearchContext: defaultSearchContext
+            "><div class="search-filters search-filters--horizontal search-filters--in-place">
+<!-- ko if: !$parent.areEventsEnabled --><!-- /ko -->
+<ul class="search-filters__sections font-family-primary">
+<!-- ko if: $parent.areEventsEnabled -->
+<li>
+<search-context-switcher params="counters: {jobs: $parent.totalJobsCount, events: $parent.totalEventsCount},
+                    defaultSearchContext: selectedSearchContext,
+                    adminMode: adminMode,
+                    onChange: onChangeSearchContext,
+                    loading: loading"><ul class="search-context-switcher__container">
+<!-- ko foreach: { data: Object.keys(searchContexts), as: 'key' } -->
+<li>
+<search-context-button params="{
+                        name: $parent.searchContexts[key].name,
+                        count: $parent.searchContexts[key].count,
+                        buttonAriaLabel: $parent.searchContexts[key].ariaLabel,
+                        isSelected: $parent.selectedSearchContext() === key,
+                        onClick: () =&gt; $parent.onClick(key),
+                        selectedSearchContext:$parent.selectedSearchContext(),
+                        loading: $parent.loading,
+                        contextKey: key
+                    }"><button aria-pressed="true" class="search-context-button search-context-button--selected" data-bind="css: {'search-context-button--selected': isSelected  },
+    attr: {'aria-pressed': isSelected },
+    click: onClick">
+<span class="search-context-button__title" data-bind="text:name">Jobs</span>
+<span class="search-context-button__pill-counter" data-bind="text: count">5713</span>
+</button>
+<div class="oj-helper-hidden-accessible" role="alert">
+<!-- ko if: !loading() && isSelected() -->
+<span data-bind="text: getSelectedContextValue()">Job search results 5713</span>
+<!-- /ko -->
+</div>
+</search-context-button>
+</li>
+<li>
+<search-context-button params="{
+                        name: $parent.searchContexts[key].name,
+                        count: $parent.searchContexts[key].count,
+                        buttonAriaLabel: $parent.searchContexts[key].ariaLabel,
+                        isSelected: $parent.selectedSearchContext() === key,
+                        onClick: () =&gt; $parent.onClick(key),
+                        selectedSearchContext:$parent.selectedSearchContext(),
+                        loading: $parent.loading,
+                        contextKey: key
+                    }"><button class="search-context-button" data-bind="css: {'search-context-button--selected': isSelected  },
+    attr: {'aria-pressed': isSelected },
+    click: onClick">
+<span class="search-context-button__title" data-bind="text:name">Events</span>
+<span class="search-context-button__pill-counter" data-bind="text: count">1</span>
+</button>
+<div class="oj-helper-hidden-accessible" role="alert">
+<!-- ko if: !loading() && isSelected() --><!-- /ko -->
+</div>
+</search-context-button>
+</li>
+<!-- /ko -->
+</ul>
+</search-context-switcher>
+</li>
+<!-- ko if: filterPresentInUrl() || (totalCount() > 0 && filters().length) -->
+<li>
+
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: filters().length && !areRecommendedJobsEnabled() -->
+<!-- ko if: !$parent.areEventsEnabled --><!-- /ko -->
+<!-- ko foreach: { data: orderedFacets, as: 'facet' } -->
+<!-- ko if: facet.items().length -->
+<li>
+<search-facet-dropdown params="filters: facet.items,
+                    facet: facet,
+                    adminMode: $parent.adminMode"><div class="search-facet-dropdown" data-bind="clickOutside: { action: closeDropdown, when: isDropdownOpen },
+        a11y.keysHandler: {keys: 'esc', handler: closeDropdown},
+        adjustDropdownPosition: { when: isDropdownOpen },
+        attr: { 'data-filter-name': title }" data-filter-name="locations">
+<!-- ko template: { nodes: $componentTemplateNodes, data: $parent } -->
+<dropdown-trigger>
+<search-facet-horizontal params="
+                            facet: facet,
+                            adminMode: $parent.adminMode,
+                            toggleFiltersDropdown: $parent.toggleDropdown"><div class="search-filters__section">
+<button aria-label="Locations filter 0" class="search-filters__pill" data-bind="
+            attr: { 'aria-label': ariaLabel },
+            hasFocus: hasFocus,
+            click: toggleFiltersDropdown,
+            css: { 'search-filters__pill--contains-selected-items': selectedCount }">
+<span class="search-filters__pill-title" data-bind="text: title">Locations</span>
+<span class="search-filters__pill-counter search-filters__pill-counter--hidden" data-bind="text: selectedCount, css: { 'search-filters__pill-counter--hidden': !selectedCount }">0</span>
+
+</button>
+</div>
+</search-facet-horizontal></dropdown-trigger>
+<!-- /ko -->
+<div aria-expanded="false" class="search-facet-dropdown__list-container" data-bind="
+            css: {
+                'search-facet-dropdown__list-container--visible': isDropdownOpen() &amp;&amp; filters().length &gt; 0,
+                'search-facet-dropdown__list-container--admin-mode': adminMode
+            },
+            a11y.trapFocus,
+            a11y.setInitialFocus: { isVisible: isDropdownOpen, delay: 400 },
+            boolAttr: {'aria-expanded': isDropdownOpen},
+            hasFocus: true" tabindex="-1">
+<!-- ko if: showSearchFilters -->
+<div class="search-facet-dropdown__list-search-input-box">
+
+
+<!-- ko if: announceSearchResults()--><!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- ko ifnot: searchInProgress -->
+<ul class="search-facet-dropdown__content" role="listbox" tabindex="-1">
+<!-- ko foreach: { data: filtersToDisplay, as: 'item' } -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="India filter 3885" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="India filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->India<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->3885<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="United States filter 2732" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="United States filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main -->United <!-- /ko -->
+<!-- ko text: item.textParts.last --> States<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->2732<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="KARNATAKA, India filter 1347" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="KARNATAKA, India filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main -->KARNATAKA, <!-- /ko -->
+<!-- ko text: item.textParts.last --> India<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->1347<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="BENGALURU, KARNATAKA, India filter 1339" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="BENGALURU, KARNATAKA, India filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main -->BENGALURU, KARNATAKA, <!-- /ko -->
+<!-- ko text: item.textParts.last --> India<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->1339<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="TELANGANA, India filter 593" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="TELANGANA, India filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main -->TELANGANA, <!-- /ko -->
+<!-- ko text: item.textParts.last --> India<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->593<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- /ko -->
+</ul>
+<!-- /ko -->
+<!-- ko if: searchInProgress --><!-- /ko -->
+</div>
+</div>
+</search-facet-dropdown>
+</li>
+<!-- /ko -->
+<!-- ko if: facet.items().length -->
+<li>
+<search-facet-dropdown params="filters: facet.items,
+                    facet: facet,
+                    adminMode: $parent.adminMode"><div class="search-facet-dropdown" data-bind="clickOutside: { action: closeDropdown, when: isDropdownOpen },
+        a11y.keysHandler: {keys: 'esc', handler: closeDropdown},
+        adjustDropdownPosition: { when: isDropdownOpen },
+        attr: { 'data-filter-name': title }" data-filter-name="categories">
+<!-- ko template: { nodes: $componentTemplateNodes, data: $parent } -->
+<dropdown-trigger>
+<search-facet-horizontal params="
+                            facet: facet,
+                            adminMode: $parent.adminMode,
+                            toggleFiltersDropdown: $parent.toggleDropdown"><div class="search-filters__section">
+<button aria-label="Categories filter 0" class="search-filters__pill" data-bind="
+            attr: { 'aria-label': ariaLabel },
+            hasFocus: hasFocus,
+            click: toggleFiltersDropdown,
+            css: { 'search-filters__pill--contains-selected-items': selectedCount }">
+<span class="search-filters__pill-title" data-bind="text: title">Categories</span>
+<span class="search-filters__pill-counter search-filters__pill-counter--hidden" data-bind="text: selectedCount, css: { 'search-filters__pill-counter--hidden': !selectedCount }">0</span>
+
+</button>
+</div>
+</search-facet-horizontal></dropdown-trigger>
+<!-- /ko -->
+<div aria-expanded="false" class="search-facet-dropdown__list-container" data-bind="
+            css: {
+                'search-facet-dropdown__list-container--visible': isDropdownOpen() &amp;&amp; filters().length &gt; 0,
+                'search-facet-dropdown__list-container--admin-mode': adminMode
+            },
+            a11y.trapFocus,
+            a11y.setInitialFocus: { isVisible: isDropdownOpen, delay: 400 },
+            boolAttr: {'aria-expanded': isDropdownOpen},
+            hasFocus: true" tabindex="-1">
+<!-- ko if: showSearchFilters -->
+<div class="search-facet-dropdown__list-search-input-box">
+
+
+<!-- ko if: announceSearchResults()--><!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- ko ifnot: searchInProgress -->
+<ul class="search-facet-dropdown__content" role="listbox" tabindex="-1">
+<!-- ko foreach: { data: filtersToDisplay, as: 'item' } -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="Product Development filter 2151" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="Product Development filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main -->Product <!-- /ko -->
+<!-- ko text: item.textParts.last --> Development<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->2151<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="Consulting filter 969" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="Consulting filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Consulting<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->969<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="Sales filter 908" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="Sales filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Sales<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->908<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="Support filter 808" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="Support filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Support<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->808<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="Pre Sales filter 302" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="Pre Sales filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main -->Pre <!-- /ko -->
+<!-- ko text: item.textParts.last --> Sales<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->302<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+
+<!-- /ko -->
+<!-- /ko -->
+</ul>
+<!-- /ko -->
+<!-- ko if: searchInProgress --><!-- /ko -->
+</div>
+</div>
+</search-facet-dropdown>
+</li>
+<!-- /ko -->
+<!-- ko if: facet.items().length -->
+<li>
+<search-facet-dropdown params="filters: facet.items,
+                    facet: facet,
+                    adminMode: $parent.adminMode"><div class="search-facet-dropdown" data-bind="clickOutside: { action: closeDropdown, when: isDropdownOpen },
+        a11y.keysHandler: {keys: 'esc', handler: closeDropdown},
+        adjustDropdownPosition: { when: isDropdownOpen },
+        attr: { 'data-filter-name': title }" data-filter-name="postingDates">
+<!-- ko template: { nodes: $componentTemplateNodes, data: $parent } -->
+<dropdown-trigger>
+<search-facet-horizontal params="
+                            facet: facet,
+                            adminMode: $parent.adminMode,
+                            toggleFiltersDropdown: $parent.toggleDropdown"><div class="search-filters__section">
+<button aria-label="Posting Dates filter 0" class="search-filters__pill" data-bind="
+            attr: { 'aria-label': ariaLabel },
+            hasFocus: hasFocus,
+            click: toggleFiltersDropdown,
+            css: { 'search-filters__pill--contains-selected-items': selectedCount }">
+<span class="search-filters__pill-title" data-bind="text: title">Posting Dates</span>
+<span class="search-filters__pill-counter search-filters__pill-counter--hidden" data-bind="text: selectedCount, css: { 'search-filters__pill-counter--hidden': !selectedCount }">0</span>
+
+</button>
+</div>
+</search-facet-horizontal></dropdown-trigger>
+<!-- /ko -->
+<div aria-expanded="false" class="search-facet-dropdown__list-container" data-bind="
+            css: {
+                'search-facet-dropdown__list-container--visible': isDropdownOpen() &amp;&amp; filters().length &gt; 0,
+                'search-facet-dropdown__list-container--admin-mode': adminMode
+            },
+            a11y.trapFocus,
+            a11y.setInitialFocus: { isVisible: isDropdownOpen, delay: 400 },
+            boolAttr: {'aria-expanded': isDropdownOpen},
+            hasFocus: true" tabindex="-1">
+<!-- ko if: showSearchFilters --><!-- /ko -->
+<!-- ko ifnot: searchInProgress -->
+<ul class="search-facet-dropdown__content" role="listbox" tabindex="-1">
+<!-- ko foreach: { data: filtersToDisplay, as: 'item' } -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="Greater than 30 days filter 3081" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="Greater than 30 days filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main -->Greater than 30 <!-- /ko -->
+<!-- ko text: item.textParts.last --> days<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->3081<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="Less than 30 days filter 2632" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="Less than 30 days filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main -->Less than 30 <!-- /ko -->
+<!-- ko text: item.textParts.last --> days<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->2632<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="Less than 7 days filter 595" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="Less than 7 days filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main -->Less than 7 <!-- /ko -->
+<!-- ko text: item.textParts.last --> days<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->595<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- /ko -->
+</ul>
+<!-- /ko -->
+<!-- ko if: searchInProgress --><!-- /ko -->
+</div>
+</div>
+</search-facet-dropdown>
+</li>
+<!-- /ko -->
+<!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- TODO - Remove complete HTML block after new API implementation for recommended jobs -->
+<!-- ko if: areRecommendedJobsEnabled() --><!-- /ko -->
+</ul>
+</div>
+<!-- ko if: filterPresentInUrl() || adminMode --><!-- /ko -->
+</search-filters-horizontal>
+</div>
+</div>
+<search-filters-mobile params="
+        hide: toggleFiltersPopup,
+        clear: clearFilters,
+        filters: filters,
+        adminMode: adminMode,
+        popupFiltersOpened: popupFiltersOpened,
+        uniqueWrapperClass: uniqueWrapperClass
+    "><minimal-dialog params="isVisible: popupFiltersOpened, baseClass: uniqueWrapperClass + ' search-filters-dialog'"><oj-dialog aria-labelledby="ui-id-10" aria-modal="true" cancel-behavior="none" class="app-dialog font-family-primary component-styling-wrapper-113058 search-filters-dialog oj-dialog oj-component oj-component-initnode oj-complete" data-bind="focus: focusCallback,
+        attr:{
+            'aria-label': ariaLabel,
+            'aria-describedby': ariaDescribedBy,
+            'role': role
+        },
+        class: 'app-dialog font-family-primary ' + baseClass,
+        a11y.keysHandler: { keys: 'esc', handler: close },
+        moveChatBot,
+        isDialogVisible: {
+            isVisible: isVisible,
+            afterClose: afterClose
+        }" drag-affordance="none" id="ui-id-9" initial-visibility="hide" modality="modeless" on-oj-focus="{{setFocusToBody}}" resize-behavior="none" role="dialog" style="display: none;" tabindex="-1">
+<div class="oj-dialog-container"><div class="oj-dialog-header"><h1 class="oj-dialog-title" id="ui-id-10"> </h1></div><div class="oj-dialog-content oj-dialog-default-content"><div class="oj-dialog-body-wrapper"><div class="app-dialog__wrapper app-dialog__wrapper--align-center oj-dialog-body" data-bind="
+            css: { 'app-dialog__wrapper--active': isVisible },
+            class: 'app-dialog__wrapper--align-' + alignment()
+        ">
+<div class="oj-dialog-body app-dialog__main background-color-dialog component-styling-wrapper-113058 search-filters-dialog__main search-filters-dialog__main-center" data-bind="
+                css: baseClass ? baseClass  + '__main ' + baseClass + '__main-' + alignment() : null,
+                a11y.setInitialFocus: {isVisible: isVisible, focusOn: '.app-dialog__content', delay: 1000 },
+                attr: { style: width() ? 'max-width: ' + width() : '' }
+            " style="" tabindex="-1">
+<!-- ko if: !nodes['dialog-bar'] --><!-- /ko -->
+<div slot="header">
+<!-- ko template: { nodes: nodes['dialog-bar'], data: $parent } -->
+<div class="app-dialog__bar search-jobs__popup-bar text-color-secondary">
+<div class="app-dialog__bar-section">
+
+</div>
+<div class="app-dialog__bar-section">
+<button class="search-jobs__clear-filters app-dialog__action-button font-family-secondary" data-bind="i18n: 'search.clear-all-filters', click: () =&gt; {
+                        clear();
+                        hide();
+                    }">Clear filters</button>
+</div>
+</div>
+<!-- /ko -->
+</div>
+<div slot="body">
+<!-- ko template: { nodes: nodes['dialog-body'], data: $parent } -->
+<search-filters-vertical params="
+                filters: filters,
+                adminMode: adminMode,
+                allExpanded: true,
+                popupFiltersOpened: popupFiltersOpened
+                clear: clearFilters
+                "><div class="search-filters search-filters--vertical" data-bind="css: { 'search-filters--in-place': !popupFiltersOpened,
+                       'search-filters--in-dialog': popupFiltersOpened }">
+<!-- ko if: !$parent.areEventsEnabled -->
+<div aria-live="polite" class="oj-helper-hidden-accessible">
+<!-- ko ifnot: $parent.loading -->
+<span data-bind="i18n: { key: 'search.results-for-jobs', tokens: { 'TOTAL': totalCount } }">Job search results undefined</span>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<ul class="search-filters__sections font-family-primary">
+<!-- ko foreach: { data: orderedFacets, as: 'facet' } -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length -->
+<li class="search-filters__section search-filters__section--vertical" data-bind="css: { 'search-filters__section--admin-mode': adminMode },
+               attr: { 'data-filter-name': title }" data-filter-name="locations">
+<div class="search-filters__section-container">
+<button aria-expanded="true" aria-label="Locations filter 0" class="search-filters__header font-family-secondary text-color-secondary search-filters__header--vertical search-filters__header--open" data-bind="click: toggleOpen,
+                       css: { 'search-filters__header--open': isOpen, 'search-filters__header--selected': selectedCount },
+                       boolAttr: { 'aria-expanded': isOpen },
+                       attr: { 'aria-label': ariaLabel }">
+<span class="search-filters__header-content" data-bind="css: { 'search-filters__header-content--selected': selectedCount }">
+<!-- ko text: title -->locations<!-- /ko -->
+<span class="search-filters__pill-counter search-filters__pill-counter--vertical search-filters__pill-counter--hidden" data-bind="text: selectedCount, css: { 'search-filters__pill-counter--hidden': !selectedCount }">0</span>
+</span>
+</button>
+<ul class="search-filters__list search-filters__list--vertical search-filters__list--open" data-bind="css: { 'search-filters__list--open': isOpen }">
+<!--ko if: showSearchFilters -->
+<li>
+<div class="search-filter-vertical_autosuggest__list" data-bind="attr: { id: 'filter-list-' + instance}" id="filter-list-1">
+
+
+<!-- ko if: isLoading --><!-- /ko -->
+</div>
+</li>
+<!-- /ko -->
+<!-- ko foreach: { data: facet.items, as: 'item' } -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="India filter 3885" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="India" type="button">
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->India<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->3885<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="United States filter 2732" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="United States" type="button">
+<!-- ko text: item.textParts.main -->United <!-- /ko -->
+<!-- ko text: item.textParts.last --> States<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->2732<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="KARNATAKA, India filter 1347" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="KARNATAKA, India" type="button">
+<!-- ko text: item.textParts.main -->KARNATAKA, <!-- /ko -->
+<!-- ko text: item.textParts.last --> India<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->1347<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="BENGALURU, KARNATAKA, India filter 1339" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="BENGALURU, KARNATAKA, India" type="button">
+<!-- ko text: item.textParts.main -->BENGALURU, KARNATAKA, <!-- /ko -->
+<!-- ko text: item.textParts.last --> India<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->1339<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="TELANGANA, India filter 593" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="TELANGANA, India" type="button">
+<!-- ko text: item.textParts.main -->TELANGANA, <!-- /ko -->
+<!-- ko text: item.textParts.last --> India<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->593<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</ul>
+</div>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length -->
+<li class="search-filters__section search-filters__section--vertical" data-bind="css: { 'search-filters__section--admin-mode': adminMode },
+               attr: { 'data-filter-name': title }" data-filter-name="categories">
+<div class="search-filters__section-container">
+<button aria-expanded="true" aria-label="Categories filter 0" class="search-filters__header font-family-secondary text-color-secondary search-filters__header--vertical search-filters__header--open" data-bind="click: toggleOpen,
+                       css: { 'search-filters__header--open': isOpen, 'search-filters__header--selected': selectedCount },
+                       boolAttr: { 'aria-expanded': isOpen },
+                       attr: { 'aria-label': ariaLabel }">
+<span class="search-filters__header-content" data-bind="css: { 'search-filters__header-content--selected': selectedCount }">
+<!-- ko text: title -->categories<!-- /ko -->
+<span class="search-filters__pill-counter search-filters__pill-counter--vertical search-filters__pill-counter--hidden" data-bind="text: selectedCount, css: { 'search-filters__pill-counter--hidden': !selectedCount }">0</span>
+</span>
+</button>
+<ul class="search-filters__list search-filters__list--vertical search-filters__list--open" data-bind="css: { 'search-filters__list--open': isOpen }">
+<!--ko if: showSearchFilters -->
+<li>
+<div class="search-filter-vertical_autosuggest__list" data-bind="attr: { id: 'filter-list-' + instance}" id="filter-list-2">
+
+
+<!-- ko if: isLoading --><!-- /ko -->
+</div>
+</li>
+<!-- /ko -->
+<!-- ko foreach: { data: facet.items, as: 'item' } -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="Product Development filter 2151" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="Product Development" type="button">
+<!-- ko text: item.textParts.main -->Product <!-- /ko -->
+<!-- ko text: item.textParts.last --> Development<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->2151<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="Consulting filter 969" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="Consulting" type="button">
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Consulting<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->969<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="Sales filter 908" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="Sales" type="button">
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Sales<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->908<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="Support filter 808" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="Support" type="button">
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Support<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->808<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="Pre Sales filter 302" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="Pre Sales" type="button">
+<!-- ko text: item.textParts.main -->Pre <!-- /ko -->
+<!-- ko text: item.textParts.last --> Sales<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->302<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</ul>
+</div>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length -->
+<li class="search-filters__section search-filters__section--vertical" data-bind="css: { 'search-filters__section--admin-mode': adminMode },
+               attr: { 'data-filter-name': title }" data-filter-name="postingDates">
+<div class="search-filters__section-container">
+<button aria-expanded="true" aria-label="Posting Dates filter 0" class="search-filters__header font-family-secondary text-color-secondary search-filters__header--vertical search-filters__header--open" data-bind="click: toggleOpen,
+                       css: { 'search-filters__header--open': isOpen, 'search-filters__header--selected': selectedCount },
+                       boolAttr: { 'aria-expanded': isOpen },
+                       attr: { 'aria-label': ariaLabel }">
+<span class="search-filters__header-content" data-bind="css: { 'search-filters__header-content--selected': selectedCount }">
+<!-- ko text: title -->postingDates<!-- /ko -->
+<span class="search-filters__pill-counter search-filters__pill-counter--vertical search-filters__pill-counter--hidden" data-bind="text: selectedCount, css: { 'search-filters__pill-counter--hidden': !selectedCount }">0</span>
+</span>
+</button>
+<ul class="search-filters__list search-filters__list--vertical search-filters__list--open" data-bind="css: { 'search-filters__list--open': isOpen }">
+<!--ko if: showSearchFilters --><!-- /ko -->
+<!-- ko foreach: { data: facet.items, as: 'item' } -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="Greater than 30 days filter 3081" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="Greater than 30 days" type="button">
+<!-- ko text: item.textParts.main -->Greater than 30 <!-- /ko -->
+<!-- ko text: item.textParts.last --> days<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->3081<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="Less than 30 days filter 2632" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="Less than 30 days" type="button">
+<!-- ko text: item.textParts.main -->Less than 30 <!-- /ko -->
+<!-- ko text: item.textParts.last --> days<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->2632<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="Less than 7 days filter 595" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="Less than 7 days" type="button">
+<!-- ko text: item.textParts.main -->Less than 7 <!-- /ko -->
+<!-- ko text: item.textParts.last --> days<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->595<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</ul>
+</div>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length -->
+<li class="search-filters__section search-filters__section--vertical" data-bind="css: { 'search-filters__section--admin-mode': adminMode },
+               attr: { 'data-filter-name': title }" data-filter-name="Job Requisition Type">
+<div class="search-filters__section-container">
+<button aria-expanded="true" aria-label="Job Requisition Type filter 0" class="search-filters__header font-family-secondary text-color-secondary search-filters__header--vertical search-filters__header--open" data-bind="click: toggleOpen,
+                       css: { 'search-filters__header--open': isOpen, 'search-filters__header--selected': selectedCount },
+                       boolAttr: { 'aria-expanded': isOpen },
+                       attr: { 'aria-label': ariaLabel }">
+<span class="search-filters__header-content" data-bind="css: { 'search-filters__header-content--selected': selectedCount }">
+<!-- ko text: title -->Job Requisition Type<!-- /ko -->
+<span class="search-filters__pill-counter search-filters__pill-counter--vertical search-filters__pill-counter--hidden" data-bind="text: selectedCount, css: { 'search-filters__pill-counter--hidden': !selectedCount }">0</span>
+</span>
+</button>
+<ul class="search-filters__list search-filters__list--vertical search-filters__list--open" data-bind="css: { 'search-filters__list--open': isOpen }">
+<!--ko if: showSearchFilters --><!-- /ko -->
+<!-- ko foreach: { data: facet.items, as: 'item' } -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="Professional filter 5629" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="Professional" type="button">
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Professional<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->5629<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="Campus filter 79" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="Campus" type="button">
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Campus<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->79<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="Executive filter 5" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="Executive" type="button">
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Executive<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->5<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</ul>
+</div>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length -->
+<li class="search-filters__section search-filters__section--vertical" data-bind="css: { 'search-filters__section--admin-mode': adminMode },
+               attr: { 'data-filter-name': title }" data-filter-name="Role">
+<div class="search-filters__section-container">
+<button aria-expanded="true" aria-label="Role filter 0" class="search-filters__header font-family-secondary text-color-secondary search-filters__header--vertical search-filters__header--open" data-bind="click: toggleOpen,
+                       css: { 'search-filters__header--open': isOpen, 'search-filters__header--selected': selectedCount },
+                       boolAttr: { 'aria-expanded': isOpen },
+                       attr: { 'aria-label': ariaLabel }">
+<span class="search-filters__header-content" data-bind="css: { 'search-filters__header-content--selected': selectedCount }">
+<!-- ko text: title -->Role<!-- /ko -->
+<span class="search-filters__pill-counter search-filters__pill-counter--vertical search-filters__pill-counter--hidden" data-bind="text: selectedCount, css: { 'search-filters__pill-counter--hidden': !selectedCount }">0</span>
+</span>
+</button>
+<ul class="search-filters__list search-filters__list--vertical search-filters__list--open" data-bind="css: { 'search-filters__list--open': isOpen }">
+<!--ko if: showSearchFilters --><!-- /ko -->
+<!-- ko foreach: { data: facet.items, as: 'item' } -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="Individual Contributor filter 5288" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="Individual Contributor" type="button">
+<!-- ko text: item.textParts.main -->Individual <!-- /ko -->
+<!-- ko text: item.textParts.last --> Contributor<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->5288<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="People Manager filter 305" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="People Manager" type="button">
+<!-- ko text: item.textParts.main -->People <!-- /ko -->
+<!-- ko text: item.textParts.last --> Manager<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->305<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</ul>
+</div>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length -->
+
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</ul>
+</div>
+</search-filters-vertical>
+<!-- /ko -->
+</div>
+</div>
+</div></div></div></div></oj-dialog>
+</minimal-dialog>
+</search-filters-mobile>
+</search-filters-panel-horizontal>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- ko component: {
+            name: 'cc-section',
+            params: {
+                section: section,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-section cc-section--width-null" data-bind="css: cssClass, style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc }" style="background-color: rgb(255, 255, 255);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: section.params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-section__content">
+<!-- ko foreach: { data: components, as: 'component' } --><!-- /ko -->
+<!-- ko foreach: { data: rows, as: 'row' } -->
+<!-- ko component: { name: 'cc-row', params: { row: row, pageData: $parent.pageData, onMessage: $parent.onMessage } } --><div class="cc-row">
+<div class="cc-row__content cc-columns-count-1" data-bind="class: 'cc-columns-count-' + columns.length">
+<!-- ko foreach: { data: columns, as: 'column' } -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--default" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } --><div class="component-styling-wrapper-113061" data-bind="class: uniqueWrapperClass">
+<!-- ko if: searchResultContextComponent() -->
+<!-- ko component: {
+                    name: searchResultContextComponent,
+                    params: {
+                        contentComponent: contentComponent,
+                        uniqueWrapperClass: uniqueWrapperClass
+                    }
+            } --><div class="search-job-results">
+<!-- ko if: loading --><!-- /ko -->
+<!-- ko ifnot: loading -->
+<!-- ko if: (areRecommendedJobsEnabled() && resumeParsingSuccessful() && hasResults()) || resumeReuploadEvent()--><!-- /ko -->
+<div class="search-results-jobs-list jobs-grid" data-bind="
+            class: listClass,
+            attr: { id: customizationParams.commonParams.cssId },
+            customStyles: customizationParams.commonParams,
+        ">
+<!-- TODO - Remove areRecommendedJobsEnabled conditon after new API implementation for recommended jobs-->
+<!-- ko if: hasResults -->
+<div class="jobs-list__header" data-bind="css: { 'jobs-list__header--not-visible': isCustomPage }">
+<div class="jobs-list__header-left jobs-list__header-left--without-image" data-bind="css: {'jobs-list__header-left--without-image': !isImageVisible }">
+<!-- ko if: isSpellCheckEnabled -->
+<spell-check params="{
+                        keyword: keyword,
+                        correctedKeyword: correctedKeyword,
+                        useExactKeywordFlag: useExactKeywordFlag,
+                        suggestedKeyword: suggestedKeyword,
+                    }"><div class="spell-check">
+<!-- ko if: !useExactKeywordFlag() && correctedKeyword --><!-- /ko -->
+<!-- ko if: useExactKeywordFlag() && suggestedKeyword --><!-- /ko -->
+</div>
+</spell-check>
+<!-- /ko -->
+</div>
+<!-- ko if: !isMapViewEnabled() && !areRecommendedJobsEnabled()-->
+<div class="jobs-list__header-right">
+<search-sorting-selector params="{
+                    sortOptions: sortOptions,
+                    selectedSortOption: selectedSortOption,
+                    onChangeSortBy: onChangeSortBy,
+                }"><div class="search-results-sorting">
+<label class="search-results-sorting__section text-color-primary">
+<button aria-controls="sortMenu" aria-expanded="false" aria-label="Sort By Posting Date" class="search-results-sorting__selector focused-tooltip" data-bind="click: toggleSortMenu, attr: {title : ariaLabel, 'aria-label': ariaLabel}, boolAttr: {'aria-expanded': isSortByMenuVisible()}" title="Sort By Posting Date">
+<span data-bind="text: selectedSortOption().name, attr : {title : ariaLabel}" title="Sort By Posting Date">Posting Date</span>
+
+
+</button>
+</label>
+<div aria-hidden="true" class="search-results-sorting__selector-menu" data-bind="
+         css: { 'search-results-sorting__selector-menu--visible': isSortByMenuVisible},
+         a11y.trapFocus,
+         a11y.setInitialFocus: { isVisible: isSortByMenuVisible, delay: 400 },
+         boolAttr: {'aria-hidden': !isSortByMenuVisible()},
+         a11y.keysHandler: {keys: 'esc', handler: hideSortMenu},
+         clickOutside: { action: hideSortMenu, when: isSortByMenuVisible, excludeElement: '.search-results-sorting__selector' }" id="sortMenu" tabindex="-1">
+<ul role="presentation">
+<!-- ko foreach: { data: sortOptions, as: 'option' } -->
+<li class="search-results-sorting__selector-item">
+<button aria-label="Relevance" class="search-results-sorting__selector-item--button" data-bind="
+                    css: {
+                        'search-results-sorting__selected-sort-option': $component.isSortOptionSelected(option)
+                    },
+                    click: () =&gt; $parent.onChangeSortBy(option),
+                    text: option.name,
+                    attr: {'aria-pressed': $component.isSortOptionSelected(option), 'aria-label': option.name, 'title': option.name}" title="Relevance">Relevance</button>
+</li>
+<li class="search-results-sorting__selector-item">
+<button aria-label="Posting Date" aria-pressed="true" class="search-results-sorting__selector-item--button search-results-sorting__selected-sort-option" data-bind="
+                    css: {
+                        'search-results-sorting__selected-sort-option': $component.isSortOptionSelected(option)
+                    },
+                    click: () =&gt; $parent.onChangeSortBy(option),
+                    text: option.name,
+                    attr: {'aria-pressed': $component.isSortOptionSelected(option), 'aria-label': option.name, 'title': option.name}" title="Posting Date">Posting Date</button>
+</li>
+<!-- /ko -->
+</ul>
+</div>
+</div>
+</search-sorting-selector>
+</div>
+<!-- /ko -->
+<search-results-toggle-button params="{
+                    componentClass: componentClass,
+                    isMapViewEnabled: isMapViewEnabled,
+                    jobDisplayStyle: jobDisplayStyle,
+                    isMapAlreadyLoaded: isMapAlreadyLoaded,
+                    showStaticMap: showStaticMap,
+                    isElasticSearchEnabled: isElasticSearchEnabled
+            }"><!-- ko if: isToggleDisplayStyle() && isElasticSearchEnabled --><!-- /ko -->
+</search-results-toggle-button>
+</div>
+<!-- ko if: isMapAlreadyLoaded() &&  isElasticSearchEnabled && !areRecommendedJobsEnabled() --><!-- /ko -->
+<!-- ko if: showStaticMap() && isMapViewEnabled()--><!-- /ko -->
+<!-- ko if: !isMapViewEnabled() -->
+<ul class="jobs-grid__list" data-bind="class: `${componentClass()}__list`">
+<!-- ko foreach: { data: requisitions, as: 'job' } -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><div class="job-tile job-grid-item" data-bind="
+    css: { 'job-grid-item--active': job.isActive, 'job-grid-item--focus': hasFocus }
+">
+<a class="job-grid-item__link" data-bind="
+        attr: { href: getJobUrl(job.id) },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://careers.oracle.com/jobs/#en/sites/jobsearch/job/238697/?mode=location">
+<div class="job-grid-item__content">
+<div class="job-grid-item__header" data-bind="style: gridItemHeaderAdditionalStyles" style="border-radius: 4px 4px 0px 0px;">
+<search-result-item-header params="
+                        job: job,
+                        jobHeadingConfig: jobHeadingConfig,
+                    "><div class="job-tile__header">
+<span class="job-tile__title" data-bind="text: job.title">Applied Scientist 2/3</span>
+<!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
+<!-- ko if: hasSubheader -->
+<div class="job-tile__subheader">
+<!-- ko if: jobHeadingConfig().isLocationVisible -->
+<span>
+<!-- ko component: { 
+                name: 'posting-locations', 
+                params: { 
+                    primaryLocation: job.primaryLocation,
+                    secondaryLocations: job.secondaryLocations,
+                    workplaceType: {
+                        name: job.workplaceType,
+                        code: job.workplaceTypeCode,
+                    },
+                    mode:'tooltip'
+                }
+            } --><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">BENGALURU, KARNATAKA, India</span>
+<!-- ko if: secondaryLocationsCount > 0 --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+<!-- /ko -->
+</span>
+<!-- /ko -->
+<!-- ko if: jobHeadingConfig().isDistanceVisible --><!-- /ko -->
+<!-- ko if: jobHeadingConfig().isPostingDateVisible --><!-- /ko -->
+<!-- ko if: areJobTagsVisible -->
+<job-tags params="jobTags: jobTags"><span class="job-tags">
+<!-- ko foreach: { data: jobTags, as: 'tag' } -->
+<!-- ko if: tag.isVisible() -->
+<tag params="className: tag.className, label: tag.label"><div class="job-tag job-tag--hot-jobs" data-bind="class: `job-tag--${className}`">
+
+<span class="job-tag__title" data-bind="text: label">Hot Job</span>
+</div>
+</tag>
+<!-- /ko -->
+<!-- ko if: tag.isVisible() -->
+<tag params="className: tag.className, label: tag.label"><div class="job-tag job-tag--trending-job" data-bind="class: `job-tag--${className}`">
+
+<span class="job-tag__title" data-bind="text: label">Trending</span>
+</div>
+</tag>
+<!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- /ko -->
+</span>
+</job-tags>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+</search-result-item-header>
+</div>
+<div class="job-grid-item__body" data-bind="style: gridItemBodyAdditionalStyles" style="border-radius: 0px 0px 4px 4px;">
+<!-- ko if: isImageVisible --><!-- /ko -->
+<!-- ko if: isDescriptionVisible -->
+<div>
+<p class="job-grid-item__description" data-bind="text: job.shortDescription">Applied Scientist 2/3</p>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</a>
+<div class="job-grid-item__actions">
+
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><div class="job-tile job-grid-item" data-bind="
+    css: { 'job-grid-item--active': job.isActive, 'job-grid-item--focus': hasFocus }
+">
+<a class="job-grid-item__link" data-bind="
+        attr: { href: getJobUrl(job.id) },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://careers.oracle.com/jobs/#en/sites/jobsearch/job/221695/?mode=location">
+<div class="job-grid-item__content">
+<div class="job-grid-item__header" data-bind="style: gridItemHeaderAdditionalStyles" style="border-radius: 4px 4px 0px 0px;">
+<search-result-item-header params="
+                        job: job,
+                        jobHeadingConfig: jobHeadingConfig,
+                    "><div class="job-tile__header">
+<span class="job-tile__title" data-bind="text: job.title">Software Developer 3</span>
+<!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
+<!-- ko if: hasSubheader -->
+<div class="job-tile__subheader">
+<!-- ko if: jobHeadingConfig().isLocationVisible -->
+<span>
+<!-- ko component: { 
+                name: 'posting-locations', 
+                params: { 
+                    primaryLocation: job.primaryLocation,
+                    secondaryLocations: job.secondaryLocations,
+                    workplaceType: {
+                        name: job.workplaceType,
+                        code: job.workplaceTypeCode,
+                    },
+                    mode:'tooltip'
+                }
+            } --><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">BENGALURU, KARNATAKA, India</span>
+<!-- ko if: secondaryLocationsCount > 0 --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+<!-- /ko -->
+</span>
+<!-- /ko -->
+<!-- ko if: jobHeadingConfig().isDistanceVisible --><!-- /ko -->
+<!-- ko if: jobHeadingConfig().isPostingDateVisible --><!-- /ko -->
+<!-- ko if: areJobTagsVisible --><!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+</search-result-item-header>
+</div>
+<div class="job-grid-item__body" data-bind="style: gridItemBodyAdditionalStyles" style="border-radius: 0px 0px 4px 4px;">
+<!-- ko if: isImageVisible --><!-- /ko -->
+<!-- ko if: isDescriptionVisible -->
+<div>
+<p class="job-grid-item__description" data-bind="text: job.shortDescription">Cloud Application development</p>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</a>
+<div class="job-grid-item__actions">
+
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><div class="job-tile job-grid-item" data-bind="
+    css: { 'job-grid-item--active': job.isActive, 'job-grid-item--focus': hasFocus }
+">
+<a class="job-grid-item__link" data-bind="
+        attr: { href: getJobUrl(job.id) },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://careers.oracle.com/jobs/#en/sites/jobsearch/job/223844/?mode=location">
+<div class="job-grid-item__content">
+<div class="job-grid-item__header" data-bind="style: gridItemHeaderAdditionalStyles" style="border-radius: 4px 4px 0px 0px;">
+<search-result-item-header params="
+                        job: job,
+                        jobHeadingConfig: jobHeadingConfig,
+                    "><div class="job-tile__header">
+<span class="job-tile__title" data-bind="text: job.title">Technical Delivery Lead - Managed Cloud Services</span>
+<!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
+<!-- ko if: hasSubheader -->
+<div class="job-tile__subheader">
+<!-- ko if: jobHeadingConfig().isLocationVisible -->
+<span>
+<!-- ko component: { 
+                name: 'posting-locations', 
+                params: { 
+                    primaryLocation: job.primaryLocation,
+                    secondaryLocations: job.secondaryLocations,
+                    workplaceType: {
+                        name: job.workplaceType,
+                        code: job.workplaceTypeCode,
+                    },
+                    mode:'tooltip'
+                }
+            } --><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">Romania</span>
+<!-- ko if: secondaryLocationsCount > 0 -->
+<tooltip class="posting-locations" params="isVisible: isTooltipVisible, helpText: tooltipContent" role="tooltip"><span class="tooltip-wrapper" data-bind="attr: {id: helpTextId}">
+<!-- ko template: { nodes: nodes['tooltip-anchor'], data: $parent} -->
+<button aria-label="Romania,Poland,LINLITHGOW, United Kingdom,Czech Republic,Spain" data-bind="attr: { 'aria-label': tooltipData },
+                event: {
+                    mouseover: showTooltip,
+                    mouseout: hideTooltip,
+                    focus: showTooltip,
+                    blur: hideTooltip
+                }">
+<i18n class="posting-locations__count" params="key: 'search.job-item.secondary-locations'"><span data-bind="i18n: {key: key, tokens: tokens}">and <span data-bind="text: $parent.secondaryLocationsCount" data-i18n-token="locationsCount">4</span> more</span>
+</i18n>
+</button>
+<!-- /ko -->
+<!-- ko if: isVisible --><!-- /ko -->
+</span>
+</tooltip>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+<!-- /ko -->
+</span>
+<!-- /ko -->
+<!-- ko if: jobHeadingConfig().isDistanceVisible --><!-- /ko -->
+<!-- ko if: jobHeadingConfig().isPostingDateVisible --><!-- /ko -->
+<!-- ko if: areJobTagsVisible --><!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+</search-result-item-header>
+</div>
+<div class="job-grid-item__body" data-bind="style: gridItemBodyAdditionalStyles" style="border-radius: 0px 0px 4px 4px;">
+<!-- ko if: isImageVisible --><!-- /ko -->
+<!-- ko if: isDescriptionVisible -->
+<div>
+<p class="job-grid-item__description" data-bind="text: job.shortDescription">The Technical Delivery lead aka Primary Support Engineer role is for a senior technical resource to deliver Managed Cloud Services to a variety of diverse and demanding customers located in JAPAC and EMEA. The Technical Delivery lead aka Primary Support Engineer (PSE) role is for a senior technical resource to deliver Managed Cloud Services to a variety of diverse and demanding customers located in JAPAC and EMEA</p>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</a>
+<div class="job-grid-item__actions">
+
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><div class="job-tile job-grid-item" data-bind="
+    css: { 'job-grid-item--active': job.isActive, 'job-grid-item--focus': hasFocus }
+">
+<a class="job-grid-item__link" data-bind="
+        attr: { href: getJobUrl(job.id) },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://careers.oracle.com/jobs/#en/sites/jobsearch/job/224125/?mode=location">
+<div class="job-grid-item__content">
+<div class="job-grid-item__header" data-bind="style: gridItemHeaderAdditionalStyles" style="border-radius: 4px 4px 0px 0px;">
+<search-result-item-header params="
+                        job: job,
+                        jobHeadingConfig: jobHeadingConfig,
+                    "><div class="job-tile__header">
+<span class="job-tile__title" data-bind="text: job.title">Senior Member of Technical Staff - OCI Infrastructure Delivery Engineering</span>
+<!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
+<!-- ko if: hasSubheader -->
+<div class="job-tile__subheader">
+<!-- ko if: jobHeadingConfig().isLocationVisible -->
+<span>
+<!-- ko component: { 
+                name: 'posting-locations', 
+                params: { 
+                    primaryLocation: job.primaryLocation,
+                    secondaryLocations: job.secondaryLocations,
+                    workplaceType: {
+                        name: job.workplaceType,
+                        code: job.workplaceTypeCode,
+                    },
+                    mode:'tooltip'
+                }
+            } --><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">Austin, TX, United States</span>
+<!-- ko if: secondaryLocationsCount > 0 -->
+<tooltip class="posting-locations" params="isVisible: isTooltipVisible, helpText: tooltipContent" role="tooltip"><span class="tooltip-wrapper" data-bind="attr: {id: helpTextId}">
+<!-- ko template: { nodes: nodes['tooltip-anchor'], data: $parent} -->
+<button aria-label="Austin, TX, United States,Nashville, TN, United States" data-bind="attr: { 'aria-label': tooltipData },
+                event: {
+                    mouseover: showTooltip,
+                    mouseout: hideTooltip,
+                    focus: showTooltip,
+                    blur: hideTooltip
+                }">
+<i18n class="posting-locations__count" params="key: 'search.job-item.secondary-locations'"><span data-bind="i18n: {key: key, tokens: tokens}">and <span data-bind="text: $parent.secondaryLocationsCount" data-i18n-token="locationsCount">1</span> more</span>
+</i18n>
+</button>
+<!-- /ko -->
+<!-- ko if: isVisible --><!-- /ko -->
+</span>
+</tooltip>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+<!-- /ko -->
+</span>
+<!-- /ko -->
+<!-- ko if: jobHeadingConfig().isDistanceVisible --><!-- /ko -->
+<!-- ko if: jobHeadingConfig().isPostingDateVisible --><!-- /ko -->
+<!-- ko if: areJobTagsVisible -->
+<job-tags params="jobTags: jobTags"><span class="job-tags">
+<!-- ko foreach: { data: jobTags, as: 'tag' } -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() -->
+<tag params="className: tag.className, label: tag.label"><div class="job-tag job-tag--trending-job" data-bind="class: `job-tag--${className}`">
+
+<span class="job-tag__title" data-bind="text: label">Trending</span>
+</div>
+</tag>
+<!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- /ko -->
+</span>
+</job-tags>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+</search-result-item-header>
+</div>
+<div class="job-grid-item__body" data-bind="style: gridItemBodyAdditionalStyles" style="border-radius: 0px 0px 4px 4px;">
+<!-- ko if: isImageVisible --><!-- /ko -->
+<!-- ko if: isDescriptionVisible -->
+<div>
+<p class="job-grid-item__description" data-bind="text: job.shortDescription">Looking for a passionate senior software engineer to develop systems that manage the datacenter buildout process, speeding up OCI capacity delivery.</p>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</a>
+<div class="job-grid-item__actions">
+
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<!-- ko ifnot: $parent.customizationParams.contentParams.hideTalentCommunitySignup() -->
+<li data-qa="searchResultTalentCommunityItem">
+<!-- ko component: {
+                                    name: $parent.talentCommunityTileComponent,
+                                    params: {
+                                        className: $parent.customizationParams.contentParams.jobDisplayStyle()
+                                    }
+                                } --><div class="talent-community-tile text-color-secondary talent-community-tile--tile" data-bind="css: className" data-qa="searchResultTCJoin">
+
+<h3 class="talent-community-tile__title text-color-primary" data-bind="text: labels.header">Oracle Talent Network</h3>
+<p class="talent-community-tile__subheader" data-bind="text: labels.description">Get career insights and job opportunities</p>
+<div class="talent-community-tile__actions">
+<a class="button text-color-primary font-family-secondary" data-bind="click: openSignUpComponent, attr: {'href': url}" href="https://careers.oracle.com/jobs/#en/sites/jobsearch/tc-join?mode=location">
+<span class="button__label" data-bind="text: labels.button">Join our network</span>
+</a>
+</div>
+
+</div>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+
+<!-- /ko -->
+<!-- /ko -->
+</ul>
+<!-- /ko -->
+<!-- ko if: initialized -->
+<!-- ko component: {
+                    name: 'search-pagination',
+                    params: {
+                        state: paginationState
+                    },
+                } --><!-- ko if: state().type === 'loading' --><!-- /ko -->
+<!-- ko if: state().type === 'has_more_items' -->
+<div class="search-pagination">
+<!-- ko if: state().isInfiniteScrollEnabled --><!-- /ko -->
+<!-- ko ifnot: state().isInfiniteScrollEnabled -->
+<button class="button text-color-primary font-family-secondary" data-bind="click: state().loadMore()">
+<span class="button__label" data-bind="i18n: 'search.show-more-results'">Show More Results</span>
+</button>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- ko if: initialized() && !hasResults() --><!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- ko component: { name: 'cc-row', params: { row: row, pageData: $parent.pageData, onMessage: $parent.onMessage } } --><div class="cc-row">
+<div class="cc-row__content cc-columns-count-1" data-bind="class: 'cc-columns-count-' + columns.length">
+<!-- ko foreach: { data: columns, as: 'column' } -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--default" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } -->
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- ko component: { name: 'cc-row', params: { row: row, pageData: $parent.pageData, onMessage: $parent.onMessage } } --><div class="cc-row">
+<div class="cc-row__content cc-columns-count-1" data-bind="class: 'cc-columns-count-' + columns.length">
+<!-- ko foreach: { data: columns, as: 'column' } -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--default" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style='background-color: rgba(255, 255, 255, 0); background-image: url("https://www.oracle.com/a/ocom/img/jobsearch-backgroundstrip-10i.png");'>
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } --><!-- ko if: areRecommendedJobsEnabled && !isEventRouteEnabled() -->
+<div class="recommended-jobs-widget-wrapper component-styling-wrapper-113055" data-bind="class: uniqueWrapperClass">
+<div class="recommended-jobs-widget recommended-jobs-widget--large recommended-jobs-widget--call-to-action" data-bind="
+            event: isDragAndDropActive()
+                ? {
+                    dragover: handleDragOver,
+                    dragenter: handleDragEnter,
+                    dragleave: handleDragLeave,
+                    drop: handleDrop.bind($component, event)
+                }
+                : null,
+            class: widgetClasses,
+            attr: { id: customizationParams.commonParams.cssId },
+            customStyles: customizationParams.commonParams
+        " style="margin-top: -10px; margin-bottom: -10px;">
+<div class="recommended-jobs-widget__text-section">
+
+<!-- ko if: !isResumeParsingInProgress() -->
+<!-- ko if: !errorMessage() -->
+<div class="recommended-jobs-widget__text-upload">
+<span aria-label="See recommended jobs based on your CV/resume (your file will not be stored)" class="recommended-jobs-widget__call-to-action-text" data-bind="text: callToActionText, attr: {'aria-label': callToActionText}">See recommended jobs based on your CV/resume (your file will not be stored)</span>
+<!-- ko if: isPrivacyPolicyEnabled() --><!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- ko if: errorMessage() && !isReuploadAction()  --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: isResumeParsingInProgress() && !isReuploadAction() --><!-- /ko -->
+</div>
+<!-- ko template: 'recommended-jobs-widget-upload-button' --><div class="recommended-jobs-widget__upload-section" data-bind="css: {'recommended-jobs-widget__upload-section--disable': isResumeParsingInProgress() || isReuploadInProgress()}">
+
+<button aria-hidden="true" class="recommended-jobs-widget__button recommended-jobs-widget__button--upload" data-bind="text: messages.callToActionButtonText" tabindex="-1" type="button">Select a file or drop one here</button>
+</div>
+<!-- /ko -->
+</div>
+</div>
+<!-- ko if: showPrivacyPolicyModal() --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- ko component: {
+            name: 'cc-section',
+            params: {
+                section: section,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-section cc-section--width-null" data-bind="css: cssClass, style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc }" style='background-color: rgba(255, 255, 255, 0); background-image: url("https://www.oracle.com/a/ocom/img/or-video-bg.jpg");'>
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: section.params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-section__content">
+<!-- ko foreach: { data: components, as: 'component' } --><!-- /ko -->
+<!-- ko foreach: { data: rows, as: 'row' } -->
+<!-- ko component: { name: 'cc-row', params: { row: row, pageData: $parent.pageData, onMessage: $parent.onMessage } } --><div class="cc-row">
+<div class="cc-row__content cc-columns-count-1" data-bind="class: 'cc-columns-count-' + columns.length">
+<!-- ko foreach: { data: columns, as: 'column' } -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--default" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } -->
+<!-- /ko -->
+<!-- ko component: { name: component.params.type, params: component } --><div class="cc-element cc-element--rich-text basic-formatter cc-paragraph" data-bind="html: content, css: params.cssClass, attr: { id: params.cssId }, customStyles: params"><p style="text-align:center;"><span style="color:#ffffff;font-family:'Oracle Sans Light';font-size:36px;">Create the </span><span style="color:#ffffff;font-family:'Oracle Sans';font-size:36px;">future</span><span style="color:#ffffff;font-family:'Oracle Sans Light';font-size:36px;"> with us</span></p></div>
+<!-- /ko -->
+<!-- ko component: { name: component.params.type, params: component } -->
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- ko component: { name: 'cc-row', params: { row: row, pageData: $parent.pageData, onMessage: $parent.onMessage } } --><div class="cc-row">
+<div class="cc-row__content cc-columns-count-2" data-bind="class: 'cc-columns-count-' + columns.length">
+<!-- ko foreach: { data: columns, as: 'column' } -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--1-2" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } --><div class="cc-element cc-element-media cc-element-media--align-right null" data-bind="css: cssClass, attr: { id: params.cssId }, customStyles: params" style="padding-right: 44px;">
+<!-- ko component: {
+        name: component,
+        params: {
+            params: params
+        }
+    } --><div class="media-element__video-wrapper" data-bind="style: { maxWidth: params.width()+'px' }" style="max-width: 500px;">
+
+<div class="replaced-iframe"><div id="player" style="width: 100%; height: 100%;"><div aria-label="YouTube ვიდეო დამკვრელი" class="html5-video-player ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-title-enable-channel-logo ytp-fine-scrubbing-exp ytp-embed ytp-embed-playlist unstarted-mode ytp-hide-controls ytp-small-mode" data-version="/s/player/590f65a6/player_ias.vflset/ka_GE/base.js" id="movie_player" tabindex="-1"><div class="html5-video-container" data-layer="0"></div><div class="ytp-chrome-top ytp-show-cards-title" data-layer="1"><div class="ytp-title-channel"><div aria-hidden="true" class="ytp-title-expanded-overlay"><div class="ytp-title-expanded-heading"><div class="ytp-title-expanded-title"><a aria-hidden="true" tabindex="-1" target="_blank">Oracle Careers</a></div><div aria-hidden="true" class="ytp-title-expanded-subtitle">3,1 ათ. გამომწერი</div></div></div></div><div class="ytp-title"><div class="ytp-title-text"><a class="ytp-title-link yt-uix-sessionlink" data-sessionlink="feature=player-title" href="https://www.youtube.com/watch?v=jOkZy0Tfe5Q" tabindex="0" target="_blank">Oracle Careers l Create the Future With Us</a><div class="ytp-title-subtext"></div></div></div><div class="ytp-shorts-title-channel" style="display: none;"><div class="ytp-shorts-title-expanded-heading"><div class="ytp-shorts-title-expanded-title"><a tabindex="0" target="_blank">Oracle Careers</a></div></div></div><div class="ytp-chrome-top-buttons"><button aria-label="ძიება" class="ytp-button ytp-search-button" data-tooltip-opaque="true" style="display: none;" title="ძიება"><div class="ytp-search-title">ძიება</div></button><button aria-haspopup="true" aria-label="დასაკრავი სია" aria-owns="ytp-id-22" class="ytp-playlist-menu-button ytp-button" style="display: none;"></button><button aria-haspopup="true" aria-label="ბარათების ჩვენება" aria-owns="iv-drawer" class="ytp-button ytp-cards-button" data-tooltip-opaque="true" style="display: none;"><span class="ytp-cards-button-icon-default"><div class="ytp-cards-button-title">ინფორმაცია</div></span><span class="ytp-cards-button-icon-shopping"><div class="ytp-cards-button-title">საყიდლები</div></span></button><div class="ytp-cards-teaser" style="display: none;"><div class="ytp-cards-teaser-text"></div></div><button aria-haspopup="true" aria-label="მეტი" aria-owns="ytp-id-29" class="ytp-button ytp-overflow-button ytp-overflow-button-visible" title="მეტი"></button></div></div><button class="ytp-unmute ytp-popup ytp-button ytp-unmute-animated ytp-unmute-shrink" data-layer="2" style="display: none;"><div class="ytp-unmute-inner"><div class="ytp-unmute-text">შეეხეთ დადუმების მოსახსნელად</div></div></button><div class="ytp-cued-thumbnail-overlay" data-layer="4" style=""></div><div class="ytp-spinner" data-layer="4" style="display: none;"><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"></div><div class="ytp-spinner-right"></div></div></div><div class="ytp-spinner-message" style="display: none;">თუ დაკვრა მალე არ დაიწყო, შეეცადეთ, გადატვირთოთ თქვენი მოწყობილობა.</div></div><div aria-atomic="true" aria-live="assertive" class="ytp-paid-content-overlay" data-layer="4"></div><div class="ytp-storyboard-framepreview" data-layer="4" style="display: none;"></div><div data-layer="4" style="display: none;"><div class="ytp-bezel-text-wrapper"></div><div class="ytp-bezel" role="status"></div></div><div class="ytp-doubletap-ui-legacy" data-layer="4" style="display: none;"><div class="ytp-doubletap-static-circle"></div><div class="ytp-doubletap-seek-info-container"><div class="ytp-doubletap-arrows-container"></div><div class="ytp-doubletap-tooltip"></div></div></div><div aria-live="polite" data-layer="4" style="display: none;"><div class="ytp-tooltip-text-wrapper"><div class="ytp-tooltip-edu"></div><div class="ytp-tooltip-title"></div></div><div class="ytp-tooltip-bg"></div></div><div class="ytp-ad-persistent-progress-bar-container" data-layer="4" style="display: none;"></div><div class="ytp-suggested-action" data-layer="4"><button class="ytp-button ytp-suggested-action-badge ytp-suggested-action-badge-with-controls" style="display: none;"><div class="ytp-suggested-action-badge-expanded-content-container" style="display: none;"></div></button></div><div aria-atomic="true" aria-haspopup="true" aria-live="assertive" aria-owns="ytp-id-30" class="ytp-info-panel-preview" data-layer="4" data-tooltip-opaque="true" style="display: none;"></div><div class="ytp-remote" data-layer="4" style="display: none;"><div class="ytp-remote-display-status"></div></div><div class="ytp-mdx-popup-dialog" data-layer="4" role="dialog" style="display: none;"><div class="ytp-mdx-popup-dialog-inner-content"><div class="ytp-mdx-popup-title">თქვენ გამოსული ხართ</div><div class="ytp-mdx-popup-description">ვიდეოები, რომლებსაც უყურებთ, შეიძლება ტელევიზორის ნახვის ისტორიას დაემატოს და გავლენა იქონიოს რეკომენდაციებზე ტელევიზორში. ამის თავიდან ასარიდებლად გააუქმეთ და შედით YouTube-ში თქვენი კომპიუტერიდან.</div><div class="ytp-mdx-privacy-popup-buttons"><button class="ytp-button ytp-mdx-privacy-popup-cancel">გაუქმება</button><button class="ytp-button ytp-mdx-privacy-popup-confirm">დადასტურება</button></div></div></div><div class="ytp-muted-autoplay-overlay" data-layer="4" style="display: none;"><div class="ytp-muted-autoplay-bottom-buttons"><button aria-label="დადუმებული დაკვრის ინდიკატორი" class="ytp-muted-autoplay-equalizer ytp-button"></button></div></div><div class="ytp-muted-autoplay-endscreen-overlay" data-layer="4" style="display: none;"><div class="ytp-muted-autoplay-end-panel"></div></div><div class="ytp-playlist-menu" data-layer="5" id="ytp-id-22" role="dialog" style="display: none;"><div class="ytp-playlist-menu-header"><div class="ytp-playlist-menu-title"></div></div></div><div aria-labelledby="ytp-id-24" class="ytp-share-panel" data-layer="5" id="ytp-id-25" role="dialog" style="display: none;"><div class="ytp-share-panel-inner-content"><div class="ytp-share-panel-title" id="ytp-id-24">გაზიარება</div><label class="ytp-share-panel-include-playlist">დასაკრავის სიის დამატება</label><div class="ytp-share-panel-loading-spinner"><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"></div><div class="ytp-spinner-right"></div></div></div></div><div class="ytp-share-panel-error">გაზიარების ინფორმაციის მიღებისას წარმოიშვა შეცდომა. გთხოვთ, სცადოთ მოგვიანებით.</div></div></div><div class="ytp-overflow-panel" data-layer="5" id="ytp-id-29" role="dialog" style="display: none;"><div class="ytp-overflow-panel-content"><div class="ytp-overflow-panel-action-buttons"><button aria-label="მოგვიანებით სანახავი" class="ytp-watch-later-button ytp-button ytp-show-watch-later-title" data-tooltip-opaque="true" style="display: none;" title="მოგვიანებით სანახავი"><div class="ytp-watch-later-title">მოგვიანებით სანახავი</div></button><button aria-haspopup="true" aria-label="გაზიარება" aria-owns="ytp-id-25" class="ytp-button ytp-share-button ytp-show-share-title ytp-share-button-visible" data-tooltip-opaque="true" title="გაზიარება"><div class="ytp-share-title">გაზიარება</div></button><button aria-label="ბმულის კოპირება" class="ytp-button ytp-copylink-button ytp-show-copylink-title" data-tooltip-opaque="true" style="display: none;" title="ბმულის კოპირება"><div aria-hidden="true" class="ytp-copylink-title">ბმულის კოპირება</div></button></div></div></div><div class="ytp-info-panel-detail-skrim" data-layer="5" style="display: none;"><div class="ytp-info-panel-detail" id="ytp-id-30" role="dialog"><div class="ytp-info-panel-detail-header"></div></div></div><div class="ytp-popup ytp-settings-menu" data-layer="6" id="ytp-id-17" style="display: none;"><div class="ytp-panel"></div></div><a aria-label="YouTube ზე ყურება" class="ytp-impression-link" data-layer="8" style="display: none;" target="_blank"><div aria-hidden="true" class="ytp-impression-link-content"><div class="ytp-impression-link-text">უყურეთ აქ:</div></div></a><div class="ytp-chrome-bottom" data-layer="9" style="display: none; width: 319px; left: 12px;"><div class="ytp-progress-bar-container"><div class="ytp-heat-map-container"></div><div aria-label="საძიებო სლაიდერი" aria-valuemax="0" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0 წუთები 0 წამები / 0 წუთები 0 წამები-დან" class="ytp-progress-bar" draggable="true" role="slider" style="touch-action: none;" tabindex="0"><div class="ytp-chapters-container"><div class="ytp-chapter-hover-container" style="width: 319px;"><div class="ytp-progress-list"></div></div></div><div class="ytp-scrubber-container" style="transform: translateX(0px);"><div class="ytp-scrubber-button ytp-swatch-background-color"></div></div></div><div class="ytp-fine-scrubbing-container"><div class="ytp-fine-scrubbing"><div class="ytp-fine-scrubbing-draggable" draggable="true" style="touch-action: none; padding: 0px;"></div><div aria-hidden="true" class="ytp-fine-scrubbing-seek-time">0:00</div></div></div></div><div class="ytp-chrome-controls"><div class="ytp-left-controls"><span class="ytp-volume-area"><div aria-label="ხმა" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" aria-valuetext="100% ხმა" class="ytp-volume-panel" role="slider" style="display: none;" tabindex="0" title="ხმა"><div class="ytp-volume-slider" draggable="true" style="touch-action: none;"></div></div></span><div class="ytp-time-display notranslate" style="display: none;"><span><span class="ytp-time-separator"> / </span></span><span class="ytp-clip-watch-full-video-button-separator">•</span><button class="ytp-live-badge ytp-button" disabled="true">პირდაპირი</button></div><div class="ytp-chapter-container" style="display: none;"><button class="ytp-chapter-title ytp-button ytp-chapter-container-disabled fitted-chapter-button" disabled=""><span aria-hidden="true" class="ytp-chapter-title-prefix">•</span></button></div></div><div class="ytp-right-controls"></div></div></div></div></div><noscript><div class="player-unavailable"><h1 class="message">მოხდა შეცდომა.</h1><div class="submessage"><a href="https://www.youtube.com/watch?v=jOkZy0Tfe5Q" target="_blank">სცადეთ ამ ვიდეოს ნახვა www.youtube.com-ზე</a> ან ჩართეთ JavaScript, თუ ის გამორთულია თქვენს ბრაუზერში.</div></div></noscript></div>
+</div>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- ko component: { name: component.params.type, params: component } --><div class="cc-element cc-element--rich-text basic-formatter cc-paragraph" data-bind="html: content, css: params.cssClass, attr: { id: params.cssId }, customStyles: params" id="oal-text-left" style="padding-top: 10px; padding-right: 0px; margin-bottom: 20px;"><p><span style="color:#ffffff;font-size:16px;">All over the world, people's lives are better because of Oracle. Want to make a difference?</span><span style="font-family:'Oracle Sans Bold';font-size:16px;"> </span><a href="https://www.oracle.com/careers/"><span style="color:#fcd881;font-family:'Oracle Sans Bold';font-size:16px;">Join our company of change makers.</span></a></p></div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--1-2" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } --><div class="cc-element cc-element-media cc-element-media--align-left null" data-bind="css: cssClass, attr: { id: params.cssId }, customStyles: params" style="padding-left: 44px;">
+<!-- ko component: {
+        name: component,
+        params: {
+            params: params
+        }
+    } --><div class="media-element__video-wrapper" data-bind="style: { maxWidth: params.width()+'px' }" style="max-width: 500px;">
+
+<div class="replaced-iframe"><div id="player" style="width: 100%; height: 100%;"><div aria-label="YouTube ვიდეო დამკვრელი" class="html5-video-player ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-title-enable-channel-logo ytp-fine-scrubbing-exp ytp-embed ytp-embed-playlist unstarted-mode ytp-hide-controls ytp-small-mode" data-version="/s/player/590f65a6/player_ias.vflset/ka_GE/base.js" id="movie_player" tabindex="-1"><div class="html5-video-container" data-layer="0"></div><div class="ytp-chrome-top ytp-show-cards-title" data-layer="1"><div class="ytp-title-channel"><div aria-hidden="true" class="ytp-title-expanded-overlay"><div class="ytp-title-expanded-heading"><div class="ytp-title-expanded-title"><a aria-hidden="true" tabindex="-1" target="_blank">Oracle Careers</a></div><div aria-hidden="true" class="ytp-title-expanded-subtitle">3,1 ათ. გამომწერი</div></div></div></div><div class="ytp-title"><div class="ytp-title-text"><a class="ytp-title-link yt-uix-sessionlink" data-sessionlink="feature=player-title" href="https://www.youtube.com/watch?v=X8SIav0KxSA" tabindex="0" target="_blank">Oracle Culture and Inclusion: Meet Our People</a><div class="ytp-title-subtext"></div></div></div><div class="ytp-shorts-title-channel" style="display: none;"><div class="ytp-shorts-title-expanded-heading"><div class="ytp-shorts-title-expanded-title"><a tabindex="0" target="_blank">Oracle Careers</a></div></div></div><div class="ytp-chrome-top-buttons"><button aria-label="ძიება" class="ytp-button ytp-search-button" data-tooltip-opaque="true" style="display: none;" title="ძიება"><div class="ytp-search-title">ძიება</div></button><button aria-haspopup="true" aria-label="დასაკრავი სია" aria-owns="ytp-id-22" class="ytp-playlist-menu-button ytp-button" style="display: none;"></button><button aria-haspopup="true" aria-label="ბარათების ჩვენება" aria-owns="iv-drawer" class="ytp-button ytp-cards-button" data-tooltip-opaque="true" style="display: none;"><span class="ytp-cards-button-icon-default"><div class="ytp-cards-button-title">ინფორმაცია</div></span><span class="ytp-cards-button-icon-shopping"><div class="ytp-cards-button-title">საყიდლები</div></span></button><div class="ytp-cards-teaser" style="display: none;"><div class="ytp-cards-teaser-text"></div></div><button aria-haspopup="true" aria-label="მეტი" aria-owns="ytp-id-29" class="ytp-button ytp-overflow-button ytp-overflow-button-visible" title="მეტი"></button></div></div><button class="ytp-unmute ytp-popup ytp-button ytp-unmute-animated ytp-unmute-shrink" data-layer="2" style="display: none;"><div class="ytp-unmute-inner"><div class="ytp-unmute-text">შეეხეთ დადუმების მოსახსნელად</div></div></button><div class="ytp-cued-thumbnail-overlay" data-layer="4" style=""></div><div class="ytp-spinner" data-layer="4" style="display: none;"><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"></div><div class="ytp-spinner-right"></div></div></div><div class="ytp-spinner-message" style="display: none;">თუ დაკვრა მალე არ დაიწყო, შეეცადეთ, გადატვირთოთ თქვენი მოწყობილობა.</div></div><div aria-atomic="true" aria-live="assertive" class="ytp-paid-content-overlay" data-layer="4"></div><div class="ytp-storyboard-framepreview" data-layer="4" style="display: none;"></div><div data-layer="4" style="display: none;"><div class="ytp-bezel-text-wrapper"></div><div class="ytp-bezel" role="status"></div></div><div class="ytp-doubletap-ui-legacy" data-layer="4" style="display: none;"><div class="ytp-doubletap-static-circle"></div><div class="ytp-doubletap-seek-info-container"><div class="ytp-doubletap-arrows-container"></div><div class="ytp-doubletap-tooltip"></div></div></div><div aria-live="polite" data-layer="4" style="display: none;"><div class="ytp-tooltip-text-wrapper"><div class="ytp-tooltip-edu"></div><div class="ytp-tooltip-title"></div></div><div class="ytp-tooltip-bg"></div></div><div class="ytp-ad-persistent-progress-bar-container" data-layer="4" style="display: none;"></div><div class="ytp-suggested-action" data-layer="4"><button class="ytp-button ytp-suggested-action-badge ytp-suggested-action-badge-with-controls" style="display: none;"><div class="ytp-suggested-action-badge-expanded-content-container" style="display: none;"></div></button></div><div aria-atomic="true" aria-haspopup="true" aria-live="assertive" aria-owns="ytp-id-30" class="ytp-info-panel-preview" data-layer="4" data-tooltip-opaque="true" style="display: none;"></div><div class="ytp-remote" data-layer="4" style="display: none;"><div class="ytp-remote-display-status"></div></div><div class="ytp-mdx-popup-dialog" data-layer="4" role="dialog" style="display: none;"><div class="ytp-mdx-popup-dialog-inner-content"><div class="ytp-mdx-popup-title">თქვენ გამოსული ხართ</div><div class="ytp-mdx-popup-description">ვიდეოები, რომლებსაც უყურებთ, შეიძლება ტელევიზორის ნახვის ისტორიას დაემატოს და გავლენა იქონიოს რეკომენდაციებზე ტელევიზორში. ამის თავიდან ასარიდებლად გააუქმეთ და შედით YouTube-ში თქვენი კომპიუტერიდან.</div><div class="ytp-mdx-privacy-popup-buttons"><button class="ytp-button ytp-mdx-privacy-popup-cancel">გაუქმება</button><button class="ytp-button ytp-mdx-privacy-popup-confirm">დადასტურება</button></div></div></div><div class="ytp-muted-autoplay-overlay" data-layer="4" style="display: none;"><div class="ytp-muted-autoplay-bottom-buttons"><button aria-label="დადუმებული დაკვრის ინდიკატორი" class="ytp-muted-autoplay-equalizer ytp-button"></button></div></div><div class="ytp-muted-autoplay-endscreen-overlay" data-layer="4" style="display: none;"><div class="ytp-muted-autoplay-end-panel"></div></div><div class="ytp-playlist-menu" data-layer="5" id="ytp-id-22" role="dialog" style="display: none;"><div class="ytp-playlist-menu-header"><div class="ytp-playlist-menu-title"></div></div></div><div aria-labelledby="ytp-id-24" class="ytp-share-panel" data-layer="5" id="ytp-id-25" role="dialog" style="display: none;"><div class="ytp-share-panel-inner-content"><div class="ytp-share-panel-title" id="ytp-id-24">გაზიარება</div><label class="ytp-share-panel-include-playlist">დასაკრავის სიის დამატება</label><div class="ytp-share-panel-loading-spinner"><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"></div><div class="ytp-spinner-right"></div></div></div></div><div class="ytp-share-panel-error">გაზიარების ინფორმაციის მიღებისას წარმოიშვა შეცდომა. გთხოვთ, სცადოთ მოგვიანებით.</div></div></div><div class="ytp-overflow-panel" data-layer="5" id="ytp-id-29" role="dialog" style="display: none;"><div class="ytp-overflow-panel-content"><div class="ytp-overflow-panel-action-buttons"><button aria-label="მოგვიანებით სანახავი" class="ytp-watch-later-button ytp-button ytp-show-watch-later-title" data-tooltip-opaque="true" style="display: none;" title="მოგვიანებით სანახავი"><div class="ytp-watch-later-title">მოგვიანებით სანახავი</div></button><button aria-haspopup="true" aria-label="გაზიარება" aria-owns="ytp-id-25" class="ytp-button ytp-share-button ytp-show-share-title ytp-share-button-visible" data-tooltip-opaque="true" title="გაზიარება"><div class="ytp-share-title">გაზიარება</div></button><button aria-label="ბმულის კოპირება" class="ytp-button ytp-copylink-button ytp-show-copylink-title" data-tooltip-opaque="true" style="display: none;" title="ბმულის კოპირება"><div aria-hidden="true" class="ytp-copylink-title">ბმულის კოპირება</div></button></div></div></div><div class="ytp-info-panel-detail-skrim" data-layer="5" style="display: none;"><div class="ytp-info-panel-detail" id="ytp-id-30" role="dialog"><div class="ytp-info-panel-detail-header"></div></div></div><div class="ytp-popup ytp-settings-menu" data-layer="6" id="ytp-id-17" style="display: none;"><div class="ytp-panel"></div></div><a aria-label="YouTube ზე ყურება" class="ytp-impression-link" data-layer="8" style="display: none;" target="_blank"><div aria-hidden="true" class="ytp-impression-link-content"><div class="ytp-impression-link-text">უყურეთ აქ:</div></div></a><div class="ytp-chrome-bottom" data-layer="9" style="display: none; width: 319px; left: 12px;"><div class="ytp-progress-bar-container"><div class="ytp-heat-map-container"></div><div aria-label="საძიებო სლაიდერი" aria-valuemax="0" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0 წუთები 0 წამები / 0 წუთები 0 წამები-დან" class="ytp-progress-bar" draggable="true" role="slider" style="touch-action: none;" tabindex="0"><div class="ytp-chapters-container"><div class="ytp-chapter-hover-container" style="width: 319px;"><div class="ytp-progress-list"></div></div></div><div class="ytp-scrubber-container" style="transform: translateX(0px);"><div class="ytp-scrubber-button ytp-swatch-background-color"></div></div></div><div class="ytp-fine-scrubbing-container"><div class="ytp-fine-scrubbing"><div class="ytp-fine-scrubbing-draggable" draggable="true" style="touch-action: none; padding: 0px;"></div><div aria-hidden="true" class="ytp-fine-scrubbing-seek-time">0:00</div></div></div></div><div class="ytp-chrome-controls"><div class="ytp-left-controls"><span class="ytp-volume-area"><div aria-label="ხმა" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" aria-valuetext="100% ხმა" class="ytp-volume-panel" role="slider" style="display: none;" tabindex="0" title="ხმა"><div class="ytp-volume-slider" draggable="true" style="touch-action: none;"></div></div></span><div class="ytp-time-display notranslate" style="display: none;"><span><span class="ytp-time-separator"> / </span></span><span class="ytp-clip-watch-full-video-button-separator">•</span><button class="ytp-live-badge ytp-button" disabled="true">პირდაპირი</button></div><div class="ytp-chapter-container" style="display: none;"><button class="ytp-chapter-title ytp-button ytp-chapter-container-disabled fitted-chapter-button" disabled=""><span aria-hidden="true" class="ytp-chapter-title-prefix">•</span></button></div></div><div class="ytp-right-controls"></div></div></div></div></div><noscript><div class="player-unavailable"><h1 class="message">მოხდა შეცდომა.</h1><div class="submessage"><a href="https://www.youtube.com/watch?v=X8SIav0KxSA" target="_blank">სცადეთ ამ ვიდეოს ნახვა www.youtube.com-ზე</a> ან ჩართეთ JavaScript, თუ ის გამორთულია თქვენს ბრაუზერში.</div></div></noscript></div>
+</div>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- ko component: { name: component.params.type, params: component } --><div class="cc-element cc-element--rich-text basic-formatter cc-paragraph" data-bind="html: content, css: params.cssClass, attr: { id: params.cssId }, customStyles: params" id="oal-text-right" style="padding-top: 10px; margin-bottom: 20px;"><p><span style="color:#ffffff;font-size:16px;">Oracle thrives on </span><a href="https://www.oracle.com/ca-en/careers/diversity-inclusion/"><span style="color:#fcd881;font-family:'Oracle Sans Bold';font-size:16px;">diverse perspectives</span></a><span style="font-size:16px;"> </span><span style="color:#ffffff;font-size:16px;">like yours. Join us and discover the future of your career today.  </span></p></div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- /ko -->
+<!--/ko--></main>
+<!-- ko view: 'dialogs' --><!-- /ko -->
+</div>
+<!-- ko component: 'app-footer' --><!-- ko if: footerEnable --><!-- /ko -->
+<!-- /ko -->
+<!-- ko component: 'custom-footer' -->
+<!-- /ko -->
+<!-- ko component: 'accessibility-messages' -->
+
+<!-- /ko -->
+</div>
+</div>
+<!-- ko view: 'candidate-verification' -->
+<!-- /ko -->
+<!-- ko component: 'app-menu'--><div aria-hidden="true" class="app-menu font-family-secondary" data-bind="boolAttr: {'aria-hidden': !isVisible()},
+                a11y.keysHandler: {keys: 'esc', handler: close},
+                a11y.setInitialFocus: {isVisible: isVisible, delay: 600, focusOn: '.app-menu__close'},
+                a11y.trapFocus" role="dialog" tabindex="-1">
+<div class="app-menu__wrapper background-color-dialog" data-bind="css: wrapperClassName" role="menubar">
+<div class="app-menu__header">
+<!-- ko if: showLanguageSelector -->
+<language-select params="headerOption: 'humburger-menu'"><div class="language-select" data-bind="
+        click: onClickHandler, 
+        css:  { 'language-select--opened': isOpened },
+        clickOutside: { action: onClickHandler, when: isOpened }
+    ">
+<oj-menu-button :aria-label="[[langSelectorAriaLabel]]" :title="[[langSelectorAriaLabel]]" chroming="borderless" class="language-select__menu humburger-menu oj-button oj-component oj-enabled oj-default oj-button-half-chrome oj-button-text-icon-end oj-complete" data-bind="{ 'class': [[headerOption]] }" title="Change Site Language American English"><button aria-haspopup="true" aria-label="Change Site Language American English" class="oj-button-button oj-component-initnode" data-oj-internal="" role="button"><div class="oj-button-label">
+<span class="language-select__menu-item-selected oj-button-text" data-bind="text: getSelectedLanguageLabel()" id="ui-id-5">American English</span><oj-menu :open-options.position.offset.y="10" class="language-select__menu-dropdown humburger-menu oj-component-initnode oj-complete" data-bind="{ 'class': [[headerOption]] }" id="ui-id-6" on-oj-menu-action="[[changeLanguage]]" open-options.display="dropDown" open-options.position.offset.y="10" slot="menu" style="display: none;">
+<!--oj-bind-for-each data='[[options]]'--><!--ko _ojBindForEach_:{data:options}-->
+<oj-option :lang="[[$current.data.code]]" class="language-select__menu-dropdown-item oj-complete" data-bind="css: { 'item-selected' : $current.data.code === $component.activeLang() }" lang="fr" value="[[$current.data.code]]">
+<!--oj-bind-text value='[[$current.data.label]]'--><!--ko text:$current.data.label--><!--/ko--><!--/oj-bind-text-->
+                    Français</oj-option>
+<oj-option :lang="[[$current.data.code]]" class="language-select__menu-dropdown-item oj-complete" data-bind="css: { 'item-selected' : $current.data.code === $component.activeLang() }" lang="ja" value="[[$current.data.code]]">
+<!--oj-bind-text value='[[$current.data.label]]'--><!--ko text:$current.data.label--><!--/ko--><!--/oj-bind-text-->
+                    日本語</oj-option>
+<oj-option :lang="[[$current.data.code]]" class="language-select__menu-dropdown-item item-selected oj-complete" data-bind="css: { 'item-selected' : $current.data.code === $component.activeLang() }" lang="en" value="[[$current.data.code]]">
+<!--oj-bind-text value='[[$current.data.label]]'--><!--ko text:$current.data.label--><!--/ko--><!--/oj-bind-text-->
+                    American English</oj-option>
+<!--/ko--><!--/oj-bind-for-each-->
+</oj-menu></div></button></oj-menu-button>
+</div>
+</language-select>
+<!-- /ko -->
+
+
+</div>
+<div class="app-menu__content">
+<ul class="app-menu__links" data-bind="click: onLinkClicked.bind($component)" role="menu">
+<!-- ko foreach: {data: links, as: 'link'} --><!-- /ko -->
+</ul>
+<!-- ko ifnot: isSignedIn -->
+<div class="app-menu__miscellaneous">
+
+<div class="app-menu__miscellaneous-list text-color-secondary">
+<div class="app-menu__miscellaneous-item">
+<internal-user-login-button params="employeeText: employeeText"><!-- ko if: userLoginButtonText() -->
+<a aria-label="I am an employee" class="text-color-secondary" data-bind="
+        text: userLoginButtonText(),
+        attr: {
+            'href': iceUrl,
+            'title': userLoginButtonAriaLabel(),
+            'aria-label': userLoginButtonAriaLabel()
+        }" href="https://eeho.fa.us2.oraclecloud.com:443/fscmUI/faces/deeplink?objType=IRC_RECRUITING&amp;action=ICE_JOB_SEARCH_RESP" title="I am an employee">I am an employee</a>
+<!-- /ko -->
+</internal-user-login-button>
+</div>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+
+</div>
+<!-- /ko -->
+<!-- ko component: 'cookie-consent' --><!-- ko if: config.isCookieConsentEnabled --><!-- /ko -->
+<!-- /ko -->
+<!-- ko component: 'notifications' --><div class="notifications font-family-primary" data-bind="css: { 'notifications--active': showNotifications }, a11y.setInitialFocus: { isVisible: showNotifications, delay: 500, focusOn: '.notifications__remove-item--focus' }" role="alert" tabindex="-1">
+<!-- ko if: showNotifications --><!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- ko component: 'session-expire' --><minimal-dialog params="isVisible: isDialogVisible, cancelBehavior:'none', baseClass: 'session-expire-dialog'"><oj-dialog aria-labelledby="ui-id-2" aria-modal="true" cancel-behavior="none" class="app-dialog font-family-primary session-expire-dialog oj-dialog oj-component oj-component-initnode oj-complete" data-bind="focus: focusCallback,
+        attr:{
+            'aria-label': ariaLabel,
+            'aria-describedby': ariaDescribedBy,
+            'role': role
+        },
+        class: 'app-dialog font-family-primary ' + baseClass,
+        a11y.keysHandler: { keys: 'esc', handler: close },
+        moveChatBot,
+        isDialogVisible: {
+            isVisible: isVisible,
+            afterClose: afterClose
+        }" drag-affordance="none" id="ui-id-1" initial-visibility="hide" modality="modeless" on-oj-focus="{{setFocusToBody}}" resize-behavior="none" role="dialog" style="display: none;" tabindex="-1">
+<div class="oj-dialog-container"><div class="oj-dialog-header"><h1 class="oj-dialog-title" id="ui-id-2"> </h1></div><div class="oj-dialog-content oj-dialog-default-content"><div class="oj-dialog-body-wrapper"><div class="app-dialog__wrapper app-dialog__wrapper--align-center oj-dialog-body" data-bind="
+            css: { 'app-dialog__wrapper--active': isVisible },
+            class: 'app-dialog__wrapper--align-' + alignment()
+        ">
+<div class="oj-dialog-body app-dialog__main background-color-dialog session-expire-dialog__main session-expire-dialog__main-center" data-bind="
+                css: baseClass ? baseClass  + '__main ' + baseClass + '__main-' + alignment() : null,
+                a11y.setInitialFocus: {isVisible: isVisible, focusOn: '.app-dialog__content', delay: 1000 },
+                attr: { style: width() ? 'max-width: ' + width() : '' }
+            " style="" tabindex="-1">
+<!-- ko if: !nodes['dialog-bar'] --><!-- /ko -->
+<div slot="header">
+<!-- ko template: { nodes: nodes['dialog-bar'], data: $parent } --><!-- /ko -->
+</div>
+<div slot="body">
+<!-- ko template: { nodes: nodes['dialog-body'], data: $parent } -->
+<div class="app-dialog__header">
+<h1 class="heading" data-bind="i18n: 'general.session-expire.modal.title'">Are You Still With Us?</h1>
+</div>
+<div class="app-dialog__content">
+<i18n params="key: 'general.session-expire.modal.content'"><span data-bind="i18n: {key: key, tokens: tokens}">It seems you've been gone for a while. For security reasons we will end your session automatically in <span data-bind="text: $parent.counter()" data-i18n-token="countdown">03:00</span> unless you would like to continue working.</span>
+</i18n>
+</div>
+<div class="app-dialog__footer">
+<div class="app-dialog__buttons-bar font-family-secondary text-color-primary">
+<button class="button app-dialog__footer-button" data-bind="click: signOut">
+<span class="button__label" data-bind="i18n: 'general.session-expire.modal.end-session-button'">End Session</span>
+</button>
+<button class="button app-dialog__footer-button theme-color-1" data-bind="click: continueWorking">
+<span class="button__label" data-bind="i18n: 'general.session-expire.modal.continue-button'">Continue Working</span>
+</button>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</div></div></div></div></oj-dialog>
+</minimal-dialog>
+<!-- /ko -->
+<!-- ko component: 'oda-summary' --><minimal-dialog params="isVisible: isDialogVisible"><oj-dialog aria-labelledby="ui-id-4" aria-modal="true" cancel-behavior="none" class="app-dialog font-family-primary oj-dialog oj-component oj-component-initnode oj-complete" data-bind="focus: focusCallback,
+        attr:{
+            'aria-label': ariaLabel,
+            'aria-describedby': ariaDescribedBy,
+            'role': role
+        },
+        class: 'app-dialog font-family-primary ' + baseClass,
+        a11y.keysHandler: { keys: 'esc', handler: close },
+        moveChatBot,
+        isDialogVisible: {
+            isVisible: isVisible,
+            afterClose: afterClose
+        }" drag-affordance="none" id="ui-id-3" initial-visibility="hide" modality="modeless" on-oj-focus="{{setFocusToBody}}" resize-behavior="none" role="dialog" style="display: none;" tabindex="-1">
+<div class="oj-dialog-container"><div class="oj-dialog-header"><h1 class="oj-dialog-title" id="ui-id-4"> </h1></div><div class="oj-dialog-content oj-dialog-default-content"><div class="oj-dialog-body-wrapper"><div class="app-dialog__wrapper app-dialog__wrapper--align-center oj-dialog-body" data-bind="
+            css: { 'app-dialog__wrapper--active': isVisible },
+            class: 'app-dialog__wrapper--align-' + alignment()
+        ">
+<div class="oj-dialog-body app-dialog__main background-color-dialog" data-bind="
+                css: baseClass ? baseClass  + '__main ' + baseClass + '__main-' + alignment() : null,
+                a11y.setInitialFocus: {isVisible: isVisible, focusOn: '.app-dialog__content', delay: 1000 },
+                attr: { style: width() ? 'max-width: ' + width() : '' }
+            " style="" tabindex="-1">
+<!-- ko if: !nodes['dialog-bar'] --><!-- /ko -->
+<div slot="header">
+<!-- ko template: { nodes: nodes['dialog-bar'], data: $parent } -->
+<div class="app-dialog__bar text-color-secondary">
+
+</div>
+<!-- /ko -->
+</div>
+<div slot="body">
+<!-- ko template: { nodes: nodes['dialog-body'], data: $parent } -->
+<div class="app-dialog__header">
+<h1 class="heading" data-bind="i18n : 'chatbot.popup.work-summary.header'">Work Summary</h1>
+</div>
+<div class="app-dialog__content">
+<p class="oda-dialog__hint" data-bind="i18n: 'chatbot.popup.work-summary.edit-hint'" style="text-align: center">This summary is generated by AI Assist. Click inside the summary text box to make changes as necessary.</p>
+<oj-text-area class="oda-dialog-text-area__content oj-textarea oj-form-control oj-component oj-text-field oj-has-no-value oj-maxrows-neg1 oj-complete" id="textArea" max-rows="-1" value="{{body}}"><div class="oj-text-field-container" role="presentation" style="resize: none;"><div class="oj-text-field-middle"><textarea class="oj-textarea-input oj-text-field-input oj-component-initnode" data-oj-internal="" id="textArea|input" placeholder="" style="height: 49.94px;">
+            </textarea></div></div></oj-text-area>
+</div>
+<div class="app-dialog__footer">
+<div class="app-dialog__buttons-bar font-family-secondary text-color-primary">
+<button class="button app-dialog__footer-button" data-bind="click: () =&gt; action('Decline')">
+<span class="button__label" data-bind="i18n: 'chatbot.popup.work-summary.discard-button-label'">Discard</span>
+</button>
+<button class="button app-dialog__footer-button" data-bind="click: () =&gt; action('Accept')">
+<span class="button__label" data-bind="i18n : 'chatbot.popup.work-summary-add-button-label'">Add Summary</span>
+</button>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</div></div></div></div></oj-dialog>
+</minimal-dialog>
+<!-- /ko -->
+<!-- /ko -->
+<!--/ko--></div>
+<div class="oda-chat-wrapper oda-chat-redwood-dark oda-chat- oda-chat-collapsed" dir="auto"><div aria-labelledby="oda-chat-title" class="oda-chat-widget oda-chat-flex oda-chat-col oda-chat-none" dir="auto" role="region" style="width: 440px; height: 620px;"><div class="oda-chat-header oda-chat-flex" dir="auto"><div class="oda-chat-header-info-wrapper" dir="auto"><div class="oda-chat-title" dir="auto" id="oda-chat-title" title="Oracle Assistant">Oracle Assistant</div></div><div class="oda-chat-header-actions oda-chat-flex" dir="auto"><ul aria-labelledby="oda-chat-action-menu-button" class="oda-chat-popup oda-chat-action-menu" dir="auto" id="oda-chat-action-menu" role="menu" tabindex="-1"><li class="oda-chat-action-item oda-chat-false" data-value="collapse" dir="auto" id="oda-chat-collapse" role="menuitem" tabindex="-1" title="Close"><span class="oda-chat-text oda-chat-action-item-text oda-chat-ellipsis" dir="auto">Close</span></li><li class="oda-chat-action-item oda-chat-false" data-value="tts" dir="auto" id="oda-chat-tts" role="menuitem" tabindex="-1" title="Audio Response Off"><span class="oda-chat-text oda-chat-action-item-text oda-chat-ellipsis" dir="auto">Audio Response Off</span></li></ul></div></div><div class="oda-chat-conversation" dir="auto"><div class="oda-chat-conversation-pane oda-chat-bot-icon oda-chat-user-icon" dir="auto"></div></div><div class="oda-chat-footer oda-chat-mode-keyboard" dir="auto"><div class="oda-chat-footer-mode-keyboard oda-chat-flex" dir="auto"><div class="oda-chat-footer-actions oda-chat-flex" dir="auto"><div dir="auto"><ul aria-labelledby="oda-chat-share-button" class="oda-chat-popup oda-chat-share-popup-list" dir="auto" id="oda-chat-share-menu" role="menu" tabindex="-1"><li class="oda-chat-share-popup-item oda-chat-false" data-value="share_txt_rtf_doc_docx_pdf_odt_htm_html" dir="auto" id="oda-chat-share_txt_rtf_doc_docx_pdf_odt_htm_html" role="menuitem" tabindex="-1" title="CV/Resume"><span class="oda-chat-text oda-chat-share-popup-item-text oda-chat-ellipsis" dir="auto">CV/Resume</span></li></ul></div></div></div></div><div class="oda-chat-webview-container oda-chat-none" dir="auto"><div class="oda-chat-header oda-chat-webview-header oda-chat-flex" dir="auto"></div></div></div></div></body></html>

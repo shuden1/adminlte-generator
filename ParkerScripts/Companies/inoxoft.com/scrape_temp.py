@@ -1,0 +1,1 @@
+There was an indentation error due to incorrect syntax. I will correct it and provide the fixed script.

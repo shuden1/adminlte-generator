@@ -88,8 +88,6 @@ class RemoveDuplicatedJobsCommand extends Command
                 }
             }
         }
-        die();
-
         return $companyJobs; // Return associative array of company IDs and their job IDs
     }
 

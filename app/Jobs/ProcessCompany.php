@@ -38,6 +38,7 @@ class ProcessCompany implements ShouldQueue
     protected $forced;
     protected $hasJobs;
 
+    public $tries = 3;
     public $timeout = 1200;
 
     /**
@@ -53,10 +54,15 @@ class ProcessCompany implements ShouldQueue
         $this->queue = 'ScriptGenerationQueue';
     }
 
+    public function failed(Exception $exception)
+    {
+        // Send user notification of failure, etc...
+        Log::error("Job failed. Exception: {$exception->getMessage()}");
+    }
 
     public function getCleanHTML($inputFile, $outputFile, $careerPageURL)
     {
-        $pythonPath = "C:\\Users\\shuga\\AppData\\Local\\Programs\\Python\\Python312";
+        $pythonPath = "C:\\Python3";
 
         $command = $pythonPath."\\python.exe"." D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
         exec($command, $output1, $returnStatus1);
@@ -208,6 +214,7 @@ class ProcessCompany implements ShouldQueue
                         ],
                 ],
             ],
+
         );
         $runId = $response->id;
         $threadId = $response->threadId;
