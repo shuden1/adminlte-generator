@@ -18,11 +18,11 @@ def scrape_job_listings(html_file_path):
     driver.get(f"file:///{html_file_path}")
 
     # Example selectors, replace with actual ones after analyzing the HTML structure
-    listings = driver.find_elements(By.CSS_SELECTOR, "div.job_listing")
+    listings = driver.find_elements(By.CSS_SELECTOR, ".career-offers--offer")
     job_details = []
-    
+
     for listing in listings:
-        title = listing.find_element(By.CSS_SELECTOR, "h2.title").text
+        title = listing.find_element(By.CSS_SELECTOR, "a").get_attribute('data-headline')
         url = listing.find_element(By.CSS_SELECTOR, "a").get_attribute('href')
         job_details.append({"Job-title": title, "URL": url})
 

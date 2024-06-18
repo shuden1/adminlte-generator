@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import threading
 import json
+import re
 
 # Accepting target HTML file name from console command
 target_html_file = sys.argv[1]
@@ -24,9 +25,9 @@ driver = webdriver.Chrome(service=service, options=options)
 driver.get(f"file:///{target_html_file}")
 
 # Selectors identified in Step 1
-job_block_selector = ".jobs-list-item"
-job_title_selector = ".job-title span"
-job_url_selector = "a"
+job_block_selector = ".posts_result"
+job_title_selector = "h2.vc_headline.has-fontsize-h6"
+job_url_selector = ".vc-content-box"
 
 # Scraping job listings
 job_elements = driver.find_elements(By.CSS_SELECTOR, job_block_selector)
@@ -34,8 +35,8 @@ jobs = []
 
 for job_element in job_elements:
     title_element = job_element.find_element(By.CSS_SELECTOR, job_title_selector)
-    url_element = job_element.find_element(By.CSS_SELECTOR, job_url_selector)
-    jobs.append({"Job-title": title_element.text, "URL": url_element.get_attribute('href')})
+    onclick_attribute = job_element.find_element(By.CSS_SELECTOR, job_url_selector).get_attribute('onclick')
+    jobs.append({"Job-title": title_element.text, "URL": re.search(r'window.open\("([^"]*)', onclick_attribute).group(1)})
 
 # Output result
 print(json.dumps(jobs))
