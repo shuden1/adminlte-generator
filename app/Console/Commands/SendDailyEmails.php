@@ -9,13 +9,19 @@ use App\Jobs\SendEmailViaGmail;
 
 class SendDailyEmails extends Command
 {
-    protected $signature = 'send:daily-emails';
+    protected $signature = 'send:daily-emails {user?}';
 
     protected $description = 'Sends an email to all users about new job openings';
 
     public function handle()
     {
-        $users = User::all(); // Fetch all users
+        $userId = $this->argument('user');
+
+        if ($userId) {
+            $users = User::where('id', $userId)->get();
+        } else {
+            $users = User::all(); // Fetch all users
+        }
 
         foreach ($users as $user) {
             // Dispatch the job for each user

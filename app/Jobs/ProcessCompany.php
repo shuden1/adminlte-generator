@@ -354,7 +354,8 @@ class ProcessCompany implements ShouldQueue
             }
 
             if (!$shouldRegenerate && file_exists($scriptPath)) {
-                $this->company->scripted = 1;
+                $this->company->scripted = true;
+                $this->company->save();
                 RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
             }
 
