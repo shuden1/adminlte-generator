@@ -24,8 +24,8 @@ driver = webdriver.Chrome(service=service, options=options)
 driver.get(f"file:///{target_html_file}")
 
 # Selectors identified in Step 1
-job_block_selector = ".block-grid-item"
-job_title_selector = ".text-block-base-link"
+job_block_selector = ".jobs-list-item"
+job_title_selector = ".job-title span"
 job_url_selector = "a"
 
 # Scraping job listings
@@ -35,7 +35,7 @@ jobs = []
 for job_element in job_elements:
     title_element = job_element.find_element(By.CSS_SELECTOR, job_title_selector)
     url_element = job_element.find_element(By.CSS_SELECTOR, job_url_selector)
-    jobs.append({"Job-title": title_element.get_attribute('title'), "URL": url_element.get_attribute('href')})
+    jobs.append({"Job-title": title_element.text, "URL": url_element.get_attribute('href')})
 
 # Output result
 print(json.dumps(jobs))
