@@ -7,7 +7,6 @@ import threading
 
 # Step 1 outcomes
 job_block_selector = ".container-fluid.iCIMS_JobsTable .row"
-job_title_selector = ".title a"
 job_title_selector = ".title a h3"
 job_url_selector = ".title a"
 
@@ -35,4 +34,5 @@ def scrape_job_listings(file_name):
 
 if __name__ == "__main__":
     file_name = sys.argv[1]
-    print(scrape_job_listings(file_name))    print(scrape_job_listings(file_name))
+
+    print(scrape_job_listings(file_name))

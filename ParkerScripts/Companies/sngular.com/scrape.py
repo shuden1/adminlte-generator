@@ -3,8 +3,8 @@ import json
 import threading
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
 def scrape_jobs(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile" + str(threading.get_ident())
@@ -18,25 +18,23 @@ def scrape_jobs(file_path):
     
     driver = webdriver.Chrome(service=service, options=options)
     
-    driver.get(f"file:///{file_path}")
+    try:
+        driver.get(f"file:///{file_path}")
+        
+        job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div.m-card-job, ul.g-card-list__list-talent > li, div.g-card-list__list-talent > div')
+        
+        jobs = []
+        for job_block in job_blocks:
+            title_tag = job_block.find_element(By.CSS_SELECTOR, 'a')
+            title = title_tag.text.strip()
+            url = title_tag.get_attribute('href')
+            jobs.append({"Job-title": title, "URL": url})
+        
+        print(json.dumps(jobs, indent=4))
     
-    job_data = []
-    
-    # Use the refined selectors
-    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div[class*="job"], li[class*="job"]')  # General selector for job blocks
-    for block in job_blocks:
-        try:
-            title_tag = block.find_element(By.CSS_SELECTOR, 'a[href]')
-            job_title = title_tag.text.strip()
-            job_url = title_tag.get_attribute('href')
-            job_data.append({"Job-title": job_title, "URL": job_url})
-        except:
-            continue
-    
-    driver.quit()
-    
-    return json.dumps(job_data, indent=4)
+    finally:
+        driver.quit()
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
-    print(scrape_jobs(file_path))
+    scrape_jobs(file_path)
