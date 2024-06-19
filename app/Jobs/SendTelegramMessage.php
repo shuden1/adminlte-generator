@@ -43,7 +43,6 @@ class SendTelegramMessage implements ShouldQueue
     public function handle()
     {
         $companies = $this->user->companies;
-        $message = '';
 
         foreach ($companies as $company) {
             $jobs = Job::where('company_id', $company->id)
@@ -59,21 +58,23 @@ class SendTelegramMessage implements ShouldQueue
             }
 
             if (!$jobs->isEmpty()) {
-                $message .= $company->name . ":\n";
+                $jobs = $jobs->chunk(5); // Split the jobs into chunks of 5
 
-                foreach ($jobs as $job) {
-                    $message .= $job->title . ' - ' . $job->url . "\n";
+                foreach ($jobs as $chunk) {
+                    $message = '';
+                    $message .= $company->name . ":\n";
+
+                    foreach ($chunk as $job) {
+                        $message .= $job->title . ' - '. $job->url. "\n";
+                    }
+
+                    if (!empty($message)) {
+                        Telegram::sendMessage([
+                            'chat_id' => $this->chatId,
+                            'text' => $message
+                        ]);
+                    }
                 }
-
-                $message .= "\n";
             }
         }
-
-        if (!empty($message)) {
-            Telegram::sendMessage([
-                'chat_id' => $this->chatId,
-                'text' => $message
-            ]);
-        }
-    }
-}
+    }}

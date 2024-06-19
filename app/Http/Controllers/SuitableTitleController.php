@@ -29,7 +29,7 @@ class SuitableTitleController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $suitableTitles = $this->suitableTitleRepository->all();
+        $suitableTitles = auth()->user()->suitableTitles;
 
         return view('suitable_titles.index')
             ->with('suitableTitles', $suitableTitles);
