@@ -1,38 +1,42 @@
 import sys
 import json
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
 import threading
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 
-def scrape_job_listings(html_file_name):
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+def scrape_jobs(file_path):
+    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
-    options = webdriver.ChromeOptions()
+    
+    options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-
+    
     driver = webdriver.Chrome(service=service, options=options)
-    driver.get(f"file:///{html_file_name}")
-
-    # Updated selectors based on correct understanding
-    job_listings = driver.find_elements(By.CSS_SELECTOR, ".job-opening")
+    
+    driver.get(f"file:///{file_path}")
+    
     job_data = []
-
-    for job in job_listings:
-        title_elements = job.find_elements(By.CSS_SELECTOR, ".job-title a")
-        for element in title_elements:
-            job_data.append({
-                "Job-title": element.text,
-                "URL": element.get_attribute('href')
-            })
-
+    
+    # Use the refined selectors
+    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div[class*="job"], li[class*="job"]')  # General selector for job blocks
+    for block in job_blocks:
+        try:
+            title_tag = block.find_element(By.CSS_SELECTOR, 'a[href]')
+            job_title = title_tag.text.strip()
+            job_url = title_tag.get_attribute('href')
+            job_data.append({"Job-title": job_title, "URL": job_url})
+        except:
+            continue
+    
     driver.quit()
+    
+    return json.dumps(job_data, indent=4)
 
-    return json.dumps(job_data)
-
-# Using a placeholder for the HTML file name argument, which should be replaced with sys.argv[1] when running the script outside of this notebook
-html_file_name = "/path/to/html/file"
-print(scrape_job_listings(html_file_name))
+if __name__ == "__main__":
+    file_path = sys.argv[1]
+    print(scrape_jobs(file_path))

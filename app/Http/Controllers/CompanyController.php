@@ -167,9 +167,10 @@ class CompanyController extends AppBaseController
         $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
         $domain = str_replace('www.', '', $domain);
 
-        if (!is_dir("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}")) {
+        if (!file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
             ProcessCompany::dispatch($company, 0, 1);
         }
+
         // Run php artisan queue:work to launch the listener
         // Run php artisan websockets:serve to start websockets
         // npm run dev to generate js
