@@ -22,10 +22,11 @@ class RemoveDuplicatedJobsCommand extends Command
     {
         $companyId = $this->argument('company_id');
         $queuedCompanies = $this->getQueuedCompanyIds();
+        dei();
         if ($companyId !== 'all') {
             if (!array_key_exists($companyId, $queuedCompanies)) {
                 $company = Company::find($companyId);
-                if ($company && $company->id >= 172) {
+                if ($company) {
                     RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue');
                     $this->info("Job dispatched for company ID: {$companyId}");
                 } else {
@@ -33,7 +34,7 @@ class RemoveDuplicatedJobsCommand extends Command
                 }
             } else {
                 $jobId = $queuedCompanies[$companyId];
-                $this->info("Company ID: {$companyId} already has a job in the queue. Job ID: {$jobId}");
+                $this->info("Company ID: {$companyId} already has a job in the queue. Job ID: {$jobId[0]}");
             }
         } else {
             $companies = Company::where('scripted', 1)->where('sauroned', 1)->get();
@@ -142,6 +143,7 @@ class RemoveDuplicatedJobsCommand extends Command
             }
         }
         return $companyJobs; // Return associative array of company IDs and their job IDs
+        var_dump($companyJobs);die();
     }
 
 }

@@ -22,7 +22,6 @@ class RetrieveCompanyCareersCommand extends Command
     {
         $companyId = $this->argument('company_id');
         $queuedCompanies = $this->getQueuedCompanyIds();
-
         if ($companyId !== 'all') {
             if (!array_key_exists($companyId, $queuedCompanies)) {
                 $company = Company::find($companyId);
@@ -34,7 +33,7 @@ class RetrieveCompanyCareersCommand extends Command
                 }
             } else {
                 $jobId = $queuedCompanies[$companyId];
-                $this->info("Company ID: {$companyId} already has a job in the queue. Job ID: {$jobId}");
+                $this->info("Company ID: {$companyId} already has a job in the queue. Job ID: {$jobId[0]}");
             }
         } else {
             $companies = Company::where('scripted', 1)->where('sauroned', 1)->get();
@@ -44,7 +43,7 @@ class RetrieveCompanyCareersCommand extends Command
                     $this->info("Job dispatched for company ID: {$company->id}");
                 } else {
                     $jobId = $queuedCompanies[$company->id];
-                    $this->info("Company ID: {$company->id} already has a job in the queue. Job ID: {$jobId}");
+                    $this->info("Company ID: {$company->id} already has a job in the queue. Job ID: {$jobId[0]}");
                 }
             }
         }
@@ -53,7 +52,7 @@ class RetrieveCompanyCareersCommand extends Command
     protected function getQueuedCompanyIds()
     {
         $jobs = DB::table('queue_jobs')
-        ->where('queue', 'RetrieveCareersQueue')
+            ->where('queue', 'RetrieveCareersQueue')
             ->get(['id', 'payload']); // Fetch job ID and payload
         $companyJobs = [];
         foreach ($jobs as $job) {
@@ -66,14 +65,14 @@ class RetrieveCompanyCareersCommand extends Command
                     $companyProperty = $reflectionObject->getProperty('company');
                     $companyProperty->setAccessible(true);
                     $company = $companyProperty->getValue($command);
-//                    $companyJobs[$company['id']][] = $job->id; // Store job ID alongside company ID
-                    $companyJobs[$company['id']] = $job->id; // Store job ID alongside company ID
-              }
+                    $companyJobs[$company['id']][] = $job->id; // Store job ID alongside company ID
+//                      $companyJobs[$company['id']] = $job->id; // Store job ID alongside company ID
+                }
             } catch (Exception $e) {
                 error_log('Error accessing company ID: ' . $e->getMessage());
             }
         }
-/*
+
         $temp_results = [];
         foreach ($companyJobs as $key => $companyJob){
             if (count($companyJob)>1){
@@ -88,8 +87,6 @@ class RetrieveCompanyCareersCommand extends Command
                 }
             }
         }
-        die();
-*/
         return $companyJobs; // Return associative array of company IDs and their job IDs
     }
 

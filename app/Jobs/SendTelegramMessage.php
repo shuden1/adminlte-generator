@@ -42,6 +42,7 @@ class SendTelegramMessage implements ShouldQueue
 
     public function handle()
     {
+        set_time_limit(1200);
         $companies = $this->user->companies;
 
         foreach ($companies as $company) {
