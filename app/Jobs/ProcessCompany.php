@@ -38,7 +38,7 @@ class ProcessCompany implements ShouldQueue
     protected $forced;
     protected $hasJobs;
 
-    public $tries = 3;
+    public $tries = 2;
     public $timeout = 1200;
 
     /**
@@ -199,7 +199,8 @@ class ProcessCompany implements ShouldQueue
             $fileId = $response->id;
         } else return false;
 
-        $step_1_message = "First, find Job Openings posted on this HTML. Respond only with maximum three Job titles PRESENTED ON THIS HTML";
+        $step_1_message = "First, find Job Openings posted on this HTML. Respond only with maximum three Job titles PRESENTED ON THIS HTML. \n
+            If you cannot find any Job Openings, respond with 'No Job Openings Found'";
 
 
         $response = $client->threads()->createAndRun(
@@ -232,15 +233,18 @@ class ProcessCompany implements ShouldQueue
         if ($lastMessage == $step_1_message){
             $lastMessage = $this->getGptResponse($client, $threadId, $runId);
         }
-
         var_dump($lastMessage);
 
-        $step_2_message = "Now having the Job Opening titles, find them in this HTML. \n
+        if ($lastMessage == "No Job Openings Found"){
+            return false;
+        }
+
+        $step_2_message = "Now having the Job Opening titles, find them in this HTML. THEY ARE IN THE HTML YOU HAVE ALREADY FOUND THEM PREVIOUSLY.\n
             Next, analyze the HTML that contains those titles and define JavaScript selectors for All Job Postings presented in this HTML. \n
             Respond in the following format: \n
             Job Opening elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED !!!FROM THE HTML PROVIDED!!!} \n
-            Job title elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED !!!FROM THE HTML PROVIDED!!!} \n
-            Job URL elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED !!!FROM THE HTML PROVIDED!!!}";
+            Job title elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED !!!FROM THE HTML PROVIDED!!! } \n
+            Job URL elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED !!!FROM THE HTML PROVIDED!!! }";
 
         $client->threads()->messages()->create($threadId, [
             'role' => 'user',
@@ -273,63 +277,54 @@ class ProcessCompany implements ShouldQueue
             THE TARGET HTML FILE NAME SHOULD BE AN ARGUMENT SENT FROM AN EXTERNAL SOURCE THROUGH THE CONSOLE COMMAND AS THE SINGLE INPUT PARAMETER. DO NOT PUT ANY PLACEHOLDERS OR EXAMPLES! \n
             2. Initialise a headless webdriver, with this profile path, do not forget to create a relevant folder: profile_folder_path=\"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\\"+str(threading.get_ident()) use this service:
             service=service(executable_path=r\"C:\\Python3\\chromedriver.exe\") add these options: options.add_argument(f\"user-data-dir={profile_folder_path}\") options.add_argument(\"--headless\") options.add_argument(\"--disable-gpu\") options.add_argument(\"--no-sandbox\") \n
-            3. USE THE SELECTORS YOU PREVIOUSLY DEFINED!!! and scrape all job listings. REMEMBER!!!! instead of an old find_elements_by_css_selector, you should use the find_elements method with By.CSS_SELECTOR \n
-            4. In case there is no URL defined in the HTML - use a \"#\", BUT ONLY IF THERE IS NO URL DEFINED WITHIN THE JOB POSTING ELEMENT \n
-            4. NEVER IMPLEMENT EXAMPLE USAGE PARAMETERS AND SELECTORS, ONLY THE ONES EXISTING IN THE HTML \n
-            5. Return a JSON with all job postings in the following format, DO NOT WRITE RESULT TO ANY FILE: { [\"Job-title\" :\"title1\", \"URL\":\"url1\"], [\"Job-title\" :\"title2\", \"URL\":\"url2\"], }",
+            3. USE THE SELECTORS AND CODE EXAMPLES YOU PREVIOUSLY DEFINED!!! and scrape all job listings. REMEMBER!!!! instead of an old find_elements_by_css_selector, you should use the find_elements method with By.CSS_SELECTOR. \n
+            4. Remember that to sometimes to extract the text placed inside the element for Job Title you should use get_attribute('innerHTML').strip() instead of just .text
+            5. In case there is no Job Opening URL defined in the HTML - use a \"#\", BUT ONLY IF THERE IS NO URL DEFINED WITHIN THE JOB POSTING ELEMENT \n
+            6. NEVER IMPLEMENT EXAMPLE USAGE PARAMETERS AND SELECTORS, ONLY THE ONES EXISTING IN THE HTML \n
+            7. Return a JSON with all job postings in the following format, DO NOT WRITE RESULT TO ANY FILE: { [\"Job-title\" :\"title1\", \"URL\":\"url1\"], [\"Job-title\" :\"title2\", \"URL\":\"url2\"], }",
         ]);
 
         $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
         $runId = $response->id;
         $validScript = false;
         $i = 3;
-        while (!$validScript && $i < 5){
-            $i++;
-            var_dump("Step ".$i);
+        $i++;
+        var_dump("Step ".$i);
+        $lastMessage = $this->getGptResponse($client, $threadId, $runId);
+        var_dump($lastMessage);
+        file_put_contents($output_file, $this->extractPythonScript($lastMessage));
+        $result = $this->runPythonScriptAndCheckJson($output_file, $careerPage);
+        var_dump($result);
+        if (!$result['isValidJson']){
+            $client->threads()->messages()->create($threadId, [
+                'role' => 'user',
+                'content' => "When I launched the script I got an error. /n Potentially, you used old Javascript syntax or tried to do something with the selectors that does not exist. Do not explain why it happened, create a working script this time.",
+            ]);
+            $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
+            $runId = $response->id;
+            var_dump($runId);
+            } else {
+            $limitedJson = $this->getLimitedJson($result["jsonData"]);
+            $client->threads()->messages()->create($threadId, [
+                'role' => 'user',
+                'content' => "I will now provide you with the result I received launching this script. I need you to tell me whether the content seems to be a valid Job title - URL pairs. Reply with ONE WORD ONLY: 'YES' or 'NO'. Result: " . $limitedJson,
+            ]);
+
+            $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
+            $runId = $response->id;
+
+            var_dump("Step ".$i.". Response check");
+
             $lastMessage = $this->getGptResponse($client, $threadId, $runId);
             var_dump($lastMessage);
-            file_put_contents($output_file, $this->extractPythonScript($lastMessage));
 
-            $result = $this->runPythonScriptAndCheckJson($output_file, $careerPage);
-            var_dump($result);
-            if (!$result['isValidJson']){
-                $client->threads()->messages()->create($threadId, [
-                    'role' => 'user',
-                    'content' => "When I launched the script I got an error. /n Potentially, you used old Javascript syntax or tried to do something with the selectors that does not exist. Do not explain why it happened, create a working script this time.",
-                ]);
-
-                $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
-                $runId = $response->id;
-                var_dump($runId);
-
+            if ($lastMessage == "YES"){
+                $validScript = true;
             } else {
-                $limitedJson = $this->getLimitedJson($result["jsonData"]);
-                $client->threads()->messages()->create($threadId, [
-                    'role' => 'user',
-                    'content' => "I will now provide you with the result I received launching this script. I need you to tell me whether the content seems to be a valid Job title - URL pairs. Reply with ONE WORD ONLY: 'YES' or 'NO'. Result: " . $limitedJson,
-                ]);
-
-                $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
-                $runId = $response->id;
-
-                var_dump("Step ".$i.". Response check");
-
-                $lastMessage = $this->getGptResponse($client, $threadId, $runId);
-                var_dump($lastMessage);
-
-                if ($lastMessage == "YES"){
-                    $validScript = true;
-                } else {
-                    $validScript = false;
-                    $client->threads()->messages()->create($threadId, [
-                        'role' => 'user',
-                        'content' => 'Then look for correct elements and selectors this time. Generate a correct script following the instructions. Reply only with a new script, do not explain why it happened.',
-                        ]);
-                    $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
-                    $runId = $response->id;
-                }
+                $validScript = false;
             }
         }
+
         if ($validScript) {
             return true;
         }
@@ -397,7 +392,12 @@ class ProcessCompany implements ShouldQueue
                 $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
 
                 if ($this->hasJobs != 0) {
-                    $success = $this->generateScript($outputFile, $basePath . "\\scrape_temp.py", $inputFile);
+                    $attempt = 1;
+                    $success = false;
+                    while (($attempt<3)&&(!$success)){
+                        $success = $this->generateScript($outputFile, $basePath . "\\scrape_temp.py", $inputFile);
+                        $attempt++;
+                    }
 
                     $this->company->scripted = $success;
                     if (!$success) {
