@@ -1,0 +1,903 @@
+<html class="scroll-smooth" lang="de">
+<body class="text-base-lg pt-20 leading-relaxed text-gray-800 antialiased lg:pt-27"><div aria-labelledby="cmpboxheadline1" aria-modal="true" class="cmpbox cmpstyleroot cmpbox1 cmpboxWelcomeGDPR cmpBoxWelcomeOI" data-nosnippet="" dir="ltr" id="cmpbox" lang="DE" role="dialog" style="display: block;"><div class="cmpboxinner" role="document"><div class="cmpboxcontent" id="cmpboxcontent"><div class="cmpboxtxtdiv"><div aria-level="1" class="cmpboxhl cmptxt_hl" id="cmpboxheadline1" role="heading">Einwilligung zu Cookies &amp; Datenverarbeitung</div><div class="cmpboxtxt cmptxt_txt">Wir verwenden Cookies, um Ihnen ein optimales Webseiten-Erlebnis zu bieten. Dazu zählen Cookies, die für den Betrieb der Seite und für die Steuerung unserer geschäftlichen Unternehmensziele notwendig sind, sowie solche, die lediglich zu anonymen Statistikzwecken oder zur Anzeige personalisierter Inhalte genutzt werden. Sie können selbst entscheiden, welche Kategorien Sie zulassen möchten.</div></div><div class="cmpboxwelcomeprps" role="form" title="Zweck"><div class="cmpwelcomeprps"><div class="cmpwelcomeprpsbtn"></div><div class="cmpwelcomeprpstxt cmpwelcomeprpstxtnopointer">Erforderlich</div></div><div class="cmpwelcomeprps"><div class="cmpwelcomeprpsbtn"><a aria-checked="false" aria-label="Zweck: Statistik" aria-labelledby="cmppurposelabelpc2" data-cmp-purpose="c2" draggable="false" href="#" role="checkbox"></a></div><div class="cmpwelcomeprpstxt" data-cmp-purpose="c2" draggable="false" id="cmppurposelabelpc2">Statistik</div></div><div class="cmpwelcomeprps"><div class="cmpwelcomeprpsbtn"><a aria-checked="false" aria-label="Zweck: Werbung/Marketing" aria-labelledby="cmppurposelabelpc3" data-cmp-purpose="c3" draggable="false" href="#" role="checkbox"></a></div><div class="cmpwelcomeprpstxt" data-cmp-purpose="c3" draggable="false" id="cmppurposelabelpc3">Werbung/Marketing</div></div><div class="cmpwelcomeprps"><div class="cmpwelcomeprpsbtn"><a aria-checked="false" aria-label="Zweck: Externe Medien" aria-labelledby="cmppurposelabelpc8" data-cmp-purpose="c8" draggable="false" href="#" role="checkbox"></a></div><div class="cmpwelcomeprpstxt" data-cmp-purpose="c8" draggable="false" id="cmppurposelabelpc8">Externe Medien</div></div></div></div><div class="cmpboxbtns" role="form"><span class="cmpboxbtnspan" id="cmpwelcomebtnyes"><a class="cmpboxbtn cmpboxbtnyes cmptxt_btn_yes" draggable="false" href="#" role="button"><span id="cmpbntyestxt">Alle akzeptieren</span></a></span><span class="cmpboxbtnspan" id="cmpwelcomebtnsave"><a class="cmpboxbtn cmpboxbtnsave cmptxt_btn_save" draggable="false" href="#" role="button"><span id="cmpbntsavetxt">Auswahl bestätigen</span></a></span><div class="cmpmore"><a class="cmpmorelink cmptxt_btn_custom" draggable="false" href="#">Einstellungen</a><span class="cmpmoredivider"> | </span><a class="cmpmorelink cmptxt_cookies" draggable="false" href="#">Cookies</a><span class="cmpmoredivider"> | </span><a class="cmpmorelink cmptxt_btn_more" href="https://www.diamir.de/datenschutz" target="_top">Datenschutzerklärung</a><span class="cmpmoredivider"> | </span><a class="cmpmorelink cmptxt_btn_tac" href="https://www.diamir.de/impressum" target="_top">AGB</a><span class="cmpmoredivider"> | </span><a class="cmpmorelink cmptxt_btn_imprint" href="https://www.diamir.de/impressum" target="_top">Impressum</a></div></div></div><div class="cmplogo2 cmplogoXL" tabindex="-1"><span class="cmplogo2hx">powered by </span><a href="https://www.consentmanager.de/cookie-banner-plugin/best-cookie-banner/?utm_source=cmplogo2A&amp;utm_medium=banner&amp;utm_campaign=cmplogo2A&amp;utm_term=4008&amp;utm_content=diamir.de" target="_top"><span class="cmplogo2h cmplogo2hvis">consentmanager.net</span></a></div></div>
+<noscript></noscript>
+<header @click.away="hideNav" class="fixed top-0 z-50 w-full bg-white shadow-sm" id="header" x-data="mainNav">
+<div class="nav-container relative mx-auto flex items-center justify-between gap-4 px-8 transition-all md:static lg:px-16 h-14 lg:h-20">
+<a aria-label="Zur Startseite" class="" href="/">
+
+</a>
+<button @click="toggleNav" aria-label="Menü anzeigen" class="order-last block text-primary-500 md:hidden">
+  </button>
+<nav class="absolute left-0 w-full border-y border-gray-100 bg-primary-500 py-4 md:static md:mx-auto md:!flex md:h-full md:w-auto md:items-center md:border-y-0 md:bg-white md:py-0 top-14" style="display: none;" x-show="visibleNav">
+<ul class="flex w-full flex-col items-center gap-3 bg-primary-500 font-medium text-white md:h-full md:w-auto md:flex-row md:items-stretch md:gap-4 md:bg-white md:text-xl md:text-primary-500 lg:gap-5 lg:text-[1.375rem]">
+<li class="group md:flex md:items-center md:hover:cursor-pointer">
+<a class="md:py-0.5 hover:border-b hover:border-primary-500 md:group-hover:border-b md:group-hover:border-primary-500" href="/reise-suchen">
+                        Reise suchen
+                    </a>
+</li>
+<li class="group relative w-full text-center md:static md:flex md:w-auto md:items-center md:hover:cursor-pointer">
+<a @click.prevent="toggleSub" class="md:py-0.5 hover:border-b hover:border-primary-500 md:group-hover:border-b md:group-hover:border-primary-500 toggle-sub" href="/urlaubsziele">
+                        Urlaubsziele
+                    </a>
+<div class="sub mt-2 hidden w-full bg-primary-700 md:absolute md:left-0 md:top-full md:z-50 md:mt-0 md:h-[480px] md:animate-fade-in md:bg-primary-500 md:bg-[url('/images/menu-bg.jpg')] md:bg-cover md:shadow-md lg:h-[540px] xl:h-[555px]">
+<div class="absolute inset-0 z-0 hidden bg-primary-500 opacity-75 mix-blend-multiply md:block">
+</div>
+<div class="mx-auto max-w-6xl px-4 font-normal lg:px-6">
+<ul class="text-base-lg mt-2 py-1 text-center text-white md:mt-0 md:grid md:grid-cols-7 md:py-4 md:text-left">
+<li class="group/menu-level-2 continent-0 relative py-1 md:px-2 md:py-0 md:pb-2">
+<a @click.prevent="toggleSub" class="toggle-sub block md:relative md:flex md:aspect-square md:items-center md:justify-center" href="/afrika">
+
+<span class="text-base-xl md:text-shadow text-menu-tile relative block hyphens-auto leading-tight md:z-30 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                    Afrika
+                                                </span>
+</a>
+<div class="mt-1.5 hidden w-fit mx-auto py-2 border-y border-white/30 py-1.5 md:mt-0 md:py-3 md:group-hover/menu-level-2:!block md:absolute md:top-full md:left-2 md:z-50 md:border-0 md:animate-fade-in md:w-[calc(500%_-_.5rem)] md:block">
+
+<div class="hidden md:absolute md:left-0 md:right-2 md:block md:h-px md:border-t md:border-white/60">
+</div>
+<ul class="text-sm md:text-base lg:text-lg md:leading-normal lg:leading-normal text-left md:gap-x-2 md:pt-2 md:block columns-3 md:columns-5">
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/algerien">
+                                                                Algerien
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/angola">
+                                                                Angola
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/aethiopien">
+                                                                Äthiopien
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/benin">
+                                                                Benin
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/botswana">
+                                                                Botswana
+                                                            </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</div>
+</li>
+<li @mouseout="hideContinent" @mouseover="showContinent" class="group/menu-level-2 continent-1 relative py-1 md:px-2 md:py-0 md:pb-2">
+<a @click.prevent="toggleSub" class="toggle-sub block md:relative md:flex md:aspect-square md:items-center md:justify-center" href="/amerika">
+
+<span class="text-base-xl md:text-shadow text-menu-tile relative block hyphens-auto leading-tight md:z-30 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                    Amerika
+                                                </span>
+</a>
+<div class="mt-1.5 hidden w-fit mx-auto py-2 border-y border-white/30 py-1.5 md:mt-0 md:py-3 md:group-hover/menu-level-2:!block md:absolute md:top-full md:left-2 md:z-50 md:border-0 md:animate-fade-in md:w-[calc(400%_-_.5rem)]">
+
+<div class="hidden md:absolute md:left-0 md:right-2 md:block md:h-px md:border-t md:border-white/60">
+</div>
+<ul class="text-sm md:text-base lg:text-lg md:leading-normal lg:leading-normal text-left md:gap-x-2 md:pt-2 md:block columns-3 md:columns-4">
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/antigua-und-barbuda">
+                                                                Antigua und Barbuda
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/argentinien">
+                                                                Argentinien
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/aruba">
+                                                                Aruba
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/bahamas">
+                                                                Bahamas
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/barbados">
+                                                                Barbados
+                                                            </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</div>
+</li>
+<li @mouseout="hideContinent" @mouseover="showContinent" class="group/menu-level-2 continent-2 relative py-1 md:px-2 md:py-0 md:pb-2">
+<a @click.prevent="toggleSub" class="toggle-sub block md:relative md:flex md:aspect-square md:items-center md:justify-center" href="/arabien">
+
+<span class="text-base-xl md:text-shadow text-menu-tile relative block hyphens-auto leading-tight md:z-30 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                    Arabien
+                                                </span>
+</a>
+<div class="mt-1.5 hidden w-fit mx-auto py-2 border-y border-white/30 py-1.5 md:mt-0 md:py-3 md:group-hover/menu-level-2:!block md:absolute md:top-full md:left-2 md:z-50 md:border-0 md:animate-fade-in md:w-[calc(200%_-_.5rem)]">
+
+<div class="hidden md:absolute md:left-0 md:right-2 md:block md:h-px md:border-t md:border-white/60">
+</div>
+<ul class="text-sm md:text-base lg:text-lg md:leading-normal lg:leading-normal text-left md:gap-x-2 md:pt-2 md:block columns-3 md:columns-2">
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/aegypten">
+                                                                Ägypten
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/algerien">
+                                                                Algerien
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/djibouti">
+                                                                Djibouti
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/eritrea">
+                                                                Eritrea
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/irak">
+                                                                Irak
+                                                            </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</div>
+</li>
+<li @mouseout="hideContinent" @mouseover="showContinent" class="group/menu-level-2 continent-3 relative py-1 md:px-2 md:py-0 md:pb-2">
+<a @click.prevent="toggleSub" class="toggle-sub block md:relative md:flex md:aspect-square md:items-center md:justify-center" href="/arktis-antarktis">
+
+<span class="text-base-xl md:text-shadow text-menu-tile relative block hyphens-auto leading-tight md:z-30 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                    Arktis &amp; Antarktis
+                                                </span>
+</a>
+<div class="mt-1.5 hidden w-fit mx-auto py-2 border-y border-white/30 py-1.5 md:mt-0 md:py-3 md:group-hover/menu-level-2:!block md:absolute md:top-full md:left-2 md:z-50 md:border-0 md:animate-fade-in md:w-[calc(100%_-_.5rem)]">
+
+<div class="hidden md:absolute md:left-0 md:right-2 md:block md:h-px md:border-t md:border-white/60">
+</div>
+<ul class="text-sm md:text-base lg:text-lg md:leading-normal lg:leading-normal text-left md:gap-x-2 md:pt-2 md:block columns-3 md:columns-1">
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/antarktis">
+                                                                Antarktis
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/arktis">
+                                                                Arktis
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/falklandinseln">
+                                                                Falklandinseln
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/groenland">
+                                                                Grönland
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/spitzbergen">
+                                                                Spitzbergen
+                                                            </a>
+</li>
+
+</ul>
+</div>
+</li>
+<li @mouseout="hideContinent" @mouseover="showContinent" class="group/menu-level-2 continent-4 relative py-1 md:px-2 md:py-0 md:pb-2">
+<a @click.prevent="toggleSub" class="toggle-sub block md:relative md:flex md:aspect-square md:items-center md:justify-center" href="/asien">
+
+<span class="text-base-xl md:text-shadow text-menu-tile relative block hyphens-auto leading-tight md:z-30 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                    Asien
+                                                </span>
+</a>
+<div class="mt-1.5 hidden w-fit mx-auto py-2 border-y border-white/30 py-1.5 md:mt-0 md:py-3 md:group-hover/menu-level-2:!block md:absolute md:top-full md:left-2 md:z-50 md:border-0 md:animate-fade-in md:w-[calc(400%_-_.5rem)] md:-ml-[100%]">
+
+<div class="hidden md:absolute md:left-0 md:right-2 md:block md:h-px md:border-t md:border-white/60">
+</div>
+<ul class="text-sm md:text-base lg:text-lg md:leading-normal lg:leading-normal text-left md:gap-x-2 md:pt-2 md:block columns-3 md:columns-4">
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/armenien">
+                                                                Armenien
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/aserbaidschan">
+                                                                Aserbaidschan
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/bangladesch">
+                                                                Bangladesch
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/bhutan">
+                                                                Bhutan
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/china">
+                                                                China
+                                                            </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</div>
+</li>
+<li @mouseout="hideContinent" @mouseover="showContinent" class="group/menu-level-2 continent-5 relative py-1 md:px-2 md:py-0 md:pb-2">
+<a @click.prevent="toggleSub" class="toggle-sub block md:relative md:flex md:aspect-square md:items-center md:justify-center" href="/europa">
+
+<span class="text-base-xl md:text-shadow text-menu-tile relative block hyphens-auto leading-tight md:z-30 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                    Europa
+                                                </span>
+</a>
+<div class="mt-1.5 hidden w-fit mx-auto py-2 border-y border-white/30 py-1.5 md:mt-0 md:py-3 md:group-hover/menu-level-2:!block md:absolute md:top-full md:left-2 md:z-50 md:border-0 md:animate-fade-in md:w-[calc(300%_-_.5rem)] md:-ml-[100%]">
+
+<div class="hidden md:absolute md:left-0 md:right-2 md:block md:h-px md:border-t md:border-white/60">
+</div>
+<ul class="text-sm md:text-base lg:text-lg md:leading-normal lg:leading-normal text-left md:gap-x-2 md:pt-2 md:block columns-3 md:columns-3">
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/albanien">
+                                                                Albanien
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/bulgarien">
+                                                                Bulgarien
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/daenemark">
+                                                                Dänemark
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/deutschland">
+                                                                Deutschland
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/estland">
+                                                                Estland
+                                                            </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</div>
+</li>
+<li @mouseout="hideContinent" @mouseover="showContinent" class="group/menu-level-2 continent-6 relative py-1 md:px-2 md:py-0 md:pb-2">
+<a @click.prevent="toggleSub" class="toggle-sub block md:relative md:flex md:aspect-square md:items-center md:justify-center" href="/ozeanien">
+
+<span class="text-base-xl md:text-shadow text-menu-tile relative block hyphens-auto leading-tight md:z-30 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                    Ozeanien
+                                                </span>
+</a>
+<div class="mt-1.5 hidden w-fit mx-auto py-2 border-y border-white/30 py-1.5 md:mt-0 md:py-3 md:group-hover/menu-level-2:!block md:absolute md:top-full md:left-2 md:z-50 md:border-0 md:animate-fade-in md:-ml-[100%]">
+
+<div class="hidden md:absolute md:left-0 md:right-2 md:block md:h-px md:border-t md:border-white/60">
+</div>
+<ul class="text-sm md:text-base lg:text-lg md:leading-normal lg:leading-normal text-left md:gap-x-2 md:pt-2 md:block columns-3 md:columns-2">
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/australien">
+                                                                Australien
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/cook-inseln">
+                                                                Cook-Inseln
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/fiji">
+                                                                Fiji
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/franzoesisch-polynesien">
+                                                                Französisch-Polynesien
+                                                            </a>
+</li>
+<li class="pb-1">
+<a class="block no-underline hover:underline" href="/neukaledonien">
+                                                                Neukaledonien
+                                                            </a>
+</li>
+
+
+
+
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class="group relative w-full text-center md:static md:flex md:w-auto md:items-center md:hover:cursor-pointer">
+<a @click.prevent="toggleSub" class="md:py-0.5 hover:border-b hover:border-primary-500 md:group-hover:border-b md:group-hover:border-primary-500 toggle-sub" href="/reisethemen">Reisethemen</a>
+<div class="sub mt-2 hidden w-full bg-primary-700 md:absolute md:left-0 md:top-full md:z-50 md:mt-0 md:h-[480px] md:animate-fade-in md:bg-primary-500 md:bg-[url('/images/menu-bg.jpg')] md:bg-cover md:shadow-md lg:h-[520px] xl:h-[555px]">
+<div class="absolute inset-0 z-0 hidden bg-primary-500 opacity-75 mix-blend-multiply md:block">
+</div>
+<div class="relative z-10 mx-auto max-w-6xl px-4 font-normal lg:px-6">
+<ul class="text-base-lg mt-2 py-1 text-center text-white md:mt-0 md:grid md:grid-cols-4 md:gap-4 md:py-4 md:text-left">
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:aspect-[5/4] md:items-center md:justify-center" href="/safari">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Safari &amp; Tiere
+                                            </div>
+</a>
+</li>
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:aspect-[5/4] md:items-center md:justify-center" href="/naturreisen">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Naturreisen
+                                            </div>
+</a>
+</li>
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:aspect-[5/4] md:items-center md:justify-center" href="/kulturreisen">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Kulturreisen
+                                            </div>
+</a>
+</li>
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:aspect-[5/4] md:items-center md:justify-center" href="/wandern-aktivreisen">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Wandern &amp; Aktivreisen
+                                            </div>
+</a>
+</li>
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:aspect-[5/4] md:items-center md:justify-center" href="/fotoreisen">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Fotoreisen
+                                            </div>
+</a>
+</li>
+
+
+
+</ul>
+</div>
+</div>
+</li>
+<li class="group relative w-full text-center md:static md:flex md:w-auto md:items-center md:hover:cursor-pointer">
+<a class="md:py-0.5 hover:border-b hover:border-primary-500 md:group-hover:border-b md:group-hover:border-primary-500 toggle-sub" href="/blog">Inspiration</a>
+<div class="sub mt-2 hidden w-full bg-primary-700 md:absolute md:left-0 md:top-full md:z-50 md:mt-0 md:h-[480px] md:animate-fade-in md:bg-primary-500 md:bg-[url('/images/menu-bg.jpg')] md:bg-cover md:shadow-md lg:h-[520px] xl:h-[555px]">
+<div class="absolute inset-0 z-0 hidden bg-primary-500 opacity-75 mix-blend-multiply md:block">
+</div>
+<div class="relative z-10 mx-auto max-w-6xl px-4 font-normal lg:px-6">
+<ul class="text-base-lg mt-2 py-1 text-center text-white md:mt-0 md:grid md:grid-cols-4 md:gap-4 md:py-4 md:text-left">
+<li class="py-1 md:py-0 md:col-span-2 md:row-span-2">
+<a class="block md:relative md:flex md:items-center md:justify-center h-full w-full" href="/blog">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block md:object-cover">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Der DIAMIR-BLOG
+                                            </div>
+</a>
+</li>
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:items-center md:justify-center md:aspect-[5/4]" href="/blog/insider/10-reiseziele-am-indischen-ozean">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block md:object-cover">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Indischer Ozean
+                                            </div>
+</a>
+</li>
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:items-center md:justify-center md:aspect-[5/4]" href="/blog/insider/10-top-safariziele">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block md:object-cover">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Safariziele zum Staunen
+                                            </div>
+</a>
+</li>
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:items-center md:justify-center md:aspect-[5/4]" href="/blog/10-bauwerke-die-man-gesehen-haben-sollte">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block md:object-cover">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Besondere Bauwerke
+                                            </div>
+</a>
+</li>
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:items-center md:justify-center md:aspect-[5/4]" href="/blog/10-kreuzfahrten-auf-denen-man-an-bord-sein-sollte">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block md:object-cover">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Kreuzfahrten weltweit
+                                            </div>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class="group relative w-full text-center md:static md:flex md:w-auto md:items-center md:hover:cursor-pointer">
+<a @click.prevent="toggleSub" class="md:py-0.5 hover:border-b hover:border-primary-500 md:group-hover:border-b md:group-hover:border-primary-500 toggle-sub" href="/ueber-uns">Über uns</a>
+<div class="sub mt-2 hidden w-full bg-primary-700 md:absolute md:left-0 md:top-full md:z-50 md:mt-0 md:h-[480px] md:animate-fade-in md:bg-primary-500 md:bg-[url('/images/menu-bg.jpg')] md:bg-cover md:shadow-md lg:h-[520px] xl:h-[555px]">
+<div class="absolute inset-0 z-0 hidden bg-primary-500 opacity-75 mix-blend-multiply md:block">
+</div>
+<div class="relative z-10 mx-auto max-w-6xl px-4 font-normal lg:px-6">
+<ul class="text-base-lg mt-2 py-1 text-center text-white md:mt-0 md:grid md:grid-cols-4 md:gap-4 md:py-4 md:text-left">
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:aspect-[5/4] md:items-center md:justify-center" href="/diamir-story">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                DIAMIR-Story
+                                            </div>
+</a>
+</li>
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:aspect-[5/4] md:items-center md:justify-center" href="/unser-team">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Unser Team
+                                            </div>
+</a>
+</li>
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:aspect-[5/4] md:items-center md:justify-center" href="/was-uns-abhebt">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Was uns abhebt
+                                            </div>
+</a>
+</li>
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:aspect-[5/4] md:items-center md:justify-center" href="/nachhaltigkeit">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Regenwald schützen
+                                            </div>
+</a>
+</li>
+<li class="py-1 md:py-0">
+<a class="block md:relative md:flex md:aspect-[5/4] md:items-center md:justify-center" href="/presse">
+<div class="hidden md:absolute md:inset-0 md:z-0 md:block">
+
+</div>
+<div class="md:text-shadow hyphens-auto md:relative md:z-30 md:col-span-2 md:flex md:h-full md:w-full md:items-center md:justify-center md:px-2 md:text-center md:text-xl md:font-semibold md:uppercase md:hover:bg-primary-500/20">
+                                                Presse
+                                            </div>
+</a>
+</li>
+
+
+
+</ul>
+</div>
+</div>
+</li>
+</ul>
+</nav>
+<div class="ml-auto flex justify-end gap-4 md:ml-0">
+<a aria-label="Kontakt" class="text-primary-500 hover:text-primary-600" href="/kontakt" x-tooltip.raw="Kontakt">
+ </a>
+<a @click.prevent="toggleSearch" aria-label="Suchen" class="text-primary-500 hover:text-primary-600" href="#">
+  </a>
+<div class="items-center text-primary-500 hidden" wire:id="SW0PEPqMuRnU89NNbSlC">
+<a aria-label="Zum Merkzettel" class="flex items-center" href="/merkzettel">
+ <small class="ml-1 font-bold">0</small>
+</a>
+</div>
+<!-- Livewire Component wire-end:SW0PEPqMuRnU89NNbSlC -->
+</div>
+</div>
+<div class="nav-search absolute top-full z-40 hidden max-h-[calc(100vh_-_8rem)] w-full overflow-y-auto border-t border-gray-200 bg-gray-100 px-8 shadow-sm lg:px-16">
+<div wire:id="MGHulx2dSjBJugKtNt0c" wire:key="header-search-1241649934">
+<div class="flex w-full items-center gap-4">
+ 
+<button @click.prevent="clearSearch" aria-label="Löschen" class="cursor-pointer bg-transparent font-medium uppercase tracking-wide text-gray-600 hover:text-primary-500" type="button">
+            Löschen
+        </button>
+</div>
+<div class="justify-center py-4" wire:loading.flex="">
+
+</div>
+<div wire:loading.remove="">
+<div class="flex flex-col lg:flex-row">
+</div>
+</div>
+</div>
+<!-- Livewire Component wire-end:MGHulx2dSjBJugKtNt0c -->
+</div>
+</header>
+<main>
+<div class="bg-gray-900">
+<div class="relative max-w-[1920px] mx-auto aspect-square sm:aspect-21/9">
+
+
+<div class="max-w-6xl w-full mx-auto px-6 lg:px-8 absolute inset-0 z-20 flex h-full w-full flex-col justify-between">
+<div class="text-shadow text-white text-center my-auto">
+<h1 class="text-2xl-4xl text-center font-heading leading-tight text-white">
+                    Kein Jetlag, nur Karrierehoch
+                </h1>
+<h2 class="text-xl-2xl font-semibold">Dein Traumjob wartet</h2>
+</div>
+<div class="mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-4">
+</div>
+<div class="text-shadow text-sm-base flex justify-center gap-1 pb-4 leading-tight text-white sm:gap-4 sm:pb-6">
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-6xl w-full mx-auto px-6 lg:px-8">
+<nav>
+<ul class="flex list-none items-baseline justify-start gap-1.5 py-2 text-sm font-medium text-primary-500 sm:gap-2">
+<li class="inline-flex items-baseline gap-1.5 sm:gap-2">
+<a aria-label="Zur Startseite" class="no-underline" href="/">
+ <span class="hidden sm:inline">Startseite</span>
+</a>
+
+</li>
+<li class="inline-flex items-baseline gap-1.5 whitespace-nowrap sm:gap-2">
+<a class="whitespace-nowrap no-underline" href="ueber-uns">
+                                                            Über uns
+                                                    </a>
+
+</li>
+<li class="inline-flex items-baseline gap-1.5 whitespace-nowrap sm:gap-2">
+                                            Jobs
+                                                        </li>
+</ul>
+</nav>
+</div>
+<div class="max-w-6xl w-full mx-auto px-6 lg:px-8 my-8">
+<div class="grid grid-cols-12 gap-y-8 sm:gap-x-8">
+<div class="col-span-12 text-center">
+<h2 class="text-2xl-3xl font-heading text-primary-500 text-center">Werde ein Diamiro</h2>
+</div>
+<div class="col-span-12">
+<div class="prose mx-auto max-w-4xl">
+<p>Wir organisieren erlebnisreiche Kleingruppenreisen und individuelle Touren in über 150 Länder weltweit. Mehr als 100 Mitarbeiter gehören inzwischen zu unserer DIAMIR-Familie. Werde auch du ein Teil davon! <span>Wir suchen zur Unterstützung unserer großartigen Teams in Dresden, Leipzig (Markkleeberg) oder Berlin ab sofort engagierte Mitarbeiter in den Bereichen:</span></p>
+</div>
+</div>
+</div>
+</div>
+<div wire:id="IQ8mQ5dis3NcWYtBzMYh">
+<div class="bg-gray-50 py-12">
+<div class="max-w-6xl w-full mx-auto px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3">
+<div class="group flex flex-col border border-transparent hover:border-teal-500 hover:cursor-pointer" data-href="/verkauf-lateinamerika-jobangebot" x-data="link">
+<a class="relative aspect-video" href="/verkauf-lateinamerika-jobangebot">
+
+</a>
+<div class="flex grow flex-col justify-between bg-white p-4">
+<h3 class="text-lg-xl font-semibold">
+<a class="no-underline hover:underline group-hover:underline" href="/verkauf-lateinamerika-jobangebot">
+                Verkauf Lateinamerika (Jobangebot)
+            </a>
+</h3>
+<p class="my-4 line-clamp-5">
+            Wir suchen zur Unterstützung unseres Teams engagierte Verkaufsmanager (m/w/d) für verschiedene Destinationen in Lateinamerika.
+        </p>
+<div class="mt-auto">
+<a class="py-1 transition inline-block no-underline px-4 border border-teal-500 text-teal-500 hover:bg-white hover:border-teal-600 hover:text-teal-600 focus:border-teal-600 focus:text-teal-600 text-sm-base group-hover:border-teal-600 group-hover:bg-white group-hover:text-teal-600" href="/verkauf-lateinamerika-jobangebot">
+        Weiterlesen
+    </a>
+</div>
+</div>
+</div>
+<div class="group flex flex-col border border-transparent hover:border-teal-500 hover:cursor-pointer" data-href="/jobs/seo-manager" x-data="link">
+<a class="relative aspect-video" href="/jobs/seo-manager">
+
+</a>
+<div class="flex grow flex-col justify-between bg-white p-4">
+<h3 class="text-lg-xl font-semibold">
+<a class="no-underline hover:underline group-hover:underline" href="/jobs/seo-manager">
+                Online-Marketing-Manager mit Fokus SEO (Jobangebot)
+            </a>
+</h3>
+<p class="my-4 line-clamp-5">
+            Wir suchen zur Unterstützung unseres Teams einen Online-Marketing-Manager mit Fokus SEO  (m/w/d).
+        </p>
+<div class="mt-auto">
+<a class="py-1 transition inline-block no-underline px-4 border border-teal-500 text-teal-500 hover:bg-white hover:border-teal-600 hover:text-teal-600 focus:border-teal-600 focus:text-teal-600 text-sm-base group-hover:border-teal-600 group-hover:bg-white group-hover:text-teal-600" href="/jobs/seo-manager">
+        Weiterlesen
+    </a>
+</div>
+</div>
+</div>
+<div class="group flex flex-col border border-transparent hover:border-teal-500 hover:cursor-pointer" data-href="/jobs/verkaufsmanager-expedition" x-data="link">
+<a class="relative aspect-video" href="/jobs/verkaufsmanager-expedition">
+
+</a>
+<div class="flex grow flex-col justify-between bg-white p-4">
+<h3 class="text-lg-xl font-semibold">
+<a class="no-underline hover:underline group-hover:underline" href="/jobs/verkaufsmanager-expedition">
+                Verkauf Expedition (Jobangebot)
+            </a>
+</h3>
+<p class="my-4 line-clamp-5">
+            Wir suchen zur Unterstützung unseres Teams engagierte Verkaufsmanager (m/w/d) für Expeditionsreisen weltweit.
+        </p>
+<div class="mt-auto">
+<a class="py-1 transition inline-block no-underline px-4 border border-teal-500 text-teal-500 hover:bg-white hover:border-teal-600 hover:text-teal-600 focus:border-teal-600 focus:text-teal-600 text-sm-base group-hover:border-teal-600 group-hover:bg-white group-hover:text-teal-600" href="/jobs/verkaufsmanager-expedition">
+        Weiterlesen
+    </a>
+</div>
+</div>
+</div>
+<div class="group flex flex-col border border-transparent hover:border-teal-500 hover:cursor-pointer" data-href="/jobs/backoffice" x-data="link">
+<a class="relative aspect-video" href="/jobs/backoffice">
+
+</a>
+<div class="flex grow flex-col justify-between bg-white p-4">
+<h3 class="text-lg-xl font-semibold">
+<a class="no-underline hover:underline group-hover:underline" href="/jobs/backoffice">
+                Backoffice (Jobangebot)
+            </a>
+</h3>
+<p class="my-4 line-clamp-5">
+            Wir suchen dich zur Verstärkung unseres Backoffice Teams (m/w/d). Du unterstützt den Verkauf und optimierst interne Prozesse.
+        </p>
+<div class="mt-auto">
+<a class="py-1 transition inline-block no-underline px-4 border border-teal-500 text-teal-500 hover:bg-white hover:border-teal-600 hover:text-teal-600 focus:border-teal-600 focus:text-teal-600 text-sm-base group-hover:border-teal-600 group-hover:bg-white group-hover:text-teal-600" href="/jobs/backoffice">
+        Weiterlesen
+    </a>
+</div>
+</div>
+</div>
+<div class="group flex flex-col border border-transparent hover:border-teal-500 hover:cursor-pointer" data-href="/jobs/expeditionsleiter" x-data="link">
+<a class="relative aspect-video" href="/jobs/expeditionsleiter">
+
+</a>
+<div class="flex grow flex-col justify-between bg-white p-4">
+<h3 class="text-lg-xl font-semibold">
+<a class="no-underline hover:underline group-hover:underline" href="/jobs/expeditionsleiter">
+                Expeditionsleitung (Jobangebot)
+            </a>
+</h3>
+<p class="my-4 line-clamp-5">
+            Wir suchen für die Leitung unserer Bergexpeditionen erfahrene Expeditionsleiter (m/w/d) mit umfassender Bergerfahrung für attraktive Gipfelziele weltweit.
+        </p>
+<div class="mt-auto">
+<a class="py-1 transition inline-block no-underline px-4 border border-teal-500 text-teal-500 hover:bg-white hover:border-teal-600 hover:text-teal-600 focus:border-teal-600 focus:text-teal-600 text-sm-base group-hover:border-teal-600 group-hover:bg-white group-hover:text-teal-600" href="/jobs/expeditionsleiter">
+        Weiterlesen
+    </a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<!-- Livewire Component wire-end:IQ8mQ5dis3NcWYtBzMYh -->
+<div class="max-w-6xl w-full mx-auto px-6 lg:px-8 my-8">
+<div class="grid grid-cols-12 gap-y-8 sm:gap-x-8">
+<div class="col-span-12">
+<div class="prose mx-auto max-w-4xl">
+<h3><span>Wir über uns</span></h3><p><span>Das Besondere an DIAMIR sind neben unseren Touren definitiv die Menschen. Wenn wir von Länderexperten sprechen, dann meinen wir das auch so. Ein Beispiel? Susan. Unsere Produktmanagerin für Afrika absolvierte kürzlich eine Ausbildung zum Safari-Guide in Botswana und ist jetzt fachlich noch besser für die Konzeption von Safari-Reisen ausgebildet. Noch ein Beispiel? Stefan – im Büro auch als "Hilde" bekannt. Es gibt kaum einen Berghang im Kaukasus, welchen die strammen Waden unseres Zentralasien-Produktmanagers noch nicht erklommen haben. Und noch ein Beispiel: Marianne. Wo ein Berg ist, da muss sie rauf! Und so kann sie mit viel Hintergrundwissen und "on ground"-Expertise die Abteilung für Asien &amp; Expeditionen auch inhaltlich super leiten. Doch keine Sorge: Wir alle haben einmal "klein" angefangen und es ist definitiv keine Voraussetzung, dass du bereits die ganze Welt bereist haben musst, um bei uns zu arbeiten.</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative flex aspect-square items-center justify-center py-12 sm:aspect-21/9">
+
+
+<div class="absolute inset-0 z-10 flex items-center justify-center overflow-hidden">
+
+
+</div>
+<div class="max-w-6xl w-full mx-auto px-6 lg:px-8 relative z-20 flex flex-col items-center">
+<h2 class="text-xl-4xl text-shadow relative z-10 mb-3 text-center font-heading text-white sm:mb-5">
+                Lerne uns kennen
+            </h2>
+<div class="text-shadow prose max-w-lg text-center leading-tight text-white">
+</div>
+<div class="mt-6 text-center">
+<a class="py-1 transition inline-block no-underline px-4 border border-teal-500 bg-teal-500 text-white hover:border-teal-600 hover:bg-teal-600 focus:border-teal-600 focus:bg-teal-600" href="/unser-team">
+        Unser Team stellt sich vor
+    </a>
+</div>
+</div>
+</div>
+<div class="max-w-6xl w-full mx-auto px-6 lg:px-8 my-8">
+<div class="grid grid-cols-12 gap-y-8 sm:gap-x-8">
+<div class="col-span-12">
+<div class="prose mx-auto max-w-4xl">
+<h3><span>Die eierlegende Wollmilchsau?</span></h3><p><span>Sind wir ehrlich: Den von vielen Unternehmen gewünschten, perfekten und allwissenden Kandidaten gibt es überhaupt nicht. So hat unser Marketingchef Michél bis heute eine latente Kommaschwäche und muss (fast alle) seiner Texte Korrekturlesen lassen – blöd, weil er schreibt sehr viele Texte. Gleichzeitig sind die Korrekturlesenden jedoch voll des Lobes für seine Kreativität. Kollegin Grit ist hervorragend in der Datenanlage und Datenpflege, was einem anderen Kollegen sichtbar schwer fällt. Dieser hat allerdings ein besonders feines Händchen fürs Tourendesign. Die berühmte eierlegende Wollmilchsau haben wir also nicht im Team. Und brauchen sie auch nicht.</span></p>
+</div>
+</div>
+<div class="col-span-12">
+<div class="prose mx-auto max-w-4xl">
+<h3><span>Es geht um deine Stärken!</span></h3><p><span>Es ist unsere Aufgabe, dich bestmöglich einzusetzen. Wir hatten sogar schon Kolleginnen und Kollegen, welche nach wenigen Wochen auf eine völlig andere Position gewechselt sind und dort ihr Glück gefunden haben. Wichtig sind: Einsatz, Mitdenken und Leidenschaft. Dann funktioniert das schon mit uns. Achso: Ein gesundes Englisch für die Kommunikation mit all unseren wunderbaren Partnern ist natürlich von Vorteil. </span></p>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<div wire:id="5KjSYWkn69KWz1i5gEmN" x-data="notification">
+<div style="display: none;" x-show="show" x-transition:enter="transition ease-out duration-500" x-transition:enter-end="opacity-100" x-transition:enter-start="opacity-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-end="opacity-0" x-transition:leave-start="opacity-100">
+<div class="fixed bottom-6 right-6 z-50 flex justify-between items-start max-w-sm w-auto p-3 rounded text-white shadow-lg">
+</div>
+</div>
+</div>
+<!-- Livewire Component wire-end:5KjSYWkn69KWz1i5gEmN -->
+<button class="py-1 transition px-4 border border-primary-500 bg-primary-500 text-white hover:border-primary-600 hover:bg-primary-600 focus:border-primary-600 focus:bg-primary-600 fixed bottom-10 right-10 z-40 !p-2 shadow" style="display: block;" type="button" x-data="goToTop">
+
+</button>
+
+</body></html>

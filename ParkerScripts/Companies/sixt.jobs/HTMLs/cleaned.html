@@ -1,0 +1,1174 @@
+<html class="overlay-open" lang="en">
+<body data-aos-delay="25" data-aos-duration="750" data-aos-easing="ease">
+<header class="bg-dark">
+<div class="topbar">
+            111+ years SIXT. 111+ years of tradition. Founded 1912.
+        </div>
+<div class="container">
+<nav>
+<div class="row align-items-center">
+<div class="col-auto">
+<div class="d-flex gap-sm align-items-center">
+<div class="nav-toggler">
+<button aria-controls="offcanvasNavbar" class="btn btn-icon text-light" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas" type="button">
+
+</button>
+</div>
+<div class="logo-wrapper">
+
+</div>
+</div>
+</div>
+<div class="col mx-auto text-center text-white text-center d-none d-md-block">
+<span class="form-control fake-input" x-data="" x-on:click="$store.searchOverlay.toggle()">
+<span>Search job by keywords, city...</span></span>
+</div>
+<div class="col-auto ms-auto ms-md-0">
+<div class="d-inline-flex gap-md gap-md-lg align-items-baseline justify-content-end" x-data="languageOverlay">
+<div class="lang-menu">
+<button class="fw-bold no-button" role="button" x-on:click="show()">
+<span class="btn btn-icon bg-white is-rounded">
+
+</span>
+<span class="d-none d-md-inline-block ms-3xs text-uppercase">en</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start" id="offcanvasNavbar" tabindex="-1">
+<div class="offcanvas-header">
+<button class="btn btn-close" data-bs-dismiss="offcanvas" type="button">
+
+</button>
+
+</div>
+<div class="offcanvas-body">
+<div class="offcanvas-body--inner">
+<ul class="offcanvas-nav">
+<li class="">
+<a class="" href="/us">
+                                                                                Home
+                                    </a>
+</li>
+<li class="">
+<a class="current" href="/us/jobs">
+
+                                            
+                                                                                All Jobs
+                                    </a>
+</li>
+<li class="">
+<a class="" href="/us/at-the-branch">
+                                                                                At the Branch
+                                    </a>
+</li>
+<li class="">
+<a class="" href="/us/about-us">
+                                                                                About us
+                                    </a>
+</li>
+<li class="">
+<a class="" href="/us/faq">
+                                                                                FAQ
+                                    </a>
+</li>
+</ul>
+<div class="offcanvas-footer">
+<div x-data="languageOverlay">
+<a data-bs-dismiss="offcanvas" href="#" role="button" x-on:click="show()">
+
+                                US
+                            </a>
+
+<a data-bs-dismiss="offcanvas" href="#" role="button" x-on:click="show()">en</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<section class="pb-lg">
+<div class="container">
+<div class="text-center no-hyphenate">
+<span class="h2 mb-2xs">
+<span class="js-jobs-counter-animated">224</span>
+</span>
+<p class="fs-lg js-search-text" x-html="getSearchText()">jobs located in United States.</p>
+</div>
+<span class="mt-xl mt-md-2xl form-control fake-input form-control-lg w-100" x-data="" x-on:click="$store.searchOverlay.toggle()">
+<span>
+<span class="">
+                Search job by keywords, city...
+                </span>
+</span>
+</span>
+<div @update-sort.window="selectSort($event.detail)" x-data="searchFilter('default', 'best_fit', countryData, cityData, roleData, levelData, departmentData)">
+<div>
+<div class="d-flex gap-3xs flex-row flex-wrap align-items-center mt-sm">
+<button class="btn d-lg-none whitespace-nowrap btn btn-outline-dark btn-sm with-icon" type="button" x-data="" x-on:click="toggleOverlay('filter')">
+ Filter &amp; Sort
+    </button>
+<div class="d-none d-lg-block">
+<div class="dropdown" x-on:click.outside="closeOverlay('country')">
+<button class="btn btn-sm dropdown-toggle with-icon btn-dark" type="button" x-bind:class="{ 'btn-outline-dark fw-normal' :  activeCountries.length === 0, 'btn-dark' : activeCountries.length &gt; 0 }" x-on:click="toggleOverlay('country')">
+                Country
+                        
+<span x-show="activeCountries.length &gt; 0" x-text="'('+getCountry(true)+')'">(United States)</span>
+</button>
+<ul class="dropdown-menu dropdown-alpine" x-bind:class="{ 'show': isOverlayOpen('country') }">
+<li class="sticky-search">
+<div class="with-search-icon form-control-wrapper">
+
+</div>
+</li>
+<li>
+<a :class="{ 'active' : activeCountries.length === 0 }" class="dropdown-item" role="button" x-on:click.prevent="selectCountry('all');">
+                                All
+                            </a>
+</li>
+<template :key="country.code" x-for="country in listCountries">
+<li x-show="showCountry(country)">
+<a :class="{ 'active' : activeCountries.includes(country.code) }" class="dropdown-item" role="button" x-on:click.prevent="selectCountry(country)">
+
+
+</a>
+</li>
+</template><li x-show="showCountry(country)">
+<a :class="{ 'active' : activeCountries.includes(country.code) }" class="dropdown-item" role="button" x-on:click.prevent="selectCountry(country)">
+
+<span x-text="country.name_native + (country.name_native == country.name ? '' : ' ('+country.name+')') ">Canada</span>
+</a>
+</li><li x-show="showCountry(country)">
+<a :class="{ 'active' : activeCountries.includes(country.code) }" class="dropdown-item" role="button" x-on:click.prevent="selectCountry(country)">
+
+<span x-text="country.name_native + (country.name_native == country.name ? '' : ' ('+country.name+')') ">Deutschland (Germany)</span>
+</a>
+</li><li x-show="showCountry(country)">
+<a :class="{ 'active' : activeCountries.includes(country.code) }" class="dropdown-item" role="button" x-on:click.prevent="selectCountry(country)">
+
+<span x-text="country.name_native + (country.name_native == country.name ? '' : ' ('+country.name+')') ">España (Spain)</span>
+</a>
+</li><li x-show="showCountry(country)">
+<a :class="{ 'active' : activeCountries.includes(country.code) }" class="dropdown-item" role="button" x-on:click.prevent="selectCountry(country)">
+
+<span x-text="country.name_native + (country.name_native == country.name ? '' : ' ('+country.name+')') ">France</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="d-none d-lg-block">
+<div class="dropdown" x-on:click.outside="closeOverlay('city')">
+<button class="btn btn-sm dropdown-toggle with-icon btn-outline-dark fw-normal" type="button" x-bind:class="{ 'btn-outline-dark fw-normal' :  activeCities.length === 0, 'btn-dark' : activeCities.length &gt; 0 }" x-on:click="toggleOverlay('city')">
+                City
+                        <span style="display: none;" x-show="activeCities.length &gt; 0" x-text="'('+getCity(true)+')'">(All)</span>
+</button>
+<ul class="dropdown-menu dropdown-alpine" x-bind:class="{ 'show': isOverlayOpen('city') }">
+<li class="sticky-search">
+<div class="with-search-icon form-control-wrapper">
+
+</div>
+</li>
+<li>
+<a :class="{ 'active' : activeCities.length === 0 }" class="dropdown-item active" role="button" x-on:click.prevent="selectCity('all');">
+                                All
+                            </a>
+</li>
+<template :key="city.slug" x-for="city in sortedCities">
+<li x-show="showCity(city)">
+<a :class="{ 'active' : activeCities.includes(city.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectCity(city)">
+, 
+</a>
+</li>
+</template><li x-show="showCity(city)">
+<a :class="{ 'active' : activeCities.includes(city.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectCity(city)">
+<span x-text="city.name">Albuquerque</span>, <span data-slug="5454711" x-bind:data-slug="city.slug" x-text="city.country.toUpperCase()">US</span>
+</a>
+</li><li style="display: none;" x-show="showCity(city)">
+<a :class="{ 'active' : activeCities.includes(city.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectCity(city)">
+<span x-text="city.name">Almere</span>, <span data-slug="2759879" x-bind:data-slug="city.slug" x-text="city.country.toUpperCase()">NL</span>
+</a>
+</li><li style="display: none;" x-show="showCity(city)">
+<a :class="{ 'active' : activeCities.includes(city.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectCity(city)">
+<span x-text="city.name">Amsterdam</span>, <span data-slug="2759794" x-bind:data-slug="city.slug" x-text="city.country.toUpperCase()">NL</span>
+</a>
+</li><li x-show="showCity(city)">
+<a :class="{ 'active' : activeCities.includes(city.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectCity(city)">
+<span x-text="city.name">Anaheim</span>, <span data-slug="5323810" x-bind:data-slug="city.slug" x-text="city.country.toUpperCase()">US</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="d-none d-lg-block">
+<div class="dropdown" x-on:click.outside="closeOverlay('department')">
+<button class="btn btn-sm dropdown-toggle with-icon btn-outline-dark fw-normal" type="button" x-bind:class="{ 'btn-outline-dark fw-normal' :  activeDepartments.length === 0, 'btn-dark' : activeDepartments.length &gt; 0 }" x-on:click="toggleOverlay('department')">
+                Business Area
+                        <span style="display: none;" x-show="activeDepartments.length &gt; 0" x-text="'('+getDepartment(true)+')'">(All)</span>
+</button>
+<ul class="dropdown-menu dropdown-alpine" x-bind:class="{ 'show': isOverlayOpen('department') }">
+<li>
+<a :class="{ 'active' : activeDepartments.length === 0 }" class="dropdown-item active" role="button" x-on:click.prevent="selectDepartment('all');">
+                                All
+                            </a>
+</li>
+<template :key="department.slug" x-for="department in listDepartments">
+<li x-show="showDepartment(department)">
+<a :class="{ 'active' : activeDepartments.includes(department.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectDepartment(department)">
+
+</a>
+</li>
+</template><li x-show="showDepartment(department)">
+<a :class="{ 'active' : activeDepartments.includes(department.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectDepartment(department)">
+<span x-text="department.title">At the Branch</span>
+</a>
+</li><li x-show="showDepartment(department)">
+<a :class="{ 'active' : activeDepartments.includes(department.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectDepartment(department)">
+<span x-text="department.title">Corporate Functions</span>
+</a>
+</li><li x-show="showDepartment(department)">
+<a :class="{ 'active' : activeDepartments.includes(department.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectDepartment(department)">
+<span x-text="department.title">Tech</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="d-none d-lg-block">
+<div class="dropdown" x-on:click.outside="closeOverlay('role')">
+<button class="btn btn-sm dropdown-toggle with-icon btn-outline-dark fw-normal" type="button" x-bind:class="{ 'btn-outline-dark fw-normal' :  activeRoles.length === 0, 'btn-dark' : activeRoles.length &gt; 0 }" x-on:click="toggleOverlay('role')">
+                Role
+                        <span style="display: none;" x-show="activeRoles.length &gt; 0" x-text="'('+getRole(true)+')'">(All)</span>
+</button>
+<ul class="dropdown-menu dropdown-alpine" x-bind:class="{ 'show': isOverlayOpen('role') }">
+<li class="sticky-search">
+<div class="with-search-icon form-control-wrapper">
+
+</div>
+</li>
+<li>
+<a :class="{ 'active' : activeRoles.length === 0 }" class="dropdown-item active" role="button" x-on:click.prevent="selectRole('all');">
+                                All
+                            </a>
+</li>
+<template :key="role.slug" x-for="role in sortedRoles">
+<li x-show="showRole(role)">
+<a :class="{ 'active' : activeRoles.includes(role.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectRole(role)">
+
+</a>
+</li>
+</template><li x-show="showRole(role)">
+<a :class="{ 'active' : activeRoles.includes(role.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectRole(role)">
+<span x-text="role.title">Administration &amp; Assistance</span>
+</a>
+</li><li x-show="showRole(role)">
+<a :class="{ 'active' : activeRoles.includes(role.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectRole(role)">
+<span x-text="role.title">Branches &amp; Operations</span>
+</a>
+</li><li x-show="showRole(role)">
+<a :class="{ 'active' : activeRoles.includes(role.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectRole(role)">
+<span x-text="role.title">Corporate Development &amp; Strategy</span>
+</a>
+</li><li x-show="showRole(role)">
+<a :class="{ 'active' : activeRoles.includes(role.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectRole(role)">
+<span x-text="role.title">Customer Service</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="d-none d-lg-block">
+<div class="dropdown" x-on:click.outside="closeOverlay('level')">
+<button class="btn btn-sm dropdown-toggle with-icon btn-outline-dark fw-normal" type="button" x-bind:class="{ 'btn-outline-dark fw-normal' :  activeLevels.length === 0, 'btn-dark' : activeLevels.length &gt; 0 }" x-on:click="toggleOverlay('level')">
+                Level
+                        <span style="display: none;" x-show="activeLevels.length &gt; 0" x-text="'('+getLevel(true)+')'">(All)</span>
+</button>
+<ul class="dropdown-menu dropdown-alpine" x-bind:class="{ 'show': isOverlayOpen('level') }">
+<li>
+<a :class="{ 'active' : activeLevels.length === 0 }" class="dropdown-item active" role="button" x-on:click.prevent="selectLevel('all');">
+                                All
+                            </a>
+</li>
+<template :key="level.slug" x-for="level in listLevels">
+<li x-show="showLevel(level)">
+<a :class="{ 'active' : activeLevels.includes(level.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectLevel(level)">
+
+</a>
+</li>
+</template><li x-show="showLevel(level)">
+<a :class="{ 'active' : activeLevels.includes(level.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectLevel(level)">
+<span x-text="level.title">Associate</span>
+</a>
+</li><li x-show="showLevel(level)">
+<a :class="{ 'active' : activeLevels.includes(level.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectLevel(level)">
+<span x-text="level.title">Director</span>
+</a>
+</li><li x-show="showLevel(level)">
+<a :class="{ 'active' : activeLevels.includes(level.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectLevel(level)">
+<span x-text="level.title">Executive</span>
+</a>
+</li><li x-show="showLevel(level)">
+<a :class="{ 'active' : activeLevels.includes(level.slug) }" class="dropdown-item" role="button" x-on:click.prevent="selectLevel(level)">
+<span x-text="level.title">Internship</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<button class="btn btn btn-link btn-sm ms-3xs" role="button" type="button" x-on:click.prevent="resetAll()">
+                Clear all
+    </button>
+</div>
+</div>
+<div class="filter-overlay overlay with-listgroup" role="dialog" style="display: none;" tabindex="-1" x-show="isOverlayOpen('filter')">
+<div class="overlay-inner" style="display: none;" x-on:click.outside="toggleOverlay('filter')" x-show="isOverlayOpen('filter')" x-transition="">
+<div class="overlay-body">
+<div class="overlay-page overlay-md-hidden" x-show="openTab == 'default'">
+<div class="overlay-header">
+<button class="btn btn-close" type="button" x-on:click="toggleOverlay('filter')">
+
+</button>
+<div class="overlay-title">Filter &amp; Sort</div>
+<button class="btn d-md-none btn btn-link btn-sm" type="button" x-on:click="clear()">
+                Clear all
+    </button>
+</div>
+<div class="overlay-body pt-sm">
+<div class="mb-xs"><b>Sort by</b></div>
+<div data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div aria-label="scrollable content" class="simplebar-content-wrapper" role="region" style="height: auto; overflow: hidden;" tabindex="0"><div class="simplebar-content" style="padding: 0px;">
+<div class="d-flex gap-3xs align-items-center">
+<button class="btn btn-sm btn-dark fw-normal" type="button" x-bind:class="{ 'btn-dark fw-normal' : sortBy == 'best_fit', 'btn-outline-dark' : sortBy != 'best_fit' }" x-on:click.prevent="selectSort('best_fit')">
+                Best fit
+    </button>
+<button class="btn btn-sm btn-outline-dark" type="button" x-bind:class="{ 'btn-dark fw-normal' : sortBy == 'latest', 'btn-outline-dark' : sortBy != 'latest' }" x-on:click.prevent="selectSort('latest')">
+                Latest
+    </button>
+<button class="btn btn-sm btn-outline-dark" type="button" x-bind:class="{ 'btn-dark fw-normal' : sortBy == 'oldest', 'btn-outline-dark' : sortBy != 'oldest' }" x-on:click.prevent="selectSort('oldest')">
+                Oldest
+    </button>
+</div>
+</div></div></div></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"></div></div>
+<div class="mt-md">
+<b>Country</b>
+<div class="list-group with-arrows mb-sm">
+<a class="list-group-item list-group-item-action" role="button" x-on:click.prevent="openTab = 'country'" x-text="getCountry()">United States</a>
+</div>
+</div>
+<div>
+<b>City</b>
+<div class="list-group with-arrows mb-sm">
+<a class="list-group-item list-group-item-action" role="button" x-on:click.prevent="openTab = 'city'" x-text="getCity()">All</a>
+</div>
+</div>
+<div>
+<b>Business Area</b>
+<div class="list-group with-arrows mb-sm">
+<a class="list-group-item list-group-item-action" role="button" x-on:click.prevent="openTab = 'department'" x-text="getDepartment()">All</a>
+</div>
+</div>
+<div>
+<b>Role</b>
+<div class="list-group with-arrows mb-sm">
+<a class="list-group-item list-group-item-action" role="button" x-on:click.prevent="openTab = 'role'" x-text="getRole()">All</a>
+</div>
+</div>
+<div>
+<b>Level</b>
+<div class="list-group with-arrows mb-sm">
+<a class="list-group-item list-group-item-action" role="button" x-on:click.prevent="openTab = 'level'" x-text="getLevel()">All</a>
+</div>
+</div>
+</div>
+<div class="overlay-footer pb-md-md">
+<button class="btn btn-primary" type="button" x-on:click="toggleOverlay('filter')">
+                Show offers
+    </button>
+</div>
+</div>
+<div class="overlay-page overlay-md-hidden" style="display: none;" x-show="openTab == 'country'">
+<div class="overlay-header">
+<button class="btn btn-close" type="button" x-on:click.prevent="openTab = 'default'">
+
+</button>
+<div class="overlay-title">Country</div>
+<div class="form-control-wrapper with-search-icon">
+
+</div>
+</div>
+<div class="overlay-body pt-xs">
+<div class="list-group">
+<a class="list-group-separator-item list-group-item list-group-item-action" role="button" x-bind:class="{ 'active' : activeCountries.length === 0 }" x-on:click.prevent="selectCountry('all')">
+                                Worldwide
+                            </a>
+<template :key="country.code" x-for="country in listCountries">
+<a :class="{ 'active' : activeCountries.includes(country.code) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectCountry(country)" x-show="showCountry(country)">
+
+
+</a>
+</template><a :class="{ 'active' : activeCountries.includes(country.code) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectCountry(country)" x-show="showCountry(country)">
+
+<span x-text="country.name_native + (country.name_native == country.name ? '' : ' ('+country.name+')') ">Canada</span>
+</a><a :class="{ 'active' : activeCountries.includes(country.code) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectCountry(country)" x-show="showCountry(country)">
+
+<span x-text="country.name_native + (country.name_native == country.name ? '' : ' ('+country.name+')') ">Deutschland (Germany)</span>
+</a><a :class="{ 'active' : activeCountries.includes(country.code) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectCountry(country)" x-show="showCountry(country)">
+
+<span x-text="country.name_native + (country.name_native == country.name ? '' : ' ('+country.name+')') ">España (Spain)</span>
+</a><a :class="{ 'active' : activeCountries.includes(country.code) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectCountry(country)" x-show="showCountry(country)">
+
+<span x-text="country.name_native + (country.name_native == country.name ? '' : ' ('+country.name+')') ">France</span>
+</a><a :class="{ 'active' : activeCountries.includes(country.code) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectCountry(country)" x-show="showCountry(country)">
+
+<span x-text="country.name_native + (country.name_native == country.name ? '' : ' ('+country.name+')') ">India</span>
+</a><a :class="{ 'active' : activeCountries.includes(country.code) }" class="list-group-item list-group-item-action active" role="button" x-on:click.prevent="selectCountry(country)" x-show="showCountry(country)">
+
+<span x-text="country.name_native + (country.name_native == country.name ? '' : ' ('+country.name+')') ">United States</span>
+</a>
+</div>
+</div>
+<div class="overlay-footer pb-md-md">
+<button class="btn btn btn-outline-primary" type="button" x-on:click.prevent="openTab = 'default'">
+                Done
+    </button>
+</div>
+</div>
+<div class="overlay-page overlay-md-hidden" style="display: none;" x-show="openTab == 'city'">
+<div class="overlay-header">
+<button class="btn btn-close" type="button" x-on:click.prevent="openTab = 'default'">
+
+</button>
+<div class="overlay-title">City</div>
+<div class="form-control-wrapper with-search-icon">
+
+</div>
+<div class="list-group">
+<a :class="{ 'active' : activeCities.length === 0 }" class="list-group-separator-item list-group-item list-group-item-action active" role="button" x-on:click.prevent="selectCity('all');">
+                                All
+                            </a>
+</div>
+</div>
+<div class="overlay-body">
+<div class="list-group">
+<template :key="city.slug" x-for="city in sortedCities">
+<a :class="{ 'active' : activeCities.includes(city.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectCity(city)" x-show="showCity(city)">
+
+</a>
+</template><a :class="{ 'active' : activeCities.includes(city.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectCity(city)" x-show="showCity(city)">
+<span x-text="city.name">Albuquerque</span>
+</a><a :class="{ 'active' : activeCities.includes(city.slug) }" class="list-group-item list-group-item-action" role="button" style="display: none;" x-on:click.prevent="selectCity(city)" x-show="showCity(city)">
+<span x-text="city.name">Almere</span>
+</a><a :class="{ 'active' : activeCities.includes(city.slug) }" class="list-group-item list-group-item-action" role="button" style="display: none;" x-on:click.prevent="selectCity(city)" x-show="showCity(city)">
+<span x-text="city.name">Amsterdam</span>
+</a><a :class="{ 'active' : activeCities.includes(city.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectCity(city)" x-show="showCity(city)">
+<span x-text="city.name">Anaheim</span>
+</a><a :class="{ 'active' : activeCities.includes(city.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectCity(city)" x-show="showCity(city)">
+<span x-text="city.name">Arlington</span>
+</a>
+</div>
+</div>
+<div class="overlay-footer pb-md-md">
+<button class="btn btn btn-outline-primary" type="button" x-on:click.prevent="openTab = 'default'">
+                Done
+    </button>
+</div>
+</div>
+<div class="overlay-page overlay-md-hidden" style="display: none;" x-show="openTab == 'department'">
+<div class="overlay-header">
+<button class="btn btn-close" type="button" x-on:click.prevent="openTab = 'default'">
+
+</button>
+<div class="overlay-title">Business Area</div>
+<div class="list-group">
+<a :class="{ 'active' : activeDepartments.length === 0 }" class="list-group-separator-item list-group-item list-group-item-action active" role="button" x-on:click.prevent="selectDepartment('all');">
+                                All
+                            </a>
+</div>
+</div>
+<div class="overlay-body">
+<div class="list-group">
+<template :key="dep.slug" x-for="dep in listDepartments">
+<a :class="{ 'active' : activeDepartments.includes(dep.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectDepartment(dep)" x-show="showDepartment(dep)">
+
+</a>
+</template><a :class="{ 'active' : activeDepartments.includes(dep.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectDepartment(dep)" x-show="showDepartment(dep)">
+<span x-text="dep.title">At the Branch</span>
+</a><a :class="{ 'active' : activeDepartments.includes(dep.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectDepartment(dep)" x-show="showDepartment(dep)">
+<span x-text="dep.title">Corporate Functions</span>
+</a><a :class="{ 'active' : activeDepartments.includes(dep.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectDepartment(dep)" x-show="showDepartment(dep)">
+<span x-text="dep.title">Tech</span>
+</a>
+</div>
+</div>
+<div class="overlay-footer pb-md-md">
+<button class="btn btn btn-outline-primary" type="button" x-on:click.prevent="openTab = 'default'">
+                Done
+    </button>
+</div>
+</div>
+<div class="overlay-page overlay-md-hidden" style="display: none;" x-show="openTab == 'role'">
+<div class="overlay-header">
+<button class="btn btn-close" type="button" x-on:click.prevent="openTab = 'default'">
+
+</button>
+<div class="overlay-title">Role</div>
+<div class="list-group">
+<a :class="{ 'active' : activeRoles.length === 0 }" class="list-group-separator-item list-group-item list-group-item-action active" role="button" x-on:click.prevent="selectRole('all');">
+                                All
+                            </a>
+</div>
+</div>
+<div class="overlay-body">
+<div class="list-group">
+<template :key="role.slug" x-for="role in sortedRoles">
+<a :class="{ 'active' : activeRoles.includes('role_'+role.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectRole(role)" x-show="showRole(role)">
+
+</a>
+</template><a :class="{ 'active' : activeRoles.includes('role_'+role.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectRole(role)" x-show="showRole(role)">
+<span x-text="role.title">Administration &amp; Assistance</span>
+</a><a :class="{ 'active' : activeRoles.includes('role_'+role.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectRole(role)" x-show="showRole(role)">
+<span x-text="role.title">Branches &amp; Operations</span>
+</a><a :class="{ 'active' : activeRoles.includes('role_'+role.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectRole(role)" x-show="showRole(role)">
+<span x-text="role.title">Corporate Development &amp; Strategy</span>
+</a><a :class="{ 'active' : activeRoles.includes('role_'+role.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectRole(role)" x-show="showRole(role)">
+<span x-text="role.title">Customer Service</span>
+</a><a :class="{ 'active' : activeRoles.includes('role_'+role.slug) }" class="list-group-item list-group-item-action" role="button" x-on:click.prevent="selectRole(role)" x-show="showRole(role)">
+<span x-text="role.title">Finance &amp; Internal Audit</span>
+</a>
+</div>
+</div>
+<div class="overlay-footer pb-md-md">
+<button class="btn btn btn-outline-primary" type="button" x-on:click.prevent="openTab = 'default'">
+                Done
+    </button>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="pt-md" data-bs-theme="light">
+<div class="container">
+<div class="d-flex flex-nowrap align-items-baseline justify-content-between pb-md fs-small">
+<div class="col-auto">
+<strong><span class="js-jobs-counter">224 jobs</span></strong>
+</div>
+<div class="col-auto">
+<div class="d-flex flex-nowrap align-items-center" x-data="{ sortBy: 'latest', labels: {'latest': 'Latest', 'best_fit': 'Best fit', 'oldest': 'Oldest' } }">
+<span>Sort by</span>
+<div class="ms-3xs dropdown">
+<button aria-expanded="false" class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown" type="button" x-text="labels[sortBy]">Latest</button>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="#" x-on:click="sortBy = 'best_fit'; $dispatch('update-sort', 'best_fit');">Best fit</a>
+</li>
+<li><a class="dropdown-item" href="#" x-on:click="sortBy = 'latest'; $dispatch('update-sort', 'latest');">Latest</a>
+</li>
+<li><a class="dropdown-item" href="#" x-on:click="sortBy = 'oldest'; $dispatch('update-sort', 'oldest');">Oldest</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div @search-changed.window.debounce="fetchResults();" class="job-list--wrapper" x-data="jobResults">
+<div class="spinner-container" style="display: none;" x-show="loading">
+
+</div>
+<div class="no-results-alert py-lg text-center" style="display: none;" x-show="jobs.length == 0 &amp;&amp; loading == false">
+<span class="d-block fs-4 mb-2xs"></span>
+<div class="fw-bold fs-5">
+</div>
+</div>
+<template :key="job.slug" x-for="job in jobs">
+<div class="card card-job">
+<div class="card-body">
+<a x-bind:href="getUrl(job)">
+<div class="row gap-3xs align-items-center">
+<div class="col-auto"></div>
+<div class="col-auto ms-auto pe-md-0">
+</div>
+<div class="col-auto actions-col ms-auto ms-md-0 ps-md-3xs">
+<span class="btn btn-primary btn-sm">
+                                        View
+                                    </span>
+</div>
+<div class="col-12 mt-4xs mt-md-0">
+
+</div>
+<div class="col-auto col-md-12">
+<small class="text-muted d-block"> </small>
+<small class="text-muted d-block"> </small>
+</div>
+</div>
+</a>
+</div>
+</div>
+</template><div class="card card-job">
+<div class="card-body">
+<a href="/us/jobs/3caa9d61-0689-4945-8acc-e881d1fb6638" x-bind:href="getUrl(job)">
+<div class="row gap-3xs align-items-center">
+<div class="col-auto"><span class="badge" x-text="job.role">Branches &amp; Operations</span></div>
+<div class="col-auto ms-auto pe-md-0">
+</div>
+<div class="col-auto actions-col ms-auto ms-md-0 ps-md-3xs">
+<span class="btn btn-primary btn-sm">
+                                        View
+                                    </span>
+</div>
+<div class="col-12 mt-4xs mt-md-0">
+<h5 class="card-title" x-text="job.title">Production Manager</h5>
+</div>
+<div class="col-auto col-md-12">
+<small class="text-muted d-block"> <span x-text="job.type_of_employment">Full-time</span></small>
+<small class="text-muted d-block"> <span x-text="job.city + ', ' + job.country_slug">Queens, US</span></small>
+</div>
+</div>
+</a>
+</div>
+</div><div class="card card-job">
+<div class="card-body">
+<a href="/us/jobs/787fae75-0cae-43cf-b3a8-6947e612f6c6" x-bind:href="getUrl(job)">
+<div class="row gap-3xs align-items-center">
+<div class="col-auto"><span class="badge" x-text="job.role">Branches &amp; Operations</span></div>
+<div class="col-auto ms-auto pe-md-0">
+</div>
+<div class="col-auto actions-col ms-auto ms-md-0 ps-md-3xs">
+<span class="btn btn-primary btn-sm">
+                                        View
+                                    </span>
+</div>
+<div class="col-12 mt-4xs mt-md-0">
+<h5 class="card-title" x-text="job.title">Customer Service Agent</h5>
+</div>
+<div class="col-auto col-md-12">
+<small class="text-muted d-block"> <span x-text="job.type_of_employment">Full-time</span></small>
+<small class="text-muted d-block"> <span x-text="job.city + ', ' + job.country_slug">Kahului, US</span></small>
+</div>
+</div>
+</a>
+</div>
+</div><div class="card card-job">
+<div class="card-body">
+<a href="/us/jobs/b9a58ca4-412c-4b46-8b54-5f02c06b2afc" x-bind:href="getUrl(job)">
+<div class="row gap-3xs align-items-center">
+<div class="col-auto"><span class="badge" x-text="job.role">Branches &amp; Operations</span></div>
+<div class="col-auto ms-auto pe-md-0">
+</div>
+<div class="col-auto actions-col ms-auto ms-md-0 ps-md-3xs">
+<span class="btn btn-primary btn-sm">
+                                        View
+                                    </span>
+</div>
+<div class="col-12 mt-4xs mt-md-0">
+<h5 class="card-title" x-text="job.title">Production Manager</h5>
+</div>
+<div class="col-auto col-md-12">
+<small class="text-muted d-block"> <span x-text="job.type_of_employment">Full-time</span></small>
+<small class="text-muted d-block"> <span x-text="job.city + ', ' + job.country_slug">Boston, US</span></small>
+</div>
+</div>
+</a>
+</div>
+</div><div class="card card-job">
+<div class="card-body">
+<a href="/us/jobs/035b3c8c-a368-4806-9544-614250bd1930" x-bind:href="getUrl(job)">
+<div class="row gap-3xs align-items-center">
+<div class="col-auto"></div>
+<div class="col-auto ms-auto pe-md-0">
+</div>
+<div class="col-auto actions-col ms-auto ms-md-0 ps-md-3xs">
+<span class="btn btn-primary btn-sm">
+                                        View
+                                    </span>
+</div>
+<div class="col-12 mt-4xs mt-md-0">
+<h5 class="card-title" x-text="job.title">Customer Service Agent (Airport)</h5>
+</div>
+<div class="col-auto col-md-12">
+<small class="text-muted d-block"> <span x-text="job.type_of_employment">Full-time</span></small>
+<small class="text-muted d-block"> <span x-text="job.city + ', ' + job.country_slug">Las Vegas, US</span></small>
+</div>
+</div>
+</a>
+</div>
+</div><div class="card card-job">
+<div class="card-body">
+<a href="/us/jobs/1d233022-8f8c-4125-9c42-2253a92ec980" x-bind:href="getUrl(job)">
+<div class="row gap-3xs align-items-center">
+<div class="col-auto"><span class="badge" x-text="job.role">Branches &amp; Operations</span></div>
+<div class="col-auto ms-auto pe-md-0">
+</div>
+<div class="col-auto actions-col ms-auto ms-md-0 ps-md-3xs">
+<span class="btn btn-primary btn-sm">
+                                        View
+                                    </span>
+</div>
+<div class="col-12 mt-4xs mt-md-0">
+<h5 class="card-title" x-text="job.title">Driver</h5>
+</div>
+<div class="col-auto col-md-12">
+<small class="text-muted d-block"> <span x-text="job.type_of_employment">Full-time</span></small>
+<small class="text-muted d-block"> <span x-text="job.city + ', ' + job.country_slug">Denver, US</span></small>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="text-center mt-md" x-show="jobs.length &gt; 0">
+<button class="btn btn-outline-primary" style="" type="button" x-on:click="showMore()" x-show="!loading &amp;&amp; jobs.length &lt; allJobs.length">
+                Load more results
+    </button>
+</div>
+</div>
+</div>
+</section>
+<section class="hero hero-quote content-is-bottom content-is-overlay with-gradient" data-bs-theme="dark">
+<picture>
+
+
+
+
+</picture>
+<div class="hero-content">
+<div class="ce-headline">
+<h1 class="">
+<span>Uncapped bonus <span class="hyphenate">agreement</span>. So <span class="hyphenate">basically</span>, the sky is the limit.</span>
+</h1>
+<span class="ce-subline">— Julian Lybarger, Rental Sales Agent</span>
+</div>
+</div>
+</section>
+<section data-bs-theme="dark">
+<div class="container">
+<div class="ce-headline text-center">
+<span class="ce-topline">Not convinced yet?</span>
+<h2>
+<span class="hl-first-line text-white aos-init aos-animate" data-aos="" data-aos-delay="0">
+                Take a look at our benefits.
+            </span>
+</h2>
+</div>
+<div class="swiper is-base-slider swiper-initialized swiper-horizontal swiper-backface-hidden">
+<div aria-live="polite" class="swiper-wrapper" id="swiper-wrapper-8fed73d10e1f26c61">
+<div aria-label="1 / 3" class="swiper-slide swiper-slide-active" role="group" style="width: 252px;">
+<div class="card-image card has-border is-icon aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+<div class="card-img-holder">
+
+</div>
+<div class="card-body">
+<p class="card-text">
+                Drive premium cars with all SIXT products  (Share, Ride, SIXT+ and Car Leasing)
+            </p>
+</div>
+</div>
+</div>
+<div aria-label="2 / 3" class="swiper-slide swiper-slide-next" role="group" style="width: 252px;">
+<div class="card-image card has-border is-icon aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+<div class="card-img-holder">
+
+</div>
+<div class="card-body">
+<p class="card-text">
+                16 days of vacation (fulltime)
+            </p>
+</div>
+</div>
+</div>
+<div aria-label="3 / 3" class="swiper-slide" role="group" style="width: 252px;">
+<div class="card-image card has-border is-icon aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+<div class="card-img-holder">
+
+</div>
+<div class="card-body">
+<p class="card-text">
+                Team Orange. The best colleagues.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<div class="swiper-navigation">
+<div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-lock"></div>
+
+
+</div>
+</div>
+</div>
+</section>
+<section data-bs-theme="white">
+<div class="container">
+<div class="ce-headline text-center">
+<h2>
+<span class="hl-first-line text-dark aos-init aos-animate" data-aos="" data-aos-delay="0">
+                Discover our roles
+            </span>
+</h2>
+</div>
+<div class="swiper is-base-slider swiper-initialized swiper-horizontal swiper-backface-hidden">
+<div aria-live="polite" class="swiper-wrapper" id="swiper-wrapper-157ae44413510c113">
+<div aria-label="1 / 3" class="swiper-slide swiper-slide-active" role="group" style="width: 252px;">
+<div class="card-overlay card with-gradient aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+ 
+<div class="card-img-overlay is-bottom">
+<h3 class="h5 card-title">AT THE BRANCH</h3>
+<p class="card-text">
+                Discover how our Operations Team is running and how you can fit into it.
+            </p>
+<a class="btn btn-outline-white btn-sm" href="/us/at-the-branch">
+                Discover more
+    </a>
+</div>
+</div>
+</div>
+<div aria-label="2 / 3" class="swiper-slide swiper-slide-next" role="group" style="width: 252px;">
+<div class="card-overlay card with-gradient aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+ 
+<div class="card-img-overlay is-bottom">
+<h3 class="h5 card-title">TECH</h3>
+<p class="card-text">
+                Find out how our whole team fully supports the company's infrastructure.
+            </p>
+<a class="btn btn-outline-white btn-sm" href="/us/tech-engineering">
+                Discover more
+    </a>
+</div>
+</div>
+</div>
+<div aria-label="3 / 3" class="swiper-slide" role="group" style="width: 252px;">
+<div class="card-overlay card with-gradient aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+ 
+<div class="card-img-overlay is-bottom">
+<h3 class="h5 card-title">CORPORATE FUNCTIONS</h3>
+<p class="card-text">
+                Get to know how our Team Orange works in headquarters around the globe.
+            </p>
+<a class="btn btn-outline-white btn-sm" href="/us/corporate-functions">
+                Discover more
+    </a>
+</div>
+</div>
+</div>
+</div>
+<div class="swiper-navigation">
+<div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-lock"></div>
+
+
+</div>
+</div>
+</div>
+</section>
+<section class="text-center" data-bs-theme="light">
+<div class="container">
+<div class="row">
+<div class="col-12 col-md-6">
+<a class="btn btn-arrow" href="/us/about-us">
+                LEARN MORE ABOUT US
+    </a>
+</div>
+<div class="col-12 col-md-6">
+<a class="btn btn-arrow" href="/us/diversixty">
+                LEARN ABOUT DIVERSIXTY
+    </a>
+</div>
+</div>
+</div>
+</section>
+
+<div @search-opened.window.debounce="init()" class="search-overlay overlay overlay-xl" role="dialog" style="display: none;" tabindex="-1" x-data="searchOverlay('/us', 'US', 'United States')" x-show="$store.searchOverlay.show">
+<div class="overlay-inner" style="display: none;" x-on:click.outside="$store.searchOverlay.hide()" x-show="$store.searchOverlay.show" x-transition="">
+<div class="overlay-header">
+<button class="btn btn-close" type="button" x-on:click="$store.searchOverlay.hide()">
+
+</button>
+<div class="overlay-title">
+                Find your job
+            </div>
+</div>
+<div class="overlay-body">
+<div class="d-flex gap-xs gap-md-md mb-xs align-items-center">
+<div class="form-control-wrapper with-search-icon" style="flex: 1;">
+<label class="visually-hidden" for="search">
+                        Find your job
+                    </label>
+
+</div>
+</div>
+<div data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div aria-label="scrollable content" class="simplebar-content-wrapper" role="region" style="height: auto; overflow: hidden;" tabindex="0"><div class="simplebar-content" style="padding: 0px;">
+<div class="d-flex gap-3xs align-items-center">
+<button class="btn btn btn-dark btn-sm with-icon fw-normal" role="button" style="display: none;" type="button" x-on:click="area='';search();" x-show="area &amp;&amp; area != ''">
+
+
+</button>
+<button class="btn btn btn-dark btn-sm with-icon fw-normal" role="button" type="button" x-on:click="country='';search();" x-show="country!=''">
+
+<span x-text="getCountry()">United States</span>
+
+</button>
+<button class="btn btn btn-link ms-3xs btn-sm" role="button" type="button" x-on:click="clear()">
+                Clear all
+    </button>
+</div>
+</div></div></div></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"></div></div>
+<div class="d-none" x-bind:class="{ 'd-none' : query == '' }">
+<div>
+<div class="list-group with-arrows search-results">
+<p class="mt-lg" style="display: none;" x-show="results.city &amp;&amp; results.city.length &gt; 0"><strong>City</strong></p>
+<template x-for="item in results.city">
+<a class="list-group-item list-group-item-action border-top border-light" x-bind:href="getUrl(item)">
+
+</a>
+</template>
+<p class="mt-lg" style="display: none;" x-show="results.role &amp;&amp; results.role.length &gt; 0"><strong>Role</strong></p>
+<template x-for="item in results.role">
+<a class="list-group-item list-group-item-action border-top border-light" x-bind:href="getUrl(item)">
+
+</a>
+</template>
+<p class="mt-lg" style="display: none;" x-show="results.title &amp;&amp; results.title.length &gt; 0"><strong>Jobs</strong></p>
+<template x-for="item in results.title">
+<a class="list-group-item list-group-item-action border-top border-light" x-bind:href="getUrl(item)">
+
+</a>
+</template>
+</div>
+</div>
+<div class="no-results-alert py-lg text-center" style="display: none;" x-show="empty == true &amp;&amp; loading == false">
+<span class="d-block fs-4 mb-2xs"></span>
+<p class="fw-bold fs-5">
+<span class="d-block">No results found for “”.</span>
+</p>
+</div>
+<div style="display: none;" x-show="loading == true &amp;&amp; query.length &gt;= 3">
+<div class="spinner-container">
+
+</div>
+</div>
+<div class="no-results-alert py-lg text-center" x-show="query.length &lt; 3">
+<p class="fw-bold fs-5">
+<span class="d-block">
+                            Your search term is too short.
+                            <small class="d-block">
+                                Please enter at least 3 characters to start searching
+                            </small>
+</span>
+</p>
+</div>
+</div>
+<div :class="{ 'd-none' : query != '' &amp;&amp; empty == false}">
+<div class="mt-3xs">
+<div class="list-group with-arrows search-results">
+<a class="list-group-item list-group-item-action" href="/us/jobs?country=US" x-bind:href="getUrlAll()">
+                            See all jobs at SIXT <span x-show="country != ''">(224)</span>
+</a>
+</div>
+</div>
+<p class="mt-lg"><strong>Our departments</strong></p>
+<div data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div aria-label="scrollable content" class="simplebar-content-wrapper" role="region" style="height: auto; overflow: hidden;" tabindex="0"><div class="simplebar-content" style="padding: 0px;">
+<div class="d-flex gap-2xs text-center">
+<div class="card-overlay card text-center card-sm with-gradient aos-init aos-animate" data-aos="fade-up">
+
+
+<div class="card-img-overlay is-bottom">
+<p class="card-text">At the Branch</p>
+</div>
+</div>
+<div class="card-overlay card text-center card-sm with-gradient aos-init aos-animate" data-aos="fade-up">
+
+
+<div class="card-img-overlay is-bottom">
+<p class="card-text">Corporate Functions</p>
+</div>
+</div>
+<div class="card-overlay card text-center card-sm with-gradient aos-init aos-animate" data-aos="fade-up">
+
+
+<div class="card-img-overlay is-bottom">
+<p class="card-text">Tech</p>
+</div>
+</div>
+</div>
+</div></div></div></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="language-overlay overlay" id="overlayLangswitcher" role="dialog" style="display: none;" tabindex="-1" x-data="languageOverlay()" x-init="fill('en', 'US')" x-show="isShown()">
+<div class="overlay-inner" style="display: none;" x-on:click.outside="hide()" x-show="isShown()" x-transition="">
+<div class="overlay-header">
+<button class="btn btn-close" type="button" x-on:click="hide()">
+
+</button>
+</div>
+<div class="overlay-body pt-md-0">
+<div class="row gx-md-xl">
+<div class="col-6">
+<div class="overlay-scroll--wrapper h-100">
+<strong class="is-title">
+                            Country</strong>
+<div class="list-group is-scrollable">
+<a class="list-group-item list-group-item-action" role="button" x-bind:class="{ 'active': activeCountry == 'AT'}" x-on:click="setCountry('AT')">
+
+                                    Austria
+                                </a>
+<a class="list-group-item list-group-item-action" role="button" x-bind:class="{ 'active': activeCountry == 'BE'}" x-on:click="setCountry('BE')">
+
+                                    Belgium
+                                </a>
+<a class="list-group-item list-group-item-action" role="button" x-bind:class="{ 'active': activeCountry == 'CA'}" x-on:click="setCountry('CA')">
+
+                                    Canada
+                                </a>
+<a class="list-group-item list-group-item-action" role="button" x-bind:class="{ 'active': activeCountry == 'CH'}" x-on:click="setCountry('CH')">
+
+                                    Switzerland
+                                </a>
+<a class="list-group-item list-group-item-action" role="button" x-bind:class="{ 'active': activeCountry == 'DE'}" x-on:click="setCountry('DE')">
+
+                                    Germany
+                                </a>
+
+
+
+
+
+
+
+
+<a class="list-group-item list-group-item-action active" role="button" x-bind:class="{ 'active': activeCountry == 'US'}" x-on:click="setCountry('US')">
+
+                                    United States
+                                </a>
+</div>
+</div>
+</div>
+<div class="col-6">
+<div class="overlay-scroll--wrapper h-100">
+<strong class="is-title">
+                            Language
+                        </strong>
+<div class="list-group is-scrollable">
+<a class="list-group-item list-group-item-action" role="button" style="display: none;" x-bind:class="{ 'active': activeLanguage == 'de'}" x-on:click="setLanguage('de')" x-show="activeCountry == 'AT'">
+                                    Deutsch
+                                </a>
+<a class="list-group-item list-group-item-action" role="button" style="display: none;" x-bind:class="{ 'active': activeLanguage == 'de'}" x-on:click="setLanguage('de')" x-show="activeCountry == 'CH'">
+                                    Deutsch
+                                </a>
+<a class="list-group-item list-group-item-action" role="button" style="display: none;" x-bind:class="{ 'active': activeLanguage == 'de'}" x-on:click="setLanguage('de')" x-show="activeCountry == 'DE'">
+                                    Deutsch
+                                </a>
+<a class="list-group-item list-group-item-action" role="button" style="display: none;" x-bind:class="{ 'active': activeLanguage == 'de'}" x-on:click="setLanguage('de')" x-show="activeCountry == 'LU'">
+                                    Deutsch
+                                </a>
+<a class="list-group-item list-group-item-action active" role="button" style="display: none;" x-bind:class="{ 'active': activeLanguage == 'en'}" x-on:click="setLanguage('en')" x-show="activeCountry == 'GB'">
+                                    English
+                                </a>
+<a class="list-group-item list-group-item-action active" role="button" style="display: none;" x-bind:class="{ 'active': activeLanguage == 'en'}" x-on:click="setLanguage('en')" x-show="activeCountry == 'AT'">
+                                    English
+                                </a>
+<a class="list-group-item list-group-item-action active" role="button" style="display: none;" x-bind:class="{ 'active': activeLanguage == 'en'}" x-on:click="setLanguage('en')" x-show="activeCountry == 'BE'">
+                                    English
+                                </a>
+<a class="list-group-item list-group-item-action active" role="button" style="display: none;" x-bind:class="{ 'active': activeLanguage == 'en'}" x-on:click="setLanguage('en')" x-show="activeCountry == 'CA'">
+                                    English
+                                </a>
+<a class="list-group-item list-group-item-action active" role="button" style="display: none;" x-bind:class="{ 'active': activeLanguage == 'en'}" x-on:click="setLanguage('en')" x-show="activeCountry == 'CH'">
+                                    English
+                                </a>
+
+
+
+
+
+
+
+
+
+<a class="list-group-item list-group-item-action" role="button" style="display: none;" x-bind:class="{ 'active': activeLanguage == 'es'}" x-on:click="setLanguage('es')" x-show="activeCountry == 'ES'">
+                                    Español
+                                </a>
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="overlay-footer">
+<button class="btn btn-primary" role="button" type="button" x-bind:disabled="!isReady()" x-on:click="switchLanguage()">
+                Save
+    </button>
+<button class="btn btn-link" role="button" type="button" x-on:click="hide();">
+                Cancel
+    </button>
+</div>
+</div>
+</div>
+<div class="overlay overlay-dark-shadow overlay-fullscreen" role="dialog" style="display: none;" tabindex="-1" x-data="" x-show="$store.videoOverlay.isShown()">
+<div class="overlay-inner" style="display: none;" x-on:click.outside="hide()" x-show="$store.videoOverlay.isShown()" x-transition="">
+<div class="overlay-header">
+<button class="btn btn-close" type="button" x-on:click="$store.videoOverlay.hide()">
+
+</button>
+</div>
+<div class="overlay-body justify-content-center d-flex align-items-center">
+<div class="">
+<template x-if="$store.videoOverlay.src != ''">
+<video class="d-inline-flex" controls="" preload="metadata" style="max-width: 100%; max-height: 90vh;">
+
+                        Your browser does not support the video tag.
+                    </video>
+</template>
+</div>
+</div>
+</div>
+</div>
+<div class="overlay" id="overlayConsent" role="dialog" tabindex="-1" x-data="$store.consentOverlay" x-show="isOpen">
+<div class="overlay-inner" x-show="isOpen" x-transition="">
+<div class="overlay-header">
+<div class="overlay-title">
+                SIXT CONSENT SETTINGS
+            </div>
+</div>
+<div class="overlay-body">
+<p>Enjoy a personalized website experience with SIXT. If you agree, we will offer you content tailored to your interests and display relevant advertising on our partners' websites. To make this possible, we use cookies and similar technologies to collect information and analyze online behavior. You can consent to the above processing by selecting "Accept all". You can select "Decline all" to continue only with technologies that are strictly necessary for this website. Should you change your mind, you can change the settings for the future at any time via the privacy notice in the footer of the website.</p>
+<ul class="list-inline m-4 text-center">
+<li class="list-inline-item">
+ Essential
+                        </li>
+<li class="list-inline-item">
+ Marketing &amp; Analytics
+                        </li>
+</ul>
+</div>
+<div class="overlay-footer">
+<button class="btn btn-primary" role="button" type="button" x-on:click="accept()">
+                Accept all
+    </button>
+<button class="btn btn-link" role="button" type="button" x-on:click="restrict()">
+                Decline all
+    </button>
+</div>
+<div class="pb-sm text-center">
+<ul class="list-inline">
+<li class="list-inline-item">
+<a href="/us/imprint">Imprint</a>
+</li>
+<li class="list-inline-item">
+<a href="/us/privacy-policy">Privacy Policy</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</body></html>

@@ -62,7 +62,7 @@ class ProcessCompany implements ShouldQueue
 
     public function getCleanHTML($inputFile, $outputFile, $careerPageURL)
     {
-        $pythonPath = "C:\\Users\\shuga\\AppData\\Local\\Programs\\Python\\Python312";
+        $pythonPath = "C:\\Python3";
 
         $command = $pythonPath."\\python.exe"." D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
         exec($command, $output1, $returnStatus1);
@@ -203,7 +203,7 @@ class ProcessCompany implements ShouldQueue
             $fileId = $response->id;
         } else return false;
 
-
+        $step_1_message = "Analyze the HTML file attached. STEP 1: Use BeautifulSoup to identify the EXACT HTML !!!CLASS!!! or !!!SOME NON-ID!!! PARAMETERS selectors representing blocks containing Job Openings only. NEVER reference to the selector's ID or just an HTML tag. Within these blocks identify the EXACT HTML !!!CLASS!!! or !!!SOME NON-ID!!! PARAMETERS for job titles and their associated URLs. Few tips: Sometimes Job opening blocks are a part of a <ul> list. Sometimes Job opening blocks are <div> blocks with a repetitive class and relevant content inside, such as Job title, URL, optional department, optional location, and optional salary. Sometimes Job Titles might be located in <h> tag inside <a> tag, representing an associated URL. Sometimes Job Title is the text inside the <a> tag that represents an associated URL. Sometimes Job Title is the text inside the <p> tag. You need to figure out what exactly is a job title. Pay attention to the labels such as \"Jobs\", \"Careers\", \"Openings\", etc. Provide the selectors in a JavaScript usable form and a few examples of Job postings you found using those selectors. The selectors you defined are going to be directly used in the script you will generate in the STEP 2!";
         $response = $client->threads()->createAndRun(
             [
                 'assistant_id' => 'asst_TXBXdt73opAxuoAxMAQ9dCFC',
@@ -212,7 +212,7 @@ class ProcessCompany implements ShouldQueue
                         [
                             [
                             'role' => 'user',
-                            'content' => "Analyze the HTML file attached. STEP 1: Use BeautifulSoup to identify the EXACT HTML CLASS OR ONLY IF THERE IS NO CLASS - SOME NON-ID!! PARAMETERS selectors including classes representing the blocks representing Job Openings. NEVER reference to the selector's ID. Within these blocks identify the EXACT selectors for job titles and their associated URLs. Few tips: Sometimes Job opening blocks are a part of a <ul> list. Sometimes Job opening blocks are <div> blocks with a repetitive class and relevant content inside, such as Job title, URL, optional department, optional location, and optional salary. Sometimes Job Titles might be located in <h> tag inside <a> tag, representing an associated URL. Sometimes Job Title is the text inside the <a> tag that represents an associated URL. Sometimes Job Title is the text inside the <p> tag. You need to figure out what exactly is a job title. Pay attention to the labels such as \"Jobs\", \"Careers\", \"Openings\", etc. Provide the selectors and a few examples. Ensure you have found job postings, but not some other information about the company before proceeding to the next step. The selectors you defined are going to be used in STEP 2!",
+                            'content' => $step_1_message,
                             'attachments'=> [
                                 [
                                     "file_id"=> $fileId,
@@ -231,7 +231,7 @@ class ProcessCompany implements ShouldQueue
 
         $lastMessage = $this->getGptResponse($client, $threadId, $runId);
         $timer = 0;
-        while (($timer<20)&&($lastMessage == "Analyze the HTML file attached. STEP 1: Use BeautifulSoup to identify the EXACT HTML selectors including classes representing the blocks representing Job Openings. NEVER reference to the selector's ID. ALWAYS reference to the selector's class. Within these blocks identify the EXACT selectors for job titles and their associated URLs. Few tips: Sometimes Job opening blocks are a part of a <ul> list. Sometimes Job opening blocks are <div> blocks with a repetitive class and relevant content inside, such as Job title, URL, optional department, optional location, and optional salary. Sometimes Job Titles might be located in <h> tag inside <a> tag, representing an associated URL. Sometimes Job Title is the text inside the <a> tag that represents an associated URL. Pay attention to the labels such as \"Jobs\", \"Careers\", \"Openings\", etc - words like this are a sign that the list of jobs is beneath. The selectors you defined are going to be used in STEP 2!")){
+        while (($timer<20)&&($lastMessage == $step_1_message)){
             $lastMessage = $this->getGptResponse($client, $threadId, $runId);
             $timer ++;
             sleep(3);
@@ -243,11 +243,11 @@ class ProcessCompany implements ShouldQueue
             'content' => "STEP 2: Create a Python + Selenium script using the latest best practices for ChromeDriver 120.0.6099.109.
             1. This script will be launched externally in a settled-up environment, DO NOT TEST THIS SCRIPT, CREATE IT:
             THE TARGET HTML FILE NAME SHOULD BE AN ARGUMENT SENT FROM AN EXTERNAL SOURCE THROUGH THE CONSOLE COMMAND AS THE SINGLE INPUT PARAMETER. DO NOT PUT ANY PLACEHOLDERS OR EXAMPLES!
-            2. Initialise a headless webdriver, with this profile path, do not forget to create a relevant folder: profile_folder_path=\"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\"+str(threading.get_ident()) use this service:
+            2. Initialise a headless webdriver, with this profile path, do not forget to create a relevant folder: profile_folder_path=\"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\\"+str(threading.get_ident()) use this service:
             service=service(executable_path=r\"C:\\Python3\\chromedriver.exe\") add these options: options.add_argument(f\"user-data-dir={profile_folder_path}\") options.add_argument(\"--headless\") options.add_argument(\"--disable-gpu\") options.add_argument(\"--no-sandbox\")
             3. USE THE SELECTORS DEFINED IN STEP 1!!! and scrape all job listings. REMEMBER!!!! instead of an old find_elements_by_css_selector, you should use the find_elements method with By.CSS_SELECTOR
             4. NEVER IMPLEMENT EXAMPLE USAGE PARAMETERS AND SELECTORS
-            5. Return a JSON in the following format, DO NOT WRITE RESULT TO ANY FILE: { [\"Job-title\" :\"title1\", \"URL\":\"url1\"], [\"Job-title\" :\"title2\", \"URL\":\"url2\"], }",
+            5. Return a JSON with all job postings in the following format, DO NOT WRITE RESULT TO ANY FILE: { [\"Job-title\" :\"title1\", \"URL\":\"url1\"], [\"Job-title\" :\"title2\", \"URL\":\"url2\"], }",
         ]);
 
         $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
@@ -371,7 +371,7 @@ class ProcessCompany implements ShouldQueue
                 $outputFile = $basePathHtmls . "\\cleaned.html";
 
 
-            //    $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
+                $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
 
                 if ($this->hasJobs != 0) {
                     $success = $this->generateScript($outputFile, $basePath . "\\scrape_temp.py", $inputFile);
@@ -408,7 +408,7 @@ class ProcessCompany implements ShouldQueue
             shuffle($originalArray);
 
             // Slice the array to get no more than 10 elements
-            $randomElements = array_slice($originalArray, 0, 10);
+            $randomElements = array_slice($originalArray, 0, 6);
 
             // Encode the resulting array back into a JSON object
             return(json_encode($randomElements));

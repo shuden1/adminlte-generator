@@ -1,35 +1,40 @@
 import sys
-import threading
 import json
+import threading
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-def main(html_file_path):
-    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{str(threading.get_ident())}"
+def scrape_jobs(file_path):
+    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
-    options = webdriver.ChromeOptions()
+
+    options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
 
     driver = webdriver.Chrome(service=service, options=options)
-    driver.get(f"file:///{html_file_path}")
 
-    job_elements = driver.find_elements(By.CSS_SELECTOR, '.correct-job-listing-selector')
-    jobs_json = []
+    driver.get(f"file:///{file_path}")
 
-    for job_element in job_elements:
-        title_element = job_element.find_element(By.CSS_SELECTOR, '.correct-job-title-selector')
+    job_openings = []
+
+    # Use the refined selectors
+    job_blocks = driver.find_elements(By.CSS_SELECTOR, "div[class*='job'], div[class*='career']")  # Example selector, replace with actual selector
+    for block in job_blocks:
+        title_element = block.find_element(By.CSS_SELECTOR, "a[href]")
         job_title = title_element.text
-        job_url = title_element.get_attribute('href')
-        jobs_json.append({"Job-title": job_title, "URL": job_url})
-
-    print(json.dumps(jobs_json, indent=4))
+        job_url = title_element.get_attribute("href")
+        job_openings.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
 
+    return json.dumps(job_openings, indent=4)
+
 if __name__ == "__main__":
-    html_file_path = sys.argv[1]
-    main(html:\n_file_path)
+    file_path = sys.argv[1]
+    job_listings = scrape_jobs(file_path)
+    print(job_listings)

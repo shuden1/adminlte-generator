@@ -1,41 +1,39 @@
 import sys
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.common.by import By
 import json
 import threading
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-# The target HTML file name is taken from the command line argument
-target_html_file = sys.argv[1]
+def scrape_jobs(file_path):
+    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
 
-# Setting up the Chrome WebDriver with options for headless operation
-service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
-profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-options = webdriver.ChromeOptions()
-options.add_argument(f"user-data-dir={profile_folder_path}")
-options.add_argument("--headless")
-options.add_argument("--disable-gpu")
-options.add_argument("--no-sandbox")
+    options = Options()
+    options.add_argument(f"user-data-dir={profile_folder_path}")
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
 
-# Initialize the WebDriver
-driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(service=service, options=options)
 
-# Open the target HTML file
-driver.get(f"file:///{target_html_file}")
+    driver.get(f"file:///{file_path}")
 
-# Corrected job opening blocks selectors
-job_elements = driver.find_elements(By.CSS_SELECTOR, ".job-opening-item")
+    job_openings = []
 
-jobs_list = []
+    # Use the selectors defined in STEP 1
+    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div[class*="job-opening"]')  # Example selector, replace with actual selector
+    for job_block in job_blocks:
+        title_tag = job_block.find_element(By.CSS_SELECTOR, 'a')
+        job_title = title_tag.text.strip()
+        job_url = title_tag.get_attribute('href')
+        job_openings.append({"Job-title": job_title, "URL": job_url})
 
-# Loop through found job opening elements to extract titles and URLs
-for job_element in job_fixtures:
-    title = job_element.find_element(By.CSS_SELECTOR, ".job-title").text
-    url = job_element.find_element(By.CSS_SELECTOR, "a").get_attribute('href')
-    jobs_list.append({"Job-title": title, "URL": url})
+    driver.quit()
 
-# Output the jobs list as JSON
-print(json.dumps(jobs_list))
+    return json.dumps(job_openings, indent=4)
 
-# Close the browser
-driver.quit()
+if __name__ == "__main__":
+    file_path = sys.argv[1]
+    print(scrape_jobs(file_path))

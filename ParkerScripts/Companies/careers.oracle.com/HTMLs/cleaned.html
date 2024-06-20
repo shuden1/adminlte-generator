@@ -346,11 +346,11 @@
     attr: {'aria-pressed': isSelected },
     click: onClick">
 <span class="search-context-button__title" data-bind="text:name">Jobs</span>
-<span class="search-context-button__pill-counter" data-bind="text: count">5713</span>
+<span class="search-context-button__pill-counter" data-bind="text: count">5736</span>
 </button>
 <div class="oj-helper-hidden-accessible" role="alert">
 <!-- ko if: !loading() && isSelected() -->
-<span data-bind="text: getSelectedContextValue()">Job search results 5713</span>
+<span data-bind="text: getSelectedContextValue()">Job search results 5736</span>
 <!-- /ko -->
 </div>
 </search-context-button>
@@ -422,11 +422,11 @@
     attr: {'aria-pressed': isSelected },
     click: onClick">
 <span class="search-context-button__title" data-bind="text:name">Jobs</span>
-<span class="search-context-button__pill-counter" data-bind="text: count">5713</span>
+<span class="search-context-button__pill-counter" data-bind="text: count">5736</span>
 </button>
 <div class="oj-helper-hidden-accessible" role="alert">
 <!-- ko if: !loading() && isSelected() -->
-<span data-bind="text: getSelectedContextValue()">Job search results 5713</span>
+<span data-bind="text: getSelectedContextValue()">Job search results 5736</span>
 <!-- /ko -->
 </div>
 </search-context-button>
@@ -513,7 +513,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="India filter 3885" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="India filter 3897" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="India filter">
@@ -523,7 +523,7 @@
 <!-- ko text: item.textParts.last -->India<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->3885<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->3897<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -532,7 +532,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="United States filter 2732" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="United States filter 2744" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="United States filter">
@@ -542,7 +542,7 @@
 <!-- ko text: item.textParts.last --> States<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->2732<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->2744<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -551,13 +551,32 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="KARNATAKA, India filter 1347" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="KARNATAKA, India filter 1356" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="KARNATAKA, India filter">
 <!-- ko if: item.label --><!-- /ko -->
 <!-- ko ifnot: item.label -->
 <!-- ko text: item.textParts.main -->KARNATAKA, <!-- /ko -->
+<!-- ko text: item.textParts.last --> India<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->1356<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="BENGALURU, KARNATAKA, India filter 1347" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="BENGALURU, KARNATAKA, India filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main -->BENGALURU, KARNATAKA, <!-- /ko -->
 <!-- ko text: item.textParts.last --> India<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
@@ -570,26 +589,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="BENGALURU, KARNATAKA, India filter 1339" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
-            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
-            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
-            }" title="BENGALURU, KARNATAKA, India filter">
-<!-- ko if: item.label --><!-- /ko -->
-<!-- ko ifnot: item.label -->
-<!-- ko text: item.textParts.main -->BENGALURU, KARNATAKA, <!-- /ko -->
-<!-- ko text: item.textParts.last --> India<!-- /ko -->
-<!-- /ko -->
-<!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->1339<!-- /ko -->)
-        <!-- /ko -->
-</button>
-</li>
-</search-facet-dropdown-item>
-<!-- /ko -->
-<!-- ko if: $parent.adminMode --><!-- /ko -->
-<!-- ko ifnot: $parent.adminMode -->
-<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="TELANGANA, India filter 593" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="TELANGANA, India filter 589" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="TELANGANA, India filter">
@@ -599,7 +599,7 @@
 <!-- ko text: item.textParts.last --> India<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->593<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->589<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -714,7 +714,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Product Development filter 2151" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Product Development filter 2170" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="Product Development filter">
@@ -724,7 +724,7 @@
 <!-- ko text: item.textParts.last --> Development<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->2151<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->2170<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -733,7 +733,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Consulting filter 969" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Consulting filter 963" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="Consulting filter">
@@ -743,7 +743,7 @@
 <!-- ko text: item.textParts.last -->Consulting<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->969<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->963<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -752,7 +752,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Sales filter 908" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Sales filter 917" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="Sales filter">
@@ -762,7 +762,7 @@
 <!-- ko text: item.textParts.last -->Sales<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->908<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->917<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -771,7 +771,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Support filter 808" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Support filter 810" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="Support filter">
@@ -781,7 +781,7 @@
 <!-- ko text: item.textParts.last -->Support<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->808<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->810<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -790,7 +790,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Pre Sales filter 302" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Pre Sales filter 305" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="Pre Sales filter">
@@ -800,7 +800,7 @@
 <!-- ko text: item.textParts.last --> Sales<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->302<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->305<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -905,7 +905,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Greater than 30 days filter 3081" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Greater than 30 days filter 3100" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="Greater than 30 days filter">
@@ -915,7 +915,7 @@
 <!-- ko text: item.textParts.last --> days<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->3081<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->3100<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -924,7 +924,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Less than 30 days filter 2632" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Less than 30 days filter 2636" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="Less than 30 days filter">
@@ -934,7 +934,7 @@
 <!-- ko text: item.textParts.last --> days<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->2632<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->2636<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -943,7 +943,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Less than 7 days filter 595" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Less than 7 days filter 568" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="Less than 7 days filter">
@@ -953,7 +953,7 @@
 <!-- ko text: item.textParts.last --> days<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->595<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->568<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1094,13 +1094,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="India filter 3885" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="India filter 3897" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="India" type="button">
 <!-- ko text: item.textParts.main --> <!-- /ko -->
 <!-- ko text: item.textParts.last -->India<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->3885<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->3897<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1109,13 +1109,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="United States filter 2732" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="United States filter 2744" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="United States" type="button">
 <!-- ko text: item.textParts.main -->United <!-- /ko -->
 <!-- ko text: item.textParts.last --> States<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->2732<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->2744<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1124,10 +1124,25 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="KARNATAKA, India filter 1347" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="KARNATAKA, India filter 1356" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="KARNATAKA, India" type="button">
 <!-- ko text: item.textParts.main -->KARNATAKA, <!-- /ko -->
+<!-- ko text: item.textParts.last --> India<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->1356<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="BENGALURU, KARNATAKA, India filter 1347" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="BENGALURU, KARNATAKA, India" type="button">
+<!-- ko text: item.textParts.main -->BENGALURU, KARNATAKA, <!-- /ko -->
 <!-- ko text: item.textParts.last --> India<!-- /ko -->
 <!-- ko if: item.totalCount -->
         (<!-- ko text: item.totalCount -->1347<!-- /ko -->)
@@ -1139,28 +1154,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="BENGALURU, KARNATAKA, India filter 1339" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
-            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
-            hasFocus: hasFocus" title="BENGALURU, KARNATAKA, India" type="button">
-<!-- ko text: item.textParts.main -->BENGALURU, KARNATAKA, <!-- /ko -->
-<!-- ko text: item.textParts.last --> India<!-- /ko -->
-<!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->1339<!-- /ko -->)
-        <!-- /ko -->
-</button>
-</li>
-<!-- /ko -->
-<!-- /ko -->
-<!-- ko if: $parent.adminMode --><!-- /ko -->
-<!-- ko ifnot: $parent.adminMode -->
-<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="TELANGANA, India filter 593" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="TELANGANA, India filter 589" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="TELANGANA, India" type="button">
 <!-- ko text: item.textParts.main -->TELANGANA, <!-- /ko -->
 <!-- ko text: item.textParts.last --> India<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->593<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->589<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1265,13 +1265,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Product Development filter 2151" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Product Development filter 2170" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Product Development" type="button">
 <!-- ko text: item.textParts.main -->Product <!-- /ko -->
 <!-- ko text: item.textParts.last --> Development<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->2151<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->2170<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1280,13 +1280,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Consulting filter 969" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Consulting filter 963" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Consulting" type="button">
 <!-- ko text: item.textParts.main --> <!-- /ko -->
 <!-- ko text: item.textParts.last -->Consulting<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->969<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->963<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1295,13 +1295,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Sales filter 908" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Sales filter 917" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Sales" type="button">
 <!-- ko text: item.textParts.main --> <!-- /ko -->
 <!-- ko text: item.textParts.last -->Sales<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->908<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->917<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1310,13 +1310,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Support filter 808" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Support filter 810" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Support" type="button">
 <!-- ko text: item.textParts.main --> <!-- /ko -->
 <!-- ko text: item.textParts.last -->Support<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->808<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->810<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1325,13 +1325,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Pre Sales filter 302" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Pre Sales filter 305" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Pre Sales" type="button">
 <!-- ko text: item.textParts.main -->Pre <!-- /ko -->
 <!-- ko text: item.textParts.last --> Sales<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->302<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->305<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1423,13 +1423,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Greater than 30 days filter 3081" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Greater than 30 days filter 3100" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Greater than 30 days" type="button">
 <!-- ko text: item.textParts.main -->Greater than 30 <!-- /ko -->
 <!-- ko text: item.textParts.last --> days<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->3081<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->3100<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1438,13 +1438,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Less than 30 days filter 2632" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Less than 30 days filter 2636" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Less than 30 days" type="button">
 <!-- ko text: item.textParts.main -->Less than 30 <!-- /ko -->
 <!-- ko text: item.textParts.last --> days<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->2632<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->2636<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1453,13 +1453,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Less than 7 days filter 595" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Less than 7 days filter 568" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Less than 7 days" type="button">
 <!-- ko text: item.textParts.main -->Less than 7 <!-- /ko -->
 <!-- ko text: item.textParts.last --> days<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->595<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->568<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1491,13 +1491,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Professional filter 5629" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Professional filter 5653" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Professional" type="button">
 <!-- ko text: item.textParts.main --> <!-- /ko -->
 <!-- ko text: item.textParts.last -->Professional<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->5629<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->5653<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1506,13 +1506,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Campus filter 79" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Campus filter 78" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Campus" type="button">
 <!-- ko text: item.textParts.main --> <!-- /ko -->
 <!-- ko text: item.textParts.last -->Campus<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->79<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->78<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1559,13 +1559,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Individual Contributor filter 5288" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Individual Contributor filter 5312" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Individual Contributor" type="button">
 <!-- ko text: item.textParts.main -->Individual <!-- /ko -->
 <!-- ko text: item.textParts.last --> Contributor<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->5288<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->5312<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1795,14 +1795,14 @@
         attr: { href: getJobUrl(job.id) },
         click: () =&gt; openJobPreview(job.id),
         hasFocus: hasFocus
-    " href="https://careers.oracle.com/jobs/#en/sites/jobsearch/job/238697/?mode=location">
+    " href="https://careers.oracle.com/jobs/#en/sites/jobsearch/job/221879/?mode=location">
 <div class="job-grid-item__content">
 <div class="job-grid-item__header" data-bind="style: gridItemHeaderAdditionalStyles" style="border-radius: 4px 4px 0px 0px;">
 <search-result-item-header params="
                         job: job,
                         jobHeadingConfig: jobHeadingConfig,
                     "><div class="job-tile__header">
-<span class="job-tile__title" data-bind="text: job.title">Applied Scientist 2/3</span>
+<span class="job-tile__title" data-bind="text: job.title">Consulting Member of Technical Staff</span>
 <!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
 <!-- ko if: hasSubheader -->
 <div class="job-tile__subheader">
@@ -1820,7 +1820,7 @@
                     mode:'tooltip'
                 }
             } --><!-- ko if: isTooltipMode() -->
-<span data-bind="html: primaryLocation">BENGALURU, KARNATAKA, India</span>
+<span data-bind="html: primaryLocation">Spain</span>
 <!-- ko if: secondaryLocationsCount > 0 --><!-- /ko -->
 <!-- /ko -->
 <!-- ko if: !isTooltipMode() --><!-- /ko -->
@@ -1840,14 +1840,14 @@
 </div>
 </tag>
 <!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
 <!-- ko if: tag.isVisible() -->
-<tag params="className: tag.className, label: tag.label"><div class="job-tag job-tag--trending-job" data-bind="class: `job-tag--${className}`">
+<tag params="className: tag.className, label: tag.label"><div class="job-tag job-tag--be-first-to-apply" data-bind="class: `job-tag--${className}`">
 
-<span class="job-tag__title" data-bind="text: label">Trending</span>
+<span class="job-tag__title" data-bind="text: label">Be the First to Apply</span>
 </div>
 </tag>
 <!-- /ko -->
-<!-- ko if: tag.isVisible() --><!-- /ko -->
 <!-- /ko -->
 </span>
 </job-tags>
@@ -1861,7 +1861,7 @@
 <!-- ko if: isImageVisible --><!-- /ko -->
 <!-- ko if: isDescriptionVisible -->
 <div>
-<p class="job-grid-item__description" data-bind="text: job.shortDescription">Applied Scientist 2/3</p>
+<p class="job-grid-item__description" data-bind="text: job.shortDescription">Building off our Cloud momentum, Oracle has formed a new organization - Oracle Health Applications &amp; Infrastructure. This team focuses on product development and product strategy for Oracle Health, while building out a complete platform supporting modernized, automated healthcare. This is a net new line of business, constructed with an entrepreneurial spirit that promotes an energetic and creative environment. We are unencumbered and will need your contribution to make it a world class engineering center with the focus on excellence. At Oracle Health, our mission is to improve healthcare and quality of life globally through better experience and easier access to health and research data for patients and healthcare providers.</p>
 </div>
 <!-- /ko -->
 </div>
@@ -1891,14 +1891,14 @@
         attr: { href: getJobUrl(job.id) },
         click: () =&gt; openJobPreview(job.id),
         hasFocus: hasFocus
-    " href="https://careers.oracle.com/jobs/#en/sites/jobsearch/job/221695/?mode=location">
+    " href="https://careers.oracle.com/jobs/#en/sites/jobsearch/job/221686/?mode=location">
 <div class="job-grid-item__content">
 <div class="job-grid-item__header" data-bind="style: gridItemHeaderAdditionalStyles" style="border-radius: 4px 4px 0px 0px;">
 <search-result-item-header params="
                         job: job,
                         jobHeadingConfig: jobHeadingConfig,
                     "><div class="job-tile__header">
-<span class="job-tile__title" data-bind="text: job.title">Software Developer 3</span>
+<span class="job-tile__title" data-bind="text: job.title">Senior Consultant</span>
 <!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
 <!-- ko if: hasSubheader -->
 <div class="job-tile__subheader">
@@ -1917,191 +1917,100 @@
                 }
             } --><!-- ko if: isTooltipMode() -->
 <span data-bind="html: primaryLocation">BENGALURU, KARNATAKA, India</span>
+<!-- ko if: secondaryLocationsCount > 0 -->
+<tooltip class="posting-locations" params="isVisible: isTooltipVisible, helpText: tooltipContent" role="tooltip"><span class="tooltip-wrapper" data-bind="attr: {id: helpTextId}">
+<!-- ko template: { nodes: nodes['tooltip-anchor'], data: $parent} -->
+<button aria-label="BENGALURU, KARNATAKA, India,CHENNAI, TAMIL NADU, India,HYDERABAD, TELANGANA, India,PUNE, MAHARASHTRA, India,MUMBAI, MAHARASHTRA, India,KOLKATA, WEST BENGAL, India,GANDHI NAGAR, GUJARAT, India,NOIDA, UTTAR PRADESH, India" data-bind="attr: { 'aria-label': tooltipData },
+                event: {
+                    mouseover: showTooltip,
+                    mouseout: hideTooltip,
+                    focus: showTooltip,
+                    blur: hideTooltip
+                }">
+<i18n class="posting-locations__count" params="key: 'search.job-item.secondary-locations'"><span data-bind="i18n: {key: key, tokens: tokens}">and <span data-bind="text: $parent.secondaryLocationsCount" data-i18n-token="locationsCount">7</span> more</span>
+</i18n>
+</button>
+<!-- /ko -->
+<!-- ko if: isVisible --><!-- /ko -->
+</span>
+</tooltip>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+<!-- /ko -->
+</span>
+<!-- /ko -->
+<!-- ko if: jobHeadingConfig().isDistanceVisible --><!-- /ko -->
+<!-- ko if: jobHeadingConfig().isPostingDateVisible --><!-- /ko -->
+<!-- ko if: areJobTagsVisible --><!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+</search-result-item-header>
+</div>
+<div class="job-grid-item__body" data-bind="style: gridItemBodyAdditionalStyles" style="border-radius: 0px 0px 4px 4px;">
+<!-- ko if: isImageVisible --><!-- /ko -->
+<!-- ko if: isDescriptionVisible -->
+<div>
+<p class="job-grid-item__description" data-bind="text: job.shortDescription">Oracle GSC HCM Cloud pillar has consultants focused on delivering services on Oracle HCM Cloud – Fusion &amp; Taleo, as well as Onprem Applications: eBusiness Suite, Peoplesoft. We have current team strength of 700+ consultants and growing. Customers look up to us as the EXPERT and give credence to what we guide them on – they pin their faith on us to provide solutions to all challenges around their implementation. Our team is spread across Oracle GSC Bangalore, Chennai, Hyderabad, Noida, Pune, Mumbai, Kolkata &amp; Gandhinagar Locations. 
+If you would like to be a member of our team and travel on this exciting journey with us please respond to this job posting.</p>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</a>
+<div class="job-grid-item__actions">
+
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><div class="job-tile job-grid-item" data-bind="
+    css: { 'job-grid-item--active': job.isActive, 'job-grid-item--focus': hasFocus }
+">
+<a class="job-grid-item__link" data-bind="
+        attr: { href: getJobUrl(job.id) },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://careers.oracle.com/jobs/#en/sites/jobsearch/job/223329/?mode=location">
+<div class="job-grid-item__content">
+<div class="job-grid-item__header" data-bind="style: gridItemHeaderAdditionalStyles" style="border-radius: 4px 4px 0px 0px;">
+<search-result-item-header params="
+                        job: job,
+                        jobHeadingConfig: jobHeadingConfig,
+                    "><div class="job-tile__header">
+<span class="job-tile__title" data-bind="text: job.title">Public Sector SaaS Account Executive - Qatar</span>
+<!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
+<!-- ko if: hasSubheader -->
+<div class="job-tile__subheader">
+<!-- ko if: jobHeadingConfig().isLocationVisible -->
+<span>
+<!-- ko component: { 
+                name: 'posting-locations', 
+                params: { 
+                    primaryLocation: job.primaryLocation,
+                    secondaryLocations: job.secondaryLocations,
+                    workplaceType: {
+                        name: job.workplaceType,
+                        code: job.workplaceTypeCode,
+                    },
+                    mode:'tooltip'
+                }
+            } --><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">DOHA, Qatar</span>
 <!-- ko if: secondaryLocationsCount > 0 --><!-- /ko -->
-<!-- /ko -->
-<!-- ko if: !isTooltipMode() --><!-- /ko -->
-<!-- ko if: workplaceTypeName --><!-- /ko -->
-<!-- /ko -->
-</span>
-<!-- /ko -->
-<!-- ko if: jobHeadingConfig().isDistanceVisible --><!-- /ko -->
-<!-- ko if: jobHeadingConfig().isPostingDateVisible --><!-- /ko -->
-<!-- ko if: areJobTagsVisible --><!-- /ko -->
-</div>
-<!-- /ko -->
-</div>
-</search-result-item-header>
-</div>
-<div class="job-grid-item__body" data-bind="style: gridItemBodyAdditionalStyles" style="border-radius: 0px 0px 4px 4px;">
-<!-- ko if: isImageVisible --><!-- /ko -->
-<!-- ko if: isDescriptionVisible -->
-<div>
-<p class="job-grid-item__description" data-bind="text: job.shortDescription">Cloud Application development</p>
-</div>
-<!-- /ko -->
-</div>
-</div>
-</a>
-<div class="job-grid-item__actions">
-
-<!-- ko if: isFavouriteToggled --><!-- /ko -->
-</div>
-</div>
-<!-- /ko -->
-</li>
-<!-- /ko -->
-<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
-<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
-<li data-qa="searchResultItem">
-<!-- ko component: {
-                        name: $parent.tileComponent,
-                        params: {
-                            job: job,
-                            customizationParams: $parent.customizationParams,
-                        }
-                    } --><div class="job-tile job-grid-item" data-bind="
-    css: { 'job-grid-item--active': job.isActive, 'job-grid-item--focus': hasFocus }
-">
-<a class="job-grid-item__link" data-bind="
-        attr: { href: getJobUrl(job.id) },
-        click: () =&gt; openJobPreview(job.id),
-        hasFocus: hasFocus
-    " href="https://careers.oracle.com/jobs/#en/sites/jobsearch/job/223844/?mode=location">
-<div class="job-grid-item__content">
-<div class="job-grid-item__header" data-bind="style: gridItemHeaderAdditionalStyles" style="border-radius: 4px 4px 0px 0px;">
-<search-result-item-header params="
-                        job: job,
-                        jobHeadingConfig: jobHeadingConfig,
-                    "><div class="job-tile__header">
-<span class="job-tile__title" data-bind="text: job.title">Technical Delivery Lead - Managed Cloud Services</span>
-<!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
-<!-- ko if: hasSubheader -->
-<div class="job-tile__subheader">
-<!-- ko if: jobHeadingConfig().isLocationVisible -->
-<span>
-<!-- ko component: { 
-                name: 'posting-locations', 
-                params: { 
-                    primaryLocation: job.primaryLocation,
-                    secondaryLocations: job.secondaryLocations,
-                    workplaceType: {
-                        name: job.workplaceType,
-                        code: job.workplaceTypeCode,
-                    },
-                    mode:'tooltip'
-                }
-            } --><!-- ko if: isTooltipMode() -->
-<span data-bind="html: primaryLocation">Romania</span>
-<!-- ko if: secondaryLocationsCount > 0 -->
-<tooltip class="posting-locations" params="isVisible: isTooltipVisible, helpText: tooltipContent" role="tooltip"><span class="tooltip-wrapper" data-bind="attr: {id: helpTextId}">
-<!-- ko template: { nodes: nodes['tooltip-anchor'], data: $parent} -->
-<button aria-label="Romania,Poland,LINLITHGOW, United Kingdom,Czech Republic,Spain" data-bind="attr: { 'aria-label': tooltipData },
-                event: {
-                    mouseover: showTooltip,
-                    mouseout: hideTooltip,
-                    focus: showTooltip,
-                    blur: hideTooltip
-                }">
-<i18n class="posting-locations__count" params="key: 'search.job-item.secondary-locations'"><span data-bind="i18n: {key: key, tokens: tokens}">and <span data-bind="text: $parent.secondaryLocationsCount" data-i18n-token="locationsCount">4</span> more</span>
-</i18n>
-</button>
-<!-- /ko -->
-<!-- ko if: isVisible --><!-- /ko -->
-</span>
-</tooltip>
-<!-- /ko -->
-<!-- /ko -->
-<!-- ko if: !isTooltipMode() --><!-- /ko -->
-<!-- ko if: workplaceTypeName --><!-- /ko -->
-<!-- /ko -->
-</span>
-<!-- /ko -->
-<!-- ko if: jobHeadingConfig().isDistanceVisible --><!-- /ko -->
-<!-- ko if: jobHeadingConfig().isPostingDateVisible --><!-- /ko -->
-<!-- ko if: areJobTagsVisible --><!-- /ko -->
-</div>
-<!-- /ko -->
-</div>
-</search-result-item-header>
-</div>
-<div class="job-grid-item__body" data-bind="style: gridItemBodyAdditionalStyles" style="border-radius: 0px 0px 4px 4px;">
-<!-- ko if: isImageVisible --><!-- /ko -->
-<!-- ko if: isDescriptionVisible -->
-<div>
-<p class="job-grid-item__description" data-bind="text: job.shortDescription">The Technical Delivery lead aka Primary Support Engineer role is for a senior technical resource to deliver Managed Cloud Services to a variety of diverse and demanding customers located in JAPAC and EMEA. The Technical Delivery lead aka Primary Support Engineer (PSE) role is for a senior technical resource to deliver Managed Cloud Services to a variety of diverse and demanding customers located in JAPAC and EMEA</p>
-</div>
-<!-- /ko -->
-</div>
-</div>
-</a>
-<div class="job-grid-item__actions">
-
-<!-- ko if: isFavouriteToggled --><!-- /ko -->
-</div>
-</div>
-<!-- /ko -->
-</li>
-<!-- /ko -->
-<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
-<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
-<li data-qa="searchResultItem">
-<!-- ko component: {
-                        name: $parent.tileComponent,
-                        params: {
-                            job: job,
-                            customizationParams: $parent.customizationParams,
-                        }
-                    } --><div class="job-tile job-grid-item" data-bind="
-    css: { 'job-grid-item--active': job.isActive, 'job-grid-item--focus': hasFocus }
-">
-<a class="job-grid-item__link" data-bind="
-        attr: { href: getJobUrl(job.id) },
-        click: () =&gt; openJobPreview(job.id),
-        hasFocus: hasFocus
-    " href="https://careers.oracle.com/jobs/#en/sites/jobsearch/job/224125/?mode=location">
-<div class="job-grid-item__content">
-<div class="job-grid-item__header" data-bind="style: gridItemHeaderAdditionalStyles" style="border-radius: 4px 4px 0px 0px;">
-<search-result-item-header params="
-                        job: job,
-                        jobHeadingConfig: jobHeadingConfig,
-                    "><div class="job-tile__header">
-<span class="job-tile__title" data-bind="text: job.title">Senior Member of Technical Staff - OCI Infrastructure Delivery Engineering</span>
-<!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
-<!-- ko if: hasSubheader -->
-<div class="job-tile__subheader">
-<!-- ko if: jobHeadingConfig().isLocationVisible -->
-<span>
-<!-- ko component: { 
-                name: 'posting-locations', 
-                params: { 
-                    primaryLocation: job.primaryLocation,
-                    secondaryLocations: job.secondaryLocations,
-                    workplaceType: {
-                        name: job.workplaceType,
-                        code: job.workplaceTypeCode,
-                    },
-                    mode:'tooltip'
-                }
-            } --><!-- ko if: isTooltipMode() -->
-<span data-bind="html: primaryLocation">Austin, TX, United States</span>
-<!-- ko if: secondaryLocationsCount > 0 -->
-<tooltip class="posting-locations" params="isVisible: isTooltipVisible, helpText: tooltipContent" role="tooltip"><span class="tooltip-wrapper" data-bind="attr: {id: helpTextId}">
-<!-- ko template: { nodes: nodes['tooltip-anchor'], data: $parent} -->
-<button aria-label="Austin, TX, United States,Nashville, TN, United States" data-bind="attr: { 'aria-label': tooltipData },
-                event: {
-                    mouseover: showTooltip,
-                    mouseout: hideTooltip,
-                    focus: showTooltip,
-                    blur: hideTooltip
-                }">
-<i18n class="posting-locations__count" params="key: 'search.job-item.secondary-locations'"><span data-bind="i18n: {key: key, tokens: tokens}">and <span data-bind="text: $parent.secondaryLocationsCount" data-i18n-token="locationsCount">1</span> more</span>
-</i18n>
-</button>
-<!-- /ko -->
-<!-- ko if: isVisible --><!-- /ko -->
-</span>
-</tooltip>
-<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: !isTooltipMode() --><!-- /ko -->
 <!-- ko if: workplaceTypeName --><!-- /ko -->
@@ -2135,7 +2044,99 @@
 <!-- ko if: isImageVisible --><!-- /ko -->
 <!-- ko if: isDescriptionVisible -->
 <div>
-<p class="job-grid-item__description" data-bind="text: job.shortDescription">Looking for a passionate senior software engineer to develop systems that manage the datacenter buildout process, speeding up OCI capacity delivery.</p>
+<p class="job-grid-item__description" data-bind="text: job.shortDescription">Do you want to take ownership of your sales success? Are you a quick learner with a flair for building relationships? If you’re eager to grow your sales skills in a fast-paced, collaborative environment, this is your opportunity to advance your career with a tech leader.
+
+Oracle has the most comprehensive SaaS portfolio on the market. Our cloud technology is changing the way the world does business, and we’re looking for a Cloud Sales Executive to drive success on our [HR/Finance/Customer Experience] team. We have phenomenal career opportunities for every experience level and celebrate a culture of support and learning. Create the future with us.</p>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</a>
+<div class="job-grid-item__actions">
+
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><div class="job-tile job-grid-item" data-bind="
+    css: { 'job-grid-item--active': job.isActive, 'job-grid-item--focus': hasFocus }
+">
+<a class="job-grid-item__link" data-bind="
+        attr: { href: getJobUrl(job.id) },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://careers.oracle.com/jobs/#en/sites/jobsearch/job/224918/?mode=location">
+<div class="job-grid-item__content">
+<div class="job-grid-item__header" data-bind="style: gridItemHeaderAdditionalStyles" style="border-radius: 4px 4px 0px 0px;">
+<search-result-item-header params="
+                        job: job,
+                        jobHeadingConfig: jobHeadingConfig,
+                    "><div class="job-tile__header">
+<span class="job-tile__title" data-bind="text: job.title">Associate Technical Support Engineer (ERP) - Oracle NetSuite Graduate Program</span>
+<!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
+<!-- ko if: hasSubheader -->
+<div class="job-tile__subheader">
+<!-- ko if: jobHeadingConfig().isLocationVisible -->
+<span>
+<!-- ko component: { 
+                name: 'posting-locations', 
+                params: { 
+                    primaryLocation: job.primaryLocation,
+                    secondaryLocations: job.secondaryLocations,
+                    workplaceType: {
+                        name: job.workplaceType,
+                        code: job.workplaceTypeCode,
+                    },
+                    mode:'tooltip'
+                }
+            } --><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">MAKATI CITY, METRO MANILA, Philippines</span>
+<!-- ko if: secondaryLocationsCount > 0 --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+<!-- /ko -->
+</span>
+<!-- /ko -->
+<!-- ko if: jobHeadingConfig().isDistanceVisible --><!-- /ko -->
+<!-- ko if: jobHeadingConfig().isPostingDateVisible --><!-- /ko -->
+<!-- ko if: areJobTagsVisible -->
+<job-tags params="jobTags: jobTags"><span class="job-tags">
+<!-- ko foreach: { data: jobTags, as: 'tag' } -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() -->
+<tag params="className: tag.className, label: tag.label"><div class="job-tag job-tag--be-first-to-apply" data-bind="class: `job-tag--${className}`">
+
+<span class="job-tag__title" data-bind="text: label">Be the First to Apply</span>
+</div>
+</tag>
+<!-- /ko -->
+<!-- /ko -->
+</span>
+</job-tags>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+</search-result-item-header>
+</div>
+<div class="job-grid-item__body" data-bind="style: gridItemBodyAdditionalStyles" style="border-radius: 0px 0px 4px 4px;">
+<!-- ko if: isImageVisible --><!-- /ko -->
+<!-- ko if: isDescriptionVisible -->
+<div>
+<p class="job-grid-item__description" data-bind="text: job.shortDescription">The Customer Success Associate Development Program (CSADP) prepares entry-level candidates for an exciting and rewarding career within Oracle NetSuite. </p>
 </div>
 <!-- /ko -->
 </div>
@@ -2421,7 +2422,7 @@
         }
     } --><div class="media-element__video-wrapper" data-bind="style: { maxWidth: params.width()+'px' }" style="max-width: 500px;">
 
-<div class="replaced-iframe"><div id="player" style="width: 100%; height: 100%;"><div aria-label="YouTube ვიდეო დამკვრელი" class="html5-video-player ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-title-enable-channel-logo ytp-fine-scrubbing-exp ytp-embed ytp-embed-playlist unstarted-mode ytp-hide-controls ytp-small-mode" data-version="/s/player/590f65a6/player_ias.vflset/ka_GE/base.js" id="movie_player" tabindex="-1"><div class="html5-video-container" data-layer="0"></div><div class="ytp-chrome-top ytp-show-cards-title" data-layer="1"><div class="ytp-title-channel"><div aria-hidden="true" class="ytp-title-expanded-overlay"><div class="ytp-title-expanded-heading"><div class="ytp-title-expanded-title"><a aria-hidden="true" tabindex="-1" target="_blank">Oracle Careers</a></div><div aria-hidden="true" class="ytp-title-expanded-subtitle">3,1 ათ. გამომწერი</div></div></div></div><div class="ytp-title"><div class="ytp-title-text"><a class="ytp-title-link yt-uix-sessionlink" data-sessionlink="feature=player-title" href="https://www.youtube.com/watch?v=jOkZy0Tfe5Q" tabindex="0" target="_blank">Oracle Careers l Create the Future With Us</a><div class="ytp-title-subtext"></div></div></div><div class="ytp-shorts-title-channel" style="display: none;"><div class="ytp-shorts-title-expanded-heading"><div class="ytp-shorts-title-expanded-title"><a tabindex="0" target="_blank">Oracle Careers</a></div></div></div><div class="ytp-chrome-top-buttons"><button aria-label="ძიება" class="ytp-button ytp-search-button" data-tooltip-opaque="true" style="display: none;" title="ძიება"><div class="ytp-search-title">ძიება</div></button><button aria-haspopup="true" aria-label="დასაკრავი სია" aria-owns="ytp-id-22" class="ytp-playlist-menu-button ytp-button" style="display: none;"></button><button aria-haspopup="true" aria-label="ბარათების ჩვენება" aria-owns="iv-drawer" class="ytp-button ytp-cards-button" data-tooltip-opaque="true" style="display: none;"><span class="ytp-cards-button-icon-default"><div class="ytp-cards-button-title">ინფორმაცია</div></span><span class="ytp-cards-button-icon-shopping"><div class="ytp-cards-button-title">საყიდლები</div></span></button><div class="ytp-cards-teaser" style="display: none;"><div class="ytp-cards-teaser-text"></div></div><button aria-haspopup="true" aria-label="მეტი" aria-owns="ytp-id-29" class="ytp-button ytp-overflow-button ytp-overflow-button-visible" title="მეტი"></button></div></div><button class="ytp-unmute ytp-popup ytp-button ytp-unmute-animated ytp-unmute-shrink" data-layer="2" style="display: none;"><div class="ytp-unmute-inner"><div class="ytp-unmute-text">შეეხეთ დადუმების მოსახსნელად</div></div></button><div class="ytp-cued-thumbnail-overlay" data-layer="4" style=""></div><div class="ytp-spinner" data-layer="4" style="display: none;"><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"></div><div class="ytp-spinner-right"></div></div></div><div class="ytp-spinner-message" style="display: none;">თუ დაკვრა მალე არ დაიწყო, შეეცადეთ, გადატვირთოთ თქვენი მოწყობილობა.</div></div><div aria-atomic="true" aria-live="assertive" class="ytp-paid-content-overlay" data-layer="4"></div><div class="ytp-storyboard-framepreview" data-layer="4" style="display: none;"></div><div data-layer="4" style="display: none;"><div class="ytp-bezel-text-wrapper"></div><div class="ytp-bezel" role="status"></div></div><div class="ytp-doubletap-ui-legacy" data-layer="4" style="display: none;"><div class="ytp-doubletap-static-circle"></div><div class="ytp-doubletap-seek-info-container"><div class="ytp-doubletap-arrows-container"></div><div class="ytp-doubletap-tooltip"></div></div></div><div aria-live="polite" data-layer="4" style="display: none;"><div class="ytp-tooltip-text-wrapper"><div class="ytp-tooltip-edu"></div><div class="ytp-tooltip-title"></div></div><div class="ytp-tooltip-bg"></div></div><div class="ytp-ad-persistent-progress-bar-container" data-layer="4" style="display: none;"></div><div class="ytp-suggested-action" data-layer="4"><button class="ytp-button ytp-suggested-action-badge ytp-suggested-action-badge-with-controls" style="display: none;"><div class="ytp-suggested-action-badge-expanded-content-container" style="display: none;"></div></button></div><div aria-atomic="true" aria-haspopup="true" aria-live="assertive" aria-owns="ytp-id-30" class="ytp-info-panel-preview" data-layer="4" data-tooltip-opaque="true" style="display: none;"></div><div class="ytp-remote" data-layer="4" style="display: none;"><div class="ytp-remote-display-status"></div></div><div class="ytp-mdx-popup-dialog" data-layer="4" role="dialog" style="display: none;"><div class="ytp-mdx-popup-dialog-inner-content"><div class="ytp-mdx-popup-title">თქვენ გამოსული ხართ</div><div class="ytp-mdx-popup-description">ვიდეოები, რომლებსაც უყურებთ, შეიძლება ტელევიზორის ნახვის ისტორიას დაემატოს და გავლენა იქონიოს რეკომენდაციებზე ტელევიზორში. ამის თავიდან ასარიდებლად გააუქმეთ და შედით YouTube-ში თქვენი კომპიუტერიდან.</div><div class="ytp-mdx-privacy-popup-buttons"><button class="ytp-button ytp-mdx-privacy-popup-cancel">გაუქმება</button><button class="ytp-button ytp-mdx-privacy-popup-confirm">დადასტურება</button></div></div></div><div class="ytp-muted-autoplay-overlay" data-layer="4" style="display: none;"><div class="ytp-muted-autoplay-bottom-buttons"><button aria-label="დადუმებული დაკვრის ინდიკატორი" class="ytp-muted-autoplay-equalizer ytp-button"></button></div></div><div class="ytp-muted-autoplay-endscreen-overlay" data-layer="4" style="display: none;"><div class="ytp-muted-autoplay-end-panel"></div></div><div class="ytp-playlist-menu" data-layer="5" id="ytp-id-22" role="dialog" style="display: none;"><div class="ytp-playlist-menu-header"><div class="ytp-playlist-menu-title"></div></div></div><div aria-labelledby="ytp-id-24" class="ytp-share-panel" data-layer="5" id="ytp-id-25" role="dialog" style="display: none;"><div class="ytp-share-panel-inner-content"><div class="ytp-share-panel-title" id="ytp-id-24">გაზიარება</div><label class="ytp-share-panel-include-playlist">დასაკრავის სიის დამატება</label><div class="ytp-share-panel-loading-spinner"><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"></div><div class="ytp-spinner-right"></div></div></div></div><div class="ytp-share-panel-error">გაზიარების ინფორმაციის მიღებისას წარმოიშვა შეცდომა. გთხოვთ, სცადოთ მოგვიანებით.</div></div></div><div class="ytp-overflow-panel" data-layer="5" id="ytp-id-29" role="dialog" style="display: none;"><div class="ytp-overflow-panel-content"><div class="ytp-overflow-panel-action-buttons"><button aria-label="მოგვიანებით სანახავი" class="ytp-watch-later-button ytp-button ytp-show-watch-later-title" data-tooltip-opaque="true" style="display: none;" title="მოგვიანებით სანახავი"><div class="ytp-watch-later-title">მოგვიანებით სანახავი</div></button><button aria-haspopup="true" aria-label="გაზიარება" aria-owns="ytp-id-25" class="ytp-button ytp-share-button ytp-show-share-title ytp-share-button-visible" data-tooltip-opaque="true" title="გაზიარება"><div class="ytp-share-title">გაზიარება</div></button><button aria-label="ბმულის კოპირება" class="ytp-button ytp-copylink-button ytp-show-copylink-title" data-tooltip-opaque="true" style="display: none;" title="ბმულის კოპირება"><div aria-hidden="true" class="ytp-copylink-title">ბმულის კოპირება</div></button></div></div></div><div class="ytp-info-panel-detail-skrim" data-layer="5" style="display: none;"><div class="ytp-info-panel-detail" id="ytp-id-30" role="dialog"><div class="ytp-info-panel-detail-header"></div></div></div><div class="ytp-popup ytp-settings-menu" data-layer="6" id="ytp-id-17" style="display: none;"><div class="ytp-panel"></div></div><a aria-label="YouTube ზე ყურება" class="ytp-impression-link" data-layer="8" style="display: none;" target="_blank"><div aria-hidden="true" class="ytp-impression-link-content"><div class="ytp-impression-link-text">უყურეთ აქ:</div></div></a><div class="ytp-chrome-bottom" data-layer="9" style="display: none; width: 319px; left: 12px;"><div class="ytp-progress-bar-container"><div class="ytp-heat-map-container"></div><div aria-label="საძიებო სლაიდერი" aria-valuemax="0" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0 წუთები 0 წამები / 0 წუთები 0 წამები-დან" class="ytp-progress-bar" draggable="true" role="slider" style="touch-action: none;" tabindex="0"><div class="ytp-chapters-container"><div class="ytp-chapter-hover-container" style="width: 319px;"><div class="ytp-progress-list"></div></div></div><div class="ytp-scrubber-container" style="transform: translateX(0px);"><div class="ytp-scrubber-button ytp-swatch-background-color"></div></div></div><div class="ytp-fine-scrubbing-container"><div class="ytp-fine-scrubbing"><div class="ytp-fine-scrubbing-draggable" draggable="true" style="touch-action: none; padding: 0px;"></div><div aria-hidden="true" class="ytp-fine-scrubbing-seek-time">0:00</div></div></div></div><div class="ytp-chrome-controls"><div class="ytp-left-controls"><span class="ytp-volume-area"><div aria-label="ხმა" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" aria-valuetext="100% ხმა" class="ytp-volume-panel" role="slider" style="display: none;" tabindex="0" title="ხმა"><div class="ytp-volume-slider" draggable="true" style="touch-action: none;"></div></div></span><div class="ytp-time-display notranslate" style="display: none;"><span><span class="ytp-time-separator"> / </span></span><span class="ytp-clip-watch-full-video-button-separator">•</span><button class="ytp-live-badge ytp-button" disabled="true">პირდაპირი</button></div><div class="ytp-chapter-container" style="display: none;"><button class="ytp-chapter-title ytp-button ytp-chapter-container-disabled fitted-chapter-button" disabled=""><span aria-hidden="true" class="ytp-chapter-title-prefix">•</span></button></div></div><div class="ytp-right-controls"></div></div></div></div></div><noscript><div class="player-unavailable"><h1 class="message">მოხდა შეცდომა.</h1><div class="submessage"><a href="https://www.youtube.com/watch?v=jOkZy0Tfe5Q" target="_blank">სცადეთ ამ ვიდეოს ნახვა www.youtube.com-ზე</a> ან ჩართეთ JavaScript, თუ ის გამორთულია თქვენს ბრაუზერში.</div></div></noscript></div>
+<div class="replaced-iframe"><div id="player" style="width: 100%; height: 100%;"><div aria-label="YouTube ვიდეო დამკვრელი" class="html5-video-player ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-title-enable-channel-logo ytp-fine-scrubbing-exp ytp-embed ytp-embed-playlist unstarted-mode ytp-hide-controls ytp-small-mode" data-version="/s/player/84314bef/player_ias.vflset/ka_GE/base.js" id="movie_player" tabindex="-1"><div class="html5-video-container" data-layer="0"></div><div class="ytp-chrome-top ytp-show-cards-title" data-layer="1"><div class="ytp-title-channel"><div aria-hidden="true" class="ytp-title-expanded-overlay"><div class="ytp-title-expanded-heading"><div class="ytp-title-expanded-title"><a aria-hidden="true" tabindex="-1" target="_blank">Oracle Careers</a></div><div aria-hidden="true" class="ytp-title-expanded-subtitle">3,11 ათ. გამომწერი</div></div></div></div><div class="ytp-title"><div class="ytp-title-text"><a class="ytp-title-link yt-uix-sessionlink" data-sessionlink="feature=player-title" href="https://www.youtube.com/watch?v=jOkZy0Tfe5Q" tabindex="0" target="_blank">Oracle Careers l Create the Future With Us</a><div class="ytp-title-subtext"></div></div></div><div class="ytp-shorts-title-channel" style="display: none;"><div class="ytp-shorts-title-expanded-heading"><div class="ytp-shorts-title-expanded-title"><a tabindex="0" target="_blank">Oracle Careers</a></div></div></div><div class="ytp-chrome-top-buttons"><button aria-label="ძიება" class="ytp-button ytp-search-button" data-tooltip-opaque="true" style="display: none;" title="ძიება"><div class="ytp-search-title">ძიება</div></button><button aria-haspopup="true" aria-label="დასაკრავი სია" aria-owns="ytp-id-22" class="ytp-playlist-menu-button ytp-button" style="display: none;"></button><button aria-haspopup="true" aria-label="ბარათების ჩვენება" aria-owns="iv-drawer" class="ytp-button ytp-cards-button" data-tooltip-opaque="true" style="display: none;"><span class="ytp-cards-button-icon-default"><div class="ytp-cards-button-title">ინფორმაცია</div></span><span class="ytp-cards-button-icon-shopping"><div class="ytp-cards-button-title">საყიდლები</div></span></button><div class="ytp-cards-teaser" style="display: none;"><div class="ytp-cards-teaser-text"></div></div><button aria-haspopup="true" aria-label="მეტი" aria-owns="ytp-id-29" class="ytp-button ytp-overflow-button ytp-overflow-button-visible" title="მეტი"></button></div></div><button class="ytp-unmute ytp-popup ytp-button ytp-unmute-animated ytp-unmute-shrink" data-layer="2" style="display: none;"><div class="ytp-unmute-inner"><div class="ytp-unmute-text">შეეხეთ დადუმების მოსახსნელად</div></div></button><div class="ytp-cued-thumbnail-overlay" data-layer="4" style=""></div><div class="ytp-spinner" data-layer="4" style="display: none;"><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"></div><div class="ytp-spinner-right"></div></div></div><div class="ytp-spinner-message" style="display: none;">თუ დაკვრა მალე არ დაიწყო, შეეცადეთ, გადატვირთოთ თქვენი მოწყობილობა.</div></div><div aria-atomic="true" aria-live="assertive" class="ytp-paid-content-overlay" data-layer="4"></div><div class="ytp-storyboard-framepreview" data-layer="4" style="display: none;"></div><div data-layer="4" style="display: none;"><div class="ytp-bezel-text-wrapper"></div><div class="ytp-bezel" role="status"></div></div><div class="ytp-doubletap-ui-legacy" data-layer="4" style="display: none;"><div class="ytp-doubletap-static-circle"></div><div class="ytp-doubletap-seek-info-container"><div class="ytp-doubletap-arrows-container"></div><div class="ytp-doubletap-tooltip"></div></div></div><div aria-live="polite" data-layer="4" style="display: none;"><div class="ytp-tooltip-text-wrapper"><div class="ytp-tooltip-edu"></div><div class="ytp-tooltip-title"></div></div><div class="ytp-tooltip-bg"></div></div><div class="ytp-ad-persistent-progress-bar-container" data-layer="4" style="display: none;"></div><div class="ytp-suggested-action" data-layer="4"><button class="ytp-button ytp-suggested-action-badge ytp-suggested-action-badge-with-controls" style="display: none;"><div class="ytp-suggested-action-badge-expanded-content-container" style="display: none;"></div></button></div><div aria-atomic="true" aria-haspopup="true" aria-live="assertive" aria-owns="ytp-id-30" class="ytp-info-panel-preview" data-layer="4" data-tooltip-opaque="true" style="display: none;"></div><div class="ytp-remote" data-layer="4" style="display: none;"><div class="ytp-remote-display-status"></div></div><div class="ytp-mdx-popup-dialog" data-layer="4" role="dialog" style="display: none;"><div class="ytp-mdx-popup-dialog-inner-content"><div class="ytp-mdx-popup-title">თქვენ გამოსული ხართ</div><div class="ytp-mdx-popup-description">ვიდეოები, რომლებსაც უყურებთ, შეიძლება ტელევიზორის ნახვის ისტორიას დაემატოს და გავლენა იქონიოს რეკომენდაციებზე ტელევიზორში. ამის თავიდან ასარიდებლად გააუქმეთ და შედით YouTube-ში თქვენი კომპიუტერიდან.</div><div class="ytp-mdx-privacy-popup-buttons"><button class="ytp-button ytp-mdx-privacy-popup-cancel">გაუქმება</button><button class="ytp-button ytp-mdx-privacy-popup-confirm">დადასტურება</button></div></div></div><div class="ytp-muted-autoplay-overlay" data-layer="4" style="display: none;"><div class="ytp-muted-autoplay-bottom-buttons"><button aria-label="დადუმებული დაკვრის ინდიკატორი" class="ytp-muted-autoplay-equalizer ytp-button"></button></div></div><div class="ytp-muted-autoplay-endscreen-overlay" data-layer="4" style="display: none;"><div class="ytp-muted-autoplay-end-panel"></div></div><div class="ytp-playlist-menu" data-layer="5" id="ytp-id-22" role="dialog" style="display: none;"><div class="ytp-playlist-menu-header"><div class="ytp-playlist-menu-title"></div></div></div><div aria-labelledby="ytp-id-24" class="ytp-share-panel" data-layer="5" id="ytp-id-25" role="dialog" style="display: none;"><div class="ytp-share-panel-inner-content"><div class="ytp-share-panel-title" id="ytp-id-24">გაზიარება</div><label class="ytp-share-panel-include-playlist">დასაკრავის სიის დამატება</label><div class="ytp-share-panel-loading-spinner"><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"></div><div class="ytp-spinner-right"></div></div></div></div><div class="ytp-share-panel-error">გაზიარების ინფორმაციის მიღებისას წარმოიშვა შეცდომა. გთხოვთ, სცადოთ მოგვიანებით.</div></div></div><div class="ytp-overflow-panel" data-layer="5" id="ytp-id-29" role="dialog" style="display: none;"><div class="ytp-overflow-panel-content"><div class="ytp-overflow-panel-action-buttons"><button aria-label="მოგვიანებით სანახავი" class="ytp-watch-later-button ytp-button ytp-show-watch-later-title" data-tooltip-opaque="true" style="display: none;" title="მოგვიანებით სანახავი"><div class="ytp-watch-later-title">მოგვიანებით სანახავი</div></button><button aria-haspopup="true" aria-label="გაზიარება" aria-owns="ytp-id-25" class="ytp-button ytp-share-button ytp-show-share-title ytp-share-button-visible" data-tooltip-opaque="true" title="გაზიარება"><div class="ytp-share-title">გაზიარება</div></button><button aria-label="ბმულის კოპირება" class="ytp-button ytp-copylink-button ytp-show-copylink-title" data-tooltip-opaque="true" style="display: none;" title="ბმულის კოპირება"><div aria-hidden="true" class="ytp-copylink-title">ბმულის კოპირება</div></button></div></div></div><div class="ytp-info-panel-detail-skrim" data-layer="5" style="display: none;"><div class="ytp-info-panel-detail" id="ytp-id-30" role="dialog"><div class="ytp-info-panel-detail-header"></div></div></div><div class="ytp-popup ytp-settings-menu" data-layer="6" id="ytp-id-17" style="display: none;"><div class="ytp-panel"></div></div><a aria-label="YouTube ზე ყურება" class="ytp-impression-link" data-layer="8" style="display: none;" target="_blank"><div aria-hidden="true" class="ytp-impression-link-content"><div class="ytp-impression-link-text">უყურეთ აქ:</div></div></a><div class="ytp-chrome-bottom" data-layer="9" style="display: none; width: 319px; left: 12px;"><div class="ytp-progress-bar-container"><div class="ytp-heat-map-container"></div><div aria-label="საძიებო სლაიდერი" aria-valuemax="0" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0 წუთები 0 წამები / 0 წუთები 0 წამები-დან" class="ytp-progress-bar" draggable="true" role="slider" style="touch-action: none;" tabindex="0"><div class="ytp-chapters-container"><div class="ytp-chapter-hover-container" style="width: 319px;"><div class="ytp-progress-list"></div></div></div><div class="ytp-scrubber-container" style="transform: translateX(0px);"><div class="ytp-scrubber-button ytp-swatch-background-color"></div></div></div><div class="ytp-fine-scrubbing-container"><div class="ytp-fine-scrubbing"><div class="ytp-fine-scrubbing-draggable" draggable="true" style="touch-action: none; padding: 0px;"></div><div aria-hidden="true" class="ytp-fine-scrubbing-seek-time">0:00</div></div></div></div><div class="ytp-chrome-controls"><div class="ytp-left-controls"><span class="ytp-volume-area"><div aria-label="ხმა" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" aria-valuetext="100% ხმა" class="ytp-volume-panel" role="slider" style="display: none;" tabindex="0" title="ხმა"><div class="ytp-volume-slider" draggable="true" style="touch-action: none;"></div></div></span><div class="ytp-time-display notranslate" style="display: none;"><span><span class="ytp-time-separator"> / </span></span><span class="ytp-clip-watch-full-video-button-separator">•</span><button class="ytp-live-badge ytp-button" disabled="true">პირდაპირი</button></div><div class="ytp-chapter-container" style="display: none;"><button class="ytp-chapter-title ytp-button ytp-chapter-container-disabled fitted-chapter-button" disabled=""><span aria-hidden="true" class="ytp-chapter-title-prefix">•</span></button></div></div><div class="ytp-right-controls"></div></div></div></div></div><noscript><div class="player-unavailable"><h1 class="message">An error occurred.</h1><div class="submessage"><a href="https://www.youtube.com/watch?v=jOkZy0Tfe5Q" target="_blank">Try watching this video on www.youtube.com</a>, or enable JavaScript if it is disabled in your browser.</div></div></noscript></div>
 </div>
 <!-- /ko -->
 </div>
@@ -2455,7 +2456,7 @@
         }
     } --><div class="media-element__video-wrapper" data-bind="style: { maxWidth: params.width()+'px' }" style="max-width: 500px;">
 
-<div class="replaced-iframe"><div id="player" style="width: 100%; height: 100%;"><div aria-label="YouTube ვიდეო დამკვრელი" class="html5-video-player ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-title-enable-channel-logo ytp-fine-scrubbing-exp ytp-embed ytp-embed-playlist unstarted-mode ytp-hide-controls ytp-small-mode" data-version="/s/player/590f65a6/player_ias.vflset/ka_GE/base.js" id="movie_player" tabindex="-1"><div class="html5-video-container" data-layer="0"></div><div class="ytp-chrome-top ytp-show-cards-title" data-layer="1"><div class="ytp-title-channel"><div aria-hidden="true" class="ytp-title-expanded-overlay"><div class="ytp-title-expanded-heading"><div class="ytp-title-expanded-title"><a aria-hidden="true" tabindex="-1" target="_blank">Oracle Careers</a></div><div aria-hidden="true" class="ytp-title-expanded-subtitle">3,1 ათ. გამომწერი</div></div></div></div><div class="ytp-title"><div class="ytp-title-text"><a class="ytp-title-link yt-uix-sessionlink" data-sessionlink="feature=player-title" href="https://www.youtube.com/watch?v=X8SIav0KxSA" tabindex="0" target="_blank">Oracle Culture and Inclusion: Meet Our People</a><div class="ytp-title-subtext"></div></div></div><div class="ytp-shorts-title-channel" style="display: none;"><div class="ytp-shorts-title-expanded-heading"><div class="ytp-shorts-title-expanded-title"><a tabindex="0" target="_blank">Oracle Careers</a></div></div></div><div class="ytp-chrome-top-buttons"><button aria-label="ძიება" class="ytp-button ytp-search-button" data-tooltip-opaque="true" style="display: none;" title="ძიება"><div class="ytp-search-title">ძიება</div></button><button aria-haspopup="true" aria-label="დასაკრავი სია" aria-owns="ytp-id-22" class="ytp-playlist-menu-button ytp-button" style="display: none;"></button><button aria-haspopup="true" aria-label="ბარათების ჩვენება" aria-owns="iv-drawer" class="ytp-button ytp-cards-button" data-tooltip-opaque="true" style="display: none;"><span class="ytp-cards-button-icon-default"><div class="ytp-cards-button-title">ინფორმაცია</div></span><span class="ytp-cards-button-icon-shopping"><div class="ytp-cards-button-title">საყიდლები</div></span></button><div class="ytp-cards-teaser" style="display: none;"><div class="ytp-cards-teaser-text"></div></div><button aria-haspopup="true" aria-label="მეტი" aria-owns="ytp-id-29" class="ytp-button ytp-overflow-button ytp-overflow-button-visible" title="მეტი"></button></div></div><button class="ytp-unmute ytp-popup ytp-button ytp-unmute-animated ytp-unmute-shrink" data-layer="2" style="display: none;"><div class="ytp-unmute-inner"><div class="ytp-unmute-text">შეეხეთ დადუმების მოსახსნელად</div></div></button><div class="ytp-cued-thumbnail-overlay" data-layer="4" style=""></div><div class="ytp-spinner" data-layer="4" style="display: none;"><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"></div><div class="ytp-spinner-right"></div></div></div><div class="ytp-spinner-message" style="display: none;">თუ დაკვრა მალე არ დაიწყო, შეეცადეთ, გადატვირთოთ თქვენი მოწყობილობა.</div></div><div aria-atomic="true" aria-live="assertive" class="ytp-paid-content-overlay" data-layer="4"></div><div class="ytp-storyboard-framepreview" data-layer="4" style="display: none;"></div><div data-layer="4" style="display: none;"><div class="ytp-bezel-text-wrapper"></div><div class="ytp-bezel" role="status"></div></div><div class="ytp-doubletap-ui-legacy" data-layer="4" style="display: none;"><div class="ytp-doubletap-static-circle"></div><div class="ytp-doubletap-seek-info-container"><div class="ytp-doubletap-arrows-container"></div><div class="ytp-doubletap-tooltip"></div></div></div><div aria-live="polite" data-layer="4" style="display: none;"><div class="ytp-tooltip-text-wrapper"><div class="ytp-tooltip-edu"></div><div class="ytp-tooltip-title"></div></div><div class="ytp-tooltip-bg"></div></div><div class="ytp-ad-persistent-progress-bar-container" data-layer="4" style="display: none;"></div><div class="ytp-suggested-action" data-layer="4"><button class="ytp-button ytp-suggested-action-badge ytp-suggested-action-badge-with-controls" style="display: none;"><div class="ytp-suggested-action-badge-expanded-content-container" style="display: none;"></div></button></div><div aria-atomic="true" aria-haspopup="true" aria-live="assertive" aria-owns="ytp-id-30" class="ytp-info-panel-preview" data-layer="4" data-tooltip-opaque="true" style="display: none;"></div><div class="ytp-remote" data-layer="4" style="display: none;"><div class="ytp-remote-display-status"></div></div><div class="ytp-mdx-popup-dialog" data-layer="4" role="dialog" style="display: none;"><div class="ytp-mdx-popup-dialog-inner-content"><div class="ytp-mdx-popup-title">თქვენ გამოსული ხართ</div><div class="ytp-mdx-popup-description">ვიდეოები, რომლებსაც უყურებთ, შეიძლება ტელევიზორის ნახვის ისტორიას დაემატოს და გავლენა იქონიოს რეკომენდაციებზე ტელევიზორში. ამის თავიდან ასარიდებლად გააუქმეთ და შედით YouTube-ში თქვენი კომპიუტერიდან.</div><div class="ytp-mdx-privacy-popup-buttons"><button class="ytp-button ytp-mdx-privacy-popup-cancel">გაუქმება</button><button class="ytp-button ytp-mdx-privacy-popup-confirm">დადასტურება</button></div></div></div><div class="ytp-muted-autoplay-overlay" data-layer="4" style="display: none;"><div class="ytp-muted-autoplay-bottom-buttons"><button aria-label="დადუმებული დაკვრის ინდიკატორი" class="ytp-muted-autoplay-equalizer ytp-button"></button></div></div><div class="ytp-muted-autoplay-endscreen-overlay" data-layer="4" style="display: none;"><div class="ytp-muted-autoplay-end-panel"></div></div><div class="ytp-playlist-menu" data-layer="5" id="ytp-id-22" role="dialog" style="display: none;"><div class="ytp-playlist-menu-header"><div class="ytp-playlist-menu-title"></div></div></div><div aria-labelledby="ytp-id-24" class="ytp-share-panel" data-layer="5" id="ytp-id-25" role="dialog" style="display: none;"><div class="ytp-share-panel-inner-content"><div class="ytp-share-panel-title" id="ytp-id-24">გაზიარება</div><label class="ytp-share-panel-include-playlist">დასაკრავის სიის დამატება</label><div class="ytp-share-panel-loading-spinner"><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"></div><div class="ytp-spinner-right"></div></div></div></div><div class="ytp-share-panel-error">გაზიარების ინფორმაციის მიღებისას წარმოიშვა შეცდომა. გთხოვთ, სცადოთ მოგვიანებით.</div></div></div><div class="ytp-overflow-panel" data-layer="5" id="ytp-id-29" role="dialog" style="display: none;"><div class="ytp-overflow-panel-content"><div class="ytp-overflow-panel-action-buttons"><button aria-label="მოგვიანებით სანახავი" class="ytp-watch-later-button ytp-button ytp-show-watch-later-title" data-tooltip-opaque="true" style="display: none;" title="მოგვიანებით სანახავი"><div class="ytp-watch-later-title">მოგვიანებით სანახავი</div></button><button aria-haspopup="true" aria-label="გაზიარება" aria-owns="ytp-id-25" class="ytp-button ytp-share-button ytp-show-share-title ytp-share-button-visible" data-tooltip-opaque="true" title="გაზიარება"><div class="ytp-share-title">გაზიარება</div></button><button aria-label="ბმულის კოპირება" class="ytp-button ytp-copylink-button ytp-show-copylink-title" data-tooltip-opaque="true" style="display: none;" title="ბმულის კოპირება"><div aria-hidden="true" class="ytp-copylink-title">ბმულის კოპირება</div></button></div></div></div><div class="ytp-info-panel-detail-skrim" data-layer="5" style="display: none;"><div class="ytp-info-panel-detail" id="ytp-id-30" role="dialog"><div class="ytp-info-panel-detail-header"></div></div></div><div class="ytp-popup ytp-settings-menu" data-layer="6" id="ytp-id-17" style="display: none;"><div class="ytp-panel"></div></div><a aria-label="YouTube ზე ყურება" class="ytp-impression-link" data-layer="8" style="display: none;" target="_blank"><div aria-hidden="true" class="ytp-impression-link-content"><div class="ytp-impression-link-text">უყურეთ აქ:</div></div></a><div class="ytp-chrome-bottom" data-layer="9" style="display: none; width: 319px; left: 12px;"><div class="ytp-progress-bar-container"><div class="ytp-heat-map-container"></div><div aria-label="საძიებო სლაიდერი" aria-valuemax="0" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0 წუთები 0 წამები / 0 წუთები 0 წამები-დან" class="ytp-progress-bar" draggable="true" role="slider" style="touch-action: none;" tabindex="0"><div class="ytp-chapters-container"><div class="ytp-chapter-hover-container" style="width: 319px;"><div class="ytp-progress-list"></div></div></div><div class="ytp-scrubber-container" style="transform: translateX(0px);"><div class="ytp-scrubber-button ytp-swatch-background-color"></div></div></div><div class="ytp-fine-scrubbing-container"><div class="ytp-fine-scrubbing"><div class="ytp-fine-scrubbing-draggable" draggable="true" style="touch-action: none; padding: 0px;"></div><div aria-hidden="true" class="ytp-fine-scrubbing-seek-time">0:00</div></div></div></div><div class="ytp-chrome-controls"><div class="ytp-left-controls"><span class="ytp-volume-area"><div aria-label="ხმა" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" aria-valuetext="100% ხმა" class="ytp-volume-panel" role="slider" style="display: none;" tabindex="0" title="ხმა"><div class="ytp-volume-slider" draggable="true" style="touch-action: none;"></div></div></span><div class="ytp-time-display notranslate" style="display: none;"><span><span class="ytp-time-separator"> / </span></span><span class="ytp-clip-watch-full-video-button-separator">•</span><button class="ytp-live-badge ytp-button" disabled="true">პირდაპირი</button></div><div class="ytp-chapter-container" style="display: none;"><button class="ytp-chapter-title ytp-button ytp-chapter-container-disabled fitted-chapter-button" disabled=""><span aria-hidden="true" class="ytp-chapter-title-prefix">•</span></button></div></div><div class="ytp-right-controls"></div></div></div></div></div><noscript><div class="player-unavailable"><h1 class="message">მოხდა შეცდომა.</h1><div class="submessage"><a href="https://www.youtube.com/watch?v=X8SIav0KxSA" target="_blank">სცადეთ ამ ვიდეოს ნახვა www.youtube.com-ზე</a> ან ჩართეთ JavaScript, თუ ის გამორთულია თქვენს ბრაუზერში.</div></div></noscript></div>
+<div class="replaced-iframe"><div id="player" style="width: 100%; height: 100%;"><div aria-label="YouTube ვიდეო დამკვრელი" class="html5-video-player ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-title-enable-channel-logo ytp-fine-scrubbing-exp ytp-embed ytp-embed-playlist unstarted-mode ytp-hide-controls ytp-small-mode" data-version="/s/player/84314bef/player_ias.vflset/ka_GE/base.js" id="movie_player" tabindex="-1"><div class="html5-video-container" data-layer="0"></div><div class="ytp-chrome-top ytp-show-cards-title" data-layer="1"><div class="ytp-title-channel"><div aria-hidden="true" class="ytp-title-expanded-overlay"><div class="ytp-title-expanded-heading"><div class="ytp-title-expanded-title"><a aria-hidden="true" tabindex="-1" target="_blank">Oracle Careers</a></div><div aria-hidden="true" class="ytp-title-expanded-subtitle">3,11 ათ. გამომწერი</div></div></div></div><div class="ytp-title"><div class="ytp-title-text"><a class="ytp-title-link yt-uix-sessionlink" data-sessionlink="feature=player-title" href="https://www.youtube.com/watch?v=X8SIav0KxSA" tabindex="0" target="_blank">Oracle Culture and Inclusion: Meet Our People</a><div class="ytp-title-subtext"></div></div></div><div class="ytp-shorts-title-channel" style="display: none;"><div class="ytp-shorts-title-expanded-heading"><div class="ytp-shorts-title-expanded-title"><a tabindex="0" target="_blank">Oracle Careers</a></div></div></div><div class="ytp-chrome-top-buttons"><button aria-label="ძიება" class="ytp-button ytp-search-button" data-tooltip-opaque="true" style="display: none;" title="ძიება"><div class="ytp-search-title">ძიება</div></button><button aria-haspopup="true" aria-label="დასაკრავი სია" aria-owns="ytp-id-22" class="ytp-playlist-menu-button ytp-button" style="display: none;"></button><button aria-haspopup="true" aria-label="ბარათების ჩვენება" aria-owns="iv-drawer" class="ytp-button ytp-cards-button" data-tooltip-opaque="true" style="display: none;"><span class="ytp-cards-button-icon-default"><div class="ytp-cards-button-title">ინფორმაცია</div></span><span class="ytp-cards-button-icon-shopping"><div class="ytp-cards-button-title">საყიდლები</div></span></button><div class="ytp-cards-teaser" style="display: none;"><div class="ytp-cards-teaser-text"></div></div><button aria-haspopup="true" aria-label="მეტი" aria-owns="ytp-id-29" class="ytp-button ytp-overflow-button ytp-overflow-button-visible" title="მეტი"></button></div></div><button class="ytp-unmute ytp-popup ytp-button ytp-unmute-animated ytp-unmute-shrink" data-layer="2" style="display: none;"><div class="ytp-unmute-inner"><div class="ytp-unmute-text">შეეხეთ დადუმების მოსახსნელად</div></div></button><div class="ytp-cued-thumbnail-overlay" data-layer="4" style=""></div><div class="ytp-spinner" data-layer="4" style="display: none;"><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"></div><div class="ytp-spinner-right"></div></div></div><div class="ytp-spinner-message" style="display: none;">თუ დაკვრა მალე არ დაიწყო, შეეცადეთ, გადატვირთოთ თქვენი მოწყობილობა.</div></div><div aria-atomic="true" aria-live="assertive" class="ytp-paid-content-overlay" data-layer="4"></div><div class="ytp-storyboard-framepreview" data-layer="4" style="display: none;"></div><div data-layer="4" style="display: none;"><div class="ytp-bezel-text-wrapper"></div><div class="ytp-bezel" role="status"></div></div><div class="ytp-doubletap-ui-legacy" data-layer="4" style="display: none;"><div class="ytp-doubletap-static-circle"></div><div class="ytp-doubletap-seek-info-container"><div class="ytp-doubletap-arrows-container"></div><div class="ytp-doubletap-tooltip"></div></div></div><div aria-live="polite" data-layer="4" style="display: none;"><div class="ytp-tooltip-text-wrapper"><div class="ytp-tooltip-edu"></div><div class="ytp-tooltip-title"></div></div><div class="ytp-tooltip-bg"></div></div><div class="ytp-ad-persistent-progress-bar-container" data-layer="4" style="display: none;"></div><div class="ytp-suggested-action" data-layer="4"><button class="ytp-button ytp-suggested-action-badge ytp-suggested-action-badge-with-controls" style="display: none;"><div class="ytp-suggested-action-badge-expanded-content-container" style="display: none;"></div></button></div><div aria-atomic="true" aria-haspopup="true" aria-live="assertive" aria-owns="ytp-id-30" class="ytp-info-panel-preview" data-layer="4" data-tooltip-opaque="true" style="display: none;"></div><div class="ytp-remote" data-layer="4" style="display: none;"><div class="ytp-remote-display-status"></div></div><div class="ytp-mdx-popup-dialog" data-layer="4" role="dialog" style="display: none;"><div class="ytp-mdx-popup-dialog-inner-content"><div class="ytp-mdx-popup-title">თქვენ გამოსული ხართ</div><div class="ytp-mdx-popup-description">ვიდეოები, რომლებსაც უყურებთ, შეიძლება ტელევიზორის ნახვის ისტორიას დაემატოს და გავლენა იქონიოს რეკომენდაციებზე ტელევიზორში. ამის თავიდან ასარიდებლად გააუქმეთ და შედით YouTube-ში თქვენი კომპიუტერიდან.</div><div class="ytp-mdx-privacy-popup-buttons"><button class="ytp-button ytp-mdx-privacy-popup-cancel">გაუქმება</button><button class="ytp-button ytp-mdx-privacy-popup-confirm">დადასტურება</button></div></div></div><div class="ytp-muted-autoplay-overlay" data-layer="4" style="display: none;"><div class="ytp-muted-autoplay-bottom-buttons"><button aria-label="დადუმებული დაკვრის ინდიკატორი" class="ytp-muted-autoplay-equalizer ytp-button"></button></div></div><div class="ytp-muted-autoplay-endscreen-overlay" data-layer="4" style="display: none;"><div class="ytp-muted-autoplay-end-panel"></div></div><div class="ytp-playlist-menu" data-layer="5" id="ytp-id-22" role="dialog" style="display: none;"><div class="ytp-playlist-menu-header"><div class="ytp-playlist-menu-title"></div></div></div><div aria-labelledby="ytp-id-24" class="ytp-share-panel" data-layer="5" id="ytp-id-25" role="dialog" style="display: none;"><div class="ytp-share-panel-inner-content"><div class="ytp-share-panel-title" id="ytp-id-24">გაზიარება</div><label class="ytp-share-panel-include-playlist">დასაკრავის სიის დამატება</label><div class="ytp-share-panel-loading-spinner"><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"></div><div class="ytp-spinner-right"></div></div></div></div><div class="ytp-share-panel-error">გაზიარების ინფორმაციის მიღებისას წარმოიშვა შეცდომა. გთხოვთ, სცადოთ მოგვიანებით.</div></div></div><div class="ytp-overflow-panel" data-layer="5" id="ytp-id-29" role="dialog" style="display: none;"><div class="ytp-overflow-panel-content"><div class="ytp-overflow-panel-action-buttons"><button aria-label="მოგვიანებით სანახავი" class="ytp-watch-later-button ytp-button ytp-show-watch-later-title" data-tooltip-opaque="true" style="display: none;" title="მოგვიანებით სანახავი"><div class="ytp-watch-later-title">მოგვიანებით სანახავი</div></button><button aria-haspopup="true" aria-label="გაზიარება" aria-owns="ytp-id-25" class="ytp-button ytp-share-button ytp-show-share-title ytp-share-button-visible" data-tooltip-opaque="true" title="გაზიარება"><div class="ytp-share-title">გაზიარება</div></button><button aria-label="ბმულის კოპირება" class="ytp-button ytp-copylink-button ytp-show-copylink-title" data-tooltip-opaque="true" style="display: none;" title="ბმულის კოპირება"><div aria-hidden="true" class="ytp-copylink-title">ბმულის კოპირება</div></button></div></div></div><div class="ytp-info-panel-detail-skrim" data-layer="5" style="display: none;"><div class="ytp-info-panel-detail" id="ytp-id-30" role="dialog"><div class="ytp-info-panel-detail-header"></div></div></div><div class="ytp-popup ytp-settings-menu" data-layer="6" id="ytp-id-17" style="display: none;"><div class="ytp-panel"></div></div><a aria-label="YouTube ზე ყურება" class="ytp-impression-link" data-layer="8" style="display: none;" target="_blank"><div aria-hidden="true" class="ytp-impression-link-content"><div class="ytp-impression-link-text">უყურეთ აქ:</div></div></a><div class="ytp-chrome-bottom" data-layer="9" style="display: none; width: 319px; left: 12px;"><div class="ytp-progress-bar-container"><div class="ytp-heat-map-container"></div><div aria-label="საძიებო სლაიდერი" aria-valuemax="0" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0 წუთები 0 წამები / 0 წუთები 0 წამები-დან" class="ytp-progress-bar" draggable="true" role="slider" style="touch-action: none;" tabindex="0"><div class="ytp-chapters-container"><div class="ytp-chapter-hover-container" style="width: 319px;"><div class="ytp-progress-list"></div></div></div><div class="ytp-scrubber-container" style="transform: translateX(0px);"><div class="ytp-scrubber-button ytp-swatch-background-color"></div></div></div><div class="ytp-fine-scrubbing-container"><div class="ytp-fine-scrubbing"><div class="ytp-fine-scrubbing-draggable" draggable="true" style="touch-action: none; padding: 0px;"></div><div aria-hidden="true" class="ytp-fine-scrubbing-seek-time">0:00</div></div></div></div><div class="ytp-chrome-controls"><div class="ytp-left-controls"><span class="ytp-volume-area"><div aria-label="ხმა" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" aria-valuetext="100% ხმა" class="ytp-volume-panel" role="slider" style="display: none;" tabindex="0" title="ხმა"><div class="ytp-volume-slider" draggable="true" style="touch-action: none;"></div></div></span><div class="ytp-time-display notranslate" style="display: none;"><span><span class="ytp-time-separator"> / </span></span><span class="ytp-clip-watch-full-video-button-separator">•</span><button class="ytp-live-badge ytp-button" disabled="true">პირდაპირი</button></div><div class="ytp-chapter-container" style="display: none;"><button class="ytp-chapter-title ytp-button ytp-chapter-container-disabled fitted-chapter-button" disabled=""><span aria-hidden="true" class="ytp-chapter-title-prefix">•</span></button></div></div><div class="ytp-right-controls"></div></div></div></div></div><noscript><div class="player-unavailable"><h1 class="message">მოხდა შეცდომა.</h1><div class="submessage"><a href="https://www.youtube.com/watch?v=X8SIav0KxSA" target="_blank">სცადეთ ამ ვიდეოს ნახვა www.youtube.com-ზე</a> ან ჩართეთ JavaScript, თუ ის გამორთულია თქვენს ბრაუზერში.</div></div></noscript></div>
 </div>
 <!-- /ko -->
 </div>

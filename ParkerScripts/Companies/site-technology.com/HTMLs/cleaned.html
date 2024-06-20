@@ -1,0 +1,834 @@
+<html lang="en">
+<body class="ng-scope" ng-app="myApp">
+<!--[if lt IE 9]>
+      <div id="browser-notification" class="alert alert-danger">
+        <div class="container">
+          We are sorry but it looks like your <a href="https://www.whatbrowser.org/intl/en_us/" target=_blank>browser</a> doesn't support our website features. In order to get the full experience please download a new version of <a title="Download Chrome" href="http://www.google.com/chrome/" target=_blank>Chrome</a>, <a title="Download Safari" href="http://www.apple.com/safari/download/" target=_blank>Safari</a>, <a title="Download Firefox" href="http://www.mozilla.com/firefox/" target=_blank>Firefox</a>, or <a title="Download Internet Explorer" href="http://www.microsoft.com/windows/internet-explorer/default.aspx" target=_blank>Internet Explorer</a>.
+        </div>
+      </div>
+    <![endif]-->
+
+
+<header class="header is-fixed">
+<div class="header-holder">
+<div class="container container-custom">
+<div class="content-holder__top">
+<div class="logo-holder">
+<a href="/en/">
+
+</a>
+<a href="/en/">
+
+</a>
+</div>
+<!-- <select class="language-picker-dropdown">
+                    <option data-content='Arabic'>Ar</option>
+                    <option  data-content='English'>En</option>
+                </select> -->
+<div class="language-picker">
+<a class="linkstyle" href="" onclick="switchLang('ar')" style="font-family: 'Janna LT Regular' !important;">عربي</a>
+<a class="linkstyle active" href="" onclick="switchLang('en')" style="padding-top: 7px;">En</a>
+</div>
+<div class="burger-holder" onclick="InitOpenMenu()">
+<button class="icon-burger">
+
+
+
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="header-menu">
+<div class="container container-custom">
+<div class="content-holder">
+<div class="content-holder__top">
+<div class="logo-holder">
+<a href="/en/">
+
+</a>
+<a href="/en/">
+
+</a>
+</div>
+<div style="display:grid">
+<a class="link-back" onclick="InitCloseMenu()" style="cursor:pointer ; color:white">Back</a>
+</div>
+</div>
+<div class="content-holder__links">
+<ul class="list-unstyled list-link-menu">
+<li class="item-list"><a class="link-menu" href="/en/About/Profile">About us</a></li>
+<li class="item-list"><a class="link-menu" href="/en/BusinessDivision">Our divisions</a></li>
+<li class="item-list"><a class="link-menu" href="/en/news">News</a></li>
+<li class="item-list"><a class="link-menu--active" href="/en/Careers">Careers</a></li>
+<li class="item-list"><a class="link-menu" href="/en/Contact">Contact us</a></li>
+
+
+</ul>
+</div>
+<div class="content-holder__social">
+<ul class="list-unstyled list-social">
+<li class="item-social">
+<a href="https://www.youtube.com/channel/UC9bkFfgzhVeI66OAMusleag" target="_blank">
+
+</a>
+</li>
+<li class="item-social">
+<a href="https://www.facebook.com/sitetechnologyofficial" target="_blank">
+
+</a>
+</li>
+<li class="item-social">
+<a href="https://www.instagram.com/site_technology/?igshid=1o5x5k9dbigsf&amp;fbclid=IwAR3uF2jF-SyCCO3XsH1gi1msD74SNI-RBY37AoEvQKZRFbwBgouRQ9u1tXE" target="_blank">
+
+</a>
+</li>
+<li class="item-social">
+<a href="https://www.linkedin.com/company/site-technology" target="_blank">
+
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</header>
+<title>Careers</title>
+<main class="careers ng-scope" ng-controller="Career">
+<div class="section-banner" style="background-image: url('https://api.site-technology.com/content/uploads//Page/Depositphotos_52009081_l-2015.jpg')">
+<div class="container container-custom">
+<div class="content-title-subtitle">
+<h1 class="title">Careers</h1>
+<h2 class="subtitle">Join Our Team</h2>
+</div>
+</div>
+</div>
+<div class="section-careers">
+<div class="container container-custom">
+<div class="careers">
+<div class="careers-col open-and-filter">
+<div class="open-position-filter-holder">
+<div class="open-positions-holder">
+<h1 class="open-positions">Open Positions</h1>
+</div>
+<div class="filter-holder">
+
+<select class="filter-city ng-pristine ng-untouched ng-valid ng-empty" ng-model="filters.LocationId">
+<option hidden="" selected="selected" value="">Filter by city </option>
+<!-- ngRepeat: x in data.filterdata.locations --><option class="ng-binding ng-scope" ng-repeat="x in data.filterdata.locations" value="4">Beirut</option><!-- end ngRepeat: x in data.filterdata.locations --><option class="ng-binding ng-scope" ng-repeat="x in data.filterdata.locations" value="6">Riyadh</option><!-- end ngRepeat: x in data.filterdata.locations --><option class="ng-binding ng-scope" ng-repeat="x in data.filterdata.locations" value="9">Jeddah</option><!-- end ngRepeat: x in data.filterdata.locations --><option class="ng-binding ng-scope" ng-repeat="x in data.filterdata.locations" value="11">Khobar</option><!-- end ngRepeat: x in data.filterdata.locations --><option class="ng-binding ng-scope" ng-repeat="x in data.filterdata.locations" value="10">Doha</option><!-- end ngRepeat: x in data.filterdata.locations --><!-- end ngRepeat: x in data.filterdata.locations --><!-- end ngRepeat: x in data.filterdata.locations --><!-- end ngRepeat: x in data.filterdata.locations --><!-- end ngRepeat: x in data.filterdata.locations -->
+</select>
+</div>
+</div>
+</div>
+<div class="careers-col">
+<!-- ngRepeat: x in data.careervancacy  --><div class="box-holder ng-scope" ng-repeat="x in data.careervancacy ">
+<div class="text-position" data-target="#applyModal" data-toggle="modal" ng-click="applycareer(x)" style="cursor:pointer">
+<p class="text ng-binding">Maintenance Operations Engineer – Low Current &amp; ELV Systems Division</p>
+<p class="city ng-binding">Doha</p>
+</div>
+<div class="button-holder">
+<a class="btn-white" data-target="#applyModal" data-toggle="modal" href="#" id="careerApplynow" ng-click="applycareer(x)">Apply now</a>
+</div>
+</div><!-- end ngRepeat: x in data.careervancacy  --><div class="box-holder ng-scope" ng-repeat="x in data.careervancacy ">
+<div class="text-position" data-target="#applyModal" data-toggle="modal" ng-click="applycareer(x)" style="cursor:pointer">
+<p class="text ng-binding">Sales Account Manager – Audiovisual Division</p>
+<p class="city ng-binding">Abudhabi</p>
+</div>
+<div class="button-holder">
+<a class="btn-white" data-target="#applyModal" data-toggle="modal" href="#" id="careerApplynow" ng-click="applycareer(x)">Apply now</a>
+</div>
+</div><!-- end ngRepeat: x in data.careervancacy  --><div class="box-holder ng-scope" ng-repeat="x in data.careervancacy ">
+<div class="text-position" data-target="#applyModal" data-toggle="modal" ng-click="applycareer(x)" style="cursor:pointer">
+<p class="text ng-binding">Implementation Engineer – Network Integration Systems Division</p>
+<p class="city ng-binding">Abudhabi</p>
+</div>
+<div class="button-holder">
+<a class="btn-white" data-target="#applyModal" data-toggle="modal" href="#" id="careerApplynow" ng-click="applycareer(x)">Apply now</a>
+</div>
+</div><!-- end ngRepeat: x in data.careervancacy  --><div class="box-holder ng-scope" ng-repeat="x in data.careervancacy ">
+<div class="text-position" data-target="#applyModal" data-toggle="modal" ng-click="applycareer(x)" style="cursor:pointer">
+<p class="text ng-binding">Sales Manager - Low Current &amp; Security Systems</p>
+<p class="city ng-binding">Abudhabi</p>
+</div>
+<div class="button-holder">
+<a class="btn-white" data-target="#applyModal" data-toggle="modal" href="#" id="careerApplynow" ng-click="applycareer(x)">Apply now</a>
+</div>
+</div><!-- end ngRepeat: x in data.careervancacy  --><div class="box-holder ng-scope" ng-repeat="x in data.careervancacy ">
+<div class="text-position" data-target="#applyModal" data-toggle="modal" ng-click="applycareer(x)" style="cursor:pointer">
+<p class="text ng-binding">Business Development Manager and Sales Manager - Contracting Group UAE</p>
+<p class="city ng-binding">UAE</p>
+</div>
+<div class="button-holder">
+<a class="btn-white" data-target="#applyModal" data-toggle="modal" href="#" id="careerApplynow" ng-click="applycareer(x)">Apply now</a>
+</div>
+</div><!-- end ngRepeat: x in data.careervancacy  --><!-- end ngRepeat: x in data.careervancacy  --><!-- end ngRepeat: x in data.careervancacy  --><!-- end ngRepeat: x in data.careervancacy  --><!-- end ngRepeat: x in data.careervancacy  --><!-- end ngRepeat: x in data.careervancacy  --><!-- end ngRepeat: x in data.careervancacy  --><!-- end ngRepeat: x in data.careervancacy  --><!-- end ngRepeat: x in data.careervancacy  -->
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" aria-labelledby="applyModalLabel" class="modal modal-apply form-input fade" id="applyModal" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="button-holder">
+<a class="link-back" data-dismiss="modal" href="#">Back</a>
+</div>
+<div class="title-holder">
+
+</div>
+<div class="content-holder">
+<div class="desc-holder">
+<div class="desc-1">
+
+</div>
+<div class="desc-2">
+<h3 class="title-blue">Pre-requisite skills &amp; training</h3>
+
+</div>
+<a class="link" href="#" onclick="InitRead.call(this)">Read more</a>
+</div>
+<form class="modal-form ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-form-email" id="applyForm" name="applyForm" ng-submit="ApplyForm()" novalidate="">
+<div class="form-holder">
+<div class="form-group" ng-class="{'form-error' : applyForm.firstname.$touched &amp;&amp; applyForm.firstname.$invalid}">
+<div class="form-controls">
+
+<label class="form-error ng-inactive" ng-messages="applyForm.firstname.$touched &amp;&amp; applyForm.firstname.$error">
+<!-- ngMessagesInclude: form-error-messages --><!-- ngMessage: required -->
+<!-- ngMessage: formEmail -->
+<!-- ngMessage: pattern -->
+</label>
+</div>
+</div>
+<div class="form-group" ng-class="{'form-error' : applyForm.lastname.$touched &amp;&amp; applyForm.lastname.$invalid}">
+<div class="form-controls">
+
+<label class="form-error ng-inactive" ng-messages="applyForm.lastname.$touched &amp;&amp; applyForm.lastname.$error">
+<!-- ngMessagesInclude: form-error-messages --><!-- ngMessage: required -->
+<!-- ngMessage: formEmail -->
+<!-- ngMessage: pattern -->
+</label>
+</div>
+</div>
+<div class="form-group" ng-class="{'form-error' : applyForm.email.$touched &amp;&amp; applyForm.email.$invalid}">
+<div class="form-controls">
+
+<label class="form-error ng-inactive" ng-messages="applyForm.email.$touched &amp;&amp; applyForm.email.$error">
+<!-- ngMessagesInclude: form-error-messages --><!-- ngMessage: required -->
+<!-- ngMessage: formEmail -->
+<!-- ngMessage: pattern -->
+</label>
+</div>
+</div>
+<div class="form-group" ng-class="{'form-error' : applyForm.mobile.$touched &amp;&amp; applyForm.mobile.$invalid}">
+<div class="form-controls">
+
+<label class="form-error form-error-custom ng-inactive" ng-messages="applyForm.mobile.$touched &amp;&amp; applyForm.mobile.$error">
+<!-- ngMessagesInclude: form-error-messages --><!-- ngMessage: required -->
+<!-- ngMessage: formEmail -->
+<!-- ngMessage: pattern -->
+</label>
+</div>
+</div>
+<div class="form-group" ng-class="{'form-error' : applyForm.countryId.$touched &amp;&amp; applyForm.countryId.$invalid}">
+<div class="form-controls">
+
+<select class="form-field form-field-select ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="countryId" name="countryId" ng-model="model.countryId" required="">
+<option selected="selected" value="">country</option>
+<option value="1">Afghanistan</option>
+<option value="2">Albania</option>
+<option value="3">Algeria</option>
+<option value="4">American Samoa</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</select>
+<label class="form-error ng-inactive" ng-messages="applyForm.countryId.$touched &amp;&amp; applyForm.countryId.$error">
+<!-- ngMessagesInclude: form-error-messages --><!-- ngMessage: required -->
+<!-- ngMessage: formEmail -->
+<!-- ngMessage: pattern -->
+</label>
+</div>
+</div>
+
+
+</div>
+<div class="button-holder holder-btn">
+<div class="holder-upload">
+<div class="form-control volunteer-uploader" ng-class="{'form-error' : applyForm.fileSrc.$touched &amp;&amp; applyForm.fileSrc.$invalid}" ng-show="!showSuccessMessage">
+<div class="input-file--holder input-file">
+<div class="form__controls ng-isolate-scope" uploader-directory="'careerApplications'" uploader-field="'fileSrc'" uploader-is-required="true" uploader-limit="'1'" uploader-location="'applyfile'" uploader-model="model.fileSrc">
+<!--<span ng-hide="uploader.queue.length >= uploaderLimit" ng-if="uploaderLocation =='resumeFile'" class="input-file-text">Upload Resume *</span>-->
+<!-- ngIf: uploaderLocation =='applyfile' --><!-- end ngIf: uploaderLocation =='applyfile' -->Upload Resume
+	<div class="file-upload" ng-show="uploader.queue.length &lt; uploaderLimit">
+
+
+</div>
+<!-- ngRepeat: item in uploader.queue -->
+<label class="form-error form-error_text ng-hide" ng-show="$parent.applyForm.$submitted &amp;&amp; !$parent.applyForm.$valid &amp;&amp; uploaderModel == undefined">
+<!-- <div ng-messages-include="form-error-messages"></div> -->
+<!-- ngIf: $parent.applyForm.$submitted && uploaderModel == undefined -->
+</label>
+</div>
+<label class="form-error form-error_text ng-inactive" ng-messages="applyForm.fileSrc.$touched &amp;&amp; applyForm.fileSrc.$error">
+<!-- ngMessagesInclude: form-error-messages --><!-- ngMessage: required -->
+<!-- ngMessage: formEmail -->
+<!-- ngMessage: pattern -->
+</label>
+</div>
+</div>
+<button class="btn-blue" type="submit">Apply</button>
+<div class="btn-loader">
+</div>
+</div>
+</div>
+</form>
+<p class="reminder-text">All fields are mandatory</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div aria-hidden="true" aria-labelledby="newsletterModalLabel" class="modal modal-newsletter fade" id="newsletterModal" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="button-holder">
+<a class="link-close" data-dismiss="modal" href="#">Close</a>
+</div>
+<div class="content-holder ng-scope" id="NewsLetterForm" ng-controller="newsLetter">
+<h2 class="title-md-bold">Join our newsletter</h2>
+<p class="modal-subtitle">to stay updated with our latest.</p>
+<form class="modal-form ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-form-email" id="newsletterForm" name="newsletterForm" ng-submit="NewsletterForm()" novalidate="">
+<div class="form-holder">
+<div class="form-group" ng-class="{'form-error' : newsletterForm.firstName.$touched &amp;&amp; newsletterForm.firstName.$invalid}">
+<div class="form-controls">
+
+<label class="form-error ng-inactive" ng-messages="newsletterForm.firstName.$touched &amp;&amp; newsletterForm.firstName.$error">
+<!-- ngMessagesInclude: form-error-messages --><!-- ngMessage: required -->
+<!-- ngMessage: formEmail -->
+<!-- ngMessage: pattern -->
+</label>
+</div>
+</div>
+<div class="form-group" ng-class="{'form-error' : newsletterForm.lastname.$touched &amp;&amp; newsletterForm.lastname.$invalid}">
+<div class="form-controls">
+
+<label class="form-error ng-inactive" ng-messages="newsletterForm.lastname.$touched &amp;&amp; newsletterForm.lastname.$error">
+<!-- ngMessagesInclude: form-error-messages --><!-- ngMessage: required -->
+<!-- ngMessage: formEmail -->
+<!-- ngMessage: pattern -->
+</label>
+</div>
+</div>
+<div class="form-group" ng-class="{'form-error' : newsletterForm.email.$touched &amp;&amp; newsletterForm.email.$invalid}">
+<div class="form-controls">
+
+<label class="form-error ng-inactive" ng-messages="newsletterForm.email.$touched &amp;&amp; newsletterForm.email.$error">
+<!-- ngMessagesInclude: form-error-messages --><!-- ngMessage: required -->
+<!-- ngMessage: formEmail -->
+<!-- ngMessage: pattern -->
+</label>
+</div>
+</div>
+<div class="form-group" ng-class="{'form-error' : newsletterForm.country.$touched &amp;&amp; newsletterForm.country.$invalid}">
+<div class="form-controls">
+
+<select class="form-field form-field-select ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="country" name="country" ng-model="model.country" required="" style="color: rgb(145, 178, 205);">
+<option hidden="" selected="selected" value="">Country</option>
+<option value="1">Afghanistan</option>
+<option value="2">Albania</option>
+<option value="3">Algeria</option>
+<option value="4">American Samoa</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</select>
+<label class="form-error ng-inactive" ng-messages="newsletterForm.country.$touched &amp;&amp; newsletterForm.country.$error">
+<!-- ngMessagesInclude: form-error-messages --><!-- ngMessage: required -->
+<!-- ngMessage: formEmail -->
+<!-- ngMessage: pattern -->
+</label>
+</div>
+</div>
+</div>
+<div class="button-holder">
+<button class="btn-blue" type="submit">Join</button>
+
+</div>
+</form>
+<p class="reminder-text" id="message1">All fields are mandatory</p>
+</div>
+<div class="content-holder" id="mySuccessNewsLetter" style="display:none">
+<p class="NewsLetterFont" id="JoinNewsLetter" style="display:none">Thank you, you've successfully joined our newsletter</p>
+<p class="NewsLetterFont" id="existNewsLetter" style="display:none">your email aready exist</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!--[if lte IE 9]>
+          <script src="javascripts/non-responsive.js"></script>
+      <![endif]-->
+</body></html>

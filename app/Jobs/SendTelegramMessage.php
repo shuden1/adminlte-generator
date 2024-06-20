@@ -22,8 +22,6 @@ class SendTelegramMessage implements ShouldQueue
     {
         $this->user = $user;
         $this->chatId = $chatId;
-        var_dump($this->user);
-        var_dump($this->chatId);
     }
 
     protected function checkRelevance($job)
@@ -42,7 +40,7 @@ class SendTelegramMessage implements ShouldQueue
 
     public function handle()
     {
-        set_time_limit(1200);
+        set_time_limit(2400);
         $companies = $this->user->companies;
 
         foreach ($companies as $company) {
@@ -63,6 +61,7 @@ class SendTelegramMessage implements ShouldQueue
 
                 foreach ($jobs as $chunk) {
                     $message = '';
+
                     $message .= $company->name . ":\n";
 
                     foreach ($chunk as $job) {

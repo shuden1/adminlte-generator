@@ -1,32 +1,39 @@
 import sys
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
 import json
 import threading
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-def scrape_jobs(file_name):
+def scrape_jobs(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
-    options = webdriver.ChromeOptions()
+
+    options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-    
+
     driver = webdriver.Chrome(service=service, options=options)
-    driver.get(f"file:///{file_name}")
-    
-    job_listings = []
-    job_elements = driver.find_elements(By.CSS_SELECTOR, ".job-listing .job-title a")  # Placeholder selectors need to be replaced with correct selectors based on Step 1 analysis
-    
-    for job_element in job_elements:
-        title = job_element.text
-        url = job_element.get_attribute('href')
-        job_listings.append({"Job-title": title, "URL": url})
-    
-    driver.quit()
-    print(json.dumps(job_listings))
+
+    try:
+        driver.get(f"file:///{file_path}")
+
+        job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div[class*="job-opening"]')  # Example selector, adjust based on actual content
+        job_openings = []
+
+        for job_block in job_blocks:
+            title_element = job_block.find_element(By.CSS_SELECTOR, 'a')
+            job_title = title_element.get_attribute('innerText')
+            job_url = title_element.get_attribute('href')
+            job_openings.append({"Job-title": job_title, "URL": job_url})
+
+        print(json.dumps(job_openings, indent=4))
+
+    finally:
+        driver.quit()
 
 if __name__ == "__main__":
     file_path = sys.argv[1]

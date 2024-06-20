@@ -1,0 +1,475 @@
+<html lang="en-US">
+<body class="home page-template-default page page-id-5 wp-embed-responsive has-hero">
+<!-- Main layout with departments -->
+<div class="pagination-container" style="display:none;">
+<!-- Angular for pagination -->
+<noscript>
+
+</noscript>
+
+
+
+
+
+
+
+
+<header class="header header--dark">
+<div class="header__container">
+<a class="header__logo" href="/">
+
+</a>
+<button class="header__hamburger">  </button>
+<nav class="header__nav">
+<ul class="" id="menu-main">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-5 current_page_item menu-item-23" id="menu-item-23"><a aria-current="page" href="/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322" id="menu-item-23"><a href="/#AboutUs">Working at Travelopia</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322" id="menu-item-322"><a href="/#OurCulture">Our Culture</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-401" id="menu-item-401"><a href="/#WhyWork">Why Work</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323" id="menu-item-323"><a href="/#OurPeople">Our People</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-311" id="menu-item-311"><a href="/#Departments">Departments</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-311" id="menu-item-311"><a href="/Department/All Vacancies">Global Vacancies</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-311 dropdown" id="menu-item-311">
+<div class="dropdown dropdown-link">
+                        Our Brands
+                        <div class="dropdown-content brand-content">
+<p><strong>Travelopia</strong><a href="/"><span style="font-size:14px">View Vacancies →</span></a></p>
+<p><strong>Quark Expeditions</strong><a href="/Brand/Quark"><span style="font-size:14px">View Vacancies →</span></a></p>
+<p><strong>TCS World Travel</strong><a href="/Brand/TCS"><span style="font-size:14px">View Vacancies →</span></a></p>
+<p><strong>Sunsail</strong><a href="/Brand/Yachts"><span style="font-size:14px">View Vacancies →</span></a></p>
+<p><strong>The Moorings</strong><a href="/Brand/Yachts"><span style="font-size:14px">View Vacancies →</span></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main class="main">
+<!-- Banner -->
+<section class="hero section section--seamless full-width">
+<picture>
+
+
+
+
+
+
+
+
+
+
+
+</picture>
+<div class="hero__content">
+<p class="hero__sub-title secondary-heading">Careers at Travelopia Group</p>
+<h1 class="hero__title display">Join our community of travel experts</h1>
+</div>
+<span class="hero__logo">
+
+</span>
+</section>
+</main>
+<div class="ng-scope" id="pagination" ng-app="jobs">
+<div class="ng-scope" ng-controller="jobsController">
+<div class="widget-container">
+<div class="container">
+<div class="panel widget">
+<h2 class="section-headers">Search Vacancies</h2>
+<form class="ng-pristine ng-valid" id="searchForm">
+
+
+
+
+<div class="row">
+<div class="col-lg-12 mb-12">
+<div class="input-group">
+<span class="input-group-addon" id="basic-addon1"></span>
+
+</div>
+</div>
+<div class="col-lg-6 mb-6">
+<div class="input-group">
+<span class="input-group-addon" id="basic-addon2"></span>
+
+</div>
+</div>
+<div class="col-lg-6 mb-6">
+<div class="input-group">
+<span class="input-group-addon" id="basic-addon3"></span>
+<select aria-describedby="basic-addon1" class="form-control ng-pristine ng-untouched ng-valid" id="txtDistance" name="distanceMiles" ng-model="searchProperties.distanceMiles" placeholder="Distance" type="text">
+<option selected="" value="10">10 miles</option>
+<option value="20">20 miles</option>
+<option value="30">30 miles</option>
+<option value="40">40 miles</option>
+<option value="50">50 miles</option>
+
+
+
+
+</select>
+</div>
+</div>
+<div class="col-lg-12 mb-12">
+<div class="pull-right pa-b">
+
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Jobs Layout -->
+<div class="container jobListingContainer">
+<h3 class="job-count ng-binding">Showing results for 'all jobs' (77 results)</h3>
+<div class="section__block section-roles">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+<!-- ngRepeat: jobs in filteredjobs --><div class="col d-flex mb-2 jobListing ng-scope" ng-repeat="jobs in filteredjobs">
+<div class="b-1 p-1 d-flex flex-column flex-fill w-100">
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Travelopia') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Quark') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_TCS') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Sunsail') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_The Moorings') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Leopard Catamarans') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Enchanting Travels') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Exodus Travels') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Headwater') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Events International') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Gullivers Travel') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Experience Education') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_LeBoat') !== -1 --><div class="ng-scope" ng-if="jobs.ExtraData.indexOf('Brand_LeBoat') !== -1">
+
+</div><!-- end ngIf: jobs.ExtraData.indexOf('Brand_LeBoat') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Hayes and Jarvis') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Sovereign') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_American Holidays') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_My Planet') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Citalia') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_YMT Vacations') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Europe Express') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Kalos') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Experience Education Seasonal') !== -1 -->
+<h3><a class="ng-binding" href="/job/525961">Assistant Manager</a></h3>
+<div class="content d-flex mb-1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> Vinkeveen, Utrecht, Netherlands</p>
+</div>
+</div>
+<div class="content d-flex mb-1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> Permanent</p>
+</div>
+</div>
+<!-- ngIf: jobs.SalaryDisplay.length > 1 --><div class="content d-flex mb-1 ng-scope" ng-if="jobs.SalaryDisplay.length &gt; 1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> Depending on experience + Bonus + Benefits Bonus, Referral program</p>
+</div>
+</div><!-- end ngIf: jobs.SalaryDisplay.length > 1 -->
+<p class="JobDescription"> <span class="ng-binding" ng-bind-html="jobs.JobDescription">ASSISTANT MANAGER
+
+Location: Vinkeveen, Netherlands
+Start Date: Immediately
+Contract type: Full time, permanent.
+
+What you will be doing 
+
+Reporting to the Base Manager, you will be responsible for the good</span> …</p>
+<div class="row row-cols-2 row-cols-sm-2 row-cols-xl-2 mt-auto advert-buttons">
+<div class="col mb-1 mb-xl-0">
+<a class="btn btn-secondary" href="/job/525961">More Info</a>
+</div>
+<div class="col">
+<a class="btn btn-primary" href="https://globalcareers.travelopia.com/Apply/U3R1dc53hbmRhcmQgQXBwbGljYXRpb24gRm9ybSAtIE5ldGhlcmxhbmRzfDMwfDUyNTk2MXwxfHxGYWxzZXwyMzE3fDMxODE0ODZ8MA%3d%3d?i=YdjLyGSGiio%3d/">Apply</a>
+</div>
+</div>
+</div>
+</div><!-- end ngRepeat: jobs in filteredjobs --><div class="col d-flex mb-2 jobListing ng-scope" ng-repeat="jobs in filteredjobs">
+<div class="b-1 p-1 d-flex flex-column flex-fill w-100">
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Travelopia') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Quark') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_TCS') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Sunsail') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_The Moorings') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Leopard Catamarans') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Enchanting Travels') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Exodus Travels') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Headwater') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Events International') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Gullivers Travel') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Experience Education') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_LeBoat') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Hayes and Jarvis') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Sovereign') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_American Holidays') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_My Planet') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Citalia') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_YMT Vacations') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Europe Express') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Kalos') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Experience Education Seasonal') !== -1 --><div class="ng-scope" ng-if="jobs.ExtraData.indexOf('Brand_Experience Education Seasonal') !== -1">
+
+</div><!-- end ngIf: jobs.ExtraData.indexOf('Brand_Experience Education Seasonal') !== -1 -->
+<h3><a class="ng-binding" href="/job/571423">Head Chef</a></h3>
+<div class="content d-flex mb-1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> Condover, Shrewsbury</p>
+</div>
+</div>
+<div class="content d-flex mb-1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> Permanent</p>
+</div>
+</div>
+<!-- ngIf: jobs.SalaryDisplay.length > 1 --><div class="content d-flex mb-1 ng-scope" ng-if="jobs.SalaryDisplay.length &gt; 1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> £32500.00 to £32500.00 Per Annum </p>
+</div>
+</div><!-- end ngIf: jobs.SalaryDisplay.length > 1 -->
+<p class="JobDescription"> <span class="ng-binding" ng-bind-html="jobs.JobDescription">To be considered for this role, you will need your own transport to travel to SY5 7AU due to the location and lack of public transport. 
+
+We are looking for a Head Chef to join our vibrant team at our Children’s Activity Centre,</span> …</p>
+<div class="row row-cols-2 row-cols-sm-2 row-cols-xl-2 mt-auto advert-buttons">
+<div class="col mb-1 mb-xl-0">
+<a class="btn btn-secondary" href="/job/571423">More Info</a>
+</div>
+<div class="col">
+<a class="btn btn-primary" href="https://globalcareers.travelopia.com/Apply/RUU70ac3gU2Vhc29uYWwgLSBKQ0EgUGVybSBBcHBsaWNhdGlvbiBGb3JtfDMwfDU3MTQyM3wxfHxGYWxzZXwyMzE3fDMxODEwOTR8MA%3d%3d?i=ibqOLnCfwhY%3d/">Apply</a>
+</div>
+</div>
+</div>
+</div><!-- end ngRepeat: jobs in filteredjobs --><div class="col d-flex mb-2 jobListing ng-scope" ng-repeat="jobs in filteredjobs">
+<div class="b-1 p-1 d-flex flex-column flex-fill w-100">
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Travelopia') !== -1 --><div class="ng-scope" ng-if="jobs.ExtraData.indexOf('Brand_Travelopia') !== -1">
+
+</div><!-- end ngIf: jobs.ExtraData.indexOf('Brand_Travelopia') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Quark') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_TCS') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Sunsail') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_The Moorings') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Leopard Catamarans') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Enchanting Travels') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Exodus Travels') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Headwater') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Events International') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Gullivers Travel') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Experience Education') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_LeBoat') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Hayes and Jarvis') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Sovereign') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_American Holidays') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_My Planet') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Citalia') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_YMT Vacations') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Europe Express') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Kalos') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Experience Education Seasonal') !== -1 -->
+<h3><a class="ng-binding" href="/job/555218">Salesforce Administrator</a></h3>
+<div class="content d-flex mb-1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> San Jose, San Jose Province, Costa Rica</p>
+</div>
+</div>
+<div class="content d-flex mb-1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> Permanent</p>
+</div>
+</div>
+<!-- ngIf: jobs.SalaryDisplay.length > 1 -->
+<p class="JobDescription"> <span class="ng-binding" ng-bind-html="jobs.JobDescription">W​e pride ourselves on being travel experts. Leading the way when it comes to providing unique travel experiences, our brands offer the world’s best polar expeditions, wildlife safaris, cultural tours, yachting adventures and</span> …</p>
+<div class="row row-cols-2 row-cols-sm-2 row-cols-xl-2 mt-auto advert-buttons">
+<div class="col mb-1 mb-xl-0">
+<a class="btn btn-secondary" href="/job/555218">More Info</a>
+</div>
+<div class="col">
+<a class="btn btn-primary" href="https://globalcareers.travelopia.com/Apply/U3R57829hbmRhcmQgQXBwbGljYXRpb24gRm9ybSAtIENvc3RhIFJpY2F8MzB8NTU1MjE4fDF8fEZhbHNlfDIzMTd8MzE3OTc5MXww?i=qbmXIyZhRR8%3d/">Apply</a>
+</div>
+</div>
+</div>
+</div><!-- end ngRepeat: jobs in filteredjobs --><div class="col d-flex mb-2 jobListing ng-scope" ng-repeat="jobs in filteredjobs">
+<div class="b-1 p-1 d-flex flex-column flex-fill w-100">
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Travelopia') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Quark') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_TCS') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Sunsail') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_The Moorings') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Leopard Catamarans') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Enchanting Travels') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Exodus Travels') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Headwater') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Events International') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Gullivers Travel') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Experience Education') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_LeBoat') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Hayes and Jarvis') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Sovereign') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_American Holidays') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_My Planet') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Citalia') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_YMT Vacations') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Europe Express') !== -1 --><div class="ng-scope" ng-if="jobs.ExtraData.indexOf('Brand_Europe Express') !== -1">
+
+</div><!-- end ngIf: jobs.ExtraData.indexOf('Brand_Europe Express') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Kalos') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Experience Education Seasonal') !== -1 -->
+<h3><a class="ng-binding" href="/job/571842">Director, Custom Group Travel</a></h3>
+<div class="content d-flex mb-1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> San Jose, San Jose Province, Costa Rica</p>
+</div>
+</div>
+<div class="content d-flex mb-1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> Permanent</p>
+</div>
+</div>
+<!-- ngIf: jobs.SalaryDisplay.length > 1 -->
+<p class="JobDescription"> <span class="ng-binding" ng-bind-html="jobs.JobDescription">Established in 1990, Europe Express provides high-quality, custom travel to Europe for their North American clients. The company serves both private group and FIT leisure markets, working exclusively with travel advisors to book</span> …</p>
+<div class="row row-cols-2 row-cols-sm-2 row-cols-xl-2 mt-auto advert-buttons">
+<div class="col mb-1 mb-xl-0">
+<a class="btn btn-secondary" href="/job/571842">More Info</a>
+</div>
+<div class="col">
+<a class="btn btn-primary" href="https://globalcareers.travelopia.com/Apply/U3R90e8ehbmRhcmQgQXBwIEZvcm0gLSBOQS9DYW5hZGF8MzB8NTcxODQyfDF8fEZhbHNlfDIzMTd8MzE3OTc4OHww?i=bNKdSQ%2ftuPc%3d/">Apply</a>
+</div>
+</div>
+</div>
+</div><!-- end ngRepeat: jobs in filteredjobs --><div class="col d-flex mb-2 jobListing ng-scope" ng-repeat="jobs in filteredjobs">
+<div class="b-1 p-1 d-flex flex-column flex-fill w-100">
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Travelopia') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Quark') !== -1 --><div class="ng-scope" ng-if="jobs.ExtraData.indexOf('Brand_Quark') !== -1">
+
+</div><!-- end ngIf: jobs.ExtraData.indexOf('Brand_Quark') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_TCS') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Sunsail') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_The Moorings') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Leopard Catamarans') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Enchanting Travels') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Exodus Travels') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Headwater') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Events International') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Gullivers Travel') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Experience Education') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_LeBoat') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Hayes and Jarvis') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Sovereign') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_American Holidays') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_My Planet') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Citalia') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_YMT Vacations') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Europe Express') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Kalos') !== -1 -->
+<!-- ngIf: jobs.ExtraData.indexOf('Brand_Experience Education Seasonal') !== -1 -->
+<h3><a class="ng-binding" href="/job/567499">Director of Sales, Americas - Business Development</a></h3>
+<div class="content d-flex mb-1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> Clearwater, Florida, United States of America</p>
+</div>
+</div>
+<div class="content d-flex mb-1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> Permanent</p>
+</div>
+</div>
+<!-- ngIf: jobs.SalaryDisplay.length > 1 --><div class="content d-flex mb-1 ng-scope" ng-if="jobs.SalaryDisplay.length &gt; 1">
+<div class="content mb-md-05 mb-lg-0">
+<p class="cards-grid__sub-title ng-binding"> Competitive base + bonus structure! </p>
+</div>
+</div><!-- end ngIf: jobs.SalaryDisplay.length > 1 -->
+<p class="JobDescription"> <span class="ng-binding" ng-bind-html="jobs.JobDescription">Quark Expeditions is the leading polar expedition travel company headquartered in Toronto, Canada. We operate cruises to Antarctica and Arctic regions (Greenland, North Canada, Svalbard) on board of 3 modern polar expedition ships</span> …</p>
+<div class="row row-cols-2 row-cols-sm-2 row-cols-xl-2 mt-auto advert-buttons">
+<div class="col mb-1 mb-xl-0">
+<a class="btn btn-secondary" href="/job/567499">More Info</a>
+</div>
+<div class="col">
+<a class="btn btn-primary" href="https://globalcareers.travelopia.com/Apply/U3Rcc9fbhbmRhcmQgQXBwIEZvcm0gLSBOQS9DYW5hZGF8MzB8NTY3NDk5fDF8fEZhbHNlfDIzMTd8MzE3OTcyMHww?i=VdLRXw0IhmE%3d/">Apply</a>
+</div>
+</div>
+</div>
+</div><!-- end ngRepeat: jobs in filteredjobs --><!-- end ngRepeat: jobs in filteredjobs --><!-- end ngRepeat: jobs in filteredjobs --><!-- end ngRepeat: jobs in filteredjobs --><!-- end ngRepeat: jobs in filteredjobs --><!-- end ngRepeat: jobs in filteredjobs -->
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+<!-- ngIf: jobs.length == 0 -->
+<div class="col-lg-12" style="text-align:center">
+
+<div class="pagination-pages">
+<ul boundary-links="true" class="pagination ng-isolate-scope ng-valid" items-per-page="numPerPage" max-size="maxSize" ng-change="pageChanged()" ng-isolate-scope="" ng-model="currentPage" ng-valid="" template-url="/Content/skins/Pagination/basicPagination.html" total-items="jobs.length">
+<!-- ngIf: ::directionLinks --><li class="ng-scope disabled" ng-class="{disabled: noPrevious()||ngDisabled}" ng-if="::directionLinks">
+<a class="previous-background previous i-previous ng-binding" href="" ng-click="selectPage(page - 1, $event)" ng-disabled="noNext()||ngDisabled" title="Previous">
+</a>
+</li><!-- end ngIf: ::directionLinks -->
+<!--<li ng-if="::directionLinks" ng-class="{disabled: noPrevious()||ngDisabled}" class="ng-scope disabled"><a href="" ng-click="selectPage(page - 1, $event)" ng-disabled="noNext()||ngDisabled" class="ng-binding">Previous</a></li>-->
+<!-- ngRepeat: page in pages track by $index --><li class="ng-scope active" ng-class="{active: page.active}" ng-repeat="page in pages track by $index"><a class="ng-binding" href="" ng-click="selectPage(page.number)">1</a></li><!-- end ngRepeat: page in pages track by $index --><li class="ng-scope" ng-class="{active: page.active}" ng-repeat="page in pages track by $index"><a class="ng-binding" href="" ng-click="selectPage(page.number)">2</a></li><!-- end ngRepeat: page in pages track by $index --><li class="ng-scope" ng-class="{active: page.active}" ng-repeat="page in pages track by $index"><a class="ng-binding" href="" ng-click="selectPage(page.number)">3</a></li><!-- end ngRepeat: page in pages track by $index --><li class="ng-scope" ng-class="{active: page.active}" ng-repeat="page in pages track by $index"><a class="ng-binding" href="" ng-click="selectPage(page.number)">4</a></li><!-- end ngRepeat: page in pages track by $index --><li class="ng-scope" ng-class="{active: page.active}" ng-repeat="page in pages track by $index"><a class="ng-binding" href="" ng-click="selectPage(page.number)">5</a></li><!-- end ngRepeat: page in pages track by $index --><li class="ng-scope" ng-class="{active: page.active}" ng-repeat="page in pages track by $index"><a class="ng-binding" href="" ng-click="selectPage(page.number)">6</a></li><!-- end ngRepeat: page in pages track by $index --><!-- end ngRepeat: page in pages track by $index --><!-- end ngRepeat: page in pages track by $index -->
+<!-- ngIf: ::directionLinks --><!-- end ngIf: ::directionLinks -->
+<!--<li ng-if="::directionLinks" ng-class="{disabled: noNext()||ngDisabled}" class="ng-scope disabled">
+    <a href="" ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" class="ng-binding">Next</a></li>-->
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Vacancies -->
+<main class="main">
+<div class="cta-banner section">
+<div class="cta-banner__image-wrapper">
+<figure class="cta-banner__image">
+
+</figure>
+</div>
+<div class="cta-banner__content">
+
+<h3 class="cta-banner__title">Work with us</h3>
+<p>Travelopia brings together over 2000 colleagues from around the world, who work together to create industry-leading travel experiences. Join us on our journey forward.</p>
+<div class="is-layout-flex wp-block-buttons">
+<div class="wp-block-button">
+<a class="wp-block-button__link wp-element-button" href="/Department/All Vacancies" rel="noreferrer noopener" target="_blank">View Global Vacancies</a>
+</div>
+</div>
+
+
+</div>
+</div>
+</main>
+</div>
+<!-- Footer content -->
+
+<div aria-hidden="true" class="modal" id="contact-modal">
+<div class="modal__overlay" data-micromodal-close="" tabindex="-1">
+<div aria-modal="true" class="modal__content" role="dialog">
+<button aria-label="Close Modal" class="modal__close" data-micromodal-close="">
+
+</button>
+<h3>Contact Us</h3>
+
+            For Travelopia media enquiries, please email us at <a href="mailto:contactus@travelopia.com">contactus@travelopia.com</a>
+
+            For brand and service related queries, please contact the individual brand directly via their website.
+        </div>
+</div>
+</div>
+<!-- Bundles -->
+<div style="display: none; visibility: hidden;">
+</div><div style="display: none; visibility: hidden;">
+</div><div id="onetrust-consent-sdk"><div aria-label="Our cookies" aria-modal="true" class="otPcCenter ot-hide ot-fade-in" id="onetrust-pc-sdk" lang="en" role="alertdialog"><!-- Close Button --><div class="ot-pc-header"><!-- Logo Tag --></div><!-- Close Button --><div class="ot-pc-scrollbar" id="ot-pc-content"><h2 id="ot-pc-title">Our cookies</h2><div id="ot-pc-desc">Here’s a bit more information about cookies and how we use them. You can allow all or manage them individually. For full details of each of the cookies we use, or to change your preferences at a later date, see our <a href="/cookies-policy">Cookie Policy</a>.</div><button id="accept-recommended-btn-handler">Accept all cookies</button><section class="ot-sdk-row ot-cat-grp"><div class="ot-accordion-layout ot-cat-item" data-optanongroupid="C0001"><!-- Accordion header --><div class="ot-acc-hdr ot-always-active-group"><div class="ot-plus-minus"></div><h4 class="ot-cat-header" id="ot-header-id-C0001">Essential</h4><div class="ot-always-active">Always Active</div></div><!-- accordion detail --><div class="ot-acc-grpcntr ot-acc-txt"><p class="ot-acc-grpdesc ot-category-desc" id="ot-desc-id-C0001">These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies do not store any personally identifiable information.</p></div></div><div class="ot-accordion-layout ot-cat-item" data-optanongroupid="C0002"><!-- Accordion header --><div class="ot-acc-hdr"><div class="ot-plus-minus"></div><h4 class="ot-cat-header" id="ot-header-id-C0002">Performance</h4><div class="ot-tgl"> <label class="ot-switch" for="ot-group-id-C0002"> <span class="ot-label-txt">Performance</span></label> </div></div><!-- accordion detail --><div class="ot-acc-grpcntr ot-acc-txt"><p class="ot-acc-grpdesc ot-category-desc" id="ot-desc-id-C0002">These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies we will not know when you have visited our site, and will not be able to monitor its performance.</p></div></div><div class="ot-accordion-layout ot-cat-item" data-optanongroupid="C0003"><!-- Accordion header --><div class="ot-acc-hdr"><div class="ot-plus-minus"></div><h4 class="ot-cat-header" id="ot-header-id-C0003">Functional</h4><div class="ot-tgl"> <label class="ot-switch" for="ot-group-id-C0003"> <span class="ot-label-txt">Functional</span></label> </div></div><!-- accordion detail --><div class="ot-acc-grpcntr ot-acc-txt"><p class="ot-acc-grpdesc ot-category-desc" id="ot-desc-id-C0003">These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies then some or all of these services may not function properly.</p></div></div><div class="ot-accordion-layout ot-cat-item" data-optanongroupid="C0004"><!-- Accordion header --><div class="ot-acc-hdr"><div class="ot-plus-minus"></div><h4 class="ot-cat-header" id="ot-header-id-C0004">Advertising</h4><div class="ot-tgl"> <label class="ot-switch" for="ot-group-id-C0004"> <span class="ot-label-txt">Advertising</span></label> </div></div><!-- accordion detail --><div class="ot-acc-grpcntr ot-acc-txt"><p class="ot-acc-grpdesc ot-category-desc" id="ot-desc-id-C0004">These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites. They do not store directly personal information, but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising.</p></div></div><!-- Groups sections starts --><!-- Group section ends --><!-- Accordion Group section starts --><!-- Accordion Group section ends --></section></div><section class="ot-hide ot-hosts-ui ot-pc-scrollbar" id="ot-pc-lst"><div id="ot-pc-hdr"><div id="ot-lst-title"><h3>Performance Cookies</h3></div><div class="ot-lst-subhdr"><div class="ot-search-cntr">  </div><div class="ot-fltr-cntr"></div><section id="ot-fltr-modal"><div id="ot-fltr-cnt"><button id="clear-filters-handler">Clear</button><div class="ot-fltr-scrlcnt ot-pc-scrollbar"><div class="ot-fltr-opts"><div class="ot-fltr-opt"><div class="ot-chkbox"> <label for="chkbox-id"><span class="ot-label-txt">checkbox label</span></label> <span class="ot-label-status">label</span></div></div></div><div class="ot-fltr-btns"><button id="filter-apply-handler">Apply</button> <button id="filter-cancel-handler">Cancel</button></div></div></div></section></div></div><section class="ot-host-cnt ot-pc-scrollbar" id="ot-lst-cnt"><div id="ot-sel-blk"><div class="ot-sel-all"><div class="ot-sel-all-hdr"><span class="ot-consent-hdr">Consent</span> <span class="ot-li-hdr">Leg.Interest</span></div><div class="ot-sel-all-chkbox"><div class="ot-chkbox" id="ot-selall-hostcntr"> <label for="select-all-hosts-groups-handler"><span class="ot-label-txt">checkbox label</span></label> <span class="ot-label-status">label</span></div><div class="ot-chkbox" id="ot-selall-vencntr"> <label for="select-all-vendor-groups-handler"><span class="ot-label-txt">checkbox label</span></label> <span class="ot-label-status">label</span></div><div class="ot-chkbox" id="ot-selall-licntr"> <label for="select-all-vendor-leg-handler"><span class="ot-label-txt">checkbox label</span></label> <span class="ot-label-status">label</span></div></div></div></div><div class="ot-sdk-row"></div></section></section><div class="ot-pc-footer"><div class="ot-btn-container"> <button class="save-preference-btn-handler onetrust-close-btn-handler">Confirm My Choices</button></div><!-- Footer logo --><div class="ot-pc-footer-logo"></div></div><!-- Cookie subgroup container --><!-- Vendor list link --><!-- Cookie lost link --><!-- Toggle HTML element --><!-- Checkbox HTML --><!-- plus minus--><!-- Arrow SVG element --><!-- Accordion basic element --></div><div aria-label="Our cookies" aria-modal="true" class="otPcCenter ot-hide ot-fade-in" id="onetrust-pc-sdk" lang="en" role="alertdialog"><!-- Close Button --><div class="ot-pc-header"><!-- Logo Tag --></div><!-- Close Button --><div class="ot-pc-scrollbar" id="ot-pc-content"><h2 id="ot-pc-title">Our cookies</h2><div id="ot-pc-desc">Here’s a bit more information about cookies and how we use them. You can allow all or manage them individually. For full details of each of the cookies we use, or to change your preferences at a later date, see our <a href="/cookies-policy">Cookie Policy</a>.</div><button id="accept-recommended-btn-handler">Accept all cookies</button><section class="ot-sdk-row ot-cat-grp"><div class="ot-accordion-layout ot-cat-item" data-optanongroupid="C0001"><!-- Accordion header --><div class="ot-acc-hdr ot-always-active-group"><div class="ot-plus-minus"></div><h4 class="ot-cat-header" id="ot-header-id-C0001">Essential</h4><div class="ot-always-active">Always Active</div></div><!-- accordion detail --><div class="ot-acc-grpcntr ot-acc-txt"><p class="ot-acc-grpdesc ot-category-desc" id="ot-desc-id-C0001">These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies do not store any personally identifiable information.</p></div></div><div class="ot-accordion-layout ot-cat-item" data-optanongroupid="C0002"><!-- Accordion header --><div class="ot-acc-hdr"><div class="ot-plus-minus"></div><h4 class="ot-cat-header" id="ot-header-id-C0002">Performance</h4><div class="ot-tgl"> <label class="ot-switch" for="ot-group-id-C0002"> <span class="ot-label-txt">Performance</span></label> </div></div><!-- accordion detail --><div class="ot-acc-grpcntr ot-acc-txt"><p class="ot-acc-grpdesc ot-category-desc" id="ot-desc-id-C0002">These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies we will not know when you have visited our site, and will not be able to monitor its performance.</p></div></div><div class="ot-accordion-layout ot-cat-item" data-optanongroupid="C0003"><!-- Accordion header --><div class="ot-acc-hdr"><div class="ot-plus-minus"></div><h4 class="ot-cat-header" id="ot-header-id-C0003">Functional</h4><div class="ot-tgl"> <label class="ot-switch" for="ot-group-id-C0003"> <span class="ot-label-txt">Functional</span></label> </div></div><!-- accordion detail --><div class="ot-acc-grpcntr ot-acc-txt"><p class="ot-acc-grpdesc ot-category-desc" id="ot-desc-id-C0003">These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies then some or all of these services may not function properly.</p></div></div><div class="ot-accordion-layout ot-cat-item" data-optanongroupid="C0004"><!-- Accordion header --><div class="ot-acc-hdr"><div class="ot-plus-minus"></div><h4 class="ot-cat-header" id="ot-header-id-C0004">Advertising</h4><div class="ot-tgl"> <label class="ot-switch" for="ot-group-id-C0004"> <span class="ot-label-txt">Advertising</span></label> </div></div><!-- accordion detail --><div class="ot-acc-grpcntr ot-acc-txt"><p class="ot-acc-grpdesc ot-category-desc" id="ot-desc-id-C0004">These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites. They do not store directly personal information, but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising.</p></div></div><!-- Groups sections starts --><!-- Group section ends --><!-- Accordion Group section starts --><!-- Accordion Group section ends --></section></div><section class="ot-hide ot-hosts-ui ot-pc-scrollbar" id="ot-pc-lst"><div id="ot-pc-hdr"><div id="ot-lst-title"><h3>Performance Cookies</h3></div><div class="ot-lst-subhdr"><div class="ot-search-cntr">  </div><div class="ot-fltr-cntr"></div><section id="ot-fltr-modal"><div id="ot-fltr-cnt"><button id="clear-filters-handler">Clear</button><div class="ot-fltr-scrlcnt ot-pc-scrollbar"><div class="ot-fltr-opts"><div class="ot-fltr-opt"><div class="ot-chkbox"> <label for="chkbox-id"><span class="ot-label-txt">checkbox label</span></label> <span class="ot-label-status">label</span></div></div></div><div class="ot-fltr-btns"><button id="filter-apply-handler">Apply</button> <button id="filter-cancel-handler">Cancel</button></div></div></div></section></div></div><section class="ot-host-cnt ot-pc-scrollbar" id="ot-lst-cnt"><div id="ot-sel-blk"><div class="ot-sel-all"><div class="ot-sel-all-hdr"><span class="ot-consent-hdr">Consent</span> <span class="ot-li-hdr">Leg.Interest</span></div><div class="ot-sel-all-chkbox"><div class="ot-chkbox" id="ot-selall-hostcntr"> <label for="select-all-hosts-groups-handler"><span class="ot-label-txt">checkbox label</span></label> <span class="ot-label-status">label</span></div><div class="ot-chkbox" id="ot-selall-vencntr"> <label for="select-all-vendor-groups-handler"><span class="ot-label-txt">checkbox label</span></label> <span class="ot-label-status">label</span></div><div class="ot-chkbox" id="ot-selall-licntr"> <label for="select-all-vendor-leg-handler"><span class="ot-label-txt">checkbox label</span></label> <span class="ot-label-status">label</span></div></div></div></div><div class="ot-sdk-row"></div></section></section><div class="ot-pc-footer"><div class="ot-btn-container"> <button class="save-preference-btn-handler onetrust-close-btn-handler">Confirm My Choices</button></div><!-- Footer logo --><div class="ot-pc-footer-logo"></div></div><!-- Cookie subgroup container --><!-- Vendor list link --><!-- Cookie lost link --><!-- Toggle HTML element --><!-- Checkbox HTML --><!-- plus minus--><!-- Arrow SVG element --><!-- Accordion basic element --></div></div></body></html>

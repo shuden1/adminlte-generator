@@ -22,7 +22,7 @@ class RemoveDuplicatedJobsCommand extends Command
     {
         $companyId = $this->argument('company_id');
         $queuedCompanies = $this->getQueuedCompanyIds();
-        dei();
+        die();
         if ($companyId !== 'all') {
             if (!array_key_exists($companyId, $queuedCompanies)) {
                 $company = Company::find($companyId);
@@ -143,7 +143,6 @@ class RemoveDuplicatedJobsCommand extends Command
             }
         }
         return $companyJobs; // Return associative array of company IDs and their job IDs
-        var_dump($companyJobs);die();
     }
 
 }

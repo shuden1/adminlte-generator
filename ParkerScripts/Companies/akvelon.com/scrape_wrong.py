@@ -1,35 +1,43 @@
 import sys
+import json
+import threading
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-import json
-import threading
+from selenium.webdriver.chrome.options import Options
 
 def scrape_jobs(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
-    options = webdriver.ChromeOptions()
+    service = Service(executable_path=r"C:\\Python3\\chromedriver.exe")
+
+    options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
 
     driver = webdriver.Chrome(service=service, options=options)
-    driver.get("file:///" + file_path)
 
-    # Adjust these selectors based on actual page structure
-    jobs = driver.find_elements(By.CSS_SELECTOR, '.job-listing .job-title a')
+    driver.get(f"file:///{file_path}")
 
-    job_listings = []
-    for job in jobs:
-        job_title = job.text
-        job_url = job.get_attribute('href')
-        job_listings.append({"Job-title": job_title, "URL": job_url})
+    job_openings = []
+
+    # Attempting to identify job blocks by looking for common patterns
+    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div, li, ul')
+    for job_block in job_blocks:
+        if 'job' in job_block.text.lower() or 'career' in job_block.text.lower() or 'opening' in job_block.text.lower():
+            title_elements = job_block.find_elements(By.CSS_SELECTOR, 'a')
+            for title_element in title_elements:
+                if title_element.get_attribute('href'):
+                    job_title = title_element.text.strip()
+                    job_url = title_element.get_attribute('href')
+                    if job_title and job_url:
+                        job_openings.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
-    
-    print(json.dumps(job_listings))
+
+    return json.dumps(job_openings, indent=4)
 
 if __name__ == "__main__":
-    file_name = sys.argv[1]
-    scrape_jobs(file_name)
+    file_path = sys.argv[1]
+    print(scrape_jobs(file_path))

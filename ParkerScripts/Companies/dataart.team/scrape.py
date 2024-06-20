@@ -27,8 +27,7 @@ jobs_list = []
 for card in job_cards:
     title_element = card.find_element(By.CSS_SELECTOR, ".VacancyCard-Title h3")
     title = title_element.text
-    slug = card.get_attribute("slug")
-    url = f"https://example.com/vacancy/{slug}"  # Assuming the URL pattern based on the 'slug'
+    url = card.find_element(By.CSS_SELECTOR, ".VacancyCard-Link").get_attribute('href')
     jobs_list.append({"Job-title": title, "URL": url})
 
 # Return JSON format

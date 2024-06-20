@@ -1,39 +1,45 @@
 import sys
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.common.by import By
-import threading
 import json
+import threading
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-# The target HTML file name comes from the command line argument
-target_html_file = sys.argv[1]
+def scrape_jobs(file_path):
+    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
 
-profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
-options = webdriver.ChromeOptions()
-options.add_argument(f"user-data-dir={profile_folder_path}")
-options.add_argument("--headless")
-options.add_argument("--disable-gpu")
-options.add_argument("--no-sandbox")
+    options = Options()
+    options.add_argument(f"user-data-dir={profile_folder_path}")
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
 
-driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(service=service, options=options)
 
-# Since we're going to work with a local file, use the file protocol
-url = f"file:///{target_html_file}"
-driver.get(url)
+    driver.get(f"file:///{file_path}")
 
-jobs_list = []
+    job_listings = driver.find_elements(By.CSS_SELECTOR, "div.jobs-list__item")
 
-# Initial attempt with incorrect selectors, providing a new approach
-# Assuming the corrected HTML analysis led to these selectors
-job_elements = driver.find_elements(By.CSS_SELECTOR, "article")
-for job_element in job_elements:
-    title = job_element.find_element(By.TAG_NAME, "h2").text  # Assuming job titles are in <h2> tags
-    url = job_element.find_element(By.TAG_NAME, "a").get_attribute('href')  # Assuming URL is within an <a> tag in each article
-    if title and url:  # Ensure both title and url contain values
-        jobs_list.append({"Job-title": title, "URL": url})
+    jobs = []
+    for job in job_listings:
+        try:
+            title_element = job.find_element(By.CSS_SELECTOR, "div.jobs-list__item-title")
+            url_element = job.find_element(By.CSS_SELECTOR, "a.jobs-list__item-link")
 
-driver.quit()
+            job_title = title_element.text.strip()
+            job_url = url_element.get_attribute("href").strip()
 
-# Converting the list into JSON format and displaying it
-print(json.dumps(jobs_list))
+            if job_title and job_url:
+                jobs.append({"Job-title": job_title, "URL": job_url})
+        except Exception as e:
+            continue
+
+    driver.quit()
+
+    return json.dumps(jobs, indent=4)
+
+if __name__ == "__main__":
+    file_path = sys.argv[1]
+    print(scrape_jobs(file_path))

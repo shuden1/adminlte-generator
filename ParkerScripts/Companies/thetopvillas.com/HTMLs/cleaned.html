@@ -1,0 +1,444 @@
+<html class="" lang="en-US">
+<body>
+<!-- Affirm -->
+<!-- End Affirm -->
+<div class="ng-scope" ng-app="other">
+<section class="top-banner-container">
+</section>
+<div class="announcement-bar" x-data="announcement('+44 (0)1227 647042')" x-init="init()" x-on:mouseenter="pauseRotation()" x-on:mouseleave="resumeRotation()">
+<div class="announcement-bar__message" x-show="!announcementClosed">
+<div class="announcement-bar__title" x-show="currentMessage">
+<strong x-text="currentMessage.title">Book direct!</strong>
+<span>
+<span x-text="currentMessage.subtitle">Talk to a Travel Planner today for the best villa deals on +44 (0)1227 647042</span>
+<template x-if="currentMessage.action === 'intercom'">
+
+</template><button class="announcement-bar__link intercom-launcher-custom chatButton" role="button" type="button" x-text="currentMessage.actionText"> or live chat.</button>
+<template x-if="currentMessage.link">
+
+</template>
+</span>
+</div>
+<button class="announcement-bar__close" type="button" x-on:click="dismissAnnouncement()">
+
+</button>
+</div>
+</div>
+<section class="content-container">
+<div class="top-menu ng-scope sticky-menu" id="top-menu" ng-class="{overlay: _NC.overlayMenu}" ng-controller="NavigationController as _NC" x-bind:class="{
+        'menu-open': menuOpen,
+        'dropdown-active': $store.contactIsOpen,
+        'sticky-menu': $store
+            .isSticky,
+        'announcement-active': announcementActive,
+    }" x-data="topMenu" x-on:click.outside="menuOpen ? toggleMenu() : ''" x-on:resize.window="window.innerWidth &gt; 1023 ? menuOpen = false : ''" x-on:scroll.window.throttle.10ms="stickyMenu(); announcementBarActive()">
+<div class="top-menu__container ng-scope" id="nav-favourites-ctrl" ng-controller="FavouritesController as fc">
+<div class="top-menu__nav-icon" x-on:click="toggleMenu(); closeSubMenus()">
+
+</div>
+<a class="top-menu__logo" href="/" target="_self">
+
+</a>
+<div class="top-menu__links-outer">
+<ul class="top-menu__links">
+<li x-bind:class="{ active: dropdown.destinations }">
+<span x-on:click="toggleDropdown('destinations')">Destinations
+                        </span>
+<ul class="top-menu__links__dropdown">
+<li><a href="/orlando/vacations" target="_self">Orlando</a></li>
+<li><a href="/destination/cape-coral" target="_self">Cape Coral</a></li>
+<li><a href="/destination/miami" target="_self">Miami</a></li>
+<li><a href="/destination/destin-area" target="_self">Destin</a></li>
+<li><a href="/destination/anna-maria-island" target="_self">Anna Maria Island</a></li>
+
+
+
+
+
+
+
+
+<li class="view-all">
+<a href="/destination/united-states" target="_self">
+<strong>All USA destinations</strong>
+<span>
+</span>
+</a>
+</li>
+
+
+
+
+
+
+<li class="view-all">
+<a href="/destination/caribbean" target="_self">
+<strong>All Caribbean destinations</strong>
+<span>
+</span>
+</a>
+</li>
+
+
+
+
+
+
+<li class="view-all">
+<a href="/destination" target="_self">
+<strong>All Worldwide destinations</strong>
+<span>
+</span>
+</a>
+</li>
+</ul>
+</li>
+<li x-bind:class="{ active: dropdown.vacationRentals }">
+<span x-on:click="toggleDropdown('vacationRentals')">Vacation Rentals
+                        </span>
+<ul class="top-menu__links__dropdown">
+<li><a href="/collections/villas-near-disney-world" target="_self">Villas near Disney World</a></li>
+<li><a href="/collections/villas-for-rent-near-universal" target="_self">Villas near Universal Studios</a></li>
+<li><a href="/collections/future-stays" target="_self">Vacations 2024/25</a></li>
+<li><a href="/collections/villas-with-pools" target="_self">Villas with pools</a></li>
+<li><a href="/collections/villas-with-beach-views" target="_self">Beach house vacation rentals</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
+<li x-bind:class="{ active: dropdown.villaResorts }">
+<span x-on:click="toggleDropdown('villaResorts')">Villa Resorts
+                        </span>
+<ul class="top-menu__links__dropdown">
+<li><a href="/reunion-resort/vacations" target="_self">Reunion Resort</a></li>
+<li><a href="/encore-resort-at-reunion/vacations" target="_self">Encore Resort at Reunion</a></li>
+<li><a href="/destination/bears-den-resort" target="_self">Bear's Den at Reunion</a></li>
+<li><a href="/destination/champions-gate" target="_self">Champions Gate Resort</a></li>
+<li><a href="/destination/margaritaville-resort" target="_self">Margaritaville Resort</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
+<li>
+<a href="/concierge" target="_self">Concierge</a>
+</li>
+<div class="top-menu__user" x-bind:class="userOpen ? 'open' : ''" x-data="{ userOpen: false }" x-on:click.outside="userOpen = false">
+<button x-on:click="userOpen = ! userOpen">
+<span>
+
+<span>
+ </span>
+</span>
+</button>
+<div class="top-menu__user__dropdown">
+<div class="top-menu__user__dropdown__links">
+<nav>
+<span class="text-h4">Account</span>
+<ul>
+<li><a href="https://www.thetopvillas.com/en_us/user/login" target="_self">Log in</a></li>
+<li><a href="https://www.thetopvillas.com/en_us/user/register" target="_self">Guest sign up</a></li>
+<li><a href="/user/home/favourites" target="_self">Favourites <span class="ng-binding">(0)</span></a></li>
+</ul>
+</nav>
+<nav>
+<span class="text-h4">Other</span>
+<ul>
+<li><a href="https://thetopvillas.com/blog" target="_blank">Be Inspired</a></li>
+<li><a href="https://help.thetopvillas.com" target="_blank">Help centre</a></li>
+<li><a href="/list-your-vacation-home" target="_blank">List your home</a></li>
+<li><a href="https://www.thetopvillas.com/en_us/agent-sign-up" target="_self">Become a travel agent partner</a>
+</li>
+<li class="top-menu__user__dropdown__currency">
+<strong>Currency</strong>
+<select aria-invalid="false" class="ng-pristine ng-untouched ng-valid ng-not-empty" ng-change="_NC.changeCurrency()" ng-model="_NC.selectedCurrency" ng-options="currency.value as currency.long for currency in _NC.currencies"><option label="£ GBP" value="string:GBP">£ GBP</option><option label="$ USD" selected="selected" value="string:USD">$ USD</option><option label="€ EUR" value="string:EUR">€ EUR</option></select>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</ul>
+</div>
+<div class="top-menu__supporting">
+<div class="top-menu__contact" x-bind:class="$store.contactIsOpen ? 'active' : ''" x-on:resize.window="window.innerWidth &lt; 1024 ? $store.contactIsOpen = false : ''">
+<span x-on:click="window.innerWidth &lt; 1024 ? $store.contactIsOpen = true : ''">
+
+<span>Contact <span class="hide-mobile">us: +44 (0)1227 647042</span></span>
+ </span>
+<div class="contact-dropdown">
+<button class="top-menu__button top-menu__button--outline" x-on:click="$store.contactIsOpen = false">
+</button>
+<div class="contact-dropdown__availability">
+<div class="support-portraits">
+<div class="support-portraits__thumbs">
+
+
+
+</div>
+</div> <span class="text-h4">Contact</span>
+<p>Our Travel Planners are here to help you book your perfect <replace-word>vacation</replace-word>
+                home.
+            </p>
+<div class="contact-dropdown__actions">
+<a class="top-menu__button top-menu__button--outline contact-dropdown__actions__call" href="tel:+44 (0)1227 647042">
+                    Call us <span>on: +44 (0)1227 647042</span></a>
+<a class="top-menu__button top-menu__button--outline contact-dropdown__actions__whatsapp" href="https://wa.me/447936710150" target="_blank">                    Whatsapp</a>
+<div class="top-menu__contact__intercom top-menu__button top-menu__button--outline intercom-launcher-custom chatButton">
+
+<span>Live chat</span>
+</div>
+<a class="top-menu__button top-menu__button--primary contact-dropdown__actions__enquiry" href="/contact-us#contact-form" target="_blank">Make an
+                    <replace-word>inquiry</replace-word></a>
+</div>
+</div>
+<div class="contact-dropdown__cta">
+<a class="top-menu__button top-menu__button--accent" href="/contact-us" target="_self">
+                More contact options
+            </a>
+</div>
+</div>
+</div>
+<div class="top-menu__user" x-bind:class="userOpen ? 'open' : ''" x-data="{ userOpen: false }" x-on:click.outside="userOpen = false">
+<button x-on:click="userOpen = ! userOpen">
+<span>
+
+<span>
+ </span>
+</span>
+</button>
+<div class="top-menu__user__dropdown">
+<div class="top-menu__user__dropdown__links">
+<nav>
+<span class="text-h4">Account</span>
+<ul>
+<li><a href="https://www.thetopvillas.com/en_us/user/login" target="_self">Log in</a></li>
+<li><a href="https://www.thetopvillas.com/en_us/user/register" target="_self">Guest sign up</a></li>
+<li><a href="/user/home/favourites" target="_self">Favourites <span class="ng-binding">(0)</span></a></li>
+</ul>
+</nav>
+<nav>
+<span class="text-h4">Other</span>
+<ul>
+<li><a href="https://thetopvillas.com/blog" target="_blank">Be Inspired</a></li>
+<li><a href="https://help.thetopvillas.com" target="_blank">Help centre</a></li>
+<li><a href="/list-your-vacation-home" target="_blank">List your home</a></li>
+<li><a href="https://www.thetopvillas.com/en_us/agent-sign-up" target="_self">Become a travel agent partner</a>
+</li>
+<li class="top-menu__user__dropdown__currency">
+<strong>Currency</strong>
+<select aria-invalid="false" class="ng-pristine ng-untouched ng-valid ng-not-empty" ng-change="_NC.changeCurrency()" ng-model="_NC.selectedCurrency" ng-options="currency.value as currency.long for currency in _NC.currencies"><option label="£ GBP" value="string:GBP">£ GBP</option><option label="$ USD" selected="selected" value="string:USD">$ USD</option><option label="€ EUR" value="string:EUR">€ EUR</option></select>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="submenu-container ng-hide" id="header_search-menu" ng-show="_NC.menus.searchMenu">
+<destinations-dropdown class="ng-isolate-scope" close-dropdown-fn="_NC.closeSubMenu('searchMenu')" init-on="_NC.menus.searchMenu" is-homepage="false" search-mode="_NC.searchBox.mode" search-model="_NC.searchBox.query" search-results="_NC.searchBox.results" search-results-loading="_NC.searchBox.searching" search-selection-fn="_NC.searchResultSelected(obj)"><div class="destinations-dropdown">
+<div class="destinations-dropdown__container">
+<div class="destinations-dropdown__container__left">
+<div>
+<div class="destinations-dropdown__container__left__featured-active leave" ng-class="{
+                        'leave': $ctrl.viewVars.mode !== 'normal' ||
+                                 $ctrl.viewVars.activeDestination
+                     }">
+<h4 class="panel-title">Featured destinations</h4>
+<!-- ngRepeat: featuredDestination in $ctrl.destinations.featured track by $index -->
+</div>
+<div class="destinations-dropdown__container__left__results" ng-class="{
+                        'enter': $ctrl.viewVars.mode === 'search'
+                     }">
+<h4 class="panel-title">Search results</h4>
+<div class="search-results">
+<div aria-hidden="true" class="search-locations ng-hide" ng-show="$ctrl.viewVars.hasResults &amp;&amp; $ctrl.searchResults.locations.length &gt; 0">
+<h5 class="search-results__heading">
+Locations
+                            </h5>
+<ul class="search-results__list">
+<!-- ngRepeat: location in $ctrl.searchResults.locations -->
+</ul>
+</div>
+<div aria-hidden="true" class="search-properties ng-hide" ng-show="$ctrl.viewVars.hasResults &amp;&amp; $ctrl.searchResults.properties.length &gt; 0">
+<h5 class="search-results__heading">
+Properties
+                            </h5>
+<ul class="search-results__list">
+<!-- ngRepeat: property in $ctrl.searchResults.properties -->
+</ul>
+</div>
+<div aria-hidden="false" class="no-results" ng-show="!$ctrl.viewVars.hasResults &amp;&amp; !$ctrl.viewVars.displayLoader">
+                            No results found for your query.
+                        </div>
+</div>
+</div>
+<div aria-hidden="true" class="destinations-dropdown__container__left__preloader ng-hide" ng-show="$ctrl.viewVars.displayLoader">
+<tv-simple-preloader class="preloader-overlay ng-isolate-scope"><div class="simple-preloader"></div></tv-simple-preloader>
+</div>
+</div>
+</div>
+<div class="destinations-dropdown__container__right">
+<div>
+<div class="panel-buttons">
+<!-- ngIf: $ctrl.viewVars.hasResults -->
+<!-- ngIf: !$ctrl.isHomepage --><!-- end ngIf: !$ctrl.isHomepage -->
+</div>
+<div aria-hidden="false" class="destinations-dropdown__container__right__list main-list" ng-show="!$ctrl.viewVars.activeDestination">
+<h4 class="panel-title">All destinations</h4>
+<div>
+<!-- ngRepeat: topDestination in $ctrl.destinations.top | orderObjectBy:'priority' track by $index -->
+</div>
+</div>
+<div aria-hidden="true" class="destinations-dropdown__container__right__breadcrumbs ng-hide" ng-show="$ctrl.breadcrumbs.length &gt; 0">
+<ul>
+<li class="back-btn" ng-click="$ctrl.goBack($ctrl.activeDestinations[$ctrl.activeDestinations.length - 1])" role="button" tabindex="0">
+
+<span>Back</span>
+</li>
+<!-- ngRepeat: breadcrumb in $ctrl.breadcrumbs track by $index -->
+</ul>
+</div>
+<!--Dynamically added panels-->
+<!-- ngRepeat: activeDestination in $ctrl.activeDestinations track by $index -->
+</div>
+</div>
+</div>
+</div></destinations-dropdown>
+</div>
+</div>
+<div class="ng-scope" ng-controller="timeoutController as TC">
+<!-- ngIf: TC.sessionTimedOut -->
+</div>
+<div class="gdpr"><div class="gdpr-area" data-v-fccb06e8=""><div class="gdpr-banner" data-v-fccb06e8=""><div class="container" data-v-fccb06e8=""><div class="gdpr-banner__content" data-v-fccb06e8=""><h4 data-v-fccb06e8="">Your privacy</h4> <p data-v-fccb06e8="">By continuing to browse or by clicking “Accept Cookies,”
+          you agree to the storing of first- and third-party cookies on your device
+          to enhance site navigation, analyze site usage, and assist in our marketing efforts.
+        </p> <div class="gdpr-banner__content__links" data-v-fccb06e8=""><a class="cookie-settings-link" data-v-fccb06e8="" href="/cookie-policy" target="_blank">Read our cookie policy</a> <a data-v-fccb06e8="">Essential cookies only</a></div></div> <div class="gdpr-banner__actions" data-v-fccb06e8=""><button class="tv-btn" data-v-fccb06e8="">Accept Cookies</button></div></div></div></div></div>
+<div class="page-header">
+<div class="page-header__details">
+<div class="breadcrumb-container">
+<ul class="breadcrumb">
+<li><a href="https://www.thetopvillas.com/en_us" target="_self">Home</a></li>
+<li><a href="https://www.thetopvillas.com/en_us/about-us" target="_self">About us</a></li>
+<li class="active">Careers</li>
+
+</ul>
+</div>
+<div class="page-header__title">
+<h1>Careers</h1>
+</div>
+<div class="page-header__subheading">
+<p>We're always looking for talented individuals to join our happy team. Led by brothers James and Tom Mannings, we are a young, fun company with lots of energy.</p>
+</div>
+</div>
+</div>
+<div class="secondary-nav">
+<div class="navigation-container">
+<ul class="navigation">
+<li><a href="https://www.thetopvillas.com/en_us/about-us" target="_self">About us</a></li>
+<li><a href="https://www.thetopvillas.com/en_us/about-us/press" target="_self">Press and media</a></li>
+<li><a href="https://www.thetopvillas.com/en_us/about-us/careers" target="_self">Careers</a></li>
+<li><a href="https://www.thetopvillas.com/en_us/contact-us" target="_self">Contact us</a></li>
+<li class="phone"> <span>Talk to our luxury villa specialists on</span> <strong>+44 (0)1227 647042</strong></li>
+</ul>
+</div>
+</div>
+<div class="careers ng-scope" ng-controller="CareersController as _CAC">
+<div class="careers__no-jobs">
+<p>
+            We don't have any job openings right now but we always love hearing from talented, passionate people. 
+            If you'd like us to keep you in mind for future career opportunities, please add your details to the form below and we'll be in touch when something comes up.
+        </p>
+<div class="careers__no-jobs__form">
+<tv-simple-preloader aria-hidden="true" class="preloader-overlay ng-isolate-scope ng-hide" ng-show="_CAC.viewVars.careersNoJobsForm.sending"><div class="simple-preloader"></div></tv-simple-preloader>
+<!-- ngIf: !_CAC.viewVars.careersNoJobsForm.sent --><form class="ng-pristine ng-scope ng-invalid ng-invalid-required ng-valid-email" name="_CAC.noJobsForm" ng-if="!_CAC.viewVars.careersNoJobsForm.sent" ng-submit="_CAC.submitForm()">
+<div class="inline">
+<div class="careers__no-jobs__form__field">
+
+<span>First name<span class="red">*</span></span>
+</div>
+<div class="careers__no-jobs__form__field">
+
+<span>Last name<span class="red">*</span></span>
+</div>
+</div>
+<div class="inline">
+<div class="careers__no-jobs__form__field">
+
+<span>Email<span class="red">*</span></span>
+</div>
+<div class="careers__no-jobs__form__field">
+<div class="datepicker-trigger ng-binding" ng-class="{
+                                'hasValue': _CAC.models.careersNoJobsForm.availableFrom
+                             }" ng-click="_CAC.openDatepicker('showDatepicker')" role="button" tabindex="0">
+                            Available from
+                        </div>
+<span>Available from</span>
+<datepicker-simple aria-hidden="true" class="ng-isolate-scope ng-hide" date-unique-id="careersDatepicker" id="careersDatepicker" model="_CAC.models.careersNoJobsForm.availableFrom" ng-show="_CAC.viewVars.showDatepicker"><div after="$ctrl.today" aria-invalid="false" class="datepicker--simple mighty-picker__holder ng-isolate-scope ng-empty ng-valid" ng-model="$ctrl.model" options="$ctrl.options"><div class="mighty-picker__wrapper ng-scope"><button class="mighty-picker__prev-month" ng-click="moveMonth(-1)" type="button"></button><!-- ngRepeat: month in months track by $index --><div bindonce="" class="mighty-picker__month ng-scope" ng-repeat="month in months track by $index"><div class="mighty-picker__month-name ng-binding" ng-bind="month.name">June 2024</div><table class="mighty-picker-calendar"><thead><tr class="mighty-picker-calendar__days"><!-- ngRepeat: day in month.weeks[1] track by $index --><th bindonce="" bo-text="day.date.format('dd')" class="mighty-picker-calendar__weekday ng-scope" ng-repeat="day in month.weeks[1] track by $index">Su</th><!-- end ngRepeat: day in month.weeks[1] track by $index --><th bindonce="" bo-text="day.date.format('dd')" class="mighty-picker-calendar__weekday ng-scope" ng-repeat="day in month.weeks[1] track by $index">Mo</th><!-- end ngRepeat: day in month.weeks[1] track by $index --><th bindonce="" bo-text="day.date.format('dd')" class="mighty-picker-calendar__weekday ng-scope" ng-repeat="day in month.weeks[1] track by $index">Tu</th><!-- end ngRepeat: day in month.weeks[1] track by $index --><th bindonce="" bo-text="day.date.format('dd')" class="mighty-picker-calendar__weekday ng-scope" ng-repeat="day in month.weeks[1] track by $index">We</th><!-- end ngRepeat: day in month.weeks[1] track by $index --><th bindonce="" bo-text="day.date.format('dd')" class="mighty-picker-calendar__weekday ng-scope" ng-repeat="day in month.weeks[1] track by $index">Th</th><!-- end ngRepeat: day in month.weeks[1] track by $index --><!-- end ngRepeat: day in month.weeks[1] track by $index --><!-- end ngRepeat: day in month.weeks[1] track by $index --></tr></thead><tbody><!-- ngRepeat: week in month.weeks --><tr bindonce="" class="ng-scope" ng-repeat="week in month.weeks"><!-- Show this TD when the date doesn't have a marker --><!-- ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope" data-date="" data-selectable-date="__--" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope" data-date="" data-selectable-date="__--" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope" data-date="" data-selectable-date="__--" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope" data-date="" data-selectable-date="__--" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope" data-date="" data-selectable-date="__--" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"></td><!-- end ngRepeat: day in week track by $index --><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-01T00:00:00+04:00" data-selectable-date="__2024-5-1" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">1</div></td><!-- end ngRepeat: day in week track by $index --></tr><!-- end ngRepeat: week in month.weeks --><tr bindonce="" class="ng-scope" ng-repeat="week in month.weeks"><!-- Show this TD when the date doesn't have a marker --><!-- ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-02T00:00:00+04:00" data-selectable-date="__2024-5-2" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">2</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-03T00:00:00+04:00" data-selectable-date="__2024-5-3" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">3</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-04T00:00:00+04:00" data-selectable-date="__2024-5-4" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">4</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-05T00:00:00+04:00" data-selectable-date="__2024-5-5" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">5</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-06T00:00:00+04:00" data-selectable-date="__2024-5-6" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">6</div></td><!-- end ngRepeat: day in week track by $index --><!-- end ngRepeat: day in week track by $index --><!-- end ngRepeat: day in week track by $index --></tr><!-- end ngRepeat: week in month.weeks --><tr bindonce="" class="ng-scope" ng-repeat="week in month.weeks"><!-- Show this TD when the date doesn't have a marker --><!-- ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-09T00:00:00+04:00" data-selectable-date="__2024-5-9" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">9</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-10T00:00:00+04:00" data-selectable-date="__2024-5-10" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">10</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-11T00:00:00+04:00" data-selectable-date="__2024-5-11" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">11</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-12T00:00:00+04:00" data-selectable-date="__2024-5-12" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">12</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-13T00:00:00+04:00" data-selectable-date="__2024-5-13" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">13</div></td><!-- end ngRepeat: day in week track by $index --><!-- end ngRepeat: day in week track by $index --><!-- end ngRepeat: day in week track by $index --></tr><!-- end ngRepeat: week in month.weeks --><tr bindonce="" class="ng-scope" ng-repeat="week in month.weeks"><!-- Show this TD when the date doesn't have a marker --><!-- ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-16T00:00:00+04:00" data-selectable-date="__2024-5-16" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">16</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-17T00:00:00+04:00" data-selectable-date="__2024-5-17" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">17</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day mighty-picker-calendar__day--disabled" data-date="2024-06-18T00:00:00+04:00" data-selectable-date="__2024-5-18" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">18</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day" data-date="2024-06-19T00:00:00+04:00" data-selectable-date="__2024-5-19" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">19</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day" data-date="2024-06-20T00:00:00+04:00" data-selectable-date="__2024-5-20" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">20</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day" data-date="2024-06-21T00:00:00+04:00" data-selectable-date="__2024-5-21" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">21</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day" data-date="2024-06-22T00:00:00+04:00" data-selectable-date="__2024-5-22" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">22</div></td><!-- end ngRepeat: day in week track by $index --></tr><!-- end ngRepeat: week in month.weeks --><tr bindonce="" class="ng-scope" ng-repeat="week in month.weeks"><!-- Show this TD when the date doesn't have a marker --><!-- ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day" data-date="2024-06-23T00:00:00+04:00" data-selectable-date="__2024-5-23" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">23</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day" data-date="2024-06-24T00:00:00+04:00" data-selectable-date="__2024-5-24" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">24</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day" data-date="2024-06-25T00:00:00+04:00" data-selectable-date="__2024-5-25" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">25</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day" data-date="2024-06-26T00:00:00+04:00" data-selectable-date="__2024-5-26" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">26</div></td><!-- end ngRepeat: day in week track by $index --><td bo-class='{"mighty-picker-calendar__day": day,"mighty-picker-calendar__day--selected": day.selected,"mighty-picker-calendar__day--disabled": day.disabled,}' class="ng-scope mighty-picker-calendar__day" data-date="2024-06-27T00:00:00+04:00" data-selectable-date="__2024-5-27" ng-click="select(day)" ng-repeat="day in week track by $index" role="button" tabindex="0"><div bo-text="day.date.date()" class="mighty-picker-calendar__day-wrapper">27</div></td><!-- end ngRepeat: day in week track by $index --><!-- end ngRepeat: day in week track by $index --><!-- end ngRepeat: day in week track by $index --></tr><!-- end ngRepeat: week in month.weeks --><!-- end ngRepeat: week in month.weeks --></tbody></table></div><!-- end ngRepeat: month in months track by $index --><button class="mighty-picker__next-month" ng-click="moveMonth(1)" type="button"></button></div><div aria-hidden="true" class="mighty-picker__clear-dates--simple ng-scope ng-hide" ng-click="clearDates('undefined')" ng-show="model" role="button" tabindex="0">Clear dates</div></div></datepicker-simple>
+</div>
+</div>
+<div class="careers__no-jobs__form__field">
+
+<span>Message</span>
+</div>
+<div class="careers__no-jobs__form__field upload-cv">
+<button aria-invalid="false" class="cvUploadBtn ng-pristine ng-untouched ng-valid ng-empty" name="cvUpload" ng-model="_CAC.models.careersNoJobsForm.cv_file" ngf-max-size="15MB" ngf-model-invalid="_CAC.models.careersNoJobsForm.cv_invalidFiles" ngf-pattern="'.pdf,.doc,.docx'" ngf-select="" type="file">Upload your CV</button>
+
+<!-- ngIf: _CAC.models.careersNoJobsForm.cv_invalidFiles -->
+</div>
+
+<div aria-hidden="true" class="alert alert-error ng-hide" ng-show="_CAC.viewVars.careersNoJobsForm.feedback &amp;&amp;
+                                                        _CAC.viewVars.careersNoJobsForm.errors &amp;&amp;
+                                                        !_CAC.models.careersNoJobsForm.cv_invalidFiles">
+                    We have encountered an error while sending your message. Please try again or contact us if the issue persists.
+                </div>
+<div aria-hidden="true" class="alert alert-error ng-hide" ng-show="_CAC.viewVars.cvUploaded">
+                    Please upload a CV file.
+                </div>
+<button type="submit">Submit</button>
+<div class="marketing-text">
+                    By submitting your details, you agree to Top Villas storing and using your information for the purposes of this enquiry.
+                </div>
+</form><!-- end ngIf: !_CAC.viewVars.careersNoJobsForm.sent -->
+<div aria-hidden="true" class="ng-hide" ng-show="_CAC.viewVars.careersNoJobsForm.sent">
+<p>Thank you for your application!</p>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+<!-- Example custom template for the typeahead demo -->
+<!-- // -->
+<!-- Bing tracking -->
+<!-- End Bing tracking -->
+</div>
+<div class="lightbox" id="lightbox" style="display: none;" tabindex="-1"><div class="lb-outerContainer"><div class="lb-container"><div class="lb-nav"></div><div class="lb-loader"></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"></div><div class="lb-closeContainer"></div></div></div></div><label style="visibility: hidden; position: absolute; overflow: hidden; width: 0px; height: 0px; border: none; margin: 0px; padding: 0px;" tabindex="-1">upload</label></body></html>

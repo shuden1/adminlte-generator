@@ -1,39 +1,42 @@
 import sys
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.common.by import By
-import threading
 import json
+import threading
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-# Assuming the job listings are structured within either div or li elements
-# and contain an a tag with the job title and URL.
+def scrape_jobs(file_path):
+    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
 
-# Target HTML file name passed through the console command as an argument
-target_html_file = sys.argv[1]
+    options = Options()
+    options.add_argument(f"user-data-dir={profile_folder_path}")
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
 
-# Initialize a headless webdriver
-profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-service = ChromeService(executable_path="C:\\Python3\\chromedriver.exe")
-options = webdriver.ChromeOptions()
-options.add_argument(f"user-data-dir={profile_folder_path}")
-options.add_argument("--headless")
-options.add_argument("--disable-gpu")
-options.add_argument("--no-sandbox")
-driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(service=service, options=options)
 
-# Open the target HTML file
-driver.get(f"file:///{target_html_file}")
+    driver.get(f"file:///{file_path}")
 
-# Scrape all job listings using CSS selectors altered to correct targeting
-# Job listings are expected to be in either div or ul>li elements
-job_listings = []
-for job_listing in driver.find_elements(By.CSS_SELECTOR, "[class*='job-listing'], [class*='job-opening'], [class*='careers'], [class*='opportunities'] a"):
-    job_title = job_listing.text
-    job_url = job_listing.get_attribute('href')
+    job_openings = []
 
-    job_listings.append({"Job-title": job_job_title, "URL": job_url})
+    # Use the selectors defined in STEP 1 to find job listings
+    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div[class*="job"]')  # General selector for job-related divs
+    for job_block in job_blocks:
+        try:
+            title_element = job_block.find_element(By.CSS_SELECTOR, 'a[href]')
+            job_title = title_element.text
+            job_url = title_element.get_attribute('href')
+            job_openings.append({"Job-title": job_title, "URL": job_url})
+        except:
+            continue
 
-driver.quit()
+    driver.quit()
 
-# Output the job listings in JSON format
-print(json.dumps(job_listings))
+    return json.dumps(job_openings, indent=4)
+
+if __name__ == "__main__":
+    file_path = sys.argv[1]
+    print(scrape_jobs(file_path))

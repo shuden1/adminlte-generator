@@ -29,7 +29,7 @@ def remove_script_tags(input_html_file):
     with open(input_html_file, 'w', encoding='utf-8') as file:
         file.write(str(soup))
 
-def get_dynamic_html(url, output_file, scrolls=4):
+def get_dynamic_html(url, output_file, scrolls=2):
     options = Options()
 
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\"+str(threading.get_ident())

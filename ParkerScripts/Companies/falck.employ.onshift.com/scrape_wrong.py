@@ -1,36 +1,42 @@
 import sys
+import json
 import threading
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-def scrape_job_listings(file_name):
+def scrape_jobs(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-    service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
-    options = webdriver.ChromeOptions()
+    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+
+    options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
 
     driver = webdriver.Chrome(service=service, options=options)
-    driver.get(f"file:///{file_name}")
 
-    job_listing_containers = driver.find_elements(By.CSS_SELECTOR, '.job-listing')
+    driver.get(f"file:///{file_path}")
 
-    jobs_json = []
+    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'li, div')
 
-    for container in job_listing_containers:
-        title_element = container.find_element(By.CSS_SELECTOR, '.job-title')
-        job_url = title_element.get_attribute('href')
-        job_title = title_element.text
-
-        jobs_json.append({"Job-title": job_title, "URL": job_url})
+    job_data = []
+    for job_block in job_blocks:
+        try:
+            title_tag = job_block.find_element(By.CSS_SELECTOR, 'a[href*="job_positions/preview"]')
+            job_title = title_tag.text.strip()
+            job_url = title_tag.get_attribute('href')
+            job_data.append({"Job-title": job_title, "URL": job_url})
+        except:
+            continue
 
     driver.quit()
-    return jobs_json
+
+    return json.dumps(job_data, indent=4)
 
 if __name__ == "__main__":
-    file_name = sys.argv[1]
-    job_listings = scrape_job_listings(file_name)
+    file_path = sys.argv[1]
+    job_listings = scrape_jobs(file_path)
     print(job_listings)

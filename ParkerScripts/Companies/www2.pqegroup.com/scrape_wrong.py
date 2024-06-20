@@ -1,18 +1,16 @@
 import sys
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service as ChromeService
-import threading
 import json
+import threading
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-# Get the target HTML file name from the argument
-target_html_file = sys.argv[1]
-
-def scrape_job_listings():
-    # Initialize the WebDriver with options
+def scrape_jobs(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-    service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
-    options = webdriver.ChromeOptions()
+    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+
+    options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
@@ -20,28 +18,25 @@ def scrape_job_listings():
 
     driver = webdriver.Chrome(service=service, options=options)
 
-    # Open the target HTML file
-    driver.get(f"file:///{target_html_file}")
+    driver.get(f"file:///{file_path}")
 
-    # Scrape job listings
-    job_blocks = driver.find_elements(By.CSS_SELECTOR, ".list-group-item.list-group-item-action")
-    job_listings = []
+    job_data = []
 
-    # Adjust to handle cases where job_blocks might not directly contain an <a> tag or the structure is different
-    for job in jobblocks:
-        try:
-            a_tag = job.find_element(By.CSS_SELECTOR, 'a')
-        except:
-            continue
-        job_title = a_tag.text.strip() if a_tag else 'No Title'
-        job_url = a_tag.get_attribute('href') if a_tag else '#'
+    # Use the refined selectors to find job listings
+    job_blocks = driver.find_elements(By.CSS_SELECTOR, "div[data-widget_type='html.default']")
 
-        job_listings.append({"Job-title": job_title, "URL": job_url})
+    for job_block in job_blocks:
+        links = job_block.find_elements(By.CSS_SELECTOR, "a")
+        for link in links:
+            job_title = link.text.strip()
+            job_url = link.get_attribute('href')
+            if job_url and "job" in job_url.lower():
+                job_data.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
 
-    return job_listings
+    return json.dumps(job_data, indent=4)
 
-# Scrape and print out the job listings in JSON format
 if __name__ == "__main__":
-    print(json.dumps(scrape_job_listings(), indent=2))
+    file_path = sys.argv[1]
+    print(scrape_jobs(file_path))

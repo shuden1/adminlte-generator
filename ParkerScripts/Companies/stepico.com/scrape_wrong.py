@@ -1,39 +1,41 @@
 import sys
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-import threading
 import json
+import threading
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-# Assuming the JSON parsing error in the provided instruction is adjusted for execution context.
-def main(html_file):
-    # Setup the webdriver
-    options = webdriver.ChromeOptions()
+def scrape_jobs(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+
+    options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
 
     driver = webdriver.Chrome(service=service, options=options)
 
-    # Open the local HTML file
-    driver.get(f"file:///{html_file}")
+    driver.get(f"file:///{file_path}")
 
-    # Use the corrected selectors to extract job listings
-    jobs = []
-    job_elements = driver.find_elements(By.CSS_SELECTOR, '.vacancy')
-    for job_element in job_elements:
-        title_element = job_element.find_element(By.CSS_SELECTOR, 'h3')
-        url = job_element.get_attribute('href')
-        jobs.append({"Job-title": title_element.text, "URL": url})
+    job_openings = []
+
+    # Corrected selectors based on the analysis
+    job_blocks = driver.find_elements(By.CSS_SELECTOR, "div.career-item")  # Example class, should be verified
+
+    for job_block in job_blocks:
+        job_title_tag = job_block.find_element(By.CSS_SELECTOR, "a")
+        job_title = job_title_tag.text.strip()
+        job_url = job_title_tag.get_attribute('href')
+        if job_url:
+            job_openings.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
 
-    # Output the jobs in JSON format
-    print(json.dumps(jobs))
+    return json.dumps(job_openings, indent=4)
 
 if __name__ == "__main__":
-    html_file = sys.argv[1]  # HTML file supplied as command-line argument
-    main(html_file)
+    file_path = sys.argv[1]
+    print(scrape_jobs(file_path))

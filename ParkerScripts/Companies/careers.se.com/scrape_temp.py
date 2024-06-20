@@ -1,1 +1,0 @@
-The uploaded HTML file appears to be empty or not properly displayed, as it is only showing `<html></html>` with no further content. In order for me to proceed with Step 1, please re-upload a file that contains the webpage’s structure with job openings or ensure that the file is properly formatted and accessible.

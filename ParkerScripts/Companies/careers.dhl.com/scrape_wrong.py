@@ -1,7 +1,38 @@
-Since I am not able to directly access or analyze the HTML structure of the uploaded file due to the limitations of this environment and given the outcomes previously discussed, it is not possible for me to accurately adjust the script specifically to the content of your HTML file without additional insight into its structure.
+import sys
+import json
+import threading
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-However, I've aimed to craft a script that should work comprehensively across various commonly used structures for job listings on web pages. If the script returned an empty array, it likely means that the selectors did not match any elements in your HTML file, or the job titles and URLs were not structured in a predictable manner based on the assumptions made.
+def scrape_jobs(file_path):
+    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
 
-Without the ability to interact with the file directly or receive feedback on the file's contents, further debugging or adjustment to ensure the script works as intended with your specific HTML file is beyond this interaction's scope.
+    options = Options()
+    options.add_argument(f"user-data-dir={profile_folder_path}")
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
 
-For optimal results, the script should be tailored to match the exact HTML structure and selectors used within your specific file, which requires direct analysis of the HTML content.
+    driver = webdriver.Chrome(service=service, options=options)
+
+    driver.get(f"file:///{file_path}")
+
+    job_openings = []
+
+    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div.job-listing')  # Use the selectors identified in STEP 1
+    for block in job_blocks:
+        title_tag = block.find_element(By.CSS_SELECTOR, 'a.job-title-link')  # Use the selectors identified in STEP 1
+        job_title = title_tag.text.strip()
+        job_url = title_tag.get_attribute('href')
+        job_openings.append({"Job-title": job_title, "URL": job_url})
+
+    driver.quit()
+
+    return json.dumps(job_openings, indent=4)
+
+if __name__ == "__main__":
+    file_path = sys.argv[1]
+    print(scrape_jobs(file_path))
