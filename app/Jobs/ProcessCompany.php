@@ -199,7 +199,7 @@ class ProcessCompany implements ShouldQueue
             $fileId = $response->id;
         } else return false;
 
-        $step_1_message = "First, find a few examples - maximum three - of Job Openings placed on this HTML. Respond with the Job titles only";
+        $step_1_message = "First, find Job Openings posted on this HTML. Respond only with maximum three Job titles PRESENTED ON THIS HTML";
 
 
         $response = $client->threads()->createAndRun(
@@ -235,11 +235,12 @@ class ProcessCompany implements ShouldQueue
 
         var_dump($lastMessage);
 
-        $step_2_message = "Now having the Job Opening titles, find them in this HTML, analyze the HTML and define JavaScript selectors for All Job Postings presented in this HTML. \n
+        $step_2_message = "Now having the Job Opening titles, find them in this HTML. \n
+            Next, analyze the HTML that contains those titles and define JavaScript selectors for All Job Postings presented in this HTML. \n
             Respond in the following format: \n
-            Job Opening elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED FROM THE HTML PROVIDED} \n
-            Job title elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED FROM THE HTML PROVIDED} \n
-            Job URL elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED FROM THE HTML PROVIDED}";
+            Job Opening elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED !!!FROM THE HTML PROVIDED!!!} \n
+            Job title elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED !!!FROM THE HTML PROVIDED!!!} \n
+            Job URL elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED !!!FROM THE HTML PROVIDED!!!}";
 
         $client->threads()->messages()->create($threadId, [
             'role' => 'user',
@@ -294,7 +295,7 @@ class ProcessCompany implements ShouldQueue
             if (!$result['isValidJson']){
                 $client->threads()->messages()->create($threadId, [
                     'role' => 'user',
-                    'content' => "When I launched the script I got an error: {$result}. /n Potentially, the selectors were wrong, or you used old Javascript syntax. Do not explain why it happened, create a working script this time.",
+                    'content' => "When I launched the script I got an error. /n Potentially, you used old Javascript syntax or tried to do something with the selectors that does not exist. Do not explain why it happened, create a working script this time.",
                 ]);
 
                 $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
@@ -322,7 +323,7 @@ class ProcessCompany implements ShouldQueue
                     $validScript = false;
                     $client->threads()->messages()->create($threadId, [
                         'role' => 'user',
-                        'content' => 'Then generate a correct script this time. Potentially, the selectors were wrong. Reply only with a new script, do not explain why it happened.',
+                        'content' => 'Then look for correct elements and selectors this time. Generate a correct script following the instructions. Reply only with a new script, do not explain why it happened.',
                         ]);
                     $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
                     $runId = $response->id;
@@ -393,7 +394,7 @@ class ProcessCompany implements ShouldQueue
                 $outputFile = $basePathHtmls . "\\cleaned.html";
 
 
- //               $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
+                $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
 
                 if ($this->hasJobs != 0) {
                     $success = $this->generateScript($outputFile, $basePath . "\\scrape_temp.py", $inputFile);
