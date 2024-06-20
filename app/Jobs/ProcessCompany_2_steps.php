@@ -30,7 +30,7 @@ Restart a process: pm2 restart <id|name>
 Delete a process: pm2 delete <id|name>
  */
 
-class ProcessCompany implements ShouldQueue
+class ProcessCompany_2_steps implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -199,7 +199,25 @@ class ProcessCompany implements ShouldQueue
             $fileId = $response->id;
         } else return false;
 
-        $step_1_message = "First, find a few examples - maximum three - of Job Openings placed on this HTML. Respond with the Job titles only";
+        $step_1_message = "Analyze the HTML file attached. Not only the code, but the content in it too. Your job is to define the selectors, that will be used to scrape ALL Job Openings from this webpage in the Step 2. \n
+                           STEP 1:  \n
+                           First find some Job Openings placed on this webpage.\n
+                           Then use BeautifulSoup to identify the EXACT HTML !!!CLASS!!! or !!!SOME NON-ID!!! PARAMETERS selectors representing blocks containing Job Openings only. \n
+                           NEVER reference to the selector's ID or just an HTML tag. Within these blocks identify the EXACT HTML !!!CLASS!!! or !!!SOME NON-ID!!! PARAMETERS for job titles and their associated URLs. \n
+                           Few tips: \n
+                           Every Job Opening block contains the information about the Job title and URL in it, or in inner blocks. \n
+                           Sometimes the page contains a list of Job Openings on the left side, and a detailed description of one Job Opening on the right side.
+                           In that case you need to focus on the left side, as we need to collect all Job Openings.
+                           Also in that case if you cannot correctly identify a Job Opening URL - use a \"#\" symbol. BUT ONLY IN THIS CASE AND ONLY IF THERE IS NO URL WITHIN A JOB OPENING BLOCK! \n
+                           Sometimes Job opening blocks are a part of a <ul> list. \n
+                           Sometimes Job opening blocks are <div> blocks with a repetitive class and relevant content inside, such as Job title, URL, optional department, optional location, and optional salary. Sometimes Job Titles might be located in <h> tag inside <a> tag, representing an associated URL.\n
+                           Sometimes Job Title is the text inside the <a> tag that represents an associated URL. Sometimes Job Title is the text inside the <p> tag. \n
+                           Sometimes Job posting blocks are HTML tag with the class that contains the word \"job\",\"career\", \"position\" and similar to them. \n
+                           Provide 3 required selectors in a JavaScript usable form. for example:
+                           Job Opening elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED} \n
+                           Job title elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED} \n
+                           Job URL elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED} \n
+                           The selectors you defined are going to be directly used in the script you will generate in the STEP 2!";
 
 
         $response = $client->threads()->createAndRun(
@@ -215,7 +233,7 @@ class ProcessCompany implements ShouldQueue
                                 [
                                     "file_id"=> $fileId,
                                     "tools" => [
-                                        ["type"=> "file_search"]
+                                        ["type"=> "code_interpreter"]
                                     ]
                                 ],
                             ],
@@ -235,54 +253,23 @@ class ProcessCompany implements ShouldQueue
 
         var_dump($lastMessage);
 
-        $step_2_message = "Now having the Job Opening titles, find them in this HTML, analyze the HTML and define JavaScript selectors for All Job Postings presented in this HTML. \n
-            Respond in the following format: \n
-            Job Opening elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED FROM THE HTML PROVIDED} \n
-            Job title elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED FROM THE HTML PROVIDED} \n
-            Job URL elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED FROM THE HTML PROVIDED}";
-
         $client->threads()->messages()->create($threadId, [
             'role' => 'user',
-            'content' => $step_2_message,
-            'attachments'=> [
-                [
-                    "file_id"=> $fileId,
-                    "tools" => [
-                        ["type"=> "code_interpreter"]
-                    ]
-                ],
-            ],
-        ]);
-
-        $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
-        $runId = $response->id;
-        var_dump("Step 2");
-        $lastMessage = $this->getGptResponse($client, $threadId, $runId);
-
-        if ($lastMessage == $step_2_message){
-            $lastMessage = $this->getGptResponse($client, $threadId, $runId);
-        }
-
-        var_dump($lastMessage);
-
-        $client->threads()->messages()->create($threadId, [
-            'role' => 'user',
-            'content' => "Now create a Python + Selenium script using the latest best practices for ChromeDriver 120.0.6099.109 \n
-            1. This script will be launched externally in a settled-up environment, DO NOT TEST THIS SCRIPT, CREATE IT: \n
-            THE TARGET HTML FILE NAME SHOULD BE AN ARGUMENT SENT FROM AN EXTERNAL SOURCE THROUGH THE CONSOLE COMMAND AS THE SINGLE INPUT PARAMETER. DO NOT PUT ANY PLACEHOLDERS OR EXAMPLES! \n
+            'content' => "STEP 2: Create a Python + Selenium script using the latest best practices for ChromeDriver 120.0.6099.109.
+            1. This script will be launched externally in a settled-up environment, DO NOT TEST THIS SCRIPT, CREATE IT:
+            THE TARGET HTML FILE NAME SHOULD BE AN ARGUMENT SENT FROM AN EXTERNAL SOURCE THROUGH THE CONSOLE COMMAND AS THE SINGLE INPUT PARAMETER. DO NOT PUT ANY PLACEHOLDERS OR EXAMPLES!
             2. Initialise a headless webdriver, with this profile path, do not forget to create a relevant folder: profile_folder_path=\"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\\"+str(threading.get_ident()) use this service:
-            service=service(executable_path=r\"C:\\Python3\\chromedriver.exe\") add these options: options.add_argument(f\"user-data-dir={profile_folder_path}\") options.add_argument(\"--headless\") options.add_argument(\"--disable-gpu\") options.add_argument(\"--no-sandbox\") \n
-            3. USE THE SELECTORS YOU PREVIOUSLY DEFINED!!! and scrape all job listings. REMEMBER!!!! instead of an old find_elements_by_css_selector, you should use the find_elements method with By.CSS_SELECTOR \n
-            4. In case there is no URL defined in the HTML - use a \"#\", BUT ONLY IF THERE IS NO URL DEFINED WITHIN THE JOB POSTING ELEMENT \n
-            4. NEVER IMPLEMENT EXAMPLE USAGE PARAMETERS AND SELECTORS, ONLY THE ONES EXISTING IN THE HTML \n
+            service=service(executable_path=r\"C:\\Python3\\chromedriver.exe\") add these options: options.add_argument(f\"user-data-dir={profile_folder_path}\") options.add_argument(\"--headless\") options.add_argument(\"--disable-gpu\") options.add_argument(\"--no-sandbox\")
+            3. USE THE SELECTORS DEFINED IN STEP 1!!! and scrape all job listings. REMEMBER!!!! instead of an old find_elements_by_css_selector, you should use the find_elements method with By.CSS_SELECTOR
+            4. NEVER IMPLEMENT EXAMPLE USAGE PARAMETERS AND SELECTORS
             5. Return a JSON with all job postings in the following format, DO NOT WRITE RESULT TO ANY FILE: { [\"Job-title\" :\"title1\", \"URL\":\"url1\"], [\"Job-title\" :\"title2\", \"URL\":\"url2\"], }",
         ]);
 
         $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
         $runId = $response->id;
         $validScript = false;
-        $i = 3;
-        while (!$validScript && $i < 5){
+        $i = 2;
+        while (!$validScript && $i < 4){
             $i++;
             var_dump("Step ".$i);
             $lastMessage = $this->getGptResponse($client, $threadId, $runId);
@@ -294,7 +281,7 @@ class ProcessCompany implements ShouldQueue
             if (!$result['isValidJson']){
                 $client->threads()->messages()->create($threadId, [
                     'role' => 'user',
-                    'content' => "When I launched the script I got an error: {$result}. /n Potentially, the selectors were wrong, or you used old Javascript syntax. Do not explain why it happened, create a working script this time.",
+                    'content' => "When I launched the script I got an error. Potentially, the selectors were wrong, or you used old Javascript syntax. Do not explain why it happened, create a working script this time.",
                 ]);
 
                 $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
@@ -322,7 +309,15 @@ class ProcessCompany implements ShouldQueue
                     $validScript = false;
                     $client->threads()->messages()->create($threadId, [
                         'role' => 'user',
-                        'content' => 'Then generate a correct script this time. Potentially, the selectors were wrong. Reply only with a new script, do not explain why it happened.',
+                        'content' => 'Then generate a correct script this time. Potentially, the selectors were wrong, define other selector following Step 1. Then Generate a script according to Step 2. Reply only with a new script, do not explain why it happened.',
+                        'attachments'=> [
+                            [
+                                "file_id"=> $fileId,
+                                "tools" => [
+                                    ["type"=> "code_interpreter"]
+                                ]
+                            ],
+                        ],
                         ]);
                     $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
                     $runId = $response->id;
@@ -393,7 +388,7 @@ class ProcessCompany implements ShouldQueue
                 $outputFile = $basePathHtmls . "\\cleaned.html";
 
 
- //               $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
+                $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
 
                 if ($this->hasJobs != 0) {
                     $success = $this->generateScript($outputFile, $basePath . "\\scrape_temp.py", $inputFile);

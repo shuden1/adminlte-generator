@@ -20,13 +20,16 @@ def scrape_jobs(file_path):
     
     driver.get(f"file:///{file_path}")
     
-    job_openings = driver.find_elements(By.CSS_SELECTOR, "div.col-12.py-2.hideshow-jobtype.jobtype-filter")
+    job_openings = driver.find_elements(By.CSS_SELECTOR, "div[class*='job-opening']")
     jobs = []
     
     for job in job_openings:
-        title_element = job.find_element(By.CSS_SELECTOR, "a")
+        title_element = job.find_element(By.CSS_SELECTOR, "h2[class*='job-title']")
+        url_element = job.find_element(By.CSS_SELECTOR, "a[class*='job-url']")
+        
         title = title_element.text
-        url = title_element.get_attribute("href")
+        url = url_element.get_attribute('href') if url_element.get_attribute('href') else "#"
+        
         jobs.append({"Job-title": title, "URL": url})
     
     driver.quit()

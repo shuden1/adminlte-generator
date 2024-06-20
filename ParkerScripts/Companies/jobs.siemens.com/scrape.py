@@ -18,21 +18,25 @@ def scrape_jobs(file_path):
     
     driver = webdriver.Chrome(service=service, options=options)
     
-    driver.get(f"file:///{file_path}")
+    try:
+        driver.get(f"file:///{file_path}")
+        
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.card.position-card.pointer")
+        job_listings = []
+        
+        for job_element in job_elements:
+            job_title_element = job_element.find_element(By.CSS_SELECTOR, "div.position-title.line-clamp.line-clamp-2")
+            job_title = job_title_element.text
+            
+            job_url = "#"  # Default to "#" if no URL is found within the job element
+            
+            job_listings.append({"Job-title": job_title, "URL": job_url})
+        
+        print(json.dumps(job_listings, indent=4))
     
-    job_openings = driver.find_elements(By.CSS_SELECTOR, "div.col-12.py-2.hideshow-jobtype.jobtype-filter")
-    jobs = []
-    
-    for job in job_openings:
-        title_element = job.find_element(By.CSS_SELECTOR, "a")
-        title = title_element.text
-        url = title_element.get_attribute("href")
-        jobs.append({"Job-title": title, "URL": url})
-    
-    driver.quit()
-    
-    return json.dumps(jobs, indent=4)
+    finally:
+        driver.quit()
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
-    print(scrape_jobs(file_path))
+    scrape_jobs(file_path)

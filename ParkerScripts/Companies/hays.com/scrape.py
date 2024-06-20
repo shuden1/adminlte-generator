@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 def scrape_jobs(file_path):
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{str(threading.get_ident())}"
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
     
     options = Options()
@@ -20,14 +20,20 @@ def scrape_jobs(file_path):
     
     driver.get(f"file:///{file_path}")
     
-    job_openings = driver.find_elements(By.CSS_SELECTOR, "div.col-12.py-2.hideshow-jobtype.jobtype-filter")
+    job_postings = driver.find_elements(By.CSS_SELECTOR, "div.col-12")
     jobs = []
     
-    for job in job_openings:
-        title_element = job.find_element(By.CSS_SELECTOR, "a")
-        title = title_element.text
-        url = title_element.get_attribute("href")
-        jobs.append({"Job-title": title, "URL": url})
+    for job in job_postings:
+        try:
+            title_element = job.find_element(By.CSS_SELECTOR, "h3.fs-600")
+            url_element = job.find_element(By.CSS_SELECTOR, "a.jobTitle")
+            
+            job_title = title_element.text
+            job_url = url_element.get_attribute("href")
+            
+            jobs.append({"Job-title": job_title, "URL": job_url})
+        except:
+            continue
     
     driver.quit()
     
