@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
-def scrape_jobs(file_path):
+def scrape_jobs(html_file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
     
@@ -18,25 +18,22 @@ def scrape_jobs(file_path):
     
     driver = webdriver.Chrome(service=service, options=options)
     
-    try:
-        driver.get(f"file:///{file_path}")
-        
-        job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div[class*="job"], ul[class*="job"] > li')
-        
-        job_postings = []
-        for block in job_blocks:
-            title_tag = block.find_element(By.CSS_SELECTOR, 'a, h2 a, h3 a, p a')
-            if title_tag:
-                job_postings.append({
-                    'Job-title': title_tag.text.strip(),
-                    'URL': title_tag.get_attribute('href')
-                })
-        
-        print(json.dumps(job_postings, indent=4))
+    driver.get(f"file:///{html_file_path}")
     
-    finally:
-        driver.quit()
+    job_postings = []
+    
+    job_elements = driver.find_elements(By.CSS_SELECTOR, "a")  # Adjust this selector based on the actual HTML structure
+    
+    for job_element in job_elements:
+        job_title = job_element.get_attribute('innerHTML').strip()
+        job_url = job_element.get_attribute('href') or "#"
+        
+        job_postings.append({"Job-title": job_title, "URL": job_url})
+    
+    driver.quit()
+    
+    return json.dumps(job_postings, indent=4)
 
 if __name__ == "__main__":
-    file_path = sys.argv[1]
-    scrape_jobs(file_path)
+    html_file_path = sys.argv[1]
+    print(scrape_jobs(html_file_path))

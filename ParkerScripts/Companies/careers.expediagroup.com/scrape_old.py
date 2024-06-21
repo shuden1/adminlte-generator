@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
-def scrape_jobs(file_path):
+def scrape_jobs(html_file):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
     
@@ -18,29 +18,27 @@ def scrape_jobs(file_path):
     
     driver = webdriver.Chrome(service=service, options=options)
     
-    driver.get(f"file:///{file_path}")
+    driver.get(f"file:///{html_file}")
     
-    job_openings = []
+    job_openings = driver.find_elements(By.CSS_SELECTOR, "li.Results__list__item")
+    jobs = []
     
-    # Use the selectors defined in STEP 1
-    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div[class*="job"], div[class*="career"], ul[class*="job"], ul[class*="career"]')
-    
-    for job_block in job_blocks:
-        title_tag = job_block.find_element(By.CSS_SELECTOR, 'a')
-        if title_tag:
-            job_title = title_tag.text.strip()
-            job_url = title_tag.get_attribute('href')
-            job_openings.append({"Job-title": job_title, "URL": job_url})
+    for job in job_openings:
+        title_element = job.find_element(By.CSS_SELECTOR, "h3.Results__list__title.h4.text-blue-2")
+        title = title_element.get_attribute('innerHTML').strip()
+        
+        try:
+            url_element = job.find_element(By.CSS_SELECTOR, "a")
+            url = url_element.get_attribute('href')
+        except:
+            url = "#"
+        
+        jobs.append({"Job-title": title, "URL": url})
     
     driver.quit()
     
-    return json.dumps(job_openings, indent=4)
+    return json.dumps(jobs, indent=4)
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <html_file_path>")
-        sys.exit(1)
-    
-    file_path = sys.argv[1]
-    job_listings = scrape_jobs(file_path)
-    print(job_listings)
+    html_file = sys.argv[1]
+    print(scrape_jobs(html_file))

@@ -6,38 +6,34 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
-def scrape_jobs(file_path):
+def scrape_jobs(html_file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
-
+    
     options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-
+    
     driver = webdriver.Chrome(service=service, options=options)
-
-    try:
-        driver.get(f"file:///{file_path}")
-
-        job_blocks_selector = 'a.css-19uc56f'
-        job_title_selector = 'a.css-19uc56f'
-        job_url_selector = 'a.css-19uc56f'
-
-        job_elements = driver.find_elements(By.CSS_SELECTOR, job_blocks_selector)
-
-        job_openings = []
-        for job_element in job_elements:
-            job_title = job_element.text
-            job_url = job_element.get_attribute('href')
-            job_openings.append({"Job-title": job_title, "URL": job_url})
-
-        print(json.dumps(job_openings, indent=4))
-
-    finally:
-        driver.quit()
+    
+    driver.get(f"file:///{html_file_path}")
+    
+    job_openings = driver.find_elements(By.CSS_SELECTOR, "li.css-1q2dra3")
+    jobs = []
+    
+    for job in job_openings:
+        title_element = job.find_element(By.CSS_SELECTOR, 'a.css-19uc56f[data-automation-id="jobTitle"]')
+        title = title_element.get_attribute('innerHTML').strip()
+        url = title_element.get_attribute('href') or "#"
+        
+        jobs.append({"Job-title": title, "URL": url})
+    
+    driver.quit()
+    
+    print(json.dumps(jobs, indent=4))
 
 if __name__ == "__main__":
-    file_path = sys.argv[1]
-    scrape_jobs(file_path)
+    html_file_path = sys.argv[1]
+    scrape_jobs(html_file_path)

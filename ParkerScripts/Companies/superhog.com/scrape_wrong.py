@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 def scrape_jobs(file_path):
-    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
+    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
     
     options = Options()
@@ -18,32 +18,28 @@ def scrape_jobs(file_path):
     
     driver = webdriver.Chrome(service=service, options=options)
     
-    try:
-        driver.get(f"file:///{file_path}")
-        
-        job_opening_selector = 'div[class*="job"], ul[class*="job"], li[class*="job"]'
-        job_title_selector = 'a'
-        
-        job_blocks = driver.find_elements(By.CSS_SELECTOR, job_opening_selector)
-        job_postings = []
-        
-        for block in job_blocks:
-            job_links = block.find_elements(By.CSS_SELECTOR, job_title_selector)
-            for link in job_links:
-                job_title = link.text.strip()
-                job_url = link.get_attribute('href')
-                if job_title and job_url:
-                    job_postings.append({"Job-title": job_title, "URL": job_url})
-        
-        print(json.dumps(job_postings, indent=4))
+    driver.get(f"file:///{file_path}")
     
-    finally:
-        driver.quit()
+    job_openings = driver.find_elements(By.CSS_SELECTOR, "div.elementor-widget-wrap.elementor-element-populated")
+    
+    jobs = []
+    
+    for job in job_openings:
+        title_element = job.find_element(By.TAG_NAME, "h2")
+        job_title = title_element.get_attribute('innerHTML').strip()
+        
+        try:
+            url_element = job.find_element(By.TAG_NAME, "a")
+            job_url = url_element.get_attribute('href')
+        except:
+            job_url = "#"
+        
+        jobs.append({"Job-title": job_title, "URL": job_url})
+    
+    driver.quit()
+    
+    print(json.dumps(jobs, indent=4))
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <path_to_html_file>")
-        sys.exit(1)
-    
     file_path = sys.argv[1]
     scrape_jobs(file_path)

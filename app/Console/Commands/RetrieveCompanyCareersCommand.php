@@ -26,7 +26,7 @@ class RetrieveCompanyCareersCommand extends Command
             if (!array_key_exists($companyId, $queuedCompanies)) {
                 $company = Company::find($companyId);
                 if ($company) {
-                    $job = RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue');
+                    $job = RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue'.rand(1, 10).rand(1, 10));
                     $this->info("Job dispatched for company ID: {$companyId}");
                 } else {
                     $this->error("No company found with ID: {$companyId}");
@@ -39,7 +39,7 @@ class RetrieveCompanyCareersCommand extends Command
             $companies = Company::where('scripted', 1)->where('sauroned', 1)->get();
             foreach ($companies as $company) {
                 if (!array_key_exists($company->id, $queuedCompanies)) {
-                    $job = RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue');
+                    $job = RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
                     $this->info("Job dispatched for company ID: {$company->id}");
                 } else {
                     $jobId = $queuedCompanies[$company->id];

@@ -9,30 +9,31 @@ from selenium.webdriver.chrome.options import Options
 def scrape_jobs(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
-
+    
     options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-
+    
     driver = webdriver.Chrome(service=service, options=options)
-
+    
     driver.get(f"file:///{file_path}")
-
-    job_openings = []
-
-    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div.job-listing')  # Use the selectors identified in STEP 1
-    for block in job_blocks:
-        title_tag = block.find_element(By.CSS_SELECTOR, 'a.job-title-link')  # Use the selectors identified in STEP 1
-        job_title = title_tag.text.strip()
-        job_url = title_tag.get_attribute('href')
-        job_openings.append({"Job-title": job_title, "URL": job_url})
-
+    
+    job_openings = driver.find_elements(By.CSS_SELECTOR, "li.jobs-list-item")
+    
+    jobs = []
+    for job in job_openings:
+        title_element = job.find_element(By.CSS_SELECTOR, 'a.au-target[data-ph-at-id="job-link"]')
+        title = title_element.get_attribute('innerHTML').strip()
+        url = title_element.get_attribute('href') or "#"
+        
+        jobs.append({"Job-title": title, "URL": url})
+    
     driver.quit()
-
-    return json.dumps(job_openings, indent=4)
+    
+    print(json.dumps(jobs, indent=4))
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
-    print(scrape_jobs(file_path))
+    scrape_jobs(file_path)

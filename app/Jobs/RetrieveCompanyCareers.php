@@ -289,7 +289,7 @@ class RetrieveCompanyCareers implements ShouldQueue
         if ($domain == "linkedin.com") {
             $this->retrieveLinkedIn();
             $when = Carbon::now()->addDay();
-            RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue')->delay($when);
+            RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue'.rand(1, 10))->delay($when);
         } else {
             // Creating a recent page image
             $basePathHtmls = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\" . $domain . "\\HTMLs\\" . $company->id;
@@ -421,7 +421,7 @@ class RetrieveCompanyCareers implements ShouldQueue
                 ProcessCompany::dispatch($company, 1, 1);
             } else {
                 $when = Carbon::now()->addDay();
-                RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue')->delay($when);
+                RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue'.rand(1, 10))->delay($when);
             }
         }
     }

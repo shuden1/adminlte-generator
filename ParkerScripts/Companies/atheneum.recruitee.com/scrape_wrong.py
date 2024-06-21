@@ -6,36 +6,36 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
-def scrape_jobs(file_path):
+def scrape_jobs(file_name):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-    service = Service(executable_path=r"C:\\Python3\\chromedriver.exe")
-
+    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    
     options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-
+    
     driver = webdriver.Chrome(service=service, options=options)
-
-    driver.get(f"file:///{file_path}")
-
-    job_listings = []
-
-    job_blocks = driver.find_elements(By.CSS_SELECTOR, ".job-block-class")  # Replace with actual class or parameter
-    for job_block in job_blocks:
-        job_title_element = job_block.find_element(By.CSS_SELECTOR, ".job-title-class")  # Replace with actual class or parameter
-        job_url_element = job_block.find_element(By.CSS_SELECTOR, "a")  # Assuming the URL is within an <a> tag
-
-        job_title = job_title_element.text
-        job_url = job_url_element.get_attribute("href")
-
-        job_listings.append({"Job-title": job_title, "URL": job_url})
-
+    
+    driver.get(f"file:///{file_name}")
+    
+    job_openings = driver.find_elements(By.CSS_SELECTOR, "div.offer-list__item")
+    
+    jobs = []
+    for job in job_openings:
+        title_element = job.find_element(By.CSS_SELECTOR, "h5.offer-list__title")
+        url_element = job.find_element(By.CSS_SELECTOR, "a.offer-list__link")
+        
+        title = title_element.get_attribute('innerHTML').strip()
+        url = url_element.get_attribute('href') if url_element.get_attribute('href') else "#"
+        
+        jobs.append({"Job-title": title, "URL": url})
+    
     driver.quit()
-
-    return json.dumps(job_listings, indent=4)
+    
+    print(json.dumps(jobs, indent=4))
 
 if __name__ == "__main__":
-    file_path = sys.argv[1]
-    print(scrape_jobs(file_path))
+    file_name = sys.argv[1]
+    scrape_jobs(file_name)

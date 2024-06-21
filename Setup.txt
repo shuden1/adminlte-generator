@@ -1,0 +1,3 @@
+php artisan queue:work --queue=ScriptGenerationQueue1 --sleep 5
+php artisan queue:work --queue=RetrieveCareersQueue1
+php artisan queue:work --queue=default

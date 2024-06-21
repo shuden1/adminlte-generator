@@ -20,20 +20,25 @@ def scrape_jobs(file_path):
     
     driver.get(f"file:///{file_path}")
     
-    job_openings = []
+    job_openings = driver.find_elements(By.CSS_SELECTOR, "div.breadcrumb")
+    jobs = []
     
-    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div[class*="job"], div[class*="career"], div[class*="opening"], ul[class*="job"], ul[class*="career"], ul[class*="opening"]')
-    for block in job_blocks:
-        title_tag = block.find_element(By.CSS_SELECTOR, 'a, h2 a, h3 a, p a')
-        if title_tag:
-            job_title = title_tag.text.strip()
-            job_url = title_tag.get_attribute('href')
-            job_openings.append({"Job-title": job_title, "URL": job_url})
+    for job in job_openings:
+        title_element = job.find_element(By.CSS_SELECTOR, "span.title-position")
+        title = title_element.get_attribute('innerHTML').strip()
+        
+        try:
+            url_element = job.find_element(By.CSS_SELECTOR, "a[href]")
+            url = url_element.get_attribute('href')
+        except:
+            url = "#"
+        
+        jobs.append({"Job-title": title, "URL": url})
     
     driver.quit()
     
-    return json.dumps(job_openings, indent=4)
+    print(json.dumps(jobs, indent=4))
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
-    print(scrape_jobs(file_path))
+    scrape_jobs(file_path)

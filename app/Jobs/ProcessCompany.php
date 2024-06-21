@@ -51,7 +51,7 @@ class ProcessCompany implements ShouldQueue
         $this->company = $company;
         $this->forced = $forced;
         $this->hasJobs = $hasJobs;
-        $this->queue = 'ScriptGenerationQueue';
+        $this->queue = 'ScriptGenerationQueue'.rand(1, 10);
     }
 
     public function failed(Exception $exception)
@@ -62,8 +62,8 @@ class ProcessCompany implements ShouldQueue
 
     public function getCleanHTML($inputFile, $outputFile, $careerPageURL)
     {
-//        $pythonPath = "C:\\Python3";
-        $pythonPath = "C:\Users\shuga\AppData\Local\Programs\Python\Python312";
+        $pythonPath = "C:\\Python3";
+//        $pythonPath = "C:\Users\shuga\AppData\Local\Programs\Python\Python312";
         $command = $pythonPath."\\python.exe"." D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
         exec($command, $output1, $returnStatus1);
 
@@ -303,7 +303,8 @@ class ProcessCompany implements ShouldQueue
             $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
             $runId = $response->id;
             var_dump($runId);
-            } else {
+            }
+        else {
             $limitedJson = $this->getLimitedJson($result["jsonData"]);
             $client->threads()->messages()->create($threadId, [
                 'role' => 'user',
@@ -345,7 +346,7 @@ class ProcessCompany implements ShouldQueue
         if ($domain == "linkedin.com") {
             $this->company->scripted = 1;
             $this->company->save();
-            RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+            RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
             return;
         } else {
             $companyPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\{$this->company->id}";
@@ -387,6 +388,7 @@ class ProcessCompany implements ShouldQueue
 
                 $inputFile = $basePathHtmls . "\\template.html";
                 $outputFile = $basePathHtmls . "\\cleaned.html";
+                $tempScriptPath = $basePath . "\\scrape_temp.py";
 
 
                 $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
@@ -395,7 +397,7 @@ class ProcessCompany implements ShouldQueue
                     $attempt = 1;
                     $success = false;
                     while (($attempt<3)&&(!$success)){
-                        $success = $this->generateScript($outputFile, $basePath . "\\scrape_temp.py", $inputFile);
+                        $success = $this->generateScript($outputFile, $tempScriptPath, $inputFile);
                         $attempt++;
                     }
 
@@ -407,17 +409,17 @@ class ProcessCompany implements ShouldQueue
                             rename($scriptPath, $basePath . "\\scrape_old.py");
                         }
                         rename($tempScriptPath, $scriptPath);
-//                        RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+//                        RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
                     }
                 } else {
-                    RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+                    RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
                 }
             }
 
             if (file_exists($scriptPath)) {
                 $this->company->scripted = true;
                 $this->company->save();
-                RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+                RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
             }
 
             $this->company->save();

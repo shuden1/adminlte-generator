@@ -3,10 +3,10 @@ import json
 import threading
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-def scrape_jobs(file_path):
+def scrape_jobs(file_name):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
 
@@ -19,22 +19,15 @@ def scrape_jobs(file_path):
     driver = webdriver.Chrome(service=service, options=options)
 
     try:
-        driver.get(f"file:///{file_path}")
+        driver.get(f"file:///{file_name}")
 
-        job_opening_selector = 'YOUR_JOB_OPENING_SELECTOR'
-        job_title_selector = 'YOUR_JOB_TITLE_SELECTOR'
-        job_url_selector = 'YOUR_JOB_URL_SELECTOR'
-
-        job_elements = driver.find_elements(By.CSS_SELECTOR, job_opening_selector)
+        job_blocks = driver.find_elements(By.CSS_SELECTOR, "div[class*='job']")  # Example selector, replace with actual
         jobs = []
 
-        for job in job_elements:
-            title_element = job.find_element(By.CSS_SELECTOR, job_title_selector)
-            url_element = job.find_element(By.CSS_SELECTOR, job_url_selector)
-
+        for job_block in job_blocks:
+            title_element = job_block.find_element(By.CSS_SELECTOR, "a")  # Example selector, replace with actual
             title = title_element.text
-            url = url_element.get_attribute('href')
-
+            url = title_element.get_attribute("href")
             jobs.append({"Job-title": title, "URL": url})
 
         print(json.dumps(jobs, indent=4))
@@ -44,8 +37,8 @@ def scrape_jobs(file_path):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python script.py <path_to_html_file>")
+        print("Usage: python script.py <html_file_path>")
         sys.exit(1)
 
-    file_path = sys.argv[1]
-    scrape_jobs(file_path)
+    file_name = sys.argv[1]
+    scrape_jobs(file_name)

@@ -110,7 +110,7 @@ class CompanyController extends AppBaseController
                 $domain = str_replace('www.', '', $domain);
 
                 if (($domain == "linkedin.com")||file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
-                    RetrieveCompanyCareers::dispatch($c)->onQueue('RetrieveCareersQueue');
+                    RetrieveCompanyCareers::dispatch($c)->onQueue('RetrieveCareersQueue'.rand(1, 10));
                 }
                 return $c;
             });

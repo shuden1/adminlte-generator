@@ -21,13 +21,14 @@ class RemoveDuplicatedJobsCommand extends Command
     public function handle()
     {
         $companyId = $this->argument('company_id');
-        $queuedCompanies = $this->getQueuedCompanyIds();
+//        $queuedCompanies = $this->getQueuedCompanyIdsRemoveScriptGenerationDuplicates();
+        $this->updateQueueNames();
         die();
         if ($companyId !== 'all') {
             if (!array_key_exists($companyId, $queuedCompanies)) {
                 $company = Company::find($companyId);
                 if ($company) {
-                    RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue');
+                    RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue'.rand(1, 10).rand(1, 10));
                     $this->info("Job dispatched for company ID: {$companyId}");
                 } else {
                     $this->error("No company found with ID: {$companyId}");
@@ -40,7 +41,7 @@ class RemoveDuplicatedJobsCommand extends Command
             $companies = Company::where('scripted', 1)->where('sauroned', 1)->get();
             foreach ($companies as $company) {
                 if ((!array_key_exists($company->id, $queuedCompanies))&&($company->id >= 172)) {
-                    RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue');
+                    RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue'.rand(1, 10).rand(1, 10));
                     $this->info("Job dispatched for company ID: {$company->id}");
                 } else {
                     if (isset($queuedCompanies[$company->id])) {
@@ -144,5 +145,71 @@ class RemoveDuplicatedJobsCommand extends Command
         }
         return $companyJobs; // Return associative array of company IDs and their job IDs
     }
+
+    public function updateQueueNames()
+    {
+        // Fetch all jobs from the queue_jobs table
+        $jobs = DB::table('queue_jobs')->get();
+
+        // Iterate over each job
+        foreach ($jobs as $job) {
+            // Check if the queue name is "RetrieveCareersQueue"
+            if ($job->queue == "RetrieveCareersQueue") {
+                // Generate a random number between 1 and 10
+                $randomNumber = rand(1, 10);
+
+                // Append the random number to the queue name
+                $newQueueName = $job->queue . $randomNumber;
+
+                // Update the queue name in the database
+                DB::table('queue_jobs')
+                    ->where('id', $job->id)
+                    ->update(['queue' => $newQueueName]);
+            }
+        }
+    }
+
+    protected function getQueuedCompanyIdsRemoveScriptGenerationDuplicates()
+    {
+        $jobs = DB::table('failed_jobs')
+            ->where('queue', 'ScriptGenerationQueue')
+            ->get(['id', 'payload']); // Fetch job ID and payload
+        $companyJobs = [];
+        foreach ($jobs as $job) {
+            $payload = json_decode($job->payload, true);
+            $commandSerialized = $payload['data']['command'];
+            try {
+                $command = unserialize($commandSerialized);
+                $reflectionObject = new ReflectionObject($command);
+                if ($reflectionObject->hasProperty('company')) {
+                    $companyProperty = $reflectionObject->getProperty('company');
+                    $companyProperty->setAccessible(true);
+                    $company = $companyProperty->getValue($command);
+                    $companyJobs[$company['id']][] = $job->id; // Store job ID alongside company ID
+//                      $companyJobs[$company['id']] = $job->id; // Store job ID alongside company ID
+                }
+            } catch (Exception $e) {
+                error_log('Error accessing company ID: ' . $e->getMessage());
+            }
+        }
+
+        $temp_results = [];
+        foreach ($companyJobs as $key => $companyJob){
+            if (count($companyJob)>1){
+                $temp_results[$key] = $companyJob;
+            }
+        }
+
+        foreach ($temp_results as $tr){
+            foreach ($tr as $k => $v){
+                if ($k>0){
+                    DB::table('failed_jobs')->where('id', $v)->delete();
+                }
+            }
+        }
+        return $companyJobs; // Return associative array of company IDs and their job IDs
+    }
+
+
 
 }

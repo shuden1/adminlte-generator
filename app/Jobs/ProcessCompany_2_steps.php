@@ -344,7 +344,7 @@ class ProcessCompany_2_steps implements ShouldQueue
         if ($domain == "linkedin.com") {
             $this->company->scripted = 1;
             $this->company->save();
-            RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+            RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
             return;
         } else {
             $companyPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\{$this->company->id}";
@@ -401,17 +401,17 @@ class ProcessCompany_2_steps implements ShouldQueue
                             rename($scriptPath, $basePath . "\\scrape_old.py");
                         }
                         rename($tempScriptPath, $scriptPath);
-//                        RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+//                        RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
                     }
                 } else {
-                    RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+                    RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
                 }
             }
 
             if (file_exists($scriptPath)) {
                 $this->company->scripted = true;
                 $this->company->save();
-                RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+                RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
             }
 
             $this->company->save();

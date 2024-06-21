@@ -18,28 +18,28 @@ def scrape_jobs(file_path):
     
     driver = webdriver.Chrome(service=service, options=options)
     
-    try:
-        driver.get(f"file:///{file_path}")
-        
-        job_postings = []
-        
-        # Use the selectors identified in STEP 1
-        job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div[class*="job-opening"]')  # Example selector, adjust based on actual content
-        for job in job_blocks:
-            title_element = job.find_element(By.CSS_SELECTOR, 'a[class*="job-title"]')
-            title = title_element.text.strip()
-            url = title_element.get_attribute('href')
-            job_postings.append({"Job-title": title, "URL": url})
-        
-        print(json.dumps(job_postings, indent=4))
+    driver.get(f"file:///{file_path}")
     
-    finally:
-        driver.quit()
+    job_openings = driver.find_elements(By.CSS_SELECTOR, "div.isotope-system.isotope-general-light.grid-general-light.career-list.isotope-processed")
+    
+    jobs = []
+    
+    for job in job_openings:
+        title_element = job.find_element(By.CSS_SELECTOR, "p.t-entry-title")
+        title = title_element.get_attribute('innerHTML').strip()
+        
+        try:
+            url_element = job.find_element(By.CSS_SELECTOR, "a.custom-link.btn.btn-lg.border-width-0.btn-accent.btn-circle.btn-outline.btn-icon-right")
+            url = url_element.get_attribute('href')
+        except:
+            url = "#"
+        
+        jobs.append({"Job-title": title, "URL": url})
+    
+    driver.quit()
+    
+    print(json.dumps(jobs, indent=4))
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <path_to_html_file>")
-        sys.exit(1)
-    
     file_path = sys.argv[1]
     scrape_jobs(file_path)

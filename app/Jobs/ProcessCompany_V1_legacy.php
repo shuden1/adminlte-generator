@@ -288,7 +288,7 @@ class ProcessCompany_v1legacy implements ShouldQueue
         if ($domain == "linkedin.com") {
             $this->company->scripted = 1;
             $this->company->save();
-            RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+            RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
             return;
         } else {
 
@@ -346,16 +346,16 @@ class ProcessCompany_v1legacy implements ShouldQueue
                             rename($scriptPath, $basePath . "\\scrape_old.py");
                         }
                         rename($tempScriptPath, $scriptPath);
-                        RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+                        RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
                     }
                 } else {
-                    RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+                    RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
                 }
             }
 
             if (!$shouldRegenerate && file_exists($scriptPath)) {
                 $this->company->scripted = 1;
-                RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue');
+                RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
             }
 
             $this->company->save();

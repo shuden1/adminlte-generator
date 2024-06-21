@@ -348,7 +348,7 @@
 <div class="search-jobs__misc search-jobs__misc-horizontal-filters" data-bind="css: {'search-jobs__misc--events-enabled': areEventsEnabled}">
 <!-- ko if: areEventsEnabled --><!-- /ko -->
 <!-- ko ifnot: areEventsEnabled -->
-<h1 class="search-jobs__counter text-color-secondary" data-bind="i18n: { key: jobsCounterKey(), tokens: { 'jobCount': totalCount } }">52 Open Jobs</h1>
+<h1 class="search-jobs__counter text-color-secondary" data-bind="i18n: { key: jobsCounterKey(), tokens: { 'jobCount': totalCount } }">53 Open Jobs</h1>
 <!-- /ko -->
 <!-- ko if: filters().length && (totalCount() || selectedFiltersCount() > 0) -->
 <!-- ko ifnot: areEventsEnabled -->
@@ -372,7 +372,7 @@
 <!-- ko if: !$parent.areEventsEnabled -->
 <div aria-live="polite" class="oj-helper-hidden-accessible">
 <!-- ko ifnot: $parent.loading -->
-<span data-bind="i18n: { key: 'search.results-for-jobs', tokens: { 'TOTAL': totalCount } }">Job search results 52</span>
+<span data-bind="i18n: { key: 'search.results-for-jobs', tokens: { 'TOTAL': totalCount } }">Job search results 53</span>
 <!-- /ko -->
 </div>
 <!-- /ko -->
@@ -381,7 +381,7 @@
 <!-- ko if: filters().length && !areRecommendedJobsEnabled() -->
 <!-- ko if: !$parent.areEventsEnabled -->
 <li>
-<div class="search-filters__counter" data-bind="i18n: { key: $parent.jobsCounterKey(), tokens: { 'jobCount': totalCount } }">52 Open Jobs</div>
+<div class="search-filters__counter" data-bind="i18n: { key: $parent.jobsCounterKey(), tokens: { 'jobCount': totalCount } }">53 Open Jobs</div>
 </li>
 <!-- ko if: anyFilterInFacetAvailable -->
 <li>
@@ -464,13 +464,32 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="United Kingdom filter 12" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="United Kingdom filter 13" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="United Kingdom filter">
 <!-- ko if: item.label --><!-- /ko -->
 <!-- ko ifnot: item.label -->
 <!-- ko text: item.textParts.main -->United <!-- /ko -->
+<!-- ko text: item.textParts.last --> Kingdom<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->13<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+</search-facet-dropdown-item>
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
+<button aria-label="BERKSHIRE, United Kingdom filter 12" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
+            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
+            }" title="BERKSHIRE, United Kingdom filter">
+<!-- ko if: item.label --><!-- /ko -->
+<!-- ko ifnot: item.label -->
+<!-- ko text: item.textParts.main -->BERKSHIRE, United <!-- /ko -->
 <!-- ko text: item.textParts.last --> Kingdom<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
@@ -483,26 +502,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="BERKSHIRE, United Kingdom filter 11" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
-            attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
-            i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
-            }" title="BERKSHIRE, United Kingdom filter">
-<!-- ko if: item.label --><!-- /ko -->
-<!-- ko ifnot: item.label -->
-<!-- ko text: item.textParts.main -->BERKSHIRE, United <!-- /ko -->
-<!-- ko text: item.textParts.last --> Kingdom<!-- /ko -->
-<!-- /ko -->
-<!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->11<!-- /ko -->)
-        <!-- /ko -->
-</button>
-</li>
-</search-facet-dropdown-item>
-<!-- /ko -->
-<!-- ko if: $parent.adminMode --><!-- /ko -->
-<!-- ko ifnot: $parent.adminMode -->
-<search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="LANGLEY, BERKSHIRE, United Kingdom filter 11" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="LANGLEY, BERKSHIRE, United Kingdom filter 12" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="LANGLEY, BERKSHIRE, United Kingdom filter">
@@ -512,7 +512,7 @@
 <!-- ko text: item.textParts.last --> Kingdom<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->11<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->12<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -810,14 +810,14 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Paralegal filter 2" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Business Intelligence &amp; Analytics filter 2" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
-            }" title="Paralegal filter">
+            }" title="Business Intelligence &amp; Analytics filter">
 <!-- ko if: item.label --><!-- /ko -->
 <!-- ko ifnot: item.label -->
-<!-- ko text: item.textParts.main --> <!-- /ko -->
-<!-- ko text: item.textParts.last -->Paralegal<!-- /ko -->
+<!-- ko text: item.textParts.main -->Business Intelligence &amp; <!-- /ko -->
+<!-- ko text: item.textParts.last --> Analytics<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
         (<!-- ko text: item.totalCount -->2<!-- /ko -->)
@@ -829,17 +829,17 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Business Intelligence &amp; Analytics filter 1" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Paralegal filter 2" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
-            }" title="Business Intelligence &amp; Analytics filter">
+            }" title="Paralegal filter">
 <!-- ko if: item.label --><!-- /ko -->
 <!-- ko ifnot: item.label -->
-<!-- ko text: item.textParts.main -->Business Intelligence &amp; <!-- /ko -->
-<!-- ko text: item.textParts.last --> Analytics<!-- /ko -->
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Paralegal<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->1<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->2<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1010,14 +1010,14 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Legal filter 2" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Business Strategy &amp; Planning filter 2" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
-            }" title="Legal filter">
+            }" title="Business Strategy &amp; Planning filter">
 <!-- ko if: item.label --><!-- /ko -->
 <!-- ko ifnot: item.label -->
-<!-- ko text: item.textParts.main --> <!-- /ko -->
-<!-- ko text: item.textParts.last -->Legal<!-- /ko -->
+<!-- ko text: item.textParts.main -->Business Strategy &amp; <!-- /ko -->
+<!-- ko text: item.textParts.last --> Planning<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
         (<!-- ko text: item.totalCount -->2<!-- /ko -->)
@@ -1029,17 +1029,17 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Business Strategy &amp; Planning filter 1" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Legal filter 2" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
-            }" title="Business Strategy &amp; Planning filter">
+            }" title="Legal filter">
 <!-- ko if: item.label --><!-- /ko -->
 <!-- ko ifnot: item.label -->
-<!-- ko text: item.textParts.main -->Business Strategy &amp; <!-- /ko -->
-<!-- ko text: item.textParts.last --> Planning<!-- /ko -->
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Legal<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->1<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->2<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1115,7 +1115,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Less than 30 days filter 29" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Less than 30 days filter 28" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="Less than 30 days filter">
@@ -1125,7 +1125,7 @@
 <!-- ko text: item.textParts.last --> days<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->29<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->28<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1134,7 +1134,7 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <search-facet-dropdown-item params="facet: facet, item: item, isDropdownOpen: $parent.isDropdownOpen"><li class="search-facet-dropdown__list-element" data-bind="css: { 'search-facet-dropdown__list-element--selected': item.selected }" role="option">
-<button aria-label="Greater than 30 days filter 23" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Greater than 30 days filter 25" class="search-facet-dropdown__filter-button" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'aria-label': ariaLabel}, hasFocus: hasFocus,
             i18nAttr: {'title': { key: 'search.filter-label', tokens: {'filtername': item.text} }
             }" title="Greater than 30 days filter">
@@ -1144,7 +1144,7 @@
 <!-- ko text: item.textParts.last --> days<!-- /ko -->
 <!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->23<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->25<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1269,9 +1269,9 @@
 <ul class="search-filters__list search-filters__list--vertical search-filters__list--open" data-bind="css: { 'search-filters__list--open': isOpen }">
 <!--ko if: showSearchFilters -->
 <li>
-<div class="search-filter-vertical_autosuggest__list" data-bind="attr: { id: 'filter-list-' + instance}" id="filter-list-5">
+<div class="search-filter-vertical_autosuggest__list" data-bind="attr: { id: 'filter-list-' + instance}" id="filter-list-9">
 <span class="search-icon icon-magnifier"></span>
-<input aria-autocomplete="list" aria-controls="vertical-filter-5" aria-expanded="false" aria-haspopup="true" aria-owns="vertical-filter-5" autocomplete="off" class="search-filter-vertical_autosuggest__list-input text-color-primary ui-autocomplete-input" data-bind="textInput: keyword,
+<input aria-autocomplete="list" aria-controls="vertical-filter-9" aria-expanded="false" aria-haspopup="true" aria-owns="vertical-filter-9" autocomplete="off" class="search-filter-vertical_autosuggest__list-input text-color-primary ui-autocomplete-input" data-bind="textInput: keyword,
                 attr: {
                     id: 'vertical-filter-' + instance,
                     placeholder: filterByLabel,
@@ -1280,9 +1280,9 @@
                 },
                 autocomplete: { model: keyword, source: fetchFacetFilters, select: action,
                     appendTo: '#filter-list-' + instance },
-                a11y.keysHandler: { keys: 'enter', handler: action }" data-control-id="search-filter-vertical_autosuggest" id="vertical-filter-5" placeholder="Filter by Locations" type="text"/>
+                a11y.keysHandler: { keys: 'enter', handler: action }" data-control-id="search-filter-vertical_autosuggest" id="vertical-filter-9" placeholder="Filter by Locations" type="text"/>
 <!-- ko if: isLoading --><!-- /ko -->
-<ul class="ui-menu ui-widget ui-widget-content ui-autocomplete text-color-primary background-color-dropdown ui-front" id="ui-id-11" style="display: none;" tabindex="0" unselectable="on"></ul></div>
+<ul class="ui-menu ui-widget ui-widget-content ui-autocomplete text-color-primary background-color-dropdown ui-front" id="ui-id-13" style="display: none;" tabindex="0" unselectable="on"></ul></div>
 </li>
 <!-- /ko -->
 <!-- ko foreach: { data: facet.items, as: 'item' } -->
@@ -1304,10 +1304,25 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="United Kingdom filter 12" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="United Kingdom filter 13" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="United Kingdom" type="button">
 <!-- ko text: item.textParts.main -->United <!-- /ko -->
+<!-- ko text: item.textParts.last --> Kingdom<!-- /ko -->
+<!-- ko if: item.totalCount -->
+        (<!-- ko text: item.totalCount -->13<!-- /ko -->)
+        <!-- /ko -->
+</button>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $parent.adminMode --><!-- /ko -->
+<!-- ko ifnot: $parent.adminMode -->
+<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
+<button aria-label="BERKSHIRE, United Kingdom filter 12" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
+            hasFocus: hasFocus" title="BERKSHIRE, United Kingdom" type="button">
+<!-- ko text: item.textParts.main -->BERKSHIRE, United <!-- /ko -->
 <!-- ko text: item.textParts.last --> Kingdom<!-- /ko -->
 <!-- ko if: item.totalCount -->
         (<!-- ko text: item.totalCount -->12<!-- /ko -->)
@@ -1319,28 +1334,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="BERKSHIRE, United Kingdom filter 11" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
-            attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
-            hasFocus: hasFocus" title="BERKSHIRE, United Kingdom" type="button">
-<!-- ko text: item.textParts.main -->BERKSHIRE, United <!-- /ko -->
-<!-- ko text: item.textParts.last --> Kingdom<!-- /ko -->
-<!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->11<!-- /ko -->)
-        <!-- /ko -->
-</button>
-</li>
-<!-- /ko -->
-<!-- /ko -->
-<!-- ko if: $parent.adminMode --><!-- /ko -->
-<!-- ko ifnot: $parent.adminMode -->
-<!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="LANGLEY, BERKSHIRE, United Kingdom filter 11" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="LANGLEY, BERKSHIRE, United Kingdom filter 12" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="LANGLEY, BERKSHIRE, United Kingdom" type="button">
 <!-- ko text: item.textParts.main -->LANGLEY, BERKSHIRE, United <!-- /ko -->
 <!-- ko text: item.textParts.last --> Kingdom<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->11<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->12<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1459,9 +1459,9 @@
 <ul class="search-filters__list search-filters__list--vertical search-filters__list--open" data-bind="css: { 'search-filters__list--open': isOpen }">
 <!--ko if: showSearchFilters -->
 <li>
-<div class="search-filter-vertical_autosuggest__list" data-bind="attr: { id: 'filter-list-' + instance}" id="filter-list-6">
+<div class="search-filter-vertical_autosuggest__list" data-bind="attr: { id: 'filter-list-' + instance}" id="filter-list-10">
 <span class="search-icon icon-magnifier"></span>
-<input aria-autocomplete="list" aria-controls="vertical-filter-6" aria-expanded="false" aria-haspopup="true" aria-owns="vertical-filter-6" autocomplete="off" class="search-filter-vertical_autosuggest__list-input text-color-primary ui-autocomplete-input" data-bind="textInput: keyword,
+<input aria-autocomplete="list" aria-controls="vertical-filter-10" aria-expanded="false" aria-haspopup="true" aria-owns="vertical-filter-10" autocomplete="off" class="search-filter-vertical_autosuggest__list-input text-color-primary ui-autocomplete-input" data-bind="textInput: keyword,
                 attr: {
                     id: 'vertical-filter-' + instance,
                     placeholder: filterByLabel,
@@ -1470,9 +1470,9 @@
                 },
                 autocomplete: { model: keyword, source: fetchFacetFilters, select: action,
                     appendTo: '#filter-list-' + instance },
-                a11y.keysHandler: { keys: 'enter', handler: action }" data-control-id="search-filter-vertical_autosuggest" id="vertical-filter-6" placeholder="Filter by Job Functions" type="text"/>
+                a11y.keysHandler: { keys: 'enter', handler: action }" data-control-id="search-filter-vertical_autosuggest" id="vertical-filter-10" placeholder="Filter by Job Functions" type="text"/>
 <!-- ko if: isLoading --><!-- /ko -->
-<ul class="ui-menu ui-widget ui-widget-content ui-autocomplete text-color-primary background-color-dropdown ui-front" id="ui-id-12" style="display: none;" tabindex="0" unselectable="on"></ul></div>
+<ul class="ui-menu ui-widget ui-widget-content ui-autocomplete text-color-primary background-color-dropdown ui-front" id="ui-id-14" style="display: none;" tabindex="0" unselectable="on"></ul></div>
 </li>
 <!-- /ko -->
 <!-- ko foreach: { data: facet.items, as: 'item' } -->
@@ -1569,11 +1569,11 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Paralegal filter 2" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Business Intelligence &amp; Analytics filter 2" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
-            hasFocus: hasFocus" title="Paralegal" type="button">
-<!-- ko text: item.textParts.main --> <!-- /ko -->
-<!-- ko text: item.textParts.last -->Paralegal<!-- /ko -->
+            hasFocus: hasFocus" title="Business Intelligence &amp; Analytics" type="button">
+<!-- ko text: item.textParts.main -->Business Intelligence &amp; <!-- /ko -->
+<!-- ko text: item.textParts.last --> Analytics<!-- /ko -->
 <!-- ko if: item.totalCount -->
         (<!-- ko text: item.totalCount -->2<!-- /ko -->)
         <!-- /ko -->
@@ -1584,13 +1584,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Business Intelligence &amp; Analytics filter 1" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Paralegal filter 2" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
-            hasFocus: hasFocus" title="Business Intelligence &amp; Analytics" type="button">
-<!-- ko text: item.textParts.main -->Business Intelligence &amp; <!-- /ko -->
-<!-- ko text: item.textParts.last --> Analytics<!-- /ko -->
+            hasFocus: hasFocus" title="Paralegal" type="button">
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Paralegal<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->1<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->2<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1712,11 +1712,11 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Legal filter 2" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Business Strategy &amp; Planning filter 2" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
-            hasFocus: hasFocus" title="Legal" type="button">
-<!-- ko text: item.textParts.main --> <!-- /ko -->
-<!-- ko text: item.textParts.last -->Legal<!-- /ko -->
+            hasFocus: hasFocus" title="Business Strategy &amp; Planning" type="button">
+<!-- ko text: item.textParts.main -->Business Strategy &amp; <!-- /ko -->
+<!-- ko text: item.textParts.last --> Planning<!-- /ko -->
 <!-- ko if: item.totalCount -->
         (<!-- ko text: item.totalCount -->2<!-- /ko -->)
         <!-- /ko -->
@@ -1727,13 +1727,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Business Strategy &amp; Planning filter 1" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Legal filter 2" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
-            hasFocus: hasFocus" title="Business Strategy &amp; Planning" type="button">
-<!-- ko text: item.textParts.main -->Business Strategy &amp; <!-- /ko -->
-<!-- ko text: item.textParts.last --> Planning<!-- /ko -->
+            hasFocus: hasFocus" title="Legal" type="button">
+<!-- ko text: item.textParts.main --> <!-- /ko -->
+<!-- ko text: item.textParts.last -->Legal<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->1<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->2<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1780,13 +1780,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Less than 30 days filter 29" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Less than 30 days filter 28" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Less than 30 days" type="button">
 <!-- ko text: item.textParts.main -->Less than 30 <!-- /ko -->
 <!-- ko text: item.textParts.last --> days<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->29<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->28<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -1795,13 +1795,13 @@
 <!-- ko if: $parent.adminMode --><!-- /ko -->
 <!-- ko ifnot: $parent.adminMode -->
 <!-- ko component: { name: 'search-facet-item-vertical', params: { facet: facet, item: item, expandedFacetTypes: $parent.expandedFacetTypes }} --><li class="search-filters__filter search-filters____filter--vertical" data-bind="css: { 'search-filters__filter--active': item.selected }">
-<button aria-label="Greater than 30 days filter 23" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
+<button aria-label="Greater than 30 days filter 25" class="search-filters__set-filter" data-bind="click: $component.setOption.bind($component, item),
             attr: {'aria-pressed': item.selected, 'title': item.text, 'aria-label': ariaLabel },
             hasFocus: hasFocus" title="Greater than 30 days" type="button">
 <!-- ko text: item.textParts.main -->Greater than 30 <!-- /ko -->
 <!-- ko text: item.textParts.last --> days<!-- /ko -->
 <!-- ko if: item.totalCount -->
-        (<!-- ko text: item.totalCount -->23<!-- /ko -->)
+        (<!-- ko text: item.totalCount -->25<!-- /ko -->)
         <!-- /ko -->
 </button>
 </li>
@@ -2039,6 +2039,106 @@
 </search-result-item-header>
 <!-- ko if: isDescriptionVisible -->
 <p class="job-list-item__description" data-bind="text: job.shortDescription">This role will be responsible for working with the Director Financial Reporting in the month, quarter, year-end accounting close for the Travelport group. This will require regular interaction with other Controllership team members, other internal finance teams, and the external auditors, along with the Head of Controllership.</p>
+<!-- /ko -->
+</div>
+<div aria-hidden="true" class="job-list-item__show-icon"></div>
+</a>
+<div class="job-list-item__actions">
+<button aria-label="Add Job to My Job Selections" class="favourite-star job-tile__favorited focused-tooltip" data-bind="
+                    click: toggleFavourite,
+                    clickBubble: false,
+                    css: { 'favourite-star--active': isFavourite },
+                    i18nAttr: { title: !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job',
+                    'aria-label': !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job' }
+                " title="Add Job to My Job Selections"></button>
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+</div>
+<!-- /ko  -->
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<div class="job-tile job-list-item" data-bind="
+    css: { 'job-list-item--active': job.isActive, 'job-list-item--focus': hasFocus, 'job-list-item--with-image': isImageVisible() },
+    style: mediaStyles
+">
+<a class="job-list-item__link" data-bind="
+        attr: { href: getJobUrl(job.id) },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://ejzg.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/2097/?mode=location">
+<!-- ko if: isImageVisible --><!-- /ko -->
+<div class="job-list-item__content">
+<search-result-item-header params="
+                    job: job,
+                    jobHeadingConfig: jobHeadingConfig,
+                "><div class="job-tile__header">
+<span class="job-tile__title" data-bind="text: job.title">Business Intelligence Analyst</span>
+<!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
+<!-- ko if: hasSubheader -->
+<div class="job-tile__subheader">
+<!-- ko if: jobHeadingConfig().isLocationVisible -->
+<span>
+<!-- ko component: { 
+                name: 'posting-locations', 
+                params: { 
+                    primaryLocation: job.primaryLocation,
+                    secondaryLocations: job.secondaryLocations,
+                    workplaceType: {
+                        name: job.workplaceType,
+                        code: job.workplaceTypeCode,
+                    },
+                    mode:'tooltip'
+                }
+            } --><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">LANGLEY, BERKSHIRE, United Kingdom</span>
+<!-- ko if: secondaryLocationsCount > 0 --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+<!-- /ko -->
+</span>
+<!-- /ko -->
+<!-- ko if: jobHeadingConfig().isDistanceVisible --><!-- /ko -->
+<!-- ko if: jobHeadingConfig().isPostingDateVisible -->
+<span>
+<i18n params="key: 'search.posted-on-label'"><span data-bind="i18n: {key: key, tokens: tokens}">Posted on <span data-bind="text: job.postedDate" data-i18n-token="posteddate">06/19/2024</span></span>
+</i18n>
+</span>
+<!-- /ko -->
+<!-- ko if: areJobTagsVisible -->
+<job-tags params="jobTags: jobTags"><span class="job-tags">
+<!-- ko foreach: { data: jobTags, as: 'tag' } -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() -->
+<tag params="className: tag.className, label: tag.label"><div class="job-tag job-tag--be-first-to-apply" data-bind="class: `job-tag--${className}`">
+<em class="job-tag__icon icon-be-first-to-apply" data-bind="class: `icon-${className}`"></em>
+<span class="job-tag__title" data-bind="text: label">Be the First to Apply</span>
+</div>
+</tag>
+<!-- /ko -->
+<!-- /ko -->
+</span>
+</job-tags>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+</search-result-item-header>
+<!-- ko if: isDescriptionVisible -->
+<p class="job-list-item__description" data-bind="text: job.shortDescription">The analyst will be commercially focused and use their analytical skills to build BI solutions showing Travelport’s value to our airline customers. The analyst will be responsible for producing key reports on a scheduled basis, for gathering good quality information about the performance being reported and using the data to create actionable insights. </p>
 <!-- /ko -->
 </div>
 <div aria-hidden="true" class="job-list-item__show-icon"></div>
@@ -2351,6 +2451,30 @@ The Technical Product Manager (TPM) role in the Access UI Pillar sits within the
 <!-- /ko -->
 </li>
 <!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<!-- ko ifnot: $parent.customizationParams.contentParams.hideTalentCommunitySignup() -->
+<li data-qa="searchResultTalentCommunityItem">
+<!-- ko component: {
+                                    name: $parent.talentCommunityTileComponent,
+                                    params: {
+                                        className: $parent.customizationParams.contentParams.jobDisplayStyle()
+                                    }
+                                } --><div class="talent-community-tile text-color-secondary talent-community-tile--list" data-bind="css: className" data-qa="searchResultTCJoin">
+<div class="talent-community-tile__line background-color-secondary"></div>
+<h3 class="talent-community-tile__title text-color-primary" data-bind="text: labels.header">Can't find what you are looking for?</h3>
+<p class="talent-community-tile__subheader" data-bind="text: labels.description">Didn't find the perfect job? Create a profile and get notified of new openings.</p>
+<div class="talent-community-tile__actions">
+<a class="button text-color-primary font-family-secondary" data-bind="click: openSignUpComponent, attr: {'href': url}" href="https://ejzg.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/tc-join?mode=location">
+<span class="button__label" data-bind="text: labels.button">Join our Talent Community</span>
+</a>
+</div>
+<div class="talent-community-tile__line background-color-secondary"></div>
+</div>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
 <!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
 <!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
 <li data-qa="searchResultItem">
@@ -2451,30 +2575,6 @@ The Technical Product Manager (TPM) role in the Access UI Pillar sits within the
 <!-- /ko -->
 </li>
 <!-- /ko -->
-<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
-<!-- ko ifnot: $parent.customizationParams.contentParams.hideTalentCommunitySignup() -->
-<li data-qa="searchResultTalentCommunityItem">
-<!-- ko component: {
-                                    name: $parent.talentCommunityTileComponent,
-                                    params: {
-                                        className: $parent.customizationParams.contentParams.jobDisplayStyle()
-                                    }
-                                } --><div class="talent-community-tile text-color-secondary talent-community-tile--list" data-bind="css: className" data-qa="searchResultTCJoin">
-<div class="talent-community-tile__line background-color-secondary"></div>
-<h3 class="talent-community-tile__title text-color-primary" data-bind="text: labels.header">Can't find what you are looking for?</h3>
-<p class="talent-community-tile__subheader" data-bind="text: labels.description">Didn't find the perfect job? Create a profile and get notified of new openings.</p>
-<div class="talent-community-tile__actions">
-<a class="button text-color-primary font-family-secondary" data-bind="click: openSignUpComponent, attr: {'href': url}" href="https://ejzg.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/tc-join?mode=location">
-<span class="button__label" data-bind="text: labels.button">Join our Talent Community</span>
-</a>
-</div>
-<div class="talent-community-tile__line background-color-secondary"></div>
-</div>
-<!-- /ko -->
-</li>
-<!-- /ko -->
-<!-- /ko -->
-<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
 <!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
 <!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
 <li data-qa="searchResultItem">
@@ -6880,6 +6980,208 @@ This is not a pure technical BI role, the GCE BI team are very close to the busi
 <!-- /ko -->
 </li>
 <!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<div class="job-tile job-list-item" data-bind="
+    css: { 'job-list-item--active': job.isActive, 'job-list-item--focus': hasFocus, 'job-list-item--with-image': isImageVisible() },
+    style: mediaStyles
+">
+<a class="job-list-item__link" data-bind="
+        attr: { href: getJobUrl(job.id) },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://ejzg.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/1791/?mode=location">
+<!-- ko if: isImageVisible --><!-- /ko -->
+<div class="job-list-item__content">
+<search-result-item-header params="
+                    job: job,
+                    jobHeadingConfig: jobHeadingConfig,
+                "><div class="job-tile__header">
+<span class="job-tile__title" data-bind="text: job.title">Agency Manager</span>
+<!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
+<!-- ko if: hasSubheader -->
+<div class="job-tile__subheader">
+<!-- ko if: jobHeadingConfig().isLocationVisible -->
+<span>
+<!-- ko component: { 
+                name: 'posting-locations', 
+                params: { 
+                    primaryLocation: job.primaryLocation,
+                    secondaryLocations: job.secondaryLocations,
+                    workplaceType: {
+                        name: job.workplaceType,
+                        code: job.workplaceTypeCode,
+                    },
+                    mode:'tooltip'
+                }
+            } --><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">Tokyo, Japan</span>
+<!-- ko if: secondaryLocationsCount > 0 -->
+<tooltip class="posting-locations" params="isVisible: isTooltipVisible, helpText: tooltipContent" role="tooltip"><span class="tooltip-wrapper" data-bind="attr: {id: helpTextId}">
+<!-- ko template: { nodes: nodes['tooltip-anchor'], data: $parent} -->
+<button aria-label="Tokyo, Japan,Singapore" data-bind="attr: { 'aria-label': tooltipData },
+                event: {
+                    mouseover: showTooltip,
+                    mouseout: hideTooltip,
+                    focus: showTooltip,
+                    blur: hideTooltip
+                }">
+<i18n class="posting-locations__count" params="key: 'search.job-item.secondary-locations'"><span data-bind="i18n: {key: key, tokens: tokens}">and <span data-bind="text: $parent.secondaryLocationsCount" data-i18n-token="locationsCount">1</span> more</span>
+</i18n>
+</button>
+<!-- /ko -->
+<!-- ko if: isVisible --><!-- /ko -->
+</span>
+</tooltip>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+<!-- /ko -->
+</span>
+<!-- /ko -->
+<!-- ko if: jobHeadingConfig().isDistanceVisible --><!-- /ko -->
+<!-- ko if: jobHeadingConfig().isPostingDateVisible -->
+<span>
+<i18n params="key: 'search.posted-on-label'"><span data-bind="i18n: {key: key, tokens: tokens}">Posted on <span data-bind="text: job.postedDate" data-i18n-token="posteddate">09/11/2023</span></span>
+</i18n>
+</span>
+<!-- /ko -->
+<!-- ko if: areJobTagsVisible -->
+<job-tags params="jobTags: jobTags"><span class="job-tags">
+<!-- ko foreach: { data: jobTags, as: 'tag' } -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() -->
+<tag params="className: tag.className, label: tag.label"><div class="job-tag job-tag--be-first-to-apply" data-bind="class: `job-tag--${className}`">
+<em class="job-tag__icon icon-be-first-to-apply" data-bind="class: `icon-${className}`"></em>
+<span class="job-tag__title" data-bind="text: label">Be the First to Apply</span>
+</div>
+</tag>
+<!-- /ko -->
+<!-- /ko -->
+</span>
+</job-tags>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+</search-result-item-header>
+<!-- ko if: isDescriptionVisible -->
+<p class="job-list-item__description" data-bind="text: job.shortDescription">This role is a management commercial role, you will be accountable for the retention and development of a defined list of Top &amp; Mid Tier and will lead a team of experienced Account Managers utilising resources dedicated to the retention and growth of top &amp; mid tier customers. The role will  encompass establishing best practice for top &amp; mid tier account development, and sharing this back into the wider Travelport organisation. </p>
+<!-- /ko -->
+</div>
+<div aria-hidden="true" class="job-list-item__show-icon"></div>
+</a>
+<div class="job-list-item__actions">
+<button aria-label="Add Job to My Job Selections" class="favourite-star job-tile__favorited focused-tooltip" data-bind="
+                    click: toggleFavourite,
+                    clickBubble: false,
+                    css: { 'favourite-star--active': isFavourite },
+                    i18nAttr: { title: !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job',
+                    'aria-label': !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job' }
+                " title="Add Job to My Job Selections"></button>
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+</div>
+<!-- /ko  -->
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<div class="job-tile job-list-item" data-bind="
+    css: { 'job-list-item--active': job.isActive, 'job-list-item--focus': hasFocus, 'job-list-item--with-image': isImageVisible() },
+    style: mediaStyles
+">
+<a class="job-list-item__link" data-bind="
+        attr: { href: getJobUrl(job.id) },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://ejzg.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/1780/?mode=location">
+<!-- ko if: isImageVisible --><!-- /ko -->
+<div class="job-list-item__content">
+<search-result-item-header params="
+                    job: job,
+                    jobHeadingConfig: jobHeadingConfig,
+                "><div class="job-tile__header">
+<span class="job-tile__title" data-bind="text: job.title">Software Development Engineer in Test</span>
+<!-- ko if: jobHeadingConfig().isAlreadyAppliedTagVisible  --><!-- /ko -->
+<!-- ko if: hasSubheader -->
+<div class="job-tile__subheader">
+<!-- ko if: jobHeadingConfig().isLocationVisible -->
+<span>
+<!-- ko component: { 
+                name: 'posting-locations', 
+                params: { 
+                    primaryLocation: job.primaryLocation,
+                    secondaryLocations: job.secondaryLocations,
+                    workplaceType: {
+                        name: job.workplaceType,
+                        code: job.workplaceTypeCode,
+                    },
+                    mode:'tooltip'
+                }
+            } --><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">Barcelona, Cataluña, Spain</span>
+<!-- ko if: secondaryLocationsCount > 0 --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+<!-- /ko -->
+</span>
+<!-- /ko -->
+<!-- ko if: jobHeadingConfig().isDistanceVisible --><!-- /ko -->
+<!-- ko if: jobHeadingConfig().isPostingDateVisible -->
+<span>
+<i18n params="key: 'search.posted-on-label'"><span data-bind="i18n: {key: key, tokens: tokens}">Posted on <span data-bind="text: job.postedDate" data-i18n-token="posteddate">08/24/2023</span></span>
+</i18n>
+</span>
+<!-- /ko -->
+<!-- ko if: areJobTagsVisible --><!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+</search-result-item-header>
+<!-- ko if: isDescriptionVisible -->
+<p class="job-list-item__description" data-bind="text: job.shortDescription">Wonderful opportunity for an experienced SDET to join our rapidly expanding team—a crucial role as we progress toward automating an increasing portion of our development processes.</p>
+<!-- /ko -->
+</div>
+<div aria-hidden="true" class="job-list-item__show-icon"></div>
+</a>
+<div class="job-list-item__actions">
+<button aria-label="Add Job to My Job Selections" class="favourite-star job-tile__favorited focused-tooltip" data-bind="
+                    click: toggleFavourite,
+                    clickBubble: false,
+                    css: { 'favourite-star--active': isFavourite },
+                    i18nAttr: { title: !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job',
+                    'aria-label': !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job' }
+                " title="Add Job to My Job Selections"></button>
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+</div>
+<!-- /ko  -->
+<!-- /ko -->
+</li>
+<!-- /ko -->
 <!-- /ko -->
 </ul>
 <!-- /ko -->
@@ -6890,14 +7192,7 @@ This is not a pure technical BI role, the GCE BI team are very close to the busi
                         state: paginationState
                     },
                 } --><!-- ko if: state().type === 'loading' --><!-- /ko -->
-<!-- ko if: state().type === 'has_more_items' -->
-<div class="search-pagination">
-<!-- ko if: state().isInfiniteScrollEnabled -->
-<div data-bind="infiniteScroll: true, settings: { loader: state().loadMore() }"></div>
-<!-- /ko -->
-<!-- ko ifnot: state().isInfiniteScrollEnabled --><!-- /ko -->
-</div>
-<!-- /ko -->
+<!-- ko if: state().type === 'has_more_items' --><!-- /ko -->
 <!-- /ko -->
 <!-- /ko -->
 <!-- /ko -->
