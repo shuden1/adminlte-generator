@@ -34,6 +34,7 @@ class Company extends Model
         'name',
         'website',
         'careerPageUrl',
+        'linkedin_id',
         'contacted',
         'sauroned',
         'scripted'
@@ -48,6 +49,7 @@ class Company extends Model
         'name' => 'string',
         'website' => 'string',
         'careerPageUrl' => 'string',
+        'linkedin_id' => 'string',
         'contacted' => 'date',
         'sauroned' => 'boolean',
         'scripted' => 'boolean'

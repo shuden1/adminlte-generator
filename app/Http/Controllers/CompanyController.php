@@ -98,6 +98,7 @@ class CompanyController extends AppBaseController
                 $c = Company::create([
                     'name' => $record['company_name'],
                     'careerPageUrl' => $record['careerPageUrl'],
+                    'linkedin_id' => $record['linkedin_id'],
                     'sauroned' => 1
                 ]);
 

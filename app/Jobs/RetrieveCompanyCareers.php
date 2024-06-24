@@ -104,12 +104,8 @@ class RetrieveCompanyCareers implements ShouldQueue
     public function retrieveLinkedIn()
     {
         $company = $this->company;
-        $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
-        $domain = str_replace('www.', '', $domain);
         // Creating a recent page image
-        preg_match('/company\/(.*?)\/jobs/', $company->careerPageUrl, $matches);
-        $linkedin_name = $matches[1];
-        $url = "https://api.serpdog.io/linkedin_jobs?api_key=".env('SERPDOG_API')."&filter_by_company=".$linkedin_name."&geoId=92000000";
+        $url = "https://api.serpdog.io/linkedin_jobs?api_key=".env('SERPDOG_API')."&filter_by_company=".$company->linkedin_id."&geoId=92000000";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
