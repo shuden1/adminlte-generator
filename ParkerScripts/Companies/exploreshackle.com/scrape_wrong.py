@@ -4,6 +4,7 @@ import threading
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 
 def scrape_jobs(file_path):
@@ -18,28 +19,35 @@ def scrape_jobs(file_path):
     
     driver = webdriver.Chrome(service=service, options=options)
     
-    driver.get(f"file:///{file_path}")
-    
-    job_openings = driver.find_elements(By.CSS_SELECTOR, "div.flex.justify-between.items-center.py-4.px-1.border-t-[1px].border-t-darker-blue")
-    
-    jobs = []
-    
-    for job in job_openings:
-        title_element = job.find_element(By.CSS_SELECTOR, "span.text-light-blue.md:text-xl")
-        title = title_element.get_attribute('innerHTML').strip()
+    try:
+        driver.get(f"file:///{file_path}")
         
-        try:
-            url_element = job.find_element(By.CSS_SELECTOR, "a.w-full")
-            url = url_element.get_attribute('href')
-        except:
-            url = "#"
+        job_openings = []
         
-        jobs.append({"Job-title": title, "URL": url})
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.flex.justify-between.items-center.py-4.px-1.border-t-[1px].border-t-darker-blue")
+        
+        for job_element in job_elements:
+            try:
+                title_element = job_element.find_element(By.CSS_SELECTOR, "span.text-light-blue.md:text-xl")
+                title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
+            except NoSuchElementException:
+                title = "No Title Found"
+            
+            try:
+                url_element = job_element.find_element(By.CSS_SELECTOR, "a.w-full")
+                url = url_element.get_attribute('href') if url_element.get_attribute('href') else "#"
+            except NoSuchElementException:
+                url = "#"
+            
+            job_openings.append({"Job-title": title, "URL": url})
     
-    driver.quit()
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    finally:
+        driver.quit()
     
-    print(json.dumps(jobs, indent=4))
+    return json.dumps(job_openings, indent=4)
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
-    scrape_jobs(file_path)
+    print(scrape_jobs(file_path))

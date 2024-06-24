@@ -241,13 +241,22 @@ class RetrieveCompanyCareers implements ShouldQueue
         $hasUpdate = false;
         if ($jsonData) {
             foreach ($jsonData as $jobData) {
-                if (strpos($jobData['URL'], "file:///" . $basePathHtmls) !== false) {
+                if (substr($jobData['URL'], -1) === '#') {
+                    // Replace it with the company's careerPageUrl
+                    $jobData['URL'] = $this->company->careerPageUrl;
+                } elseif (strpos($jobData['URL'], "file:///" . $basePathHtmls) !== false) {
                     $jobData['URL'] = str_replace("file:///" . $basePathHtmls, $baseUrl, $jobData['URL']);
                 } elseif (strpos($jobData['URL'], "file:///D:") !== false) {
                     $jobData['URL'] = str_replace("file:///D:", $baseUrl, $jobData['URL']);
                 } elseif (strpos($jobData['URL'], 'http://') === false && strpos($jobData['URL'], 'https://') === false) {
                     $jobData['URL'] = rtrim($baseUrl, '/') . '/' . ltrim($jobData['URL'], '/');
                 }
+
+                $pattern = '/.*Mind\/CRA\/AI_Experiments\/Job_Crawlers\/Peter\/adminlte-generator\/ParkerScripts\/Companies\/[^\/]*\/HTMLs\/[0-9]*(\/[0-9]*-[0-9]*-[0-9]*\.html)?\//';
+                $replacement = substr($this->company->careerPageUrl, 0, strrpos($this->company->careerPageUrl, '/')+1);
+                $jobData['URL'] = preg_replace($pattern, $replacement, $jobData['URL']);
+
+
                 $existingJob = Job::where('url', $jobData['URL'])
                     ->where('title', $jobData['Job-title'])
                     ->first();
@@ -302,6 +311,9 @@ class RetrieveCompanyCareers implements ShouldQueue
             $latestFile = $this->getLatestFile($basePathHtmls);
 
         $pythonExecutable = "C:\\Python3\\python.exe";
+        if (preg_match('/^hh\.[a-z]+$/', $domain)) {
+            $scriptPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_HH.py";
+        } else
         $scriptPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py";
         $careerPageUrl = $company->careerPageUrl;
         $filePath = escapeshellarg($basePathHtmls."\\".date("d-m-y").".html");
@@ -362,7 +374,10 @@ class RetrieveCompanyCareers implements ShouldQueue
 
             if ($jsonData) {
                 foreach ($jsonData as $jobData) {
-                    if (strpos($jobData['URL'], "file:///".$basePathHtmls) !== false) {
+                    if (substr($jobData['URL'], -1) === '#') {
+                        // Replace it with the company's careerPageUrl
+                        $jobData['URL'] = $this->company->careerPageUrl;
+                    }elseif (strpos($jobData['URL'], "file:///".$basePathHtmls) !== false) {
                         $jobData['URL'] = str_replace("file:///".$basePathHtmls, $baseUrl, $jobData['URL']);
                     }
                     elseif (strpos($jobData['URL'], "file:///D:") !== false) {
@@ -371,6 +386,10 @@ class RetrieveCompanyCareers implements ShouldQueue
                         } elseif (strpos($jobData['URL'], 'http://') === false && strpos($jobData['URL'], 'https://') === false) {
                             $jobData['URL'] = rtrim($baseUrl, '/') . '/' . ltrim($jobData['URL'], '/');
                         }
+
+                    $pattern = '/.*Mind\/CRA\/AI_Experiments\/Job_Crawlers\/Peter\/adminlte-generator\/ParkerScripts\/Companies\/[^\/]*\/HTMLs\/[0-9]*(\/[0-9]*-[0-9]*-[0-9]*\.html)?\//';
+                    $replacement = substr($careerPageUrl, 0, strrpos($careerPageUrl, '/')+1);
+                    $jobData['URL'] = preg_replace($pattern, $replacement, $jobData['URL']);
 
                     $existingJob = Job::withTrashed()
                         ->where('url', $jobData['URL'])

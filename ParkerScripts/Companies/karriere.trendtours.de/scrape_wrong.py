@@ -4,42 +4,44 @@ import threading
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import NoSuchElementException
 
 def scrape_jobs(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
-    
-    options = Options()
+    options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-    
+
     driver = webdriver.Chrome(service=service, options=options)
-    
     driver.get(f"file:///{file_path}")
-    
-    job_openings = driver.find_elements(By.CSS_SELECTOR, 'div[data-cy="section-wrapper-padder"]')
-    
-    jobs = []
-    
-    for job in job_openings:
-        title_element = job.find_element(By.CSS_SELECTOR, 'div[data-cy="offer-title"]')
-        title = title_element.get_attribute('innerHTML').strip()
-        
-        try:
-            url_element = job.find_element(By.CSS_SELECTOR, 'a[data-cy="offer-link"]')
-            url = url_element.get_attribute('href')
-        except:
-            url = "#"
-        
-        jobs.append({"Job-title": title, "URL": url})
-    
+
+    job_listings = []
+
+    try:
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.sc-1aabq8s-0")
+        for job_element in job_elements:
+            try:
+                title_element = job_element.find_element(By.CSS_SELECTOR, "span.sc-83wl6d-1")
+                title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
+            except NoSuchElementException:
+                title = "No Title"
+
+            try:
+                url_element = job_element.find_element(By.CSS_SELECTOR, "a.sc-pxbyo9-0")
+                url = url_element.get_attribute('href').strip() if url_element.get_attribute('href').strip() else "#"
+            except NoSuchElementException:
+                url = "#"
+
+            job_listings.append({"Job-title": title, "URL": url})
+    except NoSuchElementException:
+        pass
+
     driver.quit()
-    
-    print(json.dumps(jobs, indent=4))
+    return json.dumps(job_listings, indent=4)
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
-    scrape_jobs(file_path)
+    print(scrape_jobs(file_path))

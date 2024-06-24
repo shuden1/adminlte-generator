@@ -1,0 +1,646 @@
+<html lang="en" prefix="og: http://ogp.me/ns#" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><body>
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="loader-wrapper" id="loader-wrapper" style="display: none;">
+<div class="loader">
+
+</div>
+</div>
+<!-- Google Tag Manager 
+<script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MF29QJL');</script>-->
+<!-- End Google Tag Manager -->
+<!-- Google Tag Manager (noscript) 
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MF29QJL" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>-->
+<!-- End Google Tag Manager (noscript) -->
+<!-- Global site tag (gtag.js) - Google Analytics
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-63986348-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-63986348-1');
+</script> 
+ -->
+<!-- Hotjar Tracking Code for lfs-inc.com -->
+<div aria-hidden="true" aria-labelledby="login" class="modal fade login" id="loginModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+<div class="modal-content">
+<div class="modal-header bg-red-lfs text-white">
+<div class="logo_login-container text-center">
+
+</div>
+
+<button aria-label="Close" class="close text-white" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+
+
+
+<div class="modal-body">
+<h1>Log in</h1>
+<form action="https://lfsv2.shipprimus.com/Login.php" method="post" target="_blank">
+<div class="form-group">
+<label for="username">Username</label>
+
+</div>
+<div class="form-group">
+<label for="password">Password</label>
+
+</div>
+<div class="custom-control custom-checkbox my-1 mr-sm-2">
+
+<label class="custom-control-label" for="customControlInline">Keep me logged in</label>
+</div>
+<ul class="w-100 pl-4">
+<li><a id="password-btn">Forgot your password?</a></li>
+</ul>
+<div class="row mt-1">
+<div class="col text-center">
+<button class="button-session" type="submit">
+<span class="text-login">LOG IN</span>
+<span class="arrow-session">  </span>
+</button>
+</div>
+</div>
+</form>
+
+<div class="row mt-3">
+<div class="col text-center">
+<p>Don't have an account?</p>
+<button class="button-session" id="signup-btn">
+<span class="text-register">SIGN UP</span>
+<span class="arrow-session">  </span>
+</button>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" aria-labelledby="signup" class="modal fade register" id="signup" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-centered modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header bg-danger">
+<button aria-label="Close" class="close bg-lg text-dark rounded-circle" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+
+
+
+
+
+
+<div class="modal-body">
+<h1> Sign Up </h1>
+<p>Enter your information</p>
+<div class="form-row d-flex justify-content-center">
+<div class="form-group col-12 col-md-5">
+<label for="username">First Name</label>
+</div>
+<div class="form-group col-12 col-md-6">
+
+</div>
+<div class="col-12">
+<span class="error-text"><small>&lt;% errorUser[0].FirstNameText %&gt;</small></span>
+</div>
+</div>
+<div class="form-row d-flex justify-content-center">
+<div class="form-group col-12 col-md-5">
+<label for="username">Last Name</label>
+</div>
+<div class="form-group col-12 col-md-6">
+
+</div>
+<div class="col-12">
+<span class="error-text"><small>&lt;% errorUser[0].LastNameText %&gt;</small></span>
+</div>
+</div>
+<div class="form-row d-flex justify-content-center">
+<div class="form-group col-12 col-md-5">
+<label for="email">Work email</label>
+</div>
+<div class="form-group col-12 col-md-6">
+
+</div>
+<div class="col-12">
+<span class="error-text"><small>&lt;% errorUser[2].WorkEmailText %&gt;</small></span>
+</div>
+</div>
+<div class="form-row d-flex justify-content-center">
+<div class="form-group col-12 col-md-5">
+<label for="text">Number of employees</label>
+</div>
+<div class="form-group col-12 col-md-6">
+<select class="form-control" id="" name="" ref="NumEmployees" v-model="actualLogin.NumEmployees">
+<option ref="NumEmployees" value="">Please Select</option>
+<option value="1-5">1-5</option>
+<option value="5-25">5-25</option>
+<option value="25-50">25-50</option>
+<option value="50-100">50-100</option>
+
+
+
+</select>
+</div>
+<div class="col-12">
+<span class="error-text"><small>&lt;% errorUser[6].NumEmployeesText %&gt;</small></span>
+</div>
+</div>
+<div class="form-row d-flex justify-content-center">
+<div class="form-group col-12 col-md-5">
+<label for="text">Company name</label>
+</div>
+<div class="form-group col-12 col-md-6">
+
+</div>
+<div class="col-12">
+<span class="error-text"><small>&lt;% errorUser[1].CompanyNameText %&gt;</small></span>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div style="text-align: center;">
+<div class="form-group">
+<label for="text" style="width: 92% !important;">Receive verification code via:</label>
+</div>
+<div>
+
+<label for="sms_verification" style="margin-right: 30px; cursor: pointer;">Text message (SMS)</label>
+
+<label for="email_verification" style="cursor: pointer;">Email</label>
+</div>
+</div>
+
+
+
+<div class="row mt-1">
+<div class="col text-center">
+<button @click="saveUser(actualLogin)" class="button-session" id="register">
+<span class="text-register">SIGN UP</span>
+<span class="arrow-session">  </span>
+</button>
+</div>
+</div>
+<div class="row mt-3" v-show="registerSucces==true">
+<div class="col text-center">
+<h5> ¡Thanks for sign up! </h5>
+</div>
+</div>
+
+<div class="row mt-3">
+<div class="col text-center">
+<p>Already have an account?</p>
+<button class="button-session" id="login-btn">
+<span class="text-login">LOG IN</span>
+<span class="arrow-session">  </span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" aria-labelledby="signup" class="modal fade register" id="register-login" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-centered modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header bg-danger">
+<button aria-label="Close" class="close bg-lg text-dark rounded-circle" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+<!-- Desktop Nav -->
+<header class="fixed-top">
+<!-- Information Top -->
+<nav class="nav info-top">
+<ul class="nav-info__links--company">
+<li class="nav-item nav-info__links--dropdown">
+<a class="link__dropdown" href=""> 
+          Company 
+</a>
+<ul class="nav-info__dropdown">
+<li> <a href="/about-lfs-freight-shipping">About</a> </li>
+<li> <a href="/become-customer-freight-shipping">Resources</a> </li>
+<li> <a href="/careers-freight-shipping">Careers</a> </li>
+</ul>
+</li>
+<li class="nav-item"> <a href="/news-freight-shipping"> 
+        News</a>
+</li>
+<!-- <li class="nav-item"> <a href="/news-freight-shipping"> <img class="company__icon" src="../assets/icons/LFS/blog.svg" alt=" ">
+          Blog</a>
+      </li> -->
+<li class="nav-item"> <a href="https://knowledgebase.lfs-inc.com/knowledge/our-tms" target="_blank">  Knowledge
+          Base</a>
+</li>
+<li class="nav-item nav-info__links--dropdown">
+<a class="link__dropdown"> 
+              Language
+</a>
+<ul class="nav-info__dropdown">
+<li> <a href="" id="linkes" onclick="location.href=es;return false;">  Spanish</a> </li>
+<li> <a href="" id="linken" onclick="location.href=en;return false;">  English</a> </li>
+</ul>
+</li>
+<li class="nav-item"> <a href="/contact-us-freight-shipping"> 
+             Contact US: +1 (833) 744 7537 - MX: +52 8135470234</a>
+</li>
+</ul>
+<ul class="nav__links--client">
+<li class="nav-item"> <a data-target="#loginModal" data-toggle="modal"> <span class="pl-1">Login</span></a> </li>
+<li class="nav-item"> <a href="https://www.linkedin.com/company/lfsontheroad/" target="_blank"> <span class="pl-1">Linkedin</span></a> </li>
+</ul>
+</nav>
+<!-- Navegación links -->
+<nav class="nav is-active" id="nav-response">
+<a class="nav__logo" href="../">
+
+
+<p class="nav__logo--text"> <span>Handled by humans,</span><span>Driven by technology.</span></p>
+</a>
+<ul class="nav__links">
+<li class="nav__links--solutions">
+<a href="#">OUR SOLUTIONS
+          
+</a>
+<ul class="nav__dropdown">
+<li>
+<a href="/less-than-truckload-freight-shipping">
+
+
+<label for="">Less Than Truckload</label>
+</a>
+</li>
+<li>
+<a href="/full-truckload-freight-shipping">
+
+
+<label for="">Full Truckload</label>
+</a>
+</li>
+<li>
+<a href="/container-drayage-freight-shipping">
+
+
+<label for="">Container Drayage</label>
+</a>
+</li>
+<li>
+<a href="/cross-border-freight-shipping">
+
+
+<label for="">Cross-Border Shipping</label>
+</a>
+</li>
+<li>
+<a href="/project-cargo-freight-shipping">
+
+
+<label for="">Project Cargo</label>
+</a>
+</li>
+</ul>
+</li>
+<a class="li-a" href="/carriers-freight-shipping">CARRIERS</a>
+<a class="nav__btn--quote quote-btn" href="../index#quote">
+<span class="text"> GET A QUOTE </span>
+<span class="arrow-solution">  </span>
+</a>
+<button class="nav__btn--user" data-target="#loginModal" data-toggle="modal" id="user-nav-movil" style="color: black;">
+
+<span class="pl-1">Login</span>
+</button>
+<button class="nav__btn--toggle" id="icon-menu"></button>
+</ul>
+</nav>
+</header>
+<!-- Movil Nav -->
+<header class="overlay">
+<!-- Links Nav -->
+<nav class="nav">
+<a class="overlay__logo" href="">
+
+</a>
+<ul class="overlay__links">
+<button data-target="#loginModal" data-toggle="modal">
+
+<span class="pl-1">Login</span>
+</button>
+<button class="overlay__links--close" id="close-menu">
+
+</button>
+</ul>
+</nav>
+<!-- Content Links -->
+<div class="overlay__content">
+<ul class="overlay_content--links">
+<li class="m-0 border-0 pb-0" id="btnSolutionMovil">
+<a class="margin-solution" href="#"> OUR-SOLUTIONS
+          
+</a>
+<div class="container submenu">
+<div class="row">
+<div class="col-6">
+<a href="/less-than-truckload-freight-shipping">
+
+<label for="">Less Than Truckload</label>
+</a>
+</div>
+<div class="col-6">
+<a href="/full-truckload-freight-shipping">
+
+<label for="">Full Truckload</label>
+</a>
+</div>
+</div>
+<div class="row">
+<div class="col-6">
+<a href="/container-drayage-freight-shipping">
+
+<label for="">Container Drayage</label>
+</a>
+</div>
+<div class="col-6">
+<a href="/cross-border-freight-shipping">
+
+<label for="">Cross-Border Shipping</label>
+</a>
+</div>
+</div>
+<div class="row pb-4">
+<div class="col-6">
+<a href="/project-cargo-freight-shipping">
+
+<label for="">Project Cargo</label>
+</a>
+</div>
+</div>
+</div>
+</li>
+
+<li> <a href="/carriers-freight-shipping">CARRIERS</a></li>
+</ul>
+<div class="container overlay__content--sections">
+<div class="container-responsive">
+<div class="row">
+<div class="col text-center">
+<a class="language item">
+
+<span>Language</span>
+</a>
+<ul class="language-list">
+<li>
+<a class="language-list__menu">
+
+<span>Language</span>
+
+</a>
+<ul class="language-list__content">
+<li> <a href="" id="linkes" onclick="location.href=es;return false;">Español</a> </li>
+<li> <a href="" id="linken" onclick="location.href=en;return false;">English</a> </li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="row">
+<div class="col text-center">
+<a class="company item">
+
+<span>Company </span>
+</a>
+<ul class="company-list">
+<li>
+<a class="company-list__menu">
+
+<span>Company </span>
+
+</a>
+<ul class="company-list__content">
+<li><a href="/about-lfs-freight-shipping">About</a></li>
+<li><a href="/become-customer-freight-shipping">Resources</a></li>
+<li><a href="/careers-freight-shipping">Careers</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="col text-center">
+<a class="item" href="/news-freight-shipping"> 
+<span>News</span>
+</a>
+</div>
+</div>
+<div class="row">
+<div class="col text-center">
+<!-- <a href="/news-freight-shipping" class="item"> <img src="../assets/icons/LFS/blog.svg" alt=" ">
+              <span>Blog</span>
+            </a> -->
+</div>
+<div class="col text-center">
+<a class="item" href="/contact-us-freight-shipping">
+
+<span> Contact Us </span>
+</a>
+</div>
+<div class="col text-center d-flex align-items-center justify-content-center">
+<a class="item" href="https://knowledgebase.lfs-inc.com/knowledge/our-tms" target="_blank">
+
+<span>Knowledge Base</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="overlay__footer">
+<a class="nav__btn--quote btn-block quote-btn mb-2" href="../index#quote">
+<span class="text"> GET A QUOTE </span>
+<span class="arrow-solution">  </span>
+</a>
+<a class="text-dark ml-3 mt-2" href="https://www.linkedin.com/company/lfsontheroad/" target="_blank">  Linkedin </a>
+</div>
+</div>
+</div></header>
+<header class="header content-center" style="background-image: url(/uploads/careers_contact_header-e47ac618f10192eaa9fdca3df80e1518.jpg);">
+<div class="header__company--content">
+<h1 class="header__company--title">Brilliant ideas have the power to move the world.</h1>
+<p class="header__company--description">At LFS we believe our expertise and knowledge are the power behind our most  important asset: great human beings, who embody our core values:  creativity, passion, commitment, teamwork, achieve, serve and positive  attitude.</p>
+<p class="header__company--description">Our outstanding solutions are handled by humans and driven by technology,  which allows us to provide innovative and competitive solutions paired  with excellent service experience to leverage the supply chain and  positively impact the freight transportation industry in North America.</p>
+</div>
+</header>
+<div id="jobAndCareers">
+<div class="container">
+<h1 class="h1-carrier" style="text-align: center; margin-top: 60px; font-size: 35px;"> Jobs &amp; Careers  </h1>
+<div class="row">
+<div class="col-sm-2" style="margin-right: 45px;">
+
+<h1 class="h1-carrier" style="font-size: 20px; margin-bottom: 10px;">Operations</h1>
+<a>View job openings
+                    
+</a>
+<!--<ul style="list-style-type: square; color: #c23032; margin-top: 10px; padding-left: 18px;">
+                    <li>
+                      <a href="https://lfs-inc.buk.co/s/KahP6AVcWyp42hfP">                       
+                        <label style="color: black; font-size: 13px; cursor:pointer;" onmouseout="this.style.color='black'" onmouseover="this.style.color='red'" for="">Planner</label>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://lfs-inc.buk.co/s/TmVgsu2yVFG5Viy7">                       
+                        <label style="color: black; font-size: 13px; cursor:pointer;" onmouseout="this.style.color='black'" onmouseover="this.style.color='red'" for="">Imports</label>
+                      </a>
+                    </li>                    
+                    <li>
+                      <a href="https://lfs-inc.buk.co/s/tZDMF1JbuXCsAp3E">                       
+                        <label style="color: black; font-size: 13px; cursor:pointer;" onmouseout="this.style.color='black'" onmouseover="this.style.color='red'" for="">Exports</label>
+                      </a>
+                    </li>
+                </ul>-->
+<ul style="list-style-type: square; color: gray; margin-top: 10px; padding-left: 18px;">
+<li>
+<a>
+<label for="" style="color:  gray; font-size: 13px;">There are no vacancies in moment</label>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-sm-2" style="margin-right: 45px;">
+
+<h1 class="h1-carrier" style="font-size: 20px;margin-bottom: 10px; height: 24px;width: 190px;">Sales &amp; Marketing</h1>
+<a>View job openings
+                    
+</a>
+<!--<ul style="list-style-type: square; color: #c23032; margin-top: 10px; padding-left: 18px;">
+                    <li>
+                      <a href="https://lfs-inc.buk.co/s/KJEkMKx8GTwDhGpa">                       
+                        <label style="color: black; font-size: 13px; cursor:pointer;" onmouseout="this.style.color='black'" onmouseover="this.style.color='red'" for="">Inside Sales</label>
+                      </a>
+                    </li>                    
+                      <li>
+                        <a href="https://lfs-inc.buk.co/s/yL6fUBscgWb7o6oC">                       
+                          <label style="color: black; font-size: 13px; cursor:pointer;" onmouseout="this.style.color='black'" onmouseover="this.style.color='red'" for="">Sales Suppport Specialist </label>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://lfs-inc.buk.co/s/qUqRNPhrKCvQBDtg">                       
+                          <label style="color: black; font-size: 13px; cursor:pointer;" onmouseout="this.style.color='black'" onmouseover="this.style.color='red'" for="">Carrier sales</label>
+                        </a>
+                      </li>                      
+                </ul>-->
+<ul style="list-style-type: square; color: gray; margin-top: 10px; padding-left: 18px;">
+<li>
+<a>
+<label for="" style="color:  gray; font-size: 13px;">There are no vacancies in moment</label>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-sm-2" style="margin-right: 45px;">
+
+<h1 class="h1-carrier" style="font-size: 20px; margin-bottom: 10px;">IT</h1>
+<a>View job openings
+                    
+</a>
+<ul style="list-style-type: square; color: gray; margin-top: 10px; padding-left: 18px;">
+<li>
+<a>
+<label for="" style="color:  gray; font-size: 13px;">There are no vacancies in moment</label>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-sm-2" style="margin-right: 45px;">
+
+<h1 class="h1-carrier" style="font-size: 20px; margin-bottom: 10px;">Finance</h1>
+<a>View job openings
+                  
+</a>
+<!--<ul style="list-style-type: square; color: #c23032; margin-top: 10px; padding-left: 18px;">
+                <li>
+                  <a href="https://lfs-inc.buk.co/s/rMM7jPLuR8nTWwFg">                       
+                    <label style="color: black; font-size: 13px; cursor:pointer;" onmouseout="this.style.color='black'" onmouseover="this.style.color='red'" for="">Accounts payable analyst</label>
+                  </a>
+                </li>  
+                <li>
+                  <a href="https://lfs-inc.buk.co/s/u4bbmnivJpvEAe1X">                       
+                    <label style="color: black; font-size: 13px; cursor:pointer;" onmouseout="this.style.color='black'" onmouseover="this.style.color='red'" for="">Billing support</label>
+                  </a>
+                </li>              
+              </ul>-->
+<ul style="list-style-type: square; color: gray; margin-top: 10px; padding-left: 18px;">
+<li>
+<a>
+<label for="" style="color:  gray; font-size: 13px;">There are no vacancies in moment</label>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-sm-2">
+
+<h1 class="h1-carrier" style="font-size: 20px; margin-bottom: 10px; height: 24px;width: 190px">Human Resources</h1>
+<a>View job openings
+                    
+</a>
+<ul style="list-style-type: square; color: gray; margin-top: 10px; padding-left: 18px;">
+<li>
+<a>
+<label for="" style="color:  gray; font-size: 13px;">There are no vacancies in moment</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+<div id="form-carrier" style="background-color: rgb(240, 240, 240);"><div class="background"><div class="container"><div class="row"><div class="col-sm-12 col-md-5 col-lg-5 mt-3 mb-5"><p class="h1-carrier" style="font-size: 30px; margin-bottom: -35px;">Don't know what job to apply for?</p> <p>If you have a desire to <strong>help others</strong>, an interest in <strong>logistics</strong>, the <strong>supply chain</strong> and <strong>technology</strong>, and a passion for constantly learning and getting into new and exciting roads, then you’ve come to the right place.</p> </div> <div class="col-sm-12 col-md-5 col-lg-5 p-5 ml-5">     <div class="modal-body"><h1 class="h1-carrier"> Submit your application </h1> <div class="form-row"><div class="form-group col"><label for="username">Name</label>  <span class="error-text"></span></div></div> <div class="form-row"><div class="form-group col"><label for="email">Email</label>  <span class="error-text"></span></div></div> <div class="form-row"><div class="form-group col"><label for="email">Country</label>  <span class="error-text"></span></div></div> <div class="form-row"><div class="form-group col"><label for="email">Department</label>  <span class="error-text"></span></div></div> <div class="form-row"><div class="form-group col"><label for="exampleFormControlFile1">Attach your CV</label>  <span class="error-text"></span></div></div> <div class="row"><div class="col mt-4"><button class="contact-button"><span class="text"> Submit </span> <span class="arrow-solution"></span></button></div></div> <div class="row mt-3" style="display: none;"><p>
+                                Thanks for your interest in applying, our recruitment team will analyse your
+                                information. If
+                                your profile fits with the job description we will contact you shortly. Follow us: </p> <a href="https://co.linkedin.com/company/lfsontheroad">https://co.linkedin.com/company/lfsontheroad</a></div></div></div></div></div></div></div>
+<!-- Footer -->
+
+<!-- Footer -->
+
+<noscript>  </noscript>
+<!-- End LinkedIn -->
+</body><!-- <script type="text/javascript">
+    _linkedin_partner_id = "2367730";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(){var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})();
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2367730&fmt=gif" />
+    </noscript> --><!-- LinkedIn  --></html>

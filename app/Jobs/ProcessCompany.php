@@ -60,11 +60,18 @@ class ProcessCompany implements ShouldQueue
         Log::error("Job failed. Exception: {$exception->getMessage()}");
     }
 
-    public function getCleanHTML($inputFile, $outputFile, $careerPageURL)
+    public function getCleanHTML($inputFile, $outputFile, $careerPageURL, $domain)
     {
         $pythonPath = "C:\\Python3";
 //        $pythonPath = "C:\Users\shuga\AppData\Local\Programs\Python\Python312";
-        $command = $pythonPath."\\python.exe"." D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
+
+        if (preg_match('/^hh\.[a-z]+$/', $domain)) {
+            $fetchScriptPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_HH.py";
+        } else
+            $fetchScriptPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py";
+
+
+        $command = $pythonPath."\\python.exe"." ".$fetchScriptPath." \"".$careerPageURL."\" \"".$inputFile."\"";
         exec($command, $output1, $returnStatus1);
 
 
@@ -80,7 +87,7 @@ class ProcessCompany implements ShouldQueue
 
         $filesizeKB = filesize($outputFile) / 1024;
         if ($filesizeKB<3){
-            $command = $pythonPath."\\python.exe"." D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py \"".$careerPageURL."\" \"".$inputFile."\"";
+            $command = $pythonPath."\\python.exe"." ".$fetchScriptPath." \"".$careerPageURL."\" \"".$inputFile."\"";
             exec($command, $output1, $returnStatus1);
 
             // Call sculpting.py
@@ -240,7 +247,7 @@ class ProcessCompany implements ShouldQueue
         }
 
         $step_2_message = "Now having the Job Opening titles, find them in this HTML. THEY ARE IN THE HTML YOU HAVE ALREADY FOUND THEM PREVIOUSLY.\n
-            Next, analyze the HTML that contains those titles and define JavaScript selectors for All Job Postings presented in this HTML. \n
+            Next, analyze the HTML elements that contains those titles and define common JavaScript selectors for All Job Postings presented in this HTML. \n
             Respond in the following format: \n
             Job Opening elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED !!!FROM THE HTML PROVIDED!!!} \n
             Job title elements - {HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED !!!FROM THE HTML PROVIDED!!! } \n
@@ -275,13 +282,14 @@ class ProcessCompany implements ShouldQueue
             'content' => "Now create a Python + Selenium script using the latest best practices for ChromeDriver 120.0.6099.109 \n
             1. This script will be launched externally in a settled-up environment, DO NOT TEST THIS SCRIPT, CREATE IT: \n
             THE TARGET HTML FILE NAME SHOULD BE AN ARGUMENT SENT FROM AN EXTERNAL SOURCE THROUGH THE CONSOLE COMMAND AS THE SINGLE INPUT PARAMETER. DO NOT PUT ANY PLACEHOLDERS OR EXAMPLES! \n
-            2. Initialise a headless webdriver, with this profile path, do not forget to create a relevant folder: profile_folder_path=\"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\\"+str(threading.get_ident()) use this service:
+            2. Use from selenium.common.exceptions import NoSuchElementException to add a proper exception handling and avoid failing the script if the elements do not exist. \n
+            3. Initialise a headless webdriver, with this profile path, do not forget to create a relevant folder: profile_folder_path=\"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\\"+str(threading.get_ident()) use this service:
             service=service(executable_path=r\"C:\\Python3\\chromedriver.exe\") add these options: options.add_argument(f\"user-data-dir={profile_folder_path}\") options.add_argument(\"--headless\") options.add_argument(\"--disable-gpu\") options.add_argument(\"--no-sandbox\") \n
-            3. USE THE SELECTORS AND CODE EXAMPLES YOU PREVIOUSLY DEFINED!!! and scrape all job listings. REMEMBER!!!! instead of an old find_elements_by_css_selector, you should use the find_elements method with By.CSS_SELECTOR. \n
-            4. Remember that to sometimes to extract the text placed inside the element for Job Title you should use get_attribute('innerHTML').strip() instead of just .text
-            5. In case there is no Job Opening URL defined in the HTML - use a \"#\", BUT ONLY IF THERE IS NO URL DEFINED WITHIN THE JOB POSTING ELEMENT \n
-            6. NEVER IMPLEMENT EXAMPLE USAGE PARAMETERS AND SELECTORS, ONLY THE ONES EXISTING IN THE HTML \n
-            7. Return a JSON with all job postings in the following format, DO NOT WRITE RESULT TO ANY FILE: { [\"Job-title\" :\"title1\", \"URL\":\"url1\"], [\"Job-title\" :\"title2\", \"URL\":\"url2\"], }",
+            4. USE THE SELECTORS AND CODE EXAMPLES YOU PREVIOUSLY DEFINED!!! and scrape all job listings. REMEMBER!!!! instead of an old find_elements_by_css_selector, you should use the find_elements method with By.CSS_SELECTOR. \n
+            5. To extract Job Titles try to use .text.strip() first, but if it's empty - use .get_attribute('innerHTML').strip() \n
+            6. In case there is no Job Opening URL defined in the HTML - use a \"#\", BUT ONLY IF THERE IS NO URL DEFINED WITHIN THE JOB POSTING ELEMENT \n
+            7. NEVER IMPLEMENT EXAMPLE USAGE PARAMETERS AND SELECTORS, ONLY THE ONES EXISTING IN THE HTML \n
+            8. Return a JSON with all job postings in the following format, DO NOT WRITE RESULT TO ANY FILE: { [\"Job-title\" :\"title1\", \"URL\":\"url1\"], [\"Job-title\" :\"title2\", \"URL\":\"url2\"], }",
         ]);
 
         $response = $client->threads()->runs()->create($threadId,['assistant_id' =>"asst_TXBXdt73opAxuoAxMAQ9dCFC"]);
@@ -391,7 +399,7 @@ class ProcessCompany implements ShouldQueue
                 $tempScriptPath = $basePath . "\\scrape_temp.py";
 
 
-                $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl);
+                $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl, $domain);
 
                 if ($this->hasJobs != 0) {
                     $attempt = 1;
@@ -415,6 +423,7 @@ class ProcessCompany implements ShouldQueue
                     RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
                 }
             }
+            var_dump($scriptPath);
 
             if (file_exists($scriptPath)) {
                 $this->company->scripted = true;

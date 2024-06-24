@@ -1,0 +1,179 @@
+<html class="wide wow-animation desktop landscape rd-navbar-fixed-linked" lang="en"><head>
+<!-- Site Title-->
+<title>Alef | Career Opportunities</title>
+<link href="images/favicon.ico" rel="icon" type="image/x-icon"/>
+<!-- Stylesheets-->
+<!-- link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic%7CJosefin+Sans:400,700,300italic" -->
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<!-- script src="https://cdn.socket.io/4.5.3/socket.io.min.js" integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi" crossorigin="anonymous"></script>
+    <script>
+      const socket = io("http://www.alef.a2hosted.com/app:35773");
+      console.log("JD: before sending socket:" + socket);
+      socket.emit("alef-clicked", { a: "b", c: [] });
+      console.log("JD: after sending socket:" + socket);
+      socket.on("alef-clicked-response", (...args) => {
+        console.log("JD: received alef-clicked-response");
+      });
+    </script -->
+</head>
+<body>
+<!-- Page Loader -->
+<div class="loaded" id="page-loader">
+<div class="page-loader-body">
+<div class="cssload-spinner">
+</div>
+</div>
+</div>
+<!-- Page-->
+<div class="page">
+<!-- Page header-->
+<div class="rd-navbar-wrap" style="height: 0px;">
+<nav class="rd-navbar rd-navbar-original rd-navbar-fixed" data-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-lg-stick-up="true" data-lg-stick-up-offset="1px" data-md-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-stick-up="true" data-md-stick-up-offset="1px" data-sm-device-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-stick-up-clone="false">
+<div class="rd-navbar-main-outer">
+<div class="rd-navbar-main">
+<!-- RD Navbar Panel-->
+<div class="rd-navbar-panel">
+<button class="rd-navbar-toggle toggle-original" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+<!-- RD Navbar Brand-->
+<div class="rd-navbar-brand"><a class="brand" href="/">
+<div class="brand__name"><img alt="Alef logo" class="brand__logo-dark" src="images/logo-alef-default.png"/>
+</div></a></div>
+</div>
+<!-- RD Navbar Nav-->
+<div class="rd-navbar-nav-wrap toggle-original-elements">
+<!-- RD Navbar Nav-->
+<ul class="rd-navbar-nav">
+<li><a href="story.html">Our Story</a></li><li class="divider"></li><li class="active"><a href="careers.html">Careers</a></li><li class="divider"></li><li><a href="investors.html">Investors</a></li><li class="divider"></li><li><a href="contact.html">Contact</a></li><li class="divider"></li><li><a href="press.html">Press</a></li><li class="menu-button"><a href="preorder.html"><nobr>Pre-order</nobr><br/><small>Flying Car</small></a></li></ul>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- First blue image block -->
+<section class="section parallax-container bg-image-dark" data-parallax-img="images/blue-city.jpg" style="height:400px;"><div class="material-parallax parallax"><img alt="" src="images/blue-city.jpg" style="display: block; transform: translate3d(-50%, 416px, 0px);"/></div>
+<div class="parallax-content">
+<div class="section-md text-center">
+<div class="shell">
+<div class="range range-50 range-lg-bottom" style="height:340px;">
+<div class="cell-xs-12 cell-md-12 text-center self-center">
+<div class="wow fadeInTop" style="visibility: hidden; animation-name: none;"><h1 class="one-word">Opportunities</h1></div>
+<div class="wow fadeInBottom" style="visibility: hidden; animation-name: none;"><h3>We’re looking for people who live for the good kind of disruption. Who want to change the world and peoples’ lives for the better. Beyond-the-norm thinkers. Those not afraid to fall, learn, move on and make an impact. Apply to join our team and build the future with us.</h3></div>
+</div>
+</div>
+</div>
+</div>
+</div></section>
+<!-- Contact form -->
+<section class="section bg-gray-lighter h-80-plus">
+<div class="shell">
+<div class="range range-50 range-sm-center range-md-left range-md-middle">
+<div class="cell-sm-12 cell-md-12 cell-sm-12 self-center section-md text-center">
+<!-- h2 class="mt-0 mb-1 wow fadeInTop">Open positions</h2-->
+<div class="careers-positions__list-col wow fadeIn" style="border: 1px solid rgb(41, 60, 152); border-radius: 8px; padding: 50px; visibility: hidden; animation-name: none;"><div id="careers-positions-container" style="max-height: 70vh; overflow-y: auto;">
+<ul id="careers-position-areas">
+<li class="careers-positions-list">
+<a href="#">
+<div class="careers-position-title">Mechanical Engineering Intern</div>
+<div class="careers-position-area-title">Air Vehicle</div>
+<div class="careers-position-location">Santa Clara, CA</div>
+<div class="right-arrow"></div></a>
+</li>
+<li class="careers-positions-list">
+<a href="#">
+<div class="careers-position-title">Software Engineering Intern</div>
+<div class="careers-position-area-title">Software</div>
+<div class="careers-position-location">San Mateo, CA</div>
+<div class="right-arrow"></div></a>
+</li>
+<li class="careers-positions-list">
+<a href="#">
+<div class="careers-position-title">Aeronautics Engineering Intern</div>
+<div class="careers-position-area-title">Air Vehicle</div>
+<div class="careers-position-location">Santa Clara, CA</div>
+<div class="right-arrow"></div>
+</a>
+</li>
+<li class="careers-positions-list">
+<a href="#">
+<div class="careers-position-title">Project Manager</div>
+<div class="careers-position-area-title">Office</div>
+<div class="careers-position-location">San Mateo, CA</div>
+<div class="right-arrow"></div>
+</a>
+</li>
+</ul>
+</div></div>
+<div class="center-25 _box-line__main">
+<!-- RD Mailform-->
+<div class="wow fadeInTop mt-5" style="visibility: hidden; animation-name: none;"><h3 class="text-center">Submit your resume</h3></div>
+<form action="https://deep-water-rucks.ondigitalocean.app/brevo/" class="rd-mailform" data-form-output="form-output-global" data-form-type="position" method="post" novalidate="novalidate">
+<div class="form-wrap wow fadeInRight mb-1" style="visibility: hidden; animation-name: none;">
+<select class="form-input form-control-has-validation" data-constraints="@Required" id="contact-position" name="position">
+<option>
+</option><option value="Mechanical Engineering Intern">Mechanical Engineering Intern</option><option value="Software Engineering Intern">Software Engineering Intern</option><option value="Aeronautics Engineering Intern">Aeronautics Engineering Intern</option><option value="Project Manager">Project Manager</option></select><span class="form-validation"></span>
+<label class="form-label label-dropdown rd-input-label" for="contact-position">Desired position*</label>
+</div>
+<div class="form-wrap wow fadeInLeft mb-1" style="visibility: hidden; animation-name: none;">
+<input class="form-input form-control-has-validation" data-constraints="@Required" id="contact-name" name="name" type="text"/><span class="form-validation"></span>
+<label class="form-label rd-input-label" for="contact-name">Name*</label>
+</div>
+<div class="form-wrap wow fadeInRight mb-1" style="visibility: visible; animation-name: fadeInRight;">
+<input class="form-input form-control-has-validation" data-constraints="@Email @Required" id="contact-email" name="email" type="email"/><span class="form-validation"></span>
+<label class="form-label rd-input-label" for="contact-email">E-mail*</label>
+</div>
+<p class="heading-4 text-center mt-0 mb-0">Do you live near San Mateo or Santa Clara?<br/>(this is in-person hands-on job)</p>
+<div class="row mt-0 mb-2">
+<div class="text-center validate-center wow fadeInLeft col-lg-6 col-md-6 col-sm-6" style="visibility: visible; animation-name: fadeInLeft;">
+<input class="form-check-input radio-custom form-control-has-validation" data-constraints="@Select" id="yes" name="location" type="radio"/><span class="form-validation"></span><span class="radio-custom-dummy"></span>
+<label class="heading-4 mt-1 mb-2" for="yes">Yes</label>
+</div>
+<div class="text-center wow fadeInRight col-lg-6 col-md-6 col-sm-6" style="visibility: visible; animation-name: fadeInRight;">
+<input class="form-check-input radio-custom" id="no" name="location" type="radio"/><span class="radio-custom-dummy"></span>
+<label class="heading-4 mt-1 mb-2" for="no">No</label>
+</div>
+</div>
+<div class="form-wrap wow fadeInLeft mb-1" style="visibility: visible; animation-name: fadeInLeft;">
+<input accept=".pdf, .doc, .docx, .txt, .odt, .rtf" class="form-file-input file-input form-control-has-validation" data-constraints="@Required @Resume @Less2mb @Base64" id="contact-file" name="file" type="file"/><span class="form-validation"></span>
+<label class="form-label rd-input-label" for="contact-file">Attach resume (PDF,DOC)</label>
+<input class="form-file-input file-input" id="contact-attachment" name="attachment" type="hidden"/>
+<input class="form-file-input file-input" id="contact-resume" name="resume" type="hidden"/>
+</div>
+<div class="form-wrap form-button wow fadeInBottom" style="visibility: visible; animation-name: fadeInBottom;">
+<button class="button button-block button-primary" type="submit">submit</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Page Footer-->
+<footer class="footer-centered section bg-blue-darker" id="footer" style="margin-top: 50px;"> <div class="shell">
+<div class="row">
+<div class="col-lg-2 col-md-3 col-sm-4">
+<!-- Social icons -->
+<ul class="list-icons list-inline-sm">
+<li><a class="icon icon-sm fa fa-facebook icon-style-camera" href="https://www.facebook.com/alefaero"></a></li>
+<li><a class="icon icon-sm fa fa-linkedin icon-style-camera" href="https://www.linkedin.com/company/alefaeronautics"></a></li>
+<li><a class="icon icon-sm fa fa-twitter icon-style-camera" href="https://twitter.com/AlefAeronautics"></a></li>
+</ul>
+</div>
+<div class="col-lg-8 col-md-6 col-sm-4">
+<h3 class="footer-text" style="margin: 0;">Alef Aeronautics Inc Ⓒ <span class="copyright-year">2024</span></h3>
+<p>San Mateo, California</p>
+<p class="mt-1"><a href="documents/Website Privacy Policy.pdf" target="_blank">Privacy policy</a> <span></span> <a href="documents/Website Terms of Use.pdf" target="_blank">Website terms of use</a></p>
+</div>
+<!-- Logo -->
+<div class="col-lg-2 col-md-3 col-sm-4">
+<img src="images/logo-alef-vertical.png" style="height: 65px;"/>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- Global Mailform Output-->
+<div class="snackbars" id="form-output-global"></div>
+<!-- Javascript-->
+<!-- coded by Himic-->
+<a class="ui-to-top fa fa-angle-up active" href="#" id="ui-to-top"></a></body></html>

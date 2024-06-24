@@ -1,0 +1,227 @@
+<html lang="it">
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="navbar navbar-inverse">
+<div class="container">
+<div class="container-fluid">
+<div class="row">
+<div class="navbar-header">
+<div class="col-lg-3 col-md-3 col-sm-10 col-xs-10">
+<!--                        <a class="navbar-brand" href="https://careers.custom.it/">-->
+<a class="navbar-brand" onclick="redirectPageCustomBiz('HOMEPAGECAREERS');">
+
+</a>
+</div>
+<div class="col-sm-2 col-xs-2">
+<button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button">
+
+
+
+</button>
+</div>
+</div>
+
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="margin: 21px auto;">
+<div class="collapse navbar-collapse" id="myNavbar">
+
+<ul class="nav navbar-nav navbar-right">
+<!-- --><!--                                    <li><a href="/pages/jobAreas/index.php" id="link-active">Job Areas</a></li>-->
+<!-- --><!--                                    <li><a href="/pages/jobAreas/index.php" id="link-noactive">Job Areas</a></li>-->
+<!-- --> <li><a id="link-active" onclick="redirectPageLang();">JOB SEARCH</a></li>
+<li><a id="link-external" onclick="redirectPageCustomBiz('G');" target="_blank">THE GROUP</a></li>
+<li><a id="link-external" onclick="redirectPageCustomBiz('C');" target="_blank">CONTACTS</a></li>
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" id="link-language"><b id="language">EN</b> </a>
+<ul class="dropdown-menu" style="min-width: 60px;">
+<li><a id="otherLanguage" onclick="changeLanguage('IT','EN');" style="cursor: pointer;">IT</a></li>
+</ul>
+</li>
+</ul>
+
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</nav>
+<!-- Banner -->
+<div class="jobSearch hidden-sm hidden-xs">
+<div class="bannerJobSearch">
+
+
+</div>
+<div class="container">
+<h1 class="textJobSearch">Job Search</h1>
+<form action="" method="post">
+<div class="row">
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<label>Location</label>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<label>Job Family</label>
+</div>
+
+</div>
+<div class="row text-center">
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<select class="form-control" id="seat" name="seat">
+<option value="">Select</option>
+<option value="1">Fontevivo (PR)</option>
+<option value="2">Ponte Taro (PR)</option>
+<option value="3">Mestre (VE)</option>
+<option value="4">Gallarate (VA)</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</select>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<select class="form-control" id="department" name="department">
+<option value="">Select</option>
+<option value="14">CUSTOM SpA - Technical Office and R&amp;D</option>
+<option value="15">CUSTOM SpA - Legal</option>
+<option value="16">SYSTEM RETAIL SpA - Technical Office &amp; R&amp;D</option>
+<option value="17">CUSTOM SpA - Finance</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</select>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<button id="btn-search" name="btn-search" type="submit">SEARCH</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<!-- Banner telefono -->
+<div class="searchJob visible-sm visible-xs">
+<div class="bannerJobSearch">
+<div class="container">
+
+<div class="row text-center">
+<h1 class="titleJobSearch">Job Search</h1>
+</div>
+</div>
+</div>
+</div>
+<div class="content" id="content">
+<div class="container">
+
+<div class="row">
+<div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">Service</h4>
+<h4 class="titlePosition">Help Desk I° livello</h4>
+
+<h5>Mestre (VE)</h5>
+<h5>Date: 09.05.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('202','10','3')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">Sales</h4>
+<h4 class="titlePosition">Channel Sales Manager - East</h4>
+
+<h5>United States (USA)</h5>
+<h5>Date: 24.04.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('199','9','22')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">R&amp;D/Technical Department</h4>
+<h4 class="titlePosition">Technical Quality - Stage</h4>
+
+<h5>Fontevivo (PR)</h5>
+<h5>Date: 24.04.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('200','5','1')" type="button">DETAILS</button>
+</div></div><div class="row"> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">R&amp;D/Technical Department</h4>
+<h4 class="titlePosition">Sviluppatore Firmware</h4>
+
+<h5>Fontevivo (PR)</h5>
+<h5>Date: 17.04.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('198','5','1')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">R&amp;D/Technical Department</h4>
+<h4 class="titlePosition">Support Technical Quality - Stage</h4>
+
+<h5>Fontevivo (PR)</h5>
+<h5>Date: 09.04.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('195','5','1')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">R&amp;D/Technical Department</h4>
+<h4 class="titlePosition">Sviluppatore sofware rep.pesatura</h4>
+
+<h5>Gallarate (VA)</h5>
+<h5>Date: 08.04.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('194','5','4')" type="button">DETAILS</button>
+</div></div><div class="row"> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">CUSTOM SpA - Technical Office and R&amp;D</h4>
+<h4 class="titlePosition">Testing Specialist</h4>
+
+<h5>Fontevivo (PR)</h5>
+<h5>Date: 02.04.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('193','14','1')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">Operations</h4>
+<h4 class="titlePosition">Operatore/trice di Magazzino L. 68</h4>
+
+<h5>Fontevivo (PR)</h5>
+<h5>Date: 13.03.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('190','7','1')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">R&amp;D/Technical Department</h4>
+<h4 class="titlePosition">Junior developer C#</h4>
+
+<h5>Oggiona Santo Stefano (VA)</h5>
+<h5>Date: 12.03.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('189','5','6')" type="button">DETAILS</button>
+</div></div><div class="row">
+</div> 
+
+<div class="row text-center">
+<h4>Can't find your job opportunity?  Send  your free application</h4>
+<button id="btn-sendCurriculum" name="btn-sendCurriculum" onclick="redirectLangCV();" type="button">Send your c.v.</button>
+</div>
+</div>
+</div>
+
+
+
+</body></html>

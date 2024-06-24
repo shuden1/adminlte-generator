@@ -36,6 +36,7 @@ def get_dynamic_html(url, output_file, scrolls=2):
 
     os.makedirs(profile_folder_path, exist_ok=True)
 
+    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument('--remote-allow-origins="*"')
     options.add_argument("--headless")
@@ -47,7 +48,7 @@ def get_dynamic_html(url, output_file, scrolls=2):
 
     try:
         browser.get(url)
-        time.sleep(8)  # Wait for the initial page to load
+        time.sleep(10)  # Wait for the initial page to load
         for i in range(scrolls):
             browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(2)  # Wait 2 seconds between scrolls

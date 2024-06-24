@@ -4,6 +4,7 @@ import threading
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 
 def scrape_jobs(file_path):
@@ -18,21 +19,32 @@ def scrape_jobs(file_path):
     
     driver = webdriver.Chrome(service=service, options=options)
     
-    driver.get(f"file:///{file_path}")
-    
-    job_openings = driver.find_elements(By.CSS_SELECTOR, "li.jobs-list-item")
-    
-    jobs = []
-    for job in job_openings:
-        title_element = job.find_element(By.CSS_SELECTOR, 'a.au-target[data-ph-at-id="job-link"]')
-        title = title_element.get_attribute('innerHTML').strip()
-        url = title_element.get_attribute('href') or "#"
+    try:
+        driver.get(f"file:///{file_path}")
         
-        jobs.append({"Job-title": title, "URL": url})
+        job_postings = driver.find_elements(By.CSS_SELECTOR, 'div.job-posting')
+        jobs = []
+        
+        for job in job_postings:
+            try:
+                title_element = job.find_element(By.CSS_SELECTOR, 'h2.job-title')
+                title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
+            except NoSuchElementException:
+                title = None
+            
+            try:
+                url_element = job.find_element(By.CSS_SELECTOR, 'a.job-url')
+                url = url_element.get_attribute('href') if url_element else "#"
+            except NoSuchElementException:
+                url = "#"
+            
+            if title:
+                jobs.append({"Job-title": title, "URL": url})
+        
+        print(json.dumps(jobs, indent=4))
     
-    driver.quit()
-    
-    print(json.dumps(jobs, indent=4))
+    finally:
+        driver.quit()
 
 if __name__ == "__main__":
     file_path = sys.argv[1]

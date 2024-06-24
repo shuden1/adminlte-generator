@@ -4,6 +4,7 @@ import threading
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 
 def scrape_jobs(file_path):
@@ -18,21 +19,32 @@ def scrape_jobs(file_path):
     
     driver = webdriver.Chrome(service=service, options=options)
     
-    driver.get(f"file:///{file_path}")
+    try:
+        driver.get(f"file:///{file_path}")
+        
+        job_openings = []
+        
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.fusion-column-wrapper")
+        
+        for job_element in job_elements:
+            try:
+                title_element = job_element.find_element(By.CSS_SELECTOR, "span.fusion-button-text")
+                title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
+            except NoSuchElementException:
+                title = "No Title"
+            
+            try:
+                url_element = job_element.find_element(By.CSS_SELECTOR, "a.fusion-button")
+                url = url_element.get_attribute('href') if url_element.get_attribute('href') else "#"
+            except NoSuchElementException:
+                url = "#"
+            
+            job_openings.append({"Job-title": title, "URL": url})
     
-    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div[class*="job-listing"], ul[class*="job-listing"], li[class*="job-listing"]')
-    job_postings = []
+    finally:
+        driver.quit()
     
-    for job_block in job_blocks:
-        title_tag = job_block.find_element(By.CSS_SELECTOR, 'a')
-        job_postings.append({
-            'Job-title': title_tag.text.strip(),
-            'URL': title_tag.get_attribute('href')
-        })
-    
-    driver.quit()
-    
-    return json.dumps(job_postings, indent=4)
+    return json.dumps(job_openings, indent=4)
 
 if __name__ == "__main__":
     file_path = sys.argv[1]

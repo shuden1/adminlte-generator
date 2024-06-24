@@ -1,5 +1,6 @@
 <html><body style="margin:0"><div class="replaced-iframe">
 <div class="captcha" data-dd-captcha-container="" id="captcha-container">
+
 <div class="captcha__header" data-dd-captcha-header="">
 <div class="captcha__header__container" data-dd-captcha-header-container="">
 <div class="captcha__header__logo-wrapper" data-dd-captcha-header-logo-wrapper="">
@@ -7,29 +8,34 @@
 </div>
 </div>
 </div>
-<div class="captcha__human" data-dd-captcha-human="">
-<div class="captcha__human__container" data-dd-captcha-human-container="" style="min-height: 205px;">
-<p class="captcha__human__title no-margin" data-dd-captcha-human-title="">
-            You have been blocked.
+<div class="captcha__human" data-dd-captcha-human="" style="padding: 0;">
+<div class="captcha__human__container" data-dd-captcha-human-container="">
+<p class="captcha__human__title" data-dd-captcha-human-title="">
+            We want to make sure it is actually you we are dealing with and not a robot.
         </p>
+<p class="captcha__human__not_accessible_text visually-hidden" data-dd-captcha-not-accessible="" tabindex="0">The visual verification might not be accessible to you. We recommand you to use the audio verification instead.</p>
+<div class="captcha__human__captcha-container" data-dd-captcha-human-captcha-container="">
 </div>
 </div>
+</div>
+<div class="captcha__ddv1" data-dd-ddv1-captcha-container="" id="ddv1-captcha-container">
+<div id="captcha__frame"><div id="captcha__frame__top"><div id="captcha__switch"></div></div><div id="captcha__element"><div class="toggled" id="captcha__puzzle" style="position: relative; width: 280px; margin: 0px auto;"></div><div class="toggled" id="captcha__frame__bottom"><div class="sliderText" data-text=""><p class="no-margin">Slide right to complete the puzzle.</p></div><div class="sliderContainer"><div class="slider"></div></div></div><div id="captcha__audio"><p class="audio-captcha-instructions no-margin">Please type the numbers you hear.</p><div class="audio-captcha-play-container"><button class="audio-captcha-play-button push-button" name="Listen to the numbers to write" title="Listen to the numbers to write"></button></div><div class="audio-captcha-input-container"></div><div class="audio-captcha-verify-button-container" role="status"><p class="audio-captcha-verify-button push-button no-margin">Verify</p></div></div></div></div></div>
 <div class="captcha__robot" data-dd-captcha-robot="">
 <div class="captcha__robot__container" data-dd-captcha-robot-container="">
 <div class="captcha__robot__warning" data-dd-captcha-robot-warning="">
-<p class="captcha__robot__warning__why">Why? Something about the behaviour of the browser has caught our attention.</p><p class="captcha__robot__warning__explain">There are various possible explanations for this:</p> <ul> <li> You are browsing and clicking at a speed much faster than expected of a human being.</li> <li> Something is preventing JavaScript from working on your computer.</li> <li> There is a robot on the same network (IP 188.169.239.74) as you.</li> </ul>
+<p class="captcha__robot__warning__why">Why is this verification required? Something about your browser’s behavior has caught our attention.</p><p class="captcha__robot__warning__explain">There are various possible explanations for this:</p> <ul> <li> You are browsing and clicking at a speed much faster than expected of a human being.</li> <li> Something is preventing JavaScript from working on your computer.</li> <li> There is a robot on the same network (IP 188.169.239.74) as you.</li> </ul>
 </div>
 <div class="captcha__robot__contact_support" data-dd-captcha-robot-contact-support="">
 <p class="captcha__robot__contact_support_desc no-margin" data-dd-captcha-robot-contact-support-desc="">
             Having problems accessing the site?
-                <button aria-controls="human-contact-form-wrapper" aria-expanded="false" class="captcha__contact_support__submit" data-dd-captchacontact-support-submit="" id="show-human-auth" type="button">
+                <button aria-controls="human-contact-form-wrapper" aria-expanded="false" class="captcha__contact_support__submit" data-dd-captcha-contact-support-submit="" id="show-human-auth" type="button">
                 Submit feedback.
             </button>
 </p>
-<p class="captcha__robot__contact_support_request_id" data-dd-request-id="" id="show-human-requestId">ID: ce7cdef3-ee46-722e-a0fd-89d3ea98b88f</p>
+<p class="captcha__robot__contact_support_request_id" data-dd-request-id="" id="show-human-requestId">ID: e69b76fb-b4db-bcb8-0f8f-702c05de8a0f</p>
 </div>
 <div class="captcha__contact_support hidden not-displayed" data-dd-captcha-contact-support="" id="human-contact-form-wrapper">
-<form action="//geo.captcha-delivery.com/contact-human?initialCid=AHrlqAAAAAMA7Ci-PdqPDdoAvKnvSg%3D%3D&amp;hash=8A6A68E045DB8FD4F345090D6D5310&amp;cid=BWwKQ2NdeL3A0z0yz0gjP1sUJ80Nq8PhN3nB4ssAWPfGMQY_E8skP7H_kPIi62AzOkc4SewUFlyVqYG0m%7EdXMJnJq1uo7B9vwQJ02KqpBuYwxj668BOLuIMrAHTSaVTq" class="captcha__contact_form" data-dd-captcha-contact-form="" id="human-contact-form" method="post">
+<form action="//geo.captcha-delivery.com/contact-human?initialCid=AHrlqAAAAAMAR4i2A2ZhiHgAvKnvSg%3D%3D&amp;hash=8A6A68E045DB8FD4F345090D6D5310&amp;cid=w4nIu7hIDPKIL0HDGhjiC1TLsGSW1scAC%7E0zGrpib%7E_CblBmarAJVJmEdGmhrIaBeTRzi0UgZh1g_6%7ERxPZaTPYADBLp_QpCdZ1m6_ZYLQmTCQAJ_r_dvCXXs%7EpFanBF" class="captcha__contact_form" data-dd-captcha-contact-form="" id="human-contact-form" method="post">
 
 
 
@@ -37,8 +43,17 @@
 
 
 <fieldset class="captcha_contact__radio-container" data-dd-captcha-contact-radio-container="">
-<legend class="contact__label visually-hidden" data-dd-contactlabel="">Please choose a reason (mandatory).</legend>
-
+<legend class="contact__label" data-dd-contactlabel="">Please choose a reason (mandatory).</legend>
+<div class="captcha__contact__radio" data-dd-captcha-contact-radio="">
+<label class="captcha__contact__radio__label" data-dd-captcha-contact-radio-label="" for="input_recaptcha_cannot_pass_challenge">
+ I've tried several times, but it won't work.
+        </label>
+</div>
+<div class="captcha__contact__radio" data-dd-captcha-contact-radio="">
+<label class="captcha__contact__radio__label" data-dd-captcha-contact-radio-label="" for="input_other">
+ Other.
+        </label>
+</div>
 <div class="captcha__contact__input-container" data-dd-captcha-contact-input-container="">
 
 </div>

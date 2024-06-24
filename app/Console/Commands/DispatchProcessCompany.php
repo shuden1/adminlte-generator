@@ -30,8 +30,11 @@ class DispatchProcessCompany extends Command
     public function handle()
     {
         // Get all companies where scripted is not true
-        $companies = Company::where('id','>', 409)
-            ->WhereNull('scripted')
+        $companies = Company::where('sauroned', 1)
+            ->where(function ($query) {
+                $query->where('scripted', '0')
+                    ->orWhereNull('scripted');
+            })
             ->get();
 
         // Dispatch a job for each company

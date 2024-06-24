@@ -1,14 +1,16 @@
+import sys
 import json
 import threading
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-import sys
+from selenium.common.exceptions import NoSuchElementException
 
 def scrape_jobs(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
-    options = webdriver.ChromeOptions()
+    options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
@@ -17,17 +19,29 @@ def scrape_jobs(file_path):
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(f"file:///{file_path}")
 
-    job_listings = driver.find_elements(By.CSS_SELECTOR, 'ul.job-listings > li')
-    jobs = []
+    job_listings = []
 
-    for job in job_listings:
-        title_element = job.find_element(By.CSS_SELECTOR, 'a.job-title')
-        job_title = title_element.text.strip()
-        job_url = title_element.get_attribute('href')
-        jobs.append({"Job-title": job_title, "URL": job_url})
+    try:
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.page-block.not-suitable-vacancy")
+        for job_element in job_elements:
+            try:
+                title_element = job_element.find_element(By.CSS_SELECTOR, "h4.wp-block-heading")
+                title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
+            except NoSuchElementException:
+                title = "No Title"
+
+            try:
+                url_element = job_element.find_element(By.CSS_SELECTOR, "a.btn.wp-block-button__link.btn-shadow.btn-big.mt-3.apply-career")
+                url = url_element.get_attribute('href') if url_element.get_attribute('href') else "#"
+            except NoSuchElementException:
+                url = "#"
+
+            job_listings.append({"Job-title": title, "URL": url})
+    except NoSuchElementException:
+        pass
 
     driver.quit()
-    return json.dumps(jobs, indent=4)
+    return json.dumps(job_listings, indent=4)
 
 if __name__ == "__main__":
     file_path = sys.argv[1]

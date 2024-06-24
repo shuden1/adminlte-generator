@@ -1,0 +1,474 @@
+<html class="html page-template-default page page-id-535 page-child parent-pageid-123" lang="en_Gb">
+<body :class="{'h-screen overflow-hidden md:h-auto' : menuOpen, 'going-up' : goingUp}" @resize.window.debounce="menuOpen = window.innerWidth &gt;= 1024 ? false : menuOpen" @scroll.window.throttle="goingUp = window.pageYOffset &lt; lastScroll &amp;&amp; window.pageYOffset &gt; menuHeight + 100; lastScroll = window.pageYOffset" data-territory="110" x-data="{menuOpen: '', goingUp: false, lastScroll: 0, menuHeight: document.getElementById('mainNav').offsetHeight, headHeight: 'min-height:calc(100vh - ' + document.getElementById('content').offsetTop + 'px)'}"><div class="cky-btn-revisit-wrapper cky-revisit-hide cky-revisit-bottom-left" data-cky-tag="revisit-consent" data-tooltip="Cookie Settings" style="background-color: #0056a7;"> <button aria-label="Cookie Settings" class="cky-btn-revisit">  </button> </div> <div class="cky-consent-container cky-classic-bottom" tabindex="0"> <div class="cky-consent-bar" data-cky-tag="notice" style="border-color: #4f5461; background-color: #ffffff;"> <div class="cky-notice"> <p aria-level="1" class="cky-title" data-cky-tag="title" role="heading" style="color: #171B23;"> Cookie consent </p> <div class="cky-notice-group"> <div class="cky-notice-des" data-cky-tag="description" style="color: #171B23;"> This website uses cookies that help the website to function and also to track how you interact with our website. But for us to provide the best user experience, enable the specific cookies from Settings, and click on Accept. </div> <div class="cky-notice-btn-wrapper" data-cky-tag="notice-buttons"> <button aria-expanded="false" aria-label="Cookies Settings" class="cky-btn cky-btn-customize" data-cky-tag="settings-button" style="color: #171B23; border-color: #3f444e; background-color: transparent;">Cookies Settings</button> <button aria-label="Reject All" class="cky-btn cky-btn-reject" data-cky-tag="reject-button" style="color: #000000; border-color: transparent; background-color: #FFF;">Reject All</button> <button aria-label="Accept All" class="cky-btn cky-btn-accept" data-cky-tag="accept-button" style="color: #171B23; border-color: #FEAD09; background-color: #FEAD09;">Accept All</button> </div> </div> </div> </div> <div class="cky-preference-wrapper" data-cky-tag="detail" style="color: #565662; border-color: #D4D8DF; background-color: #FFFFFF;"> <div class="cky-preference-center"> <div class="cky-preference"> <div class="cky-preference-header"> <span aria-level="1" class="cky-preference-title" data-cky-tag="detail-title" role="heading" style="color: #565662;">Privacy Policy</span> <button aria-label="Close" class="cky-btn-close" data-cky-tag="detail-close">  </button> </div> <div class="cky-preference-body-wrapper"> <div class="cky-preference-content-wrapper" data-cky-tag="detail-description" style="color: #565662;"> <p>This website uses cookies to improve your experience while you navigate through the website. Out of these cookies, the cookies that are categorized as necessary are stored on your browser as they as essential for the working of basic functionalities of the website. </p><p>We also use third-party cookies that help us analyze and understand how you use this website, to store user preferences and provide them with content and advertisements that are relevant to you. These cookies will only be stored on your browser with your consent to do so. You also have the option to opt-out of these cookies.But opting out of some of these cookies may have an effect on your browsing experience.</p> </div>  <div class="cky-accordion-wrapper" data-cky-tag="detail-categories"> <div class="cky-accordion" id="ckyDetailCategorynecessary"><div class="cky-accordion-item"><div class="cky-accordion-chevron"></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button aria-expanded="false" aria-label="Necessary" class="cky-accordion-btn" data-cky-tag="detail-category-title" style="color: #565662;">Necessary</button><span class="cky-always-active">Always Active</span></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #565662;"><p>Necessary cookies are crucial for the basic functions of the website and the website will not work in its intended way without them.</p> <p>These cookies do not store any personally identifiable data.</p></div></div></div><div class="cky-accordion-body"><div class="cky-audit-table" data-cky-tag="audit-table" style="color: #212121; border-color: #ebebeb; background-color: #f4f4f4;"><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>_cq_duid</div></li><li><div>Duration</div><div>3 months</div></li><li><div>Description</div><div>Cheq sets this cookie to safeguard the website against malicious traffic. It keep an eye on the technical data and usage of the devices that connect to it.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>_cq_suid</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>Cheq sets this cookie to safeguard the website against malicious traffic. It keep an eye on the technical data and usage of the devices that connect to it.</div></li></ul></div></div></div><div class="cky-accordion" id="ckyDetailCategoryfunctional"><div class="cky-accordion-item"><div class="cky-accordion-chevron"></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button aria-expanded="false" aria-label="Functional" class="cky-accordion-btn" data-cky-tag="detail-category-title" style="color: #565662;">Functional</button></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #565662;"><p>Functional cookies help to perform certain functionalities like sharing the content of the website on social media platforms, collect feedbacks, and other third-party features.</p></div></div></div><div class="cky-accordion-body"><div class="cky-audit-table" data-cky-tag="audit-table" style="color: #212121; border-color: #ebebeb; background-color: #f4f4f4;"><p class="cky-empty-cookies-text">No cookies to display.</p></div></div></div><div class="cky-accordion" id="ckyDetailCategoryanalytics"><div class="cky-accordion-item"><div class="cky-accordion-chevron"></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button aria-expanded="false" aria-label="Analytics" class="cky-accordion-btn" data-cky-tag="detail-category-title" style="color: #565662;">Analytics</button><div class="cky-switch" data-cky-tag="detail-category-toggle"></div></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #565662;"><p>Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics the number of visitors, bounce rate, traffic source, etc.</p></div></div></div><div class="cky-accordion-body"><div class="cky-audit-table" data-cky-tag="audit-table" style="color: #212121; border-color: #ebebeb; background-color: #f4f4f4;"><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>utm_source</div></li><li><div>Duration</div><div>past</div></li><li><div>Description</div><div>This cookie is used to record from where the visitor came to the website orginally. This information is used by the website operator to know the efficiency of their marketing.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>utm_term</div></li><li><div>Duration</div><div>past</div></li><li><div>Description</div><div>This cookie is used to record from where the visitor came to the website orginally. This information is used by the website operator to know the efficiency of their marketing.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>utm_content</div></li><li><div>Duration</div><div>past</div></li><li><div>Description</div><div>This cookie is used for storing the session content value if present.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>utm_campaign</div></li><li><div>Duration</div><div>past</div></li><li><div>Description</div><div>Google Ad Services sets this cookie to store session campaign value if present.</div></li></ul></div></div></div><div class="cky-accordion" id="ckyDetailCategoryperformance"><div class="cky-accordion-item"><div class="cky-accordion-chevron"></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button aria-expanded="false" aria-label="Performance" class="cky-accordion-btn" data-cky-tag="detail-category-title" style="color: #565662;">Performance</button></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #565662;"><p>Performance cookies are used to understand and analyze the key performance indexes of the website which helps in delivering a better user experience for the visitors.</p></div></div></div><div class="cky-accordion-body"><div class="cky-audit-table" data-cky-tag="audit-table" style="color: #212121; border-color: #ebebeb; background-color: #f4f4f4;"><p class="cky-empty-cookies-text">No cookies to display.</p></div></div></div><div class="cky-accordion" id="ckyDetailCategoryadvertisement"><div class="cky-accordion-item"><div class="cky-accordion-chevron"></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button aria-expanded="false" aria-label="Advertisement" class="cky-accordion-btn" data-cky-tag="detail-category-title" style="color: #565662;">Advertisement</button><div class="cky-switch" data-cky-tag="detail-category-toggle"></div></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #565662;"><p>Advertisement cookies are used to deliver visitors with customized advertisements based on the pages they visited before and analyze the effectiveness of the ad campaign.</p></div></div></div><div class="cky-accordion-body"><div class="cky-audit-table" data-cky-tag="audit-table" style="color: #212121; border-color: #ebebeb; background-color: #f4f4f4;"><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>handl_landing_page</div></li><li><div>Duration</div><div>1 month</div></li><li><div>Description</div><div>HandL UTM Grabber plugin sets this cookie is used to record the very first page you visited on our site in your browser.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>handl_ip</div></li><li><div>Duration</div><div>1 month</div></li><li><div>Description</div><div>HandL UTM Grabber plugin sets this cookie to record the web browser's IP address.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>handl_url</div></li><li><div>Duration</div><div>1 month</div></li><li><div>Description</div><div>HandL UTM Grabber plugin sets this cookie to form the URL on which we placed the code that generates. </div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>utm_medium</div></li><li><div>Duration</div><div>past</div></li><li><div>Description</div><div>This cookie is used to record from where the visitor came to the website orginally. This information is used by the website operator to know the efficiency of their marketing.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>handl_original_ref</div></li><li><div>Duration</div><div>past</div></li><li><div>Description</div><div>HandL UTM Grabber plugin sets this cookie to record the URL from which you came to our site.</div></li></ul></div></div></div> </div> </div> </div> <div class="cky-footer-wrapper">  <div class="cky-prefrence-btn-wrapper" data-cky-tag="detail-buttons"> <button aria-label="Accept All" class="cky-btn cky-btn-accept" data-cky-tag="detail-accept-button" style="color: #FFFFFF; border-color: #0443b5; background-color: #0342b5;"> Accept All </button> <button aria-label="Save my preferences" class="cky-btn cky-btn-preferences" data-cky-tag="detail-save-button" style="color: #FEAD09; border-color: #FEAD09; background-color: transparent;"> Save my preferences </button> <button aria-label="Reject All" class="cky-btn cky-btn-reject" data-cky-tag="detail-reject-button" style="color: #717375; border-color: transparent; background-color: #DEDFE0;"> Reject All </button> </div> <div data-cky-tag="detail-powered-by" style="padding: 8px 24px; font-size: 12px; font-weight: 400; line-height: 20px; text-align: right; direction: ltr; display: flex; justify-content: flex-end; align-items: center; color: #111111; background-color: #D9DFE7;"> Powered by  </div> </div> </div> </div> </div>
+<noscript>
+
+</noscript>
+<!-- Google Tag Manager (noscript) -->
+<noscript></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<section class="IP__Detection relative z-[3001]" style="display: none;" x-data="ipDetectionBar()" x-show="!matchingLocation &amp;&amp; show &amp;&amp; !menuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-end="opacity-100" x-transition:enter-start="opacity-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-end="opacity-0" x-transition:leave-start="opacity-100">
+<div class="IP__Detection-container bg-[#F2F0F6] py-5 gutter">
+<div class="flex flex-wrap sm:flex-nowrap max-w-5xl mx-auto items-center">
+<div class="w-5/6 sm:w-auto sm:max-w-lg lg:!mr-auto body-small sm:mr-10 order-first">
+<p>Select your country to learn about local service, view local news and customer and receive support, all in your preferred language.</p>
+</div>
+<form @submit.prevent="territorySelect($refs.territorySelection.value)" class="sm:flex mt-4 sm:mt-0 mr-auto items-center grow shrink-0 max-w-[403px]">
+<div class="Pegasus__Select-wrapper relative"><div class="Pegasus__Select-hide-input"><select id="ip-select" name="countries" x-ref="territorySelection">
+<option data-image="https://www.hightekers.com/wp-content/uploads/2023/01/Flag_of_Belgium.svg" data-territory-id="558" value="https://www.hightekers.com/fr-be/carrieres/">
+                            Belgique
+                        </option>
+<option data-image="https://www.hightekers.com/wp-content/uploads/2023/01/Flag_of_Spain.svg" data-territory-id="473" value="https://www.hightekers.com/es-es/ofertas-de-empleo/">
+                            España
+                        </option>
+<option data-image="https://www.hightekers.com/wp-content/uploads/2022/12/Flag_of_France-1.svg" data-territory-id="116" value="https://www.hightekers.com/fr-fr/carrieres/">
+                            France
+                        </option>
+<option data-image="https://www.hightekers.com/wp-content/uploads/2023/01/Flag_of_Italy-1.svg" data-territory-id="612" value="https://www.hightekers.com/it-it/carriere">
+                            Italia
+                        </option>
+<option data-image="https://www.hightekers.com/wp-content/uploads/2023/05/luxemburg-flag-icon.png" data-territory-id="7108" value="https://www.hightekers.com/fr-lu/carrieres/">
+                            Luxembourg
+                        </option>
+
+
+
+
+
+</select></div><div class="Pegasus__Select-selector"><button aria-expanded="true" aria-haspopup="listbox" aria-labelledby="listbox-label" class="Form__Selector w-full cursor-pointer relative border border-[#DAD8DD] rounded-full py-4 pl-6 pr-8 focus:outline-none max-w-[286px]" type="button"><span>United Kingdom</span></button><div class="overflow-scroll absolute z-10"><ul aria-activedescendant="https://www.hightekers.com/" aria-labelledby="listbox-label" class="" role="listbox" style="display: none;" tabindex="-1"><li class="body-small select-none relative transition duration-300 py-4 px-6 flex" id="ip-select-https://www.hightekers.com/fr-be/carrieres/" role="option"><span>Belgique</span></li> <li class="body-small select-none relative transition duration-300 py-4 px-6 flex" id="ip-select-https://www.hightekers.com/es-es/ofertas-de-empleo/" role="option"><span>España</span></li> <li class="body-small select-none relative transition duration-300 py-4 px-6 flex" id="ip-select-https://www.hightekers.com/fr-fr/carrieres/" role="option"><span>France</span></li> <li class="body-small select-none relative transition duration-300 py-4 px-6 flex" id="ip-select-https://www.hightekers.com/it-it/carriere" role="option"><span>Italia</span></li> <li class="body-small select-none relative transition duration-300 py-4 px-6 flex" id="ip-select-https://www.hightekers.com/fr-lu/carrieres/" role="option"><span>Luxembourg</span></li>      </ul></div></div></div>
+<button class="js-submit button-primary button-blue mt-5 sm:mt-0 sm:ml-4 !px-6" type="submit">Continue</button>
+</form>
+<button @click.prevent="show = false" class="ml-auto sm:ml-10 order-first sm:order-last" type="button">
+
+</button>
+</div>
+</div>
+</section>
+<header class="relative z-page-header" id="page-header" x-intersect="goingUp = false">
+<div :class="menuOpen ? '!bg-white h-screen overflow-auto' : ''" class="Navigation__menu gutter transition relative text-content-dark" id="mainNav" style="background-color:#ffbe3f">
+<div :class="menuOpen ? 'h-full !items-start' : ''" class="max-w-[1448px] mx-auto py-4 flex flex-wrap lg:flex-nowrap items-center">
+<a class="fill-current relative z-10 order-first" href="https://www.hightekers.com/">
+
+</a>
+<div :class="menuOpen ? '!block text-content-dark mt-20 w-full' : ''" class="hidden lg:px-8 lg:grid grid-flow-col gap-10 mx-auto">
+<div @keyup.escape="open = false" x-data="{ open: false }">
+<button :class="menuOpen ? 'text-[22px] mb-10' : ''" @click="open = !open" class="">For IT Consultants</button>
+<div :class="menuOpen ? '!static min-h-0 shadow-none' : ''" @click.outside="open = false" class="absolute top-0 left-0 right-0 bg-white -z-10 text-content-dark shadow-[0_8px_80px_rgba(18,8,39,0.08)] lg:px-12 lg:px-16" style="display: none;" x-show="open" x-transition="">
+<div :class="menuOpen ? 'mt-10 pt-0' : ''" class="max-w-[1448px] mx-auto py-20 mt-10">
+<div class="max-w-[565px]">
+<div class="heading-five mb-2.5">
+<span class="hidden sm:inline">For IT Consultants</span>
+</div>
+
+</div>
+<div class="grid sm:grid-cols-4 gap-x-10 gap-y-14 mb-20">
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/why-hightekers">
+<div class="heading-six mb-2">Why you should join Hightekers</div>
+
+</a>
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/compliance">
+<div class="heading-six mb-2">Compliance</div>
+
+</a>
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/the-platform">
+<div class="heading-six mb-2">The Hightekers freelancer platform</div>
+
+</a>
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/starting-managing-your-business">
+<div class="heading-six mb-2">Starting and managing your business</div>
+
+</a>
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/remote-working/">
+<div class="heading-six mb-2">Remote Working</div>
+
+</a>
+
+</div>
+</div>
+</div>
+</div>
+<div @keyup.escape="open = false" x-data="{ open: false }">
+<button :class="menuOpen ? 'text-[22px] mb-10' : ''" @click="open = !open" class="">For IT Recruiters</button>
+<div :class="menuOpen ? '!static min-h-0 shadow-none' : ''" @click.outside="open = false" class="absolute top-0 left-0 right-0 bg-white -z-10 text-content-dark shadow-[0_8px_80px_rgba(18,8,39,0.08)] lg:px-12 lg:px-16" style="display: none;" x-show="open" x-transition="">
+<div :class="menuOpen ? 'mt-10 pt-0' : ''" class="max-w-[1448px] mx-auto py-20 mt-10">
+<div class="max-w-[565px]">
+<div class="heading-five mb-2.5">
+<span class="hidden sm:inline">For IT Recruiters</span>
+</div>
+
+</div>
+<div class="grid sm:grid-cols-4 gap-x-10 gap-y-14 mb-20">
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/recruiting-it-consultants/">
+<div class="heading-six mb-2">Hire IT consultants globally</div>
+
+</a>
+<a class="border-t pt-6" href="https://ightkvta5r7.typeform.com/to/sfyKuIcf">
+<div class="heading-six mb-2">Find your employment model</div>
+
+</a>
+</div>
+</div>
+</div>
+</div>
+<div @keyup.escape="open = false" x-data="{ open: false }">
+<button :class="menuOpen ? 'text-[22px] mb-10' : ''" @click="open = !open" class="">Employer of Record</button>
+<div :class="menuOpen ? '!static min-h-0 shadow-none' : ''" @click.outside="open = false" class="absolute top-0 left-0 right-0 bg-white -z-10 text-content-dark shadow-[0_8px_80px_rgba(18,8,39,0.08)] lg:px-12 lg:px-16" style="display: none;" x-show="open" x-transition="">
+<div :class="menuOpen ? 'mt-10 pt-0' : ''" class="max-w-[1448px] mx-auto py-20 mt-10">
+<div class="max-w-[565px]">
+<div class="heading-five mb-2.5">
+<a href="https://www.hightekers.com/en-gb/employer-of-record">Employer of Record</a>
+</div>
+
+</div>
+<div class="grid sm:grid-cols-4 gap-x-10 gap-y-14 mb-20">
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/employer-of-record/professionals">
+<div class="heading-six mb-2">EoR for Professionals</div>
+
+</a>
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/employer-of-record/businesses">
+<div class="heading-six mb-2">EoR for Businesses</div>
+
+</a>
+</div>
+</div>
+</div>
+</div>
+<div @keyup.escape="open = false" x-data="{ open: false }">
+<button :class="menuOpen ? 'text-[22px] mb-10' : ''" @click="open = !open" class="">Insights</button>
+<div :class="menuOpen ? '!static min-h-0 shadow-none' : ''" @click.outside="open = false" class="absolute top-0 left-0 right-0 bg-white -z-10 text-content-dark shadow-[0_8px_80px_rgba(18,8,39,0.08)] lg:px-12 lg:px-16" style="display: none;" x-show="open" x-transition="">
+<div :class="menuOpen ? 'mt-10 pt-0' : ''" class="max-w-[1448px] mx-auto py-20 mt-10">
+<div class="max-w-[565px]">
+<div class="heading-five mb-2.5">
+<span class="hidden sm:inline">Insights</span>
+</div>
+
+</div>
+<div class="grid sm:grid-cols-4 gap-x-10 gap-y-14 mb-20">
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/insights/">
+<div class="heading-six mb-2">Insights</div>
+
+</a>
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/library">
+<div class="heading-six mb-2">Resources</div>
+
+</a>
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/frequently-asked-questions">
+<div class="heading-six mb-2">FAQs</div>
+
+</a>
+</div>
+</div>
+</div>
+</div>
+<div @keyup.escape="open = false" x-data="{ open: false }">
+<button :class="menuOpen ? 'text-[22px] mb-10' : ''" @click="open = !open" class="">About Us</button>
+<div :class="menuOpen ? '!static min-h-0 shadow-none' : ''" @click.outside="open = false" class="absolute top-0 left-0 right-0 bg-white -z-10 text-content-dark shadow-[0_8px_80px_rgba(18,8,39,0.08)] lg:px-12 lg:px-16" style="display: none;" x-show="open" x-transition="">
+<div :class="menuOpen ? 'mt-10 pt-0' : ''" class="max-w-[1448px] mx-auto py-20 mt-10">
+<div class="max-w-[565px]">
+<div class="heading-five mb-2.5">
+<a href="https://www.hightekers.com/en-gb/about-us/">About Us</a>
+</div>
+
+</div>
+<div class="grid sm:grid-cols-4 gap-x-10 gap-y-14 mb-20">
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/team-values-2">
+<div class="heading-six mb-2">Team and values</div>
+
+</a>
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/partners">
+<div class="heading-six mb-2">Partners</div>
+
+</a>
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/careers">
+<div class="heading-six mb-2">Careers</div>
+
+</a>
+<a class="border-t pt-6" href="https://www.hightekers.com/en-gb/contact-us">
+<div class="heading-six mb-2">Contact us</div>
+
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div :class="menuOpen ? '!flex w-full pb-20 justify-between items-start mt-auto' : ''" class="hidden lg:flex">
+<a :class="menuOpen ? 'button-blue' : 'button-blue'" class="button-primary !w-auto !shadow-none whitespace-nowrap button-blue" href="https://www.hightekers.com/en-gb/contact-us/">
+                Contact Us
+            </a>
+<a :class="menuOpen ? 'button-blue' : 'button-blue'" class="button-primary !w-auto !shadow-none whitespace-nowrap ml-2 button-blue" href="tel:+442039360680">
+
+</a>
+<div class="relative text-right ml-auto" x-data="{ open: false }">
+<button @click="open = !open" class="button-outline ml-auto sm:ml-2 !px-3 !text-current !border-current hover:!text-white hover:!border-white !w-max">
+
+                    UK
+                </button>
+<div @click.outside="open = false" class="fixed overflow-auto left-1/2 !transition-none lg:!transition -translate-x-1/2 lg:translate-x-0 lg:left-auto top-20 max-h-[70vh] lg:max-h-max lg:absolute lg:top-full lg:right-0 bg-[#F2F0F6] z-10 rounded-3xl w-48 shadow-[0px_8px_24px_rgba(0,0,0,0.18)]" style="display: none;" x-show="open">
+<a class="body-small text-left text-content-dark relative p-3 flex items-center transition hover:bg-brand-light-blue hover:text-content-light first:rounded-t-3xl last:rounded-b-3xl" href="https://www.hightekers.com/fr-be/carrieres/">
+
+                        Belgique
+                    </a>
+<a class="body-small text-left text-content-dark relative p-3 flex items-center transition hover:bg-brand-light-blue hover:text-content-light first:rounded-t-3xl last:rounded-b-3xl" href="https://www.hightekers.com/es-es/ofertas-de-empleo/">
+
+                        España
+                    </a>
+<a class="body-small text-left text-content-dark relative p-3 flex items-center transition hover:bg-brand-light-blue hover:text-content-light first:rounded-t-3xl last:rounded-b-3xl" href="https://www.hightekers.com/fr-fr/carrieres/">
+
+                        France
+                    </a>
+<a class="body-small text-left text-content-dark relative p-3 flex items-center transition hover:bg-brand-light-blue hover:text-content-light first:rounded-t-3xl last:rounded-b-3xl" href="https://www.hightekers.com/it-it/carriere">
+
+                        Italia
+                    </a>
+<a class="body-small text-left text-content-dark relative p-3 flex items-center transition hover:bg-brand-light-blue hover:text-content-light first:rounded-t-3xl last:rounded-b-3xl" href="https://www.hightekers.com/fr-lu/carrieres/">
+
+                        Luxembourg
+                    </a>
+
+
+
+
+
+</div>
+</div>
+</div>
+<div class="lg:hidden flex-1 flex justify-end mr-4" x-show="!menuOpen">
+<a :class="menuOpen ? 'button-blue' : 'button-blue'" class="button-primary !w-auto !shadow-none whitespace-nowrap button-blue" href="tel:+442039360680">
+
+</a>
+</div>
+<button :aria-expanded="menuOpen" :class="menuOpen ? 'order-first' : ''" @click="menuOpen = !menuOpen" aria-expanded="" class="Site__Navigation-menu-open lg:hidden group transition-transform ease-in-out duration-300 transform bg-transparent relative h-[30px] w-10 focus:outline-none z-10 pointer-events-auto ml-auto" type="button">
+
+
+
+<span class="sr-only">Open menu</span>
+</button>
+</div>
+</div>
+</header>
+<main :class="menuOpen ? 'opacity-0' : ''" :style="goingUp ? 'margin-top:' + menuHeight + 'px' : ''" class="" id="content" style="">
+<article id="page-535">
+<!-- Content Row -->
+<section class="relative block md:block lg:block text-content-dark">
+<div class="">
+<div class="component__title gutter py-20 md:py-28 flex flex-col place-items-center overflow-hidden relative" style="background-color:#ffbe3f">
+<picture class="absolute inset-0 top-auto block">
+
+
+</picture>
+<div class="mx-auto relative max-w-[1238px] w-full py-2">
+<div class="max-w-[750px]">
+<h2 class="heading-two"><span style="color: #ffffff;">Careers</span><span style="color: #6960ff;"> at Hightekers</span></h2>
+<p><span class="body-large">Work with us and join the outstanding Hightekers team, dedicated to supporting freelancers and recruiters around the world.</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!--// Content Row -->
+<!-- Content Row -->
+<section class="relative block md:block lg:block padding-top-md padding-bottom-lg text-content-dark">
+<div class="container">
+<div class="component__vacancies max-w-[1238px] mx-auto">
+<div class="max-w-[671px] text-center mb-24 mx-auto">
+<h1 class="heading-three">Current job openings at Hightekers</h1>
+<p>We’re always on the lookout for excellent talent to join our team. Find rewarding and interesting job opportunities by browsing our current vacancies below.</p>
+</div>
+<div class="grid sm:grid-cols-3 gap-6">
+<a class="rounded-[10px] shadow-[0_8px_16px_rgba(18,8,39,0.05)] border border-[#DAD8DD] p-6" data-pegasus-modal="" data-pegasus-modal-id="modal-0" href="https://www.hightekers.com/vacancy/business-developer-b2c-france?modal=yes">
+<div class="heading-five">Business Developer (B2C) (France)</div>
+<div class="body-large text-brand-blue mb-6">Full Time</div>
+<div class="body-small text-[#A19EA6] flex items-center">
+
+<span class="leading-none mt-[2px]">Neuilly-sur-Seine</span>
+</div>
+</a>
+<a class="rounded-[10px] shadow-[0_8px_16px_rgba(18,8,39,0.05)] border border-[#DAD8DD] p-6" data-pegasus-modal="" data-pegasus-modal-id="modal-1" href="https://www.hightekers.com/speculative-application-france?modal=yes">
+<div class="heading-five">Speculative application (France)</div>
+<div class="body-large text-brand-blue mb-6">Full Time</div>
+<div class="body-small text-[#A19EA6] flex items-center">
+
+<span class="leading-none mt-[2px]">Neuilly-sur-Seine</span>
+</div>
+</a>
+<a class="rounded-[10px] shadow-[0_8px_16px_rgba(18,8,39,0.05)] border border-[#DAD8DD] p-6" data-pegasus-modal="" data-pegasus-modal-id="modal-2" href="https://www.hightekers.com/speculative-application-barcelona?modal=yes">
+<div class="heading-five">Speculative application (Barcelona)</div>
+<div class="body-large text-brand-blue mb-6">Full Time</div>
+<div class="body-small text-[#A19EA6] flex items-center">
+
+<span class="leading-none mt-[2px]">Barcelona</span>
+</div>
+</a>
+<a class="rounded-[10px] shadow-[0_8px_16px_rgba(18,8,39,0.05)] border border-[#DAD8DD] p-6" data-pegasus-modal="" data-pegasus-modal-id="modal-3" href="https://www.hightekers.com/speculative-application-london?modal=yes">
+<div class="heading-five">Speculative application (London)</div>
+<div class="body-large text-brand-blue mb-6">Full Time</div>
+<div class="body-small text-[#A19EA6] flex items-center">
+
+<span class="leading-none mt-[2px]">London</span>
+</div>
+</a>
+<a class="rounded-[10px] shadow-[0_8px_16px_rgba(18,8,39,0.05)] border border-[#DAD8DD] p-6" data-pegasus-modal="" data-pegasus-modal-id="modal-4" href="https://www.hightekers.com/vacancy/business-developer-spain?modal=yes">
+<div class="heading-five">Business Developer (Spain)</div>
+<div class="body-large text-brand-blue mb-6">Full Time</div>
+<div class="body-small text-[#A19EA6] flex items-center">
+
+<span class="leading-none mt-[2px]">Barcelona</span>
+</div>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</section>
+<!--// Content Row -->
+<!-- Content Row -->
+<section class="relative block md:block lg:block text-content-light">
+<div class="">
+<div class="component__images grid grid-cols-2">
+<picture class="w-full">
+
+
+</picture>
+<picture class="w-full">
+
+
+</picture>
+</div>
+</div>
+</section>
+<!--// Content Row -->
+</article>
+</main>
+
+<div id="all-modals" x-data="allModals()">
+<div id="Modal__Skeleton" x-ref="modalSkeleton">
+<div @modalopen.window="handleModalOpen" aria-label="Modal" aria-modal="true" class="ModalSkeleton" role="dialog" x-data="singleModal()">
+
+<div class="Modal__dialog-wrapper z-10 fixed inset-0 left-auto w-full sm:w-11/12 lg:w-10/12 xl:w-8/12 sm:h-screen max-w-[625px] bg-white overflow-hidden transform" style="display: none;" x-show="open" x-transition:enter="ease-out duration-600 transition-all" x-transition:enter-end="opacity-100 translate-x-0" x-transition:enter-start="opacity-0 translate-x-full" x-transition:leave="ease-in duration-500 transition-none" x-transition:leave-end="opacity-0 translate-x-full" x-transition:leave-start="opacity-100 translate-x-0">
+<div class="Modal__dialog relative w-full h-full transform" style="display: none;" x-show="open" x-transition:enter="ease-out duration-500 delay-700 transition-all" x-transition:enter-end="opacity-100 translate-x-0 scale-100" x-transition:enter-start="opacity-0 translate-x-4 scale-95" x-transition:leave="ease-in transition-none" x-transition:leave-end="opacity-0 translate-x-4 scale-95" x-transition:leave-start="opacity-100 translate-x-0 scale-100">
+<div class="Modal__content relative w-full h-full">
+<header class="Modal__header relative top-0 z-10 h-12 w-full flex justify-end items-center container sm:max-w-none p-2 sm:p-8 sm:pt-12">
+
+</header>
+<div class="Modal__body w-full h-full absolute inset-0 overflow-x-hidden overflow-y-auto">
+<p class="Modal__error hidden">An error has occurred, please try again later.An error has occurred, please try again later.</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      <noscript>
+      
+      </noscript>
+      
+
+
+<div @modalopen.window="handleModalOpen" aria-label="Modal" aria-modal="true" class="Modal" id="modal-0" role="dialog" x-data="singleModal()">
+
+<div class="Modal__dialog-wrapper z-10 fixed inset-0 left-auto w-full sm:w-11/12 lg:w-10/12 xl:w-8/12 sm:h-screen max-w-[625px] bg-white overflow-hidden transform" style="display: none;" x-show="open" x-transition:enter="ease-out duration-600 transition-all" x-transition:enter-end="opacity-100 translate-x-0" x-transition:enter-start="opacity-0 translate-x-full" x-transition:leave="ease-in duration-500 transition-none" x-transition:leave-end="opacity-0 translate-x-full" x-transition:leave-start="opacity-100 translate-x-0">
+<div class="Modal__dialog relative w-full h-full transform" style="display: none;" x-show="open" x-transition:enter="ease-out duration-500 delay-700 transition-all" x-transition:enter-end="opacity-100 translate-x-0 scale-100" x-transition:enter-start="opacity-0 translate-x-4 scale-95" x-transition:leave="ease-in transition-none" x-transition:leave-end="opacity-0 translate-x-4 scale-95" x-transition:leave-start="opacity-100 translate-x-0 scale-100">
+<div class="Modal__content relative w-full h-full">
+<header class="Modal__header relative top-0 z-10 h-12 w-full flex justify-end items-center container sm:max-w-none p-2 sm:p-8 sm:pt-12">
+
+</header>
+<div class="Modal__body w-full h-full absolute inset-0 overflow-x-hidden overflow-y-auto">
+<p class="Modal__error hidden">An error has occurred, please try again later.An error has occurred, please try again later.</p>
+</div>
+
+</div>
+</div>
+</div>
+</div><div @modalopen.window="handleModalOpen" aria-label="Modal" aria-modal="true" class="Modal" id="modal-1" role="dialog" x-data="singleModal()">
+
+<div class="Modal__dialog-wrapper z-10 fixed inset-0 left-auto w-full sm:w-11/12 lg:w-10/12 xl:w-8/12 sm:h-screen max-w-[625px] bg-white overflow-hidden transform" style="display: none;" x-show="open" x-transition:enter="ease-out duration-600 transition-all" x-transition:enter-end="opacity-100 translate-x-0" x-transition:enter-start="opacity-0 translate-x-full" x-transition:leave="ease-in duration-500 transition-none" x-transition:leave-end="opacity-0 translate-x-full" x-transition:leave-start="opacity-100 translate-x-0">
+<div class="Modal__dialog relative w-full h-full transform" style="display: none;" x-show="open" x-transition:enter="ease-out duration-500 delay-700 transition-all" x-transition:enter-end="opacity-100 translate-x-0 scale-100" x-transition:enter-start="opacity-0 translate-x-4 scale-95" x-transition:leave="ease-in transition-none" x-transition:leave-end="opacity-0 translate-x-4 scale-95" x-transition:leave-start="opacity-100 translate-x-0 scale-100">
+<div class="Modal__content relative w-full h-full">
+<header class="Modal__header relative top-0 z-10 h-12 w-full flex justify-end items-center container sm:max-w-none p-2 sm:p-8 sm:pt-12">
+
+</header>
+<div class="Modal__body w-full h-full absolute inset-0 overflow-x-hidden overflow-y-auto">
+<p class="Modal__error hidden">An error has occurred, please try again later.An error has occurred, please try again later.</p>
+</div>
+
+</div>
+</div>
+</div>
+</div><div @modalopen.window="handleModalOpen" aria-label="Modal" aria-modal="true" class="Modal" id="modal-2" role="dialog" x-data="singleModal()">
+
+<div class="Modal__dialog-wrapper z-10 fixed inset-0 left-auto w-full sm:w-11/12 lg:w-10/12 xl:w-8/12 sm:h-screen max-w-[625px] bg-white overflow-hidden transform" style="display: none;" x-show="open" x-transition:enter="ease-out duration-600 transition-all" x-transition:enter-end="opacity-100 translate-x-0" x-transition:enter-start="opacity-0 translate-x-full" x-transition:leave="ease-in duration-500 transition-none" x-transition:leave-end="opacity-0 translate-x-full" x-transition:leave-start="opacity-100 translate-x-0">
+<div class="Modal__dialog relative w-full h-full transform" style="display: none;" x-show="open" x-transition:enter="ease-out duration-500 delay-700 transition-all" x-transition:enter-end="opacity-100 translate-x-0 scale-100" x-transition:enter-start="opacity-0 translate-x-4 scale-95" x-transition:leave="ease-in transition-none" x-transition:leave-end="opacity-0 translate-x-4 scale-95" x-transition:leave-start="opacity-100 translate-x-0 scale-100">
+<div class="Modal__content relative w-full h-full">
+<header class="Modal__header relative top-0 z-10 h-12 w-full flex justify-end items-center container sm:max-w-none p-2 sm:p-8 sm:pt-12">
+
+</header>
+<div class="Modal__body w-full h-full absolute inset-0 overflow-x-hidden overflow-y-auto">
+<p class="Modal__error hidden">An error has occurred, please try again later.An error has occurred, please try again later.</p>
+</div>
+
+</div>
+</div>
+</div>
+</div><div @modalopen.window="handleModalOpen" aria-label="Modal" aria-modal="true" class="Modal" id="modal-3" role="dialog" x-data="singleModal()">
+
+<div class="Modal__dialog-wrapper z-10 fixed inset-0 left-auto w-full sm:w-11/12 lg:w-10/12 xl:w-8/12 sm:h-screen max-w-[625px] bg-white overflow-hidden transform" style="display: none;" x-show="open" x-transition:enter="ease-out duration-600 transition-all" x-transition:enter-end="opacity-100 translate-x-0" x-transition:enter-start="opacity-0 translate-x-full" x-transition:leave="ease-in duration-500 transition-none" x-transition:leave-end="opacity-0 translate-x-full" x-transition:leave-start="opacity-100 translate-x-0">
+<div class="Modal__dialog relative w-full h-full transform" style="display: none;" x-show="open" x-transition:enter="ease-out duration-500 delay-700 transition-all" x-transition:enter-end="opacity-100 translate-x-0 scale-100" x-transition:enter-start="opacity-0 translate-x-4 scale-95" x-transition:leave="ease-in transition-none" x-transition:leave-end="opacity-0 translate-x-4 scale-95" x-transition:leave-start="opacity-100 translate-x-0 scale-100">
+<div class="Modal__content relative w-full h-full">
+<header class="Modal__header relative top-0 z-10 h-12 w-full flex justify-end items-center container sm:max-w-none p-2 sm:p-8 sm:pt-12">
+
+</header>
+<div class="Modal__body w-full h-full absolute inset-0 overflow-x-hidden overflow-y-auto">
+<p class="Modal__error hidden">An error has occurred, please try again later.An error has occurred, please try again later.</p>
+</div>
+
+</div>
+</div>
+</div>
+</div><div @modalopen.window="handleModalOpen" aria-label="Modal" aria-modal="true" class="Modal" id="modal-4" role="dialog" x-data="singleModal()">
+
+<div class="Modal__dialog-wrapper z-10 fixed inset-0 left-auto w-full sm:w-11/12 lg:w-10/12 xl:w-8/12 sm:h-screen max-w-[625px] bg-white overflow-hidden transform" style="display: none;" x-show="open" x-transition:enter="ease-out duration-600 transition-all" x-transition:enter-end="opacity-100 translate-x-0" x-transition:enter-start="opacity-0 translate-x-full" x-transition:leave="ease-in duration-500 transition-none" x-transition:leave-end="opacity-0 translate-x-full" x-transition:leave-start="opacity-100 translate-x-0">
+<div class="Modal__dialog relative w-full h-full transform" style="display: none;" x-show="open" x-transition:enter="ease-out duration-500 delay-700 transition-all" x-transition:enter-end="opacity-100 translate-x-0 scale-100" x-transition:enter-start="opacity-0 translate-x-4 scale-95" x-transition:leave="ease-in transition-none" x-transition:leave-end="opacity-0 translate-x-4 scale-95" x-transition:leave-start="opacity-100 translate-x-0 scale-100">
+<div class="Modal__content relative w-full h-full">
+<header class="Modal__header relative top-0 z-10 h-12 w-full flex justify-end items-center container sm:max-w-none p-2 sm:p-8 sm:pt-12">
+
+</header>
+<div class="Modal__body w-full h-full absolute inset-0 overflow-x-hidden overflow-y-auto">
+<p class="Modal__error hidden">An error has occurred, please try again later.An error has occurred, please try again later.</p>
+</div>
+
+</div>
+</div>
+</div>
+</div><div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><div class="replaced-iframe">
+
+<div class="rc-anchor rc-anchor-invisible rc-anchor-light rc-anchor-invisible-hover"><div aria-hidden="true" class="rc-anchor-aria-status" id="recaptcha-accessible-status">Recaptcha requires verification. </div><div class="rc-anchor-error-msg-container" style="display:none"></div><div class="rc-anchor-normal-footer"><div class="rc-anchor-logo-large" role="presentation"></div><div class="rc-anchor-pt"><a href="https://www.google.com/intl/en/policies/privacy/" target="_blank">Privacy</a><span aria-hidden="true" role="presentation"> - </span><a href="https://www.google.com/intl/en/policies/terms/" target="_blank">Terms</a></div></div><div class="rc-anchor-invisible-text"><span>protected by <strong>reCAPTCHA</strong></span><div class="rc-anchor-pt"><a href="https://www.google.com/intl/en/policies/privacy/" style="" target="_blank">Privacy</a><span aria-hidden="true" role="presentation"> - </span><a href="https://www.google.com/intl/en/policies/terms/" style="" target="_blank">Terms</a></div></div></div></div></div></div></div>
+      
+      <noscript>
+      
+      </noscript>
+      </body></html>
