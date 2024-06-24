@@ -43,6 +43,9 @@ class SendTelegramMessage implements ShouldQueue
         set_time_limit(2400);
         $companies = $this->user->companies;
 
+        $leadershipJobs = [];
+        $technicalJobs = [];
+
         foreach ($companies as $company) {
             $jobs = Job::where('company_id', $company->id)
                 ->whereDate('created_at', Carbon::today())
@@ -50,31 +53,46 @@ class SendTelegramMessage implements ShouldQueue
 
             foreach ($jobs as $job) {
                 if (!$this->checkRelevance($job)) {
-                    $jobs = $jobs->reject(function ($value, $key) use ($job) {
-                        return $value->id == $job->id;
-                    });
+                    continue;
                 }
-            }
 
-            if (!$jobs->isEmpty()) {
-                $jobs = $jobs->chunk(5); // Split the jobs into chunks of 5
-
-                foreach ($jobs as $chunk) {
-                    $message = '';
-
-                    $message .= $company->name . ":\n";
-
-                    foreach ($chunk as $job) {
-                        $message .= $job->title . ' - '. $job->url. "\n";
-                    }
-
-                    if (!empty($message)) {
-                        Telegram::sendMessage([
-                            'chat_id' => $this->chatId,
-                            'text' => $message
-                        ]);
-                    }
+                // Check if the job title contains any of the leadership keywords
+                if (preg_match('/Manager|Lead|Director|Owner|Project|Product|HR|Human/i', $job->title)) {
+                    $leadershipJobs[] = ['company' => $company->name, 'title' => $job->title, 'url' => $job->url];
+                } else {
+                    $technicalJobs[] = ['company' => $company->name, 'title' => $job->title, 'url' => $job->url];
                 }
             }
         }
-    }}
+
+        // Chunk the jobs into groups of 5 and send each chunk as a message
+        $this->sendMessageInChunks($leadershipJobs, '#Leadership/HR');
+        $this->sendMessageInChunks($technicalJobs, '#Technical');
+    }
+
+    private function sendMessageInChunks($jobs, $category)
+    {
+        $chunks = array_chunk($jobs, 5);
+
+        foreach ($chunks as $chunk) {
+            $message = $category . "\n";
+
+            $currentCompany = '';
+            foreach ($chunk as $job) {
+                if ($job['company'] !== $currentCompany) {
+                    $currentCompany = $job['company'];
+                    $message .= $currentCompany . ":\n";
+                }
+
+                $message .= $job['title'] . ' - ' . $job['url'] . "\n";
+            }
+
+            if (!empty($message)) {
+                Telegram::sendMessage([
+                    'chat_id' => $this->chatId,
+                    'text' => $message
+                ]);
+            }
+        }
+    }
+}
