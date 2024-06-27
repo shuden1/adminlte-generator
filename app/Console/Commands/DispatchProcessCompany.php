@@ -13,14 +13,14 @@ class DispatchProcessCompany extends Command
      *
      * @var string
      */
-    protected $signature = 'company:process';
+    protected $signature = 'company:process {company_id?}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Dispatch a job for every company where scripted is not true';
+    protected $description = 'Dispatch a job for every company where scripted is not true or for a specific company if company_id is provided';
 
     /**
      * Execute the console command.
@@ -29,20 +29,32 @@ class DispatchProcessCompany extends Command
      */
     public function handle()
     {
-        // Get all companies where scripted is not true
-        $companies = Company::where('sauroned', 1)
-            ->where(function ($query) {
-                $query->where('scripted', '0')
-                    ->orWhereNull('scripted');
-            })
-            ->get();
+        $companyId = $this->argument('company_id');
 
-        // Dispatch a job for each company
-        foreach ($companies as $company) {
-            ProcessCompany::dispatch($company);
+        if ($companyId) {
+            $company = Company::find($companyId);
+            if ($company) {
+                ProcessCompany::dispatch($company);
+                $this->info("Job dispatched for company with id: {$companyId}.");
+            } else {
+                $this->error("No company found with id: {$companyId}.");
+            }
+        } else {
+            // Get all companies where scripted is not true
+            $companies = Company::where('sauroned', 1)
+                ->where(function ($query) {
+                    $query->where('scripted', '0')
+                        ->orWhereNull('scripted');
+                })
+                ->get();
+
+            // Dispatch a job for each company
+            foreach ($companies as $company) {
+                ProcessCompany::dispatch($company);
+            }
+
+            $this->info('Jobs dispatched for all companies where scripted is not true.');
         }
-
-        $this->info('Jobs dispatched for all companies where scripted is not true.');
 
         return 0;
     }

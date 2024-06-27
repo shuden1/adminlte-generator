@@ -26,7 +26,7 @@ class RetrieveCompanyCareersCommand extends Command
             if (!array_key_exists($companyId, $queuedCompanies)) {
                 $company = Company::find($companyId);
                 if ($company) {
-                    $job = RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue'.rand(1, 10).rand(1, 10));
+                    $job = RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
                     $this->info("Job dispatched for company ID: {$companyId}");
                 } else {
                     $this->error("No company found with ID: {$companyId}");

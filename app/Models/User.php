@@ -60,4 +60,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(DmTitle::class, 'user_dm_title', 'user_id', 'dm_title_id');
     }
+
+    public function jobs()
+    {
+        return $this->belongsToMany(Job::class)->withPivot('provided_at');
+    }
 }

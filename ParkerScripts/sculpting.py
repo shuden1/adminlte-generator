@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup, Tag
 import sys
 from collections import Counter
+import os
 
 def remove_script_tags(input_html_file):
     """
@@ -83,15 +84,14 @@ def clean_html(input_html):
 if __name__ == "__main__":
     input_html = sys.argv[1]
     output_filename = sys.argv[2]
+    if os.path.isfile(input_html):
+        remove_script_tags(input_html)
+        # Now read the updated HTML file and process it further
+        with open(input_html, 'r', encoding='utf-8') as file:
+            original_html = file.read()
 
-    # First, remove script tags from the input HTML file
-    remove_script_tags(input_html)
-
-    # Now read the updated HTML file and process it further
-    with open(input_html, 'r', encoding='utf-8') as file:
-        original_html = file.read()
-
-    cleaned_html = clean_html(original_html)
-
-    with open(output_filename, 'w', encoding='utf-8') as file:
-        file.write(cleaned_html)
+        cleaned_html = clean_html(original_html)
+        with open(output_filename, 'w', encoding='utf-8') as file:
+            file.write(cleaned_html)
+    else:
+        print(f"File not found: {input_html}")

@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\Job;
+use Illuminate\Support\Facades\DB;
 
 class UpdateJobUrls extends Command
 {
@@ -12,14 +13,14 @@ class UpdateJobUrls extends Command
      *
      * @var string
      */
-    protected $signature = 'jobs:update-urls';
+    protected $signature = 'update:job-urls';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Update job URLs that match a specific pattern';
+    protected $description = 'Update job URLs and remove duplicates';
 
     /**
      * Execute the console command.
@@ -28,31 +29,38 @@ class UpdateJobUrls extends Command
      */
     public function handle()
     {
-        // Fetch all jobs
-        $jobs = Job::all();
+        // Get all jobs where URL contains 'linkedin.com'
+        $jobs = Job::where('url', 'like', '%linkedin.com%')->get();
 
-        foreach ($jobs as $job) {
-            // Check if the URL contains '20-06-24.html' or '21-06-24.html'
-            if (strpos($job->url, '20-06-24.html') !== false || strpos($job->url, '21-06-24.html') !== false) {
-                // Remove it from the URL
-                $job->url = str_replace(['20-06-24.html', '21-06-24.html'], '', $job->url);
+        DB::beginTransaction();
 
-                // Save the updated job
-                $job->save();
-                $this->info('company->'.$job->company->id);
-            }
+        try {
+            foreach ($jobs as $job) {
+                $url = $job->url;
+                $parsedUrl = parse_url($url);
+                $newUrl = $parsedUrl['scheme'] . '://' . $parsedUrl['host'] . $parsedUrl['path'];
 
-            // Check if the URL ends with a '#'
-            if (substr($job->url, -1) === '#') {
-                // Replace it with the company's careerPageUrl
-                $job->url = $job->company->careerPageUrl;
-
-                // Save the updated job
+                // Update the job URL
+                $job->url = $newUrl;
                 $job->save();
             }
+
+            // Remove duplicates
+            DB::statement('
+                DELETE j1 FROM jobs j1
+                INNER JOIN jobs j2
+                WHERE j1.id < j2.id AND j1.title = j2.title AND j1.url = j2.url
+            ');
+
+            DB::commit();
+
+            $this->info('Job URLs updated and duplicates removed successfully.');
+
+        } catch (\Exception $e) {
+            DB::rollback();
+
+            $this->error('An error occurred while updating job URLs and removing duplicates: ' . $e->getMessage());
         }
-
-        $this->info('Job URLs updated successfully.');
 
         return 0;
     }

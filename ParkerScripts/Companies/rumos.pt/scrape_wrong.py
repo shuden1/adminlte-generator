@@ -21,17 +21,21 @@ def scrape_jobs(file_path):
     job_listings = []
 
     try:
-        job_elements = driver.find_elements(By.CSS_SELECTOR, "a.sc-4f5e12a7-19.eUYFtT.card.card-opportunity")
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.sc-4f5e12a7-19.eUYFtT.card.card-opportunity")
         for job_element in job_elements:
             try:
-                job_title_element = job_element.find_element(By.CSS_SELECTOR, "p.card-opportunity-role.card-text")
-                job_title = job_title_element.text.strip() if job_title_element.text.strip() else job_title_element.get_attribute('innerHTML').strip()
+                title_element = job_element.find_element(By.CSS_SELECTOR, "p.card-opportunity-role.card-text")
+                title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
-                job_title = "No Title"
+                title = "No Title"
 
-            job_url = job_element.get_attribute('href') if job_element.get_attribute('href') else "#"
+            try:
+                url_element = job_element.find_element(By.CSS_SELECTOR, "a.sc-4f5e12a7-19.eUYFtT.card.card-opportunity")
+                url = url_element.get_attribute('href') if url_element.get_attribute('href') else "#"
+            except NoSuchElementException:
+                url = "#"
 
-            job_listings.append({"Job-title": job_title, "URL": job_url})
+            job_listings.append({"Job-title": title, "URL": url})
     except NoSuchElementException:
         pass
 

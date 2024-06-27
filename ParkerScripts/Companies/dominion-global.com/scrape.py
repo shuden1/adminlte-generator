@@ -25,9 +25,9 @@ def scrape_jobs(file_path):
 
         job_openings = []
         for block in job_blocks:
-            title_tag = block.find_element(By.CSS_SELECTOR, 'a[href]')
+            title_tag = block.find_element(By.CSS_SELECTOR, 'a[href] h3')
             job_title = title_tag.text.strip()
-            job_url = title_tag.get_attribute('href')
+            job_url = block.find_element(By.CSS_SELECTOR, 'a[href]').get_attribute('href')
             job_openings.append({"Job-title": job_title, "URL": job_url})
 
         print(json.dumps(job_openings, indent=4))

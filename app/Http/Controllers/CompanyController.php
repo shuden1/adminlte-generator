@@ -93,6 +93,11 @@ class CompanyController extends AppBaseController
         $csv->setHeaderOffset(0);
         // Assumes the first row in CSV is the header
         foreach ($csv as $record) {
+            $company_existing = Company::where("careerPageUrl", $record["careerPageUrl"])->first();
+            $exists = 0;
+            if ($company_existing){
+                $exists = 1;
+            }
             $company = Company::where("careerPageUrl", $record["careerPageUrl"])->firstOr( function() use ($record) {
 
                 $c = Company::create([
@@ -101,43 +106,44 @@ class CompanyController extends AppBaseController
                     'linkedin_id' => $record['linkedin_id'],
                     'sauroned' => 1
                 ]);
-
-                if (Auth::check()) { // Ensure there is an authenticated user
-                    $user = Auth::user(); // Get the authenticated user
-                    $user->companies()->attach($c->id); // Attach the new company to the user
-                }
-
-                $domain = parse_url($c->careerPageUrl, PHP_URL_HOST);
-                $domain = str_replace('www.', '', $domain);
-
-                if (($domain == "linkedin.com")||file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
-                    ProcessCompany::dispatch($c, 0, 1);
-                }
                 return $c;
             });
 
-            $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
-            $domain = str_replace('www.', '', $domain);
+            $company->name = $record['company_name'];
+            $company->save();
 
-            if ($domain == "linkedin.com") {
-                ProcessCompany::dispatch($company, 0, 0);
-            } else {
-                if (!file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
-                    if ($record['has_jobs'] == 0) {
-                        ProcessCompany::dispatch($company, 0, 0);
+            if (Auth::check()) { // Ensure there is an authenticated user
+                $user = Auth::user(); // Get the authenticated user
+                $user->companies()->syncWithoutDetaching($company->id); // Attach the new company to the user only if it's not already attached
+            }
+
+            if (!$exists) {
+
+                $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
+                $domain = str_replace('www.', '', $domain);
+
+                if ($domain == "linkedin.com") {
+                    ProcessCompany::dispatch($company, 0, 0);
+                } else {
+                    if (!file_exists("D:/Mind/CRA/AI_Experiments/Job_Crawlers/Peter/adminlte-generator/ParkerScripts/Companies/{$domain}/scrape.py")) {
+                        if ($record['has_jobs'] == 0) {
+                            ProcessCompany::dispatch($company, 0, 0);
+                        } else {
+                            ProcessCompany::dispatch($company, 0, 1);
+                        }
                     } else {
                         ProcessCompany::dispatch($company, 0, 1);
                     }
                 }
-            }
-            if (isset($record["first_name"])) {
-                DecisionMaker::firstOrCreate([
-                    'company_id' => $company->id,
-                    'firstName' => $record["first_name"],
-                    'lastName' => $record["last_name"],
-                    'profile_url' => rawurlencode($record["linkedin"]),
-                    'email' => $record["email"]
-                ]);
+                if (isset($record["first_name"])) {
+                    DecisionMaker::firstOrCreate([
+                        'company_id' => $company->id,
+                        'firstName' => $record["first_name"],
+                        'lastName' => $record["last_name"],
+                        'profile_url' => rawurlencode($record["linkedin"]),
+                        'email' => $record["email"]
+                    ]);
+                }
             }
         }
 

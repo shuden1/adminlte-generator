@@ -48,13 +48,17 @@ class SendTelegramMessage implements ShouldQueue
 
         foreach ($companies as $company) {
             $jobs = Job::where('company_id', $company->id)
-                ->whereDate('created_at', Carbon::today())
+                ->whereDoesntHave('users', function ($query) {
+                    $query->where('user_id', $this->user->id);
+                })
                 ->get();
 
             foreach ($jobs as $job) {
                 if (!$this->checkRelevance($job)) {
                     continue;
                 }
+
+                $this->user->jobs()->attach($job->id, ['provided_at' => Carbon::today()]);
 
                 // Check if the job title contains any of the leadership keywords
                 if (preg_match('/Manager|Lead|Director|Owner|Project|Product|HR|Human/i', $job->title)) {
@@ -88,10 +92,28 @@ class SendTelegramMessage implements ShouldQueue
             }
 
             if (!empty($message)) {
-                Telegram::sendMessage([
-                    'chat_id' => $this->chatId,
-                    'text' => $message
-                ]);
+                try {
+                    Telegram::sendMessage([
+                        'chat_id' => $this->chatId,
+                        'text' => $message
+                    ]);
+                } catch (\Telegram\Bot\Exceptions\TelegramResponseException $e) {
+                    $errorData = $e->getResponseData();
+
+                    if ($errorData['ok'] === false) {
+                        $errorCode = $errorData['error_code'];
+                        $description = $errorData['description'];
+
+                        if ($errorCode === 429) {
+                            $parameters = $errorData['parameters'];
+                            sleep($parameters['retry_after']);
+                        } else {
+                            // Handle other exceptions if needed
+                            // For example, you can log the error code and description
+                            error_log("Telegram API error: {$errorCode} - {$description}");
+                        }
+                    }
+                }
             }
         }
     }

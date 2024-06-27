@@ -52,17 +52,23 @@ class SendEmailViaGmail implements ShouldQueue
         $companies = $this->user->companies;
 
         foreach ($companies as $company){
-            $newJobs[$company->id]['today']['all'] = Job::where('company_id', $company->id)
-                ->whereDate('created_at', Carbon::today())
+            $jobs = Job::where('company_id', $company->id)
+                ->whereDoesntHave('users', function ($query) {
+                    $query->where('user_id', $this->user->id);
+                })
                 ->get();
+
+            $newJobs[$company->id]['today']['all'] = $jobs;
+
             $newJobs[$company->id]['today']['relevant'] = [];
             foreach ($newJobs[$company->id]['today']['all'] as $job){
                 if ($this->checkRelevance($job)) {
                     $newJobs[$company->id]['today']['relevant'][] = $job;
+                    $this->user->jobs()->attach($job->id, ['provided_at' => Carbon::today()]);
                 }
             }
             if (count($newJobs[$company->id]['today']['relevant'])>0) {
-
+                $newJobs[$company->id]['week']['relevant'] = [];
                 $newJobs[$company->id]['week']['all'] = Job::withTrashed()
                     ->where('company_id', $company->id)
                     ->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
@@ -72,7 +78,7 @@ class SendEmailViaGmail implements ShouldQueue
                         $newJobs[$company->id]['week']['relevant'][] = $job;
                     }
                 }
-
+                $newJobs[$company->id]['month']['relevant'] = [];
                 $newJobs[$company->id]['month']['all'] = Job::withTrashed()
                     ->where('company_id', $company->id)
                     ->whereMonth('created_at', Carbon::now()->month)

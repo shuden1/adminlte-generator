@@ -64,12 +64,30 @@ def get_dynamic_html(url, output_file, scrolls=2):
         html_content = browser.page_source
         soup = BeautifulSoup(html_content, 'html.parser')
 
+       # Get all iframe elements on the page
+        # Get all iframe elements on the page
         iframe_elements = browser.find_elements(By.TAG_NAME, "iframe")
 
-        # Assign a unique ID to each iframe for later identification
+        # Check each element in iframe_elements
         for iframe in iframe_elements:
-            unique_id = str(uuid.uuid4())
-            browser.execute_script(f"arguments[0].setAttribute('data-unique-id', '{unique_id}');", iframe)
+            # If the element is a Selenium WebElement
+            if isinstance(iframe, webdriver.remote.webelement.WebElement):
+                unique_id = str(uuid.uuid4())
+                src = iframe.get_attribute('src') if iframe.get_attribute('src') else 'no-src'
+                js_script = f"""
+                var iframe = document.querySelector('iframe[src="{src}"]');
+                if (!iframe) {{
+                    iframe = document.querySelector('iframe:not([src])');
+                }}
+                if (iframe) {{
+                    iframe.setAttribute('data-unique-id', '{unique_id}');
+                }} else {{
+                    console.log('Iframe not found for src: {src}');
+                }}
+                """
+                browser.execute_script(js_script)
+            else:
+                print(f"Unexpected element in iframe_elements: {iframe}")
 
         # Now, reload the page content with the unique IDs applied
         # This is to ensure our BeautifulSoup object includes the iframes with their unique IDs

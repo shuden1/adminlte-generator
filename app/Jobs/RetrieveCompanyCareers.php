@@ -119,15 +119,20 @@ class RetrieveCompanyCareers implements ShouldQueue
         $jsonData = [];
         if (isset($results['job_results'])) {
             foreach ($results['job_results'] as $job) {
+
+                $url = $job['job_link'];
+                $parsedUrl = parse_url($url);
+                $newUrl = $parsedUrl['scheme'] . '://' . $parsedUrl['host'] . $parsedUrl['path'];
+
                 $jsonData[] = [
                     'Job-title' => $job['title'],
-                    'URL' => $job['job_link'],
+                    'URL' => $newUrl,
                 ];
             }
         }
         $hasUpdate = $this->processJobData($jsonData, "", "");
         if ($hasUpdate) {
-            $this->getDecisionMakers($this->company->users->first());
+        //    $this->getDecisionMakers($this->company->users->first());
         }
         if (!$hasUpdate) {
             var_dump("No updates on company LinkedIn page");
@@ -248,7 +253,7 @@ class RetrieveCompanyCareers implements ShouldQueue
                     $jobData['URL'] = rtrim($baseUrl, '/') . '/' . ltrim($jobData['URL'], '/');
                 }
 
-                $pattern = '/.*Mind\/CRA\/AI_Experiments\/Job_Crawlers\/Peter\/adminlte-generator\/ParkerScripts\/Companies\/[^\/]*\/HTMLs\/[0-9]*(\/[0-9]*-[0-9]*-[0-9]*\.html)?\//';
+                $pattern = '/.*Mind\/CRA\/AI_Experiments\/Job_Crawlers\/Peter\/adminlte-generator\/ParkerScripts\/Companies\/[^\/]*\/HTMLs\/[0-9]*(\/[0-9]*-[0-9]*-[0-9]*\.html)?\/?/';
                 $replacement = substr($this->company->careerPageUrl, 0, strrpos($this->company->careerPageUrl, '/')+1);
                 $jobData['URL'] = preg_replace($pattern, $replacement, $jobData['URL']);
 

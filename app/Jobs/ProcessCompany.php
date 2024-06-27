@@ -411,12 +411,21 @@ class ProcessCompany implements ShouldQueue
 
                     $this->company->scripted = $success;
                     if (!$success) {
-                        rename($tempScriptPath, $basePath . "\\scrape_wrong.py");
+                        if (file_exists($tempScriptPath) && is_readable($tempScriptPath)) {
+                            rename($tempScriptPath, $basePath . "\\scrape_wrong.py");
+                        } else {
+                            echo "File does not exist or is not readable: " . $tempScriptPath;
+                        }
                     } else {
                         if (file_exists($scriptPath)) {
                             rename($scriptPath, $basePath . "\\scrape_old.py");
                         }
-                        rename($tempScriptPath, $scriptPath);
+
+                        if (file_exists($tempScriptPath) && is_readable($tempScriptPath)) {
+                            rename($tempScriptPath, $scriptPath);
+                        } else {
+                            echo "File does not exist or is not readable: " . $tempScriptPath;
+                        }
 //                        RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
                     }
                 } else {
