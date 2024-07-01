@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
-def scrape_jobs(file_name):
+def scrape_jobs(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
     options = webdriver.ChromeOptions()
@@ -16,7 +16,7 @@ def scrape_jobs(file_name):
     options.add_argument("--no-sandbox")
 
     driver = webdriver.Chrome(service=service, options=options)
-    driver.get(f"file:///{file_name}")
+    driver.get(f"file:///{file_path}")
 
     job_listings = []
 
@@ -27,7 +27,7 @@ def scrape_jobs(file_name):
                 title_element = job_element.find_element(By.CSS_SELECTOR, 'h2.career-title[itemprop="title"]')
                 job_title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
-                job_title = "No Title Found"
+                job_title = "No Title"
 
             job_url = job_element.get_attribute('href') if job_element.get_attribute('href') else "#"
 
@@ -39,5 +39,5 @@ def scrape_jobs(file_name):
     return json.dumps(job_listings, indent=4)
 
 if __name__ == "__main__":
-    file_name = sys.argv[1]
-    print(scrape_jobs(file_name))
+    file_path = sys.argv[1]
+    print(scrape_jobs(file_path))

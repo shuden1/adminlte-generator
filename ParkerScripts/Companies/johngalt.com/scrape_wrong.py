@@ -24,18 +24,18 @@ def scrape_jobs(file_path):
         job_openings = driver.find_elements(By.CSS_SELECTOR, "section.careers-roles div.career-item")
         for job in job_openings:
             try:
-                title_element = job.find_element(By.CSS_SELECTOR, "div.career-item")
-                title = title_element.text.strip() or title_element.get_attribute('innerHTML').strip()
+                job_title_element = job.find_element(By.CSS_SELECTOR, "div.career-item")
+                job_title = job_title_element.text.strip() or job_title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
-                title = "No Title"
+                job_title = "No Title"
 
             try:
-                url_element = job.find_element(By.CSS_SELECTOR, "a[href]")
-                url = url_element.get_attribute('href') or "#"
+                job_url_element = job.find_element(By.CSS_SELECTOR, "a")
+                job_url = job_url_element.get_attribute('href') or "#"
             except NoSuchElementException:
-                url = "#"
+                job_url = "#"
 
-            job_listings.append({"Job-title": title, "URL": url})
+            job_listings.append({"Job-title": job_title, "URL": job_url})
     except NoSuchElementException:
         pass
 

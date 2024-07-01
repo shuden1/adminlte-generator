@@ -26,7 +26,7 @@ def scrape_jobs(file_path):
 
     for job in job_openings:
         title_element = job.find_element(By.CSS_SELECTOR, "h3.panel-title a")
-        title = text.strip()
+        title = title_element.text.strip()
         url = title_element.get_attribute('href') or "#"
 
         jobs.append({"Job-title": title, "URL": url})

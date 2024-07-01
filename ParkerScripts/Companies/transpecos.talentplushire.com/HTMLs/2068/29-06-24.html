@@ -1,0 +1,343 @@
+<html data-theme="light" lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- Load Vue -->
+<!-- Load Component Loader -->
+<!-- Bind the component loading to the window for ease of use -->
+<!-- Load component styles -->
+<link href="/js/web-components/assets/style.css?version=live52356.0" rel="stylesheet"/>
+<!-- Loader that doesn't require importing or using a 'module' sadly we have to wait until it exists though! -->
+<!--[if lt IE 10]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<![endif]-->
+<link href="/styles/all.min.css?ver=1.2.49890-2&amp;use_vue_flag=1" rel="stylesheet"/>
+<link href="/styles/font-awesome-4.7.0/css/font-awesome.css?ver=" rel="stylesheet"/>
+<link href="/styles/awesomer.css?ver=1.1.46678" rel="stylesheet"/>
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/> <!--[if gte IE 9]>
+			<style type="text/css">
+				.gradient {
+		   			filter: none;
+				}
+			</style>
+		<![endif]-->
+<title>Job Listings - TransPecos Banks Jobs</title>
+<!--[if lt IE 9]>
+			<script src="/js/html5shiv.min.js"></script>
+      		<script src="/js/respond.min.js"></script>
+      	<![endif]-->
+<!-- Popper for tooltips -->
+<!--<script type="text/javascript" src="/js/jQl.min.js"></script>-->
+<link href="https://widget-dot-refer-io.appspot.com/assets/stylesheets/widget.css" media="all" rel="stylesheet" type="text/css"/></head>
+<body class="main-body w-app" onload="breakout()">
+<div class="bootstrap-area" id="popover-container"></div>
+<div class="bootstrap-area" data-v-app="" id="toaster"><div class="w-flex" data-v-9946f66e="" id="toast-container"><div class="w-flex column" data-v-9946f66e="" id="toaster" style="top: 20px; right: 20px; width: min(265px, 100% - 40px);"><!-- --></div></div></div>
+<div class="container-fixed">
+<div class="container" id="content_area">
+<div class="header header-image" id="headerbar">
+<img alt="TransPecos Banks" src="/images/24/504/TransPecosBanks_header.png" usemap="#headerMap"/>
+</div>
+<div class="panel panel-default" id="mainArea">
+<div class="panel-body">
+<div class="row d-flex" id="career-site-top-header">
+<div class="col-sm-8 text-left">
+<h1 class="font-weight-bold">
+									Current Job Listings									</h1>
+</div>
+<div class="col-sm-4">
+<ul class="nav navbar-nav navbar-right" data-jin="ul1" id="menuLinks"><li data-jin="li"><a data-jin="1" href="/jobs/">Jobs</a></li><li data-jin="li"><a href="/account/login.php" title="Login to Your Account">Login</a></li></ul> </div>
+</div>
+<div class="row text-left">
+<div class="col-md-8">
+<div class="bootstrap-area" data-v-app="" id="job_listings"><div><div class="row"><div class="col pt-2 pb-2"><p><p>Below is a list of the current openings with our company. Click on the job title to learn more about the opening.</p></p></div></div><div class="row mt-2"><div class="col"><input data-v-5b5773ad="" id="page" name="page" type="hidden" value="1"/><div class="row" data-v-5b5773ad=""><div class="col filters-div pb-0" data-v-5b5773ad=""><div class="d-flex justify-content-between" data-v-5b5773ad=""><h4 class="font-weight-bold" data-v-5b5773ad="">Search Jobs</h4><div data-v-5b5773ad=""><span class="btn" data-v-5b5773ad="">Hide Filters</span><span class="btn" data-v-5b5773ad="">Clear All</span></div></div><div class="card px-3 pb-3 border-0" data-v-5b5773ad=""><div class="row filters-row d-flex" data-v-5b5773ad=""><div class="keywords-container input-group input-group-lg col-auto filter-column py-1 px-1 order-1 order-sm-1" data-v-5b5773ad=""><span class="input-group-prepend input-group-text bg-transparent" data-v-5b5773ad=""><i class="fa fa-search" data-v-5b5773ad=""></i></span><input class="form-control border-left-0" data-v-5b5773ad="" id="keywords" name="keywords" placeholder="Search Jobs" type="text"/></div><div class="city-container col-auto filter-column py-1 px-1 order-3 order-sm-2" data-v-5b5773ad=""><select class="form-control form-control-lg text-secondary" data-v-5b5773ad="" id="city" name="city"><option data-v-5b5773ad="" value="">City</option><option data-v-5b5773ad="" value="Pecos">Pecos</option><option data-v-5b5773ad="" value="San Antonio">San Antonio</option></select></div><div class="state-container col-auto filter-column py-1 px-1 order-4 order-sm-3" data-v-5b5773ad=""><select class="form-control form-control-lg text-secondary" data-v-5b5773ad="" id="state" name="state_id"><option data-v-5b5773ad="" value="">State</option><option data-v-5b5773ad="" value="44">Texas</option></select></div><div class="select-container col-auto filter-column py-1 px-1 order-5 order-sm-4" data-v-5b5773ad=""><select class="form-control form-control-lg text-secondary" data-v-5b5773ad="" id="employment_type" name="employment_type_id"><option data-v-5b5773ad="" value="">Employment Type</option><option data-v-5b5773ad="" value="7816">Full Time</option></select></div><!-- --><!-- --><div class="select-container col-auto filter-column py-1 px-1 order-8 order-sm-7" data-v-5b5773ad=""><select class="form-control form-control-lg text-secondary" data-v-5b5773ad="" id="org_unit" name="org_unit_id"><option data-v-5b5773ad="" value="">Department</option><option data-v-5b5773ad="" value="8190">Operations</option></select></div><!-- --><!-- --><div class="sort-container col-auto filter-column py-1 px-1 order-2 order-sm-10" data-v-5b5773ad=""><select class="form-control form-control-lg text-secondary" data-v-5b5773ad="" id="sort" name="sort"><option data-v-5b5773ad="" value="">Sort By</option><option data-v-5b5773ad="" value="job_title">Job Title</option><option data-v-5b5773ad="" value="end_date">End Date</option><option data-v-5b5773ad="" value="city">City</option><option data-v-5b5773ad="" value="employment_type">Employment Type</option><option data-v-5b5773ad="" value="org_unit">Department</option></select></div></div></div></div></div></div></div><div class="row job-results-row mt-2"><div class="col"><div class="col-auto job-count-container pl-0 pr-0 pb-2 border-bottom"><span class="job-count text-secondary" id="job_count">Number of Jobs: 4</span></div><div id="job_results"><div class="job-result card pt-4 pb-4 mb-2 border-top-0 border-right-0 border-left-0" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col-auto pr-0" data-v-589fec2b=""></div><div class="col" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col-12" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="job-name col-auto text-primary pl-0 pr-0" data-v-589fec2b=""><a class="listing-url" data-v-589fec2b="" href="https://transpecos.talentplushire.com/jobs/38042">Customer Service Representative - Pecos</a></div></div><div class="row mt-2" data-v-589fec2b=""><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><!-- --><span class="text-dark pr-1" data-v-589fec2b="">Operations</span></div></div><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><span class="pr-2" data-v-589fec2b="">|</span><span class="text-dark pr-1" data-v-589fec2b="">Pecos, TX, USA</span></div></div><div data-v-589fec2b=""><!-- --></div><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><span class="pr-2" data-v-589fec2b="">|</span><span class="text-dark pr-1" data-v-589fec2b="">Full Time</span></div></div><div data-v-589fec2b=""><!-- --></div><div data-v-589fec2b=""><!-- --></div> </div><div class="row mt-1" data-v-589fec2b=""><div class="col-auto pl-0" data-v-589fec2b=""><span class="text-secondary pr-2" data-v-589fec2b=""> Posted: Jun 25, 2024</span><span class="text-secondary" data-v-589fec2b=""> Closing Date: Jul 25, 2024</span></div></div></div></div></div><div class="action-column col-auto" data-v-589fec2b=""><a class="listing-url" data-v-589fec2b="" href="https://transpecos.talentplushire.com/jobs/38042"><button class="btn text-secondary pl-3 pr-3 border-1 border-secondary" data-v-589fec2b="" type="button"> Apply Now </button></a></div></div></div></div></div><div class="job-result card pt-4 pb-4 mb-2 border-top-0 border-right-0 border-left-0" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col-auto pr-0" data-v-589fec2b=""></div><div class="col" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col-12" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="job-name col-auto text-primary pl-0 pr-0" data-v-589fec2b=""><a class="listing-url" data-v-589fec2b="" href="https://transpecos.talentplushire.com/jobs/37809">Sr. Compliance Officer, Monitoring, Testing, and Audit</a></div></div><div class="row mt-2" data-v-589fec2b=""><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><!-- --><span class="text-dark pr-1" data-v-589fec2b="">Operations</span></div></div><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><span class="pr-2" data-v-589fec2b="">|</span><span class="text-dark pr-1" data-v-589fec2b="">1305 East Houston Street, San Antonio, TX, USA</span></div></div><div data-v-589fec2b=""><!-- --></div><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><span class="pr-2" data-v-589fec2b="">|</span><span class="text-dark pr-1" data-v-589fec2b="">Full Time</span></div></div><div data-v-589fec2b=""><!-- --></div><div data-v-589fec2b=""><!-- --></div> </div><div class="row mt-1" data-v-589fec2b=""><div class="col-auto pl-0" data-v-589fec2b=""><span class="text-secondary pr-2" data-v-589fec2b=""> Posted: May 07, 2024</span><span class="text-secondary" data-v-589fec2b=""> Closing Date: Jul 20, 2024</span></div></div></div></div></div><div class="action-column col-auto" data-v-589fec2b=""><a class="listing-url" data-v-589fec2b="" href="https://transpecos.talentplushire.com/jobs/37809"><button class="btn text-secondary pl-3 pr-3 border-1 border-secondary" data-v-589fec2b="" type="button"> Apply Now </button></a></div></div></div></div></div><div class="job-result card pt-4 pb-4 mb-2 border-top-0 border-right-0 border-left-0" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col-auto pr-0" data-v-589fec2b=""></div><div class="col" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col-12" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="job-name col-auto text-primary pl-0 pr-0" data-v-589fec2b=""><a class="listing-url" data-v-589fec2b="" href="https://transpecos.talentplushire.com/jobs/37971">VP Compliance, Banking as a Service (BaaS)</a></div></div><div class="row mt-2" data-v-589fec2b=""><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><!-- --><span class="text-dark pr-1" data-v-589fec2b="">Operations</span></div></div><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><span class="pr-2" data-v-589fec2b="">|</span><span class="text-dark pr-1" data-v-589fec2b="">1305 East Houston Street, San Antonio, TX, USA</span></div></div><div data-v-589fec2b=""><!-- --></div><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><span class="pr-2" data-v-589fec2b="">|</span><span class="text-dark pr-1" data-v-589fec2b="">Full Time</span></div></div><div data-v-589fec2b=""><!-- --></div><div data-v-589fec2b=""><!-- --></div> </div><div class="row mt-1" data-v-589fec2b=""><div class="col-auto pl-0" data-v-589fec2b=""><span class="text-secondary pr-2" data-v-589fec2b=""> Posted: Jun 07, 2024</span><span class="text-secondary" data-v-589fec2b=""> Closing Date: Until Filled</span></div></div></div></div></div><div class="action-column col-auto" data-v-589fec2b=""><a class="listing-url" data-v-589fec2b="" href="https://transpecos.talentplushire.com/jobs/37971"><button class="btn text-secondary pl-3 pr-3 border-1 border-secondary" data-v-589fec2b="" type="button"> Apply Now </button></a></div></div></div></div></div><div class="job-result card pt-4 pb-4 mb-2 border-top-0 border-right-0 border-left-0" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col-auto pr-0" data-v-589fec2b=""></div><div class="col" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="col-12" data-v-589fec2b=""><div class="row" data-v-589fec2b=""><div class="job-name col-auto text-primary pl-0 pr-0" data-v-589fec2b=""><a class="listing-url" data-v-589fec2b="" href="https://transpecos.talentplushire.com/jobs/37808">VP, Senior Compliance Officer</a></div></div><div class="row mt-2" data-v-589fec2b=""><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><!-- --><span class="text-dark pr-1" data-v-589fec2b="">Operations</span></div></div><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><span class="pr-2" data-v-589fec2b="">|</span><span class="text-dark pr-1" data-v-589fec2b="">1305 East Houston Street, San Antonio, TX, USA</span></div></div><div data-v-589fec2b=""><!-- --></div><div data-v-589fec2b=""><div class="col-auto pl-0 pr-1" data-v-589fec2b=""><span class="pr-2" data-v-589fec2b="">|</span><span class="text-dark pr-1" data-v-589fec2b="">Full Time</span></div></div><div data-v-589fec2b=""><!-- --></div><div data-v-589fec2b=""><!-- --></div> </div><div class="row mt-1" data-v-589fec2b=""><div class="col-auto pl-0" data-v-589fec2b=""><span class="text-secondary pr-2" data-v-589fec2b=""> Posted: May 07, 2024</span><span class="text-secondary" data-v-589fec2b=""> Closing Date: Until Filled</span></div></div></div></div></div><div class="action-column col-auto" data-v-589fec2b=""><a class="listing-url" data-v-589fec2b="" href="https://transpecos.talentplushire.com/jobs/37808"><button class="btn text-secondary pl-3 pr-3 border-1 border-secondary" data-v-589fec2b="" type="button"> Apply Now </button></a></div></div></div></div></div></div></div></div></div></div>
+</div>
+<div class="col-md-4">
+<ul class="list-group" id="job_piper_alerts_widget">
+<li class="list-group-item text-center">
+<h3>Sign Up For Job Alerts!</h3>
+</li>
+<li class="list-group-item background-theme">
+<div id="refer-widget"><div class="refer-widget refer-sidebar" id="refer-widget-4abf43d9-0ccb-4cfa-a71c-71389b287725" style="position: relative;"><form accept-charset="UTF-8" enctype="multipart/form-data" id="refer-widget-form" method="post">
+<!-- PANEL 1 -->
+<!-- Table layout is only used by the wide style -->
+<div class="refer-pane refer-active refer-general-pane" data-pane-name="general">
+<div class="refer-table-margin-fix">
+<div class="refer-table">
+<div class="refer-table-row">
+<div class="refer-table-cell">
+<div class="refer-input-container form-group">
+<label class="refer-hide" for="refer-name">Name</label>
+<input class="refer-input form-control" id="refer-name" name="name" placeholder="Name" type="text"/>
+<div class="refer-error-bubble">You must type a name.</div>
+</div>
+</div>
+<div class="refer-table-cell">
+<div class="refer-input-container form-group">
+<label class="refer-hide" for="refer-email">Email</label>
+<input class="refer-input form-control" id="refer-email" name="email" placeholder="Email" type="text"/>
+<div class="refer-error-bubble">You must type a valid email.</div>
+</div>
+</div>
+<!-- Location field. IE/8IE9 use a state select. -->
+<div class="refer-table-cell">
+<label class="refer-hide" for="refer-location">Location (city, state or zip code)</label>
+<div class="refer-input-container form-group">
+<input class="refer-input form-control" id="refer-location" name="location" placeholder="Location" type="text"/>
+<div class="refer-error-bubble">You must select a location.</div>
+</div>
+</div>
+<div class="refer-table-cell">
+<div class="refer-input-container refer-tos-accept-container form-group">
+<label class="refer-hide" for="refer-tos-accept">Accept Terms of Service</label>
+<input class="refer-tos-accet" id="refer-tos-accept" name="tos-accept" type="checkbox"/>
+<span>I agree to the <a href="https://refer.io/blog/terms" target="_blank">terms of service</a> and <a href="https://refer.io/blog/privacy" target="_blank">privacy policy.</a></span>
+<div class="refer-error-bubble">You must accept the terms of service and privacy policy.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="refer-input refer-button refer-first-pane-btn form-control btn btn-lg btn-block accent" type="button">
+			Send Me Jobs
+		</button>
+</div>
+<!-- PANEL 2 -->
+<!-- Table layout is only used by the wide style -->
+<div class="refer-pane" data-pane-name="optin">
+<p>
+			Would you like <a href="https://www.refer.io/" target="_blank" title="Refer.io">Refer.io</a> to send you similar jobs from other employers?
+		</p>
+<div class="refer-table-margin-fix">
+<div class="refer-table">
+<div class="refer-table-row">
+<div class="refer-table-cell">
+<button class="refer-input refer-button refer-opt-btn form-control btn btn-lg btn-block accent" data-frequency="daily" data-opt-in="yes" type="button">
+							Yes, daily!
+						</button>
+</div>
+<div class="refer-table-cell">
+<button class="refer-input refer-button refer-opt-btn form-control btn btn-lg btn-block accent" data-frequency="weekly" data-opt-in="yes" type="button">
+							Yes, weekly!
+						</button>
+</div>
+<div class="refer-table-cell">
+<button class="refer-input refer-button refer-opt-btn refer-opt-out-btn form-control btn btn-lg btn-block accent" data-frequency="weekly" data-opt-in="no" type="button">
+							No, thanks.
+						</button>
+</div>
+</div>
+</div>
+</div>
+<input id="refer-opt-in" name="opt_in" type="hidden" value="no"/>
+<input id="refer-frequency" name="frequency" type="hidden" value="sat"/>
+</div>
+<!-- PANEL 3 -->
+<div class="refer-pane" data-pane-name="title">
+<!-- <p class="refer-job-interests-label" id="refer-prediction-successful">Refer.io will compare <b id="refer-predicted-job-title"></b> against thousands of jobs to find the best ones. if you'd prefer us to use a different job title, please type it in the box below.</p> -->
+<p class="refer-job-interests-label" id="refer-prediction-unsuccessful">Please type the job title you are interested in:</p>
+<div class="refer-input-container form-group" id="refer-title-container">
+<label class="refer-hide" for="refer-title">Job title</label>
+<input class="refer-input form-control" id="refer-title" name="title-input" placeholder="Job Title" type="text"/>
+<div class="refer-error-bubble">You must type a job title.</div>
+</div>
+<p>We'll send some jobs to you in the next 30 minutes. If you don't see them, check your spam folder.</p>
+<button class="refer-input refer-button refer-second-pane-btn refer-check-interests form-control btn btn-lg btn-block accent" id="refer-job-interests-btn" type="button">
+			Next
+		</button>
+</div>
+<!-- PANEL 4 -->
+<div class="refer-pane" data-pane-name="resume">
+<p id="refer-upload-message">
+</p>
+<div class="refer-input-container form-group">
+<label class="refer-hide" for="refer-resume-file">Resume Input</label>
+<input class="refer-file-label" disabled="disabled" id="refer-resume-file" placeholder="No file has been chosen"/>
+<div class="refer-file-input">
+<span>Select file</span>
+<label class="refer-hide" for="refer-resume-input">Resume File</label>
+<input class="refer-upload" id="refer-resume-input" name="resume" type="file"/>
+</div>
+<div class="refer-error-bubble">You must select a file.</div>
+</div>
+<button class="refer-input refer-button refer-submit-btn form-control btn btn-lg btn-block accent" type="button">
+			Upload Resume
+		</button>
+<button class="refer-btn-text refer-submit-no-file-btn" type="button">upload later</button>
+</div>
+<!-- PANEL 5 -->
+<div class="refer-pane" data-pane-name="thank">
+<strong>Thank you for subscribing to receive job alerts.</strong>
+<p>You should start receiving emails in the next week.</p>
+</div>
+<!-- PANEL 6 -->
+<div class="refer-pane" data-pane-name="upload-msg">
+<p>Your file is uploading. Please wait a few seconds.</p>
+</div>
+<!-- PANEL 7 -->
+<div class="refer-pane" data-pane-name="phone">
+<p class="refer-job-interests-label">Enter your phone number if you'd like to receive job alerts for <span id="phone-pane-title"></span> in <span id="phone-pane-location"></span>  via text message.</p>
+<div class="refer-input-container form-group">
+<label class="refer-hide" for="refer-phone">Phone number</label>
+<input class="refer-input form-control" id="refer-phone" name="phone" placeholder="Phone number" type="tel"/>
+<div class="refer-error-bubble">You must type a phone number.</div>
+</div>
+<p class="">Please indicate if you agree to <b><a href="https://refer.io/subscriber-communication-policy" target="_blank">Refer.io's Subscriber Communication Policy</a></b>.</p>
+<div class="refer-input-container form-group">
+<label class="refer-hide" for="refer-phone-confirm">Please indicate if you agree to Refer.io's Subscriber Communication Policy.</label>
+<select class="refer-input form-control" id="refer-phone-confirm" name="phone-confirm" placeholder="Phone number">
+<option value="false">Select an option</option>
+<option value="true">Yes, I agree to be contacted by text messages</option>
+<option value="false">No, I do not agree to receive text messages</option>
+</select>
+<div class="refer-error-bubble">You must agree to our Subscriber Communication Policy in order to receive text messages from Refer.io.</div>
+</div>
+<div class="refer-table-margin-fix">
+<div class="refer-table">
+<div class="refer-table-row">
+<div class="refer-table-cell">
+<button class="refer-input refer-button refer-phone-btn form-control btn btn-lg btn-block accent" type="button">
+							Yes, why not?
+						</button>
+</div>
+<div class="refer-table-cell">
+<button class="refer-input refer-button refer-no-phone-btn btn-transparent form-control btn btn-lg btn-block accent" type="button">
+							Not now
+						</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PANEL 8 -->
+<div class="refer-pane" data-pane-name="questionnaire">
+<p class="refer-job-interests-label">Refer.io can assist in your job search. Please answer the following questions to amplify your search results.</p>
+<div class="refer-input-container form-group">
+<label class="refer-hide" for="refer-education">Education status</label>
+<select class="refer-input refer-select form-control" id="refer-education" name="user_attribs[education]">
+<option disabled="disabled" selected="selected" value="-1">Education status</option>
+<option value="education_in_school">In School</option>
+<option value="education_graduated">Graduated</option>
+<option value="education_never_attended">Never Attended</option>
+<option value="education_partially_completed">Partially completed</option>
+</select>
+<div class="refer-error-bubble">You must select an education status answer.</div>
+</div>
+<div class="refer-input-container form-group">
+<label class="refer-hide" for="refer-work">Work status</label>
+<select class="refer-input refer-select form-control" id="refer-work" name="user_attribs[current_work]">
+<option disabled="disabled" selected="selected" value="-1">Work status</option>
+<option value="current_work_currently_employed">Currently employed</option>
+<option value="current_work_out_of_work">Out of work</option>
+<option value="current_work_temporary_job">Temporary job</option>
+</select>
+<div class="refer-error-bubble">You must select a work status answer.</div>
+</div>
+<div class="refer-input-container form-group">
+<label class="refer-hide" for="refer-job-search">Job search status</label>
+<select class="refer-input refer-select form-control" id="refer-job-search" name="user_attribs[job_search]">
+<option disabled="disabled" selected="selected" value="-1">Job search status</option>
+<option value="job_search_actively_looking">Actively looking for a job</option>
+<option value="job_search_passively_looking">Passively looking for a job</option>
+<option value="job_search_not_looking">Not looking for a job</option>
+</select>
+<div class="refer-error-bubble">You must select a job search status answer.</div>
+</div>
+<div class="refer-input-container form-group">
+<label class="refer-hide" for="refer-seeking">Seeking for</label>
+<select class="refer-input refer-select form-control" id="refer-seeking" name="user_attribs[seeking]">
+<option disabled="disabled" selected="selected" value="-1">Employment goal</option>
+<option value="seeking_similar_job">Similar Job to What I Do Now</option>
+<option value="seeking_higher_job">Progress to a Higher Job in the Same Field</option>
+<option value="seeking_new_field">Jump to a New Field of Work</option>
+</select>
+<div class="refer-error-bubble">You must select a seeking status answer.</div>
+</div>
+<div class="refer-input-container form-group">
+<label class="refer-hide" for="refer-type">Job type</label>
+<select class="refer-input refer-select form-control" id="refer-type" name="user_attribs[type]">
+<option disabled="disabled" selected="selected" value="-1">Job type</option>
+<option value="type_full_time">Full Time</option>
+<option value="type_part_time">Part Time</option>
+<option value="type_from_home">From Home</option>
+</select>
+<div class="refer-error-bubble">You must select a job type answer.</div>
+</div>
+<div>
+<button class="refer-input refer-button refer-questionnaire-pane-btn form-control btn btn-lg btn-block accent" type="button">
+				Next
+			</button>
+</div>
+<div class="clearfix"></div>
+</div>
+</form>
+<!-- FOOTER -->
+<div class="refer-widget-panel-footer">
+<div id="refer-widget-admin-login-link" style="position: absolute; height: 20px; width: 20px; background-color: rgba(0, 0, 0, 0); bottom: -30px; left: -20px; z-index: 10; cursor: pointer;"></div>
+<div class="logo-text-only pull-right" title="Refer - Get quality job opportunities delivered right to your inbox.">
+<p style="font-size: 9px; text-align: right; margin-top: 6px;">powered by
+		 	<a href="https://refer.io/blog" id="with-refer-link" style="display: inline;" target="_blank"> Refer.io</a>
+<span id="no-refer-link" style="display: none;" target="_blank"> Refer.io</span>
+</p>
+</div>
+<div class="refer-widget-form-message"></div>
+</div>
+</div></div>
+</li>
+</ul>
+<div class="bootstrap-area" data-v-app="" id="social_media_widget"><!-- --><!-- --></div>
+</div>
+</div>
+<div class="clearfix"></div>
+</div> <!-- panel-body -->
+<div class="panel-footer">
+<div>
+<div class="footer-links">Maintained by <a href="http://www.talentplus.com" target="_blank">Talent Plus</a> - © 2024</div>
+<div class="footer-links">
+<form id="clear_cache" method="post" style="display: inline-block;">
+<input name="clear_session_cache_old_style" type="hidden"/>
+<a href="javascript:void(0);" onclick="$('#clear_cache').submit();" tabindex="-1">Refresh</a>
+</form>
+</div>
+</div>
+<!--[if lt IE 9]>
+						<script type="text/javascript">
+							$(function() {
+								$('.footer-links:last-child').css('border-left', '0');
+								$('.footer-links:last-child a').css('color', $('body .panel-footer').css('background-color'));
+							});
+						</script>
+					<![endif]-->
+</div> <!-- panel-footer -->
+</div> <!-- panel -->
+</div> <!-- container -->
+</div> <!-- container-fixed -->
+<!-- Refer.io Script that will be used throughout the site -->
+<!-- GA4 - Google tag (gtag.js) -->
+<map id="headerMap" name="headerMap">
+<area alt="logo" coords="19,6,351,154" href="https://www.transpecosbanks.com/" shape="rect" style="cursor:pointer;" target="_self"/>
+<area alt="Online Banking Enroll" coords="945,75,1096,136" href="https://web4.ibtapps.com/olb-pec/Registration/Agreement" shape="rect" style="cursor:pointer;" target="_self"/>
+<area alt="Personal" coords="3,159,123,206" href="https://www.transpecosbanks.com/personal/checking-account-options" shape="rect" style="cursor:pointer;" target="_self"/>
+<area alt="Business" coords="131,159,239,207" href="https://www.transpecosbanks.com/business/business-checking" shape="rect" style="cursor:pointer;" target="_self"/>
+<area alt="Lending" coords="247,160,350,206" href="https://www.transpecosbanks.com/business/business-loans" shape="rect" style="cursor:pointer;" target="_self"/>
+<area alt="Resources" coords="359,159,477,206" href="https://www.transpecosbanks.com/resources/helpful-links" shape="rect" style="cursor:pointer;" target="_self"/>
+<area alt="About Us" coords="487,160,585,207" href="https://www.transpecosbanks.com/about-us/overview" shape="rect" style="cursor:pointer;" target="_self"/>
+</map>
+<!-- scripts
+	<script type="text/javascript">
+		jQl.loadjQ('/js/all.min.js?ver=2.3.47194');
+	</script>
+	-->
+<!-- Google Translate For Placeholders -->
+<!--
+	<script type="text/javascript">
+		var pkBaseURL = (("https:" == document.location.protocol) ? "https://transpecos.talentplushire.com/stats/" : "http://transpecos.talentplushire.com/stats/");
+		document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+		var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 0);
+		piwikTracker.trackPageView();
+		piwikTracker.enableLinkTracking();
+		} catch( err ) {}
+	</script>
+	<noscript><p><img src="https://transpecos.talentplushire.com/stats/piwik.php?idsite=0" style="border:0" alt="" /></p></noscript>
+	-->
+<!-- 36840 Add role="combobox" to all available selects-->
+<div class="w-notification-manager"></div></body></html>

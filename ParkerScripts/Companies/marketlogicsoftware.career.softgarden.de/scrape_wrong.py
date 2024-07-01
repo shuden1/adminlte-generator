@@ -21,17 +21,17 @@ def scrape_jobs(file_path):
     job_listings = []
 
     try:
-        job_elements = driver.find_elements(By.CSS_SELECTOR, 'HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED')
-        for job_element in job_elements:
+        job_openings = driver.find_elements(By.CSS_SELECTOR, "p[style='margin:0;min-height:1em']")
+        for job_opening in job_openings:
             try:
-                job_title_element = job_element.find_element(By.CSS_SELECTOR, 'HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED')
+                job_title_element = job_opening.find_element(By.CSS_SELECTOR, "span[data-color-id][style='color:#18282f']")
                 job_title = job_title_element.text.strip() or job_title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
                 job_title = "No Title Found"
 
             try:
-                job_url_element = job_element.find_element(By.CSS_SELECTOR, 'HTML TAG WITH DEFINED CLASSES AND ATTRIBUTES IF REQUIRED')
-                job_url = job_url_element.get_attribute('href') or "#"
+                job_url_element = job_opening.find_element(By.CSS_SELECTOR, "a[href]")
+                job_url = job_url_element.get_attribute('href').strip()
             except NoSuchElementException:
                 job_url = "#"
 

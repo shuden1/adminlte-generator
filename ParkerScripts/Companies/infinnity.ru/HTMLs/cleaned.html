@@ -1,0 +1,183 @@
+<html lang="ru">
+<body>
+
+<div class="popup" data-id="resume-form-popup">
+<div class="popup__bg js-popup-bg js-popups-close">
+</div>
+<div class="popup__inner">
+<div class="popup-form">
+<button class="popup-form__close popup__close js-popups-close">
+</button>
+<h3 class="popup-form__title">
+                Ждем ваше резюме            </h3>
+<div class="form popup-form__form">
+<form action="/vacancies/" enctype="multipart/form-data" method="POST" name="SIMPLE_FORM_2">
+<div class="input-block form__input-block">
+<label class="input-block__label">Имя<font color="red"><span class="form-required starrequired">*</span></font></label>
+ </div>
+<div class="input-block form__input-block">
+<label class="input-block__label">Телефон<font color="red"><span class="form-required starrequired">*</span></font></label>
+ </div>
+<div class="input-block form__input-block">
+<label class="input-block__label">Электронная почта</label>
+ </div>
+<div class="input-block form__input-block">
+<label class="input-block__label">Комментарий</label>
+ </div>
+<div class="file-load-input form__file-load-input input-block">
+ <label class="file-load-input__file-button" for="file-load-input-100">Прикрепить резюме</label>
+<div class="file-load-input__file-wrap">
+<div class="file-load-input__file-name-text">
+</div>
+<button class="file-load-input__file-delete" type="button">
+</button>
+</div>
+</div>
+<div class="form__text">
+                                Отправь отклик и мы ответим в течение недели.                            </div>
+<div class="custom-checkbox">
+<label class="custom-checkbox__label" for="100">Ознакомлен(а) с <a href="/privacy">Политикой в области обработки персональных данных</a> и даю согласие на их обработку.</label> </div>
+
+
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="popup" data-id="review-form-popup">
+<div class="popup__bg js-popup-bg js-popups-close">
+</div>
+<div class="popup__inner">
+<div class="popup-form">
+<button class="popup-form__close popup__close js-popups-close">
+</button>
+<h3 class="popup-form__title">
+                Ждем ваш отзыв            </h3>
+<div class="form popup-form__form">
+<form action="/vacancies/" enctype="multipart/form-data" method="POST" name="SIMPLE_FORM_4">
+<div class="input-block form__input-block">
+<label class="input-block__label">Имя<font color="red"><span class="form-required starrequired">*</span></font></label>
+ </div>
+<div class="input-block form__input-block">
+<label class="input-block__label">Телефон<font color="red"><span class="form-required starrequired">*</span></font></label>
+ </div>
+<div class="input-block form__input-block">
+<label class="input-block__label">Электронная почта</label>
+ </div>
+<div class="input-block form__input-block">
+<label class="input-block__label">Комментарий</label>
+ </div>
+<div class="custom-checkbox">
+<label class="custom-checkbox__label" for="18">Ознакомлен(а) с <a href="/privacy">Политикой в области обработки персональных данных</a> и даю согласие на их обработку.</label> </div>
+
+
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="popup" data-id="thanks-form-popup" id="thanksPopup">
+<div class="popup__bg js-popup-bg js-popups-close">
+</div>
+<div class="popup__inner">
+<div class="popup-form popup-form_thanks">
+<button class="popup-form__close popup__close js-popups-close">
+</button>
+
+<div class="popup-form__title">Сообщение отправлено!
+            </div>
+
+</div>
+</div>
+</div>
+<div class="popup" data-id="unsuccessfully-form-popup" id="unsuccessfully">
+<div class="popup__bg js-popup-bg js-popups-close">
+</div>
+<div class="popup__inner">
+<div class="popup-form popup-form_thanks">
+<button class="popup-form__close popup__close js-popups-close">
+</button>
+<div class="popup-form__title" style="color:#bc262c">Сообщение отправлено не было!
+            </div>
+<div class="popup-form__text">Невидимая система защиты
+                идентифицировала вас как Робота. 
+                Попробуйте отправить сообщение позже!
+            </div>
+</div>
+</div>
+</div>
+<header class="header">
+<div class="container">
+<div class="header__row">
+<a class="header__logo" href="/">
+
+ </a>
+<div class="header__links">
+<div class="header__link header__link_opener active">
+                     Работа у нас                </div>
+<a class="header__link" href="/projects/">Компания</a>
+<a class="header__link" href="/conditions/">Условия работы</a>
+<a class="header__link active" href="/vacancies/"> Работа у нас</a>
+<a class="header__link" href="/contacts/">Контакты</a>
+<div class="header__hidden-links">
+<a class="header__link" href="/projects/">Компания</a>
+<a class="header__link" href="/conditions/">Условия работы</a>
+<a class="header__link active" href="/vacancies/"> Работа у нас</a>
+<a class="header__link" href="/contacts/">Контакты</a>
+</div>
+</div>
+<button class="header__resume-button button js-popup-opener" data-target="resume-form-popup" type="button">Отправить резюме</button>
+<div class="header__resume-button header__resume-button_mobile button">
+<button class="header__resume-button-text js-popup-opener" data-target="resume-form-popup" type="button">
+<span>+</span> Резюме
+                </button>
+<button class="header__resume-button-hidden js-popup-opener" data-target="resume-form-popup" type="button">Оставить резюме</button>
+</div>
+</div>
+</div>
+</header>
+<main class="inner-page job-page main" role="main">
+<div class="inner-page__content">
+<div class="container">
+<div class="page-submenu page-submenu_job inner-page__submenu">
+<a class="page-submenu__link active" href="/vacancies/">Вакансии</a>
+<a class="page-submenu__link" href="/practice/">Стажировка и практика</a>
+<a class="page-submenu__link" href="/steps/"> Этапы трудоустройства</a>
+</div>
+<div class="vacancies job-page__vacancies">
+<div class="vacancies__row">
+<a class="vacancies__card" href="/vacancies/backend-qa-automation-engineer/" id="bx_3218110189_104">
+<span class="vacancies__title">QA automation engineer (Backend)</span>
+<span class="vacancies__position vacancy-position">Middle+</span>
+<span class="vacancies__text">Ищем специалиста, который будет подготавливать и проводить ручное и автоматизированное функциональное/регрессионное/нагрузочное тестирование для проектов на языке Java. 
+
+Предпочтение отдается кандидатам, проживающим в г. Челябинск, либо готовым к релокации в г. Челябинск (условия переезда и проживания обсуждаются индивидуально) для работы в офисе.</span>
+</a>
+<a class="vacancies__card" href="/vacancies/sistem-analitik/" id="bx_3218110189_105">
+<span class="vacancies__title">Системный аналитик</span>
+<span class="vacancies__position vacancy-position">Middle+</span>
+<span class="vacancies__text">Ищем специалиста, который будет заниматься разработкой требований к API, к сценариям использования, ставить задачи на дизайн, прорабатывать требования к интерфейсам совместно с дизайнером.
+
+Предпочтение отдается кандидатам, проживающим в г. Челябинск, либо готовым к релокации в г. Челябинск (условия переезда и проживания обсуждаются индивидуально) для работы в офисе.</span>
+</a>
+<a class="vacancies__card" href="/vacancies/frontend-developer-angular/" id="bx_3218110189_107">
+<span class="vacancies__title">Frontend Developer (Angular)</span>
+<span class="vacancies__position vacancy-position">Middle+</span>
+<span class="vacancies__text">Ищем в нашу команду специалиста, который будет заниматься разработкой клиентской части продуктов компании. 
+
+Предпочтение отдается кандидатам, проживающим в г. Челябинск, либо готовым к релокации в г. Челябинск (условия переезда и проживания обсуждаются индивидуально) для работы в офисе.</span>
+</a>
+<a class="vacancies__card" href="/vacancies/qa-engineer/" id="bx_3218110189_126">
+<span class="vacancies__title">QA engineer</span>
+<span class="vacancies__position vacancy-position">Junior</span>
+<span class="vacancies__text">Мы ищем специалиста в области разработки ПО с опытом тест-анализа и тест-дизайна, тестирования по документации от 6 месяцев.</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><div class="replaced-iframe">
+
+<div class="rc-anchor rc-anchor-invisible rc-anchor-light rc-anchor-invisible-hover"><div aria-hidden="true" class="rc-anchor-aria-status" id="recaptcha-accessible-status">Recaptcha requires verification. </div><div class="rc-anchor-error-msg-container" style="display:none"></div><div class="rc-anchor-normal-footer"><div class="rc-anchor-logo-large" role="presentation"></div><div class="rc-anchor-pt"><a href="https://www.google.com/intl/en/policies/privacy/" target="_blank">Privacy</a><span aria-hidden="true" role="presentation"> - </span><a href="https://www.google.com/intl/en/policies/terms/" target="_blank">Terms</a></div></div><div class="rc-anchor-invisible-text"><span>protected by <strong>reCAPTCHA</strong></span><div class="rc-anchor-pt"><a href="https://www.google.com/intl/en/policies/privacy/" style="" target="_blank">Privacy</a><span aria-hidden="true" role="presentation"> - </span><a href="https://www.google.com/intl/en/policies/terms/" style="" target="_blank">Terms</a></div></div></div></div></div></div></div></body></html>

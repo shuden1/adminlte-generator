@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 
-def scrape_jobs(file_path):
+def scrape_job_listings(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
     
@@ -24,15 +24,20 @@ def scrape_jobs(file_path):
         
         job_listings = []
         
-        job_elements = driver.find_elements(By.CSS_SELECTOR, "ul > a")
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "li.typography-h4.group.flex.cursor-pointer.items-center.justify-between.border-b-[1px].border-white/20.py-8.transition-all")
+        
         for job_element in job_elements:
             try:
-                title_element = job_element.find_element(By.CSS_SELECTOR, "li > span")
-                job_title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
+                title_element = job_element.find_element(By.CSS_SELECTOR, "span")
+                title = title_element.text.strip() or title_element.get_attribute('innerHTML').strip()
                 
-                job_url = job_element.get_attribute('href') if job_element.get_attribute('href') else "#"
+                try:
+                    url_element = job_element.find_element(By.CSS_SELECTOR, "a[href]")
+                    url = url_element.get_attribute('href')
+                except NoSuchElementException:
+                    url = "#"
                 
-                job_listings.append({"Job-title": job_title, "URL": job_url})
+                job_listings.append({"Job-title": title, "URL": url})
             except NoSuchElementException:
                 continue
         
@@ -43,4 +48,4 @@ def scrape_jobs(file_path):
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
-    scrape_jobs(file_path)
+    scrape_job_listings(file_path)

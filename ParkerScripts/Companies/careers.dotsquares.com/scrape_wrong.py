@@ -25,13 +25,13 @@ def scrape_jobs(file_path):
         for job_element in job_elements:
             try:
                 title_element = job_element.find_element(By.CSS_SELECTOR, "h2")
-                title = title_element.text.strip() or title_element.get_attribute('innerHTML').strip()
+                title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
                 title = "No Title"
 
             try:
                 url_element = job_element.find_element(By.CSS_SELECTOR, "a")
-                url = url_element.get_attribute('href') or "#"
+                url = url_element.get_attribute('href') if url_element.get_attribute('href') else "#"
             except NoSuchElementException:
                 url = "#"
 

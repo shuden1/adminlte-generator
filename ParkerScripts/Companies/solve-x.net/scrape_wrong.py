@@ -24,14 +24,14 @@ def scrape_jobs(file_path):
         job_elements = driver.find_elements(By.CSS_SELECTOR, "div.blockGrid__100")
         for job_element in job_elements:
             try:
-                title_element = job_element.find_element(By.CSS_SELECTOR, "span")
-                title = title_element.text.strip() or title_element.get_attribute('innerHTML').strip()
+                title_element = job_element.find_element(By.CSS_SELECTOR, 'span[style="color:#ffff;"]')
+                title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
                 title = "No Title"
 
             try:
-                url_element = job_element.find_element(By.CSS_SELECTOR, "a")
-                url = url_element.get_attribute('href') or "#"
+                url_element = job_element.find_element(By.CSS_SELECTOR, 'a[href]')
+                url = url_element.get_attribute('href')
             except NoSuchElementException:
                 url = "#"
 

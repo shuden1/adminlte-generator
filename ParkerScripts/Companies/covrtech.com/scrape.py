@@ -1,0 +1,50 @@
+import sys
+import json
+import threading
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.chrome.options import Options
+
+def scrape_jobs(file_path):
+    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
+    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    
+    options = Options()
+    options.add_argument(f"user-data-dir={profile_folder_path}")
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+    
+    driver = webdriver.Chrome(service=service, options=options)
+    
+    try:
+        driver.get(f"file:///{file_path}")
+        
+        job_postings = driver.find_elements(By.CSS_SELECTOR, "div.resumator-job.resumator-jobs-text")
+        jobs = []
+        
+        for job in job_postings:
+            try:
+                job_title_element = job.find_element(By.CSS_SELECTOR, "div.resumator-job-title.resumator-jobs-text")
+                job_title = job_title_element.text.strip() or job_title_element.get_attribute('innerHTML').strip()
+            except NoSuchElementException:
+                job_title = "No Title"
+            
+            try:
+                job_url_element = job.find_element(By.CSS_SELECTOR, "a.resumator-job-link.resumator-jobs-text")
+                job_url = job_url_element.get_attribute('href').strip()
+            except NoSuchElementException:
+                job_url = "#"
+            
+            jobs.append({"Job-title": job_title, "URL": job_url})
+        
+        print(json.dumps(jobs, indent=4))
+    
+    finally:
+        driver.quit()
+
+if __name__ == "__main__":
+    file_path = sys.argv[1]
+    scrape_jobs(file_path)

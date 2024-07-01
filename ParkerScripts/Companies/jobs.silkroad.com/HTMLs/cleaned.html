@@ -1,0 +1,231 @@
+<html lang="en-us">
+<body class="default">
+<div id="skipNavigation"><a href="#mainContent" title="Skip Navigation">Skip Navigation</a></div>
+<header class="sr-nav">
+<div class="sr-nav__container">
+<div class="sr-logo">
+<a href="/kofax/careers">
+<i style="display: none;">Home</i>
+</a>
+</div>
+<nav class="sr-desktop-nav">
+<a class="sr-nav__item" href="/Kofax/careers" id="Base_Layout_JobsHeaderLink">Jobs</a>
+<a class="sr-nav__item" href="/Kofax/careers/Profile" id="Base_Layout_MyAccountHeaderLink">My Account</a>
+</nav>
+<div class="sr-mobile-nav__button">
+
+
+
+</div>
+</div>
+</header>
+<div class="sr-mobile-nav" style="display: none">
+<div class="sr-mobile-nav__title">Menu</div>
+<a class="sr-nav__item" href="/kofax/careers" id="Base_Layout_JobsMobileLink">Jobs</a>
+<a class="sr-nav__item" href="/kofax/careers/Profile" id="Base_Layout_MyAccountMobileLink">My Account</a>
+</div>
+<div id="mainContent">
+<div id="sr-loading-container" style=""> Loading...</div>
+<section class="sr-banner">
+
+
+<div class="sr-banner__image-container">
+
+</div>
+<div class="sr-banner__info" id="Jobs_JobsList_CompanyData">
+<div class="sr-wrapper sr-wrapper--large">
+<p id="Jobs_JobsList_CustomerTag">Tungsten Automation </p>
+</div>
+</div>
+</section>
+<aside class="sr-modal" id="modal">
+<div class="sr-modal__container">
+<a class="sr-modal__close" href="#!" id="Jobs_JobAlert_Modal_Close_Button"><i class="material-icons">close</i></a>
+<article>
+<h3 id="Jobs_JobAlert_Modal_Header_Text">Create Job Alert</h3>
+
+<div id="modal_default_buttons">
+
+<button class="sr-button sr-button--large sr-button--primary" id="Jobs_JobAlert_Modal_Primary_Button">Create Job Alert</button>
+                 
+                <a href="#!" id="Jobs_JobAlert_Modal_Cancel_Link">Cancel</a>
+</div>
+</article>
+</div>
+
+</aside>
+<form action="/Kofax/careers" id="Jobs_JobSearch_SearchForm" method="get" novalidate="novalidate"> <section class="sr-search" id="filters">
+<div class="sr-wrapper sr-wrapper--large">
+<div class="sr-filter">
+<div class="sr-form__field sr-form__field--with-icon">
+
+<button class="material-icons sr-button__icon sr-button__input-icon formSubmitButton" id="Jobs_JobSearch_SearchForm_Icon" type="submit">search</button>
+</div>
+<div class="sr-form__field">
+<a aria-expanded="false" class="sr-filter--more-options-link" data-lessoptionstext="Hide search filters" data-moreoptionstext="Show search filters" href="#filters" id="Jobs_JobSearch_MoreOptionsLink">Show search filters</a>
+<a class="sr-filter--clear-form-link" href="">Clear filters</a>
+</div>
+
+</div>
+<div class="sr-filter sr-filter--more-options">
+<div class="sr-form__field">
+<div>
+<label class="sr-form__label locationsSelectizedLabel" for="Jobs_JobSearch_LocationSelect-selectized">Search jobs by Location</label> </div>
+<div class="selectize-control sr-form__selectize-multiple multi"><div class="selectize-input items not-full has-options"></div><div class="selectize-dropdown multi sr-form__selectize-multiple" style="display: none;"></div></div> </div>
+<div class="sr-form__field">
+<label class="sr-form__label" for="Jobs_JobSearch_CategoriesSelect-selectized">Search jobs by category</label>
+<select class="sr-form__selectize selectized" data-placeholder="Categories" id="Jobs_JobSearch_CategoriesSelect" name="SelectedCategory" style="display: none;" tabindex="-1" title="Categories"></select><div class="selectize-control sr-form__selectize single"><div class="selectize-input items not-full has-options"></div><div class="selectize-dropdown single sr-form__selectize" style="display: none;"></div></div>
+</div>
+<div class="sr-form__field sr-form__field--with-button">
+<button class="sr-button sr-button--primary sr-button--large" id="Jobs_JobSearch_SubmitButton" title="Submit Search" type="submit">Search</button>
+</div>
+</div>
+</div>
+</section>
+</form>
+<div id="Jobs_JobAlert_ModalContent" style="display: none;">
+<form action="/Kofax/careers" id="Jobs_JobAlert_Form" method="post" novalidate="novalidate"> <div class="sr-form__field">
+                A job alert sends you an email with the latest jobs that match your search criteria.
+Enter a name for the job alert and your email address. Select the frequency (how often) you want to receive the job alert email.
+Click <span style="font-weight: bold;">Create Job Alert</span> to activate the job alert. It remains active for 6 months. You can unsubscribe at any time via the link in the job alert email.
+
+<span style="font-weight: bold;">Important:</span> If you create a job alert that has the same title and email address of an existing job alert, that existing job alert is updated. Therefore, if you want to create multiple job alerts, enter a unique Job Alert Title for each one.
+            </div>
+<div class="sr-form__field">
+<label class="sr-form__label" for="Jobs_JobAlert_Title">Job Alert Title</label>
+
+<div class="sr-form__helper">
+<span class="field-validation-error" data-valmsg-for="JobAlertTitle" data-valmsg-replace="true" id="Jobs_JobAlert_Title_Validation">You must enter a Job Alert Title.</span>
+</div>
+</div>
+<div class="sr-form__field">
+<label class="sr-form__label" for="Jobs_JobAlert_Email">Email Address</label>
+
+<div class="sr-form__helper">
+<span class="field-validation-error" data-valmsg-for="JobAlertEmail" data-valmsg-replace="true" id="Jobs_JobAlert_Email_Validation">You must enter an Email Address.</span>
+</div>
+</div>
+<div class="sr-form__field">
+<label class="sr-form__label" for="Jobs_JobAlert_Frequency">Job Alert Frequency</label>
+<select class="input-validation-error sr-form__input" data-val="true" data-val-required="You must select an option from the Job Alert Frequency drop-down." id="Jobs_JobAlert_Frequency" name="SelectedJobAlertFrequency"><option value="">Select One</option>
+<option value="0">Daily</option>
+<option value="1">Weekly</option>
+<option value="2">Monthly</option>
+</select>
+<div class="sr-form__helper">
+<span class="field-validation-error" data-valmsg-for="SelectedJobAlertFrequency" data-valmsg-replace="true" id="Jobs_JobAlert_Frequency_Validation">You must select an option from the Job Alert Frequency drop-down.</span>
+</div>
+</div>
+<div class="sr-form__field">
+                Once created, this job alert will expire on 12/29/2024.
+            </div>
+<div class="sr-align--text-center">
+  
+                <a href="#!" id="">Cancel</a>
+</div>
+</form> </div>
+<section class="sr-wrapper sr-wrapper--large">
+<article class="sr-search__section">
+<h2 id="Jobs_PagedJobList_Category__45677">Accounting and Finance</h2>
+<a class="sr-panel" href="/Kofax/careers/jobs/221192" id="Jobs_PagedJobList_Job-221192">
+<div class="sr-panel__title" id="Jobs_PagedJobList_JobTitle-221192">
+                            Order Fulfillment &amp; Licensing Specialist
+                        </div>
+<div class="sr-panel__location" id="Jobs_PagedJobList_JobLocation-221192">
+<span class="sr-panel__meta">Kuala Lumpur, MY</span>
+</div>
+</a>
+</article>
+<article class="sr-search__section">
+<h2 id="Jobs_PagedJobList_Category__45716">Business Operations</h2>
+<a class="sr-panel" href="/Kofax/careers/jobs/221267" id="Jobs_PagedJobList_Job-221267">
+<div class="sr-panel__title" id="Jobs_PagedJobList_JobTitle-221267">
+                            Cyber Security Engineer
+                        </div>
+<div class="sr-panel__location" id="Jobs_PagedJobList_JobLocation-221267">
+<span class="sr-panel__meta">Sofia, BG</span>
+</div>
+</a>
+<a class="sr-panel" href="/Kofax/careers/jobs/221185" id="Jobs_PagedJobList_Job-221185">
+<div class="sr-panel__title" id="Jobs_PagedJobList_JobTitle-221185">
+                            Data Privacy Specialist
+                        </div>
+<div class="sr-panel__location" id="Jobs_PagedJobList_JobLocation-221185">
+<span class="sr-panel__meta">Sofia, BG</span>
+</div>
+</a>
+<a class="sr-panel" href="/Kofax/careers/jobs/221157" id="Jobs_PagedJobList_Job-221157">
+<div class="sr-panel__title" id="Jobs_PagedJobList_JobTitle-221157">
+                            Order Fulfillment &amp; Licensing Specialist
+                        </div>
+<div class="sr-panel__location" id="Jobs_PagedJobList_JobLocation-221157">
+<span class="sr-panel__meta">Budapest, HU</span>
+</div>
+</a>
+<a class="sr-panel" href="/Kofax/careers/jobs/221158" id="Jobs_PagedJobList_Job-221158">
+<div class="sr-panel__title" id="Jobs_PagedJobList_JobTitle-221158">
+                            Order Fulfillment &amp; Licensing Specialist
+                        </div>
+<div class="sr-panel__location" id="Jobs_PagedJobList_JobLocation-221158">
+<span class="sr-panel__meta">Budapest, HU</span>
+</div>
+</a>
+<a class="sr-panel" href="/Kofax/careers/jobs/221148" id="Jobs_PagedJobList_Job-221148">
+<div class="sr-panel__title" id="Jobs_PagedJobList_JobTitle-221148">
+                            Order Fulfillment SW
+                        </div>
+<div class="sr-panel__location" id="Jobs_PagedJobList_JobLocation-221148">
+<span class="sr-panel__meta">Budapest, HU</span>
+</div>
+</a>
+
+
+</article>
+<article class="sr-search__section">
+<h2 id="Jobs_PagedJobList_Category__45722">Cloud</h2>
+<a class="sr-panel" href="/Kofax/careers/jobs/221257" id="Jobs_PagedJobList_Job-221257">
+<div class="sr-panel__title" id="Jobs_PagedJobList_JobTitle-221257">
+                            Cloud Application Services Analyst
+                        </div>
+<div class="sr-panel__location" id="Jobs_PagedJobList_JobLocation-221257">
+<span class="sr-panel__meta">Sofia, BG</span>
+</div>
+</a>
+<a class="sr-panel" href="/Kofax/careers/jobs/221258" id="Jobs_PagedJobList_Job-221258">
+<div class="sr-panel__title" id="Jobs_PagedJobList_JobTitle-221258">
+                            Cloud Application Services Analyst
+                        </div>
+<div class="sr-panel__location" id="Jobs_PagedJobList_JobLocation-221258">
+<span class="sr-panel__meta">Sofia, BG</span>
+</div>
+</a>
+</article>
+<div id="Jobs_PagedJobList_OpenSubmission">
+                        Not finding the perfect opportunity? <a href="/Kofax/careers/Apply/QuickApply/0" style="white-space: nowrap;">Submit Your Resume/CV</a>.
+                    </div>
+<article class="sr-search__section">
+<section class="sr-pagination">
+<button class="sr-pagination__button--disabled sr-pagination__button sr-pagination__button--prev" data-href="/Kofax/careers?page=1" disabled="" id="Jobs_PagedJobList_PrevPageLink">
+<i aria-hidden="true" class="material-icons">chevron_left</i>
+                                Prev
+                            </button>
+<div class="sr-pagination__pager" id="Jobs_PagedJobList_CurrentPageText">
+                                Page 1 of 11
+                            </div>
+<button class="sr-pagination__button sr-pagination__button--next" data-href="/Kofax/careers?page=2" id="Jobs_PagedJobList_NextLink" type="submit">
+                                Next
+                                <i aria-hidden="true" class="material-icons">chevron_right</i>
+</button>
+</section>
+</article>
+</section>
+</div>
+
+<div id="flashMessageContainer">
+<i class="material-icons" id="flashMessage_close">close</i>
+
+</div>
+<!-- Material Design JS -->
+<!-- Intl-Tel-input-->
+
+</body></html>

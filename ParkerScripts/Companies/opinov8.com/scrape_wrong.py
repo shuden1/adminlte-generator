@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
-def scrape_job_listings(html_file_path):
+def scrape_jobs(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
     options = webdriver.ChromeOptions()
@@ -16,28 +16,32 @@ def scrape_job_listings(html_file_path):
     options.add_argument("--no-sandbox")
 
     driver = webdriver.Chrome(service=service, options=options)
-    driver.get(f"file:///{html_file_path}")
+    driver.get(f"file:///{file_path}")
 
     job_listings = []
 
     try:
-        job_elements = driver.find_elements(By.CSS_SELECTOR, "a")
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "article.wpgb-card")
         for job_element in job_elements:
             try:
-                job_title = job_element.text.strip()
-                if not job_title:
-                    job_title = job_element.get_attribute('innerHTML').strip()
-                job_url = job_element.get_attribute('href') or "#"
-                job_listings.append({"Job-title": job_title, "URL": job_url})
+                title_element = job_element.find_element(By.CSS_SELECTOR, "h3.wpgb-block-2")
+                title = title_element.text.strip() or title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
-                continue
+                title = "No Title"
+
+            try:
+                url_element = job_element.find_element(By.CSS_SELECTOR, "a[href]")
+                url = url_element.get_attribute('href') or "#"
+            except NoSuchElementException:
+                url = "#"
+
+            job_listings.append({"Job-title": title, "URL": url})
     except NoSuchElementException:
         pass
-    finally:
-        driver.quit()
 
+    driver.quit()
     return json.dumps(job_listings, indent=4)
 
 if __name__ == "__main__":
-    html_file_path = sys.argv[1]
-    print(scrape_job_listings(html_file_path))
+    file_path = sys.argv[1]
+    print(scrape_jobs(file_path))

@@ -1,0 +1,1011 @@
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths no-ipad no-iphone no-ipod no-appleios ukg-focus-visible dj_webkit dj_chrome dj_contentbox hydrated" data-ukg-focus-visible="" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" id="PageHtml" lang="en-US"><head>
+<title data-bind="text: title()">My Job Search</title>
+<link href="data:;base64,iVBORw0KGgo=" rel="icon"/>
+</head><body class="jobboardview-controller candidate-layout"><iframe id="_as" src="/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/AnonymousSessionCheck" style="display: none"></iframe>
+<link href="/Scripts/npm-imports/site.css?v=ENlTxjTg7KIYjXI0E6JaUZpH62MiDNLcMv2EKIFk2W0&amp;v=ENlTxjTg7KIYjXI0E6JaUZpH62MiDNLcMv2EKIFk2W0" rel="stylesheet"/>
+<link href="/styles/bootstrap-extensions.css?v=lG1vzXW20Vy-3Hz05ZkCJ_pFVtY" rel="stylesheet"/>
+<link href="/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/Styles/BrandingSettings?brandId=017fbbdb-0805-4ab0-91f7-b28f045cfb18&amp;m=637623075715600000" rel="stylesheet"/>
+<link href="https://ignite.cdn.ultipro.com/dls-cdn/ignite/v7.3.2/tokens/fonts/noto/ignite-fonts-noto-hinted-cdn.css" rel="stylesheet"/>
+<link href="https://ignite.cdn.ultipro.com/dls-cdn/ignite/v7.3.2/tokens/fonts/volte/ignite-fonts-volte-cdn.css" rel="stylesheet"/>
+<link href="https://ignite.cdn.ultipro.com/dls-cdn/ignite/v7.3.2/tokens/css/ignite-tokens.css" rel="stylesheet"/>
+<!-- Google Tag Manager -->
+<!-- End Google Tag Manager -->
+<ukg-ignite-shell class="hydrated" data-ignite-version="7.3.2" default-translation-path="" enable-cdn-path="" language="en-US">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TRJP8TD" style="display:none;visibility:hidden" width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="sr-only sr-only-focusable" data-i18n="Common.SkipLink" id="skipLink" tabindex="0">Skip to main content</a>
+<div id="PageContent" style="">
+<header role="banner">
+<nav aria-label="Global" class="navbar navbar-candidate navbar-static-top" data-automation="navbar" data-i18n="[aria-label]Layout.NavigationAriaLabel">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="https://veriforce.com/company/careers" target="_blank">
+<img alt="Veriforce LLC" class="small-logo logo" data-automation="navbar-small-logo" src="/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/Styles/GetSmallHeaderLogo?brandId=017fbbdb-0805-4ab0-91f7-b28f045cfb18&amp;m=637623075715600000"/>
+<img alt="Veriforce LLC" class="large-logo logo" data-automation="navbar-large-logo" src="/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/Styles/GetLargeHeaderLogo?brandId=017fbbdb-0805-4ab0-91f7-b28f045cfb18&amp;m=637623075715600000"/>
+</a>
+<button aria-labelledby="navbar-menu-label" class="navbar-toggle" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<span class="sr-only" data-i18n="Layout.Menu.MenuLabel" id="navbar-menu-label">Toggle Navigation</span>
+</div>
+<div class="collapse navbar-collapse" id="navbar-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="find-opps-link">
+<ukg-button class="brandingbutton ukg-color ukg-button-medium ukg-button-low-emphasis ukg-on-light ukg-no-min-width hydrated" data-automation="opportunities-menu-button" data-bind="attr: {'aria-label': $.t('Layout.Menu.Opportunities') }" data-i18n="Layout.Menu.Opportunities" data-ukg-focus-visible="" emphasis="low" id="OpportunitiesMenuButton" manual-color="true" onclick="window.location='/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf'" size="medium">Find Opportunities</ukg-button>
+</li>
+<li id="LanguagePicker">
+<ukg-button child-icon="menu-caret-down" class="brandingbutton ukg-color ukg-button-medium ukg-button-low-emphasis ukg-on-light ukg-no-min-width ukg-has-icons hydrated" data-automation="selected-language-picker-link" data-bind="menudropdownListener: { targetId: 'languageMenuContainer' }" data-i18n="[tooltip-text]Layout.LanguageLabel" data-ukg-focus-visible="" emphasis="low" id="languageMenubutton" manual-color="true" parent-icon="language" size="medium" tooltip-text="Language">
+<span class="brandingbutton" data-bind="text: selectedLanguage().Name">U.S. English</span>
+</ukg-button>
+<ukg-menu class="sc-ukg-menu-h sc-ukg-menu-s hydrated" data-bind="foreach: languages" id="languageMenuContainer" selectable=""><!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="en-GB" value="en-GB">British English</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="de-DE" value="de-DE">Deutsch</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="es-ES" value="es-ES">Español</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="fr-CA" value="fr-CA">Français canadien</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="pt-BR" value="pt-BR">Português do Brasil</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="en-US" selected="true" value="en-US">U.S. English</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'-->
+<ukg-menu-item aria-label="Simplified Chinese" class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: { value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code, 'aria-label': $.t('Layout.Menu.ChineseLabel')}, text: $data.Name" lang="zh-CN" value="zh-CN">简体中文</ukg-menu-item>
+<!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'--><!--/ko-->
+</ukg-menu>
+</li>
+<li>
+<ukg-button class="brandingbutton ukg-color ukg-button-medium ukg-button-low-emphasis ukg-on-light ukg-no-min-width hydrated" data-bind="attr: {'aria-label': $.t('Layout.Menu.LogIn') }" data-i18n="Layout.Menu.LogIn" data-ukg-focus-visible="" emphasis="low" id="SignInButton" manual-color="true" onclick="window.location='/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/Account/Login?cancelUrl=https%3A%2F%2Frecruiting2.ultipro.com%2FVER1028VRIF%2FJobBoard%2F7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf%2F%3Fq%3D%26o%3DpostedDateDesc%26w%3D%26wc%3D%26we%3D%26wpst%3D'" size="medium">Sign In</ukg-button>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<div class="index-action">
+<div class="container" id="PageContainer">
+<div id="GlobalNotificationContainer">
+<global-notification><div class="alert alert-success" data-automation="global-notification" data-bind="visible: visible, css: level" role="alert" style="display: none;"><span data-bind="html: message"></span> <span data-bind="visible: errors().length == 1, text: errors()[0]" style="display: none;"></span><ul data-bind="visible: errors().length &gt; 1, foreach: errors()" style="display: none;"></ul></div></global-notification>
+</div>
+<link href="https://js.arcgis.com/4.3/esri/css/main.css" rel="stylesheet"/>
+<div id="OpportunitiesContainer">
+<div>
+<react-ko-bridge params="component:'Recruiting.Rct.Containers.Candidate.CandidateConsentBanner',
+                         props:{
+                            'showAlert': false,
+                            'consentUrl': '/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/CandidateConsent'
+                         }"><div data-automation="candidate-consent-banner-container"></div></react-ko-bridge>
+<div class="row">
+<div class="col-md-24">
+<h1 class="job-board-title" data-automation="job-board-title" data-bind="text: jobBoard.Name">Career Opportunities</h1>
+</div>
+</div>
+<div class="row" role="search">
+<div class="col-md-12" data-bind="css: { 'col-md-24': !shouldShowMap() || geoServiceUnavailable(), 'col-md-12': shouldShowMap() &amp;&amp; !geoServiceUnavailable() }">
+<div class="form-group">
+<!-- ko if: shouldShowMap() -->
+<label class="search-label" data-i18n="Opportunity.Opportunities.SearchLabel" for="SearchInput" id="searchInputLabel">What</label>
+<!-- /ko -->
+<span class="typeahead-group typeahead-group-right search-input-group">
+<div class="right-inner-addon dropdown">
+<!-- onmouseup event is needed in order set focus because the filter components steal the mousedown event and thus prevent ie from properly setting focus on input element -->
+<input aria-label="What job are you searching for?" class="form-control" data-automation="search-textbox" data-bind="textInput: searchQuery, event: { keyup: searchInputKeyPress }, attr: { placeholder: $.t('Opportunity.Opportunities.SearchHelpBlockPlaceholder'), 'aria-label': $.t('Opportunity.Opportunities.SearchLabelWhatJob') }" id="SearchInput" maxlength="100" onmouseup="this.focus()" placeholder="Job Title, Job Category, Store, Requisition Number" type="text"/>
+<div class="search-tips-target" data-bind="component: {
+                                         name: 'react-ko-bridge',
+                                         params: { 'component': 'Recruiting.Rct.Components.Atoms.SearchTips', 'props' :{ 'dropdownClassName': 'jobboard-dropdown' } }
+                                     }"><div class="searchtip-root"><span aria-expanded="false" class="dropdown-toggle bulb-icon tooltip-button" data-toggle="dropdown" id="tips-and-tricks-button-tooltip" role="button" tabindex="0"><ukg-icon aria-label="Tips &amp; Tricks" class="ukg-icon-s hydrated" custom-size="1.5" data-automation="search-tips-icon" icon-aria-label="Tips &amp; Tricks" name="info" role="img" size="s" slot="icon-only" style="font-size: 1.5rem;"></ukg-icon><ukg-tooltip aria-hidden="true" class="sc-ukg-tooltip-h sc-ukg-tooltip-s hydrated" htmlfor="tips-and-tricks-button-tooltip" role="tooltip" tabindex="-1" text="Tips &amp; Tricks"><div class="tooltip-wrapper sc-ukg-tooltip"><div class="tooltip-content sc-ukg-tooltip"><div class="tooltip-text sc-ukg-tooltip">Tips &amp; Tricks</div></div></div></ukg-tooltip></span><div class="dropdown-menu tips-dropdown jobboard-dropdown" data-automation="search-tips-dropdown-menu"><div aria-labelledby="TipsTricksHeader" class="modal-dialog mt-0 mb-0" role="dialog"><div class="modal-content"><div class="modal-header"><button aria-label="Close" class="close" data-automation="search-tips-close-button" data-bind="attr: { 'aria-label': $.t('Common.Close') }" data-dismiss="modal" type="button"> <span aria-hidden="true">× </span></button><h4 class="modal-title" id="TipsTricksHeader"> <span class="fa fa-lightbulb-o"> </span>  Tips &amp; Tricks</h4></div><div class="modal-body"><div class="mobile-view-content"><h4>Search Modifier</h4><dl><dt><b>Either terms</b></dt><label class="label label-default">word1 word2</label><dd>Manager Supervisor retrieves an opportunity for a Manager or a Supervisor when searching for an opportunity.</dd></dl><br/><dl><dt><b>Exact phrase</b></dt><label class="label label-default">"word1 word2"</label><dd>"Customer Service Manager""Customer Service Supervisor" retrieves an opportunity for a Customer Service Manager or a Customer Service Supervisor.</dd></dl><br/><dl><dt><b>Include terms</b></dt><label class="label label-default">word1 + word2</label><dd>Manager + Accounting returns opportunities for Manager and Accounting.</dd></dl><br/><dl><dt><b>Exclude terms</b></dt><label class="label label-default">-word1</label><dd>-Sales returns all opportunities that do not have the term Sales associated to them.</dd></dl><br/><dl><dt><b>Either OR</b></dt><label class="label label-default">word1 | word2</label><dd>Developer + (apache | weblogic | websphere) returns Developer opportunities with at least one of the 3 relevant terms.</dd></dl><br/><dl><dt><b>Combining terms</b></dt><label class="label label-default">word1 + -word2</label><dd>Manager + -Sales returns all opportunities that have Manager in them that do NOT have Sales associated to them.</dd></dl></div><div class="normal-content"><table class="table" role="grid"><caption class="sr-only">Tips &amp; Tricks</caption><thead><tr><th colspan="2" id="SearchTipsHeader1" scope="col" style="width: 33%;"><b>Search Modifier</b></th><th id="SearchTipsHeader3" scope="col" style="width: 33%;"><b>Description</b></th><th id="SearchTipsHeader4" scope="col" style="width: 33%;"><b>Example </b></th></tr></thead><tbody><tr><td headers="SearchTipsHeader1"><b>Either terms</b></td><td headers="SearchTipsHeader1"><label class="label label-default">word1 word2</label></td><td headers="SearchTipsHeader3"> Either search term value.</td><td headers="SearchTipsHeader4"> Manager Supervisor retrieves an opportunity for a Manager or a Supervisor when searching for an opportunity.</td></tr><tr><td headers="SearchTipsHeader1"><b>Exact phrase</b></td><td headers="SearchTipsHeader1"><label class="label label-default">"word1 word2"</label></td><td headers="SearchTipsHeader3"> Returns the exact phrase match within quotes.</td><td headers="SearchTipsHeader4">"Customer Service Manager""Customer Service Supervisor" retrieves an opportunity for a Customer Service Manager or a Customer Service Supervisor.</td></tr><tr><td headers="SearchTipsHeader1"><b>Include terms</b></td><td headers="SearchTipsHeader1"><label class="label label-default">word1 + word2</label></td><td headers="SearchTipsHeader3"> The '+' indicates that both terms must be present.</td><td headers="SearchTipsHeader4"> Manager + Accounting returns opportunities for Manager and Accounting.</td></tr><tr><td headers="SearchTipsHeader1"><b>Exclude terms</b></td><td headers="SearchTipsHeader1"><label class="label label-default">-word1</label></td><td headers="SearchTipsHeader3"> The '-' indicates that the term must not be present.</td><td headers="SearchTipsHeader4">-Sales returns all opportunities that do not have the term Sales associated to them.</td></tr><tr><td headers="SearchTipsHeader1"><b>Either OR</b> </td><td headers="SearchTipsHeader1"><label class="label label-default">word1 | word2</label></td><td headers="SearchTipsHeader3"> Offers flexible inclusion, and typically broadens your search results.You may use parentheses to encapsulate OR statements.</td><td headers="SearchTipsHeader4">Developer + (apache | weblogic | websphere) returns Developer opportunities with at least one of the 3 relevant terms.</td></tr><tr><td headers="SearchTipsHeader1"><b>Combining terms</b> </td><td headers="SearchTipsHeader1"><label class="label label-default">word1 + -word2</label></td><td headers="SearchTipsHeader3"> Retrieves records that include the first term if they do not have the second term.</td><td headers="SearchTipsHeader4">Manager + -Sales returns all opportunities that have Manager in them that do NOT have Sales associated to them.</td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+<span class="typeahead-addon typeahead-addon-right" data-automation="typeahead-search" data-bind="ifnot: showClearButton"><i aria-hidden="true" class="fa fa-search muted"></i></span>
+<span class="typeahead-addon typeahead-addon-right" data-automation="searchinput-clear" data-bind="visible: showClearButton,click: clearSearchInput, event: { keypress: clearSearchInput }" role="button" style="display: none;" tabindex="0">
+<i aria-label="Clear search" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Common.Clear') }"></i>
+</span>
+</span>
+</div>
+</div>
+<!-- ko if: shouldShowMap() && !geoServiceUnavailable() -->
+<div class="col-md-12">
+<div class="form-group">
+<label class="search-label" data-i18n="Opportunity.Opportunities.WhereLabel" for="WhereInput">Where</label>
+<!-- onmouseup event is needed in order set focus because the filter components steal the mousedown event and thus prevent ie from properly setting focus on input element -->
+<span class="twitter-typeahead typeahead-group typeahead-group-right" style="position: relative; display: inline-block; direction: ltr;"><input aria-autocomplete="list" aria-controls="search-results" aria-hidden="true" aria-label="Where are you looking for a job?" autocomplete="off" class="form-control tt-input" data-automation="location-address-selector" data-bind="typeahead: {items: 5, minLength: 1, value:'Id', remote: arcGisSuggestUrl, requestType: 'GET', option: 'text', selectedValue: selectedCandidate, showSearchIcon:true, showClearButton: true, useNumberResultsStatusMessage: true, revertOnUnselected: true}, onSelected: onSelected.bind($data), attr:{placeholder: $.t('Opportunity.Opportunities.WhereHelpBlock'), 'aria-label': $.t('Opportunity.Opportunities.WhereAria')}" dir="auto" id="WhereInput" onmouseup="this.focus()" placeholder="City, State, Zip, Address" role="combobox" spellcheck="false" style="position: relative; vertical-align: top;"/><pre aria-hidden="true" style='position: absolute; visibility: hidden; white-space: pre; font-family: "Times New Roman"; font-size: 15px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;'></pre><span class="tt-dropdown-menu" id="search-results" role="listbox" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-0"></div></span><span aria-atomic="true" aria-live="assertive" class="sr-only" id="results-status" role="status"></span><span class="typeahead-addon typeahead-button-addon-right" data-automation="typeahead-clear" style="display: none;"><!-- please see typeahead.js to view the bindings on this span and button --><button aria-label="Clear search" class="btn btn-default"><i class="fa fa-times"></i></button></span><span class="typeahead-addon typeahead-addon-right" data-automation="typeahead-search"><i class="fa fa-search muted"></i></span></span>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+<div aria-label="Map" data-bind="visible: shouldShowMap(), attr: { 'aria-label': $.t('Opportunity.Opportunities.Map') }" role="region">
+<div class="esri-view esri-view-height-xsmall esri-view-height-less-than-small esri-view-height-less-than-medium esri-view-height-less-than-large esri-view-height-less-than-xlarge esri-view-width-small esri-view-width-greater-than-xsmall esri-view-width-less-than-medium esri-view-width-less-than-large esri-view-width-less-than-xlarge esri-view-orientation-landscape" data-automation="map" id="viewDiv"><div class="esri-view-root" style="width: 720px; height: 296px;"><div class="esri-view-surface" style="user-select: none; width: 720px; height: 296px; touch-action: none; display: block; opacity: 1;" tabindex="0"><canvas class="esri-display-object" height="296" style="display: block; opacity: 1;" width="720"></canvas><div class="esri-display-object" style="display: block; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);"><svg height="296" overflow="hidden" style="width: 720px; height: 296px; transform: matrix(1, 0, 0, 1, 0, 0);" width="720"><defs></defs><g transform="matrix(1.00000000,0.00000000,0.00000000,1.00000000,0.00000000,0.00000000)"><image fill-opacity="0" height="40" preserveaspectratio="none" stroke="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" stroke-opacity="0" stroke-width="1" transform="matrix(1.00000000,0.00000000,0.00000000,1.00000000,0.00000000,-20.00000000)" width="30" x="256" xlink:href="../../../Content/images/pin_svg_outline.svg#da=7536ddbd-01b1-429e-9f8d-b92dccfb7aee" y="36"/><image fill-opacity="0" height="40" preserveaspectratio="none" stroke="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" stroke-opacity="0" stroke-width="1" transform="matrix(1.00000000,0.00000000,0.00000000,1.00000000,0.00000000,-20.00000000)" width="30" x="393" xlink:href="../../../Content/images/pin_svg_outline.svg#da=c32d47f2-9461-5835-a43f-7198d347a4d1" y="193"/><image fill-opacity="0" height="40" preserveaspectratio="none" stroke="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" stroke-opacity="0" stroke-width="1" transform="matrix(1.00000000,0.00000000,0.00000000,1.00000000,0.00000000,-20.00000000)" width="30" x="362" xlink:href="../../../Content/images/pin_svg_outline.svg#da=5db74d20-a52c-47f5-a668-53ae6670851d" y="195"/></g></svg></div><div class="esri-display-object" style="display: block; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);"><svg height="296" overflow="hidden" style="width: 720px; height: 296px; transform: matrix(1, 0, 0, 1, 0, 0);" width="720"><defs></defs><g transform="matrix(1.00000000,0.00000000,0.00000000,1.00000000,0.00000000,0.00000000)"></g></svg></div></div><div class="esri-invisible esri-popup esri-widget" id="esri_widgets_Popup_0" role="presentation" widgetid="esri_widgets_Popup_0">
+<!-- Popup Container -->
+<div class="esri-popup__position-container esri-popup--shadow esri-popup--feature-updated esri-popup--top-aligned" data-dojo-attach-point="_containerNode" data-layer-id="" data-layer-title="">
+<div class="esri-popup__main-container">
+<!-- Popup Docked Pagination -->
+<section class="esri-popup__pagination-docked">
+<div class="esri-popup__loading-container" role="presentation" title="Loading">
+<span aria-hidden="true" class="esri-popup__icon esri-rotating esri-icon-loading-indicator"></span>
+<span class="esri-icon-font-fallback-text">Loading</span>
+</div>
+<div class="esri-popup__pagination-docked-buttons">
+<div class="esri-popup__button esri-popup__pagination-previous" data-dojo-attach-point="_previousDockedNode" role="button" tabindex="0" title="Previous feature">
+<span aria-hidden="true" class="esri-popup__icon esri-icon-left-triangle-arrow esri-popup__pagination-previous-icon"></span>
+<span aria-hidden="true" class="esri-popup__icon esri-icon-right-triangle-arrow esri-popup__pagination-previous-icon--rtl"></span>
+<span class="esri-icon-font-fallback-text">Previous feature</span>
+</div>
+<div class="esri-popup__pagination-page-text" data-dojo-attach-point="_pageTextDockedNode"></div>
+<div class="esri-popup__button esri-popup__pagination-next" data-dojo-attach-point="_nextDockedNode" role="button" tabindex="0" title="Next feature">
+<span aria-hidden="true" class="esri-popup__icon esri-icon-right-triangle-arrow esri-popup__pagination-next-icon"></span>
+<span aria-hidden="true" class="esri-popup__icon esri-icon-left-triangle-arrow esri-popup__pagination-next-icon--rtl"></span>
+<span class="esri-icon-font-fallback-text">Next feature</span>
+</div>
+<div class="esri-popup__button esri-popup__feature-menu-button" data-dojo-attach-point="_pageMenuDockedNode" role="button" tabindex="0" title="Menu">
+<span aria-hidden="true" class="esri-popup__icon esri-icon-layer-list"></span>
+<span class="esri-icon-font-fallback-text">Menu</span>
+</div>
+</div>
+</section>
+<!-- /Popup Docked Pagination -->
+<!-- Popup Header -->
+<header class="esri-popup__header">
+<h1 class="esri-popup__header-title" data-dojo-attach-point="_titleNode"></h1>
+<div class="esri-popup__header-buttons">
+<div class="esri-popup__button esri-popup__button--dock" data-dojo-attach-point="_dockNode" role="button" tabindex="0" title="Dock">
+<span aria-hidden="true" class="esri-popup__icon esri-popup__icon--dock-icon esri-icon-dock-right"></span>
+<span aria-hidden="true" class="esri-popup__icon esri-popup__icon--dock-icon esri-icon-maximize"></span>
+<span aria-hidden="true" class="esri-popup__icon esri-popup__icon--dock-icon esri-icon-dock-left"></span>
+<span aria-hidden="true" class="esri-popup__icon esri-popup__icon--dock-icon esri-icon-dock-bottom"></span>
+<span class="esri-icon-font-fallback-text">Dock</span>
+<span aria-hidden="true" class="esri-popup__icon esri-icon-minimize"></span>
+<span class="esri-icon-font-fallback-text">Undock</span>
+</div>
+<div class="esri-popup__button" data-dojo-attach-point="_closeNode" role="button" tabindex="0" title="Close">
+<span aria-hidden="true" class="esri-popup__icon esri-icon-close"></span>
+<span class="esri-icon-font-fallback-text">Close</span>
+</div>
+</div>
+</header>
+<!-- /Popup Header -->
+<!-- Popup Content -->
+<article class="esri-popup__content" data-dojo-attach-point="_bodyContentNode"></article>
+<!-- /Popup Content -->
+<!-- Popup Footer -->
+<footer class="esri-popup__footer">
+<!-- Popup Actions -->
+<div class="esri-popup__actions" data-dojo-attach-point="_actionsNode"></div>
+<!-- /Popup Actions -->
+<!-- Popup Pagination -->
+<section class="esri-popup__pagination">
+<div class="esri-popup__loading-container" role="presentation" title="Loading">
+<span aria-hidden="true" class="esri-popup__icon esri-rotating esri-icon-loading-indicator"></span>
+<span class="esri-icon-font-fallback-text">Loading</span>
+</div>
+<div class="esri-popup__button esri-popup__pagination-previous" data-dojo-attach-point="_previousNode" role="button" tabindex="0" title="Previous feature">
+<span aria-hidden="true" class="esri-popup__icon esri-icon-left-triangle-arrow esri-popup__pagination-previous-icon"></span>
+<span aria-hidden="true" class="esri-popup__icon esri-icon-right-triangle-arrow esri-popup__pagination-previous-icon--rtl"></span>
+<span class="esri-icon-font-fallback-text">Previous feature</span>
+</div>
+<div class="esri-popup__pagination-page-text" data-dojo-attach-point="_pageTextNode"></div>
+<div class="esri-popup__button esri-popup__pagination-next" data-dojo-attach-point="_nextNode" role="button" tabindex="0" title="Next feature">
+<span aria-hidden="true" class="esri-popup__icon esri-icon-right-triangle-arrow esri-popup__pagination-next-icon"></span>
+<span aria-hidden="true" class="esri-popup__icon esri-icon-left-triangle-arrow esri-popup__pagination-next-icon--rtl"></span>
+<span class="esri-icon-font-fallback-text">Next feature</span>
+</div>
+<div class="esri-popup__button esri-popup__feature-menu-button" data-dojo-attach-point="_pageMenuNode" role="button" tabindex="0" title="Menu">
+<span aria-hidden="true" class="esri-popup__icon esri-icon-layer-list"></span>
+<span class="esri-icon-font-fallback-text">Menu</span>
+</div>
+</section>
+<!-- /Popup Pagination -->
+</footer>
+<!-- /Popup Footer -->
+<!-- Popup Menu -->
+<section aria-hidden="true" class="esri-popup__feature-menu" data-dojo-attach-point="_pageMenuSectionNode">
+<h2 class="esri-popup__feature-menu-header" data-dojo-attach-point="_pageMenuInfoNode"></h2>
+<nav class="esri-popup__feature-menu-viewport">
+<ol class="esri-popup__feature-menu-list" data-dojo-attach-point="_paginationNode" role="menu"></ol>
+</nav>
+</section>
+<!-- /Popup Menu -->
+</div>
+<!-- Popup Pointer -->
+<div class="esri-popup__pointer" role="presentation">
+<div class="esri-popup__pointer-direction esri-popup--shadow"></div>
+</div>
+<!-- /Popup Pointer -->
+</div>
+<!-- /Popup Container -->
+</div><div class="esri-ui" style="inset: 0px;"><div class="esri-ui-inner-container esri-ui-manual-container"><div class="esri-component esri-attribution esri-widget"><div class="esri-attribution__sources" tabindex="-1">Esri, HERE, Garmin, NGA, USGS</div><div class="esri-attribution__powered-by">Powered by <a class="esri-attribution__link" href="http://www.esri.com/" target="_blank">Esri</a></div></div></div><div class="esri-ui-inner-container esri-ui-corner-container" style="inset: 15px 15px 30px;"><div class="esri-ui-top-left esri-ui-corner"></div><div class="esri-ui-top-right esri-ui-corner"></div><div class="esri-ui-bottom-left esri-ui-corner"></div><div class="esri-ui-bottom-right esri-ui-corner"><div class="esri-component esri-zoom esri-widget"><div class="esri-widget-button esri-widget esri-interactive" role="button" tabindex="0" title="Zoom In"><span aria-hidden="true" class="esri-icon esri-icon-plus" role="presentation"></span><span class="esri-icon-font-fallback-text">Zoom In</span></div><div class="esri-widget-button esri-widget esri-disabled" role="button" tabindex="-1" title="Zoom Out"><span aria-hidden="true" class="esri-icon esri-icon-minus" role="presentation"></span><span class="esri-icon-font-fallback-text">Zoom Out</span></div></div></div></div></div><div class="esri-spinner esri-widget" id="esri_widgets_Spinner_0" widgetid="esri_widgets_Spinner_0"></div></div></div>
+</div>
+<div>
+<div class="row">
+<div aria-label="Filter Opportunities" class="pl-0 pr-0 col-md-24" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.FilterOpportunities') }, css: { 'col-md-24 col-sm-24 col-xs-24': showFullWidth(), 'col-md-16 col-sm-24 col-xs-24': !showFullWidth() }" role="region">
+<div class="col-md-21 col-sm-24 col-xs-24">
+<jobboard-filter-panel params="filtersUrl: '/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/JobBoardView/GetFilters',
+                        typeaheadOptionsUrl: '/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/JobBoardView/GetTypeaheadOptions',
+                        parentQuery: opportunityQuery,
+                        shouldInvalidate: shouldInvalidateSubscribers,
+                        onFiltersReady: filtersUpdated.bind($root),
+                        onFiltersChange: filtersUpdated.bind($root),
+                        getFilterIdentifierCallback: getFilterIdentifier.bind($root),
+                        getSearchFilterSearchFragmentCallback: getSearchFilterSearchFragment.bind($root),
+                        hydratedFilterValues: hydratedFilterValues,
+                        shouldRehydrate: shouldRehydrate,
+                        shouldReset: shouldReset,
+                        maxSelectedFilter: 10">
+<div class="filter-panel jobboard-filter-panel" data-automation="filter-panel-control" id="FilterPanel">
+<div class="row">
+<div class="col-md-24" data-bind="visible: shouldShowFilter()" style="">
+<div class="row">
+<div class="col-md-24">
+<!-- ko foreach: searchFiltersOptions -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) --><!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) -->
+<typeahead-filter params="
+                                            searchFilter: $data,
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            taOptionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            onViewMoreOptionsClickedCallback: $parent.onViewMoreOptionsClicked,
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+                                            getCurrentSelectionsThreshold: $parent.currentSelectionsThreshold,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter typeahead-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunityPhysicalLocation">
+<button aria-describedby="OpportunityPhysicalLocation" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;">
+<i aria-label="Clear filter" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Filters.ClearFilter') }"></i>
+</button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'id': identifier + 'Button',
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" id="OpportunityPhysicalLocationButton" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel(), attr: { id: 'Dropdown' + $index() }" id="Dropdown0">Company Location</span>
+<span class="caret"></span>
+</button>
+<div aria-labelledby="OpportunityPhysicalLocationButton" class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() },
+                        attr: {
+                            'id': identifier + 'FilterDropdown',
+                            'aria-labelledby': identifier + 'Button',
+                            'role': isOpen() ? 'region' : null
+                        }" id="OpportunityPhysicalLocationFilterDropdown" style="display: none;">
+<div class="text-input">
+<input aria-labelledby="Dropdown0" class="form-control" data-automation="filter-typeahead" data-bind="textInput: instantaneousQueryString,
+                            attr: {
+                                'data-automation': 'filter-typeahead', 
+                                placeholder: $.t('Recruiter.Common.Filters.Search'),
+                                'aria-labelledby': 'Dropdown' + $index(),
+                                id: 'SearchInput' + $index()
+                            }" id="SearchInput0" maxlength="200" placeholder="Search"/>
+</div>
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+<div class="progressbar bar bar1" style="width: 0%;"></div>
+<div class="bufferbar bar bar2" style="width: 100%;"></div>
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: !isFetching() &amp;&amp; emptyResults() &amp;&amp; !instantaneousQueryStringChanging()">
+<i class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : true }"></i>
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div aria-label="Select" class="options" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<div class="opts results" data-automation="results-section" data-bind="visible: isSearching() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+<div class="opts selected" data-automation="selected-section" data-bind="visible: !isSearching() &amp;&amp; selectedGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: selectedGroup --><!-- /ko -->
+</div>
+<div class="opts recent" data-automation="recent-section" data-bind="visible: !isSearching() &amp;&amp; recentGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: recentGroup --><!-- /ko -->
+</div>
+<div class="opts top" data-automation="top-results-section" data-bind="visible: !isSearching() &amp;&amp; topGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: topGroup --><!-- /ko -->
+</div>
+</div>
+<div class="view-more">
+<!-- ko if: shouldShowViewMoreLink()-->
+<a class="btn btn-link" data-automation="view-all-link" data-bind="visible: shouldShowViewMoreLink(), click: onViewMoreOptionsClicked.bind($data), text: getViewMoreTextLabel()" href="#" role="button">View Locations</a>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</typeahead-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) --><!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) -->
+<typeahead-filter params="
+                                            searchFilter: $data,
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            taOptionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            onViewMoreOptionsClickedCallback: $parent.onViewMoreOptionsClicked,
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+                                            getCurrentSelectionsThreshold: $parent.currentSelectionsThreshold,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter typeahead-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunityJobCategory">
+<button aria-describedby="OpportunityJobCategory" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;">
+<i aria-label="Clear filter" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Filters.ClearFilter') }"></i>
+</button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'id': identifier + 'Button',
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" id="OpportunityJobCategoryButton" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel(), attr: { id: 'Dropdown' + $index() }" id="Dropdown1">Job Category</span>
+<span class="caret"></span>
+</button>
+<div aria-labelledby="OpportunityJobCategoryButton" class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() },
+                        attr: {
+                            'id': identifier + 'FilterDropdown',
+                            'aria-labelledby': identifier + 'Button',
+                            'role': isOpen() ? 'region' : null
+                        }" id="OpportunityJobCategoryFilterDropdown" style="display: none;">
+<div class="text-input">
+<input aria-labelledby="Dropdown1" class="form-control" data-automation="filter-typeahead" data-bind="textInput: instantaneousQueryString,
+                            attr: {
+                                'data-automation': 'filter-typeahead', 
+                                placeholder: $.t('Recruiter.Common.Filters.Search'),
+                                'aria-labelledby': 'Dropdown' + $index(),
+                                id: 'SearchInput' + $index()
+                            }" id="SearchInput1" maxlength="200" placeholder="Search"/>
+</div>
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+<div class="progressbar bar bar1" style="width: 0%;"></div>
+<div class="bufferbar bar bar2" style="width: 100%;"></div>
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: !isFetching() &amp;&amp; emptyResults() &amp;&amp; !instantaneousQueryStringChanging()">
+<i class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : true }"></i>
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div aria-label="Select" class="options" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<div class="opts results" data-automation="results-section" data-bind="visible: isSearching() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+<div class="opts selected" data-automation="selected-section" data-bind="visible: !isSearching() &amp;&amp; selectedGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: selectedGroup --><!-- /ko -->
+</div>
+<div class="opts recent" data-automation="recent-section" data-bind="visible: !isSearching() &amp;&amp; recentGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: recentGroup --><!-- /ko -->
+</div>
+<div class="opts top" data-automation="top-results-section" data-bind="visible: !isSearching() &amp;&amp; topGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: topGroup --><!-- /ko -->
+</div>
+</div>
+<div class="view-more">
+<!-- ko if: shouldShowViewMoreLink()-->
+<a class="btn btn-link" data-automation="view-all-link" data-bind="visible: shouldShowViewMoreLink(), click: onViewMoreOptionsClicked.bind($data), text: getViewMoreTextLabel()" href="#" role="button">View Job Categories</a>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</typeahead-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) -->
+<select-list-filter params="
+                                            searchFilter: $data,
+                                            isSingleSelect : $parent.shouldBeSingleSelect($data),
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            optionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunitySchedule">
+<button aria-describedby="OpportunitySchedule" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;"><i aria-label="Clear filter" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Filters.ClearFilter') }"></i></button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel()">Schedule</span>
+<span class="caret"></span>
+</button>
+<div class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() }" style="display: none;">
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+<div class="progressbar bar bar1" style="width: 0%;"></div>
+<div class="bufferbar bar bar2" style="width: 100%;"></div>
+</div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: resultsGroup().length == 0">
+<i class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : true }"></i>
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div aria-label="Select" class="opts results options" data-automation="results-section" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div>
+</select-list-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) --><!-- /ko -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) -->
+<select-list-filter params="
+                                            searchFilter: $data,
+                                            isSingleSelect : $parent.shouldBeSingleSelect($data),
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            optionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunityJobLocationType">
+<button aria-describedby="OpportunityJobLocationType" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;"><i aria-label="Clear filter" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Filters.ClearFilter') }"></i></button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel()">Job Location Type</span>
+<span class="caret"></span>
+</button>
+<div class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() }" style="display: none;">
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+<div class="progressbar bar bar1" style="width: 0%;"></div>
+<div class="bufferbar bar bar2" style="width: 100%;"></div>
+</div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: resultsGroup().length == 0">
+<i class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : true }"></i>
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div aria-label="Select" class="opts results options" data-automation="results-section" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div>
+</select-list-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</jobboard-filter-panel>
+</div>
+<div class="col-md-3 no-left-gutter">
+<div class="pull-right reset">
+<react-ko-bridge params="component: 'Recruiting.Rct.Components.Atoms.Button',
+                            props: {
+                                'buttonType': 'link',
+                                'text': $.t('Recruiter.Candidates.ResetSearch'),
+                                'onClick': resetSearch,
+                                'icon': 'fa-refresh',
+                                'dataAutomation': 'reset-button'
+                            }"><button class="btn btn-link" data-automation="reset-button"><i class="mr-1 fa fa-refresh"></i><span>Reset</span></button></react-ko-bridge>
+</div>
+</div>
+</div>
+<div data-bind="if: !showFullWidth()"></div>
+<!-- ko if: showAddJobSearchAgent() && showFullWidth() --><!-- /ko -->
+<div class="col-sm-24 col-xs-24 col-md-24" data-bind="css: { 'col-md-24': showFullWidth(), 'col-md-16': !showFullWidth() } ">
+<p class="hidden-md hidden-lg" data-bind="visible: showAddJobSearchAgent" style="display: none;">
+<button class="btn btn-primary btn-block full-width" data-automation="create-job-search-agent-link" data-bind="disable: disableCreateJobAlert(), click: createJobSearchAgent"><span class="fa fa-envelope-o"></span> <span data-i18n="Opportunity.Opportunities.JobSearchAgent.Activate">Activate job alerts for this search</span></button>
+</p>
+<div class="search-count" data-automation="opportunities-search-container">
+<div class="row" id="SearchCount">
+<div class="col-md-15">
+<h2 aria-live="polite" class="count m-0" data-automation="opportunities-count" data-bind="text: $.t('Opportunity.Opportunities.ResultJobCountShowingXOfY', { loadedCount: loadedCount(), allCount: totalCount() }), visible: hasLoadedOpportunities()" style="">Showing 5 of 5 opportunities</h2>
+</div>
+<div class="col-md-9">
+<div class="sort-by pull-right">
+<select-list params="options: orderByOptions,
+                                    rightAligned: true,
+                                    selectedOption: orderBy,
+                                    onChangeCallback: sortUpdated.bind($root)">
+<div class="base-filter select-list-filter" data-automation="terms-filter" data-bind="
+                attr: { id: 'sort-by' },
+            " id="sort-by">
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="selected-option" data-bind="click: toggleDropdown" data-toggle="dropdown">
+<span class="sr-only" data-bind="text: $.t('Common.Sort.Sort')">Sort</span>
+<span data-bind="text: dropdownLabel()">By Newest</span>
+<span class="caret"></span>
+</button>
+<div class="filter-dropdown filter-small right-aligned" data-automation="options-dropdown" data-bind="
+                    visible: isOpen(),
+                    css: { 'right-aligned': isRightAligned }
+                " style="display: none;">
+<div aria-label="Select" class="opts results" data-automation="options-section" data-bind="attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<!-- ko foreach: options -->
+<div class="select-list-option clearfix" data-automation="filter-option" data-bind="event: { keypress: $parent.onOptionClicked.bind($parent, $data) }, click: $parent.onOptionClicked.bind($parent, $data), attr: { id: $data.Value }" id="postedDateDesc" role="listitem" tabindex="0">
+<i aria-label="Selected" class="fa fa-check" data-automation="option-icon" data-bind="css: { invisible : !$parent.isOptionSelected($data)}, attr: { 'aria-label': $.t('Common.Selected') }"></i>
+<div class="option-label" data-automation="option-name">
+<span data-bind="text: $data.Text">By Newest</span>
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="filter-option" data-bind="event: { keypress: $parent.onOptionClicked.bind($parent, $data) }, click: $parent.onOptionClicked.bind($parent, $data), attr: { id: $data.Value }" id="postedDateAsc" role="listitem" tabindex="0">
+<i aria-label="Selected" class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : !$parent.isOptionSelected($data)}, attr: { 'aria-label': $.t('Common.Selected') }"></i>
+<div class="option-label" data-automation="option-name">
+<span data-bind="text: $data.Text">By Oldest</span>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</select-list>
+</div>
+</div>
+</div>
+</div>
+<div class="alert alert-danger" data-automation="personalized-search-error-list" data-bind="with: personalizedSearch.personalizedSearchHandler, visible: personalizedSearch.personalizedSearchHandler.serverErrors().length &gt; 0" style="display: none;">
+<ul>
+<!-- ko foreach: serverErrors --><!-- /ko -->
+</ul>
+</div>
+<div data-bind="activity: { trigger: loadOpportunities.isExecuting, resize: true, valign: 'top', padding: 32 }, overlay: { trigger: loadOpportunities.isExecuting, resize: true }" id="Opportunities"><div class="us-overlay" style="border-radius: inherit; position: absolute; opacity: 0.7; background-color: rgb(255, 255, 255); display: none; margin-top: 0px; margin-left: 0px; height: 1px; width: 720px;"></div><div class="us-activity-large content-middle-right" data-automation="activity-indicator" data-content="" style="position: absolute; z-index: 1000; display: none; margin-top: 32px; margin-left: 344px;"></div>
+<div data-bind="foreach: opportunities">
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity0">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/OpportunityDetail?opportunityId=2c7b7efb-51ec-4c2c-8318-3687f401c066">Accounting Assistant (Temporary)</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jun 25, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Accounting &amp; Finance</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">ACCOU001467</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType -->
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobLocationType')">Job Location Type</strong><strong>:</strong> <span data-automation="job-location-type" data-bind="text: JobLocationTypeText">On-site</span>
+</span>
+</div>
+<!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Corporate - Covington LA</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Covington Office</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">300 Holiday Square Blvd</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Suite 100</span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Covington, LA 70433, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Corporate - Covington LA</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Covington Office</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">300 Holiday Square Blvd</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Suite 100</span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Covington, LA 70433, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">Veriforce is looking for a temporary accounting assistant to support our accounting department with their financial and administrative work.
+
+This is a temporary on-site position in our Covington, La office that will last 2-3 months.</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity1">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/OpportunityDetail?opportunityId=23cf4572-4daa-41be-ac40-2cbdb6aeeeb2">Sr Marketing Analyst</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jun 13, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Marketing</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">SRMAR001466</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType -->
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobLocationType')">Job Location Type</strong><strong>:</strong> <span data-automation="job-location-type" data-bind="text: JobLocationTypeText">Remote</span>
+</span>
+</div>
+<!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Canada Remote</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">4838 Richard Rd SW</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()" style="display: none;"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Calgary, AB T3E, CAN</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Canada Remote</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">4838 Richard Rd SW</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()" style="display: none;"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Calgary, AB T3E, CAN</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">The Senior Marketing Analyst will serve as a strategic partner, blending technical expertise with advanced analytical skills to drive business insights and strategies. This role is pivotal in designing and executing a comprehensive data strategy, delivering sophisticated analytics, and providing actionable recommendations to support revenue growth, identify market opportunities, and understand customer behavior.</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity2">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/OpportunityDetail?opportunityId=021cd666-3254-4297-b4b3-d7595581dff4">Senior Marketing Analyst</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jun 13, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Marketing</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">SENIO001465</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType -->
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobLocationType')">Job Location Type</strong><strong>:</strong> <span data-automation="job-location-type" data-bind="text: JobLocationTypeText">Remote</span>
+</span>
+</div>
+<!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">USA Remote</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1575 Sawdust Road</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Suite 600</span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Spring, TX 77380, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">USA Remote</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1575 Sawdust Road</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Suite 600</span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Spring, TX 77380, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">The Senior Marketing Analyst will serve as a strategic partner, blending technical expertise with advanced analytical skills to drive business insights and strategies. This role is pivotal in designing and executing a comprehensive data strategy, delivering sophisticated analytics, and providing actionable recommendations to support revenue growth, identify market opportunities, and understand customer behavior.</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity3">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/OpportunityDetail?opportunityId=9afe5cc3-1745-4e86-aa1d-376676b0cd7e">Product Marketing Manager</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Mar 18, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Marketing</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">PRODU001433</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType --><!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">USA Remote</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1575 Sawdust Road</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Suite 600</span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Spring, TX 77380, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">USA Remote</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1575 Sawdust Road</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2">Suite 600</span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Spring, TX 77380, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">Reporting to the Vice President of Vertical Markets and Marketing Operations, we are seeking an energetic, motivated, and passionate Go-to-Market Expert to join our fast-paced marketing team. The ideal candidate has B2B experience in the tech industry (software, computer services) in Canada or the US.</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity4">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/VER1028VRIF/JobBoard/7b44e1a9-e5c8-4f1b-b1e9-701442d5e9cf/OpportunityDetail?opportunityId=e7c7ae24-fba2-4f19-bf11-db605616b268">Product Marketing Manager</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Mar 18, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Marketing</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">PRODU001434</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType --><!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Canada Remote</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">4838 Richard Rd SW</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()" style="display: none;"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Calgary, AB T3E, CAN</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Canada Remote</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">4838 Richard Rd SW</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()" style="display: none;"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Calgary, AB T3E, CAN</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">Reporting to the Vice President of Vertical Markets and Marketing Operations, we are seeking an energetic, motivated, and passionate Go-to-Market Expert to join our fast-paced marketing team. The ideal candidate has B2B experience in the tech industry (software, computer services) in Canada or the US.</div>
+<hr class="opportunity-hr"/>
+</div>
+</div>
+<div class="row">
+<div class="col-md-24 text-center">
+<span class="h5" data-bind="visible: skip() + pageSize &lt; totalCount() &amp;&amp; totalCount() &gt; 0" style="display: none;"><a data-automation="load-more-jobs-link" data-bind="click: loadMore, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? loadMore : null}" data-i18n="Opportunity.Opportunities.LoadMoreOpportunities" href="#" id="LoadMoreJobs">View More Opportunities</a></span>
+</div>
+</div>
+<div class="alert alert-block alert-danger" data-automation="no-jobs-message" data-bind="visible: hasLoadedOpportunities() &amp;&amp; totalCount() == 0" style="display: none;">
+<span data-bind="if: hasSearchDefined()" role="alert">
+<strong data-i18n="Opportunity.Opportunities.NoOpportunities.Title">There were no opportunities matching your criteria.</strong>
+<span data-i18n="Opportunity.Opportunities.NoOpportunities.Description">Try removing some filters or searching on different keywords to broaden your results.</span>
+</span>
+<span data-bind="if: !hasSearchDefined()"></span>
+</div>
+</div>
+</div>
+<div class="col-sm-24 col-xs-24 col-md-16" data-bind="css: { 'col-md-16': showFullWidth(), 'col-md-8': !showFullWidth() }">
+<div data-bind="if: shouldShowAvailableJobBoards"></div>
+<div data-bind="if: shouldShowFeaturedOpportunities"></div>
+<div data-bind="if: shouldShowPersonalizedJobSearch"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<footer id="PageFooter" style="">
+<div class="container">
+<div class="row">
+<div class="col-md-24 text-muted">
+<div class="copyright">
+<a data-automation="footer-text" href="https://veriforce.com" target="_blank">
+                                    Veriforce LLC
+                                    <ukg-icon aria-label="This link will open in a new tab" class="ukg-icon-s hydrated" data-bind="attr:{'icon-aria-label': $.t('Layout.FooterLinkLabel')}" icon-aria-label="This link will open in a new tab" name="new-window" role="img" size="s" style="vertical-align: text-bottom"></ukg-icon>
+</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div id="unsupported-browsers" style="display: none">
+<h2>You are using an unsupported browser.</h2>
+<div>To use this site, please use a supported browser.</div>
+<div class="browser-list">
+<strong class="download-browser download-mozilla-firefox">
+<a href="https://www.mozilla.org/en-US/firefox/new/">
+<img alt="Firefox logo" src="/Content/images/browsers/firefox.png"/>
+                Download Firefox
+            </a>
+</strong>
+<strong class="download-browser download-google-chrome">
+<a href="https://www.google.com/chrome/browser/">
+<img alt="Chrome logo" src="/Content/images/browsers/chrome.png"/>
+                Download Chrome
+            </a>
+</strong>
+<strong class="download-browser download-internet-explorer">
+<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+<img alt="Internet Explorer logo" src="/Content/images/browsers/internet-explorer.png"/>
+                Download Internet Explorer
+            </a>
+</strong>
+</div>
+</div>
+</ukg-ignite-shell>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8IpZFdq7gtNOifm73I93xQqB0H5chlENw-TILKWmMyaoxvyjCxBqWEK0IRxJRr_QC9m96IRUoVmZ9otRvELVTuxqL6DI0JAny3unSTRetCCkpj68m-RW_aQsWPWMGxDn9ls42UuBmwEmEkdb1F1n2Fk"/></body></html>

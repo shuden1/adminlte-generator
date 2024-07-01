@@ -114,11 +114,11 @@
 </div>
 <div class="absolute top-0 flex items-center h-full mx-3 ltr:right-0 rtl:left-0">
 <div data-common--share-url-value="https://careers.fishbrain.com/jobs" data-controller="common--share">
-<div class="relative" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-controller="common--dropdown">
+<div class="relative" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-common--dropdown-use-stimulus-click-outside-value="false" data-controller="common--dropdown">
 <button class="text-current px-4 pt-[15px] pb-[17px] block flex items-center justify-center focus-visible-header" data-action="click-&gt;common--dropdown#toggle" data-common--dropdown-target="button" role="button" tabindex="0" title="Share page" type="button">
 
 </button>
-<div class="absolute flex-col hidden mt-2 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 p-2 top-full" data-common--dropdown-target="dropdown">
+<div class="absolute flex-col hidden -mt-1 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 p-2 top-full" data-common--dropdown-target="dropdown">
 <button class="block no-underline px-3 py-3 sm:py-1 text-gray-800 focus-visible-company hover:bg-company-secondary hover:text-company-secondary last:mb-0 text-unset mb-1 rounded-xs" data-action="click-&gt;common--share#handleClick" data-common--dropdown-target="menuItem" data-provider="Facebook" role="button" tabindex="0" type="button">
 <span class="flex items-center">
 
@@ -143,7 +143,7 @@
 <div class="w-full text-lg relative pb-20 lg:pb-0" data-blocks--jobs-blocks--jobs--filters-outlet="#blocks-jobs-filters-form" data-blocks--jobs-disabled-map-view-toggle-class="cursor-not-allowed" data-blocks--jobs-first-block-value="true" data-blocks--jobs-headquarter-value='{"id":49162,"company_id":13446,"name":"Stockholm, Sweden","email":"jobs@fishbrain.com","address":"Magnus Ladulåsgatan 65","zip":"118 27","city":"Stockholm","country":"Sweden","phone":"","created_at":"2019-03-06T17:48:06.648+01:00","updated_at":"2024-03-22T10:34:48.610+01:00","contact_email":null,"lat":"59.31295679999999","long":"18.0683327","headquarters":true,"hide_on_careersite":false,"region_id":null,"administrative_area":"Stockholms län","import_id":null,"language_code":null}' data-blocks--jobs-overflow-auto-class="lg:overflow-auto" data-blocks--jobs-overflow-hidden-class="lg:overflow-hidden" data-blocks--jobs-show-map-value="true" data-blocks--jobs-sibling-element-padding-class="lg:[&amp;.bg-block-preset-primary:not(.keep-block-padding)]:!pt-20" data-blocks--jobs-split-view-candidate-value="true" data-blocks--jobs-split-view-value="true" data-controller="blocks--jobs" data-layout="thin" id="jobs">
 <div class="block-px without-map-jobs-text">
 <div class="mb-15 md:mb-18 lg:mb-20 mx-auto block-max-w--sm pt-15 md:pt-18 lg:pt-20">
-<h2 class="text-4xl text-center font-company-header text-block-title" data-controller="fit-title">Current Job Openings</h2>
+<h2 class="text-4xl text-center font-company-header text-block-title" data-controller="fit-title" style="hyphens: inherit;"><span class="textFitted" style="display: inline-block; font-size: 40px;">Current Job Openings</span></h2>
 </div></div>
 <div class="jobs-container lg:flex lg:flex-col lg:max-h-[1440px] lg:h-[calc(95vh-84px)]" data-blocks--jobs-target="jobsContainer">
 <template data-blocks--jobs-target="largeScreenSplitViewFilter">
@@ -164,14 +164,14 @@
 
 
 <div class="w-full lg:flex lg:flex-row lg:flex-row lg:items-center lg:justify-end lg:flex-wrap hidden gap-3">
-<div class="relative" data-common--dropdown-id-value="department-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-controller="common--dropdown">
+<div class="relative" data-common--dropdown-id-value="department-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-common--dropdown-use-stimulus-click-outside-value="false" data-controller="common--dropdown">
 <button class="bg-company-primary flex gap-x-2 items-center text-left text-sm text-block-text text-opacity-85 leading-[19px] min-w-full p-2 pl-3 focus:outline text-base rounded focus-visible-company border border-block-base-text border-opacity-15 font-medium" data-action="click-&gt;common--dropdown#toggle" data-common--dropdown-target="button" role="button" tabindex="0" title="Departments" type="button">
 <span class="inline-block max-w-[320px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           Departments
         </span>
 
 </button>
-<div class="absolute flex-col hidden mt-2 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 whitespace-nowrap max-w-[280px] p-2 top-full" data-common--dropdown-target="dropdown">
+<div class="absolute flex-col hidden -mt-1 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 whitespace-nowrap max-w-[280px] p-2 top-full" data-common--dropdown-target="dropdown">
 <button class="block no-underline px-3 py-3 sm:py-1 text-gray-800 focus-visible-company hover:bg-company-secondary hover:text-company-secondary flex flex-row gap-1 last:mb-0 text-unset mb-1 rounded-xs" data-action="click-&gt;blocks--jobs--filters#handleChange" data-common--dropdown-target="menuItem" data-field="department" role="button" tabindex="0" type="button">
 <div class="max-w-[210px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           All
@@ -194,7 +194,7 @@
 </div> 
 </button>   
 </div></div>
-<div class="relative" data-common--dropdown-id-value="location-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-controller="common--dropdown">
+<div class="relative" data-common--dropdown-id-value="location-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-common--dropdown-use-stimulus-click-outside-value="false" data-controller="common--dropdown">
 <button class="bg-company-primary flex gap-x-2 items-center text-left text-sm text-block-text text-opacity-85 leading-[19px] min-w-full p-2 pl-3 focus:outline text-base rounded focus-visible-company border border-block-base-text border-opacity-15 font-medium" data-action="click-&gt;common--dropdown#toggle" data-common--dropdown-target="button" role="button" tabindex="0" title="Locations" type="button">
 <span class="inline-block max-w-[320px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           Locations
@@ -202,7 +202,7 @@
         </span>
 
 </button>
-<div class="absolute flex-col hidden mt-2 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 whitespace-nowrap max-w-[280px] p-2 top-full" data-common--dropdown-target="dropdown">
+<div class="absolute flex-col hidden -mt-1 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 whitespace-nowrap max-w-[280px] p-2 top-full" data-common--dropdown-target="dropdown">
 <button class="block no-underline px-3 py-3 sm:py-1 text-gray-800 focus-visible-company hover:bg-company-secondary hover:text-company-secondary flex flex-row gap-1 last:mb-0 text-unset mb-1 rounded-xs" data-action="click-&gt;blocks--jobs--filters#handleChange" data-common--dropdown-target="menuItem" data-field="location" role="button" tabindex="0" type="button">
 <div class="max-w-[210px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           All
@@ -213,14 +213,14 @@
 </div> 
 </button>
 </div></div>
-<div class="relative" data-common--dropdown-id-value="remote_status_id-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-controller="common--dropdown">
+<div class="relative" data-common--dropdown-id-value="remote_status_id-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-common--dropdown-use-stimulus-click-outside-value="false" data-controller="common--dropdown">
 <button class="bg-company-primary flex gap-x-2 items-center text-left text-sm text-block-text text-opacity-85 leading-[19px] min-w-full p-2 pl-3 focus:outline text-base rounded focus-visible-company border border-block-base-text border-opacity-15 font-medium" data-action="click-&gt;common--dropdown#toggle" data-common--dropdown-target="button" role="button" tabindex="0" title="Remote Statuses" type="button">
 <span class="inline-block max-w-[320px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           Remote Statuses
         </span>
 
 </button>
-<div class="absolute flex-col hidden mt-2 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 whitespace-nowrap max-w-[280px] p-2 top-full" data-common--dropdown-target="dropdown">
+<div class="absolute flex-col hidden -mt-1 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 whitespace-nowrap max-w-[280px] p-2 top-full" data-common--dropdown-target="dropdown">
 <button class="block no-underline px-3 py-3 sm:py-1 text-gray-800 focus-visible-company hover:bg-company-secondary hover:text-company-secondary flex flex-row gap-1 last:mb-0 text-unset mb-1 rounded-xs" data-action="click-&gt;blocks--jobs--filters#handleChange" data-common--dropdown-target="menuItem" data-field="remote_status_id" role="button" tabindex="0" type="button">
 <div class="max-w-[210px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           All
@@ -256,6 +256,12 @@
 </div> </div>
 </button>
 </div>
+<template data-common--modal-target="spinnerTemplate">
+<div class="flex items-center justify-center h-full" id="spinner">
+<div aria-label="loading" class="animate-[spin_3s_linear_infinite] inline-block size-6 h-30 w-30 border-6 border-current border-t-transparent text-neutral-weak rounded-full" role="status">
+</div>
+</div>
+</template>
 <template data-common--modal-target="template">
 <div class="fixed top-0 left-0 items-center justify-center w-full h-full transition-opacity duration-200 bg-black bg-opacity-50 modal z-modal backdrop-blur-md hidden">
 <div class="z-modal overflow-y-auto bg-white h-screen w-screen">
@@ -358,8 +364,7 @@
 </div>
 <button class="careersite-button rounded shadow-button p-4 fixed left-1/2 -translate-x-1/2 bottom-5" data-action="click-&gt;blocks--jobs--filters-mobile#handleSubmit" name="button" type="submit">Show jobs</button>
 </div>
-</div></div></div> </div>
-</template>
+</div></div></div></div> </template>
 </div></form>
 </template> <div class="relative lg:flex lg:grow lg:overflow-hidden lg:border-b lg:border-block-base-text lg:border-opacity-15">
 <template data-blocks--jobs-target="largeMarkerIcon">
@@ -386,14 +391,14 @@
 
 
 <div class="w-full lg:flex lg:flex-row lg:flex-row lg:items-center lg:justify-end lg:flex-wrap hidden gap-3">
-<div class="relative" data-common--dropdown-id-value="department-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-controller="common--dropdown">
+<div class="relative" data-common--dropdown-id-value="department-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-common--dropdown-use-stimulus-click-outside-value="false" data-controller="common--dropdown">
 <button class="bg-company-primary flex gap-x-2 items-center text-left text-sm text-block-text text-opacity-85 leading-[19px] min-w-full p-2 pl-3 focus:outline text-base rounded focus-visible-company border-none shadow-form font-medium" data-action="click-&gt;common--dropdown#toggle" data-common--dropdown-target="button" role="button" tabindex="0" title="Departments" type="button">
 <span class="inline-block max-w-[320px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           Departments
         </span>
 
 </button>
-<div class="absolute flex-col hidden mt-2 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 !max-h-[500px] p-2 top-full" data-common--dropdown-target="dropdown">
+<div class="absolute flex-col hidden -mt-1 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 !max-h-[500px] p-2 top-full" data-common--dropdown-target="dropdown">
 <button class="block no-underline px-3 py-3 sm:py-1 text-gray-800 focus-visible-company hover:bg-company-secondary hover:text-company-secondary flex flex-row gap-1 last:mb-0 text-unset mb-1 rounded-xs" data-action="click-&gt;blocks--jobs--filters#handleChange" data-common--dropdown-target="menuItem" data-field="department" role="button" tabindex="0" type="button">
 <div class="max-w-[210px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           All
@@ -420,7 +425,7 @@
             People &amp; Culture
 </div> <span class="pointer-events-none">(0)</span>
 </button></div></div>
-<div class="relative" data-common--dropdown-id-value="location-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-controller="common--dropdown">
+<div class="relative" data-common--dropdown-id-value="location-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-common--dropdown-use-stimulus-click-outside-value="false" data-controller="common--dropdown">
 <button class="bg-company-primary flex gap-x-2 items-center text-left text-sm text-block-text text-opacity-85 leading-[19px] min-w-full p-2 pl-3 focus:outline text-base rounded focus-visible-company border-none shadow-form font-medium" data-action="click-&gt;common--dropdown#toggle" data-common--dropdown-target="button" role="button" tabindex="0" title="Locations" type="button">
 <span class="inline-block max-w-[320px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           Locations
@@ -428,7 +433,7 @@
         </span>
 
 </button>
-<div class="absolute flex-col hidden mt-2 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 !max-h-[500px] p-2 top-full" data-common--dropdown-target="dropdown">
+<div class="absolute flex-col hidden -mt-1 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 !max-h-[500px] p-2 top-full" data-common--dropdown-target="dropdown">
 <button class="block no-underline px-3 py-3 sm:py-1 text-gray-800 focus-visible-company hover:bg-company-secondary hover:text-company-secondary flex flex-row gap-1 last:mb-0 text-unset mb-1 rounded-xs" data-action="click-&gt;blocks--jobs--filters#handleChange" data-common--dropdown-target="menuItem" data-field="location" role="button" tabindex="0" type="button">
 <div class="max-w-[210px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           All
@@ -439,14 +444,14 @@
               Stockholm, Sweden
 </div> <span class="pointer-events-none">(0)</span>
 </button></div></div>
-<div class="relative" data-common--dropdown-id-value="remote_status_id-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-controller="common--dropdown">
+<div class="relative" data-common--dropdown-id-value="remote_status_id-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-common--dropdown-use-stimulus-click-outside-value="false" data-controller="common--dropdown">
 <button class="bg-company-primary flex gap-x-2 items-center text-left text-sm text-block-text text-opacity-85 leading-[19px] min-w-full p-2 pl-3 focus:outline text-base rounded focus-visible-company border-none shadow-form font-medium" data-action="click-&gt;common--dropdown#toggle" data-common--dropdown-target="button" role="button" tabindex="0" title="Remote Statuses" type="button">
 <span class="inline-block max-w-[320px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           Remote Statuses
         </span>
 
 </button>
-<div class="absolute flex-col hidden mt-2 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 !max-h-[500px] p-2 top-full" data-common--dropdown-target="dropdown">
+<div class="absolute flex-col hidden -mt-1 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 !max-h-[500px] p-2 top-full" data-common--dropdown-target="dropdown">
 <button class="block no-underline px-3 py-3 sm:py-1 text-gray-800 focus-visible-company hover:bg-company-secondary hover:text-company-secondary flex flex-row gap-1 last:mb-0 text-unset mb-1 rounded-xs" data-action="click-&gt;blocks--jobs--filters#handleChange" data-common--dropdown-target="menuItem" data-field="remote_status_id" role="button" tabindex="0" type="button">
 <div class="max-w-[210px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           All
@@ -481,6 +486,12 @@
 </div> </div>
 </button>
 </div>
+<template data-common--modal-target="spinnerTemplate">
+<div class="flex items-center justify-center h-full" id="spinner">
+<div aria-label="loading" class="animate-[spin_3s_linear_infinite] inline-block size-6 h-30 w-30 border-6 border-current border-t-transparent text-neutral-weak rounded-full" role="status">
+</div>
+</div>
+</template>
 <template data-common--modal-target="template">
 <div class="fixed top-0 left-0 items-center justify-center w-full h-full transition-opacity duration-200 bg-black bg-opacity-50 modal z-modal backdrop-blur-md hidden">
 <div class="z-modal overflow-y-auto bg-white h-screen w-screen">
@@ -583,8 +594,7 @@
 </div>
 <button class="careersite-button rounded shadow-button p-4 fixed left-1/2 -translate-x-1/2 bottom-5" data-action="click-&gt;blocks--jobs--filters-mobile#handleSubmit" name="button" type="submit">Show jobs</button>
 </div>
-</div></div></div> </div>
-</template>
+</div></div></div></div> </template>
 </div></form>
 <template data-blocks--jobs-target="smallScreenSplitViewFilter">
 <form accept-charset="UTF-8" action="/jobs" class="mx-auto mb-4 flex items-start text-block-text flex-col text-sm sm:flex-row !mb-0 lg:absolute lg:top-3 lg:left-3 lg:right-3 z-[500] lg:hidden" data-action="submit-&gt;blocks--jobs--filters#handleBefore jobs-map-changed@window-&gt;blocks--jobs--filters#handleMapChange jobs-filters-mobile-submit@window-&gt;blocks--jobs--filters#handleExternalSubmit" data-blocks--jobs--filters-common--options-widget-outlet=".options-widget" data-blocks--jobs--filters-default-mobile-filters-value='{"department":"Departments","location":"Locations","remote_status_id":"Remote Statuses"}' data-blocks--jobs--filters-desktop-dropdown-options-divider-class="w-full bg-zinc-200 pb-px mb-1" data-blocks--jobs--filters-has-search-value="false" data-blocks--jobs--filters-interactive-map-value="true" data-blocks--jobs--filters-more-count-text-value="nbr more" data-blocks--jobs--filters-using-map-value="true" data-blocks--jobs--filters-visible-mobile-filters-value='{"department":"Departments","location":"Locations","remote_status_id":"Remote Statuses"}' data-controller="blocks--jobs--filters" data-turbo-action="advance" data-turbo-frame="jobs_list" id="blocks-jobs-filters-form" method="get">
@@ -604,14 +614,14 @@
 
 
 <div class="w-full lg:flex lg:flex-row lg:flex-row lg:items-center lg:justify-end lg:flex-wrap hidden gap-3">
-<div class="relative" data-common--dropdown-id-value="department-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-controller="common--dropdown">
+<div class="relative" data-common--dropdown-id-value="department-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-common--dropdown-use-stimulus-click-outside-value="false" data-controller="common--dropdown">
 <button class="bg-company-primary flex gap-x-2 items-center text-left text-sm text-block-text text-opacity-85 leading-[19px] min-w-full p-2 pl-3 focus:outline text-base rounded focus-visible-company border-none shadow-form font-medium" data-action="click-&gt;common--dropdown#toggle" data-common--dropdown-target="button" role="button" tabindex="0" title="Departments" type="button">
 <span class="inline-block max-w-[320px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           Departments
         </span>
 
 </button>
-<div class="absolute flex-col hidden mt-2 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 !max-h-[500px] p-2 top-full" data-common--dropdown-target="dropdown">
+<div class="absolute flex-col hidden -mt-1 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 !max-h-[500px] p-2 top-full" data-common--dropdown-target="dropdown">
 <button class="block no-underline px-3 py-3 sm:py-1 text-gray-800 focus-visible-company hover:bg-company-secondary hover:text-company-secondary flex flex-row gap-1 last:mb-0 text-unset mb-1 rounded-xs" data-action="click-&gt;blocks--jobs--filters#handleChange" data-common--dropdown-target="menuItem" data-field="department" role="button" tabindex="0" type="button">
 <div class="max-w-[210px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           All
@@ -634,7 +644,7 @@
 </div> 
 </button>   
 </div></div>
-<div class="relative" data-common--dropdown-id-value="location-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-controller="common--dropdown">
+<div class="relative" data-common--dropdown-id-value="location-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-common--dropdown-use-stimulus-click-outside-value="false" data-controller="common--dropdown">
 <button class="bg-company-primary flex gap-x-2 items-center text-left text-sm text-block-text text-opacity-85 leading-[19px] min-w-full p-2 pl-3 focus:outline text-base rounded focus-visible-company border-none shadow-form font-medium" data-action="click-&gt;common--dropdown#toggle" data-common--dropdown-target="button" role="button" tabindex="0" title="Locations" type="button">
 <span class="inline-block max-w-[320px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           Locations
@@ -642,7 +652,7 @@
         </span>
 
 </button>
-<div class="absolute flex-col hidden mt-2 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 !max-h-[500px] p-2 top-full" data-common--dropdown-target="dropdown">
+<div class="absolute flex-col hidden -mt-1 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 !max-h-[500px] p-2 top-full" data-common--dropdown-target="dropdown">
 <button class="block no-underline px-3 py-3 sm:py-1 text-gray-800 focus-visible-company hover:bg-company-secondary hover:text-company-secondary flex flex-row gap-1 last:mb-0 text-unset mb-1 rounded-xs" data-action="click-&gt;blocks--jobs--filters#handleChange" data-common--dropdown-target="menuItem" data-field="location" role="button" tabindex="0" type="button">
 <div class="max-w-[210px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           All
@@ -653,14 +663,14 @@
 </div> 
 </button>
 </div></div>
-<div class="relative" data-common--dropdown-id-value="remote_status_id-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-controller="common--dropdown">
+<div class="relative" data-common--dropdown-id-value="remote_status_id-dropdown" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-common--dropdown-use-stimulus-click-outside-value="false" data-controller="common--dropdown">
 <button class="bg-company-primary flex gap-x-2 items-center text-left text-sm text-block-text text-opacity-85 leading-[19px] min-w-full p-2 pl-3 focus:outline text-base rounded focus-visible-company border-none shadow-form font-medium" data-action="click-&gt;common--dropdown#toggle" data-common--dropdown-target="button" role="button" tabindex="0" title="Remote Statuses" type="button">
 <span class="inline-block max-w-[320px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           Remote Statuses
         </span>
 
 </button>
-<div class="absolute flex-col hidden mt-2 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 !max-h-[500px] p-2 top-full" data-common--dropdown-target="dropdown">
+<div class="absolute flex-col hidden -mt-1 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 !max-h-[500px] p-2 top-full" data-common--dropdown-target="dropdown">
 <button class="block no-underline px-3 py-3 sm:py-1 text-gray-800 focus-visible-company hover:bg-company-secondary hover:text-company-secondary flex flex-row gap-1 last:mb-0 text-unset mb-1 rounded-xs" data-action="click-&gt;blocks--jobs--filters#handleChange" data-common--dropdown-target="menuItem" data-field="remote_status_id" role="button" tabindex="0" type="button">
 <div class="max-w-[210px] whitespace-nowrap text-ellipsis overflow-hidden pointer-events-none">
           All
@@ -696,6 +706,12 @@
 </div> </div>
 </button>
 </div>
+<template data-common--modal-target="spinnerTemplate">
+<div class="flex items-center justify-center h-full" id="spinner">
+<div aria-label="loading" class="animate-[spin_3s_linear_infinite] inline-block size-6 h-30 w-30 border-6 border-current border-t-transparent text-neutral-weak rounded-full" role="status">
+</div>
+</div>
+</template>
 <template data-common--modal-target="template">
 <div class="fixed top-0 left-0 items-center justify-center w-full h-full transition-opacity duration-200 bg-black bg-opacity-50 modal z-modal backdrop-blur-md hidden">
 <div class="z-modal overflow-y-auto bg-white h-screen w-screen">
@@ -798,8 +814,7 @@
 </div>
 <button class="careersite-button rounded shadow-button p-4 fixed left-1/2 -translate-x-1/2 bottom-5" data-action="click-&gt;blocks--jobs--filters-mobile#handleSubmit" name="button" type="submit">Show jobs</button>
 </div>
-</div></div></div> </div>
-</template>
+</div></div></div></div> </template>
 </div></form>
 </template> <div class="jobs-map primary block w-full z-career-jobs-map lg:max-h-[600px] h-[calc(100svh-150px)] lg:h-[calc(80dvh-40px)] lg:!max-h-[1440px] lg:!h-full" data-blocks--jobs-target="map" data-id="jobs-map-22219185" data-turbo-permanent="true" id="jobs-map-22219185">
 <button class="bg-company-primary group flex items-center justify-center absolute w-12 h-12 lg:h-[35px] lg:w-[35px] z-[500] bottom-6 lg:bottom-[95px] right-[10px] rounded lg:rounded-b-0 text-company-primary text-opacity-85" data-action="click-&gt;blocks--jobs#handleCurrentLocation" data-blocks--jobs-target="currentLocation">
@@ -828,7 +843,7 @@
 <section class="block--about company-links bg-company-primary-text bg-opacity-3 block-px mt-auto">
 <div class="py-20 mx-auto block-max-w--sm">
 <div class="mx-auto block-max-w--sm">
-<h2 class="mb-4 text-4xl text-center font-company-header text-block-title" data-controller="fit-title">About Fishbrain</h2>
+<h2 class="mb-4 text-4xl text-center font-company-header text-block-title" data-controller="fit-title" style="hyphens: inherit;"><span class="textFitted" style="display: inline-block; font-size: 40px;">About Fishbrain</span></h2>
 <div class="prose prose-block font-company-body company-links"><p><strong>Fishbrain</strong> is a tech startup with a global user base of over 15 million anglers. Fishing is not only the world’s no. 1 hobby - it's a passion for people worldwide. Even if you don't personally love fishing, you definitely know someone who does. But Fishbrain thinks there’s a way for technology to improve this age-old tradition. Fishbrain works with the latest tech, from AR to machine learning. And Fishbrain is backed by the investors behind some of the most successful social networks and apps.</p></div>
 </div>
 <div class="flex flex-wrap mt-8 text-lg gap-y-4">
@@ -850,7 +865,7 @@
 </div>
 <section class="relative block-px mt-15 z-career-autojoin mb-[67px] md:mb-[75px]" id="section-auto-join">
 <div class="w-full px-4 pt-12 mx-auto rounded pb-18 block-max-w--lg bg-company-secondary text-company-secondary block-shadow" data-controller="false">
-<h2 class="text-center font-company-header text-4xl text-shadow" data-controller="fit-title">Already working at Fishbrain?</h2>
+<h2 class="text-center font-company-header text-4xl text-shadow" data-controller="fit-title" style="hyphens: inherit;"><span class="textFitted" style="display: inline-block; font-size: 40px;">Already working at Fishbrain?</span></h2>
 <p class="text-center text-xl text-opacity-80 text-company-secondary text-shadow">Let’s recruit together and find your next colleague.</p>
 <form accept-charset="UTF-8" action="/auto_join" class="flex w-full mt-6" data-turbo="false" method="post">
 <button class="careersite-button careersite-button--secondary mx-auto min-w-[200px]" data-event-category="Account" data-event-label="Click" data-event-name="Auto Joined: Create" data-event-tracking="click" type="submit">
@@ -979,4 +994,4 @@
 </div>
 <button class="careersite-button rounded shadow-button p-4 fixed left-1/2 -translate-x-1/2 bottom-5" data-action="click-&gt;blocks--jobs--filters-mobile#handleSubmit" name="button" type="submit">Show jobs</button>
 </div>
-</div></div></div> </div></body></html>
+</div></div></div></div></body></html>

@@ -52,7 +52,16 @@ class RetrieveCompanyCareersCommand extends Command
     protected function getQueuedCompanyIds()
     {
         $jobs = DB::table('queue_jobs')
-            ->where('queue', 'RetrieveCareersQueue')
+            ->where('queue', 'RetrieveCareersQueue1')
+            ->orWhere('queue', 'RetrieveCareersQueue2')
+            ->orWhere('queue', 'RetrieveCareersQueue3')
+            ->orWhere('queue', 'RetrieveCareersQueue4')
+            ->orWhere('queue', 'RetrieveCareersQueue5')
+            ->orWhere('queue', 'RetrieveCareersQueue6')
+            ->orWhere('queue', 'RetrieveCareersQueue7')
+            ->orWhere('queue', 'RetrieveCareersQueue8')
+            ->orWhere('queue', 'RetrieveCareersQueue9')
+            ->orWhere('queue', 'RetrieveCareersQueue10')
             ->get(['id', 'payload']); // Fetch job ID and payload
         $companyJobs = [];
         foreach ($jobs as $job) {

@@ -1,0 +1,184 @@
+<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<a class="visually-hidden-focusable" href="#main-content" id="skip-nav">
+            Skip Navigation or Skip to Content
+        </a>
+<header>
+<nav aria-label="Navigation Bar" class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
+<div class="container-lg" data-bind="with: details">
+
+<button aria-controls="nav-bar-content" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bind="visible: HasClientWebAddress" data-bs-target="#nav-bar-content" data-bs-toggle="collapse" type="button">
+
+</button>
+<div class="collapse navbar-collapse" id="nav-bar-content">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0" data-bind="visible: HasClientWebAddress">
+<li class="nav-item"><a aria-current="page" class="nav-link active" data-bind="attr: { href: ClientWebAddress }" href="//www.nipgroup.com" target="_blank">Home</a></li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<main class="main-content" id="career-portal">
+<div class="cover-container hero-container d-flex h-50 w-100 align-items-center py-3">
+<div class="container-lg py-5">
+<div class="col-md-12 col-lg-8" data-bind="with: details">
+<p class="lead" data-bind="html: PortalWelcome"><h3>Welcome to our Careers Listing page</h3>Thanks for taking the time to view our job openings. You can view the job details of each position by clicking on the View Details button, and when you are ready to apply, simply click the Apply button and complete the application as thoroughly as possible.</p>
+</div>
+</div>
+</div>
+<div class="cover-container page-heading-container d-flex mb-1">
+<div class="py-3 gx-3 container-lg d-flex flex-wrap align-items-center justify-content-between" data-bind="with: jobAlertDetail">
+<h2 class="mb-0 h3">Career Opportunities</h2>
+<button class="btn btn-link" data-bind="visible: $parent.allowJobAlerts, click: activate" style="display: none;" type="button"> Job Alerts</button>
+</div>
+</div>
+<div class="container-lg pb-3" id="job-filter-container">
+<div class="py-2 row gx-4 gy-3 align-items-center">
+<div class="col-auto pe-0 pe-sm-1 pe-md-1 flex-grow-1 flex-md-grow-0 col-md-3" id="search-col">
+<label class="screenreader-text" for="txtJobSearch">Search</label>
+<div class="input-group rounded">
+
+<button class="btn btn-primary" data-bind="click: applyFilter" id="btnJobSearch" type="button">
+<span class="screenreader-text">search</span>
+</button>
+</div>
+</div>
+<div class="col-auto d-md-none">
+<button aria-controls="SearchDepartment searchLocation" aria-expanded="false" class="btn btn-link" data-bs-target="#job-filters" data-bs-toggle="collapse" type="button"> Filters</button>
+</div>
+<div class="col-auto d-md-flex align-items-center collapse" id="job-filters">
+<label class="me-1 ms-md-4 me-md-2 col-form-label col-form-label-sm" for="ddlSearchDepartment" id="lblSearchDepartment">Department</label>
+<select aria-label="Department" class="form-select" data-bind="options: departmentFilter().items, optionsCaption: 'All', optionsText: 'value', value: departmentFilter().selectedItem" id="ddlSearchDepartment"><option value="">All</option><option value="">CORPORATE OVERHEAD-IT</option><option value="">PROGRAMS-LAND PRO</option></select>
+<label class="mt-2 mt-md-0 ms-md-5 me-1 me-md-2 col-form-label col-form-label-sm" for="ddlSearchLocation" id="lblSearchLocation">Location</label>
+<select aria-label="Location" class="form-select" data-bind="options: locationFilter().items, optionsCaption: 'All', optionsText: 'value', value: locationFilter().selectedItem" id="ddlSearchLocation"><option value="">All</option><option value="">WOODBRIDGE, NJ</option></select>
+<button class="btn btn-link mt-2 mt-md-0 ms-md-5 me-1 me-md-2" data-bind="click: clearFilters" id="btnClearJobSearch" type="button">
+                            Clear
+                        </button>
+</div>
+</div>
+
+</div>
+<div class="container-lg job-listings-container" id="agileHrJobList">
+<div data-bind="visible: isNoJobs" style="display: none;">
+<h3 class="job-title mb-0">No job openings currently available</h3>
+</div>
+<div data-bind="foreach: jobs">
+<div class="row mb-3 border-bottom pb-3 job-listing">
+<div class="col-md-3">
+<p class="department-title h-6 mb-2" data-bind="text:Department">CORPORATE OVERHEAD-IT</p>
+</div>
+<div class="col-sm col-md">
+<h3 class="job-title mb-0"><a class="jobTitle" data-bind="attr: { href: '/careers/JobDetail?RequisitionId=' + Id + '&amp;SourceId=' + $parent.sourceId() }, text:Title" href="/careers/JobDetail?RequisitionId=1520&amp;SourceId=57">Lead Data Engineer (Fully Remote)</a></h3>
+<p class="job-location"><span class="jobLocation" data-bind="text:City">WOODBRIDGE</span><span class="jobLocation">,</span> <span class="jobLocation" data-bind="text:State">NJ</span></p>
+</div>
+<div class="col-sm-auto col-md-auto justify-content-md-end">
+<a class="applyNowButton btn btn-outline-primary btn-sm rounded-pill me-3" data-bind="visible: AllowQuickApply, attr: { href: QuickApplyUrl }, css: { 'me-3': AllowStandardApply}" style="display: none;" target="_blank">Quick Apply</a>
+<a class="applyNowButton btn btn-primary btn-sm rounded-pill" data-bind="visible: AllowStandardApply, attr: { href: ApplyUrl }" href="https://nipgroup.extensishrtalent.com/Application/Login.aspx?id=1520&amp;SourceId=57" target="_blank">Apply Now</a>
+</div>
+</div>
+<div class="row mb-3 border-bottom pb-3 job-listing">
+<div class="col-md-3">
+<p class="department-title h-6 mb-2" data-bind="text:Department">PROGRAMS-LAND PRO</p>
+</div>
+<div class="col-sm col-md">
+<h3 class="job-title mb-0"><a class="jobTitle" data-bind="attr: { href: '/careers/JobDetail?RequisitionId=' + Id + '&amp;SourceId=' + $parent.sourceId() }, text:Title" href="/careers/JobDetail?RequisitionId=1633&amp;SourceId=57">New Business Underwriter, E&amp;S (Fully Remote)</a></h3>
+<p class="job-location"><span class="jobLocation" data-bind="text:City">WOODBRIDGE</span><span class="jobLocation">,</span> <span class="jobLocation" data-bind="text:State">NJ</span></p>
+</div>
+<div class="col-sm-auto col-md-auto justify-content-md-end">
+<a class="applyNowButton btn btn-outline-primary btn-sm rounded-pill me-3" data-bind="visible: AllowQuickApply, attr: { href: QuickApplyUrl }, css: { 'me-3': AllowStandardApply}" style="display: none;" target="_blank">Quick Apply</a>
+<a class="applyNowButton btn btn-primary btn-sm rounded-pill" data-bind="visible: AllowStandardApply, attr: { href: ApplyUrl }" href="https://nipgroup.extensishrtalent.com/Application/Login.aspx?id=1633&amp;SourceId=57" target="_blank">Apply Now</a>
+</div>
+</div>
+<div class="row mb-3 border-bottom pb-3 job-listing">
+<div class="col-md-3">
+
+</div>
+<div class="col-sm col-md">
+<h3 class="job-title mb-0"><a class="jobTitle" data-bind="attr: { href: '/careers/JobDetail?RequisitionId=' + Id + '&amp;SourceId=' + $parent.sourceId() }, text:Title" href="/careers/JobDetail?RequisitionId=1639&amp;SourceId=57">Assistant Controller (Fully Remote)</a></h3>
+<p class="job-location"><span class="jobLocation" data-bind="text:City">WOODBRIDGE</span><span class="jobLocation">,</span> <span class="jobLocation" data-bind="text:State">NJ</span></p>
+</div>
+<div class="col-sm-auto col-md-auto justify-content-md-end">
+<a class="applyNowButton btn btn-outline-primary btn-sm rounded-pill me-3" data-bind="visible: AllowQuickApply, attr: { href: QuickApplyUrl }, css: { 'me-3': AllowStandardApply}" style="display: none;" target="_blank">Quick Apply</a>
+<a class="applyNowButton btn btn-primary btn-sm rounded-pill" data-bind="visible: AllowStandardApply, attr: { href: ApplyUrl }" href="https://nipgroup.extensishrtalent.com/Application/Login.aspx?id=1639&amp;SourceId=57" target="_blank">Apply Now</a>
+</div>
+</div>
+<div class="row mb-3 border-bottom pb-3 job-listing">
+<div class="col-md-3">
+
+</div>
+<div class="col-sm col-md">
+<h3 class="job-title mb-0"><a class="jobTitle" data-bind="attr: { href: '/careers/JobDetail?RequisitionId=' + Id + '&amp;SourceId=' + $parent.sourceId() }, text:Title" href="/careers/JobDetail?RequisitionId=1546&amp;SourceId=57">Business Development Associate (Fully Remote)</a></h3>
+<p class="job-location"><span class="jobLocation" data-bind="text:City">WOODBRIDGE</span><span class="jobLocation">,</span> <span class="jobLocation" data-bind="text:State">NJ</span></p>
+</div>
+<div class="col-sm-auto col-md-auto justify-content-md-end">
+<a class="applyNowButton btn btn-outline-primary btn-sm rounded-pill me-3" data-bind="visible: AllowQuickApply, attr: { href: QuickApplyUrl }, css: { 'me-3': AllowStandardApply}" style="display: none;" target="_blank">Quick Apply</a>
+<a class="applyNowButton btn btn-primary btn-sm rounded-pill" data-bind="visible: AllowStandardApply, attr: { href: ApplyUrl }" href="https://nipgroup.extensishrtalent.com/Application/Login.aspx?id=1546&amp;SourceId=57" target="_blank">Apply Now</a>
+</div>
+</div>
+<div class="row mb-3 border-bottom pb-3 job-listing">
+<div class="col-md-3">
+
+</div>
+<div class="col-sm col-md">
+<h3 class="job-title mb-0"><a class="jobTitle" data-bind="attr: { href: '/careers/JobDetail?RequisitionId=' + Id + '&amp;SourceId=' + $parent.sourceId() }, text:Title" href="/careers/JobDetail?RequisitionId=1557&amp;SourceId=57">Claims Counsel (Remote, NJ-Based)</a></h3>
+<p class="job-location"><span class="jobLocation" data-bind="text:City">WOODBRIDGE</span><span class="jobLocation">,</span> <span class="jobLocation" data-bind="text:State">NJ</span></p>
+</div>
+<div class="col-sm-auto col-md-auto justify-content-md-end">
+<a class="applyNowButton btn btn-outline-primary btn-sm rounded-pill me-3" data-bind="visible: AllowQuickApply, attr: { href: QuickApplyUrl }, css: { 'me-3': AllowStandardApply}" style="display: none;" target="_blank">Quick Apply</a>
+<a class="applyNowButton btn btn-primary btn-sm rounded-pill" data-bind="visible: AllowStandardApply, attr: { href: ApplyUrl }" href="https://nipgroup.extensishrtalent.com/Application/Login.aspx?id=1557&amp;SourceId=57" target="_blank">Apply Now</a>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</main>
+<!--start modals-->
+<div data-bind="with: jobAlertDetail">
+<div aria-hidden="true" aria-labelledby="jobAlertModalLabel" class="modal fade" data-bind="showModal: active" id="job-alert-modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="jobAlertModalLabel">Sign Up for Job Alerts!</h5>
+
+</div>
+<div class="modal-body" data-bind="with: item">
+
+<div class="mb-3">
+<label class="form-label required-field-label" for="txtFirstName" id="lblFirstName">First Name</label>
+
+</div>
+<div class="mb-3">
+<label class="form-label required-field-label" for="txtLastName" id="lblLastName">Last Name</label>
+
+</div>
+<div class="mb-3">
+<label class="form-label required-field-label" for="txtEmailAddress" id="lblEmailAddress">Email Address</label>
+
+</div>
+</div>
+<div class="modal-footer justify-content-start">
+<button class="btn btn-primary" data-bind="click:save" id="job-alert-sumbit-button" type="button">Subscribe</button>
+<button class="btn btn-outline-primary" data-bind="click: deactivate" data-bs-dismiss="modal" type="button">Close</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--end modals-->
+<!-- Global "Loading..." animation used by viewmodels -->
+<div data-bind="template: { name: 'agile-notify-loading' }">
+
+
+</div>
+<!-- IMPORTANT: load custom css last so it takes precedence -->
+
+
+</body></html>

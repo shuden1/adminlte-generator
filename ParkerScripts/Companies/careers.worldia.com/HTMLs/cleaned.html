@@ -114,11 +114,11 @@
 </div>
 <div class="absolute top-0 flex items-center h-full mx-3 ltr:right-0 rtl:left-0">
 <div data-common--share-url-value="https://careers.worldia.com/en-GB" data-controller="common--share">
-<div class="relative" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-controller="common--dropdown">
+<div class="relative" data-common--dropdown-right-aligned-class="ltr:right-0 rtl:left-0" data-common--dropdown-use-stimulus-click-outside-value="false" data-controller="common--dropdown">
 <button class="text-current px-4 pt-[15px] pb-[17px] block flex items-center justify-center focus-visible-header" data-action="click-&gt;common--dropdown#toggle" data-common--dropdown-target="button" role="button" tabindex="0" title="Share page" type="button">
 
 </button>
-<div class="absolute flex-col hidden mt-2 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 p-2 top-full" data-common--dropdown-target="dropdown">
+<div class="absolute flex-col hidden -mt-1 bg-white rounded min-w-[175px] shadow-form animate__animated animate__faster z-dropdown max-h-[70vh] overflow-y-auto ltr:right-0 rtl:left-0 p-2 top-full" data-common--dropdown-target="dropdown">
 <button class="block no-underline px-3 py-3 sm:py-1 text-gray-800 focus-visible-company hover:bg-company-secondary hover:text-company-secondary last:mb-0 text-unset mb-1 rounded-xs" data-action="click-&gt;common--share#handleClick" data-common--dropdown-target="menuItem" data-provider="Facebook" role="button" tabindex="0" type="button">
 <span class="flex items-center">
 
@@ -142,7 +142,7 @@
 <section class="w-screen bg-cover bg-center bg-company-secondary-fallback relative min-h-screen !min-h-dvh lg:!min-h-[max(700px,100dvh)] block-cover-bg block-cover-text" data-blocks--cover--scroll-smooth-scroll-class="scroll-smooth" data-controller="blocks--cover--scroll" style="--block-bg-overlay-text-color: #201d1d;--block-bg-overlay-background-color: #f2f2f2;--block-bg-overlay-opacity: 24%">
 <div class="relative flex flex-col items-center min-h-[inherit] justify-center w-full h-full px-4 text-lg text-center z-career-block-content">
 <div class="delay-[100ms] w-full relative flex flex-col items-center justify-center md:max-w-[75%] lg:py-0 md:pt-[200px] pt-[160px] pb-20 lg:py-0">
-<h1 class="w-full font-company-header text-4xl md:text-6xl lg:text-[72px] leading-tight" data-controller="fit-title">Join the Worldia adventure</h1>
+<h1 class="w-full font-company-header text-4xl md:text-6xl lg:text-[72px] leading-tight" data-controller="fit-title" style="hyphens: inherit;"><span class="textFitted" style="display: inline-block; font-size: 55px;">Join the Worldia adventure</span></h1>
 <div class="mt-8 sm:flex sm:justify-center sm:gap-x-20">
 <a class="careersite-button min-w-[220px] group careersite-button--outlined" data-event-category="Career" data-event-label="Click: Connect" data-event-name="Section: Cover" data-event-tracking="click" href="https://careers.worldia.com/en-GB/connect">
 <span class="flex items-center justify-center gap-x-3">
@@ -165,7 +165,7 @@
 <button class="fixed w-16 h-16 top-4 right-4 flex justify-center text-3xl p-4 rounded-full text-gray-800 cursor-pointer sm:absolute hover:opacity-75 focus-visible-company" data-close="true" title="Close modal" type="button">
 
 </button> <div class="max-w-screen-xl max-h-screen mx-auto my-8 overflow-hidden transition duration-200 delay-100 scale-50 rounded shadow-form-strong" data-player-container="">
-<div class="w-full h-auto relative rounded cursor-pointer aspect-video" data-action="stop-all-video-players@window-&gt;common--video-player#stopVideo" data-common--video-player-aspect-ratio-value="16:9" data-common--video-player-hidden-class="!hidden" data-common--video-player-initialize-value="true" data-common--video-player-is-external-value="true" data-common--video-player-thumbnail-image-value="false" data-controller="common--video-player">
+<div class="w-full h-auto relative rounded cursor-pointer aspect-video" data-action="stop-all-video-players@window-&gt;common--video-player#stopVideo" data-common--video-player-aspect-ratio-value="16:9" data-common--video-player-autoplay-value="false" data-common--video-player-hidden-class="!hidden" data-common--video-player-initialize-value="true" data-common--video-player-is-external-value="true" data-common--video-player-no-controls-value="false" data-common--video-player-thumbnail-image-value="false" data-common--video-player-use-intersection-value="false" data-controller="common--video-player">
 <div class="group w-full absolute inset-0 rounded no-company-style z-video-poster appearance-none focus-visible-company lg:bg-opacity-100 pointer-events-none" data-common--video-player-target="thumbnail">
 
 <span class="absolute flex items-center justify-center w-16 h-16 text-xl text-black transition-opacity duration-150 transform -translate-x-8 -translate-y-8 bg-white rounded-full shadow-form group-hover:opacity-100 opacity-90 left-half top-half z-video-poster-button">
@@ -265,7 +265,7 @@
 <section class="block--text block-padding bg-block-preset-primary bg-company-primary text-company-primary" data-section-model="28367424" data-section-name="text" data-section-route="section" data-section-sub-type="ContentBlock::Text" id="section-28367424" style="--block-base-text-color: var(--company-primary-text-color);--block-base-link-color: var(--company-link-color);--block-base-background-color: var(--company-primary-bg-color);--block-base-highlight-color: var(--company-color);">
 <div class="text-lg block-px" data-controller="careersite--responsive-video">
 <div class="mx-auto block-max-w--lg">
-<p class="text-5xl md:text-[72px] text-center font-company-header text-block-title leading-tight" data-controller="fit-title">Join us and let's create the best trips together !</p>
+<p class="text-5xl md:text-[72px] text-center font-company-header text-block-title leading-tight" data-controller="fit-title" style="hyphens: inherit;"><span class="textFitted" style="display: inline-block; font-size: 72px;">Join us and let's create the best trips together !</span></p>
 </div>
 </div>
 </section>
@@ -327,7 +327,7 @@
 <div class="w-full text-lg relative block-px" data-blocks--jobs-blocks--jobs--filters-outlet="#blocks-jobs-filters-form" data-blocks--jobs-disabled-map-view-toggle-class="cursor-not-allowed" data-blocks--jobs-first-block-value="false" data-blocks--jobs-overflow-auto-class="lg:overflow-auto" data-blocks--jobs-overflow-hidden-class="lg:overflow-hidden" data-blocks--jobs-show-map-value="false" data-blocks--jobs-sibling-element-padding-class="lg:[&amp;.bg-block-preset-primary:not(.keep-block-padding)]:!pt-20" data-blocks--jobs-split-view-candidate-value="false" data-blocks--jobs-split-view-value="false" data-controller="blocks--jobs" data-layout="thick" id="jobs">
 <div class="block-px jobs-text">
 <div class="mb-15 md:mb-18 lg:mb-20 mx-auto block-max-w--sm">
-<h2 class="text-4xl text-center font-company-header text-block-title" data-controller="fit-title">Job offers</h2>
+<h2 class="text-4xl text-center font-company-header text-block-title" data-controller="fit-title" style="hyphens: inherit;"><span class="textFitted" style="display: inline-block; font-size: 40px;">Job offers</span></h2>
 </div></div>
 <div class="jobs-container" data-blocks--jobs-target="jobsContainer">
 <div class="relative">
@@ -335,6 +335,54 @@
 <div>
 <div class="mx-auto text-lg block-max-w--lg">
 <ul id="jobs_list_container">
+<li class="w-full">
+<a class="flex flex-col py-6 text-center sm:px-6 hover:bg-gradient-block-base-bg focus-visible-company focus-visible:rounded" data-turbo="false" href="https://careers.worldia.com/jobs/4667100-agent-de-voyage-aerien">
+<span class="text-block-base-link sm:min-w-[25%] sm:truncate company-link-style" title="Agent de voyage aérien">Agent de voyage aérien</span>
+<div class="mt-1 text-md">
+<span>Customer Support &amp; Operations</span>
+<span class="mx-[2px]">·</span>
+<span>Paris</span>
+<span class="mx-[2px]">·</span>
+<span class="inline-flex items-center gap-x-2">
+    Hybrid Remote
+    
+</span>
+</div>
+</a>
+
+</li>
+<li class="w-full">
+<a class="flex flex-col py-6 text-center sm:px-6 hover:bg-gradient-block-base-bg focus-visible-company focus-visible:rounded" data-turbo="false" href="https://careers.worldia.com/jobs/4642265-travel-advisor-amerique-du-nord">
+<span class="text-block-base-link sm:min-w-[25%] sm:truncate company-link-style" title="Travel Advisor Amérique du Nord">Travel Advisor Amérique du Nord</span>
+<div class="mt-1 text-md">
+<span>Customer Support &amp; Operations</span>
+<span class="mx-[2px]">·</span>
+<span>Paris</span>
+<span class="mx-[2px]">·</span>
+<span class="inline-flex items-center gap-x-2">
+    Hybrid Remote
+    
+</span>
+</div>
+</a>
+
+</li>
+<li class="w-full">
+<a class="flex flex-col py-6 text-center sm:px-6 hover:bg-gradient-block-base-bg focus-visible-company focus-visible:rounded" data-turbo="false" href="https://careers.worldia.com/jobs/4641544-agent-de-voyage">
+<span class="text-block-base-link sm:min-w-[25%] sm:truncate company-link-style" title="Agent de voyage">Agent de voyage</span>
+<div class="mt-1 text-md">
+<span>Customer Support &amp; Operations</span>
+<span class="mx-[2px]">·</span>
+<span>Paris</span>
+<span class="mx-[2px]">·</span>
+<span class="inline-flex items-center gap-x-2">
+    Hybrid Remote
+    
+</span>
+</div>
+</a>
+
+</li>
 <li class="w-full">
 <a class="flex flex-col py-6 text-center sm:px-6 hover:bg-gradient-block-base-bg focus-visible-company focus-visible:rounded" data-turbo="false" href="https://careers.worldia.com/jobs/4633028-agent-de-voyage-after-sales">
 <span class="text-block-base-link sm:min-w-[25%] sm:truncate company-link-style" title="Agent de voyage After Sales">Agent de voyage After Sales</span>
@@ -358,54 +406,6 @@
 <span>Sales &amp; Biz Dev</span>
 <span class="mx-[2px]">·</span>
 <span>Paris</span>
-<span class="mx-[2px]">·</span>
-<span class="inline-flex items-center gap-x-2">
-    Hybrid Remote
-    
-</span>
-</div>
-</a>
-
-</li>
-<li class="w-full">
-<a class="flex flex-col py-6 text-center sm:px-6 hover:bg-gradient-block-base-bg focus-visible-company focus-visible:rounded" data-turbo="false" href="https://careers.worldia.com/jobs/4578963-customer-success-agent-m-w-d">
-<span class="text-block-base-link sm:min-w-[25%] sm:truncate company-link-style" title="Customer Success Agent M/W/D">Customer Success Agent M/W/D</span>
-<div class="mt-1 text-md">
-<span>International Markets</span>
-<span class="mx-[2px]">·</span>
-<span>Berlin</span>
-<span class="mx-[2px]">·</span>
-<span class="inline-flex items-center gap-x-2">
-    Hybrid Remote
-    
-</span>
-</div>
-</a>
-
-</li>
-<li class="w-full">
-<a class="flex flex-col py-6 text-center sm:px-6 hover:bg-gradient-block-base-bg focus-visible-company focus-visible:rounded" data-turbo="false" href="https://careers.worldia.com/jobs/4578880-production-manager-m-w-d">
-<span class="text-block-base-link sm:min-w-[25%] sm:truncate company-link-style" title="Production Manager M/W/D">Production Manager M/W/D</span>
-<div class="mt-1 text-md">
-<span>International Markets</span>
-<span class="mx-[2px]">·</span>
-<span>Berlin</span>
-<span class="mx-[2px]">·</span>
-<span class="inline-flex items-center gap-x-2">
-    Hybrid Remote
-    
-</span>
-</div>
-</a>
-
-</li>
-<li class="w-full">
-<a class="flex flex-col py-6 text-center sm:px-6 hover:bg-gradient-block-base-bg focus-visible-company focus-visible:rounded" data-turbo="false" href="https://careers.worldia.com/jobs/4578833-travel-agent-m-w-d">
-<span class="text-block-base-link sm:min-w-[25%] sm:truncate company-link-style" title="Travel Agent M/W/D">Travel Agent M/W/D</span>
-<div class="mt-1 text-md">
-<span>International Markets</span>
-<span class="mx-[2px]">·</span>
-<span>Berlin</span>
 <span class="mx-[2px]">·</span>
 <span class="inline-flex items-center gap-x-2">
     Hybrid Remote
@@ -572,7 +572,7 @@
 <button class="fixed w-16 h-16 top-4 right-4 flex justify-center text-3xl p-4 rounded-full text-gray-800 cursor-pointer sm:absolute hover:opacity-75 focus-visible-company" data-close="true" title="Close modal" type="button">
 
 </button> <div class="max-w-screen-xl max-h-screen mx-auto my-8 overflow-hidden transition duration-200 delay-100 scale-50 rounded shadow-form-strong" data-player-container="">
-<div class="w-full h-auto relative rounded cursor-pointer aspect-video" data-action="stop-all-video-players@window-&gt;common--video-player#stopVideo" data-common--video-player-aspect-ratio-value="16:9" data-common--video-player-hidden-class="!hidden" data-common--video-player-initialize-value="true" data-common--video-player-is-external-value="true" data-common--video-player-thumbnail-image-value="false" data-controller="common--video-player">
+<div class="w-full h-auto relative rounded cursor-pointer aspect-video" data-action="stop-all-video-players@window-&gt;common--video-player#stopVideo" data-common--video-player-aspect-ratio-value="16:9" data-common--video-player-autoplay-value="false" data-common--video-player-hidden-class="!hidden" data-common--video-player-initialize-value="true" data-common--video-player-is-external-value="true" data-common--video-player-no-controls-value="false" data-common--video-player-thumbnail-image-value="false" data-common--video-player-use-intersection-value="false" data-controller="common--video-player">
 <div class="group w-full absolute inset-0 rounded no-company-style z-video-poster appearance-none focus-visible-company lg:bg-opacity-100 pointer-events-none invisible" data-common--video-player-target="thumbnail">
 
 <span class="absolute flex items-center justify-center w-16 h-16 text-xl text-black transition-opacity duration-150 transform -translate-x-8 -translate-y-8 bg-white rounded-full shadow-form group-hover:opacity-100 opacity-90 left-half top-half z-video-poster-button">

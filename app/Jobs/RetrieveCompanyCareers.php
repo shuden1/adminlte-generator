@@ -257,6 +257,9 @@ class RetrieveCompanyCareers implements ShouldQueue
                 $replacement = substr($this->company->careerPageUrl, 0, strrpos($this->company->careerPageUrl, '/')+1);
                 $jobData['URL'] = preg_replace($pattern, $replacement, $jobData['URL']);
 
+                $pattern = '/[0-9]*-[0-9]*-[0-9]*\.html/';
+                $jobData['URL'] = preg_replace($pattern, "", $jobData['URL']);
+
 
                 $existingJob = Job::where('url', $jobData['URL'])
                     ->where('title', $jobData['Job-title'])
@@ -391,6 +394,10 @@ class RetrieveCompanyCareers implements ShouldQueue
                     $pattern = '/.*Mind\/CRA\/AI_Experiments\/Job_Crawlers\/Peter\/adminlte-generator\/ParkerScripts\/Companies\/[^\/]*\/HTMLs\/[0-9]*(\/[0-9]*-[0-9]*-[0-9]*\.html)?\//';
                     $replacement = substr($careerPageUrl, 0, strrpos($careerPageUrl, '/')+1);
                     $jobData['URL'] = preg_replace($pattern, $replacement, $jobData['URL']);
+
+                    $pattern = '/[0-9]*-[0-9]*-[0-9]*\.html/';
+                    $jobData['URL'] = preg_replace($pattern, "", $jobData['URL']);
+
 
                     $existingJob = Job::withTrashed()
                         ->where('url', $jobData['URL'])

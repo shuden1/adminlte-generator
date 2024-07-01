@@ -9,42 +9,39 @@ from selenium.common.exceptions import NoSuchElementException
 def scrape_jobs(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
-    
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-    
+
     driver = webdriver.Chrome(service=service, options=options)
-    
+    driver.get(f"file:///{file_path}")
+
+    job_listings = []
+
     try:
-        driver.get(f"file:///{file_path}")
-        
-        job_postings = driver.find_elements(By.CSS_SELECTOR, 'div.job-list-item')
-        jobs = []
-        
-        for job in job_postings:
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "li")
+        for job_element in job_elements:
             try:
-                title_element = job.find_element(By.CSS_SELECTOR, 'h3.job-title')
+                title_element = job_element.find_element(By.CSS_SELECTOR, "div.job-name.cpy-28.cpy-b")
                 title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
-                title = None
-            
+                title = "No Title Found"
+
             try:
-                url_element = job.find_element(By.CSS_SELECTOR, 'a.job-url')
+                url_element = job_element.find_element(By.CSS_SELECTOR, "a[href]")
                 url = url_element.get_attribute('href')
             except NoSuchElementException:
                 url = "#"
-            
-            if title:
-                jobs.append({"Job-title": title, "URL": url})
-        
-        print(json.dumps(jobs, indent=4))
-    
-    finally:
-        driver.quit()
+
+            job_listings.append({"Job-title": title, "URL": url})
+    except NoSuchElementException:
+        pass
+
+    driver.quit()
+    return json.dumps(job_listings, indent=4)
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
-    scrape_jobs(file_path)
+    print(scrape_jobs(file_path))

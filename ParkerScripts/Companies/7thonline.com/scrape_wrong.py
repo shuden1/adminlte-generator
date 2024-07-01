@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
 def scrape_jobs(file_path):
-    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
+    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
     
     options = webdriver.ChromeOptions()
@@ -21,29 +21,29 @@ def scrape_jobs(file_path):
     try:
         driver.get(f"file:///{file_path}")
         
-        job_listings = []
+        job_postings = []
         
         try:
-            job_openings = driver.find_elements(By.CSS_SELECTOR, 'div.job-opening')
-            for job in job_openings:
+            job_elements = driver.find_elements(By.CSS_SELECTOR, "YOUR_JOB_OPENING_SELECTOR")
+            for job_element in job_elements:
                 try:
-                    title_element = job.find_element(By.CSS_SELECTOR, 'h2.job-title')
-                    title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
+                    job_title_element = job_element.find_element(By.CSS_SELECTOR, "YOUR_JOB_TITLE_SELECTOR")
+                    job_title = job_title_element.text.strip() or job_title_element.get_attribute('innerHTML').strip()
                 except NoSuchElementException:
-                    title = "No Title Found"
+                    job_title = "No Title Found"
                 
                 try:
-                    url_element = job.find_element(By.CSS_SELECTOR, 'a.job-url')
-                    url = url_element.get_attribute('href') if url_element.get_attribute('href') else "#"
+                    job_url_element = job_element.find_element(By.CSS_SELECTOR, "YOUR_JOB_URL_SELECTOR")
+                    job_url = job_url_element.get_attribute('href').strip() or "#"
                 except NoSuchElementException:
-                    url = "#"
+                    job_url = "#"
                 
-                job_listings.append({"Job-title": title, "URL": url})
+                job_postings.append({"Job-title": job_title, "URL": job_url})
         
         except NoSuchElementException:
             pass
         
-        print(json.dumps(job_listings, indent=4))
+        print(json.dumps(job_postings, indent=4))
     
     finally:
         driver.quit()

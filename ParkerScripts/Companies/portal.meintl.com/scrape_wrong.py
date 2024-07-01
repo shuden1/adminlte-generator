@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
-def scrape_jobs(file_path):
+def scrape_job_postings(file_path):
     profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
     service = Service(executable_path=r"C:\Python3\chromedriver.exe")
     options = webdriver.ChromeOptions()
@@ -18,30 +18,30 @@ def scrape_jobs(file_path):
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(f"file:///{file_path}")
 
-    job_listings = []
+    job_postings = []
 
     try:
-        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.rM7ckN.YJEKQk.comp-lc6lp0gh2-container.comp-lc6lp0gh2.wixui-repeater__item[role='listitem']")
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.rM7ckN.YJEKQk.comp-lc6lp0gh2-container.comp-lc6lp0gh2.wixui-repeater__item")
         for job_element in job_elements:
             try:
-                title_element = job_element.find_element(By.CSS_SELECTOR, "div.HcOXKn.SxM0TO.QxJLC3.comp-lc6lp0gw.wixui-rich-text[data-testid='richTextElement'] p.font_8.wixui-rich-text__text span.wixui-rich-text__text")
+                title_element = job_element.find_element(By.CSS_SELECTOR, "p.font_8.wixui-rich-text__text")
                 title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
                 title = "No Title"
 
             try:
-                url_element = job_element.find_element(By.CSS_SELECTOR, "a.h1DYhE.has-custom-focus[data-testid='linkElement']")
-                url = url_element.get_attribute('href').strip() if url_element.get_attribute('href').strip() else "#"
+                url_element = job_element.find_element(By.CSS_SELECTOR, "a.h1DYhE.has-custom-focus")
+                url = url_element.get_attribute('href') if url_element.get_attribute('href') else "#"
             except NoSuchElementException:
                 url = "#"
 
-            job_listings.append({"Job-title": title, "URL": url})
+            job_postings.append({"Job-title": title, "URL": url})
     except NoSuchElementException:
         pass
 
     driver.quit()
-    return json.dumps(job_listings, indent=4)
+    return json.dumps(job_postings, indent=4)
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
-    print(scrape_jobs(file_path))
+    print(scrape_job_postings(file_path))

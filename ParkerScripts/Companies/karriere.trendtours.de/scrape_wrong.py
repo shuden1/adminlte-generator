@@ -21,17 +21,17 @@ def scrape_jobs(file_path):
     job_listings = []
 
     try:
-        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.sc-1aabq8s-0")
+        job_elements = driver.find_elements(By.CSS_SELECTOR, 'div[data-cy="job-item"]')
         for job_element in job_elements:
             try:
-                title_element = job_element.find_element(By.CSS_SELECTOR, "span.sc-83wl6d-1")
-                title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
+                title_element = job_element.find_element(By.CSS_SELECTOR, 'h3[data-cy="job-title"]')
+                title = title_element.text.strip() or title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
                 title = "No Title"
 
             try:
-                url_element = job_element.find_element(By.CSS_SELECTOR, "a.sc-pxbyo9-0")
-                url = url_element.get_attribute('href').strip() if url_element.get_attribute('href').strip() else "#"
+                url_element = job_element.find_element(By.CSS_SELECTOR, 'a[data-cy="job-link"]')
+                url = url_element.get_attribute('href') or "#"
             except NoSuchElementException:
                 url = "#"
 
@@ -40,7 +40,7 @@ def scrape_jobs(file_path):
         pass
 
     driver.quit()
-    return json.dumps(job_listings, indent=4)
+    return json.dumps(job_listings, ensure_ascii=False)
 
 if __name__ == "__main__":
     file_path = sys.argv[1]

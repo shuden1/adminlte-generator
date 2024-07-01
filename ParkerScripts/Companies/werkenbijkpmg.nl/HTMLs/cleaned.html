@@ -1,0 +1,1031 @@
+<html class="js" dir="ltr" lang="en" prefix="og: https://ogp.me/ns#">
+<body data-aos-delay="0" data-aos-duration="300" data-aos-easing="ease-in-out-cubic"><div class="cookie-overlay fixed cover"><div class="cookie-options"><header><h2><strong>KPMG</strong> | Privacy settings</h2><div class="close"></div></header><nav><ul><li class="active">Tracking cookies</li><li class="">Analytical cookies</li><li class="">Functional cookies</li></ul></nav><div class="descriptions"><div class="description active"><div class="text"><h3>Tracking cookies</h3><p>Tracking cookies, also referred to as marketing cookies, are cookies used within a domain or across different domains to record visitors' browsing behaviour. This allows for targeted content such as videos, vacancies and events, among other things. The use of tracking cookies requires the user's informed consent. If you wish to accept these cookies, you will be prompted to agree by clicking on the button.</p></div></div><div class="description"><div class="text"><h3>Analytical cookies</h3><p>These cookies enable us to recognise visitors, track their numbers and see how they navigate our website. This helps us improve user navigation and ensure that users have less trouble finding what they are looking for. We use the information obtained through these cookies for the sole purpose of improving our website's performance. We use Google Analytics for these cookies; information collected by Google Analytics is anonymised as much as possible. For example, Google will never process your full IP address and always blocks the last part of your IP address. For more information, please see Google's Privacy Policy.</p></div></div><div class="description"><div class="text"><h3>Functional cookies</h3><p>Functional cookies or technical cookies are cookies needed for a website to work. These cookies help us to enable specific website functionality to improve your experience, e.g. remembering your choices and preferences (such as your language preference) or storing more complex decisions; for example, they also allow you to navigate our website and use its various features.</p></div></div></div></div></div><div class="cookie-message fixed left all-100"><p>We use cookies to improve the operation of this site and to collect information when you use our website. Additional cookies and other (tracking) technologies allow us to provide you with more convenience, such as videos, social media links and personalized content (e.g. job postings and events). To do this, we first need your permission. For more information <a href="/privacy-statement" target="_blank">read on</a>.</p><div class="actions"><a class="settings">Cookie settings</a><a class="ara-button deny">Deny cookies</a><a class="ara-button">Accept all</a></div></div>
+<noscript></noscript>
+<a class="visually-hidden focusable" href="#main-content">
+      Skip to main content
+    </a>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<div :class="{ 'locked' : locked }" class="page" x-data="{ locked: false }">
+<main class="page__content" x-data="header">
+<section :class="{ 'header-section--video' : keyvisualVideo }" @click.outside="menuOpen = false" @scroll.window="window.pageYOffset &gt; 500 ? scrolledDown() : isVideoKeyvisual()" class="header-section">
+<header class="header inverse--menu scrolled">
+<div class="header__content">
+<div class="container container--max">
+<div class="grid">
+<div class="grid__column grid__column--3 grid__column--2--lg">
+<div class="height-full flex flex--center flex--justify-start">
+<div class="header__logo">
+<a data-once="external-url" href="https://www.werkenbijkpmg.nl/en">
+
+</a>
+</div>
+</div>
+</div>
+<div class="grid__column grid__column--9 grid__column--10--lg">
+<nav :class="{ 'inverted' : keyvisualVideo &amp;&amp; !menuOpen }" class="height-full flex flex--center flex--justify-end dashboard" role="navigation">
+<a class="button button--outlined" data-gtm="kpmg&amp;meClicked" data-once="external-url" href="https://www.werkenbijkpmg.nl/en/dashboard">
+  KPMG &amp; Me
+</a>
+<button @click="open = ! open" class="language-switch" x-data="{ open: false }">
+
+<ul class="list list--unstyled flex">
+<li :class="{ 'inverted' : keyvisualVideo &amp;&amp; !menuOpen }" :style="open === true ? 'max-height: ' + $refs.dropdown.scrollHeight + 'px' : ''" class="list__item" data-gtm="languageSwitch" href-lang="nl" style="" x-ref="dropdown">
+<span class="title">
+<a class="language-link" href="/vacatures" href-lang="nl">
+<span>nl</span>
+</a>
+</span>
+</li>
+<li :class="{ 'inverted' : keyvisualVideo &amp;&amp; !menuOpen }" class="list__item is-active" data-gtm="languageSwitch" href-lang="en">
+<span class="title">
+<a class="language-link is-active" href="/en/vacancies" href-lang="en">
+<span>en</span>
+</a>
+</span>
+</li>
+</ul>
+</button>
+<div id="menu-toggle">
+<div :class="{ 'inverted' : keyvisualVideo &amp;&amp; !menuOpen }" class="hamburger">
+
+
+
+</div>
+<div class="close">
+
+
+</div>
+</div>
+<div id="main-menu">
+<div class="menu-container height-full">
+<ul class="menu-content flex list--unstyled">
+<li @click="menuOpen = true" class="menu__first" data-gtm="menuItemClicked" nav-item="menuItemClicked">
+<ul class="accordion list list--unstyled">
+<li class="list__item">
+<span :class="{ 'inverted' : keyvisualVideo &amp;&amp; !menuOpen }" class="title" data-text="Vacancies">
+                      Vacancies
+                    </span>
+</li>
+</ul>
+<div class="accordion__panel" style="display: none;">
+<div class="container">
+<div class="grid">
+<div class="grid__column grid__column--12 grid__column--4--lg">
+<ul class="list list--unstyled">
+<li class="list__item">
+<a href="/en/vacancies">
+                                      All vacancies
+                                  </a>
+</li>
+<li class="list__item">
+<a href="/en/application-procedure">
+                                      Sollicitatieprocedure
+                                  </a>
+</li>
+<li class="list__item">
+<a href="/en/internships-theses">
+                                      Stage en scripties
+                                  </a>
+</li>
+<li class="list__item">
+<a href="/en/vacancies/interim-professionals-vacancies">
+                                      Interim
+                                  </a>
+</li>
+</ul>
+</div>
+<div class="grid__column grid__column--12 grid__column--4--lg">
+<a class="menu__block flex flex--stack flex--justify-end padding-xxs" data-once="external-url" href="https://www.werkenbijkpmg.nl/en/jobs/kpmg-interim">
+
+<div class="menu__text">
+<h5>KPMG as interim professional? </h5>
+<p>Curious about the possibilities for you as an interim professional? Please contact us</p>
+</div>
+</a>
+</div>
+<div class="grid__column grid__column--12 grid__column--4--lg">
+<a class="menu__block flex flex--stack flex--justify-end padding-xxs" href="/en/audit-assurance-academy-accountant-training">
+
+<div class="menu__text">
+<h5>Audit &amp; Assurance Academy</h5>
+<p>Auditervaring opdoen, vrienden maken en je RA-diploma halen. Je doet het in de Audit &amp; Assurance Academy.</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li @click="menuOpen = true" class="menu__first" data-gtm="menuItemClicked" nav-item="menuItemClicked">
+<ul class="accordion list list--unstyled">
+<li class="list__item">
+<span :class="{ 'inverted' : keyvisualVideo &amp;&amp; !menuOpen }" class="title" data-text="About KPMG">
+                      About KPMG
+                    </span>
+</li>
+</ul>
+<div class="accordion__panel" style="display: none;">
+<div class="container">
+<div class="grid">
+<div class="grid__column grid__column--12 grid__column--4--lg">
+<ul class="list list--unstyled">
+<li class="list__item">
+<a data-once="external-url" href="https://www.werkenbijkpmg.nl/over-kpmg">
+                                      Over KPMG
+                                  </a>
+</li>
+<li class="list__item">
+<a href="/en/about-kpmg/what-kpmg-offers">
+                                      What does KPMG offer?
+                                  </a>
+</li>
+<li class="list__item">
+<a data-once="external-url" href="https://www.werkenbijkpmg.nl/over-kpmg/inclusiviteit-diversiteit">
+                                      Diversiteit &amp; Inclusie
+                                  </a>
+</li>
+<li class="list__item">
+<a href="/en/about-kpmg/corporate-responsibility">
+                                      Corporate Responsibility
+                                  </a>
+</li>
+</ul>
+</div>
+<div class="grid__column grid__column--12 grid__column--4--lg">
+<a class="menu__block flex flex--stack flex--justify-end padding-xxs" href="/en/about-kpmg/life-at-kpmg">
+
+<div class="menu__text">
+<h5>Discover life at KPMG</h5>
+<p>But what does it truly mean to work at KPMG? Get inspired by stories, videos, and blogs from colleagues</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li @click="menuOpen = true" class="menu__first" data-gtm="menuItemClicked" nav-item="menuItemClicked">
+<ul class="accordion list list--unstyled">
+<li class="list__item">
+<span :class="{ 'inverted' : keyvisualVideo &amp;&amp; !menuOpen }" class="title" data-text="Work areas">
+                      Work areas
+                    </span>
+</li>
+</ul>
+<div class="accordion__panel" style="display: none;">
+<div class="container">
+<div class="grid">
+<div class="grid__column grid__column--12 grid__column--4--lg">
+<ul class="list list--unstyled">
+<li class="list__item">
+<a data-gtm="audit_assurance" href="/en/work-areas/audit-assurance-vacancies">
+                                      Audit &amp; Assurance
+                                  </a>
+</li>
+<li class="list__item">
+<a data-gtm="technology_data_it" data-once="external-url" href="https://www.werkenbijkpmg.nl/vakgebieden/technology-data-it-vacatures">
+                                      Technology, Data &amp; IT
+                                  </a>
+</li>
+<li class="list__item">
+<a data-gtm="finance_strategy" href="/en/work-areas/finance-strategy-vacancies">
+                                      Finance &amp; Strategy
+                                  </a>
+</li>
+<li class="list__item">
+<a data-gtm="business_services" href="/en/work-areas/business-services-vacancies">
+                                      Business Services
+                                  </a>
+</li>
+</ul>
+</div>
+<div class="grid__column grid__column--12 grid__column--4--lg">
+<a class="menu__block flex flex--stack flex--justify-end padding-xxs" href="/en/work-areas/sustainability-vacancies">
+
+<div class="menu__text">
+<h5>Sustainability</h5>
+<p>Are you curious about the possibilities in sustainability? Read more about our teams</p>
+</div>
+</a>
+</div>
+<div class="grid__column grid__column--12 grid__column--4--lg">
+<a class="menu__block flex flex--stack flex--justify-end padding-xxs" href="/en/vakgebieden/accountancy-vacatures">
+
+<div class="menu__text">
+<h5>Accountancy</h5>
+<p>Are you interested in a job in accounting? Find out more about your role as an accountant</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li @click="menuOpen = true" class="menu__first" data-gtm="menuItemClicked" nav-item="menuItemClicked">
+<ul class="accordion list list--unstyled">
+<li class="list__item">
+<span :class="{ 'inverted' : keyvisualVideo &amp;&amp; !menuOpen }" class="title" data-text="Contact">
+                      Contact
+                    </span>
+</li>
+</ul>
+<div class="accordion__panel" style="display: none;">
+<div class="container">
+<div class="grid">
+<div class="grid__column grid__column--12 grid__column--4--lg">
+<ul class="list list--unstyled">
+<li class="list__item">
+<a href="/en/contact/locaties">
+                                      Locations
+                                  </a>
+</li>
+<li class="list__item">
+<a href="/en/contact/recruiters">
+                                      Our recruiters
+                                  </a>
+</li>
+<li class="list__item">
+<a href="/en/contact/events">
+                                      Events
+                                  </a>
+</li>
+<li class="list__item">
+<a data-once="external-url" href="https://werkenbijkpmg.nl/en/frequently-asked-questions" target="_blank">
+                                      Frequently asked questions
+                                  </a>
+</li>
+<li class="list__item">
+<a href="/en/lets-meet/stories-colleagues">
+                                      Stories of colleagues
+                                  </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+<ul class="list list__social list--unstyled flex flex--justify-even">
+<li class="list__item">
+<a class="social flex flex--center flex--justify-center" data-once="external-url" href="https://www.linkedin.com/company/kpmg-nederland/" target="_blank">
+
+</a>
+</li>
+<li class="list__item">
+<a class="social flex flex--center flex--justify-center" data-once="external-url" href="https://www.instagram.com/kpmgnl/?hl=en" target="_blank">
+
+</a>
+</li>
+<li class="list__item">
+<a class="social flex flex--center flex--justify-center" data-once="external-url" href="https://x.com/kpmg_nl" target="_blank">
+
+</a>
+</li>
+<li class="list__item">
+<a class="social flex flex--center flex--justify-center" data-once="external-url" href="https://www.facebook.com/KPMGNetherlands" target="_blank">
+
+</a>
+</li>
+<li class="list__item">
+<a class="social flex flex--center flex--justify-center" data-once="external-url" href="https://www.youtube.com/@KPMGNederland" target="_blank">
+
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<div class="bar-container">
+<div class="progress-bar bar flex" style="width: 100%;">
+
+</div>
+</div>
+
+
+</div>
+</header>
+</section>
+<section class="keyvisual-section">
+<div class="keyvisual--small">
+<div class="embed-responsive embed-responsive--4/1">
+<div class="image--fullwidth aos-init aos-animate" data-aos="fade-in">
+<div class="keyvisual--small__overlay flex">
+</div>
+
+</div>
+</div>
+</div>
+</section>
+<div id="lunritemsjs-container" x-data="lunrItemsjsView">
+<section class="filter-menu-section vacancies">
+<div class="container">
+<div style="display: none;" x-show="lunrItemsjs.isLoading">
+<div id="loader">
+<div class="loader flex flex--center flex--justify-center">
+
+
+
+</div>
+</div>
+</div>
+<div style="" x-data="{ filters: false }" x-show="!lunrItemsjs.isLoading">
+<div class="grid">
+<div class="grid__column grid__column--12">
+<div class="filter-menu__nav">
+<h1>KPMG vacancies</h1>
+<div class="flex flex--justify-even">
+<div class="control control--block control--block__search control--block__search--mobile flex flex--center">
+
+
+<button class="searching button button--xs">
+
+</button>
+</div>
+<a @click="filters = ! filters, locked = ! locked" class="button button--outlined" href="#">
+<div class="flex flex--center">
+
+                    Filters
+                  </div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="grid">
+<div class="grid__column grid__column--4">
+<div :class="{ 'slide-in' : filters }" class="filter-menu-container" id="facets-list" x-id="['search-filter']">
+<div class="filter-menu__top-content">
+<h1>KPMG vacancies</h1>
+<div class="control control--block control--block__search control--block__search--mobile flex flex--center">
+
+
+<button class="searching button button--xs">
+
+</button>
+</div>
+<h2 class="title title--xxl type-bold">Filters</h2>
+</div>
+<button @click="filters = ! filters, locked = ! locked" class="filter-close-button" id="filter-close">
+<div class="flex flex--center flex--justify-center">
+
+
+</div>
+</button>
+<div class="filter-menu__mid-content">
+<h3>I am a</h3>
+<div alter-data-gtm="vacancyFilterClicked" class="control control--checkbox">
+<template :key="bucket.key" x-for="bucket in lunrItemsjs.activeFilters.term_experience?.buckets">
+<label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox">
+
+
+
+</label>
+</template><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-professional_3">
+
+
+<span x-html="`${bucket.label}  (${bucket.doc_count})`">Professional (3+)  (47)</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-young_professional_0_3">
+
+
+<span x-html="`${bucket.label}  (${bucket.doc_count})`">Young Professional (0-3)  (1)</span>
+</label>
+</div>
+</div>
+<div class="filter-menu__mid-content" x-data="{
+                   interestFilters : {},
+                   setFilters() {this.interestFilters = lunrItemsjs.activeFilters.interest_groups}
+                   }" x-init="$watch('lunrItemsjs.isLoading',value =&gt; setFilters())">
+<h3>I am interested in</h3>
+<template :key="interestgroup.id" x-for="interestgroup in interestFilters">
+<div x-data="{ open: interestgroup.open, selectAll: false}">
+
+<div class="dropdown__panel" x-show="open === true">
+<div class="accordion__panel-container">
+<a @click.debounce.prevent="selectAll = ! selectAll, lunrItemsjs.gotoPage(1), lunrItemsjs.toggleGroup(interestgroup.id,selectAll)" class="accordion_select accordion_select_all">
+<template x-if="!selectAll">
+<span>Select all</span>
+</template>
+<template x-if="selectAll">
+<span>Deselect all</span>
+</template>
+</a>
+</div>
+<div alter-data-gtm="vacancyFilterClicked" class="accordion__panel-container">
+<template :key="bucket.key" x-for="bucket in lunrItemsjs.filterBuckets(interestgroup.id,lunrItemsjs.activeFilters.term_interest?.buckets)">
+<label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox">
+
+
+
+</label>
+</template>
+</div>
+</div>
+</div>
+</template><div x-data="{ open: interestgroup.open, selectAll: false}">
+<button :class="{ 'active' : open }" @click="open = ! open" class="flex flex--center dropdown" x-html="interestgroup.label">Audit &amp; Assurance</button>
+<div class="dropdown__panel" style="display: none;" x-show="open === true">
+<div class="accordion__panel-container">
+<a @click.debounce.prevent="selectAll = ! selectAll, lunrItemsjs.gotoPage(1), lunrItemsjs.toggleGroup(interestgroup.id,selectAll)" class="accordion_select accordion_select_all">
+<template x-if="!selectAll">
+<span>Select all</span>
+</template><span>Select all</span>
+<template x-if="selectAll">
+<span>Deselect all</span>
+</template>
+</a>
+</div>
+<div alter-data-gtm="vacancyFilterClicked" class="accordion__panel-container">
+<template :key="bucket.key" x-for="bucket in lunrItemsjs.filterBuckets(interestgroup.id,lunrItemsjs.activeFilters.term_interest?.buckets)">
+<label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox">
+
+
+
+</label>
+</template><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-audit">
+
+
+<span x-html="`${bucket.label}`">Audit</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-it_assurance">
+
+
+<span x-html="`${bucket.label}`">IT assurance</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-sustainability">
+
+
+<span x-html="`${bucket.label}`">Sustainability</span>
+</label>
+</div>
+</div>
+</div><div x-data="{ open: interestgroup.open, selectAll: false}">
+<button :class="{ 'active' : open }" @click="open = ! open" class="flex flex--center dropdown" x-html="interestgroup.label">Business Services</button>
+<div class="dropdown__panel" style="display: none;" x-show="open === true">
+<div class="accordion__panel-container">
+<a @click.debounce.prevent="selectAll = ! selectAll, lunrItemsjs.gotoPage(1), lunrItemsjs.toggleGroup(interestgroup.id,selectAll)" class="accordion_select accordion_select_all">
+<template x-if="!selectAll">
+<span>Select all</span>
+</template><span>Select all</span>
+<template x-if="selectAll">
+<span>Deselect all</span>
+</template>
+</a>
+</div>
+<div alter-data-gtm="vacancyFilterClicked" class="accordion__panel-container">
+<template :key="bucket.key" x-for="bucket in lunrItemsjs.filterBuckets(interestgroup.id,lunrItemsjs.activeFilters.term_interest?.buckets)">
+<label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox">
+
+
+
+</label>
+</template><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-it_services">
+
+
+<span x-html="`${bucket.label}`">IT Services</span>
+</label>
+</div>
+</div>
+</div><div x-data="{ open: interestgroup.open, selectAll: false}">
+<button :class="{ 'active' : open }" @click="open = ! open" class="flex flex--center dropdown" x-html="interestgroup.label">Finance &amp; Strategy</button>
+<div class="dropdown__panel" style="display: none;" x-show="open === true">
+<div class="accordion__panel-container">
+<a @click.debounce.prevent="selectAll = ! selectAll, lunrItemsjs.gotoPage(1), lunrItemsjs.toggleGroup(interestgroup.id,selectAll)" class="accordion_select accordion_select_all">
+<template x-if="!selectAll">
+<span>Select all</span>
+</template><span>Select all</span>
+<template x-if="selectAll">
+<span>Deselect all</span>
+</template>
+</a>
+</div>
+<div alter-data-gtm="vacancyFilterClicked" class="accordion__panel-container">
+<template :key="bucket.key" x-for="bucket in lunrItemsjs.filterBuckets(interestgroup.id,lunrItemsjs.activeFilters.term_interest?.buckets)">
+<label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox">
+
+
+
+</label>
+</template><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-financial_management">
+
+
+<span x-html="`${bucket.label}`">Financial Management</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-risk_regulatory">
+
+
+<span x-html="`${bucket.label}`">Risk &amp; Regulatory</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-strategy_consulting">
+
+
+<span x-html="`${bucket.label}`">Strategy Consulting</span>
+</label>
+</div>
+</div>
+</div><div x-data="{ open: interestgroup.open, selectAll: false}">
+<button :class="{ 'active' : open }" @click="open = ! open" class="flex flex--center dropdown" x-html="interestgroup.label">Technology, Data &amp; IT</button>
+<div class="dropdown__panel" style="display: none;" x-show="open === true">
+<div class="accordion__panel-container">
+<a @click.debounce.prevent="selectAll = ! selectAll, lunrItemsjs.gotoPage(1), lunrItemsjs.toggleGroup(interestgroup.id,selectAll)" class="accordion_select accordion_select_all">
+<template x-if="!selectAll">
+<span>Select all</span>
+</template><span>Select all</span>
+<template x-if="selectAll">
+<span>Deselect all</span>
+</template>
+</a>
+</div>
+<div alter-data-gtm="vacancyFilterClicked" class="accordion__panel-container">
+<template :key="bucket.key" x-for="bucket in lunrItemsjs.filterBuckets(interestgroup.id,lunrItemsjs.activeFilters.term_interest?.buckets)">
+<label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox">
+
+
+
+</label>
+</template><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-cyber_security">
+
+
+<span x-html="`${bucket.label}`">Cyber Security</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-data_analytics">
+
+
+<span x-html="`${bucket.label}`">Data &amp; Analytics</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-digital_transformation">
+
+
+<span x-html="`${bucket.label}`">Digital Transformation</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-innovation">
+
+
+<span x-html="`${bucket.label}`">Innovation</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-it_architecture_cloud_platforms">
+
+
+<span x-html="`${bucket.label}`">IT Architecture &amp; Cloud platforms</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="filter-menu__mid-content" x-data="{ open: false, selectAll: false,
+                setOpen(){
+                  if (lunrItemsjs.searchQuery.filters['term_location'].length &gt; 0) {
+                    this.open = true
+                  }
+                }
+               }" x-init="$watch('lunrItemsjs.isLoading', value =&gt; setOpen())">
+<h3>Location of KPMG office</h3>
+<button :class="{ 'active' : open }" @click="open = ! open" class="flex flex--center dropdown">Location</button>
+<div class="dropdown__panel" style="display: none;" x-show="open === true">
+<div class="accordion__panel-container">
+<a @click.debounce.prevent="selectAll = ! selectAll, lunrItemsjs.gotoPage(1), lunrItemsjs.toggleLocations(selectAll)" class="accordion_select accordion_select_all">
+<template x-if="!selectAll">
+<span>Select all</span>
+</template><span>Select all</span>
+<template x-if="selectAll">
+<span>Deselect all</span>
+</template>
+</a>
+</div>
+<div alter-data-gtm="vacancyFilterClicked" class="accordion__panel-container">
+<template :key="bucket.key" x-for="bucket in lunrItemsjs.activeFilters.term_location?.buckets">
+<label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox">
+
+
+
+</label>
+</template><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-alkmaar">
+
+
+<span x-html="`${bucket.label}`">Alkmaar</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-amstelveen">
+
+
+<span x-html="`${bucket.label}`">Amstelveen</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-arnhem">
+
+
+<span x-html="`${bucket.label}`">Arnhem</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-breda">
+
+
+<span x-html="`${bucket.label}`">Breda</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-den_haag">
+
+
+<span x-html="`${bucket.label}`">Den Haag</span>
+</label>
+</div>
+</div>
+</div>
+<div class="filter-menu__mid-content">
+<h3>Markets</h3>
+<div alter-data-gtm="vacancyFilterClicked" class="control control--checkbox">
+<template :key="bucket.key" x-for="bucket in lunrItemsjs.activeFilters.term_markets?.buckets">
+<label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox">
+
+
+
+</label>
+</template><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-corporate_clients">
+
+
+<span x-html="`${bucket.label}  (${bucket.doc_count})`">Corporate Clients  (18)</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-financial_services">
+
+
+<span x-html="`${bucket.label}  (${bucket.doc_count})`">Financial Services  (18)</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-healthcare">
+
+
+<span x-html="`${bucket.label}  (${bucket.doc_count})`">Healthcare  (11)</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-mid_markets">
+
+
+<span x-html="`${bucket.label}  (${bucket.doc_count})`">Mid-markets  (8)</span>
+</label><label :for="$id('search-filter',bucket.key)" class="control__label control__label--checkbox" for="search-filter-1-public_sector">
+
+
+<span x-html="`${bucket.label}  (${bucket.doc_count})`">Public Sector  (13)</span>
+</label>
+</div>
+</div>
+<div class="facet-actions">
+<button @click="filters = ! filters, locked = ! locked" class="button button--block button--primary filter-close-button">Show vacancies</button>
+</div>
+</div>
+</div>
+<div class="grid__column grid__column--12 grid__column--8--lg" x-data="{ highlightedInterest: [], highlightKey: [] }">
+<h2 class="title title--xxl type-bold jobs-found"><span x-html="lunrItemsjs.totalResults">48</span> vacancies found</h2>
+<ul class="vacancy-list" id="vacancy-overview">
+<template x-for="result,index in lunrItemsjs.searchResults">
+<span>
+<li class="vacancy-list__item cta paragraph-section" x-show="(index % 5 === 4)">
+<div class="cta-block height-full">
+<div class="cta-block__inner">
+<div class="notification">
+<div class="notification__image">
+<div class="notification__image--inner">
+<div class="embed-responsive embed-responsive--1/1">
+<div class="recruiter__image image--fullwidth">
+
+</div>
+</div>
+</div>
+<h3>Stay informed about vacancies?</h3>
+</div>
+<div class="notification__panel">
+<h3>Want to stay informed about job openings?</h3>
+<div class="description">
+<p>
+                                Create a KPMG &amp; Me profile and receive personalized job offers.
+                              </p>
+<p>
+<a class="button button--filled button--secondary button--chevron" href="/dashboard/register">Create a KPMG &amp; Me profile</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+
+</span>
+</template><span>
+<li class="vacancy-list__item cta paragraph-section" style="display: none;" x-show="(index % 5 === 4)">
+<div class="cta-block height-full">
+<div class="cta-block__inner">
+<div class="notification">
+<div class="notification__image">
+<div class="notification__image--inner">
+<div class="embed-responsive embed-responsive--1/1">
+<div class="recruiter__image image--fullwidth">
+
+</div>
+</div>
+</div>
+<h3>Stay informed about vacancies?</h3>
+</div>
+<div class="notification__panel">
+<h3>Want to stay informed about job openings?</h3>
+<div class="description">
+<p>
+                                Create a KPMG &amp; Me profile and receive personalized job offers.
+                              </p>
+<p>
+<a class="button button--filled button--secondary button--chevron" href="/dashboard/register">Create a KPMG &amp; Me profile</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="vacancy-list__item" x-html="result.listItem">
+<a :class="{ 'highlighted' : highlightKey.includes(16520) }" alter-data-gtm="vacancyClicked" class="panel-assurance" href="/en/vacancy/assistant-manager-audit-arnhem" x-init="0 === 1 &amp;&amp; !highlightedInterest.includes('assurance') ? (highlightedInterest.push('assurance'), highlightKey.push(16520)) : ''">
+<div>
+<h3>Assistant manager audit Arnhem</h3>
+<p>You know how to present findings to the client, and how to maintain and gain business relationships. Does it also fulfill you as a development manager to see your team grow both in their careers as well as on a personal level? In that case, our Arnhem office is looking for you! </p>
+<div class="flex flex--center flex--wrap">
+<div class="vacancy__label vacancy__label--primary">
+  Audit
+</div>
+<div class="vacancy__label vacancy__label--primary">
+  Audit &amp; Assurance
+</div>
+<div class="vacancy__label vacancy__label--inverse">
+  Healthcare
+</div>
+<div class="vacancy__label vacancy__label--inverse">
+  Corporate Clients
+</div>
+<div class="vacancy__label vacancy__label--inverse">
+  Public Sector
+</div>
+<div class="vacancy__label vacancy__label--inverse">
+  Financial Services
+</div>
+<div class="vacancy__label vacancy__label--location flex flex--center">
+
+    Arnhem
+  </div>
+</div>
+</div>
+
+</a>
+</li>
+</span><span>
+<li class="vacancy-list__item cta paragraph-section" style="display: none;" x-show="(index % 5 === 4)">
+<div class="cta-block height-full">
+<div class="cta-block__inner">
+<div class="notification">
+<div class="notification__image">
+<div class="notification__image--inner">
+<div class="embed-responsive embed-responsive--1/1">
+<div class="recruiter__image image--fullwidth">
+
+</div>
+</div>
+</div>
+<h3>Stay informed about vacancies?</h3>
+</div>
+<div class="notification__panel">
+<h3>Want to stay informed about job openings?</h3>
+<div class="description">
+<p>
+                                Create a KPMG &amp; Me profile and receive personalized job offers.
+                              </p>
+<p>
+<a class="button button--filled button--secondary button--chevron" href="/dashboard/register">Create a KPMG &amp; Me profile</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="vacancy-list__item" x-html="result.listItem">
+<a :class="{ 'highlighted' : highlightKey.includes(12965) }" alter-data-gtm="vacancyClicked" class="panel-assurance" href="/en/vacancy/supervisor-audit-arnhem" x-init="0 === 1 &amp;&amp; !highlightedInterest.includes('assurance') ? (highlightedInterest.push('assurance'), highlightKey.push(12965)) : ''">
+<div>
+<h3>Supervisor audit Arnhem</h3>
+<p>Working at KPMG means working at big 4 where your development is just as valuable as the performance of the company. So when you start as a supervisor audit in Arnhem you can rely on some good working conditions. Does this sound like your new job?</p>
+<div class="flex flex--center flex--wrap">
+<div class="vacancy__label vacancy__label--primary">
+  Audit
+</div>
+<div class="vacancy__label vacancy__label--primary">
+  Audit &amp; Assurance
+</div>
+<div class="vacancy__label vacancy__label--inverse">
+  Healthcare
+</div>
+<div class="vacancy__label vacancy__label--inverse">
+  Corporate Clients
+</div>
+<div class="vacancy__label vacancy__label--inverse">
+  Public Sector
+</div>
+<div class="vacancy__label vacancy__label--inverse">
+  Financial Services
+</div>
+<div class="vacancy__label vacancy__label--location flex flex--center">
+
+    Arnhem
+  </div>
+</div>
+</div>
+
+</a>
+</li>
+</span><span>
+<li class="vacancy-list__item cta paragraph-section" style="display: none;" x-show="(index % 5 === 4)">
+<div class="cta-block height-full">
+<div class="cta-block__inner">
+<div class="notification">
+<div class="notification__image">
+<div class="notification__image--inner">
+<div class="embed-responsive embed-responsive--1/1">
+<div class="recruiter__image image--fullwidth">
+
+</div>
+</div>
+</div>
+<h3>Stay informed about vacancies?</h3>
+</div>
+<div class="notification__panel">
+<h3>Want to stay informed about job openings?</h3>
+<div class="description">
+<p>
+                                Create a KPMG &amp; Me profile and receive personalized job offers.
+                              </p>
+<p>
+<a class="button button--filled button--secondary button--chevron" href="/dashboard/register">Create a KPMG &amp; Me profile</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="vacancy-list__item" x-html="result.listItem">
+<a :class="{ 'highlighted' : highlightKey.includes(19758) }" alter-data-gtm="vacancyClicked" class="panel-technology" href="/en/vacancy/sap-senior-solution-architect" x-init="0 === 1 &amp;&amp; !highlightedInterest.includes('technology') ? (highlightedInterest.push('technology'), highlightKey.push(19758)) : ''">
+<div>
+<h3>SAP Senior Solution Architect</h3>
+<p>As a solution architect, you will be responsible for working closely with our clients to design and implement technology solutions that meet their specific needs as well as working together on our opportunities to solution and estimate the right technological impact for our customers.</p>
+<div class="flex flex--center flex--wrap">
+<div class="vacancy__label vacancy__label--primary">
+  IT Architecture &amp; Cloud platforms
+</div>
+<div class="vacancy__label vacancy__label--primary">
+  Innovation
+</div>
+<div class="vacancy__label vacancy__label--primary">
+  Digital Transformation
+</div>
+<div class="vacancy__label vacancy__label--primary">
+  Technology, Data &amp; IT
+</div>
+<div class="vacancy__label vacancy__label--location flex flex--center">
+
+    Amstelveen
+  </div>
+</div>
+</div>
+
+</a>
+</li>
+</span><span>
+<li class="vacancy-list__item cta paragraph-section" style="display: none;" x-show="(index % 5 === 4)">
+<div class="cta-block height-full">
+<div class="cta-block__inner">
+<div class="notification">
+<div class="notification__image">
+<div class="notification__image--inner">
+<div class="embed-responsive embed-responsive--1/1">
+<div class="recruiter__image image--fullwidth">
+
+</div>
+</div>
+</div>
+<h3>Stay informed about vacancies?</h3>
+</div>
+<div class="notification__panel">
+<h3>Want to stay informed about job openings?</h3>
+<div class="description">
+<p>
+                                Create a KPMG &amp; Me profile and receive personalized job offers.
+                              </p>
+<p>
+<a class="button button--filled button--secondary button--chevron" href="/dashboard/register">Create a KPMG &amp; Me profile</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="vacancy-list__item" x-html="result.listItem">
+<a :class="{ 'highlighted' : highlightKey.includes(20036) }" alter-data-gtm="vacancyClicked" class="panel-assurance" href="/en/vacancy/esg-manager-assurance-carbon-accounting" x-init="0 === 1 &amp;&amp; !highlightedInterest.includes('assurance') ? (highlightedInterest.push('assurance'), highlightKey.push(20036)) : ''">
+<div>
+<h3>ESG Manager Assurance carbon accounting</h3>
+<p>Apply your expertise in environmental, social, and governance strategies to champion impactful change. Embark on a transformative role as an ESG Manager with a focus on carbon accounting, leading the charge in sustainable practices. Thrive in a collaborative setting, implementing ESG frameworks.</p>
+<div class="flex flex--center flex--wrap">
+<div class="vacancy__label vacancy__label--primary">
+  Sustainability
+</div>
+<div class="vacancy__label vacancy__label--primary">
+  Audit &amp; Assurance
+</div>
+<div class="vacancy__label vacancy__label--inverse">
+  Corporate Clients
+</div>
+<div class="vacancy__label vacancy__label--location flex flex--center">
+
+  Multiple locations
+</div>
+</div>
+</div>
+
+</a>
+</li>
+</span><span>
+<li class="vacancy-list__item cta paragraph-section" x-show="(index % 5 === 4)">
+<div class="cta-block height-full">
+<div class="cta-block__inner">
+<div class="notification">
+<div class="notification__image">
+<div class="notification__image--inner">
+<div class="embed-responsive embed-responsive--1/1">
+<div class="recruiter__image image--fullwidth">
+
+</div>
+</div>
+</div>
+<h3>Stay informed about vacancies?</h3>
+</div>
+<div class="notification__panel">
+<h3>Want to stay informed about job openings?</h3>
+<div class="description">
+<p>
+                                Create a KPMG &amp; Me profile and receive personalized job offers.
+                              </p>
+<p>
+<a class="button button--filled button--secondary button--chevron" href="/dashboard/register">Create a KPMG &amp; Me profile</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="vacancy-list__item" x-html="result.listItem">
+<a :class="{ 'highlighted' : highlightKey.includes(20201) }" alter-data-gtm="vacancyClicked" class="panel-assurance" href="/en/vacancy/assistant-manager-financial-services-0" x-init="0 === 1 &amp;&amp; !highlightedInterest.includes('assurance') ? (highlightedInterest.push('assurance'), highlightKey.push(20201)) : ''">
+<div>
+<h3>Assistant manager financial services</h3>
+<p>As an assistant manager in financial services, you are not afraid to discuss the budget or complex topics with the client and you can manage several teams at the same time. As an assistant manager you help your team to grow and develop.</p>
+<div class="flex flex--center flex--wrap">
+<div class="vacancy__label vacancy__label--primary">
+  Audit
+</div>
+<div class="vacancy__label vacancy__label--inverse">
+  Financial Services
+</div>
+<div class="vacancy__label vacancy__label--location flex flex--center">
+
+    Amstelveen
+  </div>
+</div>
+</div>
+
+</a>
+</li>
+</span>
+</ul>
+<nav aria-labelledby="pagination-heading" role="navigation" style="" x-data="{ scrollTop() {document.getElementById('lunritemsjs-container').scrollIntoView()}}" x-show="!lunrItemsjs.isLoading &amp;&amp; lunrItemsjs.pagination.totalResults &gt; lunrItemsjs.pagination.itemsPerPage">
+<ul class="vacancy--navigation">
+<li class="previous" style="display: none;" x-show="lunrItemsjs.pagination.currentPage &gt; 1">
+
+</li>
+<li style="display: none;" x-show="lunrItemsjs.pagination.preElipse &amp;&amp; lunrItemsjs.pagination.currentPage &gt; 3">
+<a @click.prevent="lunrItemsjs.gotoPage(lunrItemsjs.pagination.firstPage),scrollTop()" x-text="lunrItemsjs.pagination.firstPage">1</a>
+</li>
+<li role="presentation" style="display: none;" x-show="lunrItemsjs.pagination.preElipse &amp;&amp; lunrItemsjs.pagination.currentPage &gt; (lunrItemsjs.pagination.firstPage + 3)">…</li>
+<template x-for="props,page in lunrItemsjs.pagination.rangeItems">
+<li>
+
+</li>
+</template><li>
+<a :class="props.active?'selected':'not-selected'" @click.prevent="lunrItemsjs.gotoPage(page),scrollTop()" class="selected" x-html="page">1</a>
+</li><li>
+<a :class="props.active?'selected':'not-selected'" @click.prevent="lunrItemsjs.gotoPage(page),scrollTop()" class="not-selected" x-html="page">2</a>
+</li><li>
+<a :class="props.active?'selected':'not-selected'" @click.prevent="lunrItemsjs.gotoPage(page),scrollTop()" class="not-selected" x-html="page">3</a>
+</li>
+
+
+<li class="next" style="" x-show="lunrItemsjs.pagination.currentPage &lt; lunrItemsjs.pagination.lastPage">
+
+</li>
+</ul>
+</nav>
+<section>
+<div style="display: none;" x-show="lunrItemsjs.lookups.showContentBlock">
+
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<section class="footer-section" data-gtm="footerItemClicked" nav-item="footerItemClicked">
+<div class="section__keyvisual gradient">
+
+</div>
+
+</section>
+</main>
+</div>
+</div>
+</body></html>

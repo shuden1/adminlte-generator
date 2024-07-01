@@ -21,17 +21,17 @@ def scrape_jobs(file_path):
     job_listings = []
 
     try:
-        job_elements = driver.find_elements(By.CSS_SELECTOR, 'div.col-md-12.innerContent.col_left[data-animate="fade"][data-col="full"][data-delay="500"][data-title="1st column"][data-trigger="none"][id="col-full-146"][style="outline: none;"]')
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.col-inner.bgCover.noBorder.borderSolid.border3px.cornersAll.radius0.shadow0.P0-top.P0-bottom.P0H.noTopMargin")
         for job_element in job_elements:
             try:
-                title_element = job_element.find_element(By.CSS_SELECTOR, 'h1.ne.elHeadline.hsSize3.lh4.elMargin0.elBGStyle0.hsTextShadow0.deneg1pxLetterSpacing.mfs_20[contenteditable="false"][data-bold="inherit"][data-gramm="false"][style="text-align: left; font-size: 32px;"]')
+                title_element = job_element.find_element(By.CSS_SELECTOR, "h1.ne.elHeadline.hsSize3.lh4.elMargin0.elBGStyle0.hsTextShadow0.deneg1pxLetterSpacing.mfs_20")
                 title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
-                title = "No Title Found"
+                title = "No Title"
 
             try:
-                url_element = job_element.find_element(By.CSS_SELECTOR, 'a[href][id="link-64790-131"][rel="noopener noreferrer"][style="color: rgb(47, 47, 47);"][target="_parent"]')
-                url = url_element.get_attribute('href').strip() if url_element.get_attribute('href').strip() else "#"
+                url_element = job_element.find_element(By.CSS_SELECTOR, "a")
+                url = url_element.get_attribute('href') if url_element.get_attribute('href') else "#"
             except NoSuchElementException:
                 url = "#"
 
