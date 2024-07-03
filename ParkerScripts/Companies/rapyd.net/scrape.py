@@ -21,7 +21,8 @@ def scrape_jobs(file_path):
     job_listings = []
 
     try:
-        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.vcex-post-type-entry")
+        all_job_elements = driver.find_elements(By.CSS_SELECTOR, "div.vcex-post-type-entry")
+        job_elements = list(filter(lambda e: e.is_displayed(), all_job_elements))
         for job_element in job_elements:
             try:
                 title_element = job_element.find_element(By.CSS_SELECTOR, "li")

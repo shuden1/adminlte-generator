@@ -65,4 +65,11 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Job::class)->withPivot('provided_at');
     }
+
+    public function emails()
+    {
+        return $this->hasMany(UserEmail::class);
+    }
+
+
 }

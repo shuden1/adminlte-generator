@@ -133,10 +133,13 @@ class SendEmailViaGmail implements ShouldQueue
 
             $htmlContent = view('emails.email_template', compact('companiesToSend','newJobs'))->render();
 
+            $emails = array_merge([$this->to], $this->user->emails->pluck('email')->toArray());
+
+
             $email = (new \Swift_Message())
                 ->setSubject($this->subject)
                 ->setFrom('flock@littlebirds.io') // Use the service account email
-                ->setTo($this->to)
+                ->setTo($emails)
                 ->setBody($htmlContent, 'text/html');
 
             $message = new \Google\Service\Gmail\Message();

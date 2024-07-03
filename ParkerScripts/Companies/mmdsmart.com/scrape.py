@@ -21,10 +21,10 @@ def scrape_jobs(file_path):
     job_listings = []
 
     try:
-        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.post-gird-content.animation--from-opacity.block-animation-element.animated")
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.post-gird-content.animation--from-opacity.block-animation-element")
         for job_element in job_elements:
             try:
-                title_element = job_element.find_element(By.CSS_SELECTOR, "div.post-title")
+                title_element = job_element.find_element(By.CSS_SELECTOR, "div.post-title a")
                 title = title_element.text.strip() or title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
                 title = "No Title"

@@ -61,7 +61,7 @@ class SendTelegramMessage implements ShouldQueue
                 $this->user->jobs()->attach($job->id, ['provided_at' => Carbon::today()]);
 
                 // Check if the job title contains any of the leadership keywords
-                if (preg_match('/Manager|Lead|Director|Owner|Project|Product|HR|Human/i', $job->title)) {
+                if (preg_match('/Manager|Lead|Director|Owner|Project|Product|HR|Human|Marketing|Менеджер|Лид|Директор|Проект|Продукт|Рекрут|Персон|Руководитель|Начальник|Маркет/i', $job->title)) {
                     $leadershipJobs[] = ['company' => $company->name, 'title' => $job->title, 'url' => $job->url];
                 } else {
                     $technicalJobs[] = ['company' => $company->name, 'title' => $job->title, 'url' => $job->url];
