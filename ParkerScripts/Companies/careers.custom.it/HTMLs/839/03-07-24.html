@@ -1,0 +1,307 @@
+<html lang="it"><head>
+<title>Job Search - Careers</title>
+<link href="https://www.custom.biz/favicon.ico?v=2" rel="shortcut icon" type="image/ico"/>
+<!-- Google Tag Manager -->
+<!-- End Google Tag Manager -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/dataTables.boostrap.css" rel="stylesheet" type="text/css"/>
+<!--<link rel='stylesheet' type='text/css' href='/assets/css/jquery.dataTables.css'>-->
+<link href="/assets/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<!--<script src='/assets/js/jquery.dataTables.min.js'></script>-->
+<link href="/assets/css/jobSearch.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5JJZPKH" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<link href="/assets/css/header.css" rel="stylesheet" type="text/css"/>
+<nav class="navbar navbar-inverse">
+<div class="container">
+<div class="container-fluid">
+<div class="row">
+<div class="navbar-header">
+<div class="col-lg-3 col-md-3 col-sm-10 col-xs-10">
+<!--                        <a class="navbar-brand" href="https://careers.custom.it/">-->
+<a class="navbar-brand" onclick="redirectPageCustomBiz('HOMEPAGECAREERS');">
+<img src="/assets/img/custom_logo.svg" width="182px"/>
+</a>
+</div>
+<div class="col-sm-2 col-xs-2">
+<button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+</div>
+<input id="langinUse" type="hidden" value="EN"/>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="margin: 21px auto;">
+<div class="collapse navbar-collapse" id="myNavbar">
+<ul class="nav navbar-nav"></ul>
+<ul class="nav navbar-nav navbar-right">
+<!-- --><!--                                    <li><a href="/pages/jobAreas/index.php" id="link-active">Job Areas</a></li>-->
+<!-- --><!--                                    <li><a href="/pages/jobAreas/index.php" id="link-noactive">Job Areas</a></li>-->
+<!-- --> <li><a id="link-active" onclick="redirectPageLang();">JOB SEARCH</a></li>
+<li><a id="link-external" onclick="redirectPageCustomBiz('G');" target="_blank">THE GROUP</a></li>
+<li><a id="link-external" onclick="redirectPageCustomBiz('C');" target="_blank">CONTACTS</a></li>
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" id="link-language"><b id="language">EN</b> <b class="caret"></b></a>
+<ul class="dropdown-menu" style="min-width: 60px;">
+<li><a id="otherLanguage" onclick="changeLanguage('IT','EN');" style="cursor: pointer;">IT</a></li>
+</ul>
+</li>
+</ul>
+<input id="countLanguage" type="hidden" value="0"/>
+<input id="actualLanguage" type="hidden" value=""/>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="myForm"></div>
+</nav>
+<!-- Banner -->
+<div class="jobSearch hidden-sm hidden-xs">
+<div class="bannerJobSearch">
+<div class="container"></div>
+<div class="overlay-effect"></div>
+</div>
+<div class="container">
+<h1 class="textJobSearch">Job Search</h1><br/>
+<form action="" method="post">
+<div class="row">
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<label>Location</label>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<label>Job Family</label>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
+</div>
+<div class="row text-center">
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<select class="form-control" id="seat" name="seat">
+<option value="">Select</option>
+<option value="1">Fontevivo (PR)</option>
+<option value="2">Ponte Taro (PR)</option>
+<option value="3">Mestre (VE)</option>
+<option value="4">Gallarate (VA)</option>
+<option value="5">Cervia (RA)</option>
+<option value="6">Oggiona Santo Stefano (VA)</option>
+<option value="7">Boothwyn, Pennsylvania (EE)</option>
+<option value="8">Glimboca, Romania (EE)</option>
+<option value="9">Dusseldorf, Germany (EE)</option>
+<option value="10">Munich, Germany (EE)</option>
+<option value="11">Langhirano (PR)</option>
+<option value="12">Roma (RM)</option>
+<option value="15">Napoli (NA)</option>
+<option value="16">Bellingham, Washington (EE)</option>
+<option value="17">Mira (VE)</option>
+<option value="18">Montemarciano (AN)</option>
+<option value="19">Torino (TO)</option>
+<option value="20">Padova (PD)</option>
+<option value="21">Felino (PR)</option>
+<option value="22">United States (USA)</option>
+<option value="24">Custom America (Boothwyn, Pennsylvania)</option>
+<option value="25">Nola (NA)</option>
+</select>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<select class="form-control" id="department" name="department">
+<option value="">Select</option>
+<option value="14">CUSTOM SpA - Technical Office and R&amp;D</option>
+<option value="15">CUSTOM SpA - Legal</option>
+<option value="16">SYSTEM RETAIL SpA - Technical Office &amp; R&amp;D</option>
+<option value="17">CUSTOM SpA - Finance</option>
+<option value="18">BIZETA RETAIL SOLUTIONS - FINANCE</option>
+<option value="19">CUSTOM SpA - Sales</option>
+<option value="21">CUSTOM AMERICA Inc - OPERATIONS</option>
+<option value="22">CUSTOM AMERICA Inc - SERVICE</option>
+<option value="23">CUSTOM SpA - Purchasing</option>
+<option value="24">CUSTOM SpA - IT</option>
+<option value="25">CUSTOM SpA - Operations</option>
+<option value="26">CUSTOM SpA - Marketing</option>
+<option value="27">NETRISING Srl - Visual</option>
+<option value="28">NETRISING Srl - Communication</option>
+<option value="29">CUSTOM AMERICA Inc - Engineering</option>
+<option value="30">BIZETA RETAIL SOLUTIONS - Software Development &amp; Technical Support</option>
+<option value="31">NETRISING Srl - Development</option>
+<option value="32">CUSTOM SpA - Customer Admin</option>
+<option value="33">AMTEK - Technical Department</option>
+<option value="34">CUSTOM SpA - Customer Service</option>
+<option value="35">CUSTOM AMERICA Inc - Sales</option>
+<option value="36">CUSTOM AMERICA Inc - CEO</option>
+<option value="37">SYSTEM RETAIL SpA - Sales &amp; Marketing</option>
+<option value="38">BIZETA RETAIL SOLUTIONS - Sales</option>
+<option value="39">SIMPLIGI - UFFICIO TECNICO</option>
+<option value="40">CUSTOM SpA - Finance</option>
+<option value="41">CUSTOM PAY</option>
+<option value="42">Custom America Administration</option>
+</select>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<button id="btn-search" name="btn-search" type="submit">SEARCH</button>
+</div>
+</div><br/><br/>
+</form>
+</div>
+</div><br/>
+<!-- Banner telefono -->
+<div class="searchJob visible-sm visible-xs">
+<div class="bannerJobSearch">
+<div class="container">
+<div class="overlay-effect"></div>
+<div class="row text-center">
+<h1 class="titleJobSearch">Job Search</h1>
+</div>
+</div>
+</div>
+</div>
+<div class="content" id="content">
+<div class="container">
+<hr/>
+<div class="row">
+<div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">Sales</h4>
+<h4 class="titlePosition">Responsabile Commerciale Sud Italia</h4>
+<br/>
+<h5>Ponte Taro (PR)</h5>
+<h5>Date: 03.07.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('208','9','2')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">Administration</h4>
+<h4 class="titlePosition">Order Management  - Level 1</h4>
+<br/>
+<h5>Boothwyn, Pennsylvania (EE)</h5>
+<h5>Date: 02.07.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('32','12','7')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">CUSTOM AMERICA Inc - Sales</h4>
+<h4 class="titlePosition">Regional Sales Manager - CENTRAL</h4>
+<br/>
+<h5>United States (USA)</h5>
+<h5>Date: 02.07.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('207','35','22')" type="button">DETAILS</button>
+</div></div><br/><hr/><div class="row"> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">R&amp;D/Technical Department</h4>
+<h4 class="titlePosition">Firmware e Software Test Specialist</h4>
+<br/>
+<h5>Fontevivo (PR)</h5>
+<h5>Date: 21.06.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('205','5','1')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">R&amp;D/Technical Department</h4>
+<h4 class="titlePosition">Software Web Developer</h4>
+<br/>
+<h5>Fontevivo (PR)</h5>
+<h5>Date: 21.06.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('206','5','1')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">Service</h4>
+<h4 class="titlePosition">Help Desk I° livello</h4>
+<br/>
+<h5>Mestre (VE)</h5>
+<h5>Date: 09.05.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('202','10','3')" type="button">DETAILS</button>
+</div></div><br/><hr/><div class="row"> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">R&amp;D/Technical Department</h4>
+<h4 class="titlePosition">Technical Quality - Stage</h4>
+<br/>
+<h5>Fontevivo (PR)</h5>
+<h5>Date: 24.04.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('200','5','1')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">R&amp;D/Technical Department</h4>
+<h4 class="titlePosition">Sviluppatore Firmware</h4>
+<br/>
+<h5>Fontevivo (PR)</h5>
+<h5>Date: 17.04.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('198','5','1')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">R&amp;D/Technical Department</h4>
+<h4 class="titlePosition">Support Technical Quality - Stage</h4>
+<br/>
+<h5>Fontevivo (PR)</h5>
+<h5>Date: 09.04.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('195','5','1')" type="button">DETAILS</button>
+</div></div><br/><hr/><div class="row"> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">R&amp;D/Technical Department</h4>
+<h4 class="titlePosition">Sviluppatore sofware rep.pesatura</h4>
+<br/>
+<h5>Gallarate (VA)</h5>
+<h5>Date: 08.04.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('194','5','4')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">CUSTOM SpA - Technical Office and R&amp;D</h4>
+<h4 class="titlePosition">Testing Specialist</h4>
+<br/>
+<h5>Fontevivo (PR)</h5>
+<h5>Date: 02.04.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('193','14','1')" type="button">DETAILS</button>
+</div> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">Operations</h4>
+<h4 class="titlePosition">Operatore/trice di Magazzino L. 68</h4>
+<br/>
+<h5>Fontevivo (PR)</h5>
+<h5>Date: 13.03.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('190','7','1')" type="button">DETAILS</button>
+</div></div><br/><hr/><div class="row"> <div align="center" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-top: 15px;">
+<h4 class="titleDepartment">R&amp;D/Technical Department</h4>
+<h4 class="titlePosition">Junior developer C#</h4>
+<br/>
+<h5>Oggiona Santo Stefano (VA)</h5>
+<h5>Date: 12.03.2024</h5>
+<button class="text-center" id="btn-details" name="btn-details" onclick="viewDetails('189','5','6')" type="button">DETAILS</button>
+</div><br/><br/><br/><br/><br/><br/>
+</div> <div id="formDetails"></div>
+<br/><hr/><br/>
+<div class="row text-center">
+<h4>Can't find your job opportunity? <br/> Send  your free application</h4>
+<button id="btn-sendCurriculum" name="btn-sendCurriculum" onclick="redirectLangCV();" type="button">Send your c.v.</button>
+</div><br/><br/>
+</div>
+</div>
+<link href="/assets/css/footer.css" rel="stylesheet" type="text/css"/>
+<footer class="openerFooter visible-lg"></footer>
+<footer class="openerFooter2 text-center">
+<div class="visible-lg visible-md">
+<br/><br/>
+</div><br/>
+<img src="/assets/img/logo_custom_bianco.png" style="width: 150px;"/><br/><br/>
+<div class="visible-lg visible-md">
+<img src="/assets/logos/logoCustomAmerica.png" style="width: 70px;"/>	 
+        <img src="/assets/logos/logoItalianaMacchi.png" style="width: 70px;"/> 	 
+        <img src="/assets/logos/logoCustomCPE.png" style="width: 50px;"/> 	 
+        <img src="/assets/logos/logoSystemRetail.png" style="width: 70px;"/> 	 
+        <img src="/assets/logos/logoNitere.png" style="width: 70px;"/>	 
+        <img src="/assets/logos/logoBizeta.png" style="width: 70px;"/>	 
+        <img src="/assets/logos/logoPower2Retail.png" style="width: 70px;"/>	 
+        <img src="/assets/logos/logoNetrising.png" style="width: 70px;"/>	 
+        <img src="/assets/logos/logoZenith.png" style="width: 70px;"/>	 
+        <br/><br/>
+</div>
+<p class="visible-lg visible-md" id="textFooter">
+        CUSTOM S.P.A - Via Berettine, 2 - 43010 Fontevivo, Parma ITALY - VAT IT02498250345 - Tel. +39 0521 680111 Fax +39 0521 610701<br/>
+        CUSTOM SPA is a group of companies - Sitemap <br/>
+<a href="https://www.custom.biz/cookies" target="_blank">Use of cookies</a> | <a href="https://www.custom.biz/terms-and-conditions" target="_blank">Legal notices</a> | <a href="https://www.custom.biz/privacy" target="_blank">Privacy policy</a> | <a href="https://www.custom.biz/it_IT/gruppo/codice-etico" target="_blank">Ethical code</a>
+</p>
+<p class="visible-sm" id="textFooter">
+        CUSTOM S.P.A - Via Berettine, 2 - 43010 Fontevivo, Parma ITALY - VAT IT02498250345 - <br/>
+        Tel. +39 0521 680111 Fax +39 0521 610701 <br/>
+        CUSTOM SPA is a group of companies - Sitemap <br/><br/>
+<a href="https://www.custom.biz/cookies" target="_blank">Use of cookies</a> | <a href="https://www.custom.biz/terms-and-conditions" target="_blank">Legal notices</a> | <a href="https://www.custom.biz/privacy" target="_blank">Privacy policy</a> | <a href="https://www.custom.biz/it_IT/gruppo/codice-etico" target="_blank">Ethical code</a>
+</p>
+<p class="visible-xs" id="textFooter">
+        CUSTOM S.P.A - <br/> Via Berettine, 2 - 43010 Fontevivo, Parma <br/>
+        ITALY - VAT IT02498250345 - <br/> Tel. +39 0521 680111 Fax +39 0521 610701 <br/>
+        CUSTOM SPA is a group of companies - Sitemap <br/><br/>
+<a href="https://www.custom.biz/cookies" target="_blank">Use of cookies</a> | <a href="https://www.custom.biz/terms-and-conditions" target="_blank">Legal notices</a> | <br/>
+<a href="https://www.custom.biz/privacy" target="_blank">Privacy policy</a> | <a href="https://www.custom.biz/it_IT/gruppo/codice-etico" target="_blank">Ethical code</a>
+</p>
+</footer>
+</body></html>
