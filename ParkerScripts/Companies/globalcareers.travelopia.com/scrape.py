@@ -20,13 +20,14 @@ def scrape_jobs(file_path):
 
     driver.get(f"file:///{file_path}")
 
-    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div.ng-scope[ng-controller="jobsController"] div.panel.widget div.widget-container div.container div.row div.col-lg-12 a')
+    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div.jobListing h3 a')
 
     job_data = []
     for block in job_blocks:
-        job_title = block.text.strip()
+        title = block.text.strip() or block.get_attribute('innerHTML').strip()
+
         job_url = block.get_attribute('href')
-        job_data.append({"Job-title": job_title, "URL": job_url})
+        job_data.append({"Job-title": title, "URL": job_url})
 
     driver.quit()
 

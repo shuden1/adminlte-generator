@@ -22,7 +22,7 @@ def scrape_jobs(file_path):
         driver.get(f"file:///{file_path}")
 
         job_opening_selector = "ul > div > li"
-        job_title_selector = "a.jss-f72"
+        job_title_selector = "a"
 
         job_elements = driver.find_elements(By.CSS_SELECTOR, job_opening_selector)
         job_listings = []

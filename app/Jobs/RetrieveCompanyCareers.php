@@ -314,7 +314,12 @@ class RetrieveCompanyCareers implements ShouldQueue
 
             $latestFile = $this->getLatestFile($basePathHtmls);
 
-        $pythonExecutable = "C:\\Python3\\python.exe";
+        //$pythonExecutable = "C:\\Python3\\python.exe";
+
+            $pythonExecutable = "C:\\Users\\shuga\\AppData\\Local\\Programs\\Python\\Python312\\python.exe";
+
+
+
         if (preg_match('/^hh\.[a-z]+$/', $domain)) {
             $scriptPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_HH.py";
         } else
@@ -409,6 +414,15 @@ class RetrieveCompanyCareers implements ShouldQueue
                             $deletedAt = $existingJob->deleted_at; // assuming 'deleted_at' is the name of your soft delete timestamp column
                             if ($deletedAt->isToday() || $deletedAt->isYesterday()) {
                                 $existingJob->restore(); // Restore the soft-deleted job
+                            } else {
+                                $existingJob->forceDelete(); // Permanently delete the job if it was soft-deleted more than 2 days ago
+                                $newJob = Job::create([
+                                    'company_id' => $company->id,
+                                    'title' => $jobData['Job-title'],
+                                    'url' => $jobData['URL'],
+                                    'date' => Carbon::now(),
+                                ]);
+                                $hasUpdate = true; // Assuming this is a flag indicating that an update occurred.
                             }
                         } else {
                             // If the job exists and is not soft-deleted, simply update its timestamp.

@@ -22,12 +22,13 @@ def scrape_jobs(file_path):
 
     job_openings = []
 
-    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div.cell.small-12.medium-6')  # Adjusted based on the analysis
+    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'ul.job-list a')  # Adjusted based on the analysis
     for job_block in job_blocks:
-        title_tag = job_block.find_element(By.CSS_SELECTOR, 'a.button')  # Adjusted based on the analysis
+        title_element = job_block.find_element(By.CSS_SELECTOR, ' li')  # Adjusted based on the analysis
+        title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
         job_openings.append({
-            'Job-title': title_tag.text.strip(),
-            'URL': title_tag.get_attribute('href')
+            'Job-title': title,
+            'URL': job_block.get_attribute('href')
         })
 
     driver.quit()

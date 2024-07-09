@@ -11,7 +11,7 @@ def main():
     if len(sys.argv) != 2:
         print("Usage: script.py <target_html_file>")
         sys.exit(1)
-    
+
     target_html_file = sys.argv[1]
 
     # Set up the ChromeDriver with the specified profile path
@@ -31,15 +31,15 @@ def main():
 
     # Use the selectors defined in STEP 1 to scrape job listings
     job_listings = []
-    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'div.job-listing')  # Replace with actual CSS selector
+    job_blocks = driver.find_elements(By.CSS_SELECTOR, 'td.position')  # Replace with actual CSS selector
 
     for job_block in job_blocks:
-        job_title_element = job_block.find_element(By.CSS_SELECTOR, 'a.job-title')  # Replace with actual CSS selector
-        job_url_element = job_block.find_element(By.CSS_SELECTOR, 'a.job-title')  # Replace with actual CSS selector
-        
+        job_title_element = job_block.find_element(By.CSS_SELECTOR, 'a')  # Replace with actual CSS selector
+        job_url_element = job_block.find_element(By.CSS_SELECTOR, 'a')  # Replace with actual CSS selector
+
         job_title = job_title_element.text
         job_url = job_url_element.get_attribute('href')
-        
+
         job_listings.append({"Job-title": job_title, "URL": job_url})
 
     # Close the WebDriver

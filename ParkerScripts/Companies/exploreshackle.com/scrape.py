@@ -21,19 +21,21 @@ def scrape_jobs(file_path):
     job_listings = []
 
     try:
-        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.flex.justify-between.items-center.py-4.px-1.border-t-[1px].border-t-darker-blue")
+        job_elements = driver.find_elements(By.CSS_SELECTOR, "div.flex.justify-between")
         for job_element in job_elements:
             try:
-                title_element = job_element.find_element(By.CSS_SELECTOR, "span.text-light-blue.md:text-xl")
+                title_element = job_element.find_element(By.CSS_SELECTOR, "span.text-light-blue")
                 title = title_element.text.strip() or title_element.get_attribute('innerHTML').strip()
             except NoSuchElementException:
-                title = "No Title"
+                continue
+       ##         title = "No Title"
 
             try:
-                url_element = job_element.find_element(By.CSS_SELECTOR, "a.w-full[href]")
+                url_element = job_element.find_element(By.CSS_SELECTOR, "a.w-full")
                 url = url_element.get_attribute('href')
             except NoSuchElementException:
-                url = "#"
+                continue
+        ##        url = "#"
 
             job_listings.append({"Job-title": title, "URL": url})
     except NoSuchElementException:
