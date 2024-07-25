@@ -1,0 +1,2040 @@
+<html class="p-html p-sideslide" lang="ru"><head>
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYCRNYV3V0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){
+            dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYCRNYV3V0');
+    </script> -->
+<!-- Google tag (gtag.js) -->
+<title>Jusan Mobile – телекоммуникации бизнес-класса</title>
+<link href="https://www.jusanmobile.kz//public/img/ktc_icon.ico" rel="shortcut icon"/>
+<!-- Facebook Pixel Code -->
+<!-- End Facebook Pixel Code -->
+</head>
+<body>
+<div id="firstLoad" style="height: 100%; width: 100%; background: rgb(255, 255, 255); position: fixed; left: 0px; top: 0px; z-index: 9999; display: none;"></div>
+<div id="overlay">
+<div id="loading"></div>
+</div>
+<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="contactModal" onload="ChangeCaptcha()" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+<h3 id="myModalLabel">Для связи с нами заполните пожалуйста форму:</h3>
+</div>
+<div class="modal-body">
+<form action="https://www.jusanmobile.kz/ru/sender/feedback" class="form-horizontal col-sm-12" id="contactModalForm" method="post">
+<div class="form-group"><label>Ваше имя</label><input class="form-control required" data-content="Поле должно содержать минимум три символа" data-placement="top" data-trigger="manual" name="name" placeholder="Ваше имя" type="text"/></div>
+<div class="form-group"><label>E-mail</label><input class="form-control email" data-content="Неверный формат email" data-placement="top" data-trigger="manual" name="email" placeholder="Ваш email для обратной связи" type="text"/></div>
+<div class="form-group"><label>Телефон</label><input class="form-control phone" data-placement="top" name="phone" placeholder="Ваш телефон" type="text"/></div>
+<div class="col-md-4" style="display: none;"><input autocomplete="off" name="subbbject" placeholder="" type="text" value=""/></div>
+<div class="form-group"><label>Сообщение</label><textarea class="form-control" data-placement="top" data-trigger="manual" name="message" placeholder="Введите текст ссобщения"></textarea></div>
+<div class="form-group">
+<input disabled="" id="randomfield" type="text"/>
+</div>
+<div class="form-group">
+<input id="CaptchaEnter" maxlength="6" size="20"/>
+</div>
+<div class="form-group"><div class="g-recaptcha" data-sitekey="6LdGY1AmAAAAAIVwTNEHwP9UFsI6zLEon4uBnK7I"><div style="width: 304px; height: 78px;"><div><div class="replaced-iframe"><div class="rc-anchor-alert" id="rc-anchor-alert"></div>
+<input id="recaptcha-token" type="hidden" value="03AFcWeA75ImA4WCE-e620j1X39UsEtAMeycm1SxIGwhBpetTSKHTLIjyWyy6tJ8_mI9N_bBCWMqzP7YaYP46fRHp1NiHh7Qk2K1b4S73iLv0QuXikzifdTXtm9bEubgnuW-ZevWXrfNbeF6LEkiCRt2VQWlcs4WA_BrheR3u0X7VYRJqo3hkhhFhj_ri9z0VfQ1POkWPT3AtHFBHu2w_SFJnyvDEqqPPAyqU6Wh2oGYLKAfGPXYe-jiw9QrGpUckRO-6TZKQUfoLlMn9b-zIy2yG7m_7sEKyTQASPcVbOHNV6w6SHhttCyipyQwXDZwfvQOU9qvgDcMFePiKKRs61PQSq4P_e7AIMlrwjj9JtUH86NBdk0RTTM-d-pZjUUke76yq6avE47xzidy0x7BsAYqyumQqNA9Cy7xOnRzH13HGuvgOwhGJbBVTENvqdiD8-zMmaY2acxlEBEE17vVZEFgZYZ21TOOG-BJO2nGXI4BYkGIb1xftaWBHDZ1WBnqQrL6MBpUaeYn7-p5BfCDknfCbINd0vgzlVAaiKfB01nSHx356o1yoAad9LpMQ7KMp0LOQMia8SxZcjPzJcksJXYVgLV5pc_F_pN2IGqBOvRs8xa5UixkoOudSdsKSg5pVprJFlStCpAB8t4GItIbEvnB35a1ryhiAv4OfbCwjJal0OPB2-0AXQofrM9yj5BBRhX5Qo-qgqhlHxEV7sbteqFoHDHHPci15KJBYFNxrAH2FZ7NcNJfHxy64GUoCkEe6a7pmRTIUqUJJykbK3HMz9ztD05qPLyh1BaTfgTWedbDAz0MmrLdd4dq-qPa9obsxws5CEhhak_fhNIY8bsEny0RJtxlxTwxrTPH0l2SnGnbfqXQZcXNKmke7TF_OSFdE7moYHoTbdSQ8-0Gmg-K9BmU8poW2stC0_UAX8r38MUJaMsnyqlTOtrHiJatbouq9r6790fxCE2duKZe5CCeh75odYQknvzDVLcvFKyE032sdxK2h-daD3N7xIHfoB_X-HoFEH0yCFT2jX-2JtfJob8OTVzP_a-JqzRiFCoX6cc5MlR18QxY25lSRPsigKmHUttUyS6UpTfsdD4ustGiU4ibefDArxyvOiXWrpDxD7vBprqw_0bHcGWsM4df7tGS0fgtUaatagxXJQ_MXf4YDbGfgA9IW-DEycFtBVo8C1TkJdV9x0ISBiNyhpJd9m816xZuxpLmGl8smzBbM-WlV2NcIcYF22jsr0Z609sf-L5Zdt6mlFA-qqfCGIiEZCmvrVl4_HXrom6IAxVTOJ1Ukd2tth2eBjluyd3GJt_rx-VaIO5Y_OPtDyIgETlYIZn9M2-Yy4zvnJj1qFSnz42hPlxQaolQNwA4gX0ldwaIDfAWN_ny6gPpPnLMB5HYx5iEkirgUmzsD4egfTEla2Ht9B--84tO3LK0BZiHDrFIRjxb9ILYmIrbpZ04vovKNW-INyyLWHKnlN-cIh"/>
+<div class="rc-anchor rc-anchor-normal rc-anchor-light" id="rc-anchor-container"><div aria-hidden="true" class="rc-anchor-aria-status" id="recaptcha-accessible-status">Пройдите проверку reCAPTCHA.. </div><div class="rc-anchor-error-msg-container" style="display:none"><span aria-hidden="true" class="rc-anchor-error-msg"></span></div><div class="rc-anchor-content"><div class="rc-inline-block"><div class="rc-anchor-center-container"><div class="rc-anchor-center-item rc-anchor-checkbox-holder"><span aria-checked="false" aria-labelledby="recaptcha-anchor-label" class="recaptcha-checkbox goog-inline-block recaptcha-checkbox-unchecked rc-anchor-checkbox" dir="ltr" id="recaptcha-anchor" role="checkbox" tabindex="0"><div class="recaptcha-checkbox-border" role="presentation"></div><div class="recaptcha-checkbox-borderAnimation" role="presentation"></div><div class="recaptcha-checkbox-spinner" role="presentation"><div class="recaptcha-checkbox-spinner-overlay"></div></div><div class="recaptcha-checkbox-checkmark" role="presentation"></div></span></div></div></div><div class="rc-inline-block"><div class="rc-anchor-center-container"><label aria-hidden="true" class="rc-anchor-center-item rc-anchor-checkbox-label" id="recaptcha-anchor-label" role="presentation"><span aria-labelledby="recaptcha-accessible-status" aria-live="polite"></span>Я не робот</label></div></div></div><div class="rc-anchor-normal-footer"><div aria-hidden="true" class="rc-anchor-logo-portrait" role="presentation"><div class="rc-anchor-logo-img rc-anchor-logo-img-portrait"></div><div class="rc-anchor-logo-text">reCAPTCHA</div></div><div class="rc-anchor-pt"><a href="https://www.google.com/intl/ru/policies/privacy/" target="_blank">Конфиденциальность</a><span aria-hidden="true" role="presentation"> - </span><a href="https://www.google.com/intl/ru/policies/terms/" target="_blank">Условия использования</a></div></div></div><iframe style="display: none;"></iframe></div></div><textarea class="g-recaptcha-response" id="g-recaptcha-response" name="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe data-unique-id="6c347a0b-5bcd-4e0a-88ec-b2b2c8aaa407" style="display: none;"></iframe></div></div>
+<div class="form-group"><button autocomplete="off" class="btn btn-primary pull-right" onclick="check();return false;" type="submit">Отправить</button></div>
+</form>
+<div class="clearfix"></div>
+</div>
+<div class="modal-footer">
+<button aria-hidden="true" class="btn" data-dismiss="modal">Отмена</button>
+</div>
+</div>
+</div>
+</div>
+<!------------------------------ Форма запроса на подключение услуги ------------------------------------>
+<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="connectModal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+<h3 id="myModalLabel">Для подключения услуги заполните пожалуйста форму:</h3>
+</div>
+<div class="modal-body">
+<p class="notice"></p>
+<form action="https://www.jusanmobile.kz/ru/sender/connect" class="form-horizontal col-sm-12" id="connectModalForm" method="post">
+<input id="service_name" name="service_name" type="hidden" value=""/>
+<div class="show-static" id="first-modal-form">
+<div class="form-group" id="connect_fizlic_div">
+<label for="name" style="width: 100%;">Вы обращаетесь как*</label>
+<label class="radio-inline" style="width: 48%;display: inline-block;">
+<input checked="checked" id="connect_fizlic" name="user_type" type="radio" value="1"/> Физическое лицо
+                            </label>
+<label class="radio-inline" style="width: 48%;display: inline-block;">
+<input id="connect_biz" name="user_type" type="radio" value="0"/> Юридическое лицо
+                            </label>
+</div>
+<div class="form-group">
+<label for="city">Город*</label>
+<select class="form-control required" data-placement="top" data-trigger="manual" id="connect_city" name="city">
+<option>Алматы</option>
+<option>Астана</option>
+<option>Павлодар</option>
+<option>Атырау</option>
+<option>Караганда</option>
+<option>Актобе</option>
+<option>Актобе</option>
+<option>Уральск, Аксай</option>
+<option>Шымкент</option>
+<option>Актау, Жанаозен</option>
+</select>
+</div>
+<div class="form-group">
+<label for="address">Точный адрес подключения*</label><input class="form-control required danger" data-placement="top" data-trigger="manual" id="connect_address" name="address" placeholder="Точный адрес подключения" type="text"/>
+</div>
+<div class="form-group">
+<label for="name">Ваше имя*</label><input class="form-control required danger" data-content="Поле должно содержать минимум три символа" data-placement="top" data-trigger="manual" id="connect_name" name="name" placeholder="Ваше имя" type="text"/>
+</div>
+<div class="form-group">
+<label for="email">E-mail*</label><input class="form-control email" data-content="Неверный формат email" data-placement="top" data-trigger="manual" id="connect_email" name="email" placeholder="Ваш email для обратной связи" type="text"/>
+</div>
+<div class="form-group">
+<label for="phone">Телефон*</label><input class="form-control phone" data-placement="top" id="connect_phone" name="phone" placeholder="Ваш телефон" type="text"/>
+</div>
+<!--
+                        <div class="form-group">
+                            <label class="radio-inline">
+                                <input  checked="checked" type="radio" name="user_type" id="connect_fizlic" value="1"> Для дома
+                            </label>
+
+                            <label class="radio-inline">
+                                <input type="radio" name="user_type" id="connect_biz" value="0"> Для бизнеса
+                            </label>
+                        </div>
+-->
+<div class="col-md-12" style="margin-bottom: 1em;">
+<div class="col-md-6">
+<img id="capcha-image" src="/ru/sender/captcha"/>
+<!-- Сама капча -->
+<a href="javascript:void(0);" onclick="document.getElementById('capcha-image').src='/ru/sender/captcha?rid=' + Math.random();">
+<svg fill="#000000" height="20px" version="1.1" viewbox="0 0 32 32" width="20px" xmlns="http://www.w3.org/2000/svg">
+<title>reload</title>
+<path d="M0 16q0-2.784 1.088-5.312t2.912-4.384 4.384-2.912 5.344-1.088q2.784 0 5.312 1.088t4.384 2.912 2.912 4.384 1.088 5.312h2.304q0.736 0 1.28 0.416t0.8 1.024 0.16 1.28-0.64 1.184l-4.576 4.576q-0.672 0.672-1.6 0.672t-1.632-0.672l-4.576-4.576q-0.512-0.512-0.608-1.184t0.128-1.28 0.8-1.024 1.312-0.416h2.272q0-2.464-1.216-4.576t-3.328-3.328-4.576-1.216-4.608 1.216-3.328 3.328-1.216 4.576 1.216 4.608 3.328 3.328 4.608 1.216q1.728 0 3.36-0.64l3.424 3.392q-3.136 1.824-6.784 1.824-2.816 0-5.344-1.088t-4.384-2.912-2.912-4.384-1.088-5.344z"></path>
+</svg>
+</a>
+</div>
+<div class="col-md-6">
+<!-- Ссылка на обновление капчи. Запрашиваем у captcha.php случайное изображение.  -->
+<span>Введите капчу:</span>
+<input name="code" type="text"/>
+</div>
+</div>
+<br/>
+<button class="btn btn-primary btn-lg btn-block" disabled="disabled" id="first_button" type="button">Отправить</button>
+</div>
+<div class="keep-away" id="second-modal-form">
+<div class="form-group">
+<label for="company_name">Наименование организации* </label><input class="form-control" data-placement="top" id="connect_company_name" name="company_name" placeholder="Наименование организации" type="text"/>
+</div>
+<div class="form-group">
+<label for="company_bin">БИН*</label>
+<input class="form-control" id="connect_company_bin" name="company_bin" placeholder="БИН" type="text"/>
+</div>
+<div class="form-group">
+<label for="company_address">Ваш адрес*</label>
+<textarea class="form-control" id="connect_company_address" name="company_address" placeholder="Ваш адрес" rows="5"></textarea>
+</div>
+<div class="checkbox">
+<label>
+<input name="persManager" onclick="if($(this).prop('checked')){ $('#personalManager2').show(); } else { $('#personalManager2').hide(); }" type="checkbox" value="1"/> С вами уже работает персональный менеджер?
+                            </label>
+</div>
+<br/>
+<div class="form-group" id="personalManager2" style="display: none;">
+<label for="personalManager">Фамилия и инициалы менеджера</label><div class="easy-autocomplete"><input autocomplete="off" class="form-control phone" data-placement="top" id="personalManagerInput2" name="personalManager" placeholder="Введите первые буквы фамилии" style="width:100%;" type="text"/><div class="easy-autocomplete-container" id="eac-container-personalManagerInput2"><ul></ul></div></div>
+</div>
+<div class="col-md-4" style="display: none;">
+<input autocomplete="off" name="subject" placeholder="" type="text" value=""/>
+</div>
+<div class="form-group">
+<label for="message">Сообщение</label><textarea class="form-control" data-placement="top" data-trigger="manual" name="message" placeholder="Введите текст ссобщения"></textarea>
+</div>
+<div class="form-group">
+<button autocomplete="off" class="btn btn-primary pull-right" id="second_button" type="button">Отправить</button>
+</div>
+</div>
+</form>
+<div class="clearfix"></div>
+</div>
+<div class="modal-footer">
+<button aria-hidden="true" class="btn" data-dismiss="modal">Отмена</button>
+</div>
+</div>
+</div>
+</div>
+<!--<div id="popup_poll" class="overlay_poll">
+        <div class="popup_poll" id="popup_pollw" style="display: block;">
+            <div class="content_poll">
+                <a href="#"
+                   style="display: block;width: 110px; height: 100px; margin-top: 190px;margin-left: 85px;"
+                    onclick="$('#popup_pollw').hide();$('#popup_pollq').show();startCloudPoll();"
+                ></a>
+                <a href="#"
+                   style="display: block;width: 125px; height: 100px; margin-top: -100px;margin-left: 340px;"
+                   onclick="$('#popup_poll').hide();Cookies.set('hide_welcome_poll', 'true', { expires: 60 });"
+                ></a>
+
+            </div>
+        </div>
+
+
+        <div id="popup_pollq" class="popup_pollq" style="display: none;">
+            <div class="content_pollq">
+                <form action="" id="q1form">
+                    <input type="hidden" name="question" value="1">
+                <a href="#"
+                   style="display: block;width: 30px; height: 30px; margin-top: 15px;margin-left: 410px; " onclick="$('#popup_poll').hide();"
+                ></a>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 78px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q1" value="1" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q1" value="2" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q1" value="3" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q1" value="4" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q1" value="5" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 23px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q1" value="6" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q1" value="7" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q1" value="8" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <a href="#"
+                   style="display: block;width: 80px; height: 70px; margin-top: -55px;margin-left: 340px;"
+                   onclick="$('#popup_pollq').hide();$('#popup_pollq2').show();answerCloudPoll(1);"
+                ></a>
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <div id="popup_pollq2" class="popup_pollq" style="display: none;">
+
+            <div class="content_pollq">
+                <form action="" id="q2form">
+                    <input type="hidden" name="question" value="2">
+                <a href="#"
+                   style="display: block;width: 30px; height: 30px; margin-top: 15px;margin-left: 410px; " onclick="$('#popup_poll').hide();"
+                ></a>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 131px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q2" value="1" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q2" value="2" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q2" value="3" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q2" value="4" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <a href="#"
+                   style="display: block;width: 80px; height: 70px; margin-top: 90px;margin-left: 340px;"
+                   onclick="$('#popup_pollq2').hide();$('#popup_pollq3').show();answerCloudPoll(2);"
+                ></a>
+                </form>
+            </div>
+
+        </div>
+
+
+
+
+        <div id="popup_pollq3" class="popup_pollq" style="display: none;">
+            <div class="content_pollq">
+                <form action="" id="q3form">
+                    <input type="hidden" name="question" value="3">
+                <a href="#"
+                   style="display: block;width: 30px; height: 30px; margin-top: 15px;margin-left: 410px; " onclick="$('#popup_poll').hide();"
+                ></a>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 131px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q3" value="1" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q3" value="2" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q3" value="4" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q3" value="5" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <input type="text"
+                       style="background: #c8c8c8; width: 370px; height: 65px;
+                       margin-left: 43px;margin-top: 8px;
+                       padding: 5px;
+                       border: 0;
+                       text-align:center;
+                       "
+                       placeholder="Укажите вашу форму"
+                       autocomplete="off"
+                       name="q3text"
+                >
+
+                <a href="#"
+                   style="display: block;width: 80px; height: 70px; margin-top: 15px;margin-left: 340px;outline: none;"
+                   onclick="$('#popup_pollq3').hide();$('#popup_pollq4').show();answerCloudPoll(3);"
+                ></a>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div id="popup_pollq4" class="popup_pollq" style="display: none;">
+            <div class="content_pollq">
+                <form action="" id="q4form">
+                    <input type="hidden" name="question" value="4">
+                <a href="#"
+                   style="display: block;width: 30px; height: 30px; margin-top: 15px;margin-left: 410px; " onclick="$('#popup_poll').hide();"
+                ></a>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 66px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q4" value="1" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 17px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q4" value="2" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 20px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q4" value="3" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 19px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q4" value="4" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 20px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q4" value="5" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 19px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q4" value="6" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 19px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q4" value="7" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 19px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q4" value="8" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+
+                <input type="text"
+                       style="background: #c8c8c8; width: 290px; height: 50px;
+                       margin-left: 43px;margin-top: 8px;
+                       padding: 5px;
+                       border: 0;
+                       text-align:center;
+                       "
+                       placeholder="Укажите вашу сферу"
+                       name="q4text"
+                       autocomplete="off"
+                >
+
+                <a href="#"
+                   style="display: block;width: 80px; height: 70px; margin-top: -70px;margin-left: 340px;outline: none;"
+                   onclick="$('#popup_pollq4').hide();$('#popup_pollq5').show();answerCloudPoll(4);"
+                ></a>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div id="popup_pollq5" class="popup_pollq" style="display: none;">
+            <div class="content_pollq">
+                <form action="" id="q5form">
+                    <input type="hidden" name="question" value="5">
+                <a href="#"
+                   style="display: block;width: 30px; height: 30px; margin-top: 15px;margin-left: 410px; " onclick="$('#popup_poll').hide();"
+                ></a>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 141px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q5" value="1" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q5" value="2" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 24px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q5" value="3" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 22px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q5" value="4" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+
+                <a href="#"
+                   style="display: block;width: 80px; height: 70px; margin-top: 85px;margin-left: 340px;outline: none;"
+                   onclick="$('#popup_pollq5').hide();$('#popup_pollq6').show();answerCloudPoll(5);"
+                ></a>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div id="popup_pollq6" class="popup_pollq" style="display: none;">
+            <div class="content_pollq">
+                <form action="" id="q6form">
+                    <input type="hidden" name="question" value="6">
+                <a href="#"
+                   style="display: block;width: 30px; height: 30px; margin-top: 15px;margin-left: 410px; " onclick="$('#popup_poll').hide();"
+                ></a>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 144px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q6" value="1" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <input type="text"
+                       style="background: #c2c2c2; width: 370px; height: 65px;
+                       margin-left: 45px;margin-top: 13px;
+                       padding: 5px;
+                       border: 0;
+                       text-align:center;
+                       "
+                       autocomplete="off"
+                       name="q6text1"
+                >
+
+
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 31px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q6" value="2" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <input type="text"
+                       style="background: #c2c2c2; width: 370px; height: 65px;
+                       margin-left: 45px;margin-top: 32px;
+                       padding: 5px;
+                       border: 0;
+                       text-align:center;
+                       "
+                       autocomplete="off"
+                       name="q6text2"
+                >
+
+
+
+                <a href="#"
+                   style="display: block;width: 80px; height: 70px; margin-top: 0px;margin-left: 340px;outline: none;"
+                   onclick="$('#popup_pollq6').hide();$('#popup_pollq7').show();answerCloudPoll(6);"
+                ></a>
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <div id="popup_pollq7" class="popup_pollq" style="display: none;">
+            <div class="content_pollq">
+                <form action="" id="q7form">
+                    <input type="hidden" name="question" value="7">
+                <a href="#"
+                   style="display: block;width: 30px; height: 30px; margin-top: 15px;margin-left: 410px; " onclick="$('#popup_poll').hide();"
+                ></a>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 176px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q7" id="q7v1" value="1" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 32px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q7" id="q7v2" value="2" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <a href="#"
+                   style="display: block;width: 80px; height: 70px; margin-top: 145px;margin-left: 340px;outline: none;"
+                   onclick="$('#popup_pollq7').hide(); if( $('#q7v1').prop('checked') ){ $('#popup_pollq9').show(); } else{ $('#popup_pollq8').show(); } answerCloudPoll(7);"
+                ></a>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="popup_pollq8" class="popup_pollq" style="display: none;">
+            <div class="content_pollq">
+                <form action="" id="q8form">
+                    <input type="hidden" name="question" value="8">
+                <a href="#"
+                   style="display: block;width: 30px; height: 30px; margin-top: 15px;margin-left: 410px; " onclick="$('#popup_poll').hide();"
+                ></a>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 92px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q8" value="1" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 10px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q8" value="2" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 10px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q8" value="3" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 13px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q8" value="4" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 13px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q8" value="5" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 14px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q8" value="6" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 14px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q8" value="7" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 14px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q8" value="8" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 14px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q8" value="9" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <input type="text"
+                       style="background: #c2c2c2; width: 284px; height: 35px;
+                       margin-left: 45px;margin-top: 5px;
+                       padding: 5px;
+                       border: none;
+                       text-align:center;
+                       "
+                       autocomplete="off"
+                       name="q8text"
+
+                >
+
+
+                <a href="#"
+                   style="display: block;width: 80px; height: 70px; margin-top: -65px;margin-left: 340px;outline: none;"
+                   onclick="$('#popup_pollq8').hide();$('#popup_pollq10').show();answerCloudPoll(8);"
+                ></a>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div id="popup_pollq9" class="popup_pollq" style="display: none;">
+            <div class="content_pollq">
+                <form action="" id="q9form">
+                    <input type="hidden" name="question" value="9">
+                <a href="#"
+                   style="display: block;width: 30px; height: 30px; margin-top: 15px;margin-left: 410px; " onclick="$('#popup_poll').hide();"
+                ></a>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 105px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="checkbox" name="q9[]" value="1" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 13px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="checkbox" name="q9[]" value="2" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 14px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="checkbox" name="q9[]" value="3" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 14px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="checkbox" name="q9[]" value="4" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 13px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="checkbox" name="q9[]" value="5" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 14px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="checkbox" name="q9[]" value="6" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 14px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="checkbox" name="q9[]" value="7" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 12px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="checkbox" name="q9[]" value="8" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+
+
+                <input type="text"
+                       style="background: #c2c2c2; width: 284px; height: 35px;
+                       margin-left: 45px;margin-top: 15px;
+                       padding: 5px;
+                       border: none;
+                       text-align:center;
+                       " name="q9text"
+                       autocomplete="off"
+                >
+
+
+                <a href="#"
+                   style="display: block;width: 80px; height: 70px; margin-top: -55px;margin-left: 340px;outline: none;"
+                   onclick="$('#popup_pollq9').hide();$('#popup_pollq10').show();answerCloudPoll(9);"
+                ></a>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div id="popup_pollq10" class="popup_pollq" style="display: none;">
+            <div class="content_pollq">
+                <form action="" id="q10form">
+                    <input type="hidden" name="question" value="10">
+                <a href="#"
+                   style="display: block;width: 30px; height: 30px; margin-top: 15px;margin-left: 410px; " onclick="$('#popup_poll').hide();"
+                ></a>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 108px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q10" id="q10v1" value="1" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 48px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q10" id="q10v2" value="2" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+
+                <input type="text"
+                       style="background: #c2c2c2; width: 284px; height: 60px;
+                       margin-left: 45px;margin-top: 15px;
+                       padding: 5px;
+                       border: none;
+                       text-align:center;
+                       "
+                       placeholder="Укажите ваш вариант"
+                       autocomplete="off"
+                       name="q10text2"
+                >
+
+                <label style="width: 50%;margin-left: 42px;margin-top: 31px;height: 26px;padding: 0;margin-bottom: 0;">
+                    <input type="radio" name="q10" id="q10v3" value="3" autocomplete="off" style="background: #848789;width: 16px;height: 16px;margin: 0;">
+                </label>
+
+
+                <input type="text"
+                       style="background: #c2c2c2; width: 284px; height: 65px;
+                       margin-left: 45px;margin-top: 15px;
+                       padding: 5px;
+                       border: none;
+                       text-align:center;
+                       "
+                       placeholder="Укажите ваш вариант"
+                       autocomplete="off"
+                       name="q10text3"
+                >
+
+
+                <a href="#"
+                   style="display: block;width: 80px; height: 70px; margin-top: -25px;margin-left: 340px;outline: none;"
+                   onclick="$('#popup_pollq10').hide();$('#popup_pollq11').show();answerCloudPoll(10);"
+                ></a>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="popup_pollq11" class="popup_pollq" style="display: none;">
+            <div class="content_pollq">
+                <form action="" id="q11form">
+                    <input type="hidden" name="question" value="11">
+                <a href="#"
+                   style="display: block;width: 30px; height: 30px; margin-top: 15px;margin-left: 410px; " onclick="$('#popup_poll').hide();"
+                ></a>
+
+
+
+
+
+                <input type="text"
+                       style="background: #c2c2c2; width: 284px; height: 55px;
+                       margin-left: 85px;margin-top: 155px;
+                       padding: 5px;
+                       border: none;
+                       text-align:center;
+                       "
+                       placeholder="Имя"
+                       autocomplete="off"
+                       name="name"
+                >
+
+
+
+
+                <input type="text"
+                       style="background: #c2c2c2; width: 284px; height: 55px;
+                       margin-left: 85px;margin-top: 50px;
+                       padding: 5px;
+                       border: none;
+                       text-align:center;
+                       "
+                       placeholder="Контактный телефон"
+                       autocomplete="off"
+                       name="phone"
+                >
+
+
+                <a href="#"
+                   style="display: block;width: 90px; height: 120px; margin-top: 35px;margin-left: 185px;outline: none;"
+                   onclick="$('#popup_pollq11').hide();$('#popup_pollq12').show();finishCloudPoll();"
+                ></a>
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <div id="popup_pollq12" class="popup_pollq" style="display: none;">
+            <div class="content_pollq">
+
+                <a href="#"
+                   style="display: block;width: 30px; height: 30px; margin-top: 15px;margin-left: 410px; " onclick="$('#popup_poll').hide();"
+                ></a>
+
+
+
+
+
+
+
+
+                <a href="#"
+                   style="display: block;width: 154px; height: 120px; margin-top: 285px;margin-left: 155px;outline: none;"
+                   onclick="$('#popup_poll').hide();"
+                ></a>
+
+            </div>
+        </div>
+
+
+
+
+    </div>-->
+<!-- MOBILE HEADER -->
+<header class="mobHeader" id="mobHeader">
+<div id="mobRegionSelector" style="height: 80px;position: absolute;background: #fff;width: 100%;z-index: 99;box-shadow: 0 2px 3px rgba(0, 0, 0, 0.10);">
+<div style="text-align: right;padding: 20px 40px 0 0;">
+            Ваш регион - Алматы?
+        </div>
+<div style="text-align: right;padding-right: 40px;padding-top: 5px;">
+<a class="btn btn-primary" href="#" onclick="$('#mobRegionSelector').hide();changePhone('almaty');return false;" style="padding: 3px 10px 3px 10px;">Да</a>
+             
+             
+            <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" id="drop3"> Изменить регион <span class="caret"></span> </a>
+<ul aria-labelledby="drop3" class="dropdown-menu" style="width: 100%;margin-top: -10px;">
+<li><a href="#" onclick="changePhone('almaty');">Алматы</a></li>
+<li><a href="#" onclick="changePhone('astana');">Астана</a></li>
+<li><a href="#" onclick="changePhone('aktau');">Актау</a></li>
+<li><a href="#" onclick="changePhone('aktobe');">Актобе</a></li>
+<li><a href="#" onclick="changePhone('atyrau');">Атырау</a></li>
+<li><a href="#" onclick="changePhone('bautino');">Баутино</a></li>
+<li><a href="#" onclick="changePhone('zhanaozen');">Жанаозен</a></li>
+<li><a href="#" onclick="changePhone('karaganda');">Караганда</a></li>
+<li><a href="#" onclick="changePhone('kulsary');">Кульсары</a></li>
+<li><a href="#" onclick="changePhone('pavlodar');">Павлодар</a></li>
+<li><a href="#" onclick="changePhone('uralsk');">Уральск</a></li>
+<li><a href="#" onclick="changePhone('shymkent');">Шымкент</a></li>
+<li><a href="#" onclick="changePhone('almaty');">World Wide</a></li>
+</ul>
+</div>
+</div>
+<div style="height: 50px;background: #eeeeee;">
+<div style=" background: #cecece;padding-top: 15px; padding-right:10px;float: left;border-right: 1px solid #fff;height: 50px;">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" id="drop4" style="text-decoration: none">
+<span class="glyphicon glyphicon-map-marker" style="color: #fff"></span>
+<span id="mobcitypopover" style="color: #fff">Алматы
+                    </span>
+<small class="glyphicon glyphicon-chevron-down" style="color: #fff"></small>
+</a>
+<ul aria-labelledby="drop4" class="dropdown-menu" style="width: 100%;position: absolute;top:30px;">
+<li><a href="#" onclick="changePhone('almaty');">Алматы</a></li>
+<li><a href="#" onclick="changePhone('astana');">Астана</a></li>
+<li><a href="#" onclick="changePhone('aktau');">Актау</a></li>
+<li><a href="#" onclick="changePhone('aktobe');">Актобе</a></li>
+<li><a href="#" onclick="changePhone('atyrau');">Атырау</a></li>
+<li><a href="#" onclick="changePhone('bautino');">Баутино</a></li>
+<li><a href="#" onclick="changePhone('zhanaozen');">Жанаозен</a></li>
+<li><a href="#" onclick="changePhone('karaganda');">Караганда</a></li>
+<li><a href="#" onclick="changePhone('kulsary');">Кульсары</a></li>
+<li><a href="#" onclick="changePhone('pavlodar');">Павлодар</a></li>
+<li><a href="#" onclick="changePhone('uralsk');">Уральск</a></li>
+<li><a href="#" onclick="changePhone('shymkent');">Шымкент</a></li>
+<li><a href="#" onclick="changePhone('almaty');">World Wide</a></li>
+</ul>
+</div>
+<div style="float: right; font-size: 15px; font-weight: bold; font-family: Tahoma; padding-top: 1px;padding-right: 5px;margin: 0 auto;width: 65%;text-align: center">
+<div>
+<span class="fa fa-phone"></span>
+<a class="phoneCallTrackingKtcHref phoneCallTrackingKtc" href="tel:+77272377777" id="mobcityphone" style="color: #0c1a1e">+7(727)237-77-77</a>
+</div>
+<div style="padding-top:4px">
+<a href="mailto:info@jusanmobile.kz" style="color: #0c1a1e">
+<span class="fa fa-envelope"></span>
+                    info@jusanmobile.kz</a>
+</div>
+</div>
+</div>
+<div style="background: #fff;height: 50px;">
+<div class="col-xs-3">
+<button aria-controls="mtabnavbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#mtabnavbar" data-toggle="collapse" style="float: left;margin-left:5px;" type="button">
+<span class="sr-only">Навигация</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="col-xs-5 text-center">
+<a href="https://www.jusanmobile.kz//ru">
+<img alt="Интернет и телефония бизнес-класса" class="logo" src="https://www.jusanmobile.kz//public/img/jusan_mobile_logo.png" style="height:30px;margin-top: 12px;" title="Интернет и телефония бизнес-класса"/>
+</a>
+</div>
+<div class="col-xs-4" style="padding-top: 15px; text-align: right">
+<a class="btn btn-default" href="https://www.jusanmobile.kz/kk/hr" style="font-size: 10px;padding: 3px 5px 3px 5px;">КАЗ</a> <a class="btn btn-default" href="https://www.jusanmobile.kz/en/hr" style="font-size: 10px;padding: 3px 5px 3px 5px;">ENG</a>
+</div>
+</div>
+<div class="navbar-collapse collapse" id="mtabnavbar" style="background: #fff;position: absolute;width:100%;z-index:9;">
+<ul class="nav navbar-nav">
+<li><a href="https://www.jusanmobile.kz/ru/configurator" style="border-bottom: 1px solid #ddd;border-top: 3px solid #ddd;color:#DC371B;"><img src="https://www.jusanmobile.kz/public/img/confico.png" width="16"/> Конфигуратор</a></li>
+<li><a href="#" onclick="$('.lc_submenu').toggle();return false;" style="border-bottom: 1px solid #ddd; "><span class="fa fa-lock"></span>Пользовательский центр</a></li>
+<li><a class="lc_submenu" href="https://cabinet.kaztranscom.kz" style="border-bottom: 1px solid #ddd; border-top: 1px solid #ddd;padding-left: 40px;display: none;" target="_blank"><b>Личный кабинет</b></a></li>
+<li><a class="lc_submenu" href="https://kcloud.kaztranscom.kz" style="border-bottom: 1px solid #ddd;padding-left: 40px;padding-left: 40px;display: none;" target="_blank">kCloud</a></li>
+<li><a class="lc_submenu" href="https://kspot.kaztranscom.kz" style="border-bottom: 1px solid #ddd;padding-left: 40px;padding-left: 40px;display: none;" target="_blank">kSpot</a></li>
+<li><a class="lc_submenu" href="http://kvideo.kaztranscom.kz" style="border-bottom: 1px solid #ddd;padding-left: 40px;padding-left: 40px;display: none;" target="_blank">kVideo</a></li>
+<li><a class="lc_submenu" href="https://kphone.kaztranscom.kz" style="border-bottom: 1px solid #ddd;padding-left: 40px;padding-left: 40px;display: none;" target="_blank">kPhone</a></li>
+<li><a class="lc_submenu" href="https://dpi.kaztranscom.kz" style="border-bottom: 1px solid #ddd;padding-left: 40px;padding-left: 40px;display: none;" target="_blank">DPI</a></li>
+<li><a class="lc_submenu" href="https://sms.kaztranscom.kz" style="border-bottom: 1px solid #ddd;padding-left: 40px;padding-left: 40px;display: none;" target="_blank">SMS</a></li>
+<li><a class="lc_submenu" href="http://phone-cost.kaztranscom.kz" style="border-bottom: 1px solid #ddd;padding-left: 40px;padding-left: 40px;display: none;" target="_blank">Phone-Cost</a></li>
+<li><a class="lc_submenu" href="https://kburst.kaztranscom.kz" style="border-bottom: 1px solid #ddd;padding-left: 40px;padding-left: 40px;display: none;" target="_blank">Burstable Internet</a></li>
+<li><a class="lc_submenu" href="https://stormwall.pro/my/" style="border-bottom: 1px solid #ddd;padding-left: 40px;padding-left: 40px;display: none;" target="_blank">Защита от DDoS</a></li>
+<li><a class="lc_submenu" href="https://vpbx.kaztranscom.kz/" style="border-bottom: 1px solid #ddd;padding-left: 40px;padding-left: 40px;display: none;" target="_blank">Виртуальная АТС</a></li>
+<li><a class="lc_submenu" href="https://dealers.kaztranscom.kz/login" style="border-bottom: 1px solid #ddd;padding-left: 40px;padding-left: 40px;display: none;" target="_blank">Дилерам</a></li>
+<li><a href="#" onclick="$('.mm_parent_40').toggle();return false;" style="border-bottom: 1px solid #ddd;">Бизнесу</a></li>
+<li><a class="mm_parent_40" href="#" onclick="$('.mm_parent_43').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Каналы связи</a></li>
+<li><a class="mm_parent_43" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/videleniye-kanaly" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Выделенные каналы</a></li>
+<li><a class="mm_parent_43" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/sputnikovye-kanaly" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Спутниковые каналы связи</a></li>
+<li><a class="mm_parent_43" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/l2-vpn" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">L2 VPN</a></li>
+<li><a class="mm_parent_43" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/l3-vpn" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">L3 VPN</a></li>
+<li><a class="mm_parent_40" href="#" onclick="$('.mm_parent_44').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Интернет</a></li>
+<li><a class="mm_parent_44" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/fiksirovannyj-internet" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Проводной интернет</a></li>
+<li><a class="mm_parent_44" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/besprovodnoj-internet" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Беспроводной Интернет</a></li>
+<li><a class="mm_parent_44" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/Burstable-Internet" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Burstable Internet</a></li>
+<li><a class="mm_parent_44" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/zashhita-ot-ddos-atak" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Защита от DDoS-атак</a></li>
+<li><a class="mm_parent_44" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/analiz-internet-trafika-dpi" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Анализ Интернет трафика DPI </a></li>
+<li><a class="mm_parent_40" href="#" onclick="$('.mm_parent_45').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Облачные услуги kCloud</a></li>
+<li><a class="mm_parent_45" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/kserver" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">kServer</a></li>
+<li><a class="mm_parent_45" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/knetwork" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">kNetwork</a></li>
+<li><a class="mm_parent_45" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/ksoft" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">kSoft</a></li>
+<li><a class="mm_parent_45" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/kvideo" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">kVideo</a></li>
+<li><a class="mm_parent_40" href="#" onclick="$('.mm_parent_46').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Телефония</a></li>
+<li><a class="mm_parent_46" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/p-one" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">P-ONE</a></li>
+<li><a class="mm_parent_46" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/virtualnaya-ats" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Виртуальная АТС</a></li>
+<li><a class="mm_parent_46" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/cifrovoj-potok-e1-i-sip-t" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Цифровой поток Е1 и SIP-T</a></li>
+<li><a class="mm_parent_46" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/fiksirovannaya-abonentskaya-liniya-" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Фиксированная абонентская линия </a></li>
+<li><a class="mm_parent_46" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/telephony" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Услуги телефонных соединений</a></li>
+<li><a class="mm_parent_40" href="#" onclick="$('.mm_parent_47').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Пакеты</a></li>
+<li><a class="mm_parent_47" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/paket-office-light" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Пакет Office Light</a></li>
+<li><a class="mm_parent_40" href="#" onclick="$('.mm_parent_48').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Управляемый Wi-Fi</a></li>
+<li><a class="mm_parent_48" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/kSpot-box" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">kSpot box</a></li>
+<li><a class="mm_parent_48" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/wi-fi-kspot-light" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Wi-Fi kSpot Light</a></li>
+<li><a class="mm_parent_48" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/wi-fi-kspot" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Wi-Fi kSpot</a></li>
+<li><a class="mm_parent_48" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/wi-fi-kspot-gateway" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Wi-Fi kSpot Gateway</a></li>
+<li><a class="mm_parent_40" href="#" onclick="$('.mm_parent_49').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Аренда инфраструктуры</a></li>
+<li><a class="mm_parent_49" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/ЦОД" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">ЦОД (Центр Обработки Данных)</a></li>
+<li><a class="mm_parent_49" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/co-location" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Co-location</a></li>
+<li><a class="mm_parent_40" href="#" onclick="$('.mm_parent_50').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;"> Системная интеграция</a></li>
+<li><a class="mm_parent_50" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/sistemnaya-integraciya" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Системная интеграция</a></li>
+<li><a class="mm_parent_40" href="#" onclick="$('.mm_parent_51').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Техническое обслуживание </a></li>
+<li><a class="mm_parent_51" href="https://www.jusanmobile.kz/ru/uslugi/biznesu/obsluzhivanie--it-infrastruktury" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Обслуживание  IT инфраструктуры</a></li>
+<li><a class="mm_parent_40" href="#" onclick="$('.mm_parent_72').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Телевидение</a></li>
+<li><a class="mm_parent_40" href="https://www.jusanmobile.kz/ru/category/show/46" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Видеоконференцсвязь</a></li>
+<li><a class="mm_parent_40" href="#" onclick="$('.mm_parent_75').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">kOFD</a></li>
+<li><a href="#" onclick="$('.mm_parent_41').toggle();return false;" style="border-bottom: 1px solid #ddd;">Операторам</a></li>
+<li><a class="mm_parent_41" href="#" onclick="$('.mm_parent_60').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Телефония</a></li>
+<li><a class="mm_parent_60" href="https://www.jusanmobile.kz/ru/uslugi/operatoram/propusk-golosovogo-trafika" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Пропуск голосового трафика</a></li>
+<li><a class="mm_parent_41" href="#" onclick="$('.mm_parent_61').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Каналы связи</a></li>
+<li><a class="mm_parent_61" href="https://www.jusanmobile.kz/ru/uslugi/operatoram/iplc-(international-private-leased-circuit)" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">IPLC (International Private Leased Circuit)</a></li>
+<li><a class="mm_parent_61" href="https://www.jusanmobile.kz/ru/uslugi/operatoram/ethernet-(iepl)" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Ethernet (IEPL)</a></li>
+<li><a class="mm_parent_61" href="https://www.jusanmobile.kz/ru/uslugi/operatoram/l2-vpn" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">L2 VPN</a></li>
+<li><a class="mm_parent_61" href="https://www.jusanmobile.kz/ru/uslugi/operatoram/l3-vpn" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">L3 VPN</a></li>
+<li><a class="mm_parent_61" href="https://www.jusanmobile.kz/ru/uslugi/operatoram/vydelennye-kanaly" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Выделенные каналы</a></li>
+<li><a class="mm_parent_61" href="https://www.jusanmobile.kz/ru/uslugi/operatoram/sputnikovye-kanaly-svyazi" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Спутниковые каналы связи</a></li>
+<li><a class="mm_parent_41" href="#" onclick="$('.mm_parent_62').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Аренда инфраструктуры</a></li>
+<li><a class="mm_parent_62" href="https://www.jusanmobile.kz/ru/uslugi/operatoram/co-location" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Co-location</a></li>
+<li><a class="mm_parent_41" href="#" onclick="$('.mm_parent_63').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Интернет</a></li>
+<li><a class="mm_parent_63" href="https://www.jusanmobile.kz/ru/uslugi/operatoram/ip-tranzit" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">IP транзит</a></li>
+<li><a class="mm_parent_63" href="https://www.jusanmobile.kz/ru/uslugi/operatoram/zashhita-ot-ddos-atak" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Защита от DDoS-атак</a></li>
+<li><a class="mm_parent_41" href="#" onclick="$('.mm_parent_66').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Партнерам</a></li>
+<li><a class="mm_parent_66" href="https://www.jusanmobile.kz/ru/uslugi/operatoram/partnyorskaya-programma" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Партнёрская программа</a></li>
+<li><a href="#" onclick="$('.mm_parent_42').toggle();return false;" style="border-bottom: 1px solid #ddd;">Государству</a></li>
+<li><a class="mm_parent_42" href="#" onclick="$('.mm_parent_52').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Каналы связи</a></li>
+<li><a class="mm_parent_52" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/videleniye-kanaly" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Выделенные каналы</a></li>
+<li><a class="mm_parent_52" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/l2-vpn" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">L2 VPN</a></li>
+<li><a class="mm_parent_52" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/l3-vpn" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">L3 VPN</a></li>
+<li><a class="mm_parent_52" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/sputnikovye-kanaly" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Спутниковые каналы связи</a></li>
+<li><a class="mm_parent_42" href="#" onclick="$('.mm_parent_53').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Интернет</a></li>
+<li><a class="mm_parent_53" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/vydelennyj-internet-dostup" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Выделенный Интернет-доступ</a></li>
+<li><a class="mm_parent_53" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/zashhita-ot-ddos-atak" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Защита от DDoS-атак</a></li>
+<li><a class="mm_parent_53" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/analiz-internet-trafika-dpi-" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Анализ Интернет трафика DPI </a></li>
+<li><a class="mm_parent_42" href="#" onclick="$('.mm_parent_54').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Облачные услуги kCloud</a></li>
+<li><a class="mm_parent_54" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/kserver" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">kServer</a></li>
+<li><a class="mm_parent_54" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/knetwork" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">kNetwork</a></li>
+<li><a class="mm_parent_54" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/ksoft" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">kSoft</a></li>
+<li><a class="mm_parent_54" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/kVideo" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">kVideo</a></li>
+<li><a class="mm_parent_42" href="#" onclick="$('.mm_parent_55').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Телефония</a></li>
+<li><a class="mm_parent_55" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/p-one" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">P-ONE</a></li>
+<li><a class="mm_parent_55" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/fiksirovannaya-abonentskaya-liniya-" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Фиксированная абонентская линия </a></li>
+<li><a class="mm_parent_55" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/virtualnaya-ats" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Виртуальная АТС</a></li>
+<li><a class="mm_parent_55" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/cifrovoj-potok-e1-i-sip-t" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Цифровой поток Е1 и SIP-T</a></li>
+<li><a class="mm_parent_42" href="#" onclick="$('.mm_parent_56').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Управляемый Wi-Fi</a></li>
+<li><a class="mm_parent_56" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/wi-fi-kspot-light" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Wi-Fi kSpot Light</a></li>
+<li><a class="mm_parent_56" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/wi-fi-kspot" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Wi-Fi kSpot</a></li>
+<li><a class="mm_parent_56" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/wi-fi-kspot-gateway" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Wi-Fi kSpot Gateway</a></li>
+<li><a class="mm_parent_42" href="#" onclick="$('.mm_parent_57').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Аренда инфраструктуры</a></li>
+<li><a class="mm_parent_57" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/co-location" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Co-location</a></li>
+<li><a class="mm_parent_42" href="#" onclick="$('.mm_parent_58').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;"> Системная интеграция</a></li>
+<li><a class="mm_parent_58" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/sistemnaya-integraciya" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Системная интеграция</a></li>
+<li><a class="mm_parent_42" href="#" onclick="$('.mm_parent_59').toggle();return false;" style="border-bottom: 1px solid #ddd;padding-left: 40px;display: none;">Техническое обслуживание</a></li>
+<li><a class="mm_parent_59" href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/obsluzhivanie--it-infrastruktury" style="border-bottom: 1px solid #ddd;padding-left: 80px;display: none;">Обслуживание  IT инфраструктуры</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/about" style="border-bottom: 1px solid #ddd; ">О компании</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/contacts" style="border-bottom: 1px solid #ddd;">Контакты</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/news/list" style="border-bottom: 1px solid #ddd;">Новости</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/page/show/46" style="border-bottom: 1px solid #ddd;">Пресс центр</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/page/show/75" style="border-bottom: 1px solid #ddd;">Сертификат</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/hr" style="border-bottom: 1px solid #ddd;">Карьера</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/incident">Ответственный бизнес</a></li>
+</ul>
+</div><!--/.nav-collapse -->
+</header>
+<!-- END MOBILE HEADER -->
+<!-- FULL HEADER -->
+<div class="noMob pulse" id="fullRegionSelector" style="left:20px;height: 90px;top:90px;position: fixed;background: #fff;width: 300px;z-index: 9998;box-shadow: 0 2px 3px rgba(0, 0, 0, 0.10);border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;">
+<div style="text-align: left;padding: 10px 0px 0 40px;">
+            Ваш регион - Алматы?
+        </div>
+<div style="text-align: left;padding-left: 40px;padding-top: 5px;">
+<a class="btn btn-primary" href="#" onclick="$('#fullRegionSelector').hide();changePhone('almaty');return false;" style="padding: 3px 10px 3px 10px;">Да</a>
+             
+             
+            <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropfull1"> Изменить регион <span class="caret"></span> </a>
+<ul aria-labelledby="dropfull1" class="dropdown-menu" style="width: 300px;margin-top: -10px;">
+<li><a href="#" onclick="changePhone('almaty');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Алматы</a></li>
+<li><a href="#" onclick="changePhone('astana');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Астана</a></li>
+<li><a href="#" onclick="changePhone('aktau');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Актау</a></li>
+<li><a href="#" onclick="changePhone('aktobe');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Актобе</a></li>
+<li><a href="#" onclick="changePhone('atyrau');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Атырау</a></li>
+<li><a href="#" onclick="changePhone('bautino');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Баутино</a></li>
+<li><a href="#" onclick="changePhone('zhanaozen');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Жанаозен</a></li>
+<li><a href="#" onclick="changePhone('karaganda');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Караганда</a></li>
+<li><a href="#" onclick="changePhone('kulsary');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Кульсары</a></li>
+<li><a href="#" onclick="changePhone('pavlodar');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Павлодар</a></li>
+<li><a href="#" onclick="changePhone('uralsk');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Уральск</a></li>
+<li><a href="#" onclick="changePhone('shymkent');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Шымкент</a></li>
+<li><a href="#" onclick="changePhone('almaty');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">World Wide</a></li>
+</ul>
+</div>
+</div>
+<div id="newheader" style="padding-top:10px;padding-left: 30px;padding-right: 30px;position: fixed;z-index: 999;background: #fff;width: 100%;box-shadow: 0 0 12px rgba(0, 0, 0, 0.176)">
+<div id="searchField" style="z-index:999;display:none;position:fixed;width:100%;margin-left:-30px;margin-top: -10px;">
+<div id="custom-search-input">
+<div class="input-group col-md-12">
+<input class="form-control" id="search_input" onblur="$('#searchField').hide();" placeholder="Введите строку для поиска" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-info btn-lg" type="button">
+<img src="https://www.jusanmobile.kz//public/img/search.png"/>
+</button>
+<button class="btn btn-info btn-lg" onclick="$('#searchField').hide();" type="button">
+<i class="glyphicon glyphicon-remove"></i>
+</button>
+</span>
+</div>
+</div>
+</div>
+<!-- Блок вывода списка городов (выпадающее меню) в левой части шапки сайта -->
+<div class="newlogo">
+<div style="vertical-align: bottom;">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropfull2">
+<img src="https://www.jusanmobile.kz//public/img/location.png" style="vertical-align: top;" width="16"/>
+<span data-html="true" data-trigger="focus" id="citypopover" style="font-family: Ubuntu-Light;">
+                                        Алматы
+                                    </span>
+<img src="https://www.jusanmobile.kz//public/img/dd.png" width="10"/>
+</a>
+<ul aria-labelledby="dropfull2" class="dropdown-menu" style="width: 300px;position: absolute;top:30px;">
+<li><a href="#" onclick="changePhone('almaty');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Алматы</a></li>
+<li><a href="#" onclick="changePhone('astana');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Астана</a></li>
+<li><a href="#" onclick="changePhone('aktau');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Актау</a></li>
+<li><a href="#" onclick="changePhone('aktobe');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Актобе</a></li>
+<li><a href="#" onclick="changePhone('atyrau');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Атырау</a></li>
+<li><a href="#" onclick="changePhone('bautino');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Баутино</a></li>
+<li><a href="#" onclick="changePhone('zhanaozen');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Жанаозен</a></li>
+<li><a href="#" onclick="changePhone('karaganda');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Караганда</a></li>
+<li><a href="#" onclick="changePhone('kulsary');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Кульсары</a></li>
+<li><a href="#" onclick="changePhone('pavlodar');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Павлодар</a></li>
+<li><a href="#" onclick="changePhone('uralsk');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Уральск</a></li>
+<li><a href="#" onclick="changePhone('shymkent');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">Шымкент</a></li>
+<li><a href="#" onclick="changePhone('almaty');$('#citypopover').text(' '+$(this).text()+' ');$('#fullRegionSelector').hide();">World Wide</a></li>
+</ul>
+             
+            <!-- Конец вывода списка городов в выпадающем меню -->
+<a class="phoneCallTrackingKtcHref" href="tel:+77272377777" id="ourphone" style="color: #696969;font-family: Ubuntu-Light;"><img src="https://www.jusanmobile.kz//public/img/phone.png" style="vertical-align: text-bottom" width="16"/>  <span class="phoneCallTrackingKtc">+7(727)237-77-77</span></a>
+</div>
+<!-- Левое мультиуровневое вертикальное выпадающее меню в шапке сайта -->
+<div style="padding-top: 8px;">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropdownMenu1" style="text-decoration: none; display: none;">
+<img src="https://www.jusanmobile.kz//public/img/nvamenu.png" width="30"/>
+</a>
+<ul aria-labelledby="dropdownMenu1" class="leftMenu dropdown-menu multi-level" role="menu" style="left:0;">
+<li class="dropdown-submenu">
+<a href="#" tabindex="-1">Бизнесу</a>
+<ul class="dropdown-menu">
+<div class="leftMenuItems" style="margin-left: -70px;padding-right: 50px;">
+<ul class="row">
+<li class="col-sm-6" style="">
+<ul>
+<li class="dropdown-header">Каналы связи</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/videleniye-kanaly">Выделенные каналы</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/sputnikovye-kanaly">Спутниковые каналы связи</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/l2-vpn">L2 VPN</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/l3-vpn">L3 VPN</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Интернет</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/fiksirovannyj-internet">Проводной интернет</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/besprovodnoj-internet">Беспроводной Интернет</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/Burstable-Internet">Burstable Internet</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/zashhita-ot-ddos-atak">Защита от DDoS-атак</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/analiz-internet-trafika-dpi">Анализ Интернет трафика DPI </a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Облачные услуги kCloud</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/kserver">kServer</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/knetwork">kNetwork</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/ksoft">kSoft</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/kvideo">kVideo</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Телефония</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/p-one">P-ONE</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/virtualnaya-ats">Виртуальная АТС</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/cifrovoj-potok-e1-i-sip-t">Цифровой поток Е1 и SIP-T</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/fiksirovannaya-abonentskaya-liniya-">Фиксированная абонентская линия </a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/telephony">Услуги телефонных соединений</a></li>
+</ul>
+</li>
+<li class="col-sm-6" style="">
+<ul>
+<li class="dropdown-header">Пакеты</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/paket-office-light">Пакет Office Light</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Управляемый Wi-Fi</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/kSpot-box">kSpot box</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/wi-fi-kspot-light">Wi-Fi kSpot Light</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/wi-fi-kspot">Wi-Fi kSpot</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/wi-fi-kspot-gateway">Wi-Fi kSpot Gateway</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Аренда инфраструктуры</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/ЦОД">ЦОД (Центр Обработки Данных)</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/co-location">Co-location</a></li>
+</ul>
+<ul>
+<li class="dropdown-header"> Системная интеграция</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/sistemnaya-integraciya">Системная интеграция</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Техническое обслуживание </li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/obsluzhivanie--it-infrastruktury">Обслуживание  IT инфраструктуры</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Телевидение</li>
+</ul>
+<ul>
+<li class="dropdown-header">Omni-channel</li>
+</ul>
+<ul>
+<li class="dropdown-header">Видеоконференцсвязь</li>
+<li><a href="https://www.jusanmobile.kz/ru/category/show/46">Подключить услугу</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">kOFD</li>
+<li><a href="https://kofd.kz/" target="_blank">Подключить услугу</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</ul>
+</li>
+<li class="dropdown-submenu">
+<a href="#" tabindex="-1">Операторам</a>
+<ul class="dropdown-menu">
+<div class="leftMenuItems" style="margin-left: -70px;padding-right: 50px;">
+<ul class="row">
+<li class="col-sm-6" style="">
+<ul>
+<li class="dropdown-header">Телефония</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/propusk-golosovogo-trafika">Пропуск голосового трафика</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Каналы связи</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/iplc-(international-private-leased-circuit)">IPLC (International Private Leased Circuit)</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/ethernet-(iepl)">Ethernet (IEPL)</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/l2-vpn">L2 VPN</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/l3-vpn">L3 VPN</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/vydelennye-kanaly">Выделенные каналы</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/sputnikovye-kanaly-svyazi">Спутниковые каналы связи</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Аренда инфраструктуры</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/co-location">Co-location</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Интернет</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/ip-tranzit">IP транзит</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/zashhita-ot-ddos-atak">Защита от DDoS-атак</a></li>
+</ul>
+</li>
+<li class="col-sm-6" style="">
+<ul>
+<li class="dropdown-header">Партнерам</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/partnyorskaya-programma">Партнёрская программа</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</ul>
+</li>
+<li class="dropdown-submenu">
+<a href="#" tabindex="-1">Государству</a>
+<ul class="dropdown-menu">
+<div class="leftMenuItems" style="margin-left: -70px;padding-right: 50px;">
+<ul class="row">
+<li class="col-sm-6" style="">
+<ul>
+<li class="dropdown-header">Каналы связи</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/videleniye-kanaly">Выделенные каналы</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/l2-vpn">L2 VPN</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/l3-vpn">L3 VPN</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/sputnikovye-kanaly">Спутниковые каналы связи</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Интернет</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/vydelennyj-internet-dostup">Выделенный Интернет-доступ</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/zashhita-ot-ddos-atak">Защита от DDoS-атак</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/analiz-internet-trafika-dpi-">Анализ Интернет трафика DPI </a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Облачные услуги kCloud</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/kserver">kServer</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/knetwork">kNetwork</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/ksoft">kSoft</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/kVideo">kVideo</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Телефония</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/p-one">P-ONE</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/fiksirovannaya-abonentskaya-liniya-">Фиксированная абонентская линия </a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/virtualnaya-ats">Виртуальная АТС</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/cifrovoj-potok-e1-i-sip-t">Цифровой поток Е1 и SIP-T</a></li>
+</ul>
+</li>
+<li class="col-sm-6" style="">
+<ul>
+<li class="dropdown-header">Управляемый Wi-Fi</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/wi-fi-kspot-light">Wi-Fi kSpot Light</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/wi-fi-kspot">Wi-Fi kSpot</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/wi-fi-kspot-gateway">Wi-Fi kSpot Gateway</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Аренда инфраструктуры</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/co-location">Co-location</a></li>
+</ul>
+<ul>
+<li class="dropdown-header"> Системная интеграция</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/sistemnaya-integraciya">Системная интеграция</a></li>
+</ul>
+<ul>
+<li class="dropdown-header">Техническое обслуживание</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/obsluzhivanie--it-infrastruktury">Обслуживание  IT инфраструктуры</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</ul>
+</li>
+<li class="dropdown-submenu">
+<a href="https://www.jusanmobile.kz/ru/about" tabindex="-1">О компании</a>
+<ul class="dropdown-menu">
+<div class="leftMenuItems" style="margin-left: -70px">
+<ul class="row">
+<li class="col-sm-6" style="">
+<ul>
+<li class="dropdown-header">О компании</li>
+<li><a href="https://www.jusanmobile.kz/ru/about#about_us">Информация о компании</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/about#mission_block">Миссия и ценности</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/about#history_block">История</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/about#serts_block">Интегрированная система менеджмента</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/about#corporate">Корпоративное управление</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/about#lic_block">Лицензии</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/about#prikazblock">Приказы</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/incident">Ответственный бизнес</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/page/show/73">Электронный документооборот</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/page/show/74">Способы оплаты</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</ul>
+</li>
+<li><a href="https://www.jusanmobile.kz/ru/contacts">Контакты</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/news/list">Новости</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/hr">Карьера</a></li>
+</ul>
+             
+             
+            <a href="https://www.jusanmobile.kz/ru/" style="display: inline-block; margin-bottom: 5px;">
+<img alt="Интернет и телефония бизнес-класса" class="logo" src="https://www.jusanmobile.kz//public/img/jusan_mobile_logo.png" title="Интернет и телефония бизнес-класса" width="200"/>
+</a>
+</div>
+</div>
+<!-- Горизонтальное меню в шапке  -->
+<div style="float:left;">
+<div>
+<ul class="list-unstyled list-inline smallmenu">
+<li><a href="https://www.jusanmobile.kz/ru/about">О компании</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/contacts">Контакты</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/news/list">Новости</a></li>
+</ul>
+</div>
+<!-- ////////////////////////////// Горизонтальное меню (Категории услуг) //////////////////////////////-->
+<div style="padding-top: 10px;">
+<ul class="list-unstyled list-inline bigmenu2">
+<li class="dropdown dropdown-large">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">Бизнесу</a>
+<ul class="dropdown-menu dropdown-menu-large row">
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Каналы связи</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/videleniye-kanaly">Выделенные каналы</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/sputnikovye-kanaly">Спутниковые каналы связи</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/l2-vpn">L2 VPN</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/l3-vpn">L3 VPN</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Интернет</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/fiksirovannyj-internet">Проводной интернет</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/besprovodnoj-internet">Беспроводной Интернет</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/Burstable-Internet">Burstable Internet</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/zashhita-ot-ddos-atak">Защита от DDoS-атак</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/analiz-internet-trafika-dpi">Анализ Интернет трафика DPI </a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">
+                                                    Облачные услуги kCloud
+                                                </li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/kserver">kServer</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/knetwork">kNetwork</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/ksoft">kSoft</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/kvideo">kVideo</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Телефония</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/p-one">P-ONE</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/virtualnaya-ats">Виртуальная АТС</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/cifrovoj-potok-e1-i-sip-t">Цифровой поток Е1 и SIP-T</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/fiksirovannaya-abonentskaya-liniya-">Фиксированная абонентская линия </a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/telephony">Услуги телефонных соединений</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Пакеты</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/paket-office-light">Пакет Office Light</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Управляемый Wi-Fi</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/kSpot-box">kSpot box</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/wi-fi-kspot-light">Wi-Fi kSpot Light</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/wi-fi-kspot">Wi-Fi kSpot</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/wi-fi-kspot-gateway">Wi-Fi kSpot Gateway</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Аренда инфраструктуры</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/ЦОД">ЦОД (Центр Обработки Данных)</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/co-location">Co-location</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header"> Системная интеграция</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/sistemnaya-integraciya">Системная интеграция</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Техническое обслуживание </li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/biznesu/obsluzhivanie--it-infrastruktury">Обслуживание  IT инфраструктуры</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Видеоконференцсвязь</li>
+<li><a href="https://www.jusanmobile.kz/ru/category/show/46">Подключить услугу</a></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">kOFD</li>
+<li><a href="https://kofd.kz/" target="_blank">Подключить услугу</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<a href="https://www.jusanmobile.kz/ru/oplata" target="_blank">Физическим лицам</a>
+</li>
+<li class="dropdown dropdown-large">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">Операторам</a>
+<ul class="dropdown-menu dropdown-menu-large row">
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Телефония</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/propusk-golosovogo-trafika">Пропуск голосового трафика</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Каналы связи</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/iplc-(international-private-leased-circuit)">IPLC (International Private Leased Circuit)</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/ethernet-(iepl)">Ethernet (IEPL)</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/l2-vpn">L2 VPN</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/l3-vpn">L3 VPN</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/vydelennye-kanaly">Выделенные каналы</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/sputnikovye-kanaly-svyazi">Спутниковые каналы связи</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Аренда инфраструктуры</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/co-location">Co-location</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Интернет</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/ip-tranzit">IP транзит</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/zashhita-ot-ddos-atak">Защита от DDoS-атак</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Партнерам</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/operatoram/partnyorskaya-programma">Партнёрская программа</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown dropdown-large">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">Государству</a>
+<ul class="dropdown-menu dropdown-menu-large row">
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Каналы связи</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/videleniye-kanaly">Выделенные каналы</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/l2-vpn">L2 VPN</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/l3-vpn">L3 VPN</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/sputnikovye-kanaly">Спутниковые каналы связи</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Интернет</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/vydelennyj-internet-dostup">Выделенный Интернет-доступ</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/zashhita-ot-ddos-atak">Защита от DDoS-атак</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/analiz-internet-trafika-dpi-">Анализ Интернет трафика DPI </a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Облачные услуги kCloud</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/kserver">kServer</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/knetwork">kNetwork</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/ksoft">kSoft</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/kVideo">kVideo</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Телефония</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/p-one">P-ONE</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/fiksirovannaya-abonentskaya-liniya-">Фиксированная абонентская линия </a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/virtualnaya-ats">Виртуальная АТС</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/cifrovoj-potok-e1-i-sip-t">Цифровой поток Е1 и SIP-T</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Управляемый Wi-Fi</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/wi-fi-kspot-light">Wi-Fi kSpot Light</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/wi-fi-kspot">Wi-Fi kSpot</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/wi-fi-kspot-gateway">Wi-Fi kSpot Gateway</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Аренда инфраструктуры</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/co-location">Co-location</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header"> Системная интеграция</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/sistemnaya-integraciya">Системная интеграция</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+<li class="col-sm-3" style="width:20%;margin-right:0;">
+<ul>
+<li class="dropdown-header">Техническое обслуживание</li>
+<li><a href="https://www.jusanmobile.kz/ru/uslugi/gosudarstvu/obsluzhivanie--it-infrastruktury">Обслуживание  IT инфраструктуры</a></li>
+<!-- Добавляем услугу с кастомным шаблоном недефолтным -->
+<li class="divider"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div style="float: right;position:absolute;right:20px;">
+<div style="text-align: right">
+<a href="mailto:info@jusanmobile.kz" style="color: #696969;font-family: Ubuntu-Light;"><img src="https://www.jusanmobile.kz//public/img/email.png" style="vertical-align: text-bottom" width="24"/></a>
+</div>
+<div class="headerRB">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" id="droplc" style="margin-right: 23px;">
+<img src="https://www.jusanmobile.kz//public/img/lc.png" style="vertical-align: text-bottom" width="18"/>
+<span class="notab" style="">Мои услуги</span> <img src="https://www.jusanmobile.kz//public/img/dd.png" style="vertical-align: middle" width="10"/></a>
+<ul aria-labelledby="droplc" class="dropdown-menu" style="width: 150px;margin-top: -15px;right:100px;left:auto;">
+<li style="border-bottom: 1px solid #f7f7f7"><a href="https://cabinet.jusanmobile.kz" target="_blank"><b>Личный кабинет</b></a></li>
+<li style="margin-top: 15px;"><a href="http://kcloud.kaztranscom.kz" target="_blank">kCloud</a></li>
+<li><a href="http://kspot.kaztranscom.kz" target="_blank">kSpot</a></li>
+<li><a href="http://kvideo.kaztranscom.kz" target="_blank">kVideo</a></li>
+<li><a href="http://kphone.kaztranscom.kz" target="_blank">kPhone</a></li>
+<li><a href="http://dpi.kaztranscom.kz" target="_blank">DPI</a></li>
+<li><a href="https://sms.kaztranscom.kz/" target="_blank">SMS</a></li>
+<li><a href="http://phone-cost.kaztranscom.kz" target="_blank">Phone-Cost</a></li>
+<li><a href="https://kburst.kaztranscom.kz/" target="_blank">Burstable Internet</a></li>
+<li><a href="https://stormwall.pro/my/" target="_blank">Защита от DDoS атак</a></li>
+<li><a href="https://vpbx.kaztranscom.kz/" target="_blank">Виртуальная АТС</a></li>
+<li><a href="https://dealers.kaztranscom.kz/login" target="_blank">Дилерам</a></li>
+</ul>
+<a href="https://www.jusanmobile.kz/kk/hr">каз</a> | <a href="https://www.jusanmobile.kz/en/hr">eng</a>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix">
+</div>
+<!-- END FULL HEADER -->
+<!-- CONTENT -->
+<div class="firstrow"></div>
+<div class="" id="about_us" style="">
+<div class="col-md-6" style="height: 350px;background: url(https://www.jusanmobile.kz//public/img/about/aboutbg3.jpg);background-size: cover;">
+<div class="hrtext">
+<h3 style="color: #696969;text-transform: uppercase">КАРЬЕРА В Jusan Mobile</h3>
+<p>
+</p><p>В Jusan Mobile активно развиваются новые направления деятельности, поэтому у каждого работника есть возможности для применения и развития своих профессиональных качеств и построения карьеры.</p>
+<p>Компания проводит справедливую и открытую политику в отношении своих сотрудников, которая действует на всех этапах работы с персоналом.</p>
+<p class="noMob">Компания заботится о благосостоянии и социальной защищенности своих сотрудников и их семей, реализует социальные программы, а также Компания поддерживает ветеранов, пенсионеров, инвалидов труда и семьи работников, пострадавших на производстве.</p>
+<br/>
+</div>
+</div>
+<div class="col-md-6" style="height: 350px;background: url(https://www.jusanmobile.kz//public/img/hr2.jpg); background-size: cover">
+</div>
+</div>
+<div class="clearfix"></div>
+<div style="background: #f7f7f7">
+<br/>
+<br/>
+<div class="" style="padding:0 80px;color:#696969;">
+<form action="https://www.jusanmobile.kz/ru/hr" method="post">
+<div class="col-md-12">
+<div class="form-group">
+<label for="page_title">Ключевые слова для поиска</label>
+<input autocomplete="off" class="form-control" id="vctext" name="vctext" placeholder="Введите ключевые слова для поиска вакансий" type="text" value=""/>
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<label for="page_title">Тип занятости</label>
+<select autocomplete="off" class="form-control" id="employment" name="employment">
+<option></option>
+<option value="full">Полная занятость</option>
+<option value="part">Частичная занятость</option>
+<option value="project">Проектная работа</option>
+<option value="volunteer">Волонтерство</option>
+<option value="probation">Стажировка</option>
+</select>
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<label for="page_title">Регион</label>
+<select autocomplete="off" class="form-control" id="area" name="area">
+<option></option>
+<option value="160">Алматы</option>
+<option value="159">Астана</option>
+<option value="152">Актау</option>
+<option value="2510">--Жанаозен</option>
+<option value="162">--Баутино</option>
+<option value="154">Актобе</option>
+<option value="153">Атырау</option>
+<option value="3034">--Кульсары</option>
+<option value="177">Караганда</option>
+<option value="181">Павлодар</option>
+<option value="193">Уральск</option>
+<option value="150">--Аксай</option>
+<option value="205">Шымкент</option>
+</select>
+</div>
+</div>
+<div class="clearfix"></div>
+<br/>
+<div class="col-md-12 text-center">
+<input class="btn btn-primary" style="width: 200px;" type="submit" value="Поиск"/>
+</div>
+</form>
+</div>
+<div class="clearfix"></div>
+<br/>
+<br/>
+</div>
+<div class="clearfix"></div>
+<br/>
+<div class="newspage">
+<h2 class="text-center">НАШИ ВАКАНСИИ</h2>
+<div class="hr_zebra">
+<div class="container" style="padding-top: 40px;">
+<div class="col-md-12">
+<small>11.07.2024</small>
+<a href="https://www.jusanmobile.kz/ru/hr/show/103689666"> <h3 style="margin-top: 0;">Младший казначей.
+                                                    </h3></a>
+<p>Алматы</p>
+<div class="news_descr">
+<b>Требования:</b>
+<br/>
+<b>Обязаности:</b> Подготовка документов на оплату (платежные поручения). Оформляет банковские операции. Оплачивает счета поставщиков и подрядчиков на основании заявок на оплату от...
+                        <br/>
+<br/>
+<a href="https://www.jusanmobile.kz/ru/hr/show/103689666">Подробнее</a>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<hr/>
+</div>
+</div>
+<div class="hr_zebra">
+<div class="container" style="padding-top: 40px;">
+<div class="col-md-12">
+<small>11.07.2024</small>
+<a href="https://www.jusanmobile.kz/ru/hr/show/103711471"> <h3 style="margin-top: 0;">Координатор ИСМ.
+                                                    </h3></a>
+<p>Алматы</p>
+<div class="news_descr">
+<b>Требования:</b> Высшее образование. Опыт работы не менее 4 лет в области СМК и/или ИСМ. Знание основ стандартизации, метрологии и сертификации. 
+                        <br/>
+<b>Обязаности:</b> Обеспечивает функционирование и поддержание ИСМ в соответствии с требованиями международных стандартов ISO 9001, ISO 27001 и государственного стандарта СТ РК...
+                        <br/>
+<br/>
+<a href="https://www.jusanmobile.kz/ru/hr/show/103711471">Подробнее</a>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<hr/>
+</div>
+</div>
+<div class="hr_zebra">
+<div class="container" style="padding-top: 40px;">
+<div class="col-md-12">
+<small>24.06.2024</small>
+<a href="https://www.jusanmobile.kz/ru/hr/show/102592436"> <h3 style="margin-top: 0;">Технический эксперт Группы Pre-sale.
+                                                    </h3></a>
+<p>Астана</p>
+<div class="news_descr">
+<b>Требования:</b> Базовое образование: техническое (инженер телекоммуникаций, радиоинженер, инженер СПД). Знание технологии DWDM. Опыт проектирования систем DWDM. Знание английского языка на уровне...
+                        <br/>
+<b>Обязаности:</b> Проработка совместно с партнерами Технической спецификации по проектам. Анализ технического потенциала сделок. Участие в обсуждении стратегического потенциала Общества с учетом...
+                        <br/>
+<br/>
+<a href="https://www.jusanmobile.kz/ru/hr/show/102592436">Подробнее</a>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<hr/>
+</div>
+</div>
+<div class="hr_zebra">
+<div class="container" style="padding-top: 40px;">
+<div class="col-md-12">
+<small>13.06.2024</small>
+<a href="https://www.jusanmobile.kz/ru/hr/show/101845400"> <h3 style="margin-top: 0;">Ведущий инженер.
+                                                    </h3></a>
+<p>Алматы</p>
+<div class="news_descr">
+<b>Требования:</b> Высшее техническое образование. Наличие сертификатов по телекоммуникационному оборудованию различных вендоров Cisco, Juniper, Miktotik.
+                        <br/>
+<b>Обязаности:</b> Подключение абонентов. Настройка оборудования систем передачи данных Общества, настройка абонентского оборудования. Развитие телекоммуникационной сети филиала.
+                        <br/>
+<br/>
+<a href="https://www.jusanmobile.kz/ru/hr/show/101845400">Подробнее</a>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<hr/>
+</div>
+</div>
+<div class="hr_zebra">
+<div class="container" style="padding-top: 40px;">
+<div class="col-md-12">
+<small>13.06.2024</small>
+<a href="https://www.jusanmobile.kz/ru/hr/show/101849340"> <h3 style="margin-top: 0;">Главный эксперт.
+                                                    </h3></a>
+<p>Алматы</p>
+<div class="news_descr">
+<b>Требования:</b> Высшее техническое образование. Знание английского языка, не ниже уровня B2. Опыт работы в телекомунникационной сфере в коммерческом отделе не...
+                        <br/>
+<b>Обязаности:</b> Взаимодействие с Операторами связи по телефонному трафику. Обсуждение и ведение вопросов технической и коммерческой маршрутизации по Международному телефонному трафику. 
+                        <br/>
+<br/>
+<a href="https://www.jusanmobile.kz/ru/hr/show/101849340">Подробнее</a>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<hr/>
+</div>
+</div>
+<div class="hr_zebra">
+<div class="container" style="padding-top: 40px;">
+<div class="col-md-12">
+<small>13.06.2024</small>
+<a href="https://www.jusanmobile.kz/ru/hr/show/101844578"> <h3 style="margin-top: 0;">Ведущий менеджер закупок.
+                                                    </h3></a>
+<p>Астана</p>
+<div class="news_descr">
+<b>Требования:</b> Высшее образование. Стаж работы более 3 (трех) лет. Знание иностранного языка. не менее одного.
+                        <br/>
+<b>Обязаности:</b> Работы в MS office, Internet, системе электронного документооборота, 1С-Предприятие. В системах проверки потенциальных поставщиков. Проверки первичной документации, поступающей...
+                        <br/>
+<br/>
+<a href="https://www.jusanmobile.kz/ru/hr/show/101844578">Подробнее</a>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<hr/>
+</div>
+</div>
+<div class="hr_zebra">
+<div class="container" style="padding-top: 40px;">
+<div class="col-md-12">
+<small>18.06.2024</small>
+<a href="https://www.jusanmobile.kz/ru/hr/show/102163391"> <h3 style="margin-top: 0;">Специалист канцелярии.
+                                                    </h3></a>
+<p>Алматы</p>
+<div class="news_descr">
+<b>Требования:</b> Высшее образование. Стаж работы по данному профилю не менее 2-х лет. Желателен опыт работы с Документологом.
+                        <br/>
+<b>Обязаности:</b> Обработка и регистрация входящей, исходящей корреспонденции. Отправка исходящей корреспонденции. Работа с курьерскими компаниями. Обеспечение сохранности документов. Своевременное формирование дел и...
+                        <br/>
+<br/>
+<a href="https://www.jusanmobile.kz/ru/hr/show/102163391">Подробнее</a>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<hr/>
+</div>
+</div>
+<div class="hr_zebra">
+<div class="container" style="padding-top: 40px;">
+<div class="col-md-12">
+<small>03.07.2024</small>
+<a href="https://www.jusanmobile.kz/ru/hr/show/103192590"> <h3 style="margin-top: 0;">Бухгалтер по учету ТМЗ, ОС, НЗС.
+                                                    </h3></a>
+<p>Алматы</p>
+<div class="news_descr">
+<b>Требования:</b> Наличие высшего образования. Опыт работы не менее 3-х лет в области бухгалтерского учета.
+                        <br/>
+<b>Обязаности:</b> Контроль и учет первичных документов по форме и требованиям. Списание и перемещение ТМЗ, НМА и ОС, учет ГСМ, выписка доверенностей.
+                        <br/>
+<br/>
+<a href="https://www.jusanmobile.kz/ru/hr/show/103192590">Подробнее</a>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<hr/>
+</div>
+</div>
+<div class="hr_zebra">
+<div class="container" style="padding-top: 40px;">
+<div class="col-md-12">
+<small>24.06.2024</small>
+<a href="https://www.jusanmobile.kz/ru/hr/show/102591739"> <h3 style="margin-top: 0;">Эксперт Отдела международных продаж.
+                                                    </h3></a>
+<p>Астана</p>
+<div class="news_descr">
+<b>Требования:</b> Высшее экономическое или техническое образование. Опыт в продажах или сфере телекоммуникаций не менее 3-ех лет. Знание английского или китайского...
+                        <br/>
+<b>Обязаности:</b> Выполняет индивидуальный план, согласно утвержденного Плана продаж, Работа с международными операторами. Учувствует в выборе поставщиков телекоммуникационных услуг для нужд Общества...
+                        <br/>
+<br/>
+<a href="https://www.jusanmobile.kz/ru/hr/show/102591739">Подробнее</a>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<hr/>
+</div>
+</div>
+<div class="hr_zebra">
+<div class="container" style="padding-top: 40px;">
+<div class="col-md-12">
+<small>13.06.2024</small>
+<a href="https://www.jusanmobile.kz/ru/hr/show/101846543"> <h3 style="margin-top: 0;">Ведущий инженер по проектированию линейных сооружений связи.
+                                                    </h3></a>
+<p>Алматы</p>
+<div class="news_descr">
+<b>Требования:</b> Высшее техническое образование (проектирование многоканальных телекоммуникационных систем, инженер электросвязи). Желательно наличие аттестата инженерно-технического работника. Желательно знание английского языка (хороший...
+                        <br/>
+<b>Обязаности:</b> Консультирование и участие в подготовке заданий на проектирование линейных сооружений связи и структурированных кабельных систем связи (далее - линейные объекты связи). 
+                        <br/>
+<br/>
+<a href="https://www.jusanmobile.kz/ru/hr/show/101846543">Подробнее</a>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<hr/>
+</div>
+</div>
+<div class="hr_zebra">
+<div class="container" style="padding-top: 40px;">
+<div class="col-md-12">
+<small>13.06.2024</small>
+<a href="https://www.jusanmobile.kz/ru/hr/show/101857001"> <h3 style="margin-top: 0;">Инженер Узла связи Мунайтас.
+                                                    </h3></a>
+<p>Актобе</p>
+<div class="news_descr">
+<b>Требования:</b> Методы выявления и устранения повреждений, выполнение ремонтно-настроечных и ремонтно-восстановительных работ, проведения измерений параметров и настройки оборудования. 
+                        <br/>
+<b>Обязаности:</b> Подключение абонентов. Настройка оборудования систем передачи данных Общества, настройка абонентского оборудования. Развитие телекоммуникационной сети филиала.
+                        <br/>
+<br/>
+<a href="https://www.jusanmobile.kz/ru/hr/show/101857001">Подробнее</a>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<hr/>
+</div>
+</div>
+<div class="hr_zebra">
+<div class="container" style="padding-top: 40px;">
+<div class="col-md-12">
+<small>13.06.2024</small>
+<a href="https://www.jusanmobile.kz/ru/hr/show/101847214"> <h3 style="margin-top: 0;">Ведущий инженер Группы проводных систем.
+                                                    </h3></a>
+<p>Аксай (Казахстан)</p>
+<div class="news_descr">
+<b>Требования:</b> Высшее техническое образование в области связи, с опытом работы от 3 лет. Знание правил технической эксплуатации на всех видах связи...
+                        <br/>
+<b>Обязаности:</b> Осуществление технической эксплуатации оборудования сетей передачи данных, телефонных систем и транспортных сетей связи. Организация обходных путей и резервных каналов на...
+                        <br/>
+<br/>
+<a href="https://www.jusanmobile.kz/ru/hr/show/101847214">Подробнее</a>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<hr/>
+</div>
+</div>
+</div>
+<br/><br/><br/>
+<!-- END CONTENT -->
+<div class="footer">
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-sm-6 footerleft">
+<div class="logofooter"><a href="https://www.jusanmobile.kz/ru/"><img src="https://www.jusanmobile.kz//public/img/jusan_mobile_logo.png" width="250"/></a></div>
+<p>Все материалы, размещенные на настоящем web-сайте, являются собственностью АО «Jusan Mobile» и охраняются в соответствии с законодательством Республики Казахстан.</p>
+<p class="adr"><i class="fa fa-map-pin"></i> Республика Казахстан 050009, г. Алматы ул. Радостовца, 69</p>
+<p><i class="fa fa-phone"></i> тел.: <spam class="phoneCallTrackingKtc">+7 (727) 2 377-777</spam></p>
+<p><i class="fa fa-envelope"></i> E-mail : info@jusanmobile.kz</p>
+</div>
+<div class="col-md-2 col-sm-6 paddingtop-bottom">
+<ul class="footer-ul">
+<li><a href="https://www.jusanmobile.kz/ru/about#mission_block"> Миссия</a></li>
+<li><a href="https://www.kaztranscom.kz/ru/page/show/74"> Способы оплаты</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/about#serts_block"> Интегрированная система менеджмента</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/about#lic_block"> Лицензии</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/about#lic_block"> Корпоративное управление</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-sm-6 paddingtop-bottom">
+<ul class="footer-ul">
+<li><a href="https://www.jusanmobile.kz/ru/about#serts_block"> Сертификаты</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/about#partners_block"> Партнёры</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/page/show/46"> Пресс-Центр</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/contacts"> Филиалы</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/news/list"> Новости</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/incident"> Ответственный бизнес</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-sm-6 paddingtop-bottom">
+<ul class="footer-ul">
+<li><a href="https://www.jusanmobile.kz/ru/about"> О компании</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/contacts"> Контакты</a></li>
+<li><a href="https://cabinet.kaztranscom.kz" target="_blank"> Личный кабинет</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/hr"> Карьера</a></li>
+<li><a href="https://www.jusanmobile.kz/ru/about#payment"> Электронный документооборот</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-sm-6 paddingtop-bottom">
+<span style="color: #fff; font-size: 15px;"> СЛЕДИТЕ ЗА НОВОСТЯМИ</span>
+<div style="padding-top: 10px;">
+<a href=" https://www.facebook.com/jusanmobile/" rel="nofollow" style="color: #fff;padding: 5px;" target="_blank"><span class="fa fa-facebook-official" style="font-size: 22px;"></span></a>
+<a href="https://www.instagram.com/jusanmobile/?utm_medium=copy_link" rel="nofollow" style="color: #fff;padding: 5px;" target="_blank"> <span class="fa fa-instagram fa-2x" style="font-size: 22px;"></span></a>
+<p style="margin-top: 10px; color: #fff; font-size:smaller">Общество “Jusan Mobile” работает в системе электронного документооборота.
+                                Письма адресованные АО “Jusan Mobile” просим направлять на электронную почту <a href="mailto:info@jusanmobile.kz" style="color: #fff">info@jusanmobile.kz</a>
+</p>
+<!--<a  href="https://vk.com/kaztranscom" target="_blank" rel="nofollow" style="color: #fff;padding: 5px;"> <span class="fa fa-vk fa-2x" style="font-size: 22px;"></span></a>
+                                <a  href="https://twitter.com/kaztranscomkz" target="_blank" rel="nofollow" style="color: #fff;padding: 5px;"> <span class="fa fa-twitter fa-2x" style="font-size: 22px;"></span></a>
+                                <a  href="https://www.youtube.com/channel/UC8iHXlaDFa6uZBEXXUzmTlA" rel="nofollow" target="_blank" style="color: #fff;padding: 5px;"> <span class="fa fa-youtube fa-2x" style="font-size: 22px;"></span></a>
+                                <a  href="https://t.me/kaztranscom" rel="nofollow" target="_blank" style="color: #fff;padding: 5px;"> <span class="fa fa-telegram fa-2x" style="font-size: 22px;"></span></a>
+                                <a  href="https://www.linkedin.com/company/kaztranscom/" rel="nofollow" target="_blank" style="color: #fff;padding: 5px;"> <span class="fa fa-linkedin fa-2x" style="font-size: 22px;"></span></a>-->
+</div>
+<br/>
+</div>
+</div>
+</div>
+</footer>
+<!--footer start from here-->
+<div class="copyright">
+<div class="container">
+<div class="col-md-6">
+<p>© 2024 - АО «Jusan Mobile».</p>
+</div>
+<div class="col-md-6">
+<ul class="bottom_ul">
+<li><a href="https://www.jusanmobile.kz/lang/kk">Казакша</a></li>
+<li><a href="https://www.jusanmobile.kz/lang/ru">Русский</a></li>
+<li><a href="https://www.jusanmobile.kz/lang/en">English</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- END FOOTER -->
+</div>
+<link href="https://www.jusanmobile.kz//public/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://www.jusanmobile.kz//public/slick/slick.css" rel="stylesheet" type="text/css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link href="https://www.jusanmobile.kz//public/slick/slick-theme.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.jusanmobile.kz//public/css/style.css?ver=1.75" rel="stylesheet"/>
+<link href="https://www.jusanmobile.kz//public/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://www.jusanmobile.kz//public/css/ply.css" rel="stylesheet"/>
+<link href="https://www.jusanmobile.kz//public/js/autocomplete/easy-autocomplete.min.css" rel="stylesheet"/>
+<link href="https://www.jusanmobile.kz//public/css/telephony.css" rel="stylesheet" type="text/css"/>
+<!-- Yandex.Metrika counter -->
+<noscript><div><img alt="" src="https://mc.yandex.ru/watch/45981129" style="position:absolute; left:-9999px;"/></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><div class="replaced-iframe"><input id="recaptcha-token" type="hidden"/>
+<div></div></div></div></div></body></html>

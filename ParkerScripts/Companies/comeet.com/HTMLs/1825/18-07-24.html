@@ -1,0 +1,541 @@
+<html id="ng-app" lang="en" ng-app="comeetCareers"><head itemscope="" itemtype="http://schema.org/WebPageElement">
+<title>Jobs at INFINIDAT</title>
+<!-- Bootstrap Core CSS -->
+<!-- <link href="/common/css/bootstrap.min.css" rel="stylesheet" /> -->
+<!-- Latest compiled and minified CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="/common/css/career.css?rc-257-0" rel="stylesheet" type="text/css"/>
+<!--<link rel="stylesheet" type="text/css" href="/common/less/career.css" />-->
+<!-- Custom CSS -->
+<!-- Custom Fonts -->
+<link href="/common/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="/common/css/fonts.css" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link href="/common/assets/jobs-assets/images/favicon/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed"/>
+<link href="/common/assets/jobs-assets/images/favicon/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/common/assets/jobs-assets/images/favicon/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/common/assets/jobs-assets/images/favicon/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/common/assets/jobs-assets/images/favicon/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/common/assets/jobs-assets/images/favicon/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/common/assets/jobs-assets/images/favicon/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/common/assets/jobs-assets/images/favicon/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/common/assets/jobs-assets/images/favicon/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/common/assets/jobs-assets/images/favicon/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/common/assets/jobs-assets/images/favicon/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/common/assets/jobs-assets/images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/common/assets/jobs-assets/images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/common/assets/jobs-assets/images/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/common/assets/jobs-assets/images/favicon/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/common/assets/jobs-assets/images/favicon/manifest.json" rel="manifest"/>
+<link href="/common/assets/jobs-assets/images/favicon/favicon.ico" rel="shortcut icon" sizes="16X16"/>
+<!-- Facebook -->
+</head>
+<body class="" id="page-top" ng-class="{iframe: CareersState.current.iframeStyle, android: state.isAndroid}" ng-controller="StateCtrl">
+<div class="wrapper">
+<div ng-controller="BaseCareerCtrl">
+<!-- ngIf: state.isLoading && showLoading -->
+<div ng-controller="CareerCompanyCtrl">
+<!-- Big header element -->
+<!-- ngIf: company && !state.isIframe && !legacyDesign -->
+<div class="container animated fadeIn" ng-show="!state.isLoading">
+<!-- ngIf: !state.isIframe --><div class="row mainRow noPaddingTop noPaddingBottom" ng-if="!state.isIframe">
+<!-- ngIf: !company -->
+<!-- Legacy header element -->
+<!-- ngIf: company && legacyDesign --><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 company-header careerCard text-center brandBottomLine" ng-if="company &amp;&amp; legacyDesign">
+<div>
+<a aria-label="Navigate to the job list" href="https://www.comeet.com/jobs/infinidat/D6.003" ng-href="https://www.comeet.com/jobs/infinidat/D6.003" ng-show="company.logos.medium.url" target="_self">
+<img alt="Company logo" id="companyLogo" ng-src="https://www.comeet.co/pub/infinidat/D6.003/logo?size=medium&amp;last-modified=1677244703" src="https://www.comeet.co/pub/infinidat/D6.003/logo?size=medium&amp;last-modified=1677244703"/>
+</a>
+<h2 class="ng-hide" ng-hide="company.logos.medium.url">INFINIDAT</h2>
+</div>
+</div><!-- end ngIf: company && legacyDesign -->
+</div><!-- end ngIf: !state.isIframe -->
+<!-- ngIf: isDescription && !isEmbedded --><div class="" ng-if="isDescription &amp;&amp; !isEmbedded">
+<div class="row mainRow" id="aboutCompany">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 careerCard">
+<!-- ngIf: legacyDesign --><h2 class="smallTitle" ng-if="legacyDesign">About INFINIDAT</h2><!-- end ngIf: legacyDesign -->
+<div class="userDesignedContent company-description" ng-bind-html="company.description" ng-show="company.description"><div><p>Infinidat was founded in 2011 by a team of storage industry experts focused on returning business value to customers by eliminating the compromises between performance, availability, and cost, at multi-petabyte scale for enterprise storage. The Infinidat team, spanning generations of storage industry experience and previous product successes, has become an industry leader by developing a better, faster way to store and protect multiple petabytes of data, with the highest possible availability, at the lowest possible cost. All of this work was done with a single goal in mind – enable customers to spend less on their infrastructure and focus more on innovation, growth, and competitive advantage.</p></div><div><div class="clearfix text-formatted field field--name-field-p3-body field--type-text-long field--label-hidden field__item"><br/></div></div></div>
+</div>
+</div>
+</div><!-- end ngIf: isDescription && !isEmbedded -->
+<!-- ngIf: company && companyPositions --><div class="row mainRow positionsList" ng-if="company &amp;&amp; companyPositions">
+<!-- ngIf: companyPositions.length === 0 -->
+<!-- ngIf: companyPositions.length > 0 --><div class="positionsList col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 brandTopLine" ng-class="{brandTopLine: isDescription}" ng-if="companyPositions.length &gt; 0">
+<!--<h5>{{companyPositions.length || 'All'}} Open Jobs</h5>-->
+<!-- ngIf: legacyDesign --><h2 class="smallTitle" ng-if="legacyDesign">Current Openings</h2><!-- end ngIf: legacyDesign -->
+<!-- ngRepeat: positions in groupsA | orderBy:'sortingKey' | filter: positions.length --><div class="row positionsGroup careerCard" ng-class="{lightBottomLine :$last}" ng-repeat="positions in groupsA | orderBy:'sortingKey' | filter: positions.length">
+<div class="col-sm-12 positionsGroupHeader" ng-style="legacyDesign?{}:{backgroundColor: company.brandColor || '#278fe6'}">
+<!-- ngIf: !legacyDesign -->
+<h2 class="positionsGroupTitle">
+                                    Customer Support Engineering
+                            </h2>
+</div>
+<div class="col-sm-12 rowFix positionsGroupContent">
+<!-- BEGIN: Inner ngRepeat. -->
+<ul>
+<!-- ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/senior-tier-3-technical-support-engineer---united-kingdom/F1.22E" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/senior-tier-3-technical-support-engineer---united-kingdom/F1.22E">
+<span class="positionLink">
+                                            Senior Tier 3 Technical Support Engineer - United Kingdom
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> United Kingdom</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Experienced</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' -->
+</ul>
+<!-- END: Inner ngRepeat. -->
+</div>
+</div><!-- end ngRepeat: positions in groupsA | orderBy:'sortingKey' | filter: positions.length --><div class="row positionsGroup careerCard" ng-class="{lightBottomLine :$last}" ng-repeat="positions in groupsA | orderBy:'sortingKey' | filter: positions.length">
+<div class="col-sm-12 positionsGroupHeader" ng-style="legacyDesign?{}:{backgroundColor: company.brandColor || '#278fe6'}">
+<!-- ngIf: !legacyDesign -->
+<h2 class="positionsGroupTitle">
+                                    Finance
+                            </h2>
+</div>
+<div class="col-sm-12 rowFix positionsGroupContent">
+<!-- BEGIN: Inner ngRepeat. -->
+<ul>
+<!-- ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/financial-controller/C8.64C" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/financial-controller/C8.64C">
+<span class="positionLink">
+                                            Financial Controller
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Experienced</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' -->
+</ul>
+<!-- END: Inner ngRepeat. -->
+</div>
+</div><!-- end ngRepeat: positions in groupsA | orderBy:'sortingKey' | filter: positions.length --><div class="row positionsGroup careerCard" ng-class="{lightBottomLine :$last}" ng-repeat="positions in groupsA | orderBy:'sortingKey' | filter: positions.length">
+<div class="col-sm-12 positionsGroupHeader" ng-style="legacyDesign?{}:{backgroundColor: company.brandColor || '#278fe6'}">
+<!-- ngIf: !legacyDesign -->
+<h2 class="positionsGroupTitle">
+                                    Operations
+                            </h2>
+</div>
+<div class="col-sm-12 rowFix positionsGroupContent">
+<!-- BEGIN: Inner ngRepeat. -->
+<ul>
+<!-- ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/npi-engineer/70.843" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/npi-engineer/70.843">
+<span class="positionLink">
+                                            NPI Engineer
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Experienced</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' -->
+</ul>
+<!-- END: Inner ngRepeat. -->
+</div>
+</div><!-- end ngRepeat: positions in groupsA | orderBy:'sortingKey' | filter: positions.length --><div class="row positionsGroup careerCard" ng-class="{lightBottomLine :$last}" ng-repeat="positions in groupsA | orderBy:'sortingKey' | filter: positions.length">
+<div class="col-sm-12 positionsGroupHeader" ng-style="legacyDesign?{}:{backgroundColor: company.brandColor || '#278fe6'}">
+<!-- ngIf: !legacyDesign -->
+<h2 class="positionsGroupTitle">
+                                    R&amp;D
+                            </h2>
+</div>
+<div class="col-sm-12 rowFix positionsGroupContent">
+<!-- BEGIN: Inner ngRepeat. -->
+<ul>
+<!-- ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/applications-group-lead/40.844" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/applications-group-lead/40.844">
+<span class="positionLink">
+                                            Applications Group Lead
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Management</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/experienced-hardware-integration-engineer/05.84E" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/experienced-hardware-integration-engineer/05.84E">
+<span class="positionLink">
+                                            Experienced Hardware Integration Engineer
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Intermediate</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/python-developer/9D.744" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/python-developer/9D.744">
+<span class="positionLink">
+                                            Python Developer
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Senior</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/senior-c-developer/98.625" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/senior-c-developer/98.625">
+<span class="positionLink">
+                                            Senior C++ Developer
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Experienced</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/senior-software-developer/DF.52B" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/senior-software-developer/DF.52B">
+<span class="positionLink">
+                                            Senior Software Developer
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Experienced</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/senior-software-developer/AB.E2E" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/senior-software-developer/AB.E2E">
+<span class="positionLink">
+                                            Senior Software Developer
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Senior</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/software-developer/DB.645" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/software-developer/DB.645">
+<span class="positionLink">
+                                            Software Developer
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Junior</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/software-engineering-team-leader/09.142" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/software-engineering-team-leader/09.142">
+<span class="positionLink">
+                                            Software Engineering Team Leader
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Team Leader</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/software-team-lead/64.54E" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/software-team-lead/64.54E">
+<span class="positionLink">
+                                            Software Team Lead
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Team Leader</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' -->
+</ul>
+<!-- END: Inner ngRepeat. -->
+</div>
+</div><!-- end ngRepeat: positions in groupsA | orderBy:'sortingKey' | filter: positions.length --><div class="row positionsGroup careerCard" ng-class="{lightBottomLine :$last}" ng-repeat="positions in groupsA | orderBy:'sortingKey' | filter: positions.length">
+<div class="col-sm-12 positionsGroupHeader" ng-style="legacyDesign?{}:{backgroundColor: company.brandColor || '#278fe6'}">
+<!-- ngIf: !legacyDesign -->
+<h2 class="positionsGroupTitle">
+                                    Sales EMEA &amp; Japan
+                            </h2>
+</div>
+<div class="col-sm-12 rowFix positionsGroupContent">
+<!-- BEGIN: Inner ngRepeat. -->
+<ul>
+<!-- ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/regional-sales-manager/08.444" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/regional-sales-manager/08.444">
+<span class="positionLink">
+                                            Regional Sales Manager
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> London REMOTE</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Senior</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/regional-senior-sales-manager---germany/E2.549" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/regional-senior-sales-manager---germany/E2.549">
+<span class="positionLink">
+                                            Regional Senior Sales Manager - Germany
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Germany</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Senior</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/senior-presales-system-engineer/08.443" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/senior-presales-system-engineer/08.443">
+<span class="positionLink">
+                                            Senior Presales System Engineer
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> London REMOTE</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Experienced</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' -->
+</ul>
+<!-- END: Inner ngRepeat. -->
+</div>
+</div><!-- end ngRepeat: positions in groupsA | orderBy:'sortingKey' | filter: positions.length --><div class="row positionsGroup careerCard" ng-class="{lightBottomLine :$last}" ng-repeat="positions in groupsA | orderBy:'sortingKey' | filter: positions.length">
+<div class="col-sm-12 positionsGroupHeader" ng-style="legacyDesign?{}:{backgroundColor: company.brandColor || '#278fe6'}">
+<!-- ngIf: !legacyDesign -->
+<h2 class="positionsGroupTitle">
+                                    Sales US
+                            </h2>
+</div>
+<div class="col-sm-12 rowFix positionsGroupContent">
+<!-- BEGIN: Inner ngRepeat. -->
+<ul>
+<!-- ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/channel-manager-southeast/4F.64C" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/channel-manager-southeast/4F.64C">
+<span class="positionLink">
+                                            Channel Manager, Southeast
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Atlanta</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Experienced</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/enterprise-account-manager-southeast/E2.845" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/enterprise-account-manager-southeast/E2.845">
+<span class="positionLink">
+                                            Enterprise Account Manager, Southeast
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> USA - REMOTE</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Experienced</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/sales---enterprise-account-manager/3B.54A" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/sales---enterprise-account-manager/3B.54A">
+<span class="positionLink">
+                                            Sales - Enterprise Account Manager
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> USA - REMOTE</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Experienced</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/systems-engineer---chicago/3B.549" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/systems-engineer---chicago/3B.549">
+<span class="positionLink">
+                                            Systems Engineer - Chicago
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Chicago</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Experienced</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' -->
+</ul>
+<!-- END: Inner ngRepeat. -->
+</div>
+</div><!-- end ngRepeat: positions in groupsA | orderBy:'sortingKey' | filter: positions.length --><div class="row positionsGroup careerCard lightBottomLine" ng-class="{lightBottomLine :$last}" ng-repeat="positions in groupsA | orderBy:'sortingKey' | filter: positions.length">
+<div class="col-sm-12 positionsGroupHeader" ng-style="legacyDesign?{}:{backgroundColor: company.brandColor || '#278fe6'}">
+<!-- ngIf: !legacyDesign -->
+<h2 class="positionsGroupTitle">
+                                    SV&amp;V
+                            </h2>
+</div>
+<div class="col-sm-12 rowFix positionsGroupContent">
+<!-- BEGIN: Inner ngRepeat. -->
+<ul>
+<!-- ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/senior-manual-test-engineer/47.64B" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/senior-manual-test-engineer/47.64B">
+<span class="positionLink">
+                                            Senior Manual Test Engineer
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Senior</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/software-developer-engineer-in-test/5B.642" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/software-developer-engineer-in-test/5B.642">
+<span class="positionLink">
+                                            Software Developer Engineer in Test
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Senior</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' --><li class="" ng-repeat="position in positions | orderBy:'+name'">
+<a class="positionItem" href="https://www.comeet.com/jobs/infinidat/D6.003/system-test-engineer/D2.646" ng-href="https://www.comeet.com/jobs/infinidat/D6.003/system-test-engineer/D2.646">
+<span class="positionLink">
+                                            System Test Engineer
+                                        </span>
+<ul class="positionDetails">
+<!-- ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location --><li class="" ng-if="company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION &amp;&amp; position.location"><i class="fa fa-map-marker"></i> Herzliya</li><!-- end ngIf: company.careersWebsiteGroupPositionsBy !== careersWebsiteGroupPositionsBy.enumId.LOCATION && position.location -->
+<!-- ngIf: company.careersWebsiteGroupPositionsBy === careersWebsiteGroupPositionsBy.enumId.LOCATION && position.department -->
+<!-- ngIf: position.experienceLevel --><li class="" ng-if="position.experienceLevel">Intermediate</li><!-- end ngIf: position.experienceLevel -->
+<!-- ngIf: position.employmentType --><li class="" ng-if="position.employmentType">Full-time</li><!-- end ngIf: position.employmentType -->
+</ul>
+<!-- ngIf: !legacyDesign -->
+</a>
+</li><!-- end ngRepeat: position in positions | orderBy:'+name' -->
+</ul>
+<!-- END: Inner ngRepeat. -->
+</div>
+</div><!-- end ngRepeat: positions in groupsA | orderBy:'sortingKey' | filter: positions.length -->
+</div><!-- end ngIf: companyPositions.length > 0 -->
+</div><!-- end ngIf: company && companyPositions -->
+<!-- ngIf: company && companyPositions.length --><div class="row mainRow" id="shareWrapper" ng-if="company &amp;&amp; companyPositions.length">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 careerCard">
+<div class="comeet-social-wrap undefined" style="z-index: 1000;"><div class="replaced-iframe">
+<div class="wrapper">
+<div id="shareWrapperInIframe" ng-init="CareersState.setCurrent(CareersState.states.SOCIAL);">
+<!-- ngInclude: '/common/assets/careers/html/socialLinks.html?rc-257-0' --><div class="" ng-include="'/common/assets/careers/html/socialLinks.html?rc-257-0'"><div id="jobShareDiv" ng-controller="SharePositionCtrl">
+<div class="shareHeader" ng-show="company">
+<!-- ngIf: $root.currentUser && position && state.submissionSuccessful -->
+<div class="clear clearAfter" ng-show="!state.submissionSuccessful">
+<!-- ngIf: params.socialShowTitle --><span class="" ng-if="params.socialShowTitle">
+<!-- ngIf: (socialShowTitleForAll || !isEmbedded) && !$root.currentUser --><h2 class="smallTitle" ng-if="(socialShowTitleForAll || !isEmbedded) &amp;&amp; !$root.currentUser">Help us grow!</h2><!-- end ngIf: (socialShowTitleForAll || !isEmbedded) && !$root.currentUser -->
+<!-- ngIf: $root.currentUser -->
+</span><!-- end ngIf: params.socialShowTitle -->
+<!-- ngIf: !$root.currentUser && params.socialEmployees --><a aria-label="Employee at INFINIDAT?" class="suggestEmployee" ng-click="openUserModal()" ng-if="!$root.currentUser &amp;&amp; params.socialEmployees" ng-keydown="openUserModalOnEnterClick($event)" role="button" tabindex="0">
+<span>Employee at INFINIDAT?</span>
+</a><!-- end ngIf: !$root.currentUser && params.socialEmployees -->
+<!-- ngIf: $root.currentUser && isCopySupported && !state.isEmployeeApplyForm && !state.isReferFriendForm -->
+</div>
+</div>
+<!-- ngIf: $root.currentUser && position && !state.submissionSuccessful -->
+<div ng-hide="state.showForm">
+<div company="company" position="position" social-networks="socialNetworks" social-widget="" token="$root.userReferralToken" url="urlComeetHostedPage"><div class="socialWidget">
+<ul class="row flex rowGroup gridNoGutter grid grid-5">
+<li class="shareButton col-fifth" ng-class="params.bootstrapClass"><a aria-label="Share on LinkedIn" class="linkedinBackOnHover whiteOnHover colored" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.comeet.com%2Fjobs%2Finfinidat%2FD6.003&amp;title=Job%20opportunity%20at%20INFINIDAT&amp;summary=&amp;source=Comeet" ng-class="{}" ng-click="openLinkInWindow($event, 'Share on LinkedIn')" target="_blank" title="Share on LinkedIn"><i class="socialIcon inline linkedin" ng-class="socialNetworks.data[socialNetworks.enumId.LINKEDIN].cssClass || 'page'"></i><!--Share on LinkedIn--></a></li>
+<li class="shareButton col-fifth" ng-class="params.bootstrapClass"><a aria-label="Share on Facebook" class="facebookBackOnHover whiteOnHover colored" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.comeet.com%2Fjobs%2Finfinidat%2FD6.003" ng-click="openLinkInWindow($event, 'Share on Facebook')" target="_blank" title="Share on Facebook"><i class="socialIcon inline facebook" ng-class="socialNetworks.data[socialNetworks.enumId.FACEBOOK].cssClass || 'page'"></i><!--Share on Facebook--></a></li>
+<li class="shareButton col-fifth" ng-class="params.bootstrapClass"><a aria-label="Post on X" class="twitterBackOnHover whiteOnHover colored" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.comeet.com%2Fjobs%2Finfinidat%2FD6.003&amp;text=Great%20opportunity%20to%20join%20INFINIDAT!%20Check%20out%20the%20position&amp;via=ComeetCo&amp;hashtags=infinidat" ng-click="openLinkInWindow($event, 'Post on X')" target="_blank" title="Post on X"><i class="socialIcon inline twitter" ng-class="socialNetworks.data[socialNetworks.enumId.TWITTER].cssClass || 'page'"></i><!--Tweet on Twitter--></a></li>
+<!-- ngIf: params.socialPinterest -->
+<!-- ngIf: params.socialWhatsapp --><li class="shareButton col-fifth" ng-class="params.bootstrapClass" ng-if="params.socialWhatsapp"><a aria-label="WhatsApp" class="whatsAppBackOnHover whiteOnHover colored" href="https://api.whatsapp.com/send?text=Great%20opportunity%20to%20join%20INFINIDAT!%20Check%20out%20the%20position%20-%20https%3A%2F%2Fwww.comeet.com%2Fjobs%2Finfinidat%2FD6.003" target="_blank"><i class="socialIcon inline whatsApp" ng-class="socialNetworks.data[socialNetworks.enumId.WHATSAPP].cssClass || 'page'"></i></a></li><!-- end ngIf: params.socialWhatsapp -->
+<li class="shareButton col-fifth" ng-class="params.bootstrapClass"><a aria-label="Email a friend" class="emailBackOnHover whiteOnHover colored" href="mailto:?subject=Job%20opportunity%20at%20INFINIDAT&amp;body=Hi,%0D%0A%0D%0A%0D%0AThere's a great opening now available at INFINIDAT, I thought you'd like to check it out!%0D%0A%0D%0A%0D%0AFor more details please use this link:%0D%0Ahttps%3A%2F%2Fwww.comeet.com%2Fjobs%2Finfinidat%2FD6.003%0D%0A%0D%0A%0D%0A" target="_top" title="Email a friend"><i class="socialIcon inline email" ng-class="socialNetworks.data[socialNetworks.enumId.EMAIL].cssClass || 'page'"></i><!--Email a friend--></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="push ng-hide" ng-show="!(state.isLoading || !CareersState.current.showFooter)"></div>
+</div>
+
+ Latest compiled and minified JavaScript 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Google tag (gtag.js) 
+
+
+
+
+<div style="clear: both; display: block;"></div><div class="fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div></div></div></div>
+</div>
+</div><!-- end ngIf: company && companyPositions.length -->
+<div class="row noPaddingBottom mobilePadding">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 rowFix">
+<footer class="animated fadeIn noPadding brandTopLine" id="footer">
+<div class="">
+<p class="conditions clear pull-left">
+<a aria-label="Powered by Comeet" href="http://www.comeet.co" style="display: inline-flex;align-items: center;" target="_blank">
+<span>Powered by</span><img alt="Powered by Comeet" id="footerLogo" src="/common/assets/jobs-assets/images/comeet-logo/comeet-logo-powered-by.svg" style="padding-left: 6px;"/>
+</a>
+</p>
+<p class="conditions clear pull-right">
+<a aria-label="Link to Terms &amp; Policies" class="regularLink" href="https://help.comeet.com/en/collections/1808450-terms-policies" target="_blank">Terms &amp; Policies</a>  ·  <a aria-label="Link to cookie policy for careers website" class="regularLink" href="https://help.comeet.com/en/articles/5342603-cookie-policy-for-careers-website" target="_blank">Cookies</a>
+</p>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="push" ng-show="!(state.isLoading || !CareersState.current.showFooter)"></div>
+<!-- Latest compiled and minified JavaScript -->
+<!-- Google tag (gtag.js) -->
+<div class="fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div></body></html>

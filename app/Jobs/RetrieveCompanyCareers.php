@@ -314,9 +314,9 @@ class RetrieveCompanyCareers implements ShouldQueue
 
             $latestFile = $this->getLatestFile($basePathHtmls);
 
-        //$pythonExecutable = "C:\\Python3\\python.exe";
+        $pythonExecutable = "C:\\Python3\\python.exe";
 
-            $pythonExecutable = "C:\\Users\\shuga\\AppData\\Local\\Programs\\Python\\Python312\\python.exe";
+        //    $pythonExecutable = "C:\\Users\\shuga\\AppData\\Local\\Programs\\Python\\Python312\\python.exe";
 
 
 

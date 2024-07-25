@@ -1,0 +1,988 @@
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths no-ipad no-iphone no-ipod no-appleios ukg-focus-visible hydrated" data-ukg-focus-visible="" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" id="PageHtml" lang="en-US"><head>
+<title data-bind="text: title()">My Job Search</title>
+<link href="data:;base64,iVBORw0KGgo=" rel="icon"/>
+</head><body class="jobboardview-controller candidate-layout"><iframe id="_as" src="/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/AnonymousSessionCheck" style="display: none"></iframe>
+<link href="/Scripts/npm-imports/site.css?v=ENlTxjTg7KIYjXI0E6JaUZpH62MiDNLcMv2EKIFk2W0&amp;v=ENlTxjTg7KIYjXI0E6JaUZpH62MiDNLcMv2EKIFk2W0" rel="stylesheet"/>
+<link href="/styles/bootstrap-extensions.css?v=lG1vzXW20Vy-3Hz05ZkCJ_pFVtY" rel="stylesheet"/>
+<link href="/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/Styles/BrandingSettings?brandId=0a6de37c-80b9-4fba-9ba5-ad7437c66730&amp;m=637348426714380000" rel="stylesheet"/>
+<link href="https://ignite.cdn.ultipro.com/dls-cdn/ignite/v7.3.2/tokens/fonts/noto/ignite-fonts-noto-hinted-cdn.css" rel="stylesheet"/>
+<link href="https://ignite.cdn.ultipro.com/dls-cdn/ignite/v7.3.2/tokens/fonts/volte/ignite-fonts-volte-cdn.css" rel="stylesheet"/>
+<link href="https://ignite.cdn.ultipro.com/dls-cdn/ignite/v7.3.2/tokens/css/ignite-tokens.css" rel="stylesheet"/>
+<!-- Google Tag Manager -->
+<!-- End Google Tag Manager -->
+<ukg-ignite-shell class="hydrated" data-ignite-version="7.3.2" default-translation-path="" enable-cdn-path="" language="en-US">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TRJP8TD" style="display:none;visibility:hidden" width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="sr-only sr-only-focusable" data-i18n="Common.SkipLink" id="skipLink" tabindex="0">Skip to main content</a>
+<div id="PageContent" style="">
+<header role="banner">
+<nav aria-label="Global" class="navbar navbar-candidate navbar-static-top" data-automation="navbar" data-i18n="[aria-label]Layout.NavigationAriaLabel">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="https://www.mtaflint.org/careers.html" target="_blank">
+<img alt="MTA" class="small-logo logo" data-automation="navbar-small-logo" src="/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/Styles/GetSmallHeaderLogo?brandId=0a6de37c-80b9-4fba-9ba5-ad7437c66730&amp;m=637348426714380000"/>
+<img alt="MTA" class="large-logo logo" data-automation="navbar-large-logo" src="/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/Styles/GetLargeHeaderLogo?brandId=0a6de37c-80b9-4fba-9ba5-ad7437c66730&amp;m=637348426714380000"/>
+</a>
+<button aria-labelledby="navbar-menu-label" class="navbar-toggle" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<span class="sr-only" data-i18n="Layout.Menu.MenuLabel" id="navbar-menu-label">Toggle Navigation</span>
+</div>
+<div class="collapse navbar-collapse" id="navbar-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="find-opps-link">
+<ukg-button class="brandingbutton ukg-color ukg-button-medium ukg-button-low-emphasis ukg-on-light ukg-no-min-width hydrated" data-automation="opportunities-menu-button" data-bind="attr: {'aria-label': $.t('Layout.Menu.Opportunities') }" data-i18n="Layout.Menu.Opportunities" data-ukg-focus-visible="" emphasis="low" id="OpportunitiesMenuButton" manual-color="true" onclick="window.location='/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4'" size="medium">Find Opportunities</ukg-button>
+</li>
+<li id="LanguagePicker">
+<ukg-button child-icon="menu-caret-down" class="brandingbutton ukg-color ukg-button-medium ukg-button-low-emphasis ukg-on-light ukg-no-min-width ukg-has-icons hydrated" data-automation="selected-language-picker-link" data-bind="menudropdownListener: { targetId: 'languageMenuContainer' }" data-i18n="[tooltip-text]Layout.LanguageLabel" data-ukg-focus-visible="" emphasis="low" id="languageMenubutton" manual-color="true" parent-icon="language" size="medium" tooltip-text="Language">
+<span class="brandingbutton" data-bind="text: selectedLanguage().Name">U.S. English</span>
+</ukg-button>
+<ukg-menu class="sc-ukg-menu-h sc-ukg-menu-s hydrated" data-bind="foreach: languages" id="languageMenuContainer" selectable=""><!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="en-GB" value="en-GB">British English</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="de-DE" value="de-DE">Deutsch</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="es-ES" value="es-ES">Español</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="fr-CA" value="fr-CA">Français canadien</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="pt-BR" value="pt-BR">Português do Brasil</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="en-US" selected="true" value="en-US">U.S. English</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'-->
+<ukg-menu-item aria-label="Simplified Chinese" class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: { value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code, 'aria-label': $.t('Layout.Menu.ChineseLabel')}, text: $data.Name" lang="zh-CN" value="zh-CN">简体中文</ukg-menu-item>
+<!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'--><!--/ko-->
+</ukg-menu>
+</li>
+<li>
+<ukg-button class="brandingbutton ukg-color ukg-button-medium ukg-button-low-emphasis ukg-on-light ukg-no-min-width hydrated" data-bind="attr: {'aria-label': $.t('Layout.Menu.LogIn') }" data-i18n="Layout.Menu.LogIn" data-ukg-focus-visible="" emphasis="low" id="SignInButton" manual-color="true" onclick="window.location='/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/Account/Login?cancelUrl=https%3A%2F%2Frecruiting.ultipro.com%2FMAS1000FLINT%2FJobBoard%2Ff9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4%2F%3Fq%3D%26o%3DpostedDateDesc'" size="medium">Sign In</ukg-button>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<div class="index-action">
+<div class="container" id="PageContainer">
+<div id="GlobalNotificationContainer">
+<global-notification><div class="alert alert-success" data-automation="global-notification" data-bind="visible: visible, css: level" role="alert" style="display: none;"><span data-bind="html: message"></span> <span data-bind="visible: errors().length == 1, text: errors()[0]" style="display: none;"></span><ul data-bind="visible: errors().length &gt; 1, foreach: errors()" style="display: none;"></ul></div></global-notification>
+</div>
+<link href="https://js.arcgis.com/4.3/esri/css/main.css" rel="stylesheet"/>
+<div id="OpportunitiesContainer">
+<div>
+<react-ko-bridge params="component:'Recruiting.Rct.Containers.Candidate.CandidateConsentBanner',
+                         props:{
+                            'showAlert': false,
+                            'consentUrl': '/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/CandidateConsent'
+                         }"><div data-automation="candidate-consent-banner-container"></div></react-ko-bridge>
+<div class="row">
+<div class="col-md-24">
+<h1 class="job-board-title" data-automation="job-board-title" data-bind="text: jobBoard.Name">MTA Job Openings</h1>
+</div>
+</div>
+<div class="row" role="search">
+<div class="col-md-24" data-bind="css: { 'col-md-24': !shouldShowMap() || geoServiceUnavailable(), 'col-md-12': shouldShowMap() &amp;&amp; !geoServiceUnavailable() }">
+<div class="form-group">
+<!-- ko if: shouldShowMap() --><!-- /ko -->
+<span class="typeahead-group typeahead-group-right search-input-group">
+<div class="right-inner-addon dropdown">
+<!-- onmouseup event is needed in order set focus because the filter components steal the mousedown event and thus prevent ie from properly setting focus on input element -->
+<input aria-label="What job are you searching for?" class="form-control" data-automation="search-textbox" data-bind="textInput: searchQuery, event: { keyup: searchInputKeyPress }, attr: { placeholder: $.t('Opportunity.Opportunities.SearchHelpBlockPlaceholder'), 'aria-label': $.t('Opportunity.Opportunities.SearchLabelWhatJob') }" id="SearchInput" maxlength="100" onmouseup="this.focus()" placeholder="Job Title, Job Category, Store, Requisition Number" type="text"/>
+<div class="search-tips-target" data-bind="component: {
+                                         name: 'react-ko-bridge',
+                                         params: { 'component': 'Recruiting.Rct.Components.Atoms.SearchTips', 'props' :{ 'dropdownClassName': 'jobboard-dropdown' } }
+                                     }"><div class="searchtip-root"><span aria-expanded="false" class="dropdown-toggle bulb-icon tooltip-button" data-toggle="dropdown" id="tips-and-tricks-button-tooltip" role="button" tabindex="0"><ukg-icon aria-label="Tips &amp; Tricks" class="ukg-icon-s hydrated" custom-size="1.5" data-automation="search-tips-icon" icon-aria-label="Tips &amp; Tricks" name="info" role="img" size="s" slot="icon-only" style="font-size: 1.5rem;"></ukg-icon><ukg-tooltip aria-hidden="true" class="sc-ukg-tooltip-h sc-ukg-tooltip-s hydrated" htmlfor="tips-and-tricks-button-tooltip" role="tooltip" tabindex="-1" text="Tips &amp; Tricks"><div class="tooltip-wrapper sc-ukg-tooltip"><div class="tooltip-content sc-ukg-tooltip"><div class="tooltip-text sc-ukg-tooltip">Tips &amp; Tricks</div></div></div></ukg-tooltip></span><div class="dropdown-menu tips-dropdown jobboard-dropdown" data-automation="search-tips-dropdown-menu"><div aria-labelledby="TipsTricksHeader" class="modal-dialog mt-0 mb-0" role="dialog"><div class="modal-content"><div class="modal-header"><button aria-label="Close" class="close" data-automation="search-tips-close-button" data-bind="attr: { 'aria-label': $.t('Common.Close') }" data-dismiss="modal" type="button"> <span aria-hidden="true">× </span></button><h4 class="modal-title" id="TipsTricksHeader"> <span class="fa fa-lightbulb-o"> </span>  Tips &amp; Tricks</h4></div><div class="modal-body"><div class="mobile-view-content"><h4>Search Modifier</h4><dl><dt><b>Either terms</b></dt><label class="label label-default">word1 word2</label><dd>Manager Supervisor retrieves an opportunity for a Manager or a Supervisor when searching for an opportunity.</dd></dl><br/><dl><dt><b>Exact phrase</b></dt><label class="label label-default">"word1 word2"</label><dd>"Customer Service Manager""Customer Service Supervisor" retrieves an opportunity for a Customer Service Manager or a Customer Service Supervisor.</dd></dl><br/><dl><dt><b>Include terms</b></dt><label class="label label-default">word1 + word2</label><dd>Manager + Accounting returns opportunities for Manager and Accounting.</dd></dl><br/><dl><dt><b>Exclude terms</b></dt><label class="label label-default">-word1</label><dd>-Sales returns all opportunities that do not have the term Sales associated to them.</dd></dl><br/><dl><dt><b>Either OR</b></dt><label class="label label-default">word1 | word2</label><dd>Developer + (apache | weblogic | websphere) returns Developer opportunities with at least one of the 3 relevant terms.</dd></dl><br/><dl><dt><b>Combining terms</b></dt><label class="label label-default">word1 + -word2</label><dd>Manager + -Sales returns all opportunities that have Manager in them that do NOT have Sales associated to them.</dd></dl></div><div class="normal-content"><table class="table" role="grid"><caption class="sr-only">Tips &amp; Tricks</caption><thead><tr><th colspan="2" id="SearchTipsHeader1" scope="col" style="width: 33%;"><b>Search Modifier</b></th><th id="SearchTipsHeader3" scope="col" style="width: 33%;"><b>Description</b></th><th id="SearchTipsHeader4" scope="col" style="width: 33%;"><b>Example </b></th></tr></thead><tbody><tr><td headers="SearchTipsHeader1"><b>Either terms</b></td><td headers="SearchTipsHeader1"><label class="label label-default">word1 word2</label></td><td headers="SearchTipsHeader3"> Either search term value.</td><td headers="SearchTipsHeader4"> Manager Supervisor retrieves an opportunity for a Manager or a Supervisor when searching for an opportunity.</td></tr><tr><td headers="SearchTipsHeader1"><b>Exact phrase</b></td><td headers="SearchTipsHeader1"><label class="label label-default">"word1 word2"</label></td><td headers="SearchTipsHeader3"> Returns the exact phrase match within quotes.</td><td headers="SearchTipsHeader4">"Customer Service Manager""Customer Service Supervisor" retrieves an opportunity for a Customer Service Manager or a Customer Service Supervisor.</td></tr><tr><td headers="SearchTipsHeader1"><b>Include terms</b></td><td headers="SearchTipsHeader1"><label class="label label-default">word1 + word2</label></td><td headers="SearchTipsHeader3"> The '+' indicates that both terms must be present.</td><td headers="SearchTipsHeader4"> Manager + Accounting returns opportunities for Manager and Accounting.</td></tr><tr><td headers="SearchTipsHeader1"><b>Exclude terms</b></td><td headers="SearchTipsHeader1"><label class="label label-default">-word1</label></td><td headers="SearchTipsHeader3"> The '-' indicates that the term must not be present.</td><td headers="SearchTipsHeader4">-Sales returns all opportunities that do not have the term Sales associated to them.</td></tr><tr><td headers="SearchTipsHeader1"><b>Either OR</b> </td><td headers="SearchTipsHeader1"><label class="label label-default">word1 | word2</label></td><td headers="SearchTipsHeader3"> Offers flexible inclusion, and typically broadens your search results.You may use parentheses to encapsulate OR statements.</td><td headers="SearchTipsHeader4">Developer + (apache | weblogic | websphere) returns Developer opportunities with at least one of the 3 relevant terms.</td></tr><tr><td headers="SearchTipsHeader1"><b>Combining terms</b> </td><td headers="SearchTipsHeader1"><label class="label label-default">word1 + -word2</label></td><td headers="SearchTipsHeader3"> Retrieves records that include the first term if they do not have the second term.</td><td headers="SearchTipsHeader4">Manager + -Sales returns all opportunities that have Manager in them that do NOT have Sales associated to them.</td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+<span class="typeahead-addon typeahead-addon-right" data-automation="typeahead-search" data-bind="ifnot: showClearButton"><i aria-hidden="true" class="fa fa-search muted"></i></span>
+<span class="typeahead-addon typeahead-addon-right" data-automation="searchinput-clear" data-bind="visible: showClearButton,click: clearSearchInput, event: { keypress: clearSearchInput }" role="button" style="display: none;" tabindex="0">
+<i aria-label="Clear search" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Common.Clear') }"></i>
+</span>
+</span>
+</div>
+</div>
+<!-- ko if: shouldShowMap() && !geoServiceUnavailable() --><!-- /ko -->
+</div>
+</div>
+<div aria-label="Map" data-bind="visible: shouldShowMap(), attr: { 'aria-label': $.t('Opportunity.Opportunities.Map') }" role="region" style="display: none;">
+<div data-automation="map" id="viewDiv"></div>
+</div>
+<div>
+<div class="row">
+<div aria-label="Filter Opportunities" class="pl-0 pr-0 col-md-16 col-sm-24 col-xs-24" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.FilterOpportunities') }, css: { 'col-md-24 col-sm-24 col-xs-24': showFullWidth(), 'col-md-16 col-sm-24 col-xs-24': !showFullWidth() }" role="region">
+<div class="col-md-21 col-sm-24 col-xs-24">
+<jobboard-filter-panel params="filtersUrl: '/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/JobBoardView/GetFilters',
+                        typeaheadOptionsUrl: '/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/JobBoardView/GetTypeaheadOptions',
+                        parentQuery: opportunityQuery,
+                        shouldInvalidate: shouldInvalidateSubscribers,
+                        onFiltersReady: filtersUpdated.bind($root),
+                        onFiltersChange: filtersUpdated.bind($root),
+                        getFilterIdentifierCallback: getFilterIdentifier.bind($root),
+                        getSearchFilterSearchFragmentCallback: getSearchFilterSearchFragment.bind($root),
+                        hydratedFilterValues: hydratedFilterValues,
+                        shouldRehydrate: shouldRehydrate,
+                        shouldReset: shouldReset,
+                        maxSelectedFilter: 10">
+<div class="filter-panel jobboard-filter-panel" data-automation="filter-panel-control" id="FilterPanel">
+<div class="row">
+<div class="col-md-24" data-bind="visible: shouldShowFilter()" style="">
+<div class="row">
+<div class="col-md-24">
+<!-- ko foreach: searchFiltersOptions -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) --><!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) -->
+<typeahead-filter params="
+                                            searchFilter: $data,
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            taOptionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            onViewMoreOptionsClickedCallback: $parent.onViewMoreOptionsClicked,
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+                                            getCurrentSelectionsThreshold: $parent.currentSelectionsThreshold,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter typeahead-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunityPhysicalLocation">
+<button aria-describedby="OpportunityPhysicalLocation" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;">
+<i aria-label="Clear filter" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Filters.ClearFilter') }"></i>
+</button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'id': identifier + 'Button',
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" id="OpportunityPhysicalLocationButton" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel(), attr: { id: 'Dropdown' + $index() }" id="Dropdown0">Company Location</span>
+<span class="caret"></span>
+</button>
+<div aria-labelledby="OpportunityPhysicalLocationButton" class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() },
+                        attr: {
+                            'id': identifier + 'FilterDropdown',
+                            'aria-labelledby': identifier + 'Button',
+                            'role': isOpen() ? 'region' : null
+                        }" id="OpportunityPhysicalLocationFilterDropdown" style="display: none;">
+<div class="text-input">
+<input aria-labelledby="Dropdown0" class="form-control" data-automation="filter-typeahead" data-bind="textInput: instantaneousQueryString,
+                            attr: {
+                                'data-automation': 'filter-typeahead', 
+                                placeholder: $.t('Recruiter.Common.Filters.Search'),
+                                'aria-labelledby': 'Dropdown' + $index(),
+                                id: 'SearchInput' + $index()
+                            }" id="SearchInput0" maxlength="200" placeholder="Search"/>
+</div>
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+<div class="progressbar bar bar1" style="width: 0%;"></div>
+<div class="bufferbar bar bar2" style="width: 100%;"></div>
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: !isFetching() &amp;&amp; emptyResults() &amp;&amp; !instantaneousQueryStringChanging()">
+<i class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : true }"></i>
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div aria-label="Select" class="options" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<div class="opts results" data-automation="results-section" data-bind="visible: isSearching() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+<div class="opts selected" data-automation="selected-section" data-bind="visible: !isSearching() &amp;&amp; selectedGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: selectedGroup --><!-- /ko -->
+</div>
+<div class="opts recent" data-automation="recent-section" data-bind="visible: !isSearching() &amp;&amp; recentGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: recentGroup --><!-- /ko -->
+</div>
+<div class="opts top" data-automation="top-results-section" data-bind="visible: !isSearching() &amp;&amp; topGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: topGroup --><!-- /ko -->
+</div>
+</div>
+<div class="view-more">
+<!-- ko if: shouldShowViewMoreLink()-->
+<a class="btn btn-link" data-automation="view-all-link" data-bind="visible: shouldShowViewMoreLink(), click: onViewMoreOptionsClicked.bind($data), text: getViewMoreTextLabel()" href="#" role="button">View Locations</a>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</typeahead-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) --><!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) -->
+<typeahead-filter params="
+                                            searchFilter: $data,
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            taOptionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            onViewMoreOptionsClickedCallback: $parent.onViewMoreOptionsClicked,
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+                                            getCurrentSelectionsThreshold: $parent.currentSelectionsThreshold,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter typeahead-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunityJobCategory">
+<button aria-describedby="OpportunityJobCategory" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;">
+<i aria-label="Clear filter" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Filters.ClearFilter') }"></i>
+</button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'id': identifier + 'Button',
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" id="OpportunityJobCategoryButton" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel(), attr: { id: 'Dropdown' + $index() }" id="Dropdown1">Job Category</span>
+<span class="caret"></span>
+</button>
+<div aria-labelledby="OpportunityJobCategoryButton" class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() },
+                        attr: {
+                            'id': identifier + 'FilterDropdown',
+                            'aria-labelledby': identifier + 'Button',
+                            'role': isOpen() ? 'region' : null
+                        }" id="OpportunityJobCategoryFilterDropdown" style="display: none;">
+<div class="text-input">
+<input aria-labelledby="Dropdown1" class="form-control" data-automation="filter-typeahead" data-bind="textInput: instantaneousQueryString,
+                            attr: {
+                                'data-automation': 'filter-typeahead', 
+                                placeholder: $.t('Recruiter.Common.Filters.Search'),
+                                'aria-labelledby': 'Dropdown' + $index(),
+                                id: 'SearchInput' + $index()
+                            }" id="SearchInput1" maxlength="200" placeholder="Search"/>
+</div>
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+<div class="progressbar bar bar1" style="width: 0%;"></div>
+<div class="bufferbar bar bar2" style="width: 100%;"></div>
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: !isFetching() &amp;&amp; emptyResults() &amp;&amp; !instantaneousQueryStringChanging()">
+<i class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : true }"></i>
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div aria-label="Select" class="options" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<div class="opts results" data-automation="results-section" data-bind="visible: isSearching() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+<div class="opts selected" data-automation="selected-section" data-bind="visible: !isSearching() &amp;&amp; selectedGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: selectedGroup --><!-- /ko -->
+</div>
+<div class="opts recent" data-automation="recent-section" data-bind="visible: !isSearching() &amp;&amp; recentGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: recentGroup --><!-- /ko -->
+</div>
+<div class="opts top" data-automation="top-results-section" data-bind="visible: !isSearching() &amp;&amp; topGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: topGroup --><!-- /ko -->
+</div>
+</div>
+<div class="view-more">
+<!-- ko if: shouldShowViewMoreLink()-->
+<a class="btn btn-link" data-automation="view-all-link" data-bind="visible: shouldShowViewMoreLink(), click: onViewMoreOptionsClicked.bind($data), text: getViewMoreTextLabel()" href="#" role="button">View Job Categories</a>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</typeahead-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) -->
+<select-list-filter params="
+                                            searchFilter: $data,
+                                            isSingleSelect : $parent.shouldBeSingleSelect($data),
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            optionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunitySchedule">
+<button aria-describedby="OpportunitySchedule" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;"><i aria-label="Clear filter" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Filters.ClearFilter') }"></i></button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel()">Schedule</span>
+<span class="caret"></span>
+</button>
+<div class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() }" style="display: none;">
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+<div class="progressbar bar bar1" style="width: 0%;"></div>
+<div class="bufferbar bar bar2" style="width: 100%;"></div>
+</div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: resultsGroup().length == 0">
+<i class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : true }"></i>
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div aria-label="Select" class="opts results options" data-automation="results-section" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div>
+</select-list-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) --><!-- /ko -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) -->
+<select-list-filter params="
+                                            searchFilter: $data,
+                                            isSingleSelect : $parent.shouldBeSingleSelect($data),
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            optionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunityJobLocationType">
+<button aria-describedby="OpportunityJobLocationType" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;"><i aria-label="Clear filter" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Filters.ClearFilter') }"></i></button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel()">Job Location Type</span>
+<span class="caret"></span>
+</button>
+<div class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() }" style="display: none;">
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+<div class="progressbar bar bar1" style="width: 0%;"></div>
+<div class="bufferbar bar bar2" style="width: 100%;"></div>
+</div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: resultsGroup().length == 0">
+<i class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : true }"></i>
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div aria-label="Select" class="opts results options" data-automation="results-section" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div>
+</select-list-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</jobboard-filter-panel>
+</div>
+<div class="col-md-3 no-left-gutter">
+<div class="pull-right reset">
+<react-ko-bridge params="component: 'Recruiting.Rct.Components.Atoms.Button',
+                            props: {
+                                'buttonType': 'link',
+                                'text': $.t('Recruiter.Candidates.ResetSearch'),
+                                'onClick': resetSearch,
+                                'icon': 'fa-refresh',
+                                'dataAutomation': 'reset-button'
+                            }"><button class="btn btn-link" data-automation="reset-button"><i class="mr-1 fa fa-refresh"></i><span>Reset</span></button></react-ko-bridge>
+</div>
+</div>
+</div>
+<div data-bind="if: !showFullWidth()">
+<div class="col-xs-12 col-md-8">
+<p class="hidden-xs hidden-sm" data-bind="visible: showAddJobSearchAgent" style="display: none;">
+<button class="btn btn-primary btn-block" data-automation="create-job-search-agent-link" data-bind="disable: disableCreateJobAlert(), click: createJobSearchAgent"><span class="fa fa-envelope-o"></span> <span data-i18n="Opportunity.Opportunities.JobSearchAgent.Activate">Activate job alerts for this search</span></button>
+</p>
+</div>
+</div>
+<!-- ko if: showAddJobSearchAgent() && showFullWidth() --><!-- /ko -->
+<div class="col-sm-24 col-xs-24 col-md-16" data-bind="css: { 'col-md-24': showFullWidth(), 'col-md-16': !showFullWidth() } ">
+<p class="hidden-md hidden-lg" data-bind="visible: showAddJobSearchAgent" style="display: none;">
+<button class="btn btn-primary btn-block full-width" data-automation="create-job-search-agent-link" data-bind="disable: disableCreateJobAlert(), click: createJobSearchAgent"><span class="fa fa-envelope-o"></span> <span data-i18n="Opportunity.Opportunities.JobSearchAgent.Activate">Activate job alerts for this search</span></button>
+</p>
+<div class="search-count" data-automation="opportunities-search-container">
+<div class="row" id="SearchCount">
+<div class="col-md-15">
+<h2 aria-live="polite" class="count m-0" data-automation="opportunities-count" data-bind="text: $.t('Opportunity.Opportunities.ResultJobCountShowingXOfY', { loadedCount: loadedCount(), allCount: totalCount() }), visible: hasLoadedOpportunities()" style="">Showing 6 of 6 opportunities</h2>
+</div>
+<div class="col-md-9">
+<div class="sort-by pull-right">
+<select-list params="options: orderByOptions,
+                                    rightAligned: true,
+                                    selectedOption: orderBy,
+                                    onChangeCallback: sortUpdated.bind($root)">
+<div class="base-filter select-list-filter" data-automation="terms-filter" data-bind="
+                attr: { id: 'sort-by' },
+            " id="sort-by">
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="selected-option" data-bind="click: toggleDropdown" data-toggle="dropdown">
+<span class="sr-only" data-bind="text: $.t('Common.Sort.Sort')">Sort</span>
+<span data-bind="text: dropdownLabel()">By Newest</span>
+<span class="caret"></span>
+</button>
+<div class="filter-dropdown filter-small right-aligned" data-automation="options-dropdown" data-bind="
+                    visible: isOpen(),
+                    css: { 'right-aligned': isRightAligned }
+                " style="display: none;">
+<div aria-label="Select" class="opts results" data-automation="options-section" data-bind="attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<!-- ko foreach: options -->
+<div class="select-list-option clearfix" data-automation="filter-option" data-bind="event: { keypress: $parent.onOptionClicked.bind($parent, $data) }, click: $parent.onOptionClicked.bind($parent, $data), attr: { id: $data.Value }" id="postedDateDesc" role="listitem" tabindex="0">
+<i aria-label="Selected" class="fa fa-check" data-automation="option-icon" data-bind="css: { invisible : !$parent.isOptionSelected($data)}, attr: { 'aria-label': $.t('Common.Selected') }"></i>
+<div class="option-label" data-automation="option-name">
+<span data-bind="text: $data.Text">By Newest</span>
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="filter-option" data-bind="event: { keypress: $parent.onOptionClicked.bind($parent, $data) }, click: $parent.onOptionClicked.bind($parent, $data), attr: { id: $data.Value }" id="postedDateAsc" role="listitem" tabindex="0">
+<i aria-label="Selected" class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : !$parent.isOptionSelected($data)}, attr: { 'aria-label': $.t('Common.Selected') }"></i>
+<div class="option-label" data-automation="option-name">
+<span data-bind="text: $data.Text">By Oldest</span>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</select-list>
+</div>
+</div>
+</div>
+</div>
+<div class="alert alert-danger" data-automation="personalized-search-error-list" data-bind="with: personalizedSearch.personalizedSearchHandler, visible: personalizedSearch.personalizedSearchHandler.serverErrors().length &gt; 0" style="display: none;">
+<ul>
+<!-- ko foreach: serverErrors --><!-- /ko -->
+</ul>
+</div>
+<div data-bind="activity: { trigger: loadOpportunities.isExecuting, resize: true, valign: 'top', padding: 32 }, overlay: { trigger: loadOpportunities.isExecuting, resize: true }" id="Opportunities"><div class="us-overlay" style="border-radius: inherit; position: absolute; opacity: 0.7; background-color: rgb(255, 255, 255); display: none; margin-top: 0px; margin-left: 0px; height: 1px; width: 720px;"></div><div class="us-activity-large content-middle-right" data-automation="activity-indicator" data-content="" style="position: absolute; z-index: 1000; display: none; margin-top: 32px; margin-left: 344px;"></div>
+<div data-bind="foreach: opportunities">
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity0">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/OpportunityDetail?opportunityId=7ebcc5b9-4900-40b6-959e-26bf4e763765">Customer Service Representative</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jul 18, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Clerical/Office/Support</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">CUSTO001305</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType --><!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">As MTA Continues to improve our fare collections process and implement a new cashless fare system, Genfare, the Customer Service Representatives will suppport the transition to this new system, and be an integral part of the team that assists all customers with this transition. We are currently hiring for two people for this new position, anticipated to begin in the middle of March 2024.</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity1">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/OpportunityDetail?opportunityId=81301be3-d22b-4bc9-a55b-84359187a0ca">Network Adminstrator</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() -->
+<i aria-hidden="true" class="fa fa-flag featured-icon-invisible" data-bind="popover: { trigger: 'hover', container: 'body', placement: 'right', content: $.t('Opportunity.Opportunities.Featured') }" data-original-title="" title=""></i>
+<i aria-label="Featured" class="fa fa-flag featured-icon" data-automation="featured-label" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Featured') }, popover: { trigger: 'focus', container: 'body', placement: 'right', content: $.t('Opportunity.Opportunities.Featured') }" data-original-title="" tabindex="0" title=""></i>
+<!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jul 11, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Clerical/Office/Support</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">NETWO001304</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType --><!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">The Network Administrator role provides technical and administrative support for all local area networks, wide area networks, wireless networking environments, and all connected devices The position is responsible for maintaining complete knowledge of existing hardware and software used to maximize the efficiency of the MTA network landscape users’ utilization and provides detailed reporting evaluating network information and usage on a periodic basis</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity2">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/OpportunityDetail?opportunityId=be91df67-7f3b-405a-9f27-25c449918e23">Peak Service Driver (BIG BUS)</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jun 26, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Driver Positions</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">PEAKS001302</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Part Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType --><!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">A Transit Operator is responsible for providing safe, courteous and on time transportation to the general public in a variety of mass transit vehicles.</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity3">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/OpportunityDetail?opportunityId=f2f8bfe9-51fa-447e-9328-f3999494f6fa">Bus Driver (BIG BUS) [Substitute or Part Time]</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jun 26, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Driver Positions</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">BUSDR001301</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Part Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType --><!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">A Transit Operator is responsible for providing safe, courteous and on time transportation to the general public in a variety of mass transit vehicles.</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity4">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/OpportunityDetail?opportunityId=ca23cb42-b26a-412f-88dc-11210d22234e">Inventory Clerk</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jun 25, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Maintenance</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">INVEN001295</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType --><!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">The Inventory Control Clerk is responsible for receiving and processing all transactions that relate to Inventory Control.</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity5">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/OpportunityDetail?opportunityId=b5340a43-6e12-4ede-abad-f0aea7134998">Rides to Wellness/Your Ride Full Time Driver- Mini Bus</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">May 15, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Driver Positions</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">RIDES001287</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType --><!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">Mini Bus drivers are responsible for providing safe, courteous transportation services for customers using MTA transportation.  They also perform other service-related duties as required.</div>
+<hr class="opportunity-hr"/>
+</div>
+</div>
+<div class="row">
+<div class="col-md-24 text-center">
+<span class="h5" data-bind="visible: skip() + pageSize &lt; totalCount() &amp;&amp; totalCount() &gt; 0" style="display: none;"><a data-automation="load-more-jobs-link" data-bind="click: loadMore, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? loadMore : null}" data-i18n="Opportunity.Opportunities.LoadMoreOpportunities" href="#" id="LoadMoreJobs">View More Opportunities</a></span>
+</div>
+</div>
+<div class="alert alert-block alert-danger" data-automation="no-jobs-message" data-bind="visible: hasLoadedOpportunities() &amp;&amp; totalCount() == 0" style="display: none;">
+<span data-bind="if: hasSearchDefined()" role="alert"></span>
+<span data-bind="if: !hasSearchDefined()">
+<strong data-i18n="Opportunity.Opportunities.NoJobsAvailable.Title">We do not have any opportunities available.</strong>
+<span data-i18n="Opportunity.Opportunities.NoJobsAvailable.Description">If you tell us a little about yourself we can contact you when the right opportunity arises.</span>
+</span>
+</div>
+</div>
+</div>
+<div class="col-sm-24 col-xs-24 col-md-8" data-bind="css: { 'col-md-16': showFullWidth(), 'col-md-8': !showFullWidth() }">
+<div data-bind="if: shouldShowAvailableJobBoards"></div>
+<div data-bind="if: shouldShowFeaturedOpportunities">
+<div aria-label="Featured Opportunities" class="featured-opportunities well well-sm" data-automation="featured-opportunities" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.FeaturedOpportunitiesTitle') }" role="complementary">
+<h2 class="section-title h4" data-automation="featured-section-title" data-i18n="Opportunity.Opportunities.FeaturedOpportunitiesTitle">Featured Opportunities</h2>
+<table class="table table-hover" data-bind="foreach: featuredOpportunities" id="FeaturedOpportunities" role="presentation">
+<tbody><tr data-automation="featured-opportunity">
+<td data-bind="popover: { title: Title, content: BriefDescription, placement: 'bottom', trigger: 'hover' }" data-original-title="" title="">
+<a class="opportunity-link break-word" data-bind="attr: { href: OpportunityDetailLink }, popover: { title: Title, content: BriefDescription, placement: 'bottom', trigger: 'focus' }" data-original-title="" href="/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/OpportunityDetail?opportunityId=81301be3-d22b-4bc9-a55b-84359187a0ca" tabindex="0" title="">
+<div aria-level="3" role="heading">
+<strong data-automation="job-title" data-bind="text: Title">Network Adminstrator</strong>
+</div>
+<div class="clearfix featured-opportunity-details">
+<div class="pull-left">
+<div>
+<small class="opportunity-title-subheader" data-automation="job-category" data-bind="text: JobCategoryName, attr: { href: OpportunityDetailLink }" href="/MAS1000FLINT/JobBoard/f9145a57-4ee1-4e20-bfa2-ef2d4d9ddfe4/OpportunityDetail?opportunityId=81301be3-d22b-4bc9-a55b-84359187a0ca">Clerical/Office/Support</small>
+</div>
+<div data-bind="if: Locations().length &gt; 0">
+<small data-bind="with: Locations()[0]">
+<candidate-physical-location params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()">Main - Dort</span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Mass Transportation Authority</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line1">1401 S Dort Hwy</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Flint, MI 48503, USA</span><br/></span></address></candidate-physical-location>
+</small>
+<small class="muted" data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 })" style="display: none;">+0 more</small>
+</div>
+</div>
+<div class="pull-right text-right">
+<div class="job-post-date">
+<small class="text-normal" data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jul 11, 2024</small>
+</div>
+<small class="label-with-icon">
+<i aria-hidden="true" class="fa fa-clock-o muted"></i><span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</small>
+</div>
+</div>
+</a>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div data-bind="if: shouldShowPersonalizedJobSearch"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<footer id="PageFooter" style="">
+<div class="container">
+<div class="row">
+<div class="col-md-24 text-muted">
+<div class="copyright">
+<a data-automation="footer-text" href="https://www.mtaflint.org/careers.html" target="_blank">
+                                    Mass Transportation Authority - Job Openings
+                                    <ukg-icon aria-label="This link will open in a new tab" class="ukg-icon-s hydrated" data-bind="attr:{'icon-aria-label': $.t('Layout.FooterLinkLabel')}" icon-aria-label="This link will open in a new tab" name="new-window" role="img" size="s" style="vertical-align: text-bottom"></ukg-icon>
+</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div id="unsupported-browsers" style="display: none">
+<h2>You are using an unsupported browser.</h2>
+<div>To use this site, please use a supported browser.</div>
+<div class="browser-list">
+<strong class="download-browser download-mozilla-firefox">
+<a href="https://www.mozilla.org/en-US/firefox/new/">
+<img alt="Firefox logo" src="/Content/images/browsers/firefox.png"/>
+                Download Firefox
+            </a>
+</strong>
+<strong class="download-browser download-google-chrome">
+<a href="https://www.google.com/chrome/browser/">
+<img alt="Chrome logo" src="/Content/images/browsers/chrome.png"/>
+                Download Chrome
+            </a>
+</strong>
+<strong class="download-browser download-internet-explorer">
+<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+<img alt="Internet Explorer logo" src="/Content/images/browsers/internet-explorer.png"/>
+                Download Internet Explorer
+            </a>
+</strong>
+</div>
+</div>
+</ukg-ignite-shell>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8IyZRnnva8xFl0DUCwN3oYsP62o1ZawF3uptmu2JrsjDlOuF8cQCfzgrBweXSLMplkkEKD3pMIuRwxcKvLyi2BUzxTE5h5QuREO1xeIgCUb0bWDrciTGk24NlKm9Qd_V4cvTMp_rHEv8v4i9irtmnLM"/></body></html>

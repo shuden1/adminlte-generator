@@ -40,16 +40,26 @@ class SendTelegramMessage implements ShouldQueue
 
     public function handle()
     {
-        set_time_limit(2400);
+        set_time_limit(5000);
         $companies = $this->user->companies;
 
         $leadershipJobs = [];
         $technicalJobs = [];
 
         foreach ($companies as $company) {
+            // Step 1: Determine the last 'provided_at' date for any job related to the $company
+            $lastProvidedAt = Job::where('company_id', $company->id)
+                ->join('job_user', 'jobs.id', '=', 'job_user.job_id')
+                ->max('job_user.provided_at');
+
+            // Step 2: Modify the existing job query to include the new condition
             $jobs = Job::where('company_id', $company->id)
                 ->whereDoesntHave('users', function ($query) {
                     $query->where('user_id', $this->user->id);
+                })
+                ->when($lastProvidedAt, function ($query) use ($lastProvidedAt) {
+                    // Only include jobs created after the last 'provided_at' date
+                    return $query->where('created_at', '>', $lastProvidedAt);
                 })
                 ->get();
 

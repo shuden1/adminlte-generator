@@ -47,6 +47,8 @@ class SendEmailViaGmail implements ShouldQueue
 
     public function handle()
     {
+        set_time_limit(5000);
+
         $companiesToSend = [];
         $newJobs = [];
         $companies = $this->user->companies;
@@ -142,30 +144,42 @@ class SendEmailViaGmail implements ShouldQueue
 
             $service = new Gmail($client);
 
-            $htmlContent = view('emails.email_template', compact('companiesToSend','newJobs'))->render();
-
             $emails = array_merge([$this->to], $this->user->emails->pluck('email')->toArray());
 
+            $companyChunks = array_chunk($companiesToSend, 5); // Chunk companies by 5
 
-            $email = (new \Swift_Message())
-                ->setSubject($this->subject)
-                ->setFrom('flock@littlebirds.io') // Use the service account email
-                ->setTo($emails)
-                ->setBody($htmlContent, 'text/html');
-
-            $message = new \Google\Service\Gmail\Message();
-            $encodedMessage = base64_encode($email->toString());
-            $message->setRaw(str_replace(['+', '/', '='], ['-', '_', ''], $encodedMessage)); // URL safe base64
-
-            try {
-                $service->users_messages->send('me', $message);
-                foreach ($companiesToSend as $company){
-                    $company->contacted = \Carbon\Carbon::now();
-                    $company->save();
-                }
-            } catch (\Exception $e) {
-                print_r("Failed to send email via Gmail: " . $e->getMessage());
+            foreach ($companyChunks as $chunk) {
+                $companiesToSend = $chunk;
+                $htmlContent = view('emails.email_template', compact('companiesToSend', 'newJobs'))->render();
+                $this->sendEmail($service, $htmlContent, $this->subject, $emails);
             }
         }
     }
+
+      function sendEmail($service, $content, $subject, $emails) {
+        // Prepare the MIME message with headers and body
+        $mimeMessage = "Content-Type: text/html; charset=utf-8\r\n";
+        $mimeMessage .= "From: flock@littlebirds.io\r\n";
+        $mimeMessage .= "To: " . implode(",", $emails) . "\r\n";
+//        $mimeMessage .= "To: " .  "shugaevden@gmail.com\r\n";
+        $mimeMessage .= "Subject: =?utf-8?B?" . base64_encode($subject) . "?=\r\n\r\n";
+        $mimeMessage .= $content;
+
+        // Base64 encode the entire MIME message
+        $base64EncodedEmail = base64_encode($mimeMessage);
+
+        // Make the base64-encoded string URL-safe
+        $urlSafeBase64EncodedEmail = str_replace(['+', '/', '='], ['-', '_', ''], $base64EncodedEmail);
+
+        // Create a new Gmail message and set the raw field with the URL-safe, base64-encoded MIME message
+        $message = new \Google\Service\Gmail\Message();
+        $message->setRaw($urlSafeBase64EncodedEmail);
+
+        try {
+            $service->users_messages->send('me', $message);
+        } catch (\Exception $e) {
+            print_r("Failed to send email part via Gmail: " . $e->getMessage());
+        }
+    }
+
 }

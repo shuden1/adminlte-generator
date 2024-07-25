@@ -12,6 +12,7 @@
 @foreach($companiesToSend as $company)
     <!-- Example Block for a Company -->
         <div style="background-color: #ffffff; padding: 15px; border-radius: 5px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <span>
             <div style="color: #327ab7; font-size: 20px; font-weight: bold; margin-bottom: 15px;">{{$company->name}}</div>
             @if ($company->contacted)
             <div>Last time we emailed you about {{$company->name}} {{$company->contacted->format('m-d-Y')}}</div>
@@ -49,6 +50,7 @@
                     <li><a href="{{$job->url}}" target="_blank" style="color: #327ab7; text-decoration: none;">{{$job->title}}</a></li>
                 @endforeach
             </ul>
+            </span>
         </div>
         <!-- End of Company Block -->
 @endforeach
