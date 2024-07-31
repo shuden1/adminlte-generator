@@ -1,0 +1,1266 @@
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths no-ipad no-iphone no-ipod no-appleios ukg-focus-visible hydrated" data-ukg-focus-visible="" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" id="PageHtml" lang="en-US"><head>
+<title data-bind="text: title()">My Job Search</title>
+<link href="data:;base64,iVBORw0KGgo=" rel="icon"/>
+</head><body class="jobboardview-controller candidate-layout"><iframe id="_as" src="/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/AnonymousSessionCheck" style="display: none"></iframe>
+<link href="/Scripts/npm-imports/site.css?v=ENlTxjTg7KIYjXI0E6JaUZpH62MiDNLcMv2EKIFk2W0&amp;v=ENlTxjTg7KIYjXI0E6JaUZpH62MiDNLcMv2EKIFk2W0" rel="stylesheet"/>
+<link href="/styles/bootstrap-extensions.css?v=lG1vzXW20Vy-3Hz05ZkCJ_pFVtY" rel="stylesheet"/>
+<link href="/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/Styles/BrandingSettings?brandId=4e18d8a5-9f8c-4eb8-ad16-89b098d3d9d0&amp;m=637951713490930000" rel="stylesheet"/>
+<link href="https://ignite.cdn.ultipro.com/dls-cdn/ignite/v7.3.2/tokens/fonts/noto/ignite-fonts-noto-hinted-cdn.css" rel="stylesheet"/>
+<link href="https://ignite.cdn.ultipro.com/dls-cdn/ignite/v7.3.2/tokens/fonts/volte/ignite-fonts-volte-cdn.css" rel="stylesheet"/>
+<link href="https://ignite.cdn.ultipro.com/dls-cdn/ignite/v7.3.2/tokens/css/ignite-tokens.css" rel="stylesheet"/>
+<!-- Google Tag Manager -->
+<!-- End Google Tag Manager -->
+<ukg-ignite-shell class="hydrated" data-ignite-version="7.3.2" default-translation-path="" enable-cdn-path="" language="en-US">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TRJP8TD" style="display:none;visibility:hidden" width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="sr-only sr-only-focusable" data-i18n="Common.SkipLink" id="skipLink" tabindex="0">Skip to main content</a>
+<div id="PageContent" style="">
+<header role="banner">
+<nav aria-label="Global" class="navbar navbar-candidate navbar-static-top" data-automation="navbar" data-i18n="[aria-label]Layout.NavigationAriaLabel">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="https://www.foxworldtravel.com/careers/" target="_blank">
+<img alt="Fox World Travel" class="small-logo logo" data-automation="navbar-small-logo" src="/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/Styles/GetSmallHeaderLogo?brandId=4e18d8a5-9f8c-4eb8-ad16-89b098d3d9d0&amp;m=637951713490930000"/>
+<img alt="Fox World Travel" class="large-logo logo" data-automation="navbar-large-logo" src="/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/Styles/GetSmallHeaderLogo?brandId=4e18d8a5-9f8c-4eb8-ad16-89b098d3d9d0&amp;m=637951713490930000"/>
+</a>
+<button aria-labelledby="navbar-menu-label" class="navbar-toggle" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<span class="sr-only" data-i18n="Layout.Menu.MenuLabel" id="navbar-menu-label">Toggle Navigation</span>
+</div>
+<div class="collapse navbar-collapse" id="navbar-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="find-opps-link">
+<ukg-button class="brandingbutton ukg-color ukg-button-medium ukg-button-low-emphasis ukg-on-light ukg-no-min-width hydrated" data-automation="opportunities-menu-button" data-bind="attr: {'aria-label': $.t('Layout.Menu.Opportunities') }" data-i18n="Layout.Menu.Opportunities" data-ukg-focus-visible="" emphasis="low" id="OpportunitiesMenuButton" manual-color="true" onclick="window.location='/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5'" size="medium">Find Opportunities</ukg-button>
+</li>
+<li id="LanguagePicker">
+<ukg-button child-icon="menu-caret-down" class="brandingbutton ukg-color ukg-button-medium ukg-button-low-emphasis ukg-on-light ukg-no-min-width ukg-has-icons hydrated" data-automation="selected-language-picker-link" data-bind="menudropdownListener: { targetId: 'languageMenuContainer' }" data-i18n="[tooltip-text]Layout.LanguageLabel" data-ukg-focus-visible="" emphasis="low" id="languageMenubutton" manual-color="true" parent-icon="language" size="medium" tooltip-text="Language">
+<span class="brandingbutton" data-bind="text: selectedLanguage().Name">U.S. English</span>
+</ukg-button>
+<ukg-menu class="sc-ukg-menu-h sc-ukg-menu-s hydrated" data-bind="foreach: languages" id="languageMenuContainer" selectable=""><!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="en-GB" value="en-GB">British English</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="de-DE" value="de-DE">Deutsch</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="es-ES" value="es-ES">Español</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="fr-CA" value="fr-CA">Français canadien</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="pt-BR" value="pt-BR">Português do Brasil</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'--><!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'-->
+<ukg-menu-item class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: {value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code}, text: $data.Name" lang="en-US" selected="true" value="en-US">U.S. English</ukg-menu-item>
+<!--/ko-->
+<!-- -->
+<!-- ko if: $data.Code=='zh-CN'-->
+<ukg-menu-item aria-label="Simplified Chinese" class="hydrated" data-automation="language-picker-link" data-bind="click: $parent.selected, attr: { value: $data.Code, selected: $parent.selectedLanguage() == $data, 'lang': $data.Code, 'aria-label': $.t('Layout.Menu.ChineseLabel')}, text: $data.Name" lang="zh-CN" value="zh-CN">简体中文</ukg-menu-item>
+<!-- /ko -->
+<!-- ko ifnot: $data.Code=='zh-CN'--><!--/ko-->
+</ukg-menu>
+</li>
+<li>
+<ukg-button class="brandingbutton ukg-color ukg-button-medium ukg-button-low-emphasis ukg-on-light ukg-no-min-width hydrated" data-bind="attr: {'aria-label': $.t('Layout.Menu.LogIn') }" data-i18n="Layout.Menu.LogIn" data-ukg-focus-visible="" emphasis="low" id="SignInButton" manual-color="true" onclick="window.location='/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/Account/Login?cancelUrl=https%3A%2F%2Frecruiting2.ultipro.com%2FFOX1003FOXW%2FJobBoard%2Fc32418b5-27db-4ca6-93fe-ee995e4453a5%2F%3Fq%3D%26o%3DpostedDateDesc'" size="medium">Sign In</ukg-button>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<div class="index-action">
+<div class="container" id="PageContainer">
+<div id="GlobalNotificationContainer">
+<global-notification><div class="alert alert-success" data-automation="global-notification" data-bind="visible: visible, css: level" role="alert" style="display: none;"><span data-bind="html: message"></span> <span data-bind="visible: errors().length == 1, text: errors()[0]" style="display: none;"></span><ul data-bind="visible: errors().length &gt; 1, foreach: errors()" style="display: none;"></ul></div></global-notification>
+</div>
+<link href="https://js.arcgis.com/4.3/esri/css/main.css" rel="stylesheet"/>
+<div id="OpportunitiesContainer">
+<div>
+<react-ko-bridge params="component:'Recruiting.Rct.Containers.Candidate.CandidateConsentBanner',
+                         props:{
+                            'showAlert': false,
+                            'consentUrl': '/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/CandidateConsent'
+                         }"><div data-automation="candidate-consent-banner-container"></div></react-ko-bridge>
+<div class="row">
+<div class="col-md-24">
+<h1 class="job-board-title" data-automation="job-board-title" data-bind="text: jobBoard.Name">Join our Team!</h1>
+</div>
+</div>
+<div class="row" role="search">
+<div class="col-md-24" data-bind="css: { 'col-md-24': !shouldShowMap() || geoServiceUnavailable(), 'col-md-12': shouldShowMap() &amp;&amp; !geoServiceUnavailable() }">
+<div class="form-group">
+<!-- ko if: shouldShowMap() --><!-- /ko -->
+<span class="typeahead-group typeahead-group-right search-input-group">
+<div class="right-inner-addon dropdown">
+<!-- onmouseup event is needed in order set focus because the filter components steal the mousedown event and thus prevent ie from properly setting focus on input element -->
+<input aria-label="What job are you searching for?" class="form-control" data-automation="search-textbox" data-bind="textInput: searchQuery, event: { keyup: searchInputKeyPress }, attr: { placeholder: $.t('Opportunity.Opportunities.SearchHelpBlockPlaceholder'), 'aria-label': $.t('Opportunity.Opportunities.SearchLabelWhatJob') }" id="SearchInput" maxlength="100" onmouseup="this.focus()" placeholder="Job Title, Job Category, Store, Requisition Number" type="text"/>
+<div class="search-tips-target" data-bind="component: {
+                                         name: 'react-ko-bridge',
+                                         params: { 'component': 'Recruiting.Rct.Components.Atoms.SearchTips', 'props' :{ 'dropdownClassName': 'jobboard-dropdown' } }
+                                     }"><div class="searchtip-root"><span aria-expanded="false" class="dropdown-toggle bulb-icon tooltip-button" data-toggle="dropdown" id="tips-and-tricks-button-tooltip" role="button" tabindex="0"><ukg-icon aria-label="Tips &amp; Tricks" class="ukg-icon-s hydrated" custom-size="1.5" data-automation="search-tips-icon" icon-aria-label="Tips &amp; Tricks" name="info" role="img" size="s" slot="icon-only" style="font-size: 1.5rem;"></ukg-icon><ukg-tooltip aria-hidden="true" class="sc-ukg-tooltip-h sc-ukg-tooltip-s hydrated" htmlfor="tips-and-tricks-button-tooltip" role="tooltip" tabindex="-1" text="Tips &amp; Tricks"><div class="tooltip-wrapper sc-ukg-tooltip"><div class="tooltip-content sc-ukg-tooltip"><div class="tooltip-text sc-ukg-tooltip">Tips &amp; Tricks</div></div></div></ukg-tooltip></span><div class="dropdown-menu tips-dropdown jobboard-dropdown" data-automation="search-tips-dropdown-menu"><div aria-labelledby="TipsTricksHeader" class="modal-dialog mt-0 mb-0" role="dialog"><div class="modal-content"><div class="modal-header"><button aria-label="Close" class="close" data-automation="search-tips-close-button" data-bind="attr: { 'aria-label': $.t('Common.Close') }" data-dismiss="modal" type="button"> <span aria-hidden="true">× </span></button><h4 class="modal-title" id="TipsTricksHeader"> <span class="fa fa-lightbulb-o"> </span>  Tips &amp; Tricks</h4></div><div class="modal-body"><div class="mobile-view-content"><h4>Search Modifier</h4><dl><dt><b>Either terms</b></dt><label class="label label-default">word1 word2</label><dd>Manager Supervisor retrieves an opportunity for a Manager or a Supervisor when searching for an opportunity.</dd></dl><br/><dl><dt><b>Exact phrase</b></dt><label class="label label-default">"word1 word2"</label><dd>"Customer Service Manager""Customer Service Supervisor" retrieves an opportunity for a Customer Service Manager or a Customer Service Supervisor.</dd></dl><br/><dl><dt><b>Include terms</b></dt><label class="label label-default">word1 + word2</label><dd>Manager + Accounting returns opportunities for Manager and Accounting.</dd></dl><br/><dl><dt><b>Exclude terms</b></dt><label class="label label-default">-word1</label><dd>-Sales returns all opportunities that do not have the term Sales associated to them.</dd></dl><br/><dl><dt><b>Either OR</b></dt><label class="label label-default">word1 | word2</label><dd>Developer + (apache | weblogic | websphere) returns Developer opportunities with at least one of the 3 relevant terms.</dd></dl><br/><dl><dt><b>Combining terms</b></dt><label class="label label-default">word1 + -word2</label><dd>Manager + -Sales returns all opportunities that have Manager in them that do NOT have Sales associated to them.</dd></dl></div><div class="normal-content"><table class="table" role="grid"><caption class="sr-only">Tips &amp; Tricks</caption><thead><tr><th colspan="2" id="SearchTipsHeader1" scope="col" style="width: 33%;"><b>Search Modifier</b></th><th id="SearchTipsHeader3" scope="col" style="width: 33%;"><b>Description</b></th><th id="SearchTipsHeader4" scope="col" style="width: 33%;"><b>Example </b></th></tr></thead><tbody><tr><td headers="SearchTipsHeader1"><b>Either terms</b></td><td headers="SearchTipsHeader1"><label class="label label-default">word1 word2</label></td><td headers="SearchTipsHeader3"> Either search term value.</td><td headers="SearchTipsHeader4"> Manager Supervisor retrieves an opportunity for a Manager or a Supervisor when searching for an opportunity.</td></tr><tr><td headers="SearchTipsHeader1"><b>Exact phrase</b></td><td headers="SearchTipsHeader1"><label class="label label-default">"word1 word2"</label></td><td headers="SearchTipsHeader3"> Returns the exact phrase match within quotes.</td><td headers="SearchTipsHeader4">"Customer Service Manager""Customer Service Supervisor" retrieves an opportunity for a Customer Service Manager or a Customer Service Supervisor.</td></tr><tr><td headers="SearchTipsHeader1"><b>Include terms</b></td><td headers="SearchTipsHeader1"><label class="label label-default">word1 + word2</label></td><td headers="SearchTipsHeader3"> The '+' indicates that both terms must be present.</td><td headers="SearchTipsHeader4"> Manager + Accounting returns opportunities for Manager and Accounting.</td></tr><tr><td headers="SearchTipsHeader1"><b>Exclude terms</b></td><td headers="SearchTipsHeader1"><label class="label label-default">-word1</label></td><td headers="SearchTipsHeader3"> The '-' indicates that the term must not be present.</td><td headers="SearchTipsHeader4">-Sales returns all opportunities that do not have the term Sales associated to them.</td></tr><tr><td headers="SearchTipsHeader1"><b>Either OR</b> </td><td headers="SearchTipsHeader1"><label class="label label-default">word1 | word2</label></td><td headers="SearchTipsHeader3"> Offers flexible inclusion, and typically broadens your search results.You may use parentheses to encapsulate OR statements.</td><td headers="SearchTipsHeader4">Developer + (apache | weblogic | websphere) returns Developer opportunities with at least one of the 3 relevant terms.</td></tr><tr><td headers="SearchTipsHeader1"><b>Combining terms</b> </td><td headers="SearchTipsHeader1"><label class="label label-default">word1 + -word2</label></td><td headers="SearchTipsHeader3"> Retrieves records that include the first term if they do not have the second term.</td><td headers="SearchTipsHeader4">Manager + -Sales returns all opportunities that have Manager in them that do NOT have Sales associated to them.</td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+<span class="typeahead-addon typeahead-addon-right" data-automation="typeahead-search" data-bind="ifnot: showClearButton"><i aria-hidden="true" class="fa fa-search muted"></i></span>
+<span class="typeahead-addon typeahead-addon-right" data-automation="searchinput-clear" data-bind="visible: showClearButton,click: clearSearchInput, event: { keypress: clearSearchInput }" role="button" style="display: none;" tabindex="0">
+<i aria-label="Clear search" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Common.Clear') }"></i>
+</span>
+</span>
+</div>
+</div>
+<!-- ko if: shouldShowMap() && !geoServiceUnavailable() --><!-- /ko -->
+</div>
+</div>
+<div aria-label="Map" data-bind="visible: shouldShowMap(), attr: { 'aria-label': $.t('Opportunity.Opportunities.Map') }" role="region" style="display: none;">
+<div data-automation="map" id="viewDiv"></div>
+</div>
+<div>
+<div class="row">
+<div aria-label="Filter Opportunities" class="pl-0 pr-0 col-md-16 col-sm-24 col-xs-24" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.FilterOpportunities') }, css: { 'col-md-24 col-sm-24 col-xs-24': showFullWidth(), 'col-md-16 col-sm-24 col-xs-24': !showFullWidth() }" role="region">
+<div class="col-md-21 col-sm-24 col-xs-24">
+<jobboard-filter-panel params="filtersUrl: '/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/JobBoardView/GetFilters',
+                        typeaheadOptionsUrl: '/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/JobBoardView/GetTypeaheadOptions',
+                        parentQuery: opportunityQuery,
+                        shouldInvalidate: shouldInvalidateSubscribers,
+                        onFiltersReady: filtersUpdated.bind($root),
+                        onFiltersChange: filtersUpdated.bind($root),
+                        getFilterIdentifierCallback: getFilterIdentifier.bind($root),
+                        getSearchFilterSearchFragmentCallback: getSearchFilterSearchFragment.bind($root),
+                        hydratedFilterValues: hydratedFilterValues,
+                        shouldRehydrate: shouldRehydrate,
+                        shouldReset: shouldReset,
+                        maxSelectedFilter: 10">
+<div class="filter-panel jobboard-filter-panel" data-automation="filter-panel-control" id="FilterPanel">
+<div class="row">
+<div class="col-md-24" data-bind="visible: shouldShowFilter()" style="">
+<div class="row">
+<div class="col-md-24">
+<!-- ko foreach: searchFiltersOptions -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) --><!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) -->
+<typeahead-filter params="
+                                            searchFilter: $data,
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            taOptionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            onViewMoreOptionsClickedCallback: $parent.onViewMoreOptionsClicked,
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+                                            getCurrentSelectionsThreshold: $parent.currentSelectionsThreshold,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter typeahead-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunityPhysicalLocation">
+<button aria-describedby="OpportunityPhysicalLocation" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;">
+<i aria-label="Clear filter" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Filters.ClearFilter') }"></i>
+</button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'id': identifier + 'Button',
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" id="OpportunityPhysicalLocationButton" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel(), attr: { id: 'Dropdown' + $index() }" id="Dropdown0">Company Location</span>
+<span class="caret"></span>
+</button>
+<div aria-labelledby="OpportunityPhysicalLocationButton" class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() },
+                        attr: {
+                            'id': identifier + 'FilterDropdown',
+                            'aria-labelledby': identifier + 'Button',
+                            'role': isOpen() ? 'region' : null
+                        }" id="OpportunityPhysicalLocationFilterDropdown" style="display: none;">
+<div class="text-input">
+<input aria-labelledby="Dropdown0" class="form-control" data-automation="filter-typeahead" data-bind="textInput: instantaneousQueryString,
+                            attr: {
+                                'data-automation': 'filter-typeahead', 
+                                placeholder: $.t('Recruiter.Common.Filters.Search'),
+                                'aria-labelledby': 'Dropdown' + $index(),
+                                id: 'SearchInput' + $index()
+                            }" id="SearchInput0" maxlength="200" placeholder="Search"/>
+</div>
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+<div class="progressbar bar bar1" style="width: 0%;"></div>
+<div class="bufferbar bar bar2" style="width: 100%;"></div>
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: !isFetching() &amp;&amp; emptyResults() &amp;&amp; !instantaneousQueryStringChanging()">
+<i class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : true }"></i>
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div aria-label="Select" class="options" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<div class="opts results" data-automation="results-section" data-bind="visible: isSearching() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+<div class="opts selected" data-automation="selected-section" data-bind="visible: !isSearching() &amp;&amp; selectedGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: selectedGroup --><!-- /ko -->
+</div>
+<div class="opts recent" data-automation="recent-section" data-bind="visible: !isSearching() &amp;&amp; recentGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: recentGroup --><!-- /ko -->
+</div>
+<div class="opts top" data-automation="top-results-section" data-bind="visible: !isSearching() &amp;&amp; topGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: topGroup --><!-- /ko -->
+</div>
+</div>
+<div class="view-more">
+<!-- ko if: shouldShowViewMoreLink()-->
+<a class="btn btn-link" data-automation="view-all-link" data-bind="visible: shouldShowViewMoreLink(), click: onViewMoreOptionsClicked.bind($data), text: getViewMoreTextLabel()" href="#" role="button">View Locations</a>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</typeahead-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) --><!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) -->
+<typeahead-filter params="
+                                            searchFilter: $data,
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            taOptionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            onViewMoreOptionsClickedCallback: $parent.onViewMoreOptionsClicked,
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+                                            getCurrentSelectionsThreshold: $parent.currentSelectionsThreshold,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter typeahead-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunityJobCategory">
+<button aria-describedby="OpportunityJobCategory" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;">
+<i aria-label="Clear filter" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Filters.ClearFilter') }"></i>
+</button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'id': identifier + 'Button',
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" id="OpportunityJobCategoryButton" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel(), attr: { id: 'Dropdown' + $index() }" id="Dropdown1">Job Category</span>
+<span class="caret"></span>
+</button>
+<div aria-labelledby="OpportunityJobCategoryButton" class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() },
+                        attr: {
+                            'id': identifier + 'FilterDropdown',
+                            'aria-labelledby': identifier + 'Button',
+                            'role': isOpen() ? 'region' : null
+                        }" id="OpportunityJobCategoryFilterDropdown" style="display: none;">
+<div class="text-input">
+<input aria-labelledby="Dropdown1" class="form-control" data-automation="filter-typeahead" data-bind="textInput: instantaneousQueryString,
+                            attr: {
+                                'data-automation': 'filter-typeahead', 
+                                placeholder: $.t('Recruiter.Common.Filters.Search'),
+                                'aria-labelledby': 'Dropdown' + $index(),
+                                id: 'SearchInput' + $index()
+                            }" id="SearchInput1" maxlength="200" placeholder="Search"/>
+</div>
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+<div class="progressbar bar bar1" style="width: 0%;"></div>
+<div class="bufferbar bar bar2" style="width: 100%;"></div>
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: !isFetching() &amp;&amp; emptyResults() &amp;&amp; !instantaneousQueryStringChanging()">
+<i class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : true }"></i>
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div aria-label="Select" class="options" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<div class="opts results" data-automation="results-section" data-bind="visible: isSearching() &amp;&amp; !instantaneousQueryStringChanging()" style="display: none;">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+<div class="opts selected" data-automation="selected-section" data-bind="visible: !isSearching() &amp;&amp; selectedGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: selectedGroup --><!-- /ko -->
+</div>
+<div class="opts recent" data-automation="recent-section" data-bind="visible: !isSearching() &amp;&amp; recentGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: recentGroup --><!-- /ko -->
+</div>
+<div class="opts top" data-automation="top-results-section" data-bind="visible: !isSearching() &amp;&amp; topGroup().length &gt; 0" style="display: none;">
+<!-- ko foreach: topGroup --><!-- /ko -->
+</div>
+</div>
+<div class="view-more">
+<!-- ko if: shouldShowViewMoreLink()-->
+<a class="btn btn-link" data-automation="view-all-link" data-bind="visible: shouldShowViewMoreLink(), click: onViewMoreOptionsClicked.bind($data), text: getViewMoreTextLabel()" href="#" role="button">View Job Categories</a>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</typeahead-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) -->
+<select-list-filter params="
+                                            searchFilter: $data,
+                                            isSingleSelect : $parent.shouldBeSingleSelect($data),
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            optionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunitySchedule">
+<button aria-describedby="OpportunitySchedule" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;"><i aria-label="Clear filter" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Filters.ClearFilter') }"></i></button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel()">Schedule</span>
+<span class="caret"></span>
+</button>
+<div class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() }" style="display: none;">
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+<div class="progressbar bar bar1" style="width: 0%;"></div>
+<div class="bufferbar bar bar2" style="width: 100%;"></div>
+</div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: resultsGroup().length == 0">
+<i class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : true }"></i>
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div aria-label="Select" class="opts results options" data-automation="results-section" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div>
+</select-list-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) --><!-- /ko -->
+<!-- ko if: $parent.isDateRangeFilter($data.FilterType) --><!-- /ko -->
+<!--ko if: $parent.isStaticListFilter($data.FilterType) -->
+<select-list-filter params="
+                                            searchFilter: $data,
+                                            isSingleSelect : $parent.shouldBeSingleSelect($data),
+                                            identifier: $parent.getFilterIdentifier($data),
+                                            optionsUrl: $parent.typeaheadOptionsUrl,
+                                            shouldReset: $parent.shouldReset,
+                                            shouldInvalidate: $parent.shouldInvalidate,
+                                            onQuerySearchCallback: $parent.onFilterQueryChange.bind($parent),
+                                            searchFragment: $parent.getSearchFilterSearchFragment(),
+                                            hydratedFilterValues: $parent.hydratedFilterValues,
+                                            shouldRehydrate: $parent.shouldRehydrate,
+                                            isFilterLimitReached: $parent.isFilterLimitReached,
+					                        filterValueProviderFactory: $parent.filterValueProviderFactory">
+<div class="base-filter select-list-filter" data-automation="terms-filter" data-bind="attr: { id: identifier }" id="OpportunityJobLocationType">
+<button aria-describedby="OpportunityJobLocationType" class="btn-link clear-options" data-automation="clear-filter-button" data-bind="visible: selectedOptionsCount() &gt; 0, click: onClearClick, attr: { 'aria-describedby': identifier }" style="display: none;"><i aria-label="Clear filter" class="fa fa-times" data-bind="attr: { 'aria-label': $.t('Opportunity.Opportunities.Filters.ClearFilter') }"></i></button>
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="filter-button" data-bind="click: toggleDropdown, 
+                        tooltip: { title: dropdownTitle(), container: 'body'},
+                        css: {active: selectedOptionsCount() &gt; 0},
+                        attr: {
+                            'aria-expanded': isOpen() ? 'true' : 'false'
+                        }" data-original-title="" title="">
+<span class="sr-only" data-bind="text: $.t('Common.FilterBy')">Filter by</span>
+<span data-automation="filter-button-label" data-bind="text: dropdownLabel()">Job Location Type</span>
+<span class="caret"></span>
+</button>
+<div class="filter-dropdown filter-small" data-automation="filter-dropdown" data-bind="visible: isOpen(), css: { 'filter-small': hasSmallOptions(), 
+                                                          'filter-large': hasLargeOptions(),
+                                                          'right-aligned': dropdownDoesntFitHoriz() }" style="display: none;">
+<div class="option-label spinner" data-bind="visible: isFetching()" style="display: none;">
+<div class="bar-spinner bar-spinner-progress__indeterminate">
+<div class="progressbar bar bar1" style="width: 0%;"></div>
+<div class="bufferbar bar bar2" style="width: 100%;"></div>
+</div>
+</div>
+<div class="select-list-option clearfix select-list-error" data-automation="reached-limit-message" data-bind="visible: !allowSelection()" style="display: none;">
+<div class="option-label"><span data-bind="text: $.t('Recruiter.Common.Filters.ReachedLimit')">The maximum number of filters has been reached.</span></div>
+</div>
+<div class="select-list-option clearfix" data-automation="no-results" data-bind="visible: resultsGroup().length == 0">
+<i class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : true }"></i>
+<div class="option-label italic"><span data-bind="text: $.t('Recruiter.Common.Filters.NoResults')">No Results Found</span></div>
+</div>
+<div aria-label="Select" class="opts results options" data-automation="results-section" data-bind="visible: !isFetching(), attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<!-- ko if resultsGroup().length > 0 -->
+<!-- ko foreach: resultsGroup --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div>
+</select-list-filter>
+<!-- /ko -->
+<!-- ko if: $parent.isTypeAheadFilter($data.FilterType) --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</jobboard-filter-panel>
+</div>
+<div class="col-md-3 no-left-gutter">
+<div class="pull-right reset">
+<react-ko-bridge params="component: 'Recruiting.Rct.Components.Atoms.Button',
+                            props: {
+                                'buttonType': 'link',
+                                'text': $.t('Recruiter.Candidates.ResetSearch'),
+                                'onClick': resetSearch,
+                                'icon': 'fa-refresh',
+                                'dataAutomation': 'reset-button'
+                            }"><button class="btn btn-link" data-automation="reset-button"><i class="mr-1 fa fa-refresh"></i><span>Reset</span></button></react-ko-bridge>
+</div>
+</div>
+</div>
+<div data-bind="if: !showFullWidth()">
+<div class="col-xs-12 col-md-8">
+<p class="hidden-xs hidden-sm" data-bind="visible: showAddJobSearchAgent" style="display: none;">
+<button class="btn btn-primary btn-block" data-automation="create-job-search-agent-link" data-bind="disable: disableCreateJobAlert(), click: createJobSearchAgent"><span class="fa fa-envelope-o"></span> <span data-i18n="Opportunity.Opportunities.JobSearchAgent.Activate">Activate job alerts for this search</span></button>
+</p>
+</div>
+</div>
+<!-- ko if: showAddJobSearchAgent() && showFullWidth() --><!-- /ko -->
+<div class="col-sm-24 col-xs-24 col-md-16" data-bind="css: { 'col-md-24': showFullWidth(), 'col-md-16': !showFullWidth() } ">
+<p class="hidden-md hidden-lg" data-bind="visible: showAddJobSearchAgent" style="display: none;">
+<button class="btn btn-primary btn-block full-width" data-automation="create-job-search-agent-link" data-bind="disable: disableCreateJobAlert(), click: createJobSearchAgent"><span class="fa fa-envelope-o"></span> <span data-i18n="Opportunity.Opportunities.JobSearchAgent.Activate">Activate job alerts for this search</span></button>
+</p>
+<div class="search-count" data-automation="opportunities-search-container">
+<div class="row" id="SearchCount">
+<div class="col-md-15">
+<h2 aria-live="polite" class="count m-0" data-automation="opportunities-count" data-bind="text: $.t('Opportunity.Opportunities.ResultJobCountShowingXOfY', { loadedCount: loadedCount(), allCount: totalCount() }), visible: hasLoadedOpportunities()" style="">Showing 6 of 6 opportunities</h2>
+</div>
+<div class="col-md-9">
+<div class="sort-by pull-right">
+<select-list params="options: orderByOptions,
+                                    rightAligned: true,
+                                    selectedOption: orderBy,
+                                    onChangeCallback: sortUpdated.bind($root)">
+<div class="base-filter select-list-filter" data-automation="terms-filter" data-bind="
+                attr: { id: 'sort-by' },
+            " id="sort-by">
+<button aria-expanded="false" class="btn-link dropdown-label" data-automation="selected-option" data-bind="click: toggleDropdown" data-toggle="dropdown">
+<span class="sr-only" data-bind="text: $.t('Common.Sort.Sort')">Sort</span>
+<span data-bind="text: dropdownLabel()">By Newest</span>
+<span class="caret"></span>
+</button>
+<div class="filter-dropdown filter-small right-aligned" data-automation="options-dropdown" data-bind="
+                    visible: isOpen(),
+                    css: { 'right-aligned': isRightAligned }
+                " style="display: none;">
+<div aria-label="Select" class="opts results" data-automation="options-section" data-bind="attr: { 'aria-label': $.t('Common.Select') }" role="list">
+<!-- ko foreach: options -->
+<div class="select-list-option clearfix" data-automation="filter-option" data-bind="event: { keypress: $parent.onOptionClicked.bind($parent, $data) }, click: $parent.onOptionClicked.bind($parent, $data), attr: { id: $data.Value }" id="postedDateDesc" role="listitem" tabindex="0">
+<i aria-label="Selected" class="fa fa-check" data-automation="option-icon" data-bind="css: { invisible : !$parent.isOptionSelected($data)}, attr: { 'aria-label': $.t('Common.Selected') }"></i>
+<div class="option-label" data-automation="option-name">
+<span data-bind="text: $data.Text">By Newest</span>
+</div>
+</div>
+<div class="select-list-option clearfix" data-automation="filter-option" data-bind="event: { keypress: $parent.onOptionClicked.bind($parent, $data) }, click: $parent.onOptionClicked.bind($parent, $data), attr: { id: $data.Value }" id="postedDateAsc" role="listitem" tabindex="0">
+<i aria-label="Selected" class="fa fa-check invisible" data-automation="option-icon" data-bind="css: { invisible : !$parent.isOptionSelected($data)}, attr: { 'aria-label': $.t('Common.Selected') }"></i>
+<div class="option-label" data-automation="option-name">
+<span data-bind="text: $data.Text">By Oldest</span>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</select-list>
+</div>
+</div>
+</div>
+</div>
+<div class="alert alert-danger" data-automation="personalized-search-error-list" data-bind="with: personalizedSearch.personalizedSearchHandler, visible: personalizedSearch.personalizedSearchHandler.serverErrors().length &gt; 0" style="display: none;">
+<ul>
+<!-- ko foreach: serverErrors --><!-- /ko -->
+</ul>
+</div>
+<div data-bind="activity: { trigger: loadOpportunities.isExecuting, resize: true, valign: 'top', padding: 32 }, overlay: { trigger: loadOpportunities.isExecuting, resize: true }" id="Opportunities"><div class="us-overlay" style="border-radius: inherit; position: absolute; opacity: 0.7; background-color: rgb(255, 255, 255); display: none; margin-top: 0px; margin-left: 0px; height: 1px; width: 720px;"></div><div class="us-activity-large content-middle-right" data-automation="activity-indicator" data-content="" style="position: absolute; z-index: 1000; display: none; margin-top: 32px; margin-left: 344px;"></div>
+<div data-bind="foreach: opportunities">
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity0">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/OpportunityDetail?opportunityId=78f3ced1-a742-47d1-a1fc-8372848b69dd">Travel Technology Product Supervisor - Remote</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jul 24, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Computer &amp; Mathematical</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">TRAVE001606</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType --><!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Oshkosh</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()"><span data-bind="text: Address().Line1">2150 S Washburn St</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Oshkosh, WI 54904, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Oshkosh</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()"><span data-bind="text: Address().Line1">2150 S Washburn St</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Oshkosh, WI 54904, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">The Travel Technology Product Supervisor is responsible for providing positive and enthusiastic guidance to the Travel Technology product team, ensuring support of a professional Travel Technology Team capable of fulfilling the mission of Fox World Travel.  In partnership with Travel Technology Manager, contribute to the advancement of Fox World Travel Technology Systems and Services by providing high-level support to new and existing Travel Applications, including in the implementation of new clients.  This is a hands-on, working supervisor role requiring the fulfillment of Business Travel clients travel technology related requests in a timely and accurate manner.</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity1">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/OpportunityDetail?opportunityId=ca4d83e9-dda0-4fe1-bd5e-fc43248e9517">Web Design &amp; Graphic Specialist - Remote</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jul 24, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Arts, Design, Entertainment Sports &amp; Media</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">EVENT001605</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType -->
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobLocationType')">Job Location Type</strong><strong>:</strong> <span data-automation="job-location-type" data-bind="text: JobLocationTypeText">Remote</span>
+</span>
+</div>
+<!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Oshkosh</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()"><span data-bind="text: Address().Line1">2150 S Washburn St</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Oshkosh, WI 54904, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Oshkosh</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()"><span data-bind="text: Address().Line1">2150 S Washburn St</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Oshkosh, WI 54904, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">The Web Design &amp; Graphic Specialist is dedicated to the meetings and incentives division for the main purpose of supporting the client’s meetings and event strategy. This is accomplished by meeting or exceeding specific deliverables including, but not limited to, the creation and maintenance of registration websites and mobile apps, creation of statistical attendee data, and technical support for event build products.</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity2">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/OpportunityDetail?opportunityId=e38391b0-420f-414a-839c-834e06b6c1ab">Marketing Proposal Support Specialist</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jun 27, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Office &amp; Administrative Support</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">MARKE001590</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType -->
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobLocationType')">Job Location Type</strong><strong>:</strong> <span data-automation="job-location-type" data-bind="text: JobLocationTypeText">Hybrid</span>
+</span>
+</div>
+<!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Oshkosh</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()"><span data-bind="text: Address().Line1">2150 S Washburn St</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Oshkosh, WI 54904, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Oshkosh</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()"><span data-bind="text: Address().Line1">2150 S Washburn St</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Oshkosh, WI 54904, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">As part of our collaborative and creative marketing department, the Proposal Support Specialist will be responsible for supporting the proposal team in the development and execution of Fox World Travel’s response to requests for proposals for our corporate travel business unit. This includes working with subject matter experts, executive leadership, marketing influencers, and global sales teams to create industry leading, client-winning proposals. In addition, the proposal support specialist will assist with additional content, such as sales collateral, client presentations and more to support Fox World Travel sales and marketing initiatives.  This position relies heavily on copy writing, editing, positioning and technical process thereof.</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity3">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/OpportunityDetail?opportunityId=a50d4165-7b47-4115-beb6-4c4d638f61ee">Financial Analyst (Hybrid - Wisconsin)</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Jun 19, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Business &amp; Financial Operations</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">FINAN001596</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType --><!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Oshkosh</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()"><span data-bind="text: Address().Line1">2150 S Washburn St</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Oshkosh, WI 54904, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Oshkosh</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()"><span data-bind="text: Address().Line1">2150 S Washburn St</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Oshkosh, WI 54904, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">Fox World Travel (Fox) is seeking a Financial Analyst who is responsible for developing, interpreting, and implementing complex financial and accounting concepts, or techniques for financial planning and control. This position will also analyze past financial performance to predict future performance; advise the organization on its financial strategy.</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity4">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/OpportunityDetail?opportunityId=ef8818bb-5af9-4791-b8ec-e60e0fa2c798">Sales Director - Group, Meetings and Incentives Programs - Remote</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">May 16, 2024</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Sales &amp; Related</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">SALES001588</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType -->
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobLocationType')">Job Location Type</strong><strong>:</strong> <span data-automation="job-location-type" data-bind="text: JobLocationTypeText">Remote</span>
+</span>
+</div>
+<!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Oshkosh</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()"><span data-bind="text: Address().Line1">2150 S Washburn St</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Oshkosh, WI 54904, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Oshkosh</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()"><span data-bind="text: Address().Line1">2150 S Washburn St</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Oshkosh, WI 54904, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">The Sales Director, Group, Meetings and Incentives Programs is responsible for the achievement of meeting, event, and incentive sales goals and growth of Meetings and Incentives revenues through direct selling to businesses. Additionally, responsible for development, implementation and management of strategic sourcing and contract strategies that increase efficiency and profitability while meeting client’s goals and objectives for group travel, strategic meeting management, incentives, and event programs.
+ 
+A day in the lif</div>
+<hr class="opportunity-hr"/>
+</div>
+<div class="opportunity" data-automation="opportunity" data-bind="attr: {id: 'Opportunity' + $index()}" id="Opportunity5">
+<div class="row">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-18">
+<h3>
+<a class="opportunity-link break-word" data-automation="job-title" data-bind="text: Title, attr: { href: OpportunityDetailLink }" href="/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/OpportunityDetail?opportunityId=4b48d19d-f857-4b64-b8f1-dd90fae6e815">Experienced Vacation Travel Advisor - Remote</a><!-- ko if: $parent.shouldShowFeaturedOpportunities() && Featured() --><!-- /ko -->
+<img class="marker-img" data-automation="opportunity-pin" data-bind="visible: isPinned" src="../../../Content/images/map-marker.svg" style="display: none;"/>
+</h3>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 text-right">
+<h3 class="text-right" role="presentation">
+<small data-automation="opportunity-posted-date" data-bind="text: PostedDateString">Feb 10, 2023</small>
+</h3>
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.JobCategory')">Job Category</strong><strong>: </strong>
+</span>
+<span class="label-with-icon" data-automation="job-category">
+<span data-bind="text: JobCategoryName()">Sales &amp; Related</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.RequisitionNumber')">Requisition Number</strong><strong>:</strong> <span data-bind="text: RequisitionNumber()">EXPER001466</span>
+</span>
+</div>
+<div class="col-sm-18 col-xs-16 mb-1">
+<span class="label-with-icon">
+<strong data-bind="text: $.t('Opportunity.Opportunities.Schedule')">Schedule</strong><strong>:</strong> <span data-automation="job-hours" data-bind="text: FullTimeText">Full Time</span>
+</span>
+</div>
+<!-- ko if: HasJobLocationType --><!-- /ko -->
+<div class="col-sm-6 col-xs-8 text-right">
+<!-- ko if: $parent.shouldShowPersonalizedJobSearch() && $parent.IsMatchForCandidate($data) && !$parent.IsSortingByRelevance() --><!-- /ko -->
+</div>
+</div>
+<div class="row paragraph">
+<div class="col-lg-20 col-md-19 col-sm-18 col-xs-16">
+<!-- ko if: Locations().length > 0 -->
+<!-- ko foreach: OpportunityListLocations() -->
+<div class="location-bottom" data-bind="visible: $index() == 0 &amp;&amp; $parent.showAllLocations() == false">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Oshkosh</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()"><span data-bind="text: Address().Line1">2150 S Washburn St</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Oshkosh, WI 54904, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<div class="location-bottom" data-bind="visible: $parent.showAllLocations" style="display: none;">
+<candidate-physical-location data-automation="physical-location-item" params="{bindingContext: $data}"><address data-automation="physical-location"><span data-bind="visible: (LocalizedDescription() &amp;&amp; DisplayDescription() &amp;&amp; SourceOfTruth() == Recruiting.RecruitmentAdministrator.LocationSourceOfTruth.Ultipro)" style="display: none;"><span data-automation="location-description" data-bind="text: LocalizedDescription()"></span><br/></span><span data-bind="visible: (LocalizedName() &amp;&amp; DisplayName()) || (LocalizedLocationId() &amp;&amp; DisplayLocationId())"><span data-automation="name-and-location-id-label" data-bind="text: localizedNameAndLocationId()">Oshkosh</span><br/></span><span data-automation="address-line1-label" data-bind="visible: Address().Line1() &amp;&amp; DisplayStreetAddress()"><span data-bind="text: Address().Line1">2150 S Washburn St</span><br/></span><span data-automation="address-line2-label" data-bind="visible: Address().Line2() &amp;&amp; DisplayStreetAddress()" style="display: none;"><span data-bind="text: Address().Line2"></span><br/></span><span data-bind="visible: Address().CityStatePostalCodeAndCountry() &amp;&amp; DisplayAddress()"><span data-automation="city-state-zip-country-label" data-bind="text: Address().CityStatePostalCodeAndCountry()">Oshkosh, WI 54904, USA</span><br/></span></address></candidate-physical-location>
+</div>
+<!-- /ko -->
+<a data-automation="job-location-more" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == false, text: $.t('Opportunity.Opportunities.MoreLocations', { count : Locations().length - 1 }), click: function(){showAllLocations(true)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(true)} : null}" role="button" style="display: none;" tabindex="0">+0 more</a>
+<a data-automation="job-location-less" data-bind="visible: Locations().length &gt; 1 &amp;&amp; showAllLocations() == true, text: $.t('Opportunity.Opportunities.Less'), click: function(){showAllLocations(false)}, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? function(){showAllLocations(false)} : null}" role="button" style="display: none;" tabindex="0">less</a>
+<!-- /ko -->
+</div>
+<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8 text-right">
+<span data-automation="opportunity-distance" data-bind="text: DistanceText()"></span>
+</div>
+</div>
+<div class="hidden-xs paragraph" data-automation="job-brief-description" data-bind="text: BriefDescription">We are currently on the hunt to expand our Vacation Travel teams within our retail locations in Oshkosh, De Pere, Appleton, Fond Du Lac, Sheboygan, and Brookfield. Remote opportunities are also available for experienced advisors who are not located within a commutable distance of one of our physical branch locations. Are you looking for more growth and security in the rapidly-changing and exciting travel industry? Then consider joining the best! Fox World Travel is growing and looking for elite candidates to join our team.</div>
+<hr class="opportunity-hr"/>
+</div>
+</div>
+<div class="row">
+<div class="col-md-24 text-center">
+<span class="h5" data-bind="visible: skip() + pageSize &lt; totalCount() &amp;&amp; totalCount() &gt; 0" style="display: none;"><a data-automation="load-more-jobs-link" data-bind="click: loadMore, event: {keypress: function(data, e){if(e.keyCode === 13 || e.keyCode === 32){return true} else{return false}} ? loadMore : null}" data-i18n="Opportunity.Opportunities.LoadMoreOpportunities" href="#" id="LoadMoreJobs">View More Opportunities</a></span>
+</div>
+</div>
+<div class="alert alert-block alert-danger" data-automation="no-jobs-message" data-bind="visible: hasLoadedOpportunities() &amp;&amp; totalCount() == 0" style="display: none;">
+<span data-bind="if: hasSearchDefined()" role="alert"></span>
+<span data-bind="if: !hasSearchDefined()">
+<strong data-i18n="Opportunity.Opportunities.NoJobsAvailable.Title">We do not have any opportunities available.</strong>
+<span data-i18n="Opportunity.Opportunities.NoJobsAvailable.Description">If you tell us a little about yourself we can contact you when the right opportunity arises.</span>
+</span>
+</div>
+</div>
+</div>
+<div class="col-sm-24 col-xs-24 col-md-8" data-bind="css: { 'col-md-16': showFullWidth(), 'col-md-8': !showFullWidth() }">
+<div data-bind="if: shouldShowAvailableJobBoards"></div>
+<div data-bind="if: shouldShowFeaturedOpportunities"></div>
+<div data-bind="if: shouldShowPersonalizedJobSearch">
+<div aria-label="Discover Your Potential" class="well well-sm" data-bind="with: personalizedSearch, attr: { 'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.Title') }" role="complementary">
+<h2 class="section-title h4" data-automation="personalized-search-section-title">
+<span data-automation="personalized-search-title" data-i18n="Opportunity.Opportunities.PersonalizedSearch.Title">Discover Your Potential</span>
+</h2>
+<p class="text-muted" data-automation="personalized-search-description" data-i18n="Opportunity.Opportunities.PersonalizedSearch.Description">We'll help you build a presence that enables you to save your results and find the most relevant jobs.</p>
+<div class="mx-auto personalized-search">
+<div class="personalized-container" data-automation="personalized-container" data-bind="css: { open: currentStep }, activity: { trigger: personalizedSearchHandler.isExecuting, resize: true, valign: 'center', zindex: 100 }, overlay: { trigger: personalizedSearchHandler.isExecuting, resize: true, zindex: 99 }" id="PersonalizedContainer" tabindex="-1"><div class="us-overlay" style="border-radius: inherit; position: absolute; opacity: 0.7; background-color: rgb(255, 255, 255); z-index: 99; display: none;"></div><div class="us-activity-large content-middle-right" data-automation="activity-indicator" data-content="" style="position: absolute; z-index: 100; display: none;"></div>
+<!-- ko if: shouldShowPersonalizationQuestions -->
+<div class="personalized-card job-title" data-automation="personalized-card-job-title" data-bind="attr: {'tabindex': !isStepCompleted('job-title-step') ? '0' : '-1', 'role': !isStepCompleted('job-title-step') ? 'button' : null }, css: { finished: isStepCompleted('job-title-step') }, click: isStepCompleted('job-title-step') ? null : goToStep.bind($data, 'job-title-step'), event: { keypress: function(data,e) { if( (e.keyCode == 13 || e.keyCode == 32) &amp;&amp; !isStepCompleted('job-title-step') ) {return true} else {return false} } ? goToStep.bind($data, 'job-title-step') : null }" role="button" tabindex="0">
+<i aria-hidden="true" class="fa fa-thumbs-up"></i>
+<div class="footer">
+<span class="step-number" data-automation="personalized-card-job-title-stepnumber" data-i18n="Opportunity.Opportunities.PersonalizedSearch.JobTitleCard.StepNumber">1</span>
+<span class="step-title" data-automation="personalized-card-job-title-steptitle" data-i18n="Opportunity.Opportunities.PersonalizedSearch.JobTitleCard.StepTitle">My ideal job title is...</span>
+</div>
+<div class="mask" data-automation="personalized-card-job-title-completed">
+<i aria-label="Completed" class="fa fa-check" data-bind="attr: {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.CompletedPresenceCard.Completed') }" role="img"></i>
+</div>
+</div>
+<div class="personalized-card education" data-automation="personalized-card-education" data-bind="attr: {'tabindex': !isStepCompleted('education-step') ? '0' : '-1', 'role': !isStepCompleted('education-step') ? 'button' : null }, css: { finished: isStepCompleted('education-step') }, click: isStepCompleted('education-step') ? null : goToStep.bind($data, 'education-step'), event: { keypress: function(data,e) { if( (e.keyCode == 13 || e.keyCode == 32) &amp;&amp; !isStepCompleted('education-step') ) {return true} else {return false} } ? goToStep.bind($data, 'education-step') : null }" role="button" tabindex="0">
+<i aria-hidden="true" class="fa fa-book"></i>
+<div class="footer">
+<span class="step-number" data-automation="personalized-card-education-stepnumber" data-i18n="Opportunity.Opportunities.PersonalizedSearch.EducationCard.StepNumber">2</span>
+<span class="step-title" data-automation="personalized-card-education-steptitle" data-i18n="Opportunity.Opportunities.PersonalizedSearch.EducationCard.StepTitle">My education level is...</span>
+</div>
+<div class="mask" data-automation="personalized-card-education-completed">
+<i aria-label="Completed" class="fa fa-check" data-bind="attr: {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.CompletedPresenceCard.Completed') }" role="img"></i>
+</div>
+</div>
+<div class="personalized-card licenses" data-automation="personalized-card-licenses" data-bind="attr: {'tabindex': !isStepCompleted('licenses-step') ? '0' : '-1', 'role': !isStepCompleted('licenses-step') ? 'button' : null }, css: { finished: isStepCompleted('licenses-step') }, click: isStepCompleted('licenses-step') ? null : goToStep.bind($data, 'has-licenses-step'), event: { keypress: function(data,e) { if( (e.keyCode == 13 || e.keyCode == 32) &amp;&amp; !isStepCompleted('licenses-step') ) {return true} else {return false} } ? goToStep.bind($data, 'has-licenses-step') : null }" role="button" tabindex="0">
+<i aria-hidden="true" class="fa fa-certificate"></i>
+<div class="footer">
+<span class="step-number" data-automation="personalized-card-licenses-stepnumber" data-i18n="Opportunity.Opportunities.PersonalizedSearch.LicensesCard.StepNumber">3</span>
+<span class="step-title" data-automation="personalized-card-licenses-steptitle" data-i18n="Opportunity.Opportunities.PersonalizedSearch.LicensesCard.StepTitle">I am licensed or certified in...</span>
+</div>
+<div class="mask" data-automation="personalized-card-licenses-completed">
+<i aria-label="Completed" class="fa fa-check" data-bind="attr: {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.CompletedPresenceCard.Completed') }" role="img"></i>
+</div>
+</div>
+<!-- /ko -->
+<div class="qualifications small" data-bind="css: { small: shouldShowPersonalizationQuestions, finished: skillStepsCompleted }">
+<div class="personalized-card rate-skill rate-skill-1" data-automation="personalized-card-rate-skill-1" data-bind="attr: {'tabindex': isStepCompleted('completed-presence-step') &amp;&amp; !isStepCompleted('skill-step-1') ? '0' : '-1', 'role': isStepCompleted('completed-presence-step') &amp;&amp; !isStepCompleted('skill-step-1') ? 'button' : null }, css: { finished: isStepCompleted('skill-step-1') }, template: { name: 'rate-skill-readonly-template', data: findStep('skill-step-1') }, click: goToStep.bind($data, 'skill-step-1'), event: { keypress: function(data,e) { if(e.keyCode == 13 || e.keyCode == 32) {return true} else {return false} } ? goToStep.bind($data, 'skill-step-1') : null }" tabindex="-1">
+<!-- ko if: $parent.isStepCompleted('completed-presence-step') --><!-- /ko -->
+<div class="mask" data-automation="rate-skill-completed"></div>
+</div>
+<div class="personalized-card rate-skill rate-skill-2" data-automation="personalized-card-rate-skill-2" data-bind="attr: {'tabindex': isStepCompleted('completed-presence-step') &amp;&amp; !isStepCompleted('skill-step-2') ? '0' : '-1', 'role': isStepCompleted('completed-presence-step') &amp;&amp; !isStepCompleted('skill-step-2') ? 'button' : null }, css: { finished: isStepCompleted('skill-step-2') }, template: { name: 'rate-skill-readonly-template', data: findStep('skill-step-2') }, click: goToStep.bind($data, 'skill-step-2'), event: { keypress: function(data,e) { if(e.keyCode == 13 || e.keyCode == 32) {return true} else {return false} } ? goToStep.bind($data, 'skill-step-2') : null }" tabindex="-1">
+<!-- ko if: $parent.isStepCompleted('completed-presence-step') --><!-- /ko -->
+<div class="mask" data-automation="rate-skill-completed"></div>
+</div>
+<div class="personalized-card rate-skill rate-skill-3" data-automation="personalized-card-rate-skill-3" data-bind="attr: {'tabindex': isStepCompleted('completed-presence-step') &amp;&amp; !isStepCompleted('skill-step-3') ? '0' : '-1', 'role': isStepCompleted('completed-presence-step') &amp;&amp; !isStepCompleted('skill-step-3') ? 'button' : null }, css: { finished: isStepCompleted('skill-step-3') }, template: { name: 'rate-skill-readonly-template', data: findStep('skill-step-3') }, click: goToStep.bind($data, 'skill-step-3'), event: { keypress: function(data,e) { if(e.keyCode == 13 || e.keyCode == 32) {return true} else {return false} } ? goToStep.bind($data, 'skill-step-3') : null }" tabindex="-1">
+<!-- ko if: $parent.isStepCompleted('completed-presence-step') --><!-- /ko -->
+<div class="mask" data-automation="rate-skill-completed"></div>
+</div>
+<div class="personalized-card rate-skill rate-skill-4" data-automation="personalized-card-rate-skill-4" data-bind="attr: {'tabindex': isStepCompleted('completed-presence-step') &amp;&amp; !isStepCompleted('skill-step-4') ? '0' : '-1', 'role': isStepCompleted('completed-presence-step') &amp;&amp; !isStepCompleted('skill-step-4') ? 'button' : null }, css: { finished: isStepCompleted('skill-step-4') }, template: { name: 'rate-skill-readonly-template', data: findStep('skill-step-4') }, click: goToStep.bind($data, 'skill-step-4'), event: { keypress: function(data,e) { if(e.keyCode == 13 || e.keyCode == 32) {return true} else {return false} } ? goToStep.bind($data, 'skill-step-4') : null }" tabindex="-1">
+<!-- ko if: $parent.isStepCompleted('completed-presence-step') --><!-- /ko -->
+<div class="mask" data-automation="rate-skill-completed"></div>
+</div>
+<!-- ko if: !isStepCompleted('completed-presence-step') -->
+<i aria-label="Locked. Complete steps 1 to 3 to unlock" class="fa fa-lock lock-mask" data-bind="attr: {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.NotCompletedPresenceCard') }" role="img"></i>
+<!-- /ko -->
+<!-- ko if: skillStepsCompleted --><!-- /ko -->
+</div>
+<div data-bind="stopBindings: true" id="rate-skill-readonly-template" style="display: none">
+<!-- ko if: $parent.isStepCompleted('completed-presence-step') -->
+<button class="close skip-skill-button" data-automation="skip-Skill-button" data-bind="click: $data.skipSkill.bind($data, true), clickBubble: false, tooltip: { title: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Skip'), trigger: 'hover focus' }, attr: { 'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Skip') }" style="display: none;" type="button"><i class="fa fa-times"></i></button>
+<div class="skill-name-container">
+<p class="skill-name-header" data-automation="skill-name" data-bind="text: nextSkillName"></p>
+</div>
+<!-- /ko -->
+<div class="mask" data-automation="rate-skill-completed"></div>
+</div>
+<div class="mask"></div>
+<div class="personalized-carousel" data-automation="personalized-carousel" data-bind="css: { open: currentStep }">
+<div class="carousel slide" id="CarouselCard">
+<div class="carousel-inner none" data-bind="attr: { class: 'carousel-inner ' + (!currentStep() ? 'none' : currentStep().id) }">
+<div aria-label="1/3" class="item job-title" data-automation="personalized-card-open-job-title" data-bind="with: findStep('job-title-step'), attr: { 'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.JobTitleCard.Heading') }" role="region">
+<div class="personalized-carousel-card">
+<div class="header">
+<div class="pull-left" data-automation="personalized-card-open-job-title-heading" data-i18n="Opportunity.Opportunities.PersonalizedSearch.JobTitleCard.Heading">1/3</div>
+<button aria-label="Close" class="close pull-right" data-automation="personalized-card-open-job-title-close" data-bind="click: $parent.close, attr: { 'aria-label': $.t('Common.Close') }" type="button"><i class="fa fa-times"></i></button>
+</div>
+<div class="body">
+<i aria-hidden="true" class="quote fa fa-quote-left"></i>
+<span data-i18n="Opportunity.Opportunities.PersonalizedSearch.JobTitleCard.Sentence">My ideal job title is </span>
+<div class="madlib open" data-automation="personalized-card-open-job-title-idmadlib">
+<label class="sr-only" data-i18n="Opportunity.Opportunities.PersonalizedSearch.JobTitleCard.Sentence" for="JobTitleCard_Sentence">My ideal job title is </label>
+<select class="form-control" data-automation="personalized-card-open-job-title-id" data-bind="options: $parent.jobOptions, optionsText: 'Text', optionsValue: 'Value', value: job().JobId, optionsCaption: $.t('Common.Forms.Select.Empty.Choose')" id="JobTitleCard_Sentence"><option value="">Choose...</option><option value="2172d3fe-3404-42e8-9c57-485d28fe1ab9">Account Services Manager</option><option value="6460b470-c08c-416b-be0a-41c66313f12d">Account Services Mgr Dedicated Account</option><option value="13077d23-a0e6-47ab-81f7-a0bf283e0a1b">Accounting Assistant</option><option value="4e8c15b4-b823-4ddd-956e-9eba87f1258f">Accounting Manager</option><option value="d1b88779-a579-4f54-9296-721ef36b3ea4">Accounts Payable Specialist</option><option value="3ddcbd26-49b9-45b7-b1a7-2515ac6c1287">Accounts Receivable Specialist</option><option value="e6c73566-6a64-49b2-8533-0ff61a88d734">Administrative Asst-Meetings&amp;Incentives</option><option value="4bcb909d-66bf-4196-91f5-0ff197ac7628">Application Development Manager</option><option value="85965e4a-7082-452d-a6fc-8c6526af6559">Ashley On-Site Specialist</option><option value="c5f90e4b-e8a2-46b2-9c73-6cff266badc2">Branch Manager</option><option value="cf495b5f-1cef-4c7c-b2f5-597c6ca47428">Brand Manager</option><option value="03e09c33-71f9-4318-bb40-ef23bfe85221">Business Development Manager</option><option value="98766eeb-55dd-497d-987a-717088c01555">Business Development Rep</option><option value="2535bf4d-1575-4461-ab9e-354902ea5f1e">Business Process Manager</option><option value="a6bf2570-2b21-4200-b21c-6e89d8dded9a">Business Relationship Director</option><option value="1654eb01-c52d-4913-ba68-e282f2851dbf">Business Relationship Manager</option><option value="e58fba79-250a-4af0-a7ee-6171b4636d6e">Business Travel Associate</option><option value="ca8138d6-2cf3-4c5c-807c-238d34bd2928">Business Travel Associate - Floater</option><option value="732eb5dd-d36e-4f46-8df9-1b0760b10323">Business Travel Associate - Team Floater</option><option value="aa49830b-d965-4b58-bb21-2c7df710d72d">Business Travel Contact Center Administrator</option><option value="98f67e71-0c2e-4e4c-a1ba-f64e6325ce07">Business Travel Help Desk Specialist</option><option value="3bc0a975-0136-43b5-baea-31edf4d92d6e">Business Travel Operations Manager</option><option value="4ac6b918-fb3d-4983-aef1-410c1c937865">Business Travel Operations Manager - Higher Education</option><option value="ab63ca3c-f216-4d1e-af04-a041d71ca361">Business Travel Specialist</option><option value="2c97bef9-67d7-4306-9e06-74b5aef5eb9a">Business Travel Specialist - Ded Acct</option><option value="74df8d07-5fca-4c6e-8141-dc58d4f02d9d">Business Travel Specialist - Dedicated</option><option value="4bff0e68-26fd-4c9b-a833-c4eea780900b">Business Travel Specialist - Higher Education</option><option value="69e29a9b-c85e-4c36-b829-0c606e14e67a">Business Travel Team Mgr</option><option value="bbaa202c-7f2a-4e0d-9920-251019aa0e15">Chief Culture Officer</option><option value="9cdaef07-aa23-4d30-826a-2804e2a336e2">Chief Executive Officer</option><option value="c98fd767-c5d8-48ed-8906-70118e55b219">Chief Experience Officer</option><option value="e9f1bd2e-36ff-494e-92e3-494f75fdaff5">Chief Financial Officer</option><option value="74195120-5064-49d9-a74e-c2653c4e5755">Chief Information Officer</option><option value="437e2ad8-707b-4743-ac77-f50efaf5b176">Chief Operating Officer</option><option value="b47d8299-ab77-4b54-9ed5-2af741d85b42">Chief Sales &amp; Marketing Officer</option><option value="1c8f8c0b-0e48-4e72-a83a-705b5007daf6">Client Experience Quality Advisor</option><option value="302071c6-e55c-4c18-a96d-a19da01c32c5">Client Solutions Manager</option><option value="ee521f94-97aa-4b41-933b-4f0ffe9b835f">Client Solutions Support &amp; Implem Spec</option><option value="472e3a86-3926-42f5-8b59-aa04788c7a50">Client Solutions Support Manager</option><option value="f64e48c2-4db4-4a36-a983-8af83ca993ce">Client Solutions Support Specialist</option><option value="33b50b0e-3c0c-4909-bb49-25affe9f1352">Controller</option><option value="0d41ff42-e84e-48b6-903c-99b3e96ec2a7">Creative Marketing Supervisor</option><option value="4950a06e-9848-4b83-a22c-cd97248715ae">Customer Experience Director</option><option value="d1b95fad-973d-458e-b28b-d1321f8c81fe">Data Analyst</option><option value="c2a54b64-a30d-4e89-a659-b54fedf50c7a">Data Analytics Manager</option><option value="f9aa04e4-9b00-4478-a36a-801126c24f4b">Data Engineer</option><option value="6f014255-9f8e-489a-b54d-408f9c55c563">Dedicated Account Operations Manager</option><option value="77a3ed68-67c4-446e-bbcb-0e6b4443178c">Destination Wedding Specialist</option><option value="6d7c63fa-9d6f-4fba-994c-16995edbc97d">Destination Weddings Manager</option><option value="db195d93-682e-4888-a899-027fdd9e21cc">Destintation Wedding Operations Coordinator</option><option value="3dc9ad7e-300f-4919-bfb0-b53e418051b7">Digital Marketing Specialist</option><option value="f4a62c7b-3e74-47dc-ac06-c74e8e8cb113">Dir - Client Solutions</option><option value="c82b6cce-e1f8-49eb-a512-858c6cecc621">Dir - Global Development &amp; Sales Operations</option><option value="7300b6db-18a1-4547-8e18-8c87af652b4c">Dir - Marketing</option><option value="1f403284-abb9-4cc5-af5a-4902149fdf06">Dir - Sales Enblmnt &amp; Ops</option><option value="b224af61-d857-4946-b14e-9e4ef08680f8">Dir - Supplier Solutions</option><option value="38bdd283-cf15-449d-9fac-e6723601b182">Dir - Travel Technology</option><option value="f1744ea3-0416-4404-99ed-fddded9dd4ba">Dir - Vacation Travel Sales &amp; Operations</option><option value="67a2ab5e-a08e-48af-8f90-f64554c39407">Dir, Operations - Business Travel</option><option value="1ce1d9aa-2392-4e42-9440-e176baceb902">Director - Business Travel Operations Domestic</option><option value="18be39f6-2400-44e7-ad12-c70c560099a9">Director - Business Travel Operations Group &amp; International</option><option value="ccc04cde-0cdb-43cd-bd98-830753273579">Director - Business Travel Operations Specialty Services</option><option value="6afe56d2-48da-4ccd-9fd5-7234ffecbe7c">Director - Client Solutions Support</option><option value="44c1aeec-fb23-43c1-823f-698bf0a71733">Director - IT and Application Development</option><option value="d59f006f-2aa9-43be-bb03-715ce78fd255">Director - Operations, Meetings&amp;Incentives</option><option value="6cd9e80b-db4c-40b8-a8d5-452de1290255">Director, Global Client Solutions</option><option value="03fe1c20-abec-4f0a-ac5e-e14b857ac18a">Director-Human Resources</option><option value="274d74c3-c7d5-45a6-8635-15f4d479dccf">Dir-Vacation Travel Groups</option><option value="eb22c9da-955f-4986-a04d-e9b8aa884735">Domestic Reservations Team Mgr</option><option value="bacdd379-55e4-4ceb-b8ed-550a9f38593d">DS Support Spec - Intern</option><option value="585720be-23bb-4ea8-924f-ef0d53c17fc6">Emergency Service Associate</option><option value="eaa55358-e3f5-469d-8590-50c236bf8504">Emergency Travel Specialist</option><option value="74606a7c-aeaa-4836-92a2-0db02ee0d585">Engagement Marketing Specialist</option><option value="2dc91c7a-86b1-47d2-b440-f1921e24f347">Enterprise Application Administrator</option><option value="360dec99-0610-40b2-bf23-e8fb3c934ca6">ETC On-Site Travel Specialist</option><option value="b3bfd6d2-87f4-4a87-b4c6-32f656092228">Event Resource Specialist</option><option value="9755932f-4db3-467f-a1ec-c8a933ee1b26">Events Coordinator</option><option value="a710e760-6941-432b-945d-bb4a925b06d1">Executive</option><option value="f87fbeab-dede-4593-8043-1ec9d09ddc9f">Executive Administrative Assistant</option><option value="12e67444-f7ad-43ef-beb5-708b94a85e43">Executive Chairman</option><option value="d556b26e-7b96-4783-933e-34f50e92109f">Financial Analyst</option><option value="87b0fe43-dc4f-4b31-9bdf-d79462b7d0f0">FMI Program Operations Supervisor</option><option value="967823b7-5381-4f4e-9044-480c06c82ccc">Fox Emergency Services Manager</option><option value="245b865f-cb6c-472e-82a1-c331e4fdb69d">Fox Emergency Services Supervisor</option><option value="5c2e9897-02c8-4063-b75c-518acddaced3">Global Client Solutions Manager</option><option value="60d0043f-5009-4d7d-ac94-8b3c2f04d4b4">Global Sales Director</option><option value="5106a48a-9df2-4b74-a059-ec0031a62fc1">Graphic Designer</option><option value="7670d707-a6f7-4eef-b806-cedc45d5c0ed">Group Air Associate</option><option value="deff38bf-cf46-475e-834e-6cb000928606">Group Air Block Specialist</option><option value="283e24c7-a5fc-4813-82f5-5ccba876d248">Group Air Operations Manager</option><option value="b866a506-a3a4-478c-a898-c56296d61052">Group Air Specialist</option><option value="4ef081ee-4f9c-49b8-a696-d44e37376d85">Group Air Support Manager</option><option value="25b111a6-13c0-43e4-b861-265f397b7a84">Group Air Support Specialist</option><option value="f9da0d99-3695-4f7e-849b-2103ceb17d4b">Group Block Travel Specialist</option><option value="a575b363-a112-4223-b45b-3b60d5276b3c">Group Development Specialist</option><option value="38f2c70f-5e33-48a1-b611-ffb6386d60e1">Group Product Devlopment Specialist</option><option value="dff3e4f1-b49f-480a-96ec-e6c4a6ee0944">Group Program Coord Dedicated Account</option><option value="2c29bf90-5253-4213-8e19-2fb9ffe0ce31">Group Sys &amp; Inv Team Lead</option><option value="dd4fa587-16b9-49f4-b840-5cc2c021b391">Group Travel Associate</option><option value="d437d4a0-dd31-4cfb-a619-0e858a96ca0e">Group Travel Specialist</option><option value="50754746-b1a6-45aa-8a4a-97d30e9011df">Group Travel Specialist-Dedicated Acct</option><option value="c610e6ff-5402-4b33-aa2c-d62ed16f3060">Group Vacation Administrative Assistant</option><option value="0dd367d5-e910-451e-bc26-81c945dbc958">Group Vacation Intern</option><option value="8c0e8446-cd88-43cc-a0a8-d82e1b386b87">Group Vacation Travel Specialist</option><option value="537cea83-9135-41de-8d02-6bde5109b396">Group Vacation Travel Support Specialist</option><option value="e65b7638-70cd-4ea6-8d9b-6596e3070e84">Group,MI Program Sales Director</option><option value="5944d54b-873c-40bb-b83a-fbad0ccd7836">Hotel &amp; Car Consulting Solutions Mgr</option><option value="a3d2b446-9cf9-4a0b-b76e-ff76e87d4143">HR Assistant</option><option value="fb7d3f3c-fe93-4ca9-a65d-798de30a4df8">HR Business Partner</option><option value="cb16b564-3b6f-413b-8afb-688808cfb8c4">HR Coordinator</option><option value="389420c1-15e8-4d63-8203-0c8a2f7bf629">HR Generalist</option><option value="d8bf1dbe-8446-4fb6-8392-15e1efd00751">HR Intern</option><option value="fd50b998-d54d-4b3c-ba52-2c9b0d19b247">HR Payroll Assistant</option><option value="8f828b8a-f66e-40b0-a324-b2d5a62e6495">Human Resources &amp; Engagement Coordinator</option><option value="01969769-e3c7-44f4-9c3f-d699c22ba482">Imperial On-Site Specialist</option><option value="38d2055d-5211-4c0c-a0e1-cf0c359568ed">Implementation Manager</option><option value="a28b21d9-1e39-4d96-a35c-7e0317ff7a49">International Business Travel Operations Manager</option><option value="9de757cc-82f4-4290-b054-2f4d7d84e259">International Business Travel Specialist</option><option value="12f6b86e-1a4e-474c-b381-2cdad65fd6ab">International Reservations Team Manager</option><option value="fddd16ef-351a-4fb6-ba24-f6c53123c31d">Intl BT Specialist (FIT)</option><option value="a1a5e0f9-5163-4e16-b6f2-5101284590bd">IT Manager</option><option value="d22470de-5290-4fb9-8943-749cb550de2c">IT Specialist</option><option value="5f425e2f-8fad-4682-b467-8523a0f88c2b">IT Support Specialist</option><option value="f85ce50c-e569-4dfa-a32b-1c529abcc35b">Learning &amp; Development Customer Service Specialist</option><option value="b64b08d7-9884-462a-a33c-2abfe843268f">Learning &amp; Development Specialist</option><option value="bafddab6-f245-49f7-a10b-3c08a4769633">Maintenance</option><option value="f9168d5f-29f1-41cd-8811-4c388d5b5e70">Marketing Analyst</option><option value="f81fd348-c219-4311-8aac-369e065d6cc6">Marketing Communications Specialist</option><option value="ecbaa942-5e52-44e7-a760-05f791ba69c2">Marketing Coordinator</option><option value="ecfe4cab-f6c5-4002-83da-29bd9979b531">Marketing Coordinator</option><option value="01a87380-4695-40f0-8866-37e5806e4c92">Marketing Events Specialist</option><option value="62b215cc-76c1-4d10-89b0-879c498513f8">Marketing Generalist</option><option value="5e2eab14-89e1-4674-8a79-3ccefb4d40a9">Marketing Intern</option><option value="832ca65c-6b9a-4245-b8a6-6fe57cb7c12c">Marketing Manager</option><option value="64b90cf9-fa84-44bd-a47e-a3ae748ebc75">Marketing Support Specialist</option><option value="f8a6e724-cd1c-44c3-be49-73ac4ae5c3e1">Meetings and Incentives Program Coord</option><option value="2ae67a87-397a-4275-9ea6-8746e8e79a51">Meetings and Incentives Program Mgr</option><option value="e0728471-d719-4cf8-a162-d4bfd3fb824a">Meetings and Incentives Program Mgr II</option><option value="08c8faba-c660-469b-9702-108ebf97fb87">Mgr - Group Air</option><option value="348d3e38-4e5a-4857-834d-01f248465778">Mgr - Group Vacations</option><option value="375e2372-17c2-4b62-99bf-87130f83176c">Mgr-Business Development, Vacation</option><option value="8b8e9889-d009-44d9-879c-b4030346f91d">Network &amp; VoIP Administrator</option><option value="bde8e761-0eca-4f2d-8de4-d13f6114f10a">Online Fulfillment Associate</option><option value="98445c43-4442-4976-bb41-d734d539e2fa">Online Fulfillment Specialist</option><option value="c72668ca-af0c-4653-9277-d7faaebf8591">Online Tech Sup Spvsr</option><option value="058a66ec-d940-4d2e-934a-429a87aa889f">Online Technology Manager</option><option value="aab5b8e9-0054-4b99-911d-a228d45bc569">Online Technology Support Specialist</option><option value="c27d81d9-1de7-4ad3-bdf9-8f1d1fbb5706">Online Travel Technology Specialist</option><option value="30447183-0524-4aa7-87c4-fea9df92157f">Onsite Agent</option><option value="9c8fb679-f2a7-430d-9171-0e6ef3529479">On-site Business Travel Operations Manager</option><option value="915bc996-af0d-4ee4-98da-e9840cb57636">Onsite&amp;Online Queue Fulfillment Mgr</option><option value="57182805-4204-4fb8-bc20-1eca31bde8e5">Operations Manager</option><option value="5310d1a4-bf5b-411e-93da-7bb5592f2ce7">Operations Mgr - Group Vacations</option><option value="f0a78081-8677-409b-b857-fefc090c81da">Operations Support Specialist</option><option value="e36d34f1-d286-43dd-bbf8-1643aee34163">Operations Support Specialist</option><option value="55f1fd8c-d74e-4244-8365-608fc8412eaa">Payroll &amp; Engagement Coordinator</option><option value="c0cf401c-cb61-4152-b4ba-da20af3b5df3">PHP Programmer I</option><option value="6d5ff93d-e7dc-40c8-958c-4f8811ff36f6">PHP Programmer II</option><option value="eadc9559-fd27-49a0-b70c-bc35a0c58d95">Project Assistant - Limited Term</option><option value="38249e45-ea68-4f70-8dbc-89cfb1a53510">Project Management Office (PMO) Manager</option><option value="65b94f4d-544e-4332-b49d-8169445edcb4">Project Manager</option><option value="6b7fb62c-2c8d-403d-b123-ca1c12c59999">Project Manager - Implementations</option><option value="904c429a-2960-43c0-a309-fdc62a4b2e15">Promotions&amp;Events Specialist</option><option value="952d3d78-eaae-433f-8a86-bcefce4c9c9a">Proposal Specialist</option><option value="d3ffd606-acf8-4643-b9fd-8626389def51">Proposal Support Specialist</option><option value="f30f71f5-b8bd-43de-ada6-7b3480a0fe10">Proposal Team Supervisor</option><option value="577ea0ce-d1d0-4da3-8ac4-9604db85a58c">Quality Fulfillment Specialist</option><option value="9db36e21-0b31-458f-a991-7c6f2c1c622c">Quality Fulfillment Supervisor</option><option value="a16138c4-4342-423b-ace3-9c33334b2566">Sales Director - Group, M&amp;I Programs</option><option value="1f728f06-e48e-4018-aabf-c33b341c22eb">Sales Support</option><option value="0db8e189-6e0e-4962-8886-c946376ead99">Security Analyst</option><option value="a2ff4cad-3bcc-46be-8bc6-08bb48ff9be0">Senior Accountant</option><option value="e9815060-f6ee-4111-9c82-b7530bd8fc61">Senior Digital Marketing Specialist</option><option value="e91f9c00-e4d7-4b47-98e5-78b332cde1e4">Senior Graphic Designer</option><option value="45ed1a7a-9dcb-49c3-a3f7-f83d3a13a53d">Senior Manager - Group Vacations</option><option value="158b3823-b91f-4ccd-b7d2-b568195b07b8">Senior Project Manager</option><option value="299db9c5-aa88-4026-b924-6f27a39eba59">Senior Talent Acquisition Specialist</option><option value="f49125a7-a4c1-4910-8dac-ea3c32028723">Senior Travel Buyer</option><option value="0594ea0e-697d-4693-99be-3dfec2fdfcfe">Solutions Sales Director</option><option value="7ef91b0f-9202-412b-aa53-a948f393eb91">Sr Destination Specialist</option><option value="a9a27708-8f55-4af3-9c94-cae211958e33">Sr Dir Operations</option><option value="c95007f3-bc9b-4137-91bb-c64676bb1ba3">Sr Director - Business Travel Operations</option><option value="178984b1-9dd1-49fa-b044-9fb5b1fcec28">Sr Dir-Global Sales</option><option value="82635982-eee4-400b-80b7-016186f71f26">Sr IT Support Specialist</option><option value="c59780b8-fee1-4673-a591-13a24afb85ca">Sr Marketing Coordinator</option><option value="3aa33c2e-1250-4f38-9e27-19acf2fc1295">Sr Web Application Developer</option><option value="754998a8-15a8-48c5-a1d1-1809ece8f1b3">Sr. HR Generalist</option><option value="37d836de-9a23-44b5-9d5e-78cf0e8cabb1">Sr. HR Talent Acquisition Consultant</option><option value="84b95490-3078-403f-bad7-fc0b5180a5c8">Sr. Marketing Specialist</option><option value="3227f833-611a-4930-b960-1c1f24d929d4">Staff Accountant</option><option value="726271fa-6184-4914-9d48-52880f54be43">Staff Accountant</option><option value="847a07e2-0dcc-41be-befc-bf27a8ae9f70">Systems Administrator</option><option value="784e0297-8a6d-4a47-92f8-cacab183a9a5">Systems Architect</option><option value="f9ab5a84-53e8-4307-9dc6-b7127b3b3d01">Talent Acquisition Consultant</option><option value="6f29be83-f3f1-427b-a957-0c9c9cceab8e">Talent Acquisition Coordinator</option><option value="d6da43c0-f345-4973-8ffb-d8c9cb4cfa83">Talent Acquisition Specialist</option><option value="b4077fbc-27f2-4edf-8583-8e6765f36930">Talent Learning &amp;Development Manager</option><option value="96d0fa9d-eaee-41e4-82fe-2bf7046edd15">Temp - Administrative Assistant</option><option value="a9ce24d0-22d4-4765-9289-c7d7136509a4">Temp - Mktg Specialist</option><option value="b7e821e1-2125-491d-bc7a-94517aeb93b8">Temp - Talent Acq Coordinator/HR Gen</option><option value="0eaaf3bb-dc91-41bf-8b5a-aee1c4321938">Training&amp;Development Specialist</option><option value="a4501c85-04a3-45ec-914e-44c4b14fb6b3">Travel Buyer</option><option value="7daa18f9-8aaa-46d2-bbb9-95b337d2fcc1">Travel Tech Support Spec</option><option value="f2fc43db-f723-4c7a-88de-4928e28ae4f8">Travel Technology Developer</option><option value="e0fdc628-91f1-4b5b-8184-400dfcb8fecd">Travel Technology Manager</option><option value="a823d028-a0f9-4fab-a298-97a20c8fc617">Travel Technology Product Supervisor</option><option value="83fcc27e-5ac6-4f6f-b431-639a2d8371ea">Travel Technology Specialist</option><option value="212033e2-da13-42ec-8c58-10340d4549ab">Travel Technology Sr Developer</option><option value="bac97e92-ff38-4b1a-8919-b5bb08ba5820">Vacation Travel Advisor</option><option value="921c7624-d794-4b18-b94a-42967761e211">Vacation Travel Associate</option><option value="96531e03-1f70-4a4c-ae39-bfefedeefc63">Vacation Travel Consultant</option><option value="ef12752f-cb7c-4710-88af-6d8311c9a191">Vacation Travel Independent Contractor</option><option value="d7807927-f3df-4bfe-bc02-2c6849dc2d24">Vacation Travel Operations Analyst</option><option value="d930f8a6-9705-4320-b6f4-99c3ac555896">Vacation Travel Specialist</option><option value="b18ab2b6-0dd6-42d3-bcc3-dbd365a66613">Vacation Travel Support Specialist</option><option value="794d012f-2cad-4522-818e-5789f08894df">Vacation Travel Support Specialist Supervisor</option><option value="70ab775c-def5-4e28-9776-386bdce92d57">Vice President of Information Technology</option><option value="e129845a-256b-4089-8783-acbcf955b458">VIP Travel Specialist</option><option value="7dbf3873-c229-49f9-a6ca-4a0fa40a5da4">VIP/Intl On-Site Specialist</option><option value="be40b303-e972-4f25-9ce3-ea67873c3df7">VP - Business Travel</option><option value="3ff32019-8abe-4562-8081-27a12bb3a871">VP - Client Solutions</option><option value="c5d2878f-ac98-4e66-8ad8-8ccff67a6c52">VP - Marketing</option><option value="6df3064e-17d6-49d4-a672-910046db9f64">VP - Meetings&amp;Incentives</option><option value="7da535b5-3997-42d5-a44d-7282aff117c2">VP - Supplier Solutions</option><option value="de0e43e1-623e-483e-a5e8-0125ba9f51a0">VP-Client Solutions&amp;Event Strategy</option><option value="3b559bf3-9342-46cb-a2da-3255b80c9fb2">VP-Global Sales</option><option value="2f350570-6497-4bb6-8152-16847a37de93">VP-Vacation Travel</option><option value="1e383c25-464a-4a23-a3c7-c1edb68ba997">Web Application Developer</option><option value="a7270985-3b99-4b62-be81-b60cfb768404">Web Developer</option></select>
+</div><i aria-hidden="true" class="quote fa fa-quote-right"></i>
+</div>
+<div class="footer">
+<button class="btn btn-warning pull-right" data-automation="personalized-card-open-job-title-next" data-bind="enable: isValid(), click: complete" disabled="" type="button"><span data-i18n="Common.Next">Next</span> <i class="icon fa fa-arrow-right"></i></button>
+</div>
+</div>
+</div>
+<div aria-label="2/3" class="item education" data-automation="personalized-card-open-education" data-bind="with: findStep('education-step'), attr: {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.EducationCard.Heading') }" role="region">
+<div class="personalized-carousel-card">
+<div class="header">
+<div class="pull-left" data-automation="personalized-card-open-education-heading" data-i18n="Opportunity.Opportunities.PersonalizedSearch.EducationCard.Heading">2/3</div>
+<button aria-label="Close" class="close pull-right" data-automation="personalized-card-open-education-close" data-bind="click: $parent.close, attr: { 'aria-label': $.t('Common.Close') }" type="button"><i class="fa fa-times"></i></button>
+</div>
+<div class="body">
+<i aria-hidden="true" class="quote fa fa-quote-left"></i>
+<span data-i18n="Opportunity.Opportunities.PersonalizedSearch.EducationCard.SentenceOne">My highest level of education is </span>
+<div class="madlib open" data-automation="personalized-card-open-education-degreeidmadlib">
+<label class="sr-only" data-i18n="Opportunity.Opportunities.PersonalizedSearch.EducationCard.SentenceOne" for="EducationCard_SentenceOne">My highest level of education is </label>
+<select class="form-control" data-automation="personalized-card-open-education-degreeid" data-bind="options: $parent.degreeChoices, optionsText: 'Text', optionsValue: 'Value', value: education().DegreeId, optionsCaption: $.t('Common.Forms.Select.Empty.Choose')" id="EducationCard_SentenceOne"><option value="">Choose...</option><option value="bccb1497-c726-4d3e-a81b-cc8bd51f6593">Associates</option><option value="9250db2f-d244-4b17-91aa-e853e74efca5">Bachelors</option><option value="1ca4826a-a4fc-4e72-93e4-bc60dd242dfe">Doctorate</option><option value="02c631c5-be6a-40ae-b6e4-8856dfe2bc9e">High School</option><option value="f28f592b-27d8-4d77-b99d-54e9cd622ffd">Masters</option><option value="7d67d770-24bd-403d-961f-4746d4dd6e0f">PHD</option><option value="371350d6-45ef-4669-97f6-4eb62b594f24">Some college</option><option value="ba711732-bed9-4d06-aa8a-b8b3ad146e10">Some post college</option><option value="e2eb6717-e01f-45d5-95cb-ddd239951d89">Technical/other training</option></select>
+</div>
+<span data-i18n="Opportunity.Opportunities.PersonalizedSearch.EducationCard.SentenceTwo">I studied </span>
+<div class="madlib open" data-automation="personalized-card-open-education-majoridmadlib">
+<label class="sr-only" data-i18n="Opportunity.Opportunities.PersonalizedSearch.EducationCard.SentenceTwo" for="EducationCard_SentenceTwo">I studied </label>
+<select class="form-control" data-automation="personalized-card-open-education-majorid" data-bind="options: $parent.fieldOfStudyChoices, optionsText: 'Text', optionsValue: 'Value', value: education().MajorId, optionsCaption: $.t('Common.Forms.Select.Empty.Choose')" id="EducationCard_SentenceTwo"><option value="">Choose...</option><option value="e023ace0-2ecc-4d3c-bb47-d3c28c536f48">Accounting</option><option value="60321377-9409-4c0a-b3fb-3bfce1e0a709">Accounting Systems</option><option value="a12aa95f-aff7-405b-8fdc-96d941e3af36">Adult Education</option><option value="664fc1f5-361b-4e2c-8ca6-ff51db82fad3">Advertising</option><option value="d45fc353-5f32-4410-a549-6a2324259d5c">Africa and the Middle East</option><option value="c799ef30-a64b-4ff0-b139-1266562df5b2">African and African American Studies</option><option value="4beae524-861e-410c-96bd-1f05b43c5fc8">Air Force ROTC</option><option value="d6c3f634-d479-49d7-a6f8-8b8691a1aafd">Alcohol and Drug Abuse Services</option><option value="e1ca2db1-6497-4236-9577-9f558b72f32d">American Foreign Policy</option><option value="9d8acd9b-c5c5-43f6-8012-95d6dceff4bd">American Studies</option><option value="fe8bda77-1629-438a-9cbf-db9ffbaf1fd8">Analytical Chemistry</option><option value="0bc22c2b-4d32-49e1-87b0-b0da78f316ea">Ancient Egyptian History</option><option value="65fdcadf-a039-411f-9206-4eb936c81e1e">Anthropology</option><option value="0ee98e3b-8116-4dfe-ba50-deb5cda0b77e">Applied Linguistics</option><option value="3a03e74a-f22f-44ac-ac73-3caf46e7e8dc">Applied Mathematics</option><option value="2b7b14f8-9f0f-4838-b52c-698fcc4147bc">Applied Statistics</option><option value="20e0f90a-39e7-4437-a414-b9d3d73f175c">Architectural Technology</option><option value="83fae454-7698-4901-8882-bf3ab186a23b">Architecture</option><option value="55ee96d7-1609-455b-bbc4-57faf7fba4f4">Army ROTC</option><option value="87f45cee-c6c7-4d13-8835-840b4dadd6e3">Art</option><option value="2ebce668-4ac5-4f66-aa0e-9fcf8c2e84ea">Art Education</option><option value="97a62901-4f65-4b96-a918-884db427e0a9">Art History</option><option value="4d897009-c2fb-435e-9bea-21f9d0869fb3">Asia</option><option value="1369f784-9521-4b1b-86ed-b47763dd8d4d">Audiology</option><option value="b625a6a2-6e96-4ec0-a763-386f42adad06">Audiology &amp; Speech Pathology</option><option value="0e3d9f50-8ff4-4806-a447-32af19aa70b7">Automatic Control Systems</option><option value="9725ee0e-536f-4142-b062-090316aa1bc2">Behavioral Neuroscience</option><option value="66dca0dd-15ed-4ec1-aead-7fc0d761139c">Biochemistry</option><option value="26445593-542e-4f23-a40f-5acf15a3e700">Bioinformatics</option><option value="0f6998ba-1cb0-4661-b560-cb5e88559829">Biology</option><option value="58433bf8-ed6e-4a49-bff4-0879390fd3e6">Biomedical Engineering</option><option value="2fd12e81-7586-4a9e-8267-976fdf997176">Biomedical Illustration</option><option value="60b2c5e9-3c0e-4028-a2c2-bf3ebf06ec19">Biomedical Systems</option><option value="b2016dfb-1187-46e5-9273-60da275bca0a">Biotechnology</option><option value="8653df23-0458-4bc8-9ac9-af1dcef57a39">Botany</option><option value="6a1b3f37-fd6a-42d2-9a3e-832d309b0eec">Broadcast and Electronic Media</option><option value="fdb1c967-bc74-434d-a3c0-c389e5d59833">Broadcast News</option><option value="7706c2b3-6037-4ce7-a65f-20235b39be1f">Business Administration</option><option value="ee781c7f-1a67-45ed-a9e9-cfab08335579">Business Economics</option><option value="2299b114-4311-4242-9401-c00ebf740fae">Ceramics, Painting/Sculpture</option><option value="647abbfc-fc08-40ec-a9ac-85c590744577">Chemistry</option><option value="e04c2d88-b838-4600-b1f0-87a7e3aaf555">City and Regional Planning</option><option value="35e56fee-f414-43c1-a021-ba8c407bff65">Civil Engineering</option><option value="1c4ed7c8-6ef5-4076-a55b-04a9699f4deb">Clinical Nutrition</option><option value="517abcf3-c703-4267-a910-14745f0f90bf">Clinical Psychology</option><option value="c1bbcd37-2340-48ef-9749-b9a4feaf8a18">Commercial Aviation</option><option value="05a698bf-3849-4d11-8ca8-64b430d10f05">Communication</option><option value="e69840f3-28ee-4ab6-98df-1406bc500fd6">Community Agency Counseling</option><option value="e0347924-4ed8-4658-858c-5f6f7b8fca1f">Community Education</option><option value="32e650bc-01af-447a-8bbc-c0bb439cd9f3">Composition</option><option value="3fd18062-ce5c-4c7e-ace3-31e4c02a0e68">Computational Chemistry</option><option value="2e3004e2-129a-4236-ab12-c4395f89cd0d">Computational Physics</option><option value="9c3b0789-f9ce-4505-bb2c-0d169c16e876">Computer Engineering</option><option value="c32f27b4-9204-4589-9dba-8c754c0a362c">Computer Science</option><option value="09672b95-2f9d-4816-b84a-87bffa10a639">Conducting</option><option value="6abf67be-c553-44ff-93f6-b4c636573f9e">Construction Engineering</option><option value="55fe2824-0cab-4f01-8432-111b0f461679">Construction Management Services</option><option value="68dac045-bf71-41e3-885f-63a70816a6e4">Counseling and Personnel Services</option><option value="ce25a00b-ed25-4883-b2d3-35e4d1d09775">Counseling Psychology</option><option value="391143f3-6f2b-42cf-ad44-428302466d3f">Creative Writing</option><option value="c309bf87-ac69-4c88-920e-10cba6ebf428">Criminal Justice</option><option value="1afffe23-8dc1-4249-8bae-204db3eba0ef">Criminology and Criminal Justice</option><option value="f2860db5-cfd9-4dc5-80f0-a1d79709a33a">Cultural Studies</option><option value="748f228b-db73-4b52-b850-282fbec1b805">Dance</option><option value="4c8ba651-7cfa-48fd-8819-e0c09b3e3058">Design and Mechanical Systems</option><option value="cfed3425-955e-420c-97a0-e69d87433744">Design and Technical Production</option><option value="b0f644fa-c0e5-4238-bb7b-794a4405384c">Dietetics</option><option value="208503a2-2f41-474a-964d-487a8d42529a">Early Childhood Education</option><option value="b8570e59-bbf7-4151-a94b-a476f369beb6">Earth Sciences</option><option value="d9ee6102-47c7-4bc1-aa59-e330ae96de8c">Economics</option><option value="6073715b-4af4-47b4-ac1b-8f37d5a815ce">Education</option><option value="162e1c4f-1edd-41e9-9f81-d22407d4eeff">Educational Leadership</option><option value="7028642c-c89b-4fb8-af53-cf62ce0beb5e">Educational Psychology</option><option value="7005ae7b-3675-4c28-b9d9-ea8343640c1b">Educational Research</option><option value="e31ff9be-b749-4593-9ee5-9512b4a3764e">Egyptian Art and Archaeology</option><option value="89dc6947-ee88-4aab-8a34-422c2260c95f">Electrical Engineering</option><option value="fbcb3f7e-70af-4444-b6de-39c0a1a4abdc">Electronic Commerce</option><option value="6ffc2869-f646-456a-93b2-d50379a0ced6">Electronics Engineering Technology</option><option value="32e6a6a2-fb56-4f52-8ba6-10c669482d82">Electronics Technology</option><option value="0aed8a8a-b583-42c8-b93c-c18a7750d85b">Electro-Optical Systems</option><option value="35194a60-894d-4fea-9133-62c77e32aa6e">Electrophysics</option><option value="e4ebab38-cea6-41b0-ab28-3eb0f825d291">Elementary Education</option><option value="3634da72-606d-4f1e-9196-923de05fe7a6">Energy Systems</option><option value="c957fca7-db9e-477f-b5a9-4fe7319ed590">Engineering</option><option value="2705a072-f97e-4fbe-b139-03a797413c04">Engineering Computer Systems</option><option value="cf8685a0-a6ef-4bc2-9edf-492897409236">Engineering Technology</option><option value="3596a3c6-19e9-47fb-9d13-d9145dab33bf">English</option><option value="d0aa4f72-b33c-4940-9637-52e8fb45f3b3">English as a Second Language</option><option value="9d969404-dd45-40e1-bf87-2b8588244b44">Environmental and Earth Science</option><option value="9459cc77-b2e6-4d52-a9d0-1fb3288246fa">Environmental Engineering</option><option value="d06cf5b4-1801-47da-9287-20718ad42778">Executive MBA</option><option value="48c5e944-db1e-4312-928a-216ca131d352">Exercise and Sport Science</option><option value="4a5eee5a-a5ac-4aae-b324-aabe03c2e08f">Exercise Science</option><option value="2926c0f3-343f-404e-bed3-b53737f70418">Experimental Psychology</option><option value="cd85bb97-1d52-44fc-b4d6-f5f2999cbac4">Family and Consumer Studies</option><option value="28b00217-7076-460f-8597-463177f96667">Film and Video Production</option><option value="dbe19b03-d0ac-409b-a63b-1ed3e24c2625">Finance</option><option value="76d1065d-e3fa-4e52-a8a2-0997f4426f84">Fire Administration</option><option value="1f28294a-5622-460b-a653-8a440a5b9cdf">Fire Prevention Technology</option><option value="5b3ae04c-bebf-4ffc-b45b-88e94ab4254c">Fire Service</option><option value="853997f6-d54c-4cf4-abd6-01ed1e4788c7">Foreign Languages</option><option value="6b52f264-6b1e-457e-8edc-2b1cd98ffdae">Foundation Engineering</option><option value="3f3ec600-1f7f-438c-a57f-d88eb1eff1d2">French</option><option value="5303da0b-6464-40fe-96d1-9c1224be7134">General Art History</option><option value="5cffb86a-5aac-4b00-a042-a96d657a6a2e">General Business</option><option value="64c9bf47-530a-46d6-9137-4dce77222f84">General Journalism</option><option value="3050c381-31ac-4851-becc-3c22501eaf6a">General Physics</option><option value="a0e86654-f50e-4b72-b290-39484d7269c0">General Psychology</option><option value="b9415462-36da-4eec-a41e-8b95f8db8867">General Public Administration</option><option value="cf77e819-386e-4d80-9ed1-e087b2c2e5a5">Geographic Techniques</option><option value="c288bb57-7fb5-4821-a983-d89eda546979">Geography</option><option value="9b455af7-eaf7-4cae-831b-0b8c062f453b">Geological Science</option><option value="1cac5306-c388-49e3-850b-0f5dd4664276">Geology</option><option value="de01ecbf-1cdb-4ae8-a468-18ea333c92fe">Geophysics</option><option value="6133276e-0c4f-444b-888e-b61a6fb58e12">German</option><option value="84490018-e20b-49e2-b379-df162cc74066">Graphic Design</option><option value="f941cba5-8a2c-4166-8382-ae5a1754e2ae">Greek</option><option value="f36c6ae3-1a51-47f7-a27d-33ddbf3f9e15">Health Administration</option><option value="0edea68a-578f-470d-a5ef-5ac1a9958e4a">Health and Human Performance</option><option value="b9806659-e016-44b1-9be9-3b079622c59e">Health Promotion</option><option value="72e3d846-28a3-45ab-ba0e-42c4d07f0d00">Health Services Administration</option><option value="e99fa2c8-9a06-482b-b123-980b333b1ae7">Higher and Adult Education</option><option value="6ebba054-c913-4603-bea4-003062c6f9b5">Higher Education</option><option value="0f841490-79c5-4f13-a80c-0f54f19a04c1">History</option><option value="e6af8e5d-55d3-442c-ad39-3ae8781fab89">Hospitality and Resort Management</option><option value="d3250267-b32a-4930-bc3b-2d6844f00094">Human Development and Learning</option><option value="ebd90613-b6ff-4d37-8e8a-d3320a3e1eb1">Human Movement Science</option><option value="2d49b217-54b4-4416-84a5-1f560b194a40">Human Resource Administration</option><option value="301c6402-5fdc-414a-baca-7a5419a588e6">Human Services</option><option value="88ea3832-4023-41fa-86be-9e2a913ab434">Inequality and Social Policy</option><option value="98b193d5-6f8e-4882-bc95-0064063a818f">Information Technology</option><option value="f4626644-81b3-41db-b52c-b320e97255bc">Inorganic Chemistry</option><option value="9f30c2e8-017f-4ef4-8fe1-77f2a1c20a31">Instruction and Curriculum</option><option value="80780e47-35f0-40d9-a007-248a3ec30b91">Instruction and Curriculum Leadership</option><option value="21f4a31f-c3af-4b3c-ba1b-e597f37c4644">Instructional Design and Technology</option><option value="cd8d0ba9-d528-481b-abe3-213366db6411">Integrative Studies</option><option value="3ad3a118-77bb-4d6b-8894-d4300fcdc75d">Interdisciplinary Studies</option><option value="da6d58a9-cb0e-4b0e-9c54-74c08037989d">Interior Design</option><option value="ca45f109-b190-4e03-bb49-d26d471e9669">International Business</option><option value="0ff266fa-810b-48a0-8079-63c9d944dee6">International Studies</option><option value="92c0ff41-a247-47a0-99b2-6e48d6c2a87b">Internet Journalism</option><option value="695609ad-b293-4783-a3e7-b2a7be6730cd">Invertebrate Zoology</option><option value="7b2b3e70-66f3-4e13-b127-05c32be039d2">Italian</option><option value="74f93c2b-5686-4488-b5fc-93c2e4a52382">Japanese</option><option value="ed2bb0f5-d6a3-4dc3-95b5-d1cd5ce041c0">Jazz and Studio Composition/Arranging</option><option value="762a952c-9a35-4e94-8cce-cca9aa9c5255">Jazz and Studio Music</option><option value="973d7c0f-7cdc-44da-8f1f-79394a4c6395">Jazz and Studio Performance</option><option value="8d90876e-9892-481e-b045-7d6275b2cf05">Journalism</option><option value="bfa56e4f-0138-4101-9205-7540363c3ace">Journalism Administration</option><option value="44b72997-2816-4a2e-bf21-2b7c5517dccc">Judaic Studies</option><option value="067362db-b559-4985-8fe6-a1a9fca2c451">Language and Linguistics</option><option value="d46a0f60-6546-4602-85bf-c73839bd163c">Latin</option><option value="9816fd74-29e3-4741-86b6-3c5a7d974c00">Latin America</option><option value="5dc5acde-0771-4f60-85aa-9a47ad265d84">Law</option><option value="06bdadfd-1f9a-4127-8eb7-dea2fd38fcd7">Law (MBA)</option><option value="b1f36c7d-df36-4c9e-8a61-6c88682b11c5">Law Enforcement Management</option><option value="92cca789-9c79-4d24-9e82-49fa56e9b7bc">Leadership</option><option value="d8759d61-994c-4109-8532-1b56cb830f8d">Leadership and Policy Studies</option><option value="8b9f181f-2422-4674-8ce9-a23eee00c72f">Leisure Management</option><option value="2f622bbc-aec7-4369-b7f4-07bca2175d94">Liberal Studies</option><option value="ea1312ed-ed24-403d-90e5-e42e5705fe5b">Literature</option><option value="c7006165-ba96-4cdd-b6e9-0e59779683dd">Logistics /Supply Chain Management</option><option value="d5aa4968-4d7f-457b-9f84-64099b9a4fb7">Management</option><option value="bbced9e0-ee12-4549-b4ab-151ee90046e7">Management Information Systems</option><option value="9867c224-8fec-4f44-ad03-7016c926ae01">Manufacturing Engineering Technology</option><option value="a97db95c-c51b-419b-bcba-f151c8f8f0d6">Manufacturing Technology</option><option value="0d7c76ef-9b3a-4920-aae6-552770099fc2">Marketing</option><option value="1046f247-f086-4bfd-829d-51405654713f">Marketing Management</option><option value="770994aa-f483-4dc3-9da9-25538c5debeb">Mathematical Sciences</option><option value="e3749742-5c5c-412e-9392-efc8329f4f71">Mathematics</option><option value="07511102-375c-4189-89dd-107e4df68f92">Mechanical Engineering</option><option value="bc0f63ab-8ae4-4df7-9cb5-8b09875ce76d">Mechanical Systems</option><option value="49b85df6-6ef6-4a12-9408-be2911c2081b">Medical Anthropology</option><option value="993ce9ce-5646-4d4b-8619-ca579915f537">Merchandising-Fashion</option><option value="c203d1fa-9497-45b6-b980-46c7fb1df2ad">Merchandising-Home Furnishings</option><option value="70c7f09a-aef1-4a67-8a4a-a758ca7943f7">Microbiology</option><option value="7e20525e-c710-4e18-90bc-e83f91abcf36">Microbiology and Molecular Cell Sciences</option><option value="5bbe742c-1254-4b1b-8247-06dcf97d70b4">Molecular Cell Sciences</option><option value="272bd7b7-0af0-4d7c-a685-d2574296977a">Music</option><option value="fdc2a7b5-0854-4bfd-af47-4b82cf80274c">Musicology</option><option value="ac6a0bcb-4b16-4060-83e6-d39f9193612f">Naval Science</option><option value="580576c8-b440-461b-bb78-a5e7fa872e98">Newspaper / Magazine</option><option value="7a24788a-5cee-4aed-b1fa-8b9ac33bb78d">Nonprofit Administration</option><option value="ffce1d14-6462-4517-9894-9e2daf07533b">Nonprofit Development and Administration</option><option value="c439dbe8-4cb6-435a-927e-5d1fbaf30d9f">Nonprofit Studies / American Humanics</option><option value="450e3ad7-57b5-4a14-adbd-3869ccf964e8">Nursing</option><option value="bbba5379-0b90-4d52-8ccd-9b3cc19fe6a1">Organic Chemistry</option><option value="47fd2aa7-9140-4a97-923c-0e9e7165e132">Organizational Leadership</option><option value="b07440a1-c976-4e8a-afbd-c3ecc07629c8">Other</option><option value="8f3a4e1b-2844-433c-b1fc-031e0a195661">Painting</option><option value="99013aee-375e-4aee-bad6-c33edab06488">Paralegal Studies</option><option value="b79a6452-2e7b-4d24-a22f-81d8120e9c74">Pedagogy</option><option value="d50a6c3b-e9bb-4f04-a12f-821617a6b9a2">Performance (Music)</option><option value="8c0d81c6-f650-45c0-ae84-4aa2509ebfcd">Performance (Theatre)</option><option value="c43c95d3-9894-43b5-ac7a-b943d074fb86">Philosophy</option><option value="617fabb5-a371-4097-8814-0bde80019840">Photography</option><option value="97e12769-7e91-47ae-9e41-e08f640c1304">Physical Chemistry</option><option value="7dd75704-260b-4aa8-8a7a-4d8b8fc786ec">Physical Education Teacher Education</option><option value="80c7dd6a-70f5-4d2e-8b0f-a11fb1baeaf1">Physics</option><option value="8e6de512-7901-45e7-a037-921e5eb1040a">Planning</option><option value="b653acd6-002a-4909-8fe5-98100da9ac15">Policy Studies</option><option value="ecd6a7cc-0c5a-4c43-844c-7c4cae716f40">Political Science</option><option value="5f9018b3-69c6-464b-95be-d168a915bbae">Power Systems</option><option value="a6281059-4f9b-480d-801f-0ab01b444e6b">Pre-Cytotechnology</option><option value="fc2ca464-8b24-4688-b0e2-f0f4c04f342f">Pre-Dental Hygiene</option><option value="9506a20c-34f3-45c1-8f7a-8625f44f0a99">Pre-Dentistry</option><option value="6d5df197-c86a-41ce-a8c6-3775470a9104">Pre-Health Information Management</option><option value="b486eaf8-51c3-4b47-8596-69372d8211b6">Pre-Law</option><option value="00152b18-6948-430c-806b-90a7622a8c29">Pre-Medical Technology</option><option value="899f8880-d474-47f9-990c-93f8ed7997de">Pre-Medicine</option><option value="1f156f47-752d-497b-b30f-08539b2d5431">Pre-Nursing</option><option value="9d7e587a-8534-4b26-b3c4-11db87ae4e51">Pre-Occupational Therapy</option><option value="cad499b6-1b97-4884-95fa-911c933f4783">Pre-Optometry</option><option value="df346a18-bd6e-4263-8553-83eefbcef1ba">Pre-Pharmacy</option><option value="a9e2da55-a3ec-41d1-8dcc-061bb2b4907c">Pre-Physical Therapy</option><option value="ff337359-f83e-42d0-aa26-dbe6a0ec942c">Pre-Podiatry</option><option value="419ca321-dc53-429a-aa8f-c12a86742492">Pre-School and Childcare Administration</option><option value="3a76b9d2-cef5-4a91-a3a5-431f49ec45ed">Pre-Veterinary Medicine</option><option value="d8a2a7f7-5d7e-4b54-9028-ebafc0393952">Print Making</option><option value="ca857336-749c-4cb3-85f8-392edf12d3f9">Professional Writing</option><option value="bd4531fb-d870-48c4-aea7-8ba7ae462ea5">Psychology</option><option value="72b5125d-12d5-46dc-93f9-f8686c670957">Public Administration</option><option value="fe026be4-d64c-44f0-a621-fa0aa8a0a2dc">Public Archaeology</option><option value="2f68e008-b7d4-4fc3-a2d3-fb658df32b58">Public Relations</option><option value="478866f1-c95a-4d30-9176-a2966ada773e">Reading</option><option value="f0e1740a-7f38-457f-b418-2cc1bfe1a04b">Real Estate</option><option value="c5445514-a813-4e27-afa1-cb177d140d03">Real Estate Development</option><option value="4c65bf92-8fe0-461b-aed0-6f2c950cb7ee">Recording Technology</option><option value="89a54e4e-c220-452f-a1af-d73e4b20389e">Rehabilitation Counseling</option><option value="a7df408d-af20-4fc4-a285-7e710cd3bf44">Religion and Society</option><option value="18c8383a-063e-463c-9efd-49e2cd3e8710">Risk Management and Insurance</option><option value="689b5676-235d-4bba-9f70-d2931be4168f">Romance Languages</option><option value="09416b89-2b05-4f72-a405-2f4e7c50dc87">Russia and Eastern Europe</option><option value="3e40a821-c006-4220-a3d7-6992cd95ffda">Russian</option><option value="fc6b0472-8ba1-45d1-afcb-065e08c5690d">Sacred Music</option><option value="b7d05a30-e253-4294-9927-a8b00d299af5">Sales</option><option value="cbce96ea-68a1-42cc-b974-bf0a829f2530">School Administration and Supervision</option><option value="a2235793-4283-4b50-a45a-90ed54f09902">School Counseling</option><option value="e2cad912-f713-4f8f-9f91-0f4b26725ff0">School Music</option><option value="5a8c890b-0981-4420-9f57-994d684d7fb1">School Psychology</option><option value="972c6025-7fe7-44a9-9711-e65e62041c71">Sculpture</option><option value="78a3fb50-ea32-4959-8655-b17854d9e4bb">Secondary Education</option><option value="810baf18-fef3-43d5-8bdd-963bf043d8df">Services for the Aging</option><option value="a96ada36-b026-487b-a1d8-f41bddc6da8d">Social Work</option><option value="d256ac8b-ccb4-45a2-8adc-bcc4fc3498a2">Sociology</option><option value="dcff8d0e-47b9-4221-936e-2cc49f010302">Spanish</option><option value="ecc32457-12a4-4f32-afb8-2a60aeb48c8c">Special Education</option><option value="054abc1b-aa4c-42a1-8940-c4ede21f7428">Speech-Language Pathology</option><option value="42d3ca08-e2f4-434a-8717-de12ed5b32a0">Sport and Leisure Commerce</option><option value="442118bb-29f3-4afd-b41c-a445683da028">Sport and Leisure Studies</option><option value="a12be15b-8e83-425f-b582-2e191676f220">Sport Management</option><option value="c2058683-5fca-4fd4-ada0-5a68c983de74">Statistics</option><option value="6615fe68-c7db-4b3b-b63e-5c2060155333">Structural Engineering</option><option value="ea2453fd-9626-4893-a0c4-51d4ae00d16a">Student Personnel Services</option><option value="40de5f8c-2234-4712-bce4-38f14b59bb5a">Systems and Signals</option><option value="a123dbcb-91fc-42fc-a03e-92adb4062c99">Taxation</option><option value="f9a7b13b-c5e5-4c83-a61c-858db243735a">Technology Management Services</option><option value="bc6dfb04-bc88-47e6-9306-3db7af23bf76">Textual Studies</option><option value="39d3c339-1bc8-4cb7-92f7-98e1a86d9061">Theatre</option><option value="c73c3725-9122-4da5-9088-5f427e77f8ff">Transportation Engineering</option><option value="25217cfc-cd1f-4b0a-a15a-3d44ee7e6756">Urban Anthropology</option><option value="2cc2bf09-804c-404a-a9f8-13d79536b8fb">Urban Management and Planning</option><option value="bfd8b7cd-dd2f-4580-ad2d-4a78bba9e8b9">Urban Planning</option><option value="17d0a7e9-e5a7-426d-b53e-4467f9547b9f">Urban Sport Leadership</option><option value="074bac1a-5a77-4e7e-95a4-69ac325be7bb">Vertebrate Zoology</option><option value="51baeb4c-d566-497f-8bb2-75d561832718">Water Resources Engineering</option><option value="8f5e9805-1396-4a45-8a1b-b94eabc40319">Western Europe</option><option value="8500b05a-7b55-4747-8554-727a9d2fb90a">Women's Studies</option></select>
+</div>
+<span data-i18n="Opportunity.Opportunities.PersonalizedSearch.EducationCard.Preposition"> at </span>
+<div class="madlib open" data-automation="personalized-card-open-education-schoolnamemadlib">
+<label class="sr-only" data-i18n="Opportunity.Opportunities.PersonalizedSearch.EducationCard.Preposition" for="PersonalizedSearchSchoolName"> at </label>
+<span class="sr-only" data-i18n="Opportunity.Opportunities.PersonalizedSearch.EducationCard.EnterSchoolName" id="SchoolName">Enter school name</span>
+<span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;"><input aria-autocomplete="list" aria-describedby="SchoolName" autocomplete="off" class="form-control tt-input" data-automation="personalized-card-open-education-schoolname" data-bind="value: education().SchoolName,
+                                                typeahead: { source: $parent.schoolChoices, value: 'Name', option: 'Name', items: 10 }" dir="auto" id="PersonalizedSearchSchoolName" maxlength="100" placeholder="School Name" role="combobox" spellcheck="false" style="position: relative; vertical-align: top;" type="text"/><pre aria-hidden="true" style='position: absolute; visibility: hidden; white-space: pre; font-family: "Times New Roman"; font-size: 15px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;'></pre><span class="tt-dropdown-menu" role="listbox" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-0"></div></span></span>
+</div><i aria-hidden="true" class="quote fa fa-quote-right"></i>
+</div>
+<div class="footer">
+<button class="btn btn-warning pull-right" data-automation="personalized-card-open-education-next" data-bind="enable: isValid(), click: complete" disabled="" type="button"><span data-i18n="Common.Next">Next</span> <i class="icon fa fa-arrow-right"></i></button>
+</div>
+</div>
+</div>
+<div aria-label="3/3" class="item has-licenses" data-automation="personalized-card-open-haslicenses" data-bind="with: findStep('has-licenses-step'), attr: {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.HasLicensesCard.Heading') }" role="region">
+<div class="personalized-carousel-card">
+<div class="header">
+<div class="pull-left" data-automation="personalized-card-open-haslicenses-heading" data-i18n="Opportunity.Opportunities.PersonalizedSearch.HasLicensesCard.Heading">3/3</div>
+<button aria-label="Close" class="close pull-right" data-automation="personalized-card-open-haslicenses-close" data-bind="click: $parent.close, attr: { 'aria-label': $.t('Common.Close') }" type="button"><i class="fa fa-times"></i></button>
+</div>
+<div class="body">
+<i aria-hidden="true" class="quote fa fa-quote-left"></i><span data-i18n="Opportunity.Opportunities.PersonalizedSearch.HasLicensesCard.Message">I have a professional license or certification you should know about.</span><i aria-hidden="true" class="quote fa fa-quote-right"></i>
+</div>
+<div class="footer">
+<button class="btn btn-warning pull-left" data-automation="personalized-card-open-haslicenses-no" data-bind="click: complete.bind($data, false)" type="button"><span data-i18n="Common.No">No</span></button>
+<button class="btn btn-warning pull-right" data-automation="personalized-card-open-haslicenses-yes" data-bind="click: complete.bind($data, true)" type="button"><span data-i18n="Common.Yes">Yes</span></button>
+</div>
+</div>
+</div>
+<div aria-label="3/3" class="item licenses" data-automation="personalized-card-open-licenses" data-bind="with: findStep('licenses-step'), attr: {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.HasLicensesCard.Heading') }" role="region">
+<div class="personalized-carousel-card">
+<div class="header">
+<div class="pull-left" data-automation="personalized-card-open-licenses-heading" data-i18n="Opportunity.Opportunities.PersonalizedSearch.LicensesCard.Heading">3/3</div>
+<button aria-label="Close" class="close pull-right" data-automation="personalized-card-open-licenses-close" data-bind="click: $parent.close, attr: { 'aria-label': $.t('Common.Close') }" type="button"><i class="fa fa-times"></i></button>
+</div>
+<div class="body">
+<i aria-hidden="true" class="quote fa fa-quote-left"></i><span data-i18n="Opportunity.Opportunities.PersonalizedSearch.LicensesCard.LicensedAndCertiedIn">I am licensed/certified in</span>
+<div class="madlib open" data-automation="personalized-card-open-licenses-idmadlib">
+<label class="sr-only" data-i18n="Opportunity.Opportunities.PersonalizedSearch.LicensesCard.LicensedAndCertiedIn" for="LicensesCard_LicensedAndCertiedIn">I am licensed/certified in</label>
+<select class="form-control" data-automation="personalized-card-open-licenses-id" data-bind="options: $parent.licenseChoices, optionsText: 'Text', optionsValue: 'Value', value: license().LicenseAndCertificationId, optionsCaption: $.t('Common.Forms.Select.Empty.Choose')" id="LicensesCard_LicensedAndCertiedIn"><option value="">Choose...</option><option value="e4af468b-5d10-4b48-8d17-2af46677de29">ASTA Travel Advisor</option><option value="7dc72051-fc35-412a-8fa1-d2fd0e9a383f">Cert Trvl Indstry Exec</option><option value="d7fd2b81-39bd-4df0-a692-515d7b5a7195">Cert. Mtg Professional</option><option value="b77c047e-8e63-43f2-aca0-0f93971b8a35">Certified Corp Trvl Exec</option><option value="b84861a0-413d-40e0-aaac-964ac645c826">Certified Mtg Mgr</option><option value="7ccbde9f-f212-441f-90ea-d72e272c94a8">Certified Trvl Counsellor</option><option value="44175a4b-7075-4224-951a-9b66a17c2254">Cruise Counsellor</option><option value="170716e0-36ad-40fc-894a-40420c5a166b">CTA</option><option value="64da0243-3e99-4dac-b79f-6573b5b64a0c">CTE</option><option value="ebf82a8b-0858-4fa0-9652-57d28500b9a8">Global Leadership Prof</option><option value="24c9c5df-171d-4ae2-ae17-f47a38b716e9">Global Travel Prof</option><option value="32fb954a-841e-4166-8e79-d54b9ce212e6">Master Cruise Counsellor</option><option value="436fe219-cf1e-4799-b749-47ee368c7e04">PHR</option><option value="f4a88686-ee9b-4b7f-81ce-bc06685f1ffd">Project Mgmt Prof</option><option value="28d024e1-ea2b-4fd1-a5d4-e64959cbc7e6">SHRM-SCP</option><option value="df4693e6-62bb-47bc-bf28-bc144153d61f">SPHR</option><option value="815ba80a-89ae-478c-9ded-272c3c269657">SRHM-CP</option></select>
+</div>
+<span data-i18n="Opportunity.Opportunities.PersonalizedSearch.LicensesCard.AsOf">as of</span>
+<div class="madlib open" data-automation="personalized-card-open-licenses-datemadlib">
+<label class="sr-only" data-i18n="Opportunity.Opportunities.PersonalizedSearch.LicensesCard.AsOf" for="LicensesCard_AsOf">as of</label>
+<span class="sr-only" data-i18n="Opportunity.Opportunities.PersonalizedSearch.LicensesCard.EnterDateFormat" id="LicenseDate">Enter date in mm/dd/yyyy format</span>
+<input aria-describedby="LicenseDate" class="form-control" data-automation="personalized-card-open-licenses-date" data-bind="datepicker: license().DateAchieved.asObservableDateOnly(), datepickerOptions: { viewMode: 'years' }" id="LicensesCard_AsOf" placeholder="MM/DD/YYYY" type="text"/>
+</div><i aria-hidden="true" class="quote fa fa-quote-right"></i>
+</div>
+<div class="footer">
+<button class="btn btn-warning pull-left" data-automation="personalized-card-open-licenses-addmore" data-bind="enable: isValid(), click: complete.bind($data, true)" disabled="" type="button"><span data-i18n="Opportunity.Opportunities.PersonalizedSearch.LicensesCard.AddMore">Add more</span></button>
+<button class="btn btn-warning pull-right" data-automation="personalized-card-open-licenses-next" data-bind="enable: isValid(), click: complete.bind($data, false)" disabled="" type="button"><span data-i18n="Common.Next">Next</span> <i class="icon fa fa-arrow-right"></i></button>
+</div>
+</div>
+</div>
+<div aria-label="Almost completed" class="item almost-completed-presence" data-automation="personalized-card-open-almostcompleted" data-bind="with: findStep('almost-completed-presence-step'), attr: {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.AlmostCompletedPresenceCard.AlmostCompleted') }" role="region">
+<div class="personalized-carousel-card">
+<div class="header">
+<button aria-label="Close" class="close pull-right" data-automation="personalized-card-open-almostcompleted-close" data-bind="click: $parent.close, attr: { 'aria-label': $.t('Common.Close') }" type="button"><i class="fa fa-times"></i></button>
+</div>
+<div class="body">
+<h3 data-automation="personalized-card-open-almostcompleted-firstmsg" data-bind="text: $.t('Opportunity.Opportunities.PersonalizedSearch.AlmostCompletedPresenceCard.FirstMessage')" role="presentation">Great!</h3>
+<h3 data-automation="personalized-card-open-secondmsg" data-bind="text: $.t('Opportunity.Opportunities.PersonalizedSearch.AlmostCompletedPresenceCard.SecondMessage', { context: uncompletedSteps().length.toString() })" role="presentation">Opportunity.Opportunities.PersonalizedSearch.AlmostCompletedPresenceCard.SecondMessage</h3>
+</div>
+<div class="footer">
+<button class="btn btn-warning" data-automation="personalized-card-open-almostcompleted-next" data-bind="click: complete" type="button"><span data-i18n="Common.Next">Next</span> <i class="icon fa fa-arrow-right"></i></button>
+</div>
+</div>
+</div>
+<div aria-label="Completed" class="item completed-presence" data-automation="personalized-card-open-completed" data-bind="with: findStep('completed-presence-step'), attr: {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.CompletedPresenceCard.Completed') }" role="region">
+<div class="personalized-carousel-card">
+<div class="header">
+<button aria-label="Close" class="close pull-right" data-automation="personalized-card-open-close" data-bind="click: function (data) { $parent.close(data); data.complete(); }, attr: { 'aria-label': $.t('Common.Close') }" type="button"><i class="fa fa-times"></i></button>
+</div>
+<div class="body">
+<p data-automation="personalized-card-open-completed-firstmsg" data-bind="text: $.t('Opportunity.Opportunities.PersonalizedSearch.CompletedPresenceCard.FirstMessage')">Great!</p>
+<p data-automation="personalized-card-open-completed-secondmsg" data-bind="text: $.t('Opportunity.Opportunities.PersonalizedSearch.CompletedPresenceCard.SecondMessage', { context: matchCount() &gt; 0 ? 'true' : 'false', matchCount: matchCount() }), attr: { 'data-matchcount': matchCount() }" data-matchcount="0">You're on your way to finding the perfect opportunity.</p>
+<div data-automation="personalized-card-open-completed-thirdmsg" data-i18n="Opportunity.Opportunities.PersonalizedSearch.CompletedPresenceCard.ThirdMessage">Tell us a little more and we'll highlight better opportunities.</div>
+</div>
+<div class="footer">
+<button class="btn btn-warning" data-automation="personalized-card-open-completed-next" data-bind="click: complete" type="button"><span data-i18n="Opportunity.Opportunities.PersonalizedSearch.CompletedPresenceCard.RateSkills">Rate your skills</span> <i class="icon fa fa-arrow-right"></i></button>
+</div>
+</div>
+</div>
+<div aria-label="Skill Card" class="item rate-skill rate-skill-1" data-automation="personalized-card-rate-skill-1" data-bind="attr : {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.SkillCard') }, template: { name: 'rate-skill-template', data: findStep('skill-step-1') }" role="region">
+<div class="personalized-carousel-card">
+<div class="header">
+<button aria-label="Minimize" class="close pull-right" data-automation="personalized-card-open-close" data-bind="click: $parent.close, tooltip: { title: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Minimize'), trigger: 'hover focus', placement: 'left' }, attr: { 'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Minimize') }" data-original-title="" title="" type="button"><i class="fa fa-compress"></i></button>
+</div>
+<div class="body">
+<p data-bind="text: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Question')">How would you rate your</p>
+<p data-automation="skill-name-expanded" data-bind="text: currentSkillName"></p>
+<p data-automation="skill-description" data-bind="limitedText: { text: currentSkillDescription, maxLength: 100, overflowTitle: currentSkillName, showOverflow: true }"></p>
+</div>
+<div class="footer">
+<div class="rating" data-bind="foreach: currentSkillScaleValueChoices"></div>
+<div class="skip">
+<a data-automation="skip-link" data-bind="click: $data.skipSkill.bind($data, false), text: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Skip')" href="#">Skip</a>
+</div>
+</div>
+</div>
+</div>
+<div aria-label="Skill Card" class="item rate-skill rate-skill-2" data-automation="personalized-card-rate-skill-2" data-bind="attr : {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.SkillCard') }, template: { name: 'rate-skill-template', data: findStep('skill-step-2') }" role="region">
+<div class="personalized-carousel-card">
+<div class="header">
+<button aria-label="Minimize" class="close pull-right" data-automation="personalized-card-open-close" data-bind="click: $parent.close, tooltip: { title: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Minimize'), trigger: 'hover focus', placement: 'left' }, attr: { 'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Minimize') }" data-original-title="" title="" type="button"><i class="fa fa-compress"></i></button>
+</div>
+<div class="body">
+<p data-bind="text: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Question')">How would you rate your</p>
+<p data-automation="skill-name-expanded" data-bind="text: currentSkillName"></p>
+<p data-automation="skill-description" data-bind="limitedText: { text: currentSkillDescription, maxLength: 100, overflowTitle: currentSkillName, showOverflow: true }"></p>
+</div>
+<div class="footer">
+<div class="rating" data-bind="foreach: currentSkillScaleValueChoices"></div>
+<div class="skip">
+<a data-automation="skip-link" data-bind="click: $data.skipSkill.bind($data, false), text: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Skip')" href="#">Skip</a>
+</div>
+</div>
+</div>
+</div>
+<div aria-label="Skill Card" class="item rate-skill rate-skill-3" data-automation="personalized-card-rate-skill-3" data-bind="attr : {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.SkillCard') }, template: { name: 'rate-skill-template', data: findStep('skill-step-3') }" role="region">
+<div class="personalized-carousel-card">
+<div class="header">
+<button aria-label="Minimize" class="close pull-right" data-automation="personalized-card-open-close" data-bind="click: $parent.close, tooltip: { title: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Minimize'), trigger: 'hover focus', placement: 'left' }, attr: { 'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Minimize') }" data-original-title="" title="" type="button"><i class="fa fa-compress"></i></button>
+</div>
+<div class="body">
+<p data-bind="text: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Question')">How would you rate your</p>
+<p data-automation="skill-name-expanded" data-bind="text: currentSkillName"></p>
+<p data-automation="skill-description" data-bind="limitedText: { text: currentSkillDescription, maxLength: 100, overflowTitle: currentSkillName, showOverflow: true }"></p>
+</div>
+<div class="footer">
+<div class="rating" data-bind="foreach: currentSkillScaleValueChoices"></div>
+<div class="skip">
+<a data-automation="skip-link" data-bind="click: $data.skipSkill.bind($data, false), text: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Skip')" href="#">Skip</a>
+</div>
+</div>
+</div>
+</div>
+<div aria-label="Skill Card" class="item rate-skill rate-skill-4" data-automation="personalized-card-rate-skill-4" data-bind="attr : {'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.SkillCard') }, template: { name: 'rate-skill-template', data: findStep('skill-step-4') }" role="region">
+<div class="personalized-carousel-card">
+<div class="header">
+<button aria-label="Minimize" class="close pull-right" data-automation="personalized-card-open-close" data-bind="click: $parent.close, tooltip: { title: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Minimize'), trigger: 'hover focus', placement: 'left' }, attr: { 'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Minimize') }" data-original-title="" title="" type="button"><i class="fa fa-compress"></i></button>
+</div>
+<div class="body">
+<p data-bind="text: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Question')">How would you rate your</p>
+<p data-automation="skill-name-expanded" data-bind="text: currentSkillName"></p>
+<p data-automation="skill-description" data-bind="limitedText: { text: currentSkillDescription, maxLength: 100, overflowTitle: currentSkillName, showOverflow: true }"></p>
+</div>
+<div class="footer">
+<div class="rating" data-bind="foreach: currentSkillScaleValueChoices"></div>
+<div class="skip">
+<a data-automation="skip-link" data-bind="click: $data.skipSkill.bind($data, false), text: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Skip')" href="#">Skip</a>
+</div>
+</div>
+</div>
+</div>
+<div data-bind="stopBindings: true" id="rate-skill-template" style="display: none">
+<div class="personalized-carousel-card">
+<div class="header">
+<button class="close pull-right" data-automation="personalized-card-open-close" data-bind="click: $parent.close, tooltip: { title: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Minimize'), trigger: 'hover focus', placement: 'left' }, attr: { 'aria-label': $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Minimize') }" type="button"><i class="fa fa-compress"></i></button>
+</div>
+<div class="body">
+<p data-bind="text: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Question')"></p>
+<p data-automation="skill-name-expanded" data-bind="text: currentSkillName"></p>
+<p data-automation="skill-description" data-bind="limitedText: { text: currentSkillDescription, maxLength: 100, overflowTitle: currentSkillName, showOverflow: true }"></p>
+</div>
+<div class="footer">
+<div class="rating" data-bind="foreach: currentSkillScaleValueChoices">
+<span class="star" data-bind="attr: { 'aria-label': Name }, click: $parent.complete.bind($parent, $data), tooltip: { title: Name }, event: { keypress: function(data,e) { if(e.keyCode == 13 || e.keyCode == 32){return true} else{return false} } ? $parent.complete.bind($parent, $data) : null }" role="button" tabindex="0"></span>
+</div>
+<div class="skip">
+<a data-automation="skip-link" data-bind="click: $data.skipSkill.bind($data, false), text: $.t('Opportunity.Opportunities.PersonalizedSearch.SkillRatingCard.Skip')" href="#"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="register-and-save collapse" data-bind="collapse: !showRegistration()">
+<div class="register-description muted" data-i18n="Opportunity.Opportunities.PersonalizedSearch.RegisterDescription">Create a new Presence with these answers.</div>
+<div>
+<a class="btn btn-primary" data-automation="register-and-save" data-i18n="Opportunity.Opportunities.PersonalizedSearch.RegisterAndSave" href="/FOX1003FOXW/JobBoard/c32418b5-27db-4ca6-93fe-ee995e4453a5/Account/Register">Register</a>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<footer id="PageFooter" style="">
+<div class="container">
+<div class="row">
+<div class="col-md-24 text-muted">
+<div class="copyright">
+<a data-automation="footer-text" href="https://www.foxworldtravel.com/privacy-policy/" target="_blank">
+                                    Privacy Policy
+                                    <ukg-icon aria-label="This link will open in a new tab" class="ukg-icon-s hydrated" data-bind="attr:{'icon-aria-label': $.t('Layout.FooterLinkLabel')}" icon-aria-label="This link will open in a new tab" name="new-window" role="img" size="s" style="vertical-align: text-bottom"></ukg-icon>
+</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div id="unsupported-browsers" style="display: none">
+<h2>You are using an unsupported browser.</h2>
+<div>To use this site, please use a supported browser.</div>
+<div class="browser-list">
+<strong class="download-browser download-mozilla-firefox">
+<a href="https://www.mozilla.org/en-US/firefox/new/">
+<img alt="Firefox logo" src="/Content/images/browsers/firefox.png"/>
+                Download Firefox
+            </a>
+</strong>
+<strong class="download-browser download-google-chrome">
+<a href="https://www.google.com/chrome/browser/">
+<img alt="Chrome logo" src="/Content/images/browsers/chrome.png"/>
+                Download Chrome
+            </a>
+</strong>
+<strong class="download-browser download-internet-explorer">
+<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+<img alt="Internet Explorer logo" src="/Content/images/browsers/internet-explorer.png"/>
+                Download Internet Explorer
+            </a>
+</strong>
+</div>
+</div>
+</ukg-ignite-shell>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8IpZFdq7gtNOifm73I93xQoaA2pBH09uzov-5axObJBmM1DFjBV4n8crr4-kAxa-wgcb3EqvIGhIm5-SBxF91t41JJEO2tb__1AR3d8Tof9a1GLubhGUSZopb9M1VXK9eqFazn5AyCJuT74I9xFzdk0"/><div aria-label="Calendar" class="datepicker datepicker-dropdown dropdown-menu" role="dialog"><div class="datepicker-days" role="application" style="display: block;"><table class="table-condensed"><thead><tr><th aria-label="Previous month" class="prev" role="button" style="visibility: visible;" tabindex="0"><i aria-hidden="true" class="icon-arrow-left"></i></th><th class="switch" colspan="5" role="presentation">July 2024</th><th aria-label="Next month" class="next" role="button" style="visibility: visible;" tabindex="0"><i aria-hidden="true" class="icon-arrow-right"></i></th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old" role="button">30</td><td class="day" role="button">1</td><td class="day" role="button">2</td><td class="day" role="button">3</td><td class="day" role="button">4</td><td class="day" role="button">5</td><td class="day" role="button">6</td></tr><tr><td class="day" role="button">7</td><td class="day" role="button">8</td><td class="day" role="button">9</td><td class="day" role="button">10</td><td class="day" role="button">11</td><td class="day" role="button">12</td><td class="day" role="button">13</td></tr><tr><td class="day" role="button">14</td><td class="day" role="button">15</td><td class="day" role="button">16</td><td class="day" role="button">17</td><td class="day" role="button">18</td><td class="day" role="button">19</td><td class="day" role="button">20</td></tr><tr><td class="day" role="button">21</td><td class="day" role="button">22</td><td class="day" role="button">23</td><td class="day" role="button">24</td><td class="day active" role="button">25</td><td class="day" role="button">26</td><td class="day" role="button">27</td></tr><tr><td class="day" role="button">28</td><td class="day" role="button">29</td><td class="day" role="button">30</td><td class="day" role="button">31</td><td class="day new" role="button">1</td><td class="day new" role="button">2</td><td class="day new" role="button">3</td></tr><tr><td class="day new" role="button">4</td><td class="day new" role="button">5</td><td class="day new" role="button">6</td><td class="day new" role="button">7</td><td class="day new" role="button">8</td><td class="day new" role="button">9</td><td class="day new" role="button">10</td></tr></tbody><tfoot><tr><th class="today" colspan="7" style="display: none;">Today</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th aria-label="Previous month" class="prev" role="button" style="visibility: visible;" tabindex="0"><i aria-hidden="true" class="icon-arrow-left"></i></th><th class="switch" colspan="5" role="presentation">2024</th><th aria-label="Next month" class="next" role="button" style="visibility: visible;" tabindex="0"><i aria-hidden="true" class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span class="month">Jun</span><span class="month active">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody><tfoot><tr><th class="today" colspan="7" style="display: none;">Today</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th aria-label="Previous month" class="prev" role="button" style="visibility: visible;" tabindex="0"><i aria-hidden="true" class="icon-arrow-left"></i></th><th class="switch" colspan="5" role="presentation">2020-2029</th><th aria-label="Next month" class="next" role="button" style="visibility: visible;" tabindex="0"><i aria-hidden="true" class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year active">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody><tfoot><tr><th class="today" colspan="7" style="display: none;">Today</th></tr></tfoot></table></div></div></body></html>

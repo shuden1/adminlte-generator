@@ -1,0 +1,1705 @@
+<html class="oj-agent-os-windows oj-agent-browser-chrome" dir="ltr" lang="en"><head>
+<title>Search Jobs - Centrus Global Career Site Careers</title>
+<base href="/hcmUI/CandidateExperience/en/sites/CentrusEnergyCareers"/>
+<link href="/hcmUI/CandExpStatic/siteFavicon/favicon-16x16.png?siteNumber=CX_1&amp;size=16x16" rel="icon" sizes="16x16" title="favicon" type="image/png"/>
+<link href="/hcmUI/CandExpStatic/siteFavicon/favicon-144x144.png?siteNumber=CX_1&amp;size=144x144" rel="icon" sizes="144x144" title="favicon" type="image/png"/>
+<link href="/hcmUI/CandExpStatic/siteFavicon/favicon-152x152.png?siteNumber=CX_1&amp;size=152x152" rel="icon" sizes="152x152" title="favicon" type="image/png"/>
+<link href="/hcmUI/CandExpStatic/siteFavicon/favicon-152x152.png?siteNumber=CX_1&amp;size=152x152" rel="apple-touch-icon" sizes="152x152" title="favicon" type="image/png"/>
+<link href="https://static.oracle.com/cdn/jet/15.0.0/default/css/redwood/oj-redwood-min.css" rel="stylesheet"/>
+<link href="/hcmUI/CandExpStatic/24.4.85/css/main-minimal.css" rel="stylesheet"/>
+<link data-custom-css="" href="/hcmUI/CandExpStatic/css/ce-custom.css?themeNumber=default_minimal_theme_CX_1&amp;lang=en&amp;themeVersion=2&amp;brandVersion=5&amp;brandTlVersion=5&amp;siteNumber=CX_1" rel="stylesheet" title="cx-custom"/>
+</head>
+<body class="app-loading font-family-primary app-loaded body--scrolled-down" data-bind="loadingIndicator, a11y.toggleFocusIndicator, bodyScrolledDown, currentRoute" data-route="search">
+<div aria-hidden="true" class="preload">
+<div class="preload__icons"></div>
+<div class="preload__primary-font"></div>
+<div class="preload__secondary-font"></div>
+</div>
+<div class="app-loading-spinner"></div>
+<div class="app" data-bind="view: 'layout'"><!--ko [ minimal ]--><!-- ko if: isBrowserUnsupported --><!-- /ko -->
+<!-- ko if: !isBrowserUnsupported -->
+<skip-navigation-link><button class="skip-navigation-link" data-bind="a11y.skipTo: skipTo, i18n: 'general.a11y.skip-navigation-link'" type="button">Skip to main content.</button>
+</skip-navigation-link>
+<div class="app__viewport" style="top: 0px;">
+<div class="app__wrapper">
+<div class="app__main">
+<!-- ko component: 'custom-header' --><!-- ko if: enabled --><!-- /ko -->
+<!-- /ko -->
+<div class="app__top-wrapper">
+<div class="app__top">
+<!-- ko component: 'app-header' --><!-- ko if: isHeaderLoaded() -->
+<header>
+<div class="app-header component-styling-wrapper-default" data-bind="class: uniqueWrapperClass">
+<!-- ko if: isHorizontalMenu --><!-- /ko -->
+<!-- ko ifnot: isHorizontalMenu -->
+<app-header-hamburger params="
+            globalHeaderSettings:globalHeaderSettings,
+            logoImages:logoImages,
+            headerId:headerId,
+            uniqueWrapperClass: uniqueWrapperClass
+        "><div class="app-header-hamburger">
+<company-logo params="isLogoHidden: isLogoHidden, logoImages:logoImages, headerId:headerId"><!-- ko ifnot: isLogoHidden -->
+<!-- ko if: logoMobile -->
+<a aria-label="Go to Home Page" class="app-header__logo app-header__logo--mobile" data-bind="route: 'home-page',
+    i18nAttr: { title: 'general.a11y.go-to-home-page', 'aria-label': 'general.a11y.go-to-home-page' }" href="https://eese.fa.us8.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CentrusEnergyCareers/" title="Go to Home Page">
+<img alt="" class="app-header__logo-image--mobile" data-bind="attr: {'src': logoMobile}, event: { load: adjustLogoSize }" src="https://www.centrusenergy.com/wp-content/themes/centrus/assets/img/logo-light-bg.png" style="height: 40px;"/>
+</a>
+<!-- /ko -->
+<!-- ko if: logoDesktop -->
+<a aria-label="Go to Home Page" class="app-header__logo app-header__logo--desktop" data-bind="route: 'home-page',
+    i18nAttr: { title: 'general.a11y.go-to-home-page', 'aria-label': 'general.a11y.go-to-home-page' }" href="https://eese.fa.us8.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CentrusEnergyCareers/" title="Go to Home Page">
+<img alt="" class="app-header__logo-image" data-bind="attr: {'src': logoDesktop}, event: { load: adjustLogoSize }" src="https://www.centrusenergy.com/wp-content/themes/centrus/assets/img/logo-light-bg.png" style="height: 40px;"/>
+</a>
+<!-- /ko -->
+<!-- /ko -->
+</company-logo>
+<div class="app-header__actions">
+<favourite-jobs><!-- ko if: hasFavourites --><!-- /ko -->
+</favourite-jobs>
+<user-menu class="user-menu" params="profileText: profileText, isProfileButtonHidden: isProfileButtonHidden"><div class="header-menu user-menu__container" data-bind="css: { 'header-menu--active': isOpened } , clickOutside: { action: closeMenu, when: isOpened}">
+<!-- ko if: !isProfileButtonHidden() || userMenuButtonText() -->
+<a aria-expanded="false" aria-label="Manage profile" class="user-menu__header focused-tooltip" data-bind="click: menuClicked, css: {'theme-color-1': isOpened},
+            attr: {
+                'href': url,
+                'title': userMenuButtonAriaLabel(),
+                'aria-label': userMenuButtonAriaLabel()
+            }, 
+            boolAttr: {'aria-expanded': isOpened}" href="https://eese.fa.us8.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CentrusEnergyCareers/my-profile/sign-in" id="user-menu-header" title="Manage profile">
+<!-- ko ifnot: showUserData -->
+<!-- ko ifnot: isProfileButtonHidden -->
+<span class="user-menu__icon"></span>
+<!-- /ko -->
+<!-- ko if: userMenuButtonText --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: showUserData --><!-- /ko -->
+</a>
+<!-- /ko -->
+<div aria-live="polite" class="header-menu__dropdown user-menu__dropdown">
+<p class="user-menu__title-item" data-bind="text: model.title"></p>
+<p class="user-menu__subtitle-item text-color-secondary" data-bind="attr:{title: model.subtitle}, text: model.subtitle" dir="ltr"></p>
+<hr class="user-menu__separator"/>
+<ul>
+<li class="user-menu__action-item">
+<button data-bind="click: goToCss,
+                    i18n: 'candidate-self-service.user-menu.my-profile'">Profile</button>
+</li>
+<li class="user-menu__action-item">
+<button data-bind="i18n: 'candidate-self-service.sign-out',
+                    click: signOut">Sign Out</button>
+</li>
+</ul>
+</div>
+</div>
+</user-menu>
+<!-- ko if: isAppMenuNotEmpty() -->
+<app-menu-toggle class="app-menu-toggle" params="uniqueWrapperClass: uniqueWrapperClass"><button aria-expanded="false" aria-label="Open menu" class="app-toggle-menu__container focused-tooltip" data-bind="
+        click: open,
+        boolAttr: {'aria-expanded': isVisible},
+        i18nAttr: { title: 'general.a11y.open-menu', 'aria-label': 'general.a11y.open-menu' }
+    " title="Open menu">
+<div style="width: 20px">
+<em class="app-toggle-menu__strap"></em>
+<em class="app-toggle-menu__strap"></em>
+<em class="app-toggle-menu__strap"></em>
+</div>
+</button>
+</app-menu-toggle>
+<!-- /ko -->
+</div>
+</div>
+</app-header-hamburger>
+<!-- /ko -->
+</div>
+</header>
+<!-- /ko -->
+<!-- /ko -->
+<div class="app__top-background-wrapper">
+<div class="app__top-background"></div>
+</div>
+</div>
+</div>
+<main class="app__content" data-bind="view: 'main'" tabindex="-1"><!--ko [ search ]--><!-- ko ifnot: page --><!-- /ko -->
+<!-- ko if: page -->
+<!-- ko component: { name: 'cc-search', params: { page: page() } } --><div class="app__subpage app__subpage--custom-page">
+<h1 class="oj-helper-hidden-accessible" data-bind="text: searchPageHeading">Search Jobs - Centrus Global Career Site Careers</h1>
+<!-- ko component: { 
+        name: 'cc-page',
+         params: {
+            page: page,
+            pageData: page,
+            classModifier: 'search-page' 
+        }
+        } --><div class="cc-page cc-page--boxed cc-page--search-page" data-bind="
+        css: {'cc-page--boxed': isPageDisplayBoxed},
+        class: classWithModifier
+    ">
+<div class="cc-page__content">
+<!-- ko foreach: { data: page.sections, as: 'section' } -->
+<!-- ko component: {
+            name: 'cc-section',
+            params: {
+                section: section,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-section cc-section--width-" data-bind="css: cssClass, style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc }" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: section.params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-section__content">
+<!-- ko foreach: { data: components, as: 'component' } --><!-- /ko -->
+<!-- ko foreach: { data: rows, as: 'row' } -->
+<!-- ko component: { name: 'cc-row', params: { row: row, pageData: $parent.pageData, onMessage: $parent.onMessage } } --><div class="cc-row">
+<div class="cc-row__content cc-columns-count-1" data-bind="class: 'cc-columns-count-' + columns.length">
+<!-- ko foreach: { data: columns, as: 'column' } -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--default" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } --><div class="component-styling-wrapper-0" data-bind="class: uniqueWrapperClass">
+<!-- ko if: customizationCompactParams && !isCustomSearch() --><!-- /ko -->
+<!-- ko if: isCustomSearch() -->
+<!-- /ko -->
+<div class="search-box-compact font-family-secondary" data-bind="class: customizationParams.commonParams ? customizationParams.commonParams.cssClass : '',
+        css: { 'search-box-compact--admin-mode': isAdminMode },
+        attr: { id: customizationParams.commonParams ? customizationParams.commonParams.cssId : '' },
+        customStyles: customizationParams.commonParams,
+        sticky: {
+            isEnabled: isStickySearchBarEnabled,
+            isReady: isReady,
+            className: 'search-box-compact--sticky'
+        }
+    " role="search">
+<div class="search-box-compact__form text-color-secondary">
+<div class="search-box-compact__fieldset search-box-compact__fieldset--keyword" id="keyword-container">
+<div class="search-box-compact__label text-color-secondary">
+<span data-bind="i18n: searchKeywordLabel">Find Jobs</span>
+</div>
+<div class="search-box-compact__field" role="application">
+<label class="oj-helper-hidden-accessible" data-bind="i18n: 'search.keyword-placeholder'" for="keyword">Job title, skill, keyword</label>
+<!-- ko component: { name: 'search-box-keyword',
+                    params: {
+                        value: keyword,
+                        action: performSearch } } --><input aria-autocomplete="list" aria-controls="suggestions-keywords" aria-expanded="false" aria-haspopup="true" aria-label="Find Jobs" aria-owns="suggestions-keywords" autocomplete="off" class="search-box-compact__input text-color-primary ui-autocomplete-input" data-bind="textInput: keyword,
+        attr: {'aria-label': searchKeywordAriaLabel },
+        i18nAttr: { placeholder: searchKeywordPlaceHolder },
+        autocomplete: { model: keyword, source: fetch,
+        appendTo: '#keyword-container', id: 'suggestions-keywords',
+        select: (event, suggestion) =&gt; onSelectSuggestion(event, suggestion) },
+        a11y.keysHandler: { keys: 'enter', handler: action }" data-control-id="suggestions-keywords" data-qa="searchKeywordsInput" id="keyword" placeholder="Job title, skill, keyword" role="combobox" type="text"/>
+<!-- ko if: isWorking --><!-- /ko -->
+<!-- /ko -->
+</div>
+<ul class="ui-menu ui-widget ui-widget-content ui-autocomplete text-color-primary background-color-dropdown ui-front" id="suggestions-keywords" role="listbox" style="display: none;" tabindex="0" unselectable="on"></ul></div>
+<div class="search-box-compact__fieldset-spacer"></div>
+<div class="search-box-compact__fieldset search-box-compact__fieldset--location" id="location-container">
+<mode-menu><div class="search-box-compact__label text-color-secondary">
+<!-- ko if: showSearchModeMenu -->
+<button aria-expanded="false" class="search-box-compact__menu-button" data-bind="click: toggleModeMenu, boolAttr: {'aria-expanded': isModeMenuVisible}">
+<span data-bind="text: toggleButtonText">Near Location</span>
+<em class="search-box-compact__menu-icon icon-triangle-down"></em>
+</button>
+<!-- /ko -->
+<!-- ko ifnot: showSearchModeMenu --><!-- /ko -->
+</div>
+<div class="search-box-compact__menu" data-bind="
+         css: { 'search-box-compact__menu--active': isModeMenuVisible },
+         a11y.trapFocus,
+         a11y.setInitialFocus: { isVisible: isModeMenuVisible, delay: 400 },
+         a11y.keysHandler: {keys: 'esc', handler: hideModeMenu},
+         clickOutside: { action: hideModeMenu, when: isModeMenuVisible, excludeElement: '.search-box-compact__menu-button' }" tabindex="-1">
+<ul class="search-box-compact__menu-list" role="presentation">
+<!-- ko ifnot: isSearchByRecruitingLocationsModeEnabled -->
+<li class="search-box-compact__menu-item">
+<button aria-current="true" data-bind="
+                    click: handleModeSet.bind(this, MODES.LOCATION),
+                    attr: {'aria-current': mode() === 'location' ? 'true' : 'false'},
+                    i18n: 'search.mode-menu.location'">Location</button>
+</li>
+<!-- /ko -->
+<!-- ko if: isSearchByRecruitingLocationsModeEnabled --><!-- /ko -->
+<!-- ko if: isGeolocationEnabled -->
+<li class="search-box-compact__menu-item">
+<button aria-current="false" data-bind="
+                    click: handleModeSet.bind(this, MODES.GEO_LOCATION),
+                    attr: {'aria-current': mode() === 'geolocation' ? 'true' : 'false'},
+                    i18n: 'search.mode-menu.geolocation'">My Location</button>
+</li>
+<!-- /ko -->
+<!-- ko if: isZipcodeEnabled --><!-- /ko -->
+</ul>
+</div>
+</mode-menu>
+<div class="search-box-compact__field" role="application">
+<label class="oj-helper-hidden-accessible" data-bind="i18n: locationInputLabel" for="location">City, state, country</label>
+<!-- ko if: mode() === MODES.LOCATION -->
+<!-- ko component: { name: 'search-box-location',
+                        params: {
+                            value: location,
+                            action: performSearch,
+                            radiusValue: radiusValue,
+                            radiusUnit: radiusUnit } } --><input aria-autocomplete="list" aria-controls="suggestions-locations" aria-expanded="false" aria-haspopup="true" aria-owns="suggestions-locations" autocomplete="off" class="search-box-compact__input text-color-primary ui-autocomplete-input" data-bind="textInput: location,
+        disable: isDisabled,
+        hasFocus: hasFocus,
+        i18nAttr: { placeholder: 'location-bar.dropdown.location-input-label' },
+        autocomplete: { model: location, source: fetch, select: onSelect, appendTo: '#location-container',
+            response: onResponse, id: 'suggestions-locations'},
+        a11y.keysHandler: { keys: 'enter', handler: onPressEnter },
+        locationSearchFocus: { location: value }" data-control-id="suggestions-locations" data-qa="searchLocationInput" id="location" placeholder="City, state, country" role="combobox" type="text"/>
+<!-- ko if: isWorking --><!-- /ko -->
+<!-- ko if: showRadiusDisplay --><!-- /ko -->
+<!-- ko component: { name: 'search-box-popup', params: {
+    message: 'location-bar.dropdown.no-results',
+    value: showNoResultsHint,
+    focus: hasFocus,
+    restoreValue: true,
+    autoDismiss: false } } --><!-- ko if: visible --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: mode() === MODES.RECRUITING_LOCATION--><!-- /ko -->
+<!-- ko if: isGeolocationEnabled && mode() === MODES.GEO_LOCATION --><!-- /ko -->
+<!-- ko if: isZipcodeEnabled && mode() === MODES.ZIPCODE --><!-- /ko -->
+</div>
+<ul class="ui-menu ui-widget ui-widget-content ui-autocomplete text-color-primary background-color-dropdown ui-front" id="suggestions-locations" role="listbox" style="display: none;" tabindex="0" unselectable="on"></ul></div>
+</div>
+<button aria-label="Search for Jobs" class="search-box-compact__button text-color-secondary focused-tooltip" data-bind="
+            click: performSearch,
+            i18nAttr: { title: searchTooltipLabel, 'aria-label': searchTooltipLabel }
+        " data-qa="searchStartBtn" title="Search for Jobs" type="button">
+<em class="icon-search-thin theme-color-1"></em>
+<span class="search-box-compact__button-background text-color-primary"></span>
+<span class="search-box-compact__button-border text-color-secondary"></span>
+</button>
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- ko component: { name: 'cc-row', params: { row: row, pageData: $parent.pageData, onMessage: $parent.onMessage } } --><div class="cc-row">
+<div class="cc-row__content cc-columns-count-1" data-bind="class: 'cc-columns-count-' + columns.length">
+<!-- ko foreach: { data: columns, as: 'column' } -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--default" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } --><!-- ko if: filterPanelVisible-->
+<div class="component-styling-wrapper-0" data-bind="class: uniqueWrapperClass">
+<!-- ko if: isVerticalStyle --><!-- /ko -->
+<!-- ko ifnot: isVerticalStyle -->
+<search-filters-panel-horizontal params="
+            adminMode: adminMode,
+            loading: loading(),
+            totalCount: totalCount(),
+            totalJobsCount: totalJobsCount,
+            totalEventsCount: totalEventsCount,
+            filters: filters(),
+            customizationParams: customizationParams,
+            uniqueWrapperClass: uniqueWrapperClass,
+            areEventsEnabled: areEventsEnabled,
+            defaultSearchContext: defaultSearchContext,
+            selectedSearchContext: selectedSearchContext
+        "><div class="search-jobs-root-container" data-bind="switchFilterLayout: { popupFiltersOpened: popupFiltersOpened }">
+<div class="search-jobs font-family-secondary search-jobs--horizontal search-box-no-result-tooltip" data-bind="
+            class: customizationParams.commonParams.cssClass,
+            attr: { id: customizationParams.commonParams.cssId },
+            customStyles: customizationParams.commonParams,
+            css: {'search-jobs--admin-mode': adminMode, 'search-box-no-result-tooltip': $parent.totalEventsCount() === 0}">
+<div class="search-jobs__misc-wrapper">
+<h3 class="search-jobs__filters-header" data-bind="i18n: 'search.filters-header-vertical'">Filter Results</h3>
+<div class="search-jobs__misc search-jobs__misc-horizontal-filters" data-bind="css: {'search-jobs__misc--events-enabled': areEventsEnabled}">
+<!-- ko if: areEventsEnabled --><!-- /ko -->
+<!-- ko ifnot: areEventsEnabled -->
+<h1 class="search-jobs__counter text-color-secondary" data-bind="i18n: { key: jobsCounterKey(), tokens: { 'jobCount': totalCount } }">6 Open Jobs</h1>
+<!-- /ko -->
+<!-- ko if: filters().length && (totalCount() || selectedFiltersCount() > 0) -->
+<!-- ko ifnot: areEventsEnabled -->
+<div class="search-jobs__toggle-filters search-jobs__misc-spacer background-color-secondary"></div>
+<!-- /ko -->
+<button class="search-jobs__toggle-filters search-jobs__toggle-filters--in-popup" data-bind="click: toggleFiltersPopup, css: {'search-jobs__toggle-filters--events-enabled': areEventsEnabled}" type="button">
+<span data-bind="i18n: 'search.filters-header'">Filters</span>
+<!-- ko if: selectedFiltersCount() > 0 --><!-- /ko -->
+</button>
+<!-- /ko -->
+</div>
+</div>
+<search-filters-horizontal params="
+                filters: filters,
+                totalCount: totalCount,
+                adminMode: adminMode,
+                loading: loading,
+                clear: clearFilters,
+                defaultSearchContext: defaultSearchContext
+            "><div class="search-filters search-filters--horizontal search-filters--in-place">
+<!-- ko if: !$parent.areEventsEnabled -->
+<div aria-live="polite" class="oj-helper-hidden-accessible">
+<!-- ko ifnot: $parent.loading -->
+<span data-bind="i18n: { key: 'search.results-for-jobs', tokens: { 'TOTAL': totalCount } }">Job search results 6</span>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<ul class="search-filters__sections font-family-primary">
+<!-- ko if: $parent.areEventsEnabled --><!-- /ko -->
+<!-- ko if: filters().length && !areRecommendedJobsEnabled() -->
+<!-- ko if: !$parent.areEventsEnabled -->
+<li>
+<div class="search-filters__counter" data-bind="i18n: { key: $parent.jobsCounterKey(), tokens: { 'jobCount': totalCount } }">6 Open Jobs</div>
+</li>
+<!-- ko if: anyFilterInFacetAvailable --><!-- /ko -->
+<!-- /ko -->
+<!-- ko foreach: { data: orderedFacets, as: 'facet' } -->
+<!-- ko if: facet.items().length --><!-- /ko -->
+<!-- ko if: facet.items().length --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- TODO - Remove complete HTML block after new API implementation for recommended jobs -->
+<!-- ko if: areRecommendedJobsEnabled() --><!-- /ko -->
+</ul>
+</div>
+<!-- ko if: filterPresentInUrl() || adminMode --><!-- /ko -->
+</search-filters-horizontal>
+</div>
+</div>
+<search-filters-mobile params="
+        hide: toggleFiltersPopup,
+        clear: clearFilters,
+        filters: filters,
+        adminMode: adminMode,
+        popupFiltersOpened: popupFiltersOpened,
+        uniqueWrapperClass: uniqueWrapperClass
+    "><minimal-dialog params="isVisible: popupFiltersOpened, baseClass: uniqueWrapperClass + ' search-filters-dialog'"><oj-dialog aria-labelledby="ui-id-9" aria-modal="true" cancel-behavior="none" class="app-dialog font-family-primary component-styling-wrapper-0 search-filters-dialog oj-dialog oj-component oj-component-initnode oj-complete" data-bind="focus: focusCallback,
+        attr:{
+            'aria-label': ariaLabel,
+            'aria-describedby': ariaDescribedBy,
+            'role': role
+        },
+        class: 'app-dialog font-family-primary ' + baseClass,
+        a11y.keysHandler: { keys: 'esc', handler: close },
+        moveChatBot: {
+            shouldMoveChatbot: shouldMoveChatbot
+        },
+        isDialogVisible: {
+            isVisible: isVisible,
+            afterClose: afterClose
+        }" drag-affordance="none" id="ui-id-8" initial-visibility="hide" modality="modeless" on-oj-focus="{{setFocusToBody}}" resize-behavior="none" role="dialog" style="display: none;" tabindex="-1">
+<div class="oj-dialog-container"><div class="oj-dialog-header"><h1 class="oj-dialog-title" id="ui-id-9"> </h1></div><div class="oj-dialog-content oj-dialog-default-content"><div class="oj-dialog-body-wrapper"><div class="oj-dialog-header app-dialog__hide-header oj-dialog-body"></div><div class="app-dialog__wrapper app-dialog__wrapper--align-center oj-dialog-body" data-bind="
+            css: { 'app-dialog__wrapper--active': isVisible },
+            class: 'app-dialog__wrapper--align-' + alignment()
+        ">
+<div class="oj-dialog-body app-dialog__main background-color-dialog component-styling-wrapper-0 search-filters-dialog__main search-filters-dialog__main-center" data-bind="
+                css: baseClass ? baseClass  + '__main ' + baseClass + '__main-' + alignment() : null,
+                a11y.setInitialFocus: {isVisible: isVisible, focusOn: '.app-dialog__content', delay: 1000 },
+                attr: { style: width() ? 'max-width: ' + width() : '' }
+            " style="" tabindex="-1">
+<!-- ko if: !nodes['dialog-bar'] --><!-- /ko -->
+<div slot="header">
+<!-- ko template: { nodes: nodes['dialog-bar'], data: $parent } -->
+<div class="app-dialog__bar search-jobs__popup-bar text-color-secondary">
+<div class="app-dialog__bar-section">
+<button aria-label="Hide Filters" class="app-dialog__close" data-bind="click: hide, i18nAttr: {'title': 'search.close-filters', 'aria-label': 'search.close-filters' }" title="Hide Filters"></button>
+</div>
+<div class="app-dialog__bar-section">
+<button class="search-jobs__clear-filters app-dialog__action-button font-family-secondary" data-bind="i18n: 'search.clear-all-filters', click: () =&gt; {
+                        clear();
+                        hide();
+                    }">Clear Filters</button>
+</div>
+</div>
+<!-- /ko -->
+</div>
+<div slot="body">
+<!-- ko template: { nodes: nodes['dialog-body'], data: $parent } -->
+<search-filters-vertical params="
+                filters: filters,
+                adminMode: adminMode,
+                allExpanded: true,
+                popupFiltersOpened: popupFiltersOpened
+                clear: clearFilters
+                "><div class="search-filters search-filters--vertical" data-bind="css: { 'search-filters--in-place': !popupFiltersOpened,
+                       'search-filters--in-dialog': popupFiltersOpened }">
+<!-- ko if: !$parent.areEventsEnabled -->
+<div aria-live="polite" class="oj-helper-hidden-accessible">
+<!-- ko ifnot: $parent.loading -->
+<span data-bind="i18n: { key: 'search.results-for-jobs', tokens: { 'TOTAL': totalCount } }">Job search results undefined</span>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<ul class="search-filters__sections font-family-primary">
+<!-- ko foreach: { data: orderedFacets, as: 'facet' } -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length --><!-- /ko -->
+<!-- /ko -->
+<!-- ko component: { name: 'search-' + facet.name + '-facet-vertical',
+            params: { facet: facet, adminMode: $parent.adminMode, expandedFacetTypes: $parent.expandedFacetTypes }} --><!-- ko if: facet.items().length --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</ul>
+</div>
+</search-filters-vertical>
+<!-- /ko -->
+</div>
+</div>
+</div><div class="app-dialog__background oj-dialog-body" data-bind="
+            attr: { style: opacity() ? 'opacity: ' + opacity() : '' },
+            css: { 'app-dialog__background--no-animation': opacity() }
+        " style=""></div></div></div></div></oj-dialog>
+</minimal-dialog>
+</search-filters-mobile>
+</search-filters-panel-horizontal>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- ko component: { name: 'cc-row', params: { row: row, pageData: $parent.pageData, onMessage: $parent.onMessage } } --><div class="cc-row">
+<div class="cc-row__content cc-columns-count-1" data-bind="class: 'cc-columns-count-' + columns.length">
+<!-- ko foreach: { data: columns, as: 'column' } -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--default" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } --><!-- ko if: areRecommendedJobsEnabled && !isEventRouteEnabled() --><!-- /ko -->
+<!-- /ko -->
+<!-- ko component: { name: component.params.type, params: component } --><div class="component-styling-wrapper-0" data-bind="class: uniqueWrapperClass">
+<!-- ko if: searchResultContextComponent() -->
+<!-- ko component: {
+                    name: searchResultContextComponent,
+                    params: {
+                        contentComponent: contentComponent,
+                        uniqueWrapperClass: uniqueWrapperClass
+                    }
+            } --><div class="search-job-results layout1" data-bind="class: layoutStyle">
+<!-- ko if: loading --><!-- /ko -->
+<!-- ko ifnot: loading -->
+<!-- ko if: (areRecommendedJobsEnabled() && resumeParsingSuccessful() && hasResults() && !isCustomPage) || resumeReuploadEvent()--><!-- /ko -->
+<div class="search-results-jobs-list jobs-list" data-bind="
+            class: listClass,
+            attr: { id: customizationParams.commonParams.cssId },
+            customStyles: customizationParams.commonParams,
+        ">
+<!-- TODO - Remove areRecommendedJobsEnabled conditon after new API implementation for recommended jobs-->
+<!-- ko if: hasResults -->
+<div class="jobs-list__header" data-bind="css: { 'jobs-list__header--not-visible': isCustomPage }">
+<div class="jobs-list__header-left jobs-list__header-left--without-image" data-bind="css: {'jobs-list__header-left--without-image': !isImageVisible }">
+<!-- ko if: isSpellCheckEnabled --><!-- /ko -->
+</div>
+<!-- ko if: !isMapViewEnabled() && !areRecommendedJobsEnabled()-->
+<div class="jobs-list__header-right">
+<search-sorting-selector params="{
+                    sortOptions: sortOptions,
+                    selectedSortOption: selectedSortOption,
+                    onChangeSortBy: onChangeSortBy,
+                }"><div class="search-results-sorting">
+<label class="search-results-sorting__section text-color-primary">
+<button aria-controls="sortMenu" aria-expanded="false" aria-label="Sort By Posting Date" class="search-results-sorting__selector focused-tooltip" data-bind="click: toggleSortMenu, attr: {title : ariaLabel, 'aria-label': ariaLabel}, boolAttr: {'aria-expanded': isSortByMenuVisible()}" title="Sort By Posting Date">
+<span data-bind="text: selectedSortOption().name, attr : {title : ariaLabel}" title="Sort By Posting Date">Posting Date</span>
+<em class="search-results-sorting__selector-icon icon-sort-by-icon-mobile"></em>
+<em class="search-results-sorting__selector-mobile-icon icon-sort-by-icon-mobile" data-bind="i18nAttr: { title: 'search.sort-by-title' }" title="Sort By"></em>
+</button>
+</label>
+<div aria-hidden="true" class="search-results-sorting__selector-menu" data-bind="
+         css: { 'search-results-sorting__selector-menu--visible': isSortByMenuVisible},
+         a11y.trapFocus,
+         a11y.setInitialFocus: { isVisible: isSortByMenuVisible, delay: 400 },
+         boolAttr: {'aria-hidden': !isSortByMenuVisible()},
+         a11y.keysHandler: {keys: 'esc', handler: hideSortMenu},
+         clickOutside: { action: hideSortMenu, when: isSortByMenuVisible, excludeElement: '.search-results-sorting__selector' }" id="sortMenu" tabindex="-1">
+<ul role="presentation">
+<!-- ko foreach: { data: sortOptions, as: 'option' } -->
+<li class="search-results-sorting__selector-item">
+<button aria-label="Relevance" class="search-results-sorting__selector-item--button" data-bind="
+                    css: {
+                        'search-results-sorting__selected-sort-option': $component.isSortOptionSelected(option)
+                    },
+                    click: () =&gt; $parent.onChangeSortBy(option),
+                    text: option.name,
+                    attr: {'aria-pressed': $component.isSortOptionSelected(option), 'aria-label': option.name, 'title': option.name}" title="Relevance">Relevance</button>
+</li>
+<li class="search-results-sorting__selector-item">
+<button aria-label="Posting Date" aria-pressed="true" class="search-results-sorting__selector-item--button search-results-sorting__selected-sort-option" data-bind="
+                    css: {
+                        'search-results-sorting__selected-sort-option': $component.isSortOptionSelected(option)
+                    },
+                    click: () =&gt; $parent.onChangeSortBy(option),
+                    text: option.name,
+                    attr: {'aria-pressed': $component.isSortOptionSelected(option), 'aria-label': option.name, 'title': option.name}" title="Posting Date">Posting Date</button>
+</li>
+<!-- /ko -->
+</ul>
+</div>
+</div>
+</search-sorting-selector>
+</div>
+<!-- /ko -->
+<search-results-toggle-button params="{
+                    componentClass: componentClass,
+                    isMapViewEnabled: isMapViewEnabled,
+                    jobDisplayStyle: jobDisplayStyle,
+                    isMapAlreadyLoaded: isMapAlreadyLoaded,
+                    showStaticMap: showStaticMap,
+                    isElasticSearchEnabled: isElasticSearchEnabled
+            }"><!-- ko if: isToggleDisplayStyle() && isElasticSearchEnabled --><!-- /ko -->
+</search-results-toggle-button>
+</div>
+<!-- ko if: isMapAlreadyLoaded() &&  isElasticSearchEnabled && !areRecommendedJobsEnabled() --><!-- /ko -->
+<!-- ko if: showStaticMap() && isMapViewEnabled()--><!-- /ko -->
+<!-- ko if: !isMapViewEnabled() -->
+<ul class="jobs-list__list" data-bind="class: `${componentClass()}__list`">
+<!-- ko foreach: { data: requisitions, as: 'job' } -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<div class="search-results job-tile job-list-item" data-bind="
+    css: { 'job-list-item--active': job.isActive, 'job-list-item--focus': hasFocus, 'job-list-item--with-image': mainContentConfig().isImageVisible },
+    style: mediaStyles
+">
+<a aria-labelledby="31" class="job-list-item__link" data-bind="
+        attr: { href: getJobUrl(job.id), 'aria-labelledby': ariaLabelledByIdJob },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://eese.fa.us8.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CentrusEnergyCareers/job/31"></a>
+<div class="job-list-item__link" data-bind="click: () =&gt; openJobPreview(job.id)">
+<!-- ko if: mainContentConfig().isImageVisible --><!-- /ko -->
+<div class="job-list-item__content" data-bind="attr: { id: ariaLabelledByIdJob }" id="31">
+<search-result-item-header params="
+                    job: job,
+                    headerInformationConfig: headerInformationConfig,
+                    customizationParams: customizationParams,
+                    jobInfoDisplayed: jobInfoDisplayed,
+                    jobInfoDisplay: jobInfoDisplay,
+                    jobInfoSeparator: jobInfoSeparator,
+                    jobInfoTagsConfiguration: jobInfoTagsConfiguration,
+                    jobTags: jobTags,
+                    jobTagsConfig: jobTagsConfig,
+                    shouldShowDistance: shouldShowDistance,
+                    viewType: 'listView',
+                    dffs: dffs
+                "><div class="job-tile__header job-tile__header--job-info-tags" data-bind="css: { 'job-tile__header--job-info-tags': jobInfoTagsConfiguration() === 'inHeader' }">
+<div class="job-tile__header-container">
+<!-- ko if: isJobTitleVisible -->
+<span class="job-tile__title" data-bind="text: job.title">Industrial Safety &amp; Environmental Waste Management Manager</span>
+<!-- /ko -->
+<!-- ko if: isAlreadyAppliedVisible  --><!-- /ko -->
+</div>
+<div class="job-tile__subheader" data-bind="css: { 'job-tile__subheader--apply-button-visible': enableApplyButton() &amp;&amp; isApplyButtonVisible }">
+<!-- ko if: jobInfoDisplayed().length && jobInfoDisplayed && jobInfoTagsConfiguration() === 'inHeader' -->
+<div class="job-list-item__job-info-container" data-bind="react: { component: 'search-result-item-job-info', props: { job, jobInfoDisplayed, jobInfoDisplay, jobInfoSeparator, distanceInfo, shouldShowDistance, areJobTagsVisible, viewType, dffs } }"><ul class="job-list-item__job-info-items job-list-item__job-info-items--dot job-list-item__job-info-items--label"><li class="job-list-item__job-info-item job-list-item__job-info-item--tags-visible"><div class="job-list-item__job-info-label job-list-item__job-info-label--locations">Locations</div><div class="job-list-item__job-info-value-container"><div class="job-list-item__job-info-value"><posting-locations params="primaryLocation: primaryLocation, secondaryLocations: secondaryLocations, workplaceType: { name: workplaceType, code: workplaceTypeCode, }, mode:'tooltip'"><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">Oak Ridge, TN, United States</span>
+<!-- ko if: secondaryLocationsCount > 0 --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+</posting-locations></div><div class="icon-separator-dot"></div></div></li><li class="job-list-item__job-info-item job-list-item__job-info-item--tags-visible"><div class="job-list-item__job-info-label job-list-item__job-info-label--posting-date">Posting Dates</div><div class="job-list-item__job-info-value-container"><div class="job-list-item__job-info-value">07/25/2024</div><div class="icon-separator icon-separator-dot"></div></div></li></ul></div>
+<!-- /ko -->
+<div class="job-tile__subheader-additional-container">
+<!-- ko if: areJobTagsVisible && jobInfoTagsConfiguration() === 'inHeader' -->
+<job-tags params="jobTags: jobTags, layoutStyle: layoutStyle"><span class="job-tags">
+<!-- ko foreach: { data: jobTags, as: 'tag' } -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() -->
+<tag params="className: tag.className, label: tag.label, layoutStyle: $parent.layoutStyle"><div class="job-tag job-tag--be-first-to-apply job-tag--layout1" data-bind="class: `job-tag--${className}`, css: { 'job-tag--layout1': layoutStyle &amp;&amp; layoutStyle() === 'layout1' }">
+<em class="job-tag__icon icon-be-first-to-apply" data-bind="class: `icon-${className}`"></em>
+<span class="job-tag__title" data-bind="text: label">Be the First to Apply</span>
+</div>
+</tag>
+<!-- /ko -->
+<!-- /ko -->
+</span>
+</job-tags>
+<!-- /ko -->
+<!-- ko if: jobInfoTagsConfiguration() === 'inHeader' && enableApplyButton() && isApplyButtonVisible --><!-- /ko -->
+</div>
+</div>
+</div>
+</search-result-item-header>
+<!-- ko if: mainContentConfig().isDescriptionVisible -->
+<p class="job-list-item__description" data-bind="text: job.shortDescription">Position Summary:
+
+Industrial Safety and Environmental/Waste Management Manager, manages all ACO-OR Industrial Safety programs, Waste programs and Environmental programs.  Management of the industrial safety programs require the incumbent ensure site programs and associated activities are compliant with all OSHA 29 CFR 1910 and when applicable 29 CFR 1926 requirements.  Management of the site Environmental and Waste programs require the incumbent to direct and monitor environmental and waste sampling to ensure compliance with environmental regulations to protect site personnel, the environment and public. The position requires a working knowledge of applicable environmental, waste and safety regulations as well as effective human relations, written, organizational and oral communication skills. The individual maintains working relationships with all layers of management and Federal, State and Local Regulators.</p>
+<!-- /ko -->
+<!-- ko if: mainContentConfig().isResponsibilitiesVisible --><!-- /ko -->
+<!-- ko if: mainContentConfig().isQualificationsVisible --><!-- /ko -->
+</div>
+<div class="job-list-item__actions-container">
+<!-- ko if: enableApplyButton() && isApplyButtonVisible --><!-- /ko -->
+<div class="job-list-item__actions">
+<!-- ko if: enableShareIcon --><!-- /ko -->
+<!-- ko if: enableSaveIcon -->
+<div>
+<button aria-label="Add Job to My Job Selections" class="favourite-star job-tile__favorited focused-tooltip" data-bind="
+                            click: toggleFavourite,
+                            clickBubble: false,
+                            css: { 'favourite-star--active': isFavourite },
+                            i18nAttr: { title: !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job',
+                            'aria-label': !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job' }
+                        " title="Add Job to My Job Selections"></button>
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+<!-- ko if: enableArrowIcon -->
+<span aria-hidden="true" class="job-list-item__show-icon"></span>
+<!-- /ko -->
+</div>
+</div>
+</div>
+<!-- /ko  -->
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<div class="search-results job-tile job-list-item" data-bind="
+    css: { 'job-list-item--active': job.isActive, 'job-list-item--focus': hasFocus, 'job-list-item--with-image': mainContentConfig().isImageVisible },
+    style: mediaStyles
+">
+<a aria-labelledby="27" class="job-list-item__link" data-bind="
+        attr: { href: getJobUrl(job.id), 'aria-labelledby': ariaLabelledByIdJob },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://eese.fa.us8.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CentrusEnergyCareers/job/27"></a>
+<div class="job-list-item__link" data-bind="click: () =&gt; openJobPreview(job.id)">
+<!-- ko if: mainContentConfig().isImageVisible --><!-- /ko -->
+<div class="job-list-item__content" data-bind="attr: { id: ariaLabelledByIdJob }" id="27">
+<search-result-item-header params="
+                    job: job,
+                    headerInformationConfig: headerInformationConfig,
+                    customizationParams: customizationParams,
+                    jobInfoDisplayed: jobInfoDisplayed,
+                    jobInfoDisplay: jobInfoDisplay,
+                    jobInfoSeparator: jobInfoSeparator,
+                    jobInfoTagsConfiguration: jobInfoTagsConfiguration,
+                    jobTags: jobTags,
+                    jobTagsConfig: jobTagsConfig,
+                    shouldShowDistance: shouldShowDistance,
+                    viewType: 'listView',
+                    dffs: dffs
+                "><div class="job-tile__header job-tile__header--job-info-tags" data-bind="css: { 'job-tile__header--job-info-tags': jobInfoTagsConfiguration() === 'inHeader' }">
+<div class="job-tile__header-container">
+<!-- ko if: isJobTitleVisible -->
+<span class="job-tile__title" data-bind="text: job.title">Systems Engineer</span>
+<!-- /ko -->
+<!-- ko if: isAlreadyAppliedVisible  --><!-- /ko -->
+</div>
+<div class="job-tile__subheader" data-bind="css: { 'job-tile__subheader--apply-button-visible': enableApplyButton() &amp;&amp; isApplyButtonVisible }">
+<!-- ko if: jobInfoDisplayed().length && jobInfoDisplayed && jobInfoTagsConfiguration() === 'inHeader' -->
+<div class="job-list-item__job-info-container" data-bind="react: { component: 'search-result-item-job-info', props: { job, jobInfoDisplayed, jobInfoDisplay, jobInfoSeparator, distanceInfo, shouldShowDistance, areJobTagsVisible, viewType, dffs } }"><ul class="job-list-item__job-info-items job-list-item__job-info-items--dot job-list-item__job-info-items--label job-list-item__job-info-items--tags-visible"><li class="job-list-item__job-info-item"><div class="job-list-item__job-info-label job-list-item__job-info-label--locations">Locations</div><div class="job-list-item__job-info-value-container"><div class="job-list-item__job-info-value"><posting-locations params="primaryLocation: primaryLocation, secondaryLocations: secondaryLocations, workplaceType: { name: workplaceType, code: workplaceTypeCode, }, mode:'tooltip'"><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">Piketon, OH, United States</span>
+<!-- ko if: secondaryLocationsCount > 0 --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+</posting-locations></div><div class="icon-separator-dot"></div></div></li><li class="job-list-item__job-info-item"><div class="job-list-item__job-info-label job-list-item__job-info-label--posting-date">Posting Dates</div><div class="job-list-item__job-info-value-container"><div class="job-list-item__job-info-value">07/01/2024</div><div class="icon-separator icon-separator-dot"></div></div></li></ul></div>
+<!-- /ko -->
+<div class="job-tile__subheader-additional-container">
+<!-- ko if: areJobTagsVisible && jobInfoTagsConfiguration() === 'inHeader' -->
+<job-tags params="jobTags: jobTags, layoutStyle: layoutStyle"><span class="job-tags">
+<!-- ko foreach: { data: jobTags, as: 'tag' } -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- /ko -->
+</span>
+</job-tags>
+<!-- /ko -->
+<!-- ko if: jobInfoTagsConfiguration() === 'inHeader' && enableApplyButton() && isApplyButtonVisible --><!-- /ko -->
+</div>
+</div>
+</div>
+</search-result-item-header>
+<!-- ko if: mainContentConfig().isDescriptionVisible -->
+<p class="job-list-item__description" data-bind="text: job.shortDescription">Centrus Energy Corp. is a trusted supplier of enriched uranium fuel for commercial nuclear power plants in the United States and around the world. Our mission is to provide reliable and competitive fuel goods and services to meet the needs of our customers, consistent with the highest levels of integrity, safety, and security.
+
+Given our work on advanced gas centrifuge uranium enrichment technology, the Company is especially interested in applicants with experience in engineering, high-tech manufacturing, complex plant operations, regulatory compliance and quality assurance.
+
+At the leading edge of U.S. nuclear technology development, Centrus is dedicated to the long-term growth of the commercial U.S. nuclear fuel supply and the expansion of the commercial nuclear power industry worldwide.</p>
+<!-- /ko -->
+<!-- ko if: mainContentConfig().isResponsibilitiesVisible --><!-- /ko -->
+<!-- ko if: mainContentConfig().isQualificationsVisible --><!-- /ko -->
+</div>
+<div class="job-list-item__actions-container">
+<!-- ko if: enableApplyButton() && isApplyButtonVisible --><!-- /ko -->
+<div class="job-list-item__actions">
+<!-- ko if: enableShareIcon --><!-- /ko -->
+<!-- ko if: enableSaveIcon -->
+<div>
+<button aria-label="Add Job to My Job Selections" class="favourite-star job-tile__favorited focused-tooltip" data-bind="
+                            click: toggleFavourite,
+                            clickBubble: false,
+                            css: { 'favourite-star--active': isFavourite },
+                            i18nAttr: { title: !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job',
+                            'aria-label': !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job' }
+                        " title="Add Job to My Job Selections"></button>
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+<!-- ko if: enableArrowIcon -->
+<span aria-hidden="true" class="job-list-item__show-icon"></span>
+<!-- /ko -->
+</div>
+</div>
+</div>
+<!-- /ko  -->
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<div class="search-results job-tile job-list-item" data-bind="
+    css: { 'job-list-item--active': job.isActive, 'job-list-item--focus': hasFocus, 'job-list-item--with-image': mainContentConfig().isImageVisible },
+    style: mediaStyles
+">
+<a aria-labelledby="23" class="job-list-item__link" data-bind="
+        attr: { href: getJobUrl(job.id), 'aria-labelledby': ariaLabelledByIdJob },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://eese.fa.us8.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CentrusEnergyCareers/job/23"></a>
+<div class="job-list-item__link" data-bind="click: () =&gt; openJobPreview(job.id)">
+<!-- ko if: mainContentConfig().isImageVisible --><!-- /ko -->
+<div class="job-list-item__content" data-bind="attr: { id: ariaLabelledByIdJob }" id="23">
+<search-result-item-header params="
+                    job: job,
+                    headerInformationConfig: headerInformationConfig,
+                    customizationParams: customizationParams,
+                    jobInfoDisplayed: jobInfoDisplayed,
+                    jobInfoDisplay: jobInfoDisplay,
+                    jobInfoSeparator: jobInfoSeparator,
+                    jobInfoTagsConfiguration: jobInfoTagsConfiguration,
+                    jobTags: jobTags,
+                    jobTagsConfig: jobTagsConfig,
+                    shouldShowDistance: shouldShowDistance,
+                    viewType: 'listView',
+                    dffs: dffs
+                "><div class="job-tile__header job-tile__header--job-info-tags" data-bind="css: { 'job-tile__header--job-info-tags': jobInfoTagsConfiguration() === 'inHeader' }">
+<div class="job-tile__header-container">
+<!-- ko if: isJobTitleVisible -->
+<span class="job-tile__title" data-bind="text: job.title">Finance Director</span>
+<!-- /ko -->
+<!-- ko if: isAlreadyAppliedVisible  --><!-- /ko -->
+</div>
+<div class="job-tile__subheader" data-bind="css: { 'job-tile__subheader--apply-button-visible': enableApplyButton() &amp;&amp; isApplyButtonVisible }">
+<!-- ko if: jobInfoDisplayed().length && jobInfoDisplayed && jobInfoTagsConfiguration() === 'inHeader' -->
+<div class="job-list-item__job-info-container" data-bind="react: { component: 'search-result-item-job-info', props: { job, jobInfoDisplayed, jobInfoDisplay, jobInfoSeparator, distanceInfo, shouldShowDistance, areJobTagsVisible, viewType, dffs } }"><ul class="job-list-item__job-info-items job-list-item__job-info-items--dot job-list-item__job-info-items--label job-list-item__job-info-items--tags-visible"><li class="job-list-item__job-info-item"><div class="job-list-item__job-info-label job-list-item__job-info-label--locations">Locations</div><div class="job-list-item__job-info-value-container"><div class="job-list-item__job-info-value"><posting-locations params="primaryLocation: primaryLocation, secondaryLocations: secondaryLocations, workplaceType: { name: workplaceType, code: workplaceTypeCode, }, mode:'tooltip'"><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">Oak Ridge, TN, United States</span>
+<!-- ko if: secondaryLocationsCount > 0 --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+</posting-locations></div><div class="icon-separator-dot"></div></div></li><li class="job-list-item__job-info-item"><div class="job-list-item__job-info-label job-list-item__job-info-label--posting-date">Posting Dates</div><div class="job-list-item__job-info-value-container"><div class="job-list-item__job-info-value">06/10/2024</div><div class="icon-separator icon-separator-dot"></div></div></li></ul></div>
+<!-- /ko -->
+<div class="job-tile__subheader-additional-container">
+<!-- ko if: areJobTagsVisible && jobInfoTagsConfiguration() === 'inHeader' -->
+<job-tags params="jobTags: jobTags, layoutStyle: layoutStyle"><span class="job-tags">
+<!-- ko foreach: { data: jobTags, as: 'tag' } -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- /ko -->
+</span>
+</job-tags>
+<!-- /ko -->
+<!-- ko if: jobInfoTagsConfiguration() === 'inHeader' && enableApplyButton() && isApplyButtonVisible --><!-- /ko -->
+</div>
+</div>
+</div>
+</search-result-item-header>
+<!-- ko if: mainContentConfig().isDescriptionVisible -->
+<p class="job-list-item__description" data-bind="text: job.shortDescription">Finance and Planning Responsibilities
+Implements and plans assignments in all aspects of AC project entity level and operating or budgeting and forecasting activities, including but not limited to coordinating annual budget development, submission, presentations, tracking and reporting.
+Analyzes I interpret operating results &amp; trends as they affect the financial aspects of the organization, making recommendations, as appropriate, including potential cost reductions and profit improvements.
+Works closely with ACO Management and Project Controls to ensure the total project cost is captured and reconciled within the Cost Processor to Oracle records; and results are reported correctly with variances explained.
+Assures financial integrity of the project's Work Breakdown Structure (WBS) and ensures the use of appropriate budget and reporting categories.
+</p>
+<!-- /ko -->
+<!-- ko if: mainContentConfig().isResponsibilitiesVisible --><!-- /ko -->
+<!-- ko if: mainContentConfig().isQualificationsVisible --><!-- /ko -->
+</div>
+<div class="job-list-item__actions-container">
+<!-- ko if: enableApplyButton() && isApplyButtonVisible --><!-- /ko -->
+<div class="job-list-item__actions">
+<!-- ko if: enableShareIcon --><!-- /ko -->
+<!-- ko if: enableSaveIcon -->
+<div>
+<button aria-label="Add Job to My Job Selections" class="favourite-star job-tile__favorited focused-tooltip" data-bind="
+                            click: toggleFavourite,
+                            clickBubble: false,
+                            css: { 'favourite-star--active': isFavourite },
+                            i18nAttr: { title: !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job',
+                            'aria-label': !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job' }
+                        " title="Add Job to My Job Selections"></button>
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+<!-- ko if: enableArrowIcon -->
+<span aria-hidden="true" class="job-list-item__show-icon"></span>
+<!-- /ko -->
+</div>
+</div>
+</div>
+<!-- /ko  -->
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<div class="search-results job-tile job-list-item" data-bind="
+    css: { 'job-list-item--active': job.isActive, 'job-list-item--focus': hasFocus, 'job-list-item--with-image': mainContentConfig().isImageVisible },
+    style: mediaStyles
+">
+<a aria-labelledby="21" class="job-list-item__link" data-bind="
+        attr: { href: getJobUrl(job.id), 'aria-labelledby': ariaLabelledByIdJob },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://eese.fa.us8.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CentrusEnergyCareers/job/21"></a>
+<div class="job-list-item__link" data-bind="click: () =&gt; openJobPreview(job.id)">
+<!-- ko if: mainContentConfig().isImageVisible --><!-- /ko -->
+<div class="job-list-item__content" data-bind="attr: { id: ariaLabelledByIdJob }" id="21">
+<search-result-item-header params="
+                    job: job,
+                    headerInformationConfig: headerInformationConfig,
+                    customizationParams: customizationParams,
+                    jobInfoDisplayed: jobInfoDisplayed,
+                    jobInfoDisplay: jobInfoDisplay,
+                    jobInfoSeparator: jobInfoSeparator,
+                    jobInfoTagsConfiguration: jobInfoTagsConfiguration,
+                    jobTags: jobTags,
+                    jobTagsConfig: jobTagsConfig,
+                    shouldShowDistance: shouldShowDistance,
+                    viewType: 'listView',
+                    dffs: dffs
+                "><div class="job-tile__header job-tile__header--job-info-tags" data-bind="css: { 'job-tile__header--job-info-tags': jobInfoTagsConfiguration() === 'inHeader' }">
+<div class="job-tile__header-container">
+<!-- ko if: isJobTitleVisible -->
+<span class="job-tile__title" data-bind="text: job.title">Tax Manager</span>
+<!-- /ko -->
+<!-- ko if: isAlreadyAppliedVisible  --><!-- /ko -->
+</div>
+<div class="job-tile__subheader" data-bind="css: { 'job-tile__subheader--apply-button-visible': enableApplyButton() &amp;&amp; isApplyButtonVisible }">
+<!-- ko if: jobInfoDisplayed().length && jobInfoDisplayed && jobInfoTagsConfiguration() === 'inHeader' -->
+<div class="job-list-item__job-info-container" data-bind="react: { component: 'search-result-item-job-info', props: { job, jobInfoDisplayed, jobInfoDisplay, jobInfoSeparator, distanceInfo, shouldShowDistance, areJobTagsVisible, viewType, dffs } }"><ul class="job-list-item__job-info-items job-list-item__job-info-items--dot job-list-item__job-info-items--label"><li class="job-list-item__job-info-item job-list-item__job-info-item--tags-visible"><div class="job-list-item__job-info-label job-list-item__job-info-label--locations">Locations</div><div class="job-list-item__job-info-value-container"><div class="job-list-item__job-info-value"><posting-locations params="primaryLocation: primaryLocation, secondaryLocations: secondaryLocations, workplaceType: { name: workplaceType, code: workplaceTypeCode, }, mode:'tooltip'"><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">Bethesda, MD, United States</span>
+<!-- ko if: secondaryLocationsCount > 0 --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+</posting-locations></div><div class="icon-separator-dot"></div></div></li><li class="job-list-item__job-info-item job-list-item__job-info-item--tags-visible"><div class="job-list-item__job-info-label job-list-item__job-info-label--posting-date">Posting Dates</div><div class="job-list-item__job-info-value-container"><div class="job-list-item__job-info-value">06/07/2024</div><div class="icon-separator icon-separator-dot"></div></div></li></ul></div>
+<!-- /ko -->
+<div class="job-tile__subheader-additional-container">
+<!-- ko if: areJobTagsVisible && jobInfoTagsConfiguration() === 'inHeader' -->
+<job-tags params="jobTags: jobTags, layoutStyle: layoutStyle"><span class="job-tags">
+<!-- ko foreach: { data: jobTags, as: 'tag' } -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() -->
+<tag params="className: tag.className, label: tag.label, layoutStyle: $parent.layoutStyle"><div class="job-tag job-tag--be-first-to-apply job-tag--layout1" data-bind="class: `job-tag--${className}`, css: { 'job-tag--layout1': layoutStyle &amp;&amp; layoutStyle() === 'layout1' }">
+<em class="job-tag__icon icon-be-first-to-apply" data-bind="class: `icon-${className}`"></em>
+<span class="job-tag__title" data-bind="text: label">Be the First to Apply</span>
+</div>
+</tag>
+<!-- /ko -->
+<!-- /ko -->
+</span>
+</job-tags>
+<!-- /ko -->
+<!-- ko if: jobInfoTagsConfiguration() === 'inHeader' && enableApplyButton() && isApplyButtonVisible --><!-- /ko -->
+</div>
+</div>
+</div>
+</search-result-item-header>
+<!-- ko if: mainContentConfig().isDescriptionVisible -->
+<p class="job-list-item__description" data-bind="text: job.shortDescription">Centrus Energy Corp. seeks an experienced individual to fill the role of Tax Manager on our corporate headquarters’ team under a hybrid work schedule. The Tax Manager will assume responsibility for the quarterly income tax provision and preparation of the company’s consolidated federal and state income tax returns. They will work closely with others in the accounting group and throughout the organization to understand and analyze issues for pertinent income tax, property tax, sales tax, or other tax consequences. The Tax Manager will demonstrate an in-depth knowledge of and experience in the use of OneSource Tax Provision and OneSource Income Tax systems. The Tax Manager is expected to continually identify process and quality improvements in the company’s tax processes. They will report directly to the Director, Tax, and the two of them will work together on all company tax issues.</p>
+<!-- /ko -->
+<!-- ko if: mainContentConfig().isResponsibilitiesVisible --><!-- /ko -->
+<!-- ko if: mainContentConfig().isQualificationsVisible --><!-- /ko -->
+</div>
+<div class="job-list-item__actions-container">
+<!-- ko if: enableApplyButton() && isApplyButtonVisible --><!-- /ko -->
+<div class="job-list-item__actions">
+<!-- ko if: enableShareIcon --><!-- /ko -->
+<!-- ko if: enableSaveIcon -->
+<div>
+<button aria-label="Add Job to My Job Selections" class="favourite-star job-tile__favorited focused-tooltip" data-bind="
+                            click: toggleFavourite,
+                            clickBubble: false,
+                            css: { 'favourite-star--active': isFavourite },
+                            i18nAttr: { title: !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job',
+                            'aria-label': !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job' }
+                        " title="Add Job to My Job Selections"></button>
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+<!-- ko if: enableArrowIcon -->
+<span aria-hidden="true" class="job-list-item__show-icon"></span>
+<!-- /ko -->
+</div>
+</div>
+</div>
+<!-- /ko  -->
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<li data-qa="searchResultItem">
+<!-- ko component: {
+                        name: $parent.tileComponent,
+                        params: {
+                            job: job,
+                            customizationParams: $parent.customizationParams,
+                        }
+                    } --><!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<div class="search-results job-tile job-list-item" data-bind="
+    css: { 'job-list-item--active': job.isActive, 'job-list-item--focus': hasFocus, 'job-list-item--with-image': mainContentConfig().isImageVisible },
+    style: mediaStyles
+">
+<a aria-labelledby="3" class="job-list-item__link" data-bind="
+        attr: { href: getJobUrl(job.id), 'aria-labelledby': ariaLabelledByIdJob },
+        click: () =&gt; openJobPreview(job.id),
+        hasFocus: hasFocus
+    " href="https://eese.fa.us8.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CentrusEnergyCareers/job/3"></a>
+<div class="job-list-item__link" data-bind="click: () =&gt; openJobPreview(job.id)">
+<!-- ko if: mainContentConfig().isImageVisible --><!-- /ko -->
+<div class="job-list-item__content" data-bind="attr: { id: ariaLabelledByIdJob }" id="3">
+<search-result-item-header params="
+                    job: job,
+                    headerInformationConfig: headerInformationConfig,
+                    customizationParams: customizationParams,
+                    jobInfoDisplayed: jobInfoDisplayed,
+                    jobInfoDisplay: jobInfoDisplay,
+                    jobInfoSeparator: jobInfoSeparator,
+                    jobInfoTagsConfiguration: jobInfoTagsConfiguration,
+                    jobTags: jobTags,
+                    jobTagsConfig: jobTagsConfig,
+                    shouldShowDistance: shouldShowDistance,
+                    viewType: 'listView',
+                    dffs: dffs
+                "><div class="job-tile__header job-tile__header--job-info-tags" data-bind="css: { 'job-tile__header--job-info-tags': jobInfoTagsConfiguration() === 'inHeader' }">
+<div class="job-tile__header-container">
+<!-- ko if: isJobTitleVisible -->
+<span class="job-tile__title" data-bind="text: job.title">Director, Human Resources</span>
+<!-- /ko -->
+<!-- ko if: isAlreadyAppliedVisible  --><!-- /ko -->
+</div>
+<div class="job-tile__subheader" data-bind="css: { 'job-tile__subheader--apply-button-visible': enableApplyButton() &amp;&amp; isApplyButtonVisible }">
+<!-- ko if: jobInfoDisplayed().length && jobInfoDisplayed && jobInfoTagsConfiguration() === 'inHeader' -->
+<div class="job-list-item__job-info-container" data-bind="react: { component: 'search-result-item-job-info', props: { job, jobInfoDisplayed, jobInfoDisplay, jobInfoSeparator, distanceInfo, shouldShowDistance, areJobTagsVisible, viewType, dffs } }"><ul class="job-list-item__job-info-items job-list-item__job-info-items--dot job-list-item__job-info-items--label job-list-item__job-info-items--tags-visible"><li class="job-list-item__job-info-item"><div class="job-list-item__job-info-label job-list-item__job-info-label--locations">Locations</div><div class="job-list-item__job-info-value-container"><div class="job-list-item__job-info-value"><posting-locations params="primaryLocation: primaryLocation, secondaryLocations: secondaryLocations, workplaceType: { name: workplaceType, code: workplaceTypeCode, }, mode:'tooltip'"><!-- ko if: isTooltipMode() -->
+<span data-bind="html: primaryLocation">Bethesda, MD, United States</span>
+<!-- ko if: secondaryLocationsCount > 0 -->
+<tooltip class="posting-locations" params="isVisible: isTooltipVisible, helpText: tooltipContent" role="tooltip"><span class="tooltip-wrapper" data-bind="attr: {id: helpTextId}">
+<!-- ko template: { nodes: nodes['tooltip-anchor'], data: $parent} -->
+<button aria-label="Bethesda, MD, United States,Oak Ridge, TN, United States,Piketon, OH, United States" data-bind="attr: { 'aria-label': tooltipData },
+                event: {
+                    mouseover: showTooltip,
+                    mouseout: hideTooltip,
+                    focus: showTooltip,
+                    blur: hideTooltip
+                }">
+<i18n class="posting-locations__count" params="key: 'search.job-item.secondary-locations'"><span data-bind="i18n: {key: key, tokens: tokens}">and <span data-bind="text: $parent.secondaryLocationsCount" data-i18n-token="locationsCount">2</span> more</span>
+</i18n>
+</button>
+<!-- /ko -->
+<!-- ko if: isVisible --><!-- /ko -->
+</span>
+</tooltip>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: !isTooltipMode() --><!-- /ko -->
+<!-- ko if: workplaceTypeName --><!-- /ko -->
+</posting-locations></div><div class="icon-separator-dot"></div></div></li><li class="job-list-item__job-info-item"><div class="job-list-item__job-info-label job-list-item__job-info-label--posting-date">Posting Dates</div><div class="job-list-item__job-info-value-container"><div class="job-list-item__job-info-value">06/29/2024</div><div class="icon-separator icon-separator-dot"></div></div></li></ul></div>
+<!-- /ko -->
+<div class="job-tile__subheader-additional-container">
+<!-- ko if: areJobTagsVisible && jobInfoTagsConfiguration() === 'inHeader' -->
+<job-tags params="jobTags: jobTags, layoutStyle: layoutStyle"><span class="job-tags">
+<!-- ko foreach: { data: jobTags, as: 'tag' } -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- ko if: tag.isVisible() --><!-- /ko -->
+<!-- /ko -->
+</span>
+</job-tags>
+<!-- /ko -->
+<!-- ko if: jobInfoTagsConfiguration() === 'inHeader' && enableApplyButton() && isApplyButtonVisible --><!-- /ko -->
+</div>
+</div>
+</div>
+</search-result-item-header>
+<!-- ko if: mainContentConfig().isDescriptionVisible -->
+<p class="job-list-item__description" data-bind="text: job.shortDescription">Centrus Energy Corp. is a trusted supplier of enriched uranium fuel for commercial nuclear power plants in the United States and around the world. Our mission is to provide reliable and competitive fuel goods and services to meet the needs of our customers, consistent with the highest levels of integrity, safety, and security.
+Given our work on advanced gas centrifuge uranium enrichment technology, the Company is especially interested in applicants with experience in engineering, high-tech manufacturing, complex plant operations, regulatory compliance and quality assurance.
+
+At the leading edge of U.S. nuclear technology development, Centrus is dedicated to the long-term growth of the commercial U.S. nuclear fuel supply and the expansion of the commercial nuclear power industry worldwide.
+</p>
+<!-- /ko -->
+<!-- ko if: mainContentConfig().isResponsibilitiesVisible --><!-- /ko -->
+<!-- ko if: mainContentConfig().isQualificationsVisible --><!-- /ko -->
+</div>
+<div class="job-list-item__actions-container">
+<!-- ko if: enableApplyButton() && isApplyButtonVisible --><!-- /ko -->
+<div class="job-list-item__actions">
+<!-- ko if: enableShareIcon --><!-- /ko -->
+<!-- ko if: enableSaveIcon -->
+<div>
+<button aria-label="Add Job to My Job Selections" class="favourite-star job-tile__favorited focused-tooltip" data-bind="
+                            click: toggleFavourite,
+                            clickBubble: false,
+                            css: { 'favourite-star--active': isFavourite },
+                            i18nAttr: { title: !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job',
+                            'aria-label': !isFavourite() ? 'favourite.a11y.pin-job' : 'favourite.a11y.unpin-job' }
+                        " title="Add Job to My Job Selections"></button>
+<!-- ko if: isFavouriteToggled --><!-- /ko -->
+</div>
+<!-- /ko -->
+</div>
+<!-- ko if: enableArrowIcon -->
+<span aria-hidden="true" class="job-list-item__show-icon"></span>
+<!-- /ko -->
+</div>
+</div>
+</div>
+<!-- /ko  -->
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- ko if: job.id === 'CE_TALENT_COMMUNITY_TILE' -->
+<!-- ko ifnot: $parent.customizationParams.contentParams.hideTalentCommunitySignup() -->
+<li data-qa="searchResultTalentCommunityItem">
+<!-- ko component: {
+                                    name: $parent.talentCommunityTileComponent,
+                                    params: {
+                                        className: $parent.customizationParams.contentParams.jobDisplayStyle()
+                                    }
+                                } --><div class="talent-community-tile text-color-secondary talent-community-tile--toggleListMap" data-bind="css: className" data-qa="searchResultTCJoin">
+<div class="talent-community-tile__line background-color-secondary"></div>
+<h3 class="talent-community-tile__title text-color-primary" data-bind="text: labels.header">Join Our Talent Community</h3>
+<p class="talent-community-tile__subheader" data-bind="text: labels.description"></p>
+<div class="talent-community-tile__actions">
+<a class="button text-color-primary font-family-secondary" data-bind="click: openSignUpComponent, attr: {'href': url}" href="https://eese.fa.us8.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CentrusEnergyCareers/tc-join">
+<span class="button__label" data-bind="text: labels.button">Click Here to Join</span>
+</a>
+</div>
+<div class="talent-community-tile__line background-color-secondary"></div>
+</div>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko ifnot: job.id === 'CE_TALENT_COMMUNITY_TILE' --><!-- /ko -->
+<!-- /ko -->
+</ul>
+<!-- /ko -->
+<!-- ko if: initialized -->
+<!-- ko component: {
+                    name: 'search-pagination',
+                    params: {
+                        state: paginationState
+                    },
+                } --><!-- ko if: state().type === 'loading' --><!-- /ko -->
+<!-- ko if: state().type === 'has_more_items' --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- ko if: initialized() && !hasResults() --><!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- /ko -->
+<!--/ko--></main>
+<!-- ko view: 'dialogs' --><!-- /ko -->
+</div>
+<!-- ko component: 'app-footer' --><!-- ko if: footerEnable -->
+<div class="app-footer">
+<!-- ko if: footerMobileLinks().length -->
+<div class="app-footer__links app-footer__links--mobile">
+<ul class="footer-links">
+<!-- ko foreach: { data: footerMobileLinks, as: 'link' } -->
+<li class="footer-links__item">
+<!-- ko if: link.url === $parent.getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: link.url !== $parent.getCookieConsentIdentifier() -->
+<a class="footer-links__link" data-bind="text: link.text, attr: { href: link.url }" href="https://investors.centrusenergy.com/">Investors</a>
+<!-- /ko -->
+</li>
+<li class="footer-links__item">
+<!-- ko if: link.url === $parent.getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: link.url !== $parent.getCookieConsentIdentifier() -->
+<a class="footer-links__link" data-bind="text: link.text, attr: { href: link.url }" href="https://www.centrusenergy.com/terms-conditions/">Terms and Conditions</a>
+<!-- /ko -->
+</li>
+<li class="footer-links__item">
+<!-- ko if: link.url === $parent.getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: link.url !== $parent.getCookieConsentIdentifier() -->
+<a class="footer-links__link" data-bind="text: link.text, attr: { href: link.url }" href="https://www.centrusenergy.com/contact/">Contact</a>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+</ul>
+</div>
+<!-- /ko -->
+<!-- ko if: footerLinks().length -->
+<div class="app-footer__links app-footer__links--desktop">
+<ul class="footer-links">
+<!-- ko foreach: footerLinks -->
+<li class="footer-links__item">
+<!-- ko if: url === $parent.getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: url !== $parent.getCookieConsentIdentifier() -->
+<a class="footer-links__link" data-bind="text: text, attr: { href: url }" href="https://investors.centrusenergy.com/">Investors</a>
+<!-- /ko -->
+<!-- ko if: sublinks.length --><!-- /ko -->
+</li>
+<li class="footer-links__item">
+<!-- ko if: url === $parent.getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: url !== $parent.getCookieConsentIdentifier() -->
+<a class="footer-links__link" data-bind="text: text, attr: { href: url }" href="https://www.centrusenergy.com/terms-conditions/">Terms and Conditions</a>
+<!-- /ko -->
+<!-- ko if: sublinks.length --><!-- /ko -->
+</li>
+<li class="footer-links__item">
+<!-- ko if: url === $parent.getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: url !== $parent.getCookieConsentIdentifier() -->
+<a class="footer-links__link" data-bind="text: text, attr: { href: url }" href="https://www.centrusenergy.com/contact/">Contact</a>
+<!-- /ko -->
+<!-- ko if: sublinks.length --><!-- /ko -->
+</li>
+<!-- /ko -->
+</ul>
+</div>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko component: 'custom-footer' --><footer class="app__custom-footer">
+<!-- ko if: customFooterEnable --><!-- /ko -->
+</footer>
+<!-- /ko -->
+</div>
+</div>
+<!-- ko view: 'candidate-verification' -->
+<!-- /ko -->
+<!-- ko component: 'app-menu'--><div aria-hidden="true" aria-label="Show menu options" class="app-menu font-family-secondary" data-bind="boolAttr: {'aria-hidden': !isVisible()},
+                a11y.keysHandler: {keys: 'esc', handler: close},
+                a11y.setInitialFocus: {isVisible: isVisible, delay: 600, focusOn: '.app-menu__close'},
+                a11y.trapFocus,
+                i18nAttr: { 'aria-label': 'candidate-self-service.show-menu-options'}" role="dialog" tabindex="-1">
+<div class="app-menu__wrapper background-color-dialog" data-bind="css: wrapperClassName">
+<div class="app-menu__header">
+<!-- ko if: showLanguageSelector --><!-- /ko -->
+<span class="app-menu__language-filler"></span>
+<button aria-label="Close menu" class="app-menu__close" data-bind="
+                    click: close,
+                    i18nAttr: { title: 'general.a11y.close-menu', 'aria-label': 'general.a11y.close-menu' }" title="Close menu"></button>
+</div>
+<div class="app-menu__content">
+<ul class="app-menu__links" data-bind="click: onLinkClicked.bind($component)" role="menu">
+<!-- ko foreach: {data: links, as: 'link'} -->
+<li class="app-menu__item" role="menuitem">
+<!-- ko if: link.url === $parent.getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: link.url !== $parent.getCookieConsentIdentifier() -->
+<a data-bind="attr: { href:  link.url }, text: link.text" href="https://www.centrusenergy.com/who-we-are/">Who We Are</a>
+<!-- /ko -->
+<!-- ko if: link.sublinks.length -->
+<div class="app-menu__sublinks-wrapper">
+<div class="app-menu__sublinks-line background-color-secondary"></div>
+<ul class="app-menu__sublinks text-color-secondary" role="menu">
+<!-- ko foreach: {data: link.sublinks, as: 'sublink'} -->
+<li class="app-menu__subitem" role="menuitem">
+<!-- ko if: sublink.url === $parents[1].getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: sublink.url !== $parents[1].getCookieConsentIdentifier() -->
+<a data-bind="attr: { href: sublink.url }, text: sublink.text" href="https://www.centrusenergy.com/who-we-are/leadership/">Leadership</a>
+<!-- /ko -->
+</li>
+<li class="app-menu__subitem" role="menuitem">
+<!-- ko if: sublink.url === $parents[1].getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: sublink.url !== $parents[1].getCookieConsentIdentifier() -->
+<a data-bind="attr: { href: sublink.url }, text: sublink.text" href="https://www.centrusenergy.com/who-we-are/corporate-responsibility/">Corporate Responsibility</a>
+<!-- /ko -->
+</li>
+<li class="app-menu__subitem" role="menuitem">
+<!-- ko if: sublink.url === $parents[1].getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: sublink.url !== $parents[1].getCookieConsentIdentifier() -->
+<a data-bind="attr: { href: sublink.url }, text: sublink.text" href="https://www.centrusenergy.com/who-we-are/history/">History</a>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+</ul>
+</div>
+<!-- /ko -->
+</li>
+<li class="app-menu__item" role="menuitem">
+<!-- ko if: link.url === $parent.getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: link.url !== $parent.getCookieConsentIdentifier() -->
+<a data-bind="attr: { href:  link.url }, text: link.text" href="https://www.centrusenergy.com/what-we-do/">What We Do</a>
+<!-- /ko -->
+<!-- ko if: link.sublinks.length -->
+<div class="app-menu__sublinks-wrapper">
+<div class="app-menu__sublinks-line background-color-secondary"></div>
+<ul class="app-menu__sublinks text-color-secondary" role="menu">
+<!-- ko foreach: {data: link.sublinks, as: 'sublink'} -->
+<li class="app-menu__subitem" role="menuitem">
+<!-- ko if: sublink.url === $parents[1].getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: sublink.url !== $parents[1].getCookieConsentIdentifier() -->
+<a data-bind="attr: { href: sublink.url }, text: sublink.text" href="https://www.centrusenergy.com/what-we-do/nuclear-fuel/">Nuclear Fuel</a>
+<!-- /ko -->
+</li>
+<li class="app-menu__subitem" role="menuitem">
+<!-- ko if: sublink.url === $parents[1].getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: sublink.url !== $parents[1].getCookieConsentIdentifier() -->
+<a data-bind="attr: { href: sublink.url }, text: sublink.text" href="https://www.centrusenergy.com/what-we-do/manufacturing-engineering-innovation/">Manufacturing, Engineering &amp; Innovation</a>
+<!-- /ko -->
+</li>
+<li class="app-menu__subitem" role="menuitem">
+<!-- ko if: sublink.url === $parents[1].getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: sublink.url !== $parents[1].getCookieConsentIdentifier() -->
+<a data-bind="attr: { href: sublink.url }, text: sublink.text" href="https://www.centrusenergy.com/what-we-do/national-security/">National Security</a>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+</ul>
+</div>
+<!-- /ko -->
+</li>
+<li class="app-menu__item" role="menuitem">
+<!-- ko if: link.url === $parent.getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: link.url !== $parent.getCookieConsentIdentifier() -->
+<a data-bind="attr: { href:  link.url }, text: link.text" href="https://www.centrusenergy.com/news/">News And Updates</a>
+<!-- /ko -->
+<!-- ko if: link.sublinks.length -->
+<div class="app-menu__sublinks-wrapper">
+<div class="app-menu__sublinks-line background-color-secondary"></div>
+<ul class="app-menu__sublinks text-color-secondary" role="menu">
+<!-- ko foreach: {data: link.sublinks, as: 'sublink'} -->
+<li class="app-menu__subitem" role="menuitem">
+<!-- ko if: sublink.url === $parents[1].getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: sublink.url !== $parents[1].getCookieConsentIdentifier() -->
+<a data-bind="attr: { href: sublink.url }, text: sublink.text" href="https://www.centrusenergy.com/news/?fwp_categories=news-releases">News Release</a>
+<!-- /ko -->
+</li>
+<li class="app-menu__subitem" role="menuitem">
+<!-- ko if: sublink.url === $parents[1].getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: sublink.url !== $parents[1].getCookieConsentIdentifier() -->
+<a data-bind="attr: { href: sublink.url }, text: sublink.text" href="https://www.centrusenergy.com/news/?fwp_categories=photo-gallery">Photo Gallery</a>
+<!-- /ko -->
+</li>
+<li class="app-menu__subitem" role="menuitem">
+<!-- ko if: sublink.url === $parents[1].getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: sublink.url !== $parents[1].getCookieConsentIdentifier() -->
+<a data-bind="attr: { href: sublink.url }, text: sublink.text" href="https://www.centrusenergy.com/news/?fwp_categories=updates-perspectives">Updates and Perspectives</a>
+<!-- /ko -->
+</li>
+<!-- /ko -->
+</ul>
+</div>
+<!-- /ko -->
+</li>
+<li class="app-menu__item" role="menuitem">
+<!-- ko if: link.url === $parent.getCookieConsentIdentifier() --><!-- /ko -->
+<!-- ko if: link.url !== $parent.getCookieConsentIdentifier() -->
+<a data-bind="attr: { href:  link.url }, text: link.text" href="https://www.centrusenergy.com/careers/">Careers</a>
+<!-- /ko -->
+<!-- ko if: link.sublinks.length --><!-- /ko -->
+</li>
+<!-- /ko -->
+</ul>
+<!-- ko ifnot: isSignedIn -->
+<div class="app-menu__miscellaneous">
+<div class="app-menu__miscellaneous-line background-color-secondary"></div>
+<div class="app-menu__miscellaneous-list text-color-secondary">
+<div class="app-menu__miscellaneous-item">
+<internal-user-login-button params="employeeText: employeeText"><!-- ko if: userLoginButtonText() -->
+<a aria-label="I am an employee" class="text-color-secondary" data-bind="
+        text: userLoginButtonText(),
+        attr: {
+            'href': iceUrl,
+            'title': userLoginButtonAriaLabel(),
+            'aria-label': userLoginButtonAriaLabel()
+        }" href="https://eese.fa.us8.oraclecloud.com:443/fscmUI/faces/deeplink?objType=IRC_RECRUITING&amp;action=ICE_JOB_SEARCH_RESP" title="I am an employee">I am an employee</a>
+<!-- /ko -->
+</internal-user-login-button>
+</div>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+<div class="app-menu__overlay" data-bind="click: close"></div>
+</div>
+<!-- /ko -->
+<!-- ko component: 'cookie-consent-modal-details' --><!-- ko if: isCookieConsentVisible() && viewData.customPage -->
+<div class="cookie-consent-modal font-family-primary cookie-consent-site narrow" data-bind="class: isWideModal() ? 'wide' : 'narrow',
+a11y.setInitialFocus:{ isVisible: isCookieConsentVisible, delay: 2000, onInit: true, focusOn: '.cookie-consent__message' }" tabindex="-1">
+<div aria-describedby="cookieConsentMessage" aria-label="Cookie Consent Message" class="cookie-consent__content" data-bind="i18nAttr: {'aria-label': 'admin.theme-editor.theme-editor-panel.cookie-consent-config.cookie-consent-message-label'}" role="dialog">
+<!-- ko ifnot: isWideModal -->
+<div class="cookie-consent__pulse"></div>
+<div class="cookie-consent__pulse"></div>
+<div class="cookie-consent__pulse"></div>
+<!-- /ko -->
+<!-- ko if: viewData.customPage -->
+<div class="cookie-consent-modal-wrapper">
+<div>
+<article>
+<!-- ko component: {
+                            name: 'cc-page',
+                            params: {
+                                page: viewData.customPage(),
+                                pageData: pageData,
+                                classModifier: classModifier
+                            }
+                    } --><div class="cc-page cc-page--boxed cc-page--cookie-consent-modal" data-bind="
+        css: {'cc-page--boxed': isPageDisplayBoxed},
+        class: classWithModifier
+    ">
+<div class="cc-page__content">
+<!-- ko foreach: { data: page.sections, as: 'section' } -->
+<!-- ko component: {
+            name: 'cc-section',
+            params: {
+                section: section,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-section cc-section--width-" data-bind="css: cssClass, style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc }" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: section.params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-section__content">
+<!-- ko foreach: { data: components, as: 'component' } --><!-- /ko -->
+<!-- ko foreach: { data: rows, as: 'row' } -->
+<!-- ko component: { name: 'cc-row', params: { row: row, pageData: $parent.pageData, onMessage: $parent.onMessage } } --><div class="cc-row">
+<div class="cc-row__content cc-columns-count-1" data-bind="class: 'cc-columns-count-' + columns.length">
+<!-- ko foreach: { data: columns, as: 'column' } -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--default" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } --><div class="cookie-consent-widgets component-styling-wrapper-0" data-bind="class: uniqueWrapperClass">
+<p class="cookie-consent__message text-color-primary" tabindex="-1">
+<span data-bind="
+    html: pageData().cookiePopupMessage" id="cookieConsentMessage" role="document">Cookie Consent</span>
+<!-- ko ifnot: pageData().isCookiePreferencesEnabled-->
+<span>
+<a aria-label="Learn more about the cookie policy" class="cookie-consent__read-more" data-bind="click: openPolicyDialog, text: pageData().cookieLinkText,  i18nAttr: {'aria-label': 'cookie-consent.a11y.learn-more', 'title': 'cookie-consent.a11y.learn-more' }" href="javascript:void(0)" tabindex="0" title="Learn more about the cookie policy">Learn more</a>
+</span>
+<!-- /ko -->
+</p>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- ko component: { name: 'cc-row', params: { row: row, pageData: $parent.pageData, onMessage: $parent.onMessage } } --><div class="cc-row">
+<div class="cc-row__content cc-columns-count-1" data-bind="class: 'cc-columns-count-' + columns.length">
+<!-- ko foreach: { data: columns, as: 'column' } -->
+<!-- ko component: {
+            name: 'cc-column',
+            params: {
+                column: column,
+                pageData: $parent.pageData,
+                onMessage: $parent.onMessage,
+            }
+        } --><div class="cc-column cc-column--default" data-bind="style: { backgroundColor: params.backgroundColor, backgroundImage: backgroundSrc },
+               class: 'cc-column--' + size()" style="background-color: rgba(255, 255, 255, 0);">
+<cc-parallax params="backgroundSrc: backgroundSrc, isParallaxEnabled: isParallaxEnabled"><!-- ko if: isParallaxEnabled --><!-- /ko -->
+</cc-parallax>
+<cc-video-background params="videoUrl: params.backgroundVideo, videoWrapper: true, isFullscreen: false"><!-- ko if: videoUrl --><!-- /ko -->
+</cc-video-background>
+<div class="cc-column__content">
+<!-- ko foreach: { data: components, as: 'component' } -->
+<!-- ko component: { name: component.params.type, params: component } --><div class="cookie-consent-widgets cookie-consent-actions__container component-styling-wrapper-0" data-bind="class: uniqueWrapperClass">
+<div class="app-dialog__buttons-bar font-family-secondary text-color-primary" data-bind="template: template"><div class="cookie-consent__actions-wrapper">
+<div class="cookie-consent__actions">
+<button class="cookie-consent__button button accept app-dialog__footer-button large" data-bind="a11y.setFocusOnClick: { focusOn: '.search-box-compact__field', delay: 700}, click: acceptAll, css: buttonSize" type="button">
+<span class="cookie-consent__button-label" data-bind="text: pageData().acceptButtonLabel">Accept</span>
+</button>
+<!-- ko if: pageData().isDeclineButtonEnabled -->
+<button class="cookie-consent__button button decline app-dialog__footer-button large" data-bind="a11y.setFocusOnClick: { focusOn: '.search-box-compact__field', delay: 700}, click: declineAll, css: buttonSize" type="button">
+<span class="cookie-consent__button-label" data-bind="text: pageData().declineButtonLabel">Decline</span>
+</button>
+<!-- /ko -->
+<!-- ko if: isCookiePreferenceButtonEnabled--><!-- /ko -->
+</div>
+<div>
+<!-- ko if: isCookiePreferenceLinkEnabled--><!-- /ko -->
+</div>
+</div>
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+</article>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko component: 'cookie-policy-modal' --><!-- ko if: viewData.customPage --><!-- /ko -->
+<!-- /ko -->
+<!-- ko component: 'cookie-preferences-modal' --><!-- ko if: viewData.customPage --><!-- /ko -->
+<!-- /ko -->
+<!-- ko component: 'notifications' --><div class="notifications font-family-primary" data-bind="css: { 'notifications--active': showNotifications }, a11y.setInitialFocus: { isVisible: showNotifications, delay: 500, focusOn: '.notifications__remove-item--focus' }" role="alert" tabindex="-1">
+<!-- ko if: showNotifications --><!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- ko component: 'session-expire' --><minimal-dialog params="isVisible: isDialogVisible, cancelBehavior:'none', baseClass: 'session-expire-dialog'"><oj-dialog aria-labelledby="ui-id-2" aria-modal="true" cancel-behavior="none" class="app-dialog font-family-primary session-expire-dialog oj-dialog oj-component oj-component-initnode oj-complete" data-bind="focus: focusCallback,
+        attr:{
+            'aria-label': ariaLabel,
+            'aria-describedby': ariaDescribedBy,
+            'role': role
+        },
+        class: 'app-dialog font-family-primary ' + baseClass,
+        a11y.keysHandler: { keys: 'esc', handler: close },
+        moveChatBot: {
+            shouldMoveChatbot: shouldMoveChatbot
+        },
+        isDialogVisible: {
+            isVisible: isVisible,
+            afterClose: afterClose
+        }" drag-affordance="none" id="ui-id-1" initial-visibility="hide" modality="modeless" on-oj-focus="{{setFocusToBody}}" resize-behavior="none" role="dialog" style="display: none;" tabindex="-1">
+<div class="oj-dialog-container"><div class="oj-dialog-header"><h1 class="oj-dialog-title" id="ui-id-2"> </h1></div><div class="oj-dialog-content oj-dialog-default-content"><div class="oj-dialog-body-wrapper"><div class="oj-dialog-header app-dialog__hide-header oj-dialog-body"></div><div class="app-dialog__wrapper app-dialog__wrapper--align-center oj-dialog-body" data-bind="
+            css: { 'app-dialog__wrapper--active': isVisible },
+            class: 'app-dialog__wrapper--align-' + alignment()
+        ">
+<div class="oj-dialog-body app-dialog__main background-color-dialog session-expire-dialog__main session-expire-dialog__main-center" data-bind="
+                css: baseClass ? baseClass  + '__main ' + baseClass + '__main-' + alignment() : null,
+                a11y.setInitialFocus: {isVisible: isVisible, focusOn: '.app-dialog__content', delay: 1000 },
+                attr: { style: width() ? 'max-width: ' + width() : '' }
+            " style="" tabindex="-1">
+<!-- ko if: !nodes['dialog-bar'] --><!-- /ko -->
+<div slot="header">
+<!-- ko template: { nodes: nodes['dialog-bar'], data: $parent } --><!-- /ko -->
+</div>
+<div slot="body">
+<!-- ko template: { nodes: nodes['dialog-body'], data: $parent } -->
+<div class="app-dialog__header">
+<h1 class="heading" data-bind="i18n: 'general.session-expire.modal.title'">Are You Still With Us?</h1>
+</div>
+<div class="app-dialog__content">
+<i18n params="key: 'general.session-expire.modal.content'"><span data-bind="i18n: {key: key, tokens: tokens}">It seems you've been gone for a while. For security reasons we will end your session automatically in <span data-bind="text: $parent.counter()" data-i18n-token="countdown">03:00</span> unless you would like to continue working.</span>
+</i18n>
+</div>
+<div class="app-dialog__footer">
+<div class="app-dialog__buttons-bar font-family-secondary text-color-primary">
+<button class="button app-dialog__footer-button" data-bind="click: signOut">
+<span class="button__label" data-bind="i18n: 'general.session-expire.modal.end-session-button'">End Session</span>
+</button>
+<button class="button app-dialog__footer-button theme-color-1" data-bind="click: continueWorking">
+<span class="button__label" data-bind="i18n: 'general.session-expire.modal.continue-button'">Continue Working</span>
+</button>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</div><div class="app-dialog__background oj-dialog-body" data-bind="
+            attr: { style: opacity() ? 'opacity: ' + opacity() : '' },
+            css: { 'app-dialog__background--no-animation': opacity() }
+        " style=""></div></div></div></div></oj-dialog>
+</minimal-dialog>
+<!-- /ko -->
+<!-- ko component: 'oda-summary' --><minimal-dialog params="isVisible: isDialogVisible"><oj-dialog aria-labelledby="ui-id-5" aria-modal="true" cancel-behavior="none" class="app-dialog font-family-primary oj-dialog oj-component oj-component-initnode oj-complete" data-bind="focus: focusCallback,
+        attr:{
+            'aria-label': ariaLabel,
+            'aria-describedby': ariaDescribedBy,
+            'role': role
+        },
+        class: 'app-dialog font-family-primary ' + baseClass,
+        a11y.keysHandler: { keys: 'esc', handler: close },
+        moveChatBot: {
+            shouldMoveChatbot: shouldMoveChatbot
+        },
+        isDialogVisible: {
+            isVisible: isVisible,
+            afterClose: afterClose
+        }" drag-affordance="none" id="ui-id-4" initial-visibility="hide" modality="modeless" on-oj-focus="{{setFocusToBody}}" resize-behavior="none" role="dialog" style="display: none;" tabindex="-1">
+<div class="oj-dialog-container"><div class="oj-dialog-header"><h1 class="oj-dialog-title" id="ui-id-5"> </h1></div><div class="oj-dialog-content oj-dialog-default-content"><div class="oj-dialog-body-wrapper"><div class="oj-dialog-header app-dialog__hide-header oj-dialog-body"></div><div class="app-dialog__wrapper app-dialog__wrapper--align-center oj-dialog-body" data-bind="
+            css: { 'app-dialog__wrapper--active': isVisible },
+            class: 'app-dialog__wrapper--align-' + alignment()
+        ">
+<div class="oj-dialog-body app-dialog__main background-color-dialog" data-bind="
+                css: baseClass ? baseClass  + '__main ' + baseClass + '__main-' + alignment() : null,
+                a11y.setInitialFocus: {isVisible: isVisible, focusOn: '.app-dialog__content', delay: 1000 },
+                attr: { style: width() ? 'max-width: ' + width() : '' }
+            " style="" tabindex="-1">
+<!-- ko if: !nodes['dialog-bar'] --><!-- /ko -->
+<div slot="header">
+<!-- ko template: { nodes: nodes['dialog-bar'], data: $parent } -->
+<div class="app-dialog__bar text-color-secondary">
+<button class="app-dialog__close" data-bind="click: () =&gt; action('Decline'), i18nAttr: {'title': 'general.cancel-button'}" title="Cancel"></button>
+</div>
+<!-- /ko -->
+</div>
+<div slot="body">
+<!-- ko template: { nodes: nodes['dialog-body'], data: $parent } -->
+<div class="app-dialog__header">
+<h1 class="heading" data-bind="i18n : 'chatbot.popup.work-summary.header'">Work Summary</h1>
+</div>
+<div class="app-dialog__content">
+<p class="oda-dialog__hint" data-bind="i18n: 'chatbot.popup.work-summary.edit-hint'" style="text-align: center">This summary is generated by AI Assist. Click inside the summary text box to make changes as necessary.</p>
+<oj-text-area class="oda-dialog-text-area__content oj-textarea oj-form-control oj-component oj-text-field oj-has-no-value oj-maxrows-neg1 oj-complete" id="textArea" max-rows="-1" value="{{body}}"><div class="oj-text-field-container" role="presentation" style="resize: none;"><div class="oj-text-field-middle"><textarea class="oj-textarea-input oj-text-field-input oj-component-initnode" data-oj-internal="" id="textArea|input" placeholder="" style="height: 56.5px;">
+            </textarea></div></div><div class="oj-user-assistance-inline-container oj-reflow" id="ui-id-3"></div></oj-text-area>
+</div>
+<div class="app-dialog__footer">
+<div class="app-dialog__buttons-bar font-family-secondary text-color-primary">
+<button class="button app-dialog__footer-button" data-bind="click: () =&gt; action('Decline')">
+<span class="button__label" data-bind="i18n: 'chatbot.popup.work-summary.discard-button-label'">Discard</span>
+</button>
+<button class="button app-dialog__footer-button" data-bind="click: () =&gt; action('Accept')">
+<span class="button__label" data-bind="i18n : 'chatbot.popup.work-summary-add-button-label'">Add Summary</span>
+</button>
+</div>
+</div>
+<!-- /ko -->
+</div>
+</div>
+</div><div class="app-dialog__background oj-dialog-body" data-bind="
+            attr: { style: opacity() ? 'opacity: ' + opacity() : '' },
+            css: { 'app-dialog__background--no-animation': opacity() }
+        " style=""></div></div></div></div></oj-dialog>
+</minimal-dialog>
+<!-- /ko -->
+<!--ko component: 'accessibility-messages' --><div aria-live="polite" aria-relevant="additions" class="oj-helper-hidden-accessible" data-bind="accessibleMessage: status" role="status"></div>
+<div aria-live="assertive" aria-relevant="additions" class="oj-helper-hidden-accessible" data-bind="accessibleMessage: alert" role="alert"></div>
+<!-- /ko -->
+<!-- /ko -->
+<!--/ko--></div>
+<div aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible" role="status"></div><div aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible" role="status"></div></body></html>
