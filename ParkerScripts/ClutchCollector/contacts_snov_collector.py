@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SNOVIO_CLIENT_ID = "96f1af48ae5a9074a70a3b1833069948"
-SNOVIO_CLIENT_SECRET = "ccbfa0a52aef3554712a26c5e7d11717"
 
 def get_access_token():
     params = {
