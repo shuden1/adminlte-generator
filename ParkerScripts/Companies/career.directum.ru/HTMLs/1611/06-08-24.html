@@ -1,0 +1,602 @@
+<html lang="ru"><head>
+<title>Вакансии - Карьера в Directum</title>
+<link href="/app/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/app/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/dist/build.min.css?v=XhAcxEBuxiuBT4WsF-s1z4EtF8ehBgcbNrjC8FKKVsQ" rel="stylesheet"/>
+</head>
+<body class="page">
+<header class="header" id="header">
+<div class="header__inner">
+<button class="humburger d-lg-none js-menu-toggle" data-target="headerMenu">
+<svg class="humburger__icon" viewbox="0 0 100 100" width="80">
+<path class="line top" d="m 30,33 h 40 c 0,0 8.5,-0.68551 8.5,10.375 0,8.292653 -6.122707,9.002293 -8.5,6.625 l -11.071429,-11.071429"></path>
+<path class="line middle" d="m 70,50 h -40"></path>
+<path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.68551 8.5,-10.375 0,-8.292653 -6.122707,-9.002293 -8.5,-6.625 l -11.071429,11.071429"></path>
+</svg>
+</button>
+<a class="header__logo" href="/">
+<svg class="icon icon__logo"><use xlink:href="/dist/icon.svg#logo"></use></svg>
+</a>
+<div class="header__menu" id="headerMenu">
+<div class="form-inline header__menu_search js-search-go d-none">
+<input class="form-control" placeholder="Поиск вакансий" type="text"/>
+<a class="btn btn-primary ml-4 js-search-btn" href="#">Найти</a>
+</div>
+<ul class="header__menu_list mx-2 my-2 py-1 mx-md-0 my-md-0 py-md-0">
+<li class="header__menu_item">
+<a class="header__menu_item_link px-md-4 py-2 py-md-0 my-1 my-md-0" href="/">Карьера</a>
+</li>
+<li class="header__menu_item active">
+<a class="header__menu_item_link px-md-4 py-2 py-md-0 my-1 my-md-0" href="/vacancy">Вакансии</a>
+</li>
+<li class="header__menu_item">
+<a class="header__menu_item_link px-md-4 py-2 py-md-0 my-1 my-md-0" href="/life">Жизнь в Directum</a>
+</li>
+<li class="header__menu_item">
+<a class="header__menu_item_link px-md-4 py-2 py-md-0 my-1 my-md-0" href="/question">Вопросы и ответы</a>
+</li>
+</ul>
+</div>
+<div class="form-inline header__menu_search_mobile pr-3 js-search-go d-none">
+<input class="form-control flex-fill" placeholder="Поиск вакансий" type="text"/>
+<a class="btn pl-1 py-1 pr-0 ml-2 js-search-cross" href="#">
+<svg class="icon icon__cross"><use xlink:href="/dist/icon.svg#cross"></use></svg>
+</a>
+<a class="btn pl-1 py-1 pr-0 ml-2 js-search-btn" href="#">
+<svg class="icon icon__search"><use xlink:href="/dist/icon.svg#search"></use></svg>
+</a>
+</div>
+<button class="header__search_btn js-vacancy-search">
+<svg class="icon icon__search"><use xlink:href="/dist/icon.svg#search"></use></svg>
+<svg class="icon icon__cross d-none"><use xlink:href="/dist/icon.svg#cross"></use></svg>
+</button>
+</div>
+</header>
+<section class="page__content">
+<div class="content-block__header content-block__header_vacancy">
+<div class="container">
+<h1>Присоединяйся<br/>к команде профессионалов!</h1>
+<div class="vacancy-filter form-inline d-none d-md-flex justify-content-between flex-nowrap"><select class="vacancy-filter_directions form-control mr-md-3 mb-3 mb-md-0 flex-fill">
+<option>Все направления</option>
+<option>Разработка</option>
+<option>Тестирование</option>
+<option>Техподдержка</option>
+<option>Внедрение и сопровождение</option>
+<option>Маркетинг</option>
+<option>Продажи и работа с партнерами</option>
+<option>Работа с персоналом</option>
+<option>Развитие решений и продуктов</option>
+</select><select class="vacancy-filter_city form-control mr-md-3 mb-3 mb-md-0 flex-fill js-vacancy-tags">
+<option>Все города</option>
+<option>Ижевск</option>
+<option>Уфа</option>
+<option>Москва</option>
+<option>Удалённая работа</option>
+</select><input class="form-control flex-fill js-search-vacancy" placeholder="Поиск вакансии" type="text"/></div>
+</div>
+</div>
+<div class="container d-md-none">
+<div class="vacancy-filter form-inline d-flex mt-2"><select class="vacancy-filter_directions form-control mr-0 mr-sm-3 mb-3 mb flex-fill">
+<option>Все направления</option>
+<option>Разработка</option>
+<option>Тестирование</option>
+<option>Техподдержка</option>
+<option>Внедрение и сопровождение</option>
+<option>Маркетинг</option>
+<option>Продажи и работа с партнерами</option>
+<option>Работа с персоналом</option>
+<option>Развитие решений и продуктов</option>
+</select><select class="vacancy-filter_city form-control mb-3 flex-fill js-vacancy-tags">
+<option>Все города</option>
+<option>Ижевск</option>
+<option>Уфа</option>
+<option>Москва</option>
+<option>Удалённая работа</option>
+</select><input class="form-control flex-fill js-search-vacancy" placeholder="Поиск вакансии" type="text"/></div>
+</div>
+<div class="container pt-4 mt-2 mt-md-0 pt-md-5 pb-3">
+<div class="filterResult d-none">
+<h4 class="pb-2 mb-1">Вакансии:</h4>
+<div class="text-line mb-3 mb-md-4"></div>
+<div class="filterResultList"></div>
+<a class="d-inline-block pt-2" href="#show_all" onclick="Tags.clearResult(); return false;">Вернуть полный список</a></div>
+<div class="vacancy-list" style=""><h4 class="pb-2 mb-1">Разработка</h4>
+<div class="text-line mb-3 mb-md-4"></div>
+<div class="vacancy-list_item pb-3 mb-2">
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/razrab_1C">Разработчик 1С</a>
+<span class="vacancy-link__new">new</span>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/ML">Инженер машинного обучения</a>
+<span class="vacancy-link__new">new</span>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Удалённая работа" href="#filter_city">
+                                    Удалённая работа
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/developer_C">Программист С#</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Удалённая работа" href="#filter_city">
+                                    Удалённая работа
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/teamlead_razrabotka_vnedrenie">Тимлид разработки на проекты внедрения</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/fullstack_frontend">Fullstack-разработчик/Frontend</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Удалённая работа" href="#filter_city">
+                                    Удалённая работа
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/net_razrabotchik">.NET-разработчик</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Удалённая работа" href="#filter_city">
+                                    Удалённая работа
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/middle_senior_net_razrabotchik">Middle/Senior .NET-разработчик</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Удалённая работа" href="#filter_city">
+                                    Удалённая работа
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/analitik_v_komandu_razrabotki">Аналитик в команду разработки</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+</div>
+<h4 class="pb-2 mb-1">Тестирование</h4>
+<div class="text-line mb-3 mb-md-4"></div>
+<div class="vacancy-list_item pb-3 mb-2">
+<div class="no-vacancy mb-3 mb-md-4">
+                Сейчас открытых вакансий на это направление нет.
+                <div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<h4 class="pb-2 mb-1">Техподдержка</h4>
+<div class="text-line mb-3 mb-md-4"></div>
+<div class="vacancy-list_item pb-3 mb-2">
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/specialist_tex_podderzhki_ekosystem">Специалист технической поддержки экосистемы цифровых решений</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+</div>
+<h4 class="pb-2 mb-1">Маркетинг</h4>
+<div class="text-line mb-3 mb-md-4"></div>
+<div class="vacancy-list_item pb-3 mb-2">
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/smm">SMM-менеджер</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/pr_specialist">PR-специалист</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+</div>
+<h4 class="pb-2 mb-1">Продажи и работа с партнерами</h4>
+<div class="text-line mb-3 mb-md-4"></div>
+<div class="vacancy-list_item pb-3 mb-2">
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/dogovornaya_rabota">Специалист по договорной работе</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/Business_Development_Manager">Business Development Manager в Узбекистане</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Удалённая работа" href="#filter_city">
+                                    Удалённая работа
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/Msk_manager_po_razvitiu_klientov">Менеджер по развитию клиентов</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Москва" href="#filter_city">
+                                    Москва
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/manager_udalennyih_prodazh">Менеджер удалённых продаж</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/menedger_po_prodazham">Менеджер по продажам</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Удалённая работа" href="#filter_city">
+                                    Удалённая работа
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/menedzher_telemarketinga">Менеджер телемаркетинга</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/Menedjer_po_soprovojdeniyu_klientov_Directum">Менеджер по сопровождению клиентов Directum</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+</div>
+<h4 class="pb-2 mb-1">Внедрение и сопровождение</h4>
+<div class="text-line mb-3 mb-md-4"></div>
+<div class="vacancy-list_item pb-3 mb-2">
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/Implementation_project_consultant">Консультант проектов внедрения</a>
+<span class="vacancy-link__new">new</span>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/inzhener_po_proektirovaniu">Инженер по проектированию инсталляций и внедрению продуктов Directum</a>
+<span class="vacancy-link__new">new</span>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/analitik_vnedrenie">Бизнес-аналитик проектов внедрения</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Удалённая работа" href="#filter_city">
+                                    Удалённая работа
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/rukovoditel_proektov_vnedrenija">Руководитель проектов внедрения</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Удалённая работа" href="#filter_city">
+                                    Удалённая работа
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+</div>
+<h4 class="pb-2 mb-1">Работа с персоналом</h4>
+<div class="text-line mb-3 mb-md-4"></div>
+<div class="vacancy-list_item pb-3 mb-2">
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/Finansist">Руководитель группы бюджетирования </a>
+<span class="vacancy-link__new">new</span>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/Biznes-trener">Бизнес-тренер</a>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+<div class="row mb-3 mb-md-4 js-vacancy-item">
+<div class="col-md-8 vacancy-link__name pb-2 pb-md-0 d-flex">
+<a class="vacancy-link" href="/HR_manager">Менеджер по подбору персонала</a>
+<span class="vacancy-link__new">new</span>
+</div>
+<div class="col-md-2 vacancy-link__city">
+<a class="vacancy-link js-select-tag" data-tag="Ижевск" href="#filter_city">
+                                    Ижевск
+                                </a>
+<div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div>
+</div>
+<h4 class="pb-2 mb-1">Развитие решений и продуктов</h4>
+<div class="text-line mb-3 mb-md-4"></div>
+<div class="vacancy-list_item pb-3 mb-2">
+<div class="no-vacancy mb-3 mb-md-4">
+                Сейчас открытых вакансий на это направление нет.
+                <div class="d-md-none pb-3 vacancy-line"></div>
+</div>
+</div></div>
+</div>
+<div class="footer-form footer-form_vac">
+<div class="container">
+<h2 class="content-block__title pb-md-4 mb-3 text-white">Не нашли подходящую вакансию?</h2>
+<div class="footer-form__inner">
+<div class="footer-form__aside">
+<p>Оставьте свои контактные данные через форму справа.</p>
+<p>Мы обязательно ответим вам в течение 3-х рабочих дней.</p>
+<p>
+<a class="btn btn-icon btn-recommend" href="/recommend">
+<svg class="icon icon__recommend mr-2"><use xlink:href="/dist/icon.svg#recommend"></use></svg>
+<span>Рекомендовать друга</span>
+</a>
+</p>
+</div>
+<div class="footer-form__content">
+<div class="form-area" data-mail-template="FormSectionAnswerEmail" data-response-template="FormSectionAnswer" data-subject="Отправка резюме на сайт career.directum.ru" data-user-email="vacEmail" id="vacSection">
+<div class="form-area-wrapper">
+<div class="form-send-to" data-email="job@directum.ru" data-send-log="false" data-template="FormSectionData">
+</div>
+<input data-label="Страница" data-span-name="url" type="hidden" value="https://career.directum.ru/vacancy"/>
+<div class="form-group">
+<input class="required footer-form__control form-control" data-label="ФИО" data-span-name="name" id="vacName" placeholder="ФИО*" type="text" value=""/>
+</div>
+<div class="form-group">
+<input class="required footer-form__control form-control" data-label="E-mail" data-span-name="email" data-valid="is-email" id="vacEmail" placeholder="E-mail*" type="text" value=""/>
+</div>
+<div class="form-group">
+<input class="footer-form__control form-control" data-label="Ссылка на резюме" data-span-name="resume" id="vacLink" placeholder="Ссылка на резюме" type="text" value=""/>
+</div>
+<div class="form-group">
+<div class="input-file form__file form__file_ligth" data-value="">
+<a class="" href="#attach_file" onclick="Form().attach(this); return false;">
+<svg class="icon icon__attach"><use xlink:href="/dist/icon.svg#attach"></use></svg>
+<span>Приложить резюме</span>
+</a>
+<span class="input-file-target"></span>
+</div>
+</div>
+<div class="form-group">
+<div class="custom-control custom-checkbox">
+<input class="custom-control-input required" data-label="Согласие на обработку персональных данных" data-span-name="" id="vacAgree" type="checkbox" value=""/>
+<label class="custom-control-label" for="vacAgree">
+                                            Соглашаюсь на <a href="https://www.directum.ru/privacy_policy" target="_blank">обработку моих персональных данных</a>.
+                                        </label>
+</div>
+</div>
+<div class="form-group text-center">
+<a class="btn btn-primary" href="#" onclick="Form().send(this, true, formHideAround, false); return false;">Отправить</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="footer">
+<div class="container">
+<h3 class="footer__title mb-4">Присоединяйтесь к нам в соцсетях:</h3>
+<div class="footer__social">
+<a class="footer__social_item footer__social_item_vk" href="//vk.com/directum_people" target="_blank">
+<svg class="icon icon__vk"><use xlink:href="/dist/icon.svg#vk"></use></svg>
+</a>
+</div>
+<div class="row footer__contact flex-lg-nowrap justify-content-lg-between">
+<div class="footer__contact_item">
+<p class="footer__title mb-2">Ижевск:</p>
+<p><a href="mailto:job@directum.ru">job@directum.ru</a></p>
+<p><a href="tel:+73412722221">+7 (3412) 72-22-21</a></p>
+<p>г.Ижевск, пер.Северный, д.61.</p>
+</div>
+<div class="footer__contact_item">
+<p class="footer__title mb-2">Москва:</p>
+<p><a href="mailto:Vychegzhanina_DI@directum.ru">vychegzhanina_di@directum.ru</a></p>
+<p><a href="tel:+74992771560">+ 7 (499) 277-15-60</a></p>
+<p>г.Москва, проспект Андропова, д.18, корп.7, 6 этаж, «Технопарк Нагатино <nobr>i-Land</nobr>». Станция м.Технопарк.</p>
+</div>
+<div class="footer__contact_item">
+<p class="footer__title mb-2">Уфа:</p>
+<p><a href="mailto:badertdinova_yv@directum.ru">badertdinova_yv@directum.ru</a></p>
+<p><a href="tel:+79270804309">+7 (927) 08-04-309</a></p>
+<p>г.Уфа, ул.Менделеева, 134/7, офис 308, 3 этаж. <nobr>Бизнес-центр</nobr> Территория 3000.</p>
+</div>
+<div class="footer__contact_item">
+<p class="footer__title mb-2">Тюмень:</p>
+<p><a href="mailto:job@directum.ru">job@directum.ru</a></p>
+<p><a href="tel:+73452500357">+7 (3452) 500-357</a></p>
+<p>г.Тюмень, ул.Пермякова 7, пом.1 </p>
+</div>
+</div>
+</div>
+</footer>
+<div class="social-block" style="top: -240.484px;">
+<a class="social-block__item" href="//vk.com/directum_people" target="_blank">
+<svg class="icon icon__vk"><use xlink:href="/dist/icon.svg#vk"></use></svg>
+</a>
+</div>
+<div id="connection">
+<div class="connection__inner">
+<span class="connection__close">
+<svg class="icon icon__cross"><use xlink:href="/dist/icon.svg#cross"></use></svg>
+</span>
+<div class="form-area" data-mail-template="FormConnectionAnswerClient" data-response-template="FormConnectionAnswer" data-subject="Обращение на career.directum.ru" data-user-email="connectionEmail" id="connection__form">
+<div class="connection__form_wrapper">
+<div class="form-area-wrapper">
+<div class="text-center mb-3">
+<h4>Отправить резюме</h4>
+</div>
+<div class="form-send-to" data-email="job@directum.ru" data-send-log="false" data-template="FormConnectionData">
+</div>
+<div class="form-group">
+<input class="required modal__form-control form-control" data-label="ФИО" data-span-name="name" id="connectionName" placeholder="ФИО*" type="text" value=""/>
+</div>
+<div class="form-group">
+<input class="required modal__form-control form-control" data-label="E-mail" data-span-name="email" data-valid="is-email" id="connectionEmail" placeholder="E-mail*" type="text" value=""/>
+</div>
+<div class="form-group">
+<div class="input-file form__file form__file_dark" data-value="">
+<a class="" href="#attach_file" onclick="Form().attach(this); return false;">
+<svg class="icon icon__attach"><use xlink:href="/dist/icon.svg#attach"></use></svg>
+<span>Приложить резюме</span>
+</a>
+<span class="input-file-target"></span>
+</div>
+</div>
+<div class="form-group">
+<textarea class="modal__form-control form-control" data-label="Комментарий" data-span-name="comment" id="connectionComment" placeholder="Комментарий"></textarea>
+</div>
+<div class="form-group">
+<div class="custom-control custom-checkbox">
+<input class="custom-control-input required" data-label="Согласие на обработку персональных данных" data-span-name="" id="connectionAgree" type="checkbox" value=""/>
+<label class="custom-control-label custom-control-label_dark" for="connectionAgree">
+								Соглашаюсь на <a href="https://www.directum.ru/privacy_policy" target="_blank">обработку моих персональных данных</a>.
+							</label>
+</div>
+</div>
+<input data-label="Страница" data-span-name="url" type="hidden" value="https://career.directum.ru/vacancy"/>
+<br/>
+<div class="form-group text-center">
+<a class="btn btn-primary" href="#" onclick="Form().send(this, true, ConnectionBtn.reset); return false;">Отправить</a>
+</div>
+</div>
+<div class="form-msg"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Yandex.Metrika counter -->
+<noscript><div><img alt="" src="https://mc.yandex.ru/watch/47137377" style="position:absolute; left:-9999px;"/></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!-- Yandex.Metrika counter -->
+<noscript><div><img alt="" src="https://mc.yandex.ru/watch/47137377" style="position:absolute; left:-9999px;"/></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<div class="fade show" id="cookieConsent" role="alert">
+<div class="container d-flex">
+<div>
+				Для удобства пользователей сайта ООО «ДИРЕКТУМ» поддерживается технология cookie
+				(файл с информацией о предыдущих посещениях). С целью совершенствования
+				интернет-ресурса могут использоваться сервисы Яндекс.Метрика, Google Analytics. Чтобы
+				исключить использование персональных данных, пользователь сайта вправе
+				отключить/запретить сохранение файлов cookie в настройках программы или использовать
+				режим «инкогнито» интернет-браузера.
+			</div>
+<div class="ml-3">
+<a aria-label="Close" data-cookie-string=".AspNet.Consent=yes; expires=Wed, 06 Aug 2025 08:44:06 GMT; path=/; samesite=strict" data-dismiss="alert" href="#cookie" onclick="return false;">
+<span aria-hidden="true">
+<svg class="icon icon__cookie-close"><use xlink:href="/dist/icon.svg#cookie-close"></use></svg>
+</span>
+</a>
+</div>
+</div>
+</div>
+<a class="top-scroller js-scroller-anchor" href="#header" id="topScroller" style="">
+<svg class="icon icon__arrow-top mr-md-2"><use xlink:href="/dist/icon.svg#arrow-top"></use></svg>
+<span class="d-none d-md-inline">Наверх</span>
+</a>
+</body></html>

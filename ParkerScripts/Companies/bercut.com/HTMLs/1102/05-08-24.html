@@ -1,0 +1,940 @@
+<html class="bx-core bx-win bx-no-touch bx-no-retina bx-chrome"><head>
+<link href="/bitrix/js/ui/design-tokens/dist/ui.design-tokens.min.css?169649992322029" rel="stylesheet" type="text/css"/>
+<link data-template-style="true" href="/bitrix/cache/css/s1/bercut/template_ea3a934df54ce2d40739b9f0ee4efe52/template_ea3a934df54ce2d40739b9f0ee4efe52_v1.css?1718701292595391" rel="stylesheet" type="text/css"/>
+<link data-template-style="true" href="/bitrix/panel/main/popup.min.css?169649986520774" rel="stylesheet" type="text/css"/>
+<title> Найти вакансии | Работа в компании Bercut</title>
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/upload/resize_cache/webp//apple-touch-icon.webp" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/upload/resize_cache/webp//favicon-32x32.webp" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/upload/resize_cache/webp//favicon-16x16.webp" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<!--<script src="/local/templates/bercut/static/dist/js/vendors~index.chunk.js" defer></script>-->
+<!--<script src="/local/templates/bercut/static/dist/js/index.js" defer></script>-->
+<!-- Yandex.Metrika counter --> <noscript><div><img alt="" src="https://mc.yandex.ru/watch/44445856" style="position:absolute; left:-9999px;"/></div></noscript> <!-- /Yandex.Metrika counter -->
+<noscript><img alt="" src="https://vk.com/rtrg?p=VK-RTRG-1476654-2QlcC" style="position:fixed; left:-999px;"/></noscript>
+<!-- Google tag (gtag.js) -->
+<!-- Google Tag Manager -->
+<!-- End Google Tag Manager -->
+</head>
+<body class="body bg-white" style=""><noscript><img alt="" height="0" src="/b7a8854df5b29f34f3d95eb3630fd60a.gif" width="0"/></noscript>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-N5PHSQ9" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="panel">
+</div>
+<div class="page">
+<header class="header">
+<div class="header__container">
+<div class="header__cnt">
+<a class="logo" href="/">
+<img alt="bercut" src="/local/templates/bercut/static/dist/img/logo/logo.svg"/>
+</a>
+<nav class="header__nav">
+<div class="burger">
+<div class="burger__item top"></div>
+<div class="burger__item bottom"></div>
+</div>
+<ul class="header__list">
+<li class="header__list-item">
+<span class="menu-products header__list-link cursor-pointer">Продукты</span>
+</li>
+<li class="header__list-item">
+<span class="header__list-link link_disabled">Карьера</span>
+</li>
+<li class="header__list-item">
+<a class="header__list-link" href="/media-center/">Медиацентр</a>
+</li>
+</ul>
+</nav>
+<nav aria-hidden="true" class="menu">
+<div class="container">
+<ul class="menu__list">
+<li class="menu__item">
+<div class="menu__link">
+<a class="menu__link" href="/company/">О компании</a>
+</div>
+</li>
+<li class="menu__item parent menu__item_sub">
+<div class="menu__link">
+<a class="menu__link menu-products menu__item_sub" href="">Продукты</a>
+</div>
+</li>
+<li class="menu__item parent menu__item_sub">
+<div class="menu__link">
+<a class="menu__link menu__link menu-service menu__item_sub" href="">Услуги</a>
+</div>
+</li>
+<li class="menu__item">
+<div class="menu__link">
+<a class="menu__link current" href="/career/">Карьера</a>
+</div>
+</li>
+<li class="menu__item">
+<div class="menu__link">
+<a class="menu__link" href="/media-center/">Медиацентр</a>
+</div>
+</li>
+<li class="menu__item">
+<div class="menu__link">
+<a class="menu__link" href="/blog/">Блог</a>
+</div>
+</li>
+<li class="menu__item">
+<div class="menu__link">
+<a class="menu__link" href="/stories/">Истории успеха</a>
+</div>
+</li>
+<li class="menu__item">
+<div class="menu__link">
+<a class="menu__link" href="/purchases/">Закупки</a>
+</div>
+</li>
+<li class="menu__item">
+<div class="menu__link">
+<a class="menu__link" href="/contacts/">Контакты</a>
+</div>
+</li>
+</ul>
+<div class="menu__control">
+<div class="menu__control-item">
+<a class="btn bg-transparent border-third-blue btn-tiny" href="https://support.bercut.com/" target="_blank">Техподдержка</a>
+<form action="/search/" class="search-hidden">
+<fieldset class="input">
+<input class="input__item" name="q" type="text"/>
+</fieldset>
+<button class="search-hidden__button" name="s" type="submit">
+</button>
+<input name="csrftoken" type="hidden" value="17e8d264df279f0f07ccfdaf44b0efcc6c2fd731be8f15ef9cd60a9cedb2dcef4bb3b0f8ed072ec3"/></form> </div>
+<div class="custom-select bordered">
+<div aria-expanded="false" aria-haspopup="true" class="choices select-choices" data-type="select-one" role="listbox" tabindex="0"><div class="choices__inner"><select class="select lang choices__input" data-choice="active" data-select="chooseLanguage" hidden="" name="choose-language" tabindex="-1"><option data-custom-properties="[object Object]" value="0">RU</option></select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__item--selectable" data-custom-properties="[object Object]" data-id="1" data-item="" data-value="0">RU</div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-select-text="" data-value="local/include/lang_redirect.php?page=/en/career/vacancy" id="choices--choose-language-1s-item-choice-1" role="option">EN</div><div class="choices__item choices__item--choice is-selected choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-select-text="" data-value="0" id="choices--choose-language-1s-item-choice-2" role="option">RU</div></div></div></div>
+</div>
+</div>
+<div class="menu__footer menu__item">
+<div class="social">
+<a href="https://vk.com/bercut_team" target="_blank">
+<svg data-name="Layer 1" height="24px" id="Layer_1" viewbox="0 0 23 23" width="24px" xmlns="http://www.w3.org/2000/svg"><defs></defs><path class="cls-1" d="M3.88,7C4,13,7,16.57,12.24,16.57h.3V13.15a4.72,4.72,0,0,1,4,3.42h2.72a7.54,7.54,0,0,0-3.93-4.8A7.33,7.33,0,0,0,18.65,7H16.18c-.54,1.89-2.13,3.62-3.64,3.78V7H10.06v6.63C8.53,13.24,6.59,11.39,6.51,7ZM1.62,1.62C0,3.23,0,5.84,0,11V12c0,5.2,0,7.81,1.62,9.42S5.84,23,11,23H12c5.2,0,7.81,0,9.42-1.62S23,17.16,23,12V11c0-5.2,0-7.81-1.62-9.42S17.16,0,12,0H11C5.84,0,3.23,0,1.62,1.62Z"></path></svg> </a>
+<a href="https://t.me/bercutteam" target="_blank">
+</a>
+</div> <a class="link" href="tel:88123273233">
+           +7 (812) 327-32-33    </a>
+<a class="link" href="mailto:info@bercut.com">
+        info@bercut.com    </a>
+</div>
+<div class="menu__country">
+<div class="menu__country-wrap">
+<img alt="" class="image" src="/local/templates/bercut/static/dist/img/other/country.svg"/>
+<div class="marker">
+<span class="icon size-57x57">
+<img alt="map_marker" src="/local/templates/bercut/svg/map_marker.svg"/>
+</span>
+<div class="marker__cnt">
+<div class="marker__title">Лахтинский 85, корп. 3, стр. 1</div>
+<div class="marker__description">Санкт-Петербург, Россия, 197229</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-hidden="true" class="menu-product">
+<div class="container">
+<button class="menu-product__back" type="button">Продукты</button>
+<ul class="menu-product__list">
+<li class="menu-product__item" style="transition-delay: 0s;">
+<div class="menu-product__link">
+<a class="menu-product__link" href="/products/convergent-bss/">Convergent BSS</a>
+<ul class="menu-product__sub">
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/in-voice/">IN@Voice </a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/care-mobile/">Self-care mobile (CareM)</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/mobile-number-portability/">Mobile Number Portability</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/space/">SPACE</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/unified-payment-system/">Unified Payment System</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/bercut-test-engine/">Bercut Test Engine</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/bercut-interconnect/">Bercut Interconnect</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-product__item" style="transition-delay: 0.05s;">
+<div class="menu-product__link">
+<a class="menu-product__link" href="/products/importozameshchenie/">Продукты в реестре РПО</a>
+<ul class="menu-product__sub">
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/in-voice/">IN@Voice </a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/business-rules-engine/">Business Rules Engine</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/intelligent-network-services-in-services/">Intelligent network services (IN services)</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/hybrid-integration-platform/">Hybrid Integration Platform</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/care-mobile/">Self-care mobile (CareM)</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/short-message-service-centre/">Message service centre</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/hlr-hss-bercut/">HLR/HSS Bercut</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-product__item" style="transition-delay: 0.1s;">
+<div class="menu-product__link">
+<a class="menu-product__link" href="/products/intelligent-network-services-in-services/">Intelligent network services (IN services)</a>
+<ul class="menu-product__sub">
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/branch-roaming-gateway/">Branch Roaming Gateway</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/roaming-steering/">Roaming Steering</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/mchs-112/">МЧС-112</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/5g-keysy/">5G-кейсы</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-product__item" style="transition-delay: 0.15s;">
+<div class="menu-product__link">
+<a class="menu-product__link" href="/products/policy-and-charging-rules-function/">Policy and Charging Rules Function</a>
+<ul class="menu-product__sub">
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/5g-keysy/">5G-кейсы</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-product__item" style="transition-delay: 0.2s;">
+<div class="menu-product__link">
+<a class="menu-product__link" href="/products/dra-bercut/">DRA Bercut</a>
+</div>
+</li>
+<li class="menu-product__item" style="transition-delay: 0.25s;">
+<div class="menu-product__link">
+<a class="menu-product__link" href="/products/hybrid-integration-platform/">Hybrid Integration Platform</a>
+<ul class="menu-product__sub">
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/hip-esb/">HIP</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/business-rules-engine/">Business Rules Engine</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-product__item" style="transition-delay: 0.3s;">
+<div class="menu-product__link">
+<a class="menu-product__link" href="/products/value-added-services-vas/">Value Added Services (VAS)</a>
+<ul class="menu-product__sub">
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/zero-balance/">Zero Balance</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/fake-call/">Fake Call</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/welcome-sms/">Welcome SMS</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/sms-centre-docs/">Bercut Messaging Centre</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-product__item" style="transition-delay: 0.35s;">
+<div class="menu-product__link">
+<a class="menu-product__link" href="/products/business-intelligence-bi-analytics-suite/">Business Intelligence (BI) &amp; Analytics Suite</a>
+</div>
+</li>
+<li class="menu-product__item" style="transition-delay: 0.4s;">
+<div class="menu-product__link">
+<a class="menu-product__link" href="/products/mvne/">Mobile Virtual Network Enabler (MVNE)</a>
+<ul class="menu-product__sub">
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/convergent-bss/">Convergent BSS</a>
+</li>
+<li class="menu-product__sub-item">
+<a class="menu-product__sub-link" href="/products/value-added-services-vas/">Value Added Services (VAS)</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</nav> <nav aria-hidden="true" class="menu-services">
+<div class="container">
+<button class="menu-services__back" type="button">Услуги</button>
+<ul class="menu-services__list">
+<li class="menu-services__item" style="transition-delay: 0s;">
+<div class="menu-services__link">
+<a class="menu-services__link" href="/services/tekhnicheskaya-podderzhka/">Техническая поддержка</a>
+<ul class="menu-services__sub">
+<li class="menu-services__sub-item">
+<a class="menu-services__sub-link" href="/services/tekhnicheskaya-podderzhka-na-ploshchadke/">Техническая поддержка на площадке</a>
+</li>
+<li class="menu-services__sub-item">
+<a class="menu-services__sub-link" href="/services/tekhnologicheskiy-audit/">Технологический аудит</a>
+</li>
+<li class="menu-services__sub-item">
+<a class="menu-services__sub-link" href="/services/obuchenie/">Обучение</a>
+</li>
+<li class="menu-services__sub-item">
+<a class="menu-services__sub-link" href="/services/servis-avariynoy-pomoshchi/">Сервис аварийной помощи</a>
+</li>
+<li class="menu-services__sub-item">
+<a class="menu-services__sub-link" href="/services/servis-regulyarnoy-pomoshchi/">Сервис регулярной помощи</a>
+</li>
+<li class="menu-services__sub-item">
+<a class="menu-services__sub-link" href="/services/obnovlenie-versiy-po/">Обновление версий ПО</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-services__item" style="transition-delay: 0.05s;">
+<div class="menu-services__link">
+<a class="menu-services__link" href="/services/partnerstvo/">Партнерство </a>
+</div>
+</li>
+</ul>
+</div>
+</nav> <div class="menu-overlay"></div>
+<div class="header__info">
+<a class="link color-dark" href="https://support.bercut.com/" target="_blank">Техподдержка</a>
+<a class="btn bg-third-blue border-third-blue btn-tiny" href="/contacts/">Контакты</a>
+<div class="search-main">
+<form action="/search/" class="search-hidden">
+<fieldset class="input">
+<input class="input__item" name="q" type="text"/>
+</fieldset>
+<button class="search-hidden__button" name="s" type="submit">
+</button>
+<input name="csrftoken" type="hidden" value="17e8d264df279f0f07ccfdaf44b0efcc6c2fd731be8f15ef9cd60a9cedb2dcef4bb3b0f8ed072ec3"/></form> </div>
+</div>
+</div>
+<div class="header__language">
+<div class="custom-select bordered">
+<div aria-expanded="false" aria-haspopup="true" class="choices select-choices" data-type="select-one" role="listbox" tabindex="0"><div class="choices__inner"><select class="select lang choices__input" data-choice="active" data-select="chooseLanguage" hidden="" name="choose-language" tabindex="-1"><option data-custom-properties="[object Object]" value="0">RU</option></select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__item--selectable" data-custom-properties="[object Object]" data-id="1" data-item="" data-value="0">RU</div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-select-text="" data-value="local/include/lang_redirect.php?page=/en/career/vacancy" id="choices--choose-language-ls-item-choice-1" role="option">EN</div><div class="choices__item choices__item--choice is-selected choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-select-text="" data-value="0" id="choices--choose-language-ls-item-choice-2" role="option">RU</div></div></div></div>
+</div> </div>
+</div>
+</header>
+<main>
+<div class="container">
+<nav class="breadcrumb swiper-container-breadcrumb swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events swiper-container-css-mode">
+<ul class="breadcrumb-list swiper-wrapper">
+<li class="breadcrumb-list__item swiper-slide swiper-slide-active" style="margin-right: 18px;">
+<a class="breadcrumb-list__link" href="/" title="Главная">
+                            Главная                        </a>
+</li>
+<li class="breadcrumb-list__item swiper-slide swiper-slide-next" style="margin-right: 18px;">
+<a class="breadcrumb-list__link" href="/career/" title="Приглашаем в команду">
+                            Приглашаем в команду                        </a>
+</li>
+<li class="breadcrumb-list__item swiper-slide">
+<span>Вакансии</span>
+</li>
+</ul>
+</nav>
+</div><section class="vacancy-page__main"><div class="container"><h1 class="vacancy-page__main-title">Вакансии</h1><div class="vacancy-page__main-content"><p class="vacancy-page__main-description">Наши продукты отвечают высоким мировым стандартам. Миллионы людей каждый день пользуются услугами связи благодаря нашему ПО. Любишь сложные задачи? Тогда добро пожаловать в команду Bercut!</p><a class="btn bg-transparent btn-large" href="https://spb.hh.ru/employer/11600" target="_blank">Вакансии на hh.ru</a></div></div></section><section class="vacancy-page__filter">
+<div class="container">
+<div class="vacancy-page__filter-wrapper">
+<form action="" class="select-search" method="GET">
+<div class="custom-select bordered">
+<div aria-expanded="false" aria-haspopup="true" class="choices select-choices" data-type="select-one" role="listbox" tabindex="0"><div class="choices__inner"><select class="select choices__input" data-choice="active" data-select="" hidden="" id="category" name="c" tabindex="-1"><option data-custom-properties="[object Object]" value="">Категория</option></select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-custom-properties="[object Object]" data-id="1" data-item="" data-value="">Категория</div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="5" data-select-text="" data-value="" id="choices--category-item-choice-5" role="option">Категория</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="1" data-select-text="" data-value="52" id="choices--category-item-choice-1" role="option">Административный персонал</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-select-text="" data-value="33" id="choices--category-item-choice-2" role="option">Высший менеджмент</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-select-text="" data-value="51" id="choices--category-item-choice-3" role="option">Закупки</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-select-text="" data-value="32" id="choices--category-item-choice-4" role="option">Информационные технологии, интернет, телеком</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="6" data-select-text="" data-value="37" id="choices--category-item-choice-6" role="option">Маркетинг и PR</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="7" data-select-text="" data-value="36" id="choices--category-item-choice-7" role="option">Продажи</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="8" data-select-text="" data-value="53" id="choices--category-item-choice-8" role="option">Проектный офис</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="9" data-select-text="" data-value="40" id="choices--category-item-choice-9" role="option">Управление персоналом </div></div></div></div>
+</div>
+<fieldset class="input">
+<label class="input__label" for="search">Поиск в вакансиях</label>
+<input class="input__item" id="search" name="q" type="text" value=""/>
+</fieldset>
+<button class="btn bg-third-blue btn-large form-search__button" type="submit">
+                    Искать                </button>
+</form>
+</div>
+</div>
+</section>
+<section class="vacancy-page__qualification">
+<div class="container">
+<h2 class="vacancy-page__qualification-title">Информационные технологии, интернет, телеком</h2>
+<div class="vacancy-page__qualification-list">
+<a class="card-career-h" href="/career/vacancy/head-of-qa-integratsionnoe-testirovanie/">
+<div class="card-career-h__title">Head of QA (Интеграционное тестирование)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3-6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/inzhener-vnedreniya-i-soprovozhdeniya-billing/">
+<div class="card-career-h__title">Инженер внедрения и сопровождения (Billing)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3-6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/systems-analyst-solutions/">
+<div class="card-career-h__title">Systems Analyst (Telecom)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3–6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/systems-architect-oss/">
+<div class="card-career-h__title">Systems Architect (OSS)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3-6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/vedushchiy-tekhnicheskiy-pisatel/">
+<div class="card-career-h__title">Ведущий технический писатель</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3–6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/qa-engineer-telecom/">
+<div class="card-career-h__title">QA Engineer Telecom</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">1–3 года</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/systems-analyst-billing/">
+<div class="card-career-h__title">Systems Analyst (billing)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3-6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/middle-qa-engineer-services/">
+<div class="card-career-h__title">Middle QA Engineer (Services)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">1–3 года</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/product-manager/">
+<div class="card-career-h__title">Product manager (BSS)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3-6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/inzhener-vnedreniya-i-soprovozhdeniya/">
+<div class="card-career-h__title">Инженер внедрения и сопровождения</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3-6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/pl-sql-developer-billing/">
+<div class="card-career-h__title">PL/SQL developer (Billing)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience"> 3–6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/java-developer-services/">
+<div class="card-career-h__title">Java developer (services)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">1–3 года</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/systems-analyst-bss-solution/">
+<div class="card-career-h__title">Middle/Senior systems architect/analyst (BSS solution)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3-6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/middle-senior-qa-engineer-rnd/">
+<div class="card-career-h__title">Middle/Senior QA Automation Engineer (Python)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3–6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/systems-analyst-oss/">
+<div class="card-career-h__title">Systems analyst (OSS)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3–6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/middle-senior-software-developer-lua-rust/">
+<div class="card-career-h__title">Middle/Senior software developer (Lua/Rust)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3-6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/qa-analyst/">
+<div class="card-career-h__title">QA Analyst</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">от 1 года</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/systems-analyst-rnd/">
+<div class="card-career-h__title">Systems Analyst (RnD)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">от 3-х лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+</div>
+</div>
+</section>
+<section class="vacancy-page__qualification">
+<div class="container">
+<h2 class="vacancy-page__qualification-title">Высший менеджмент</h2>
+<div class="vacancy-page__qualification-list">
+<a class="card-career-h" href="/career/vacancy/zamestitel-kommercheskogo-direktora/">
+<div class="card-career-h__title">Заместитель коммерческого директора</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">6-8 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+</div>
+</div>
+</section>
+<section class="vacancy-page__qualification">
+<div class="container">
+<h2 class="vacancy-page__qualification-title">Проектный офис</h2>
+<div class="vacancy-page__qualification-list">
+<a class="card-career-h" href="/career/vacancy/middle-senior-project-manager/">
+<div class="card-career-h__title">Middle/senior project manager</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3-6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+</div>
+</div>
+</section>
+<section class="vacancy-page__qualification">
+<div class="container">
+<h2 class="vacancy-page__qualification-title">Продажи</h2>
+<div class="vacancy-page__qualification-list">
+<a class="card-career-h" href="/career/vacancy/it-sales-manager-b2b-telecom/">
+<div class="card-career-h__title">IT Sales manager (B2B telecom)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3-5 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+<a class="card-career-h" href="/career/vacancy/key-account-manager-telecom/">
+<div class="card-career-h__title">Key account manager (telecom)</div>
+<div class="card-career-h__info">
+<div class="card-career-h__experience">3–6 лет</div>
+<div class="card-career-h__format">
+<span>
+                                        РФ                                    </span>
+</div>
+</div>
+<span class="icon size-40x40">
+<svg fill="currentColor" stroke="currentColor" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28498 3.73311c-.55688-.00328-1.00915.44899-1.00587 1.00586l.02879 4.89279c.00322.54764.44642.99084.99411.99404l13.62019.0802c.8881.0052 1.3292 1.0791.7012 1.7071L1.72528 33.3109c-.39053.3905-.39053 1.0236 0 1.4142l3.43926 3.4392c.39053.3905 1.0237.3905 1.41423 0L27.4769 17.2665c.628-.628 1.7019-.1869 1.7071.7012l.0802 13.62c.0032.5476.4464.9908.9941.994l4.8928.0288c.5569.0033 1.0092-.449 1.0059-1.0058l-.1572-26.72026c-.0032-.54768-.4464-.99087-.9941-.99409L8.28498 3.73311z" stroke-miterlimit="10"></path>
+</svg> </span>
+</a>
+</div>
+</div>
+</section>
+<section class="vacancy-page__subscribe">
+<div class="container">
+<form action="/local/templates/bercut/include/ajax/forms/subscribe.php" class="form-subscribe-us" id="form-subscribe-us" name="form-subscribe-us">
+<h5 class="form-subscribe-us__title">Подпишитесь на нашу рассылку</h5>
+<div class="form-subscribe-us__body">
+<fieldset class="input">
+<label class="input__label" for="email">Электронная почта</label>
+<input class="input__item" data-pristine-email-message="Неверный формат" data-pristine-required-message="Обязательно поле" id="email" name="email" required="" type="email"/>
+</fieldset>
+<input class="g-recaptcha-response" name="g-recaptcha-response" type="hidden"/>
+<button class="btn bg-third-blue btn-large form__button" type="submit">
+                    Подписаться                </button>
+</div>
+<input name="csrftoken" type="hidden" value="17e8d264df279f0f07ccfdaf44b0efcc6c2fd731be8f15ef9cd60a9cedb2dcef4bb3b0f8ed072ec3"/></form>
+</div>
+</section><section class="career-page__contacts">
+<div class="container">
+<form action="/local/templates/bercut/include/ajax/forms/callback.php" class="form-contact-us" id="form-contact-us" name="form-contact-us" novalidate="">
+<h2 class="form-contact-us__title">Связаться с нами</h2>
+<div class="form-contact-us__row">
+<fieldset class="input">
+<label class="input__label" for="name">Ваше имя<span>*</span></label>
+<input class="input__item" data-pristine-required-message="Обязательно поле" id="name" maxlength="220" name="name" required="" type="text"/>
+</fieldset>
+<fieldset class="input">
+<label class="input__label" for="phoneOrMail">Телефон / Электронная почта<span>*</span></label>
+<input class="input__item input__item_mutable" data-pristine-required-message="Обязательно поле" id="phoneOrMail" name="phoneOrMail" required="" type="text"/>
+</fieldset>
+</div>
+<fieldset class="input file">
+<label class="input__label" for="resume">Резюме</label>
+<input class="input__item" id="resume" name="resume" size="10" type="file"/>
+</fieldset>
+<fieldset class="input">
+<label class="input__label" for="comment">Комментарий<span>*</span></label>
+<textarea class="input__item" id="comment" maxlength="200" name="comment"></textarea>
+</fieldset>
+<fieldset class="input checkbox">
+<div class="checkbox__item">
+<input class="checkbox__item-input input__item" data-pristine-required-message="Согласитесь с условиями" id="formAgreement" name="agreement" required="" type="checkbox"/>
+<label class="checkbox__item-label" for="formAgreement"><span>Я согласен на <a class="link" href="/politics/">обработку персональных данных</a></span></label>
+</div>
+</fieldset>
+<input name="pagelink" type="hidden" value="/career/vacancy/"/>
+<input name="pagename" type="hidden" value="Вакансии"/>
+<input name="formname" type="hidden" value="Отклик на вакансию"/>
+<input name="eventname" type="hidden" value="FORM_SEND_VACANCY"/>
+<input class="g-recaptcha-response" name="g-recaptcha-response" type="hidden"/>
+<button class="btn bg-third-blue btn-large form__button" disabled="disabled" type="submit">
+                Отправить 
+            </button>
+<input name="csrftoken" type="hidden" value="17e8d264df279f0f07ccfdaf44b0efcc6c2fd731be8f15ef9cd60a9cedb2dcef4bb3b0f8ed072ec3"/></form>
+</div>
+</section>
+<section class="vacancy-page__button">
+<div class="prefooter prefooter_mt-0">
+<div class="row justify-content-between p-0 no-wrap is-relative index-0">
+<a class="prefooter__left btn bg-third-blue btn-skew" href="/company/"><span>О компании</span></a>
+<a class="prefooter__right btn bg-fourth-blue btn-skew" href="/blog/"><span>Блог</span></a>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer__top">
+<div class="footer__top-lc">
+<nav class="footer__column caption">
+<ul class="footer__list">
+<li class="footer__list-item">
+<a class="footer__list-link caption-lead menu-products" href="/products/">Продукты</a>
+</li>
+<li class="footer__list-item">
+<a class="footer__list-link caption-lead menu-service" href="/services/">Услуги</a>
+</li>
+<li class="footer__list-item">
+<a class="footer__list-link caption-lead" href="/purchases/">Закупки</a>
+</li>
+</ul>
+</nav>
+<nav class="footer__column">
+<a class="footer__list-link caption-lead" href="/company/">О компании</a>
+<ul class="footer__list">
+<li class="footer__list-item">
+<a class="footer__list-link" href="/ceo-view/">Видение директора</a>
+</li>
+<li class="footer__list-item">
+<a class="footer__list-link" href="/responsibility/">Социальная ответственность</a>
+</li>
+<li class="footer__list-item">
+<a class="footer__list-link" href="/politics/">Политика обработки персональных данных</a>
+</li>
+</ul>
+</nav>
+<nav class="footer__column">
+<a class="footer__list-link caption-lead" href="/media-center/">Медиацентр</a>
+<ul class="footer__list">
+<li class="footer__list-item">
+<a class="footer__list-link" href="/media-center/news/">Новости</a>
+</li>
+<li class="footer__list-item">
+<a class="footer__list-link" href="/media-center/performances/">Выступления</a>
+</li>
+<li class="footer__list-item">
+<a class="footer__list-link" href="/media-center/media/">Bercut в СМИ</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="footer__top-rc">
+<nav class="footer__column">
+<a class="footer__list-link caption-lead" href="/blog/">Блог</a>
+<ul class="footer__list">
+<li class="footer__list-item">
+<a class="footer__list-link" href="/blog/expert/">Экспертное мнение</a>
+</li>
+<li class="footer__list-item">
+<a class="footer__list-link" href="/blog/technologies/">Технологии</a>
+</li>
+<li class="footer__list-item">
+<a class="footer__list-link" href="/blog/comments/">Комментарии специалиста</a>
+</li>
+</ul>
+</nav>
+<nav class="footer__column">
+<a class="footer__list-link caption-lead" href="/career/">Карьера</a>
+<ul class="footer__list">
+<li class="footer__list-item">
+<a class="footer__list-link" href="/career/vacancy/">Вакансии</a>
+</li>
+</ul>
+</nav>
+<nav class="footer__column caption">
+<ul class="footer__list">
+<li class="footer__list-item">
+<a class="footer__list-link caption-lead" href="/stories/">Истории успеха</a>
+</li>
+<li class="footer__list-item">
+<a class="footer__list-link caption-lead" href="/contacts/">Контакты</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="footer__middle">
+<a class="link color-white tel" href="tel:88123273233">+7 (812) 327-32-33</a>
+<a class="btn bg-dark border-third-blue btn-tiny" href="https://support.bercut.com/" target="_blank">Поддержка</a>
+</div>
+<div class="footer__bottom">
+<div class="footer__bottom-lc">
+<div class="made-by made-by_mobile">
+<a class="made_by" href="https://artw.ru" rel="nofollow noopener" target="_blank">
+        Сделано в        <svg fill="none" height="13" viewbox="0 0 67 13" width="67" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.283 9.55588H8.52814V12.8371H14.9053V-0.0961914H9.59144L0 12.8371H4.45332L11.283 3.07148V9.55588Z" fill="white"></path>
+<path d="M42.5774 3.18414V-0.0961914H30.4678V3.18414H34.8332V12.9038H38.5939V3.18414H42.5774Z" fill="white"></path>
+<path d="M47.739 7.80781V-0.0961914H44.1167V12.8371H48.2985L53.5907 5.32048V12.87H57.4088L67.0002 -0.0641247H62.5556L57.0433 7.84074V-0.0641247H57.0268V-0.0961914H53.2522L47.739 7.80781Z" fill="#FF0538"></path>
+<path d="M24.6909 -0.0866459H22.5608L22.5556 -0.0970459H17.4854V12.903H21.1608V9.79335H23.665L25.7002 12.9038H30.2641L27.464 9.13989L28.0044 8.68229C28.2811 8.44742 28.5325 8.18222 28.7501 7.89189C28.9162 7.67002 29.0563 7.42475 29.179 7.15869L29.1808 7.15522C29.3644 6.75915 29.5036 6.33795 29.6019 5.93495L29.5993 5.94535L29.601 5.93582C29.6506 5.73475 29.6881 5.54062 29.7133 5.35862C29.7385 5.17315 29.7524 5.00935 29.7524 4.85162C29.7524 3.55422 29.2687 2.36515 28.4803 1.48462C27.7825 0.702887 26.8419 0.157754 25.7838 -0.0277126L25.7759 -0.0285792L25.3209 -0.0857792L25.3104 -0.0866459C25.2669 -0.0883792 25.2269 -0.0901126 25.1782 -0.0909792H25.1756C25.119 -0.0918459 25.0529 -0.0927126 24.9885 -0.0927126C24.9241 -0.0927126 24.8614 -0.0927126 24.8066 -0.0909792H24.8005H24.7979C24.7657 -0.0901126 24.7361 -0.0892459 24.7074 -0.0883792L24.6909 -0.0866459ZM25.2991 3.34102H25.3009C25.4792 3.42509 25.6411 3.54555 25.7803 3.69635C25.9239 3.85235 26.0335 4.02829 26.1127 4.22415L26.1153 4.23109L26.1127 4.22589C26.1901 4.42089 26.2336 4.63235 26.2336 4.84989V4.85162V4.85422C26.2345 5.09515 26.1875 5.32655 26.1118 5.51895L26.1109 5.52069C26.0352 5.71482 25.9213 5.89075 25.7881 6.03202L25.7864 6.03375L25.7829 6.03722C25.6489 6.17762 25.4853 6.29375 25.3087 6.37089C25.1338 6.44889 24.9276 6.49395 24.7231 6.49309H24.7248H24.7231H24.7205H24.4777H22.1414H22.1223H21.1608V3.21449H24.7344C24.9276 3.21362 25.1303 3.26215 25.2991 3.34102Z" fill="white"></path>
+</svg> </a>
+</div> <span class="color-main-grey copyright">© 1995—2024 Bercut.<br/> Все права защищены</span>
+<a class="link color-main-grey" href="/upload/SOUT2021-2022.pdf" target="_blank">Результаты проведения специальной оценки условий труда (2021-2022)</a>
+</div>
+<div class="footer__bottom-rc">
+<div class="social">
+<a href="https://vk.com/bercut_team" target="_blank">
+<svg data-name="Layer 1" height="24px" id="Layer_1" viewbox="0 0 23 23" width="24px" xmlns="http://www.w3.org/2000/svg"><defs></defs><path class="cls-1" d="M3.88,7C4,13,7,16.57,12.24,16.57h.3V13.15a4.72,4.72,0,0,1,4,3.42h2.72a7.54,7.54,0,0,0-3.93-4.8A7.33,7.33,0,0,0,18.65,7H16.18c-.54,1.89-2.13,3.62-3.64,3.78V7H10.06v6.63C8.53,13.24,6.59,11.39,6.51,7ZM1.62,1.62C0,3.23,0,5.84,0,11V12c0,5.2,0,7.81,1.62,9.42S5.84,23,11,23H12c5.2,0,7.81,0,9.42-1.62S23,17.16,23,12V11c0-5.2,0-7.81-1.62-9.42S17.16,0,12,0H11C5.84,0,3.23,0,1.62,1.62Z"></path></svg> </a>
+<a href="https://t.me/bercutteam" target="_blank">
+</a>
+</div><div class="made-by made-by_desktop">
+<a class="made_by" href="https://artw.ru" rel="nofollow noopener" target="_blank">
+        Сделано в        <svg fill="none" height="13" viewbox="0 0 67 13" width="67" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.283 9.55588H8.52814V12.8371H14.9053V-0.0961914H9.59144L0 12.8371H4.45332L11.283 3.07148V9.55588Z" fill="white"></path>
+<path d="M42.5774 3.18414V-0.0961914H30.4678V3.18414H34.8332V12.9038H38.5939V3.18414H42.5774Z" fill="white"></path>
+<path d="M47.739 7.80781V-0.0961914H44.1167V12.8371H48.2985L53.5907 5.32048V12.87H57.4088L67.0002 -0.0641247H62.5556L57.0433 7.84074V-0.0641247H57.0268V-0.0961914H53.2522L47.739 7.80781Z" fill="#FF0538"></path>
+<path d="M24.6909 -0.0866459H22.5608L22.5556 -0.0970459H17.4854V12.903H21.1608V9.79335H23.665L25.7002 12.9038H30.2641L27.464 9.13989L28.0044 8.68229C28.2811 8.44742 28.5325 8.18222 28.7501 7.89189C28.9162 7.67002 29.0563 7.42475 29.179 7.15869L29.1808 7.15522C29.3644 6.75915 29.5036 6.33795 29.6019 5.93495L29.5993 5.94535L29.601 5.93582C29.6506 5.73475 29.6881 5.54062 29.7133 5.35862C29.7385 5.17315 29.7524 5.00935 29.7524 4.85162C29.7524 3.55422 29.2687 2.36515 28.4803 1.48462C27.7825 0.702887 26.8419 0.157754 25.7838 -0.0277126L25.7759 -0.0285792L25.3209 -0.0857792L25.3104 -0.0866459C25.2669 -0.0883792 25.2269 -0.0901126 25.1782 -0.0909792H25.1756C25.119 -0.0918459 25.0529 -0.0927126 24.9885 -0.0927126C24.9241 -0.0927126 24.8614 -0.0927126 24.8066 -0.0909792H24.8005H24.7979C24.7657 -0.0901126 24.7361 -0.0892459 24.7074 -0.0883792L24.6909 -0.0866459ZM25.2991 3.34102H25.3009C25.4792 3.42509 25.6411 3.54555 25.7803 3.69635C25.9239 3.85235 26.0335 4.02829 26.1127 4.22415L26.1153 4.23109L26.1127 4.22589C26.1901 4.42089 26.2336 4.63235 26.2336 4.84989V4.85162V4.85422C26.2345 5.09515 26.1875 5.32655 26.1118 5.51895L26.1109 5.52069C26.0352 5.71482 25.9213 5.89075 25.7881 6.03202L25.7864 6.03375L25.7829 6.03722C25.6489 6.17762 25.4853 6.29375 25.3087 6.37089C25.1338 6.44889 24.9276 6.49395 24.7231 6.49309H24.7248H24.7231H24.7205H24.4777H22.1414H22.1223H21.1608V3.21449H24.7344C24.9276 3.21362 25.1303 3.26215 25.2991 3.34102Z" fill="white"></path>
+</svg> </a>
+</div> </div>
+</div>
+</div>
+</footer>
+</div>
+<div class="cookie-message js-cookie-message active">
+<div class="cookie-message__text text-small">Мы используем cookie-файлы в целях повышения удобства использования сайта и проведения аналитики.<br/>Продолжая использовать сайт, Вы соглашаетесь на использование cookie-файлов и сервисов интернет-статистики в соответствии с <a href="/politics/" target="_blank">Политикой в отношении обработки персональных данных</a></div>
+<button class="btn bg-third-blue btn-small cookie-message__btn js-cookie-message__btn" type="button">
+        Принять    </button>
+</div>
+<div class="d-none" id="constructor-video">
+<div class="video-inner">
+<div class="video-inner__video">
+<div class="video">
+<div class="video__tag video-inner__video-tag video__tag_disable" data-plyr-embed-id="" data-plyr-provider="youtube">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="body__preloader">
+<div class="preloader">
+<div class="preloader__wrapper">
+<div class="preloader__inner">
+<div class="preloader__element"></div>
+</div>
+</div>
+<div class="preloader__text">Загрузка</div>
+</div>
+</div>
+<div class="d-none" id="review">
+<div id="review-wrapper">
+<div class="review-success">
+</div>
+</div>
+</div>
+<div class="d-none" id="management">
+<div class="review-success modal-management" data-modal-management="">
+<div class="review-success__wrapper" id="manager-wrapper">
+</div>
+</div>
+</div>
+<div class="d-none" id="purchase">
+<div class="modal-purchase" id="purchase-wrapper">
+</div>
+</div>
+<!-- Rating Mail.ru counter -->
+<noscript><div>
+<img alt="Top.Mail.Ru" src="https://top-fwz1.mail.ru/counter?id=3256515;js=na" style="border:0;position:absolute;left:-9999px;"/>
+</div></noscript>
+<!-- //Rating Mail.ru counter -->
+<div class="tingle-modal tingle-modal_simple" style="display: none;"><div class="tingle-modal-box"><div class="tingle-modal-box__content"></div></div></div><div class="video-line__modal"></div><div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><div class="replaced-iframe"><div class="rc-anchor-alert" id="rc-anchor-alert"></div>
+<input id="recaptcha-token" type="hidden" value="03AFcWeA7NxwEg0Nx2uplBvm3rlgHYbYlUXrzQA0LumvTeoDNA-HGGLjgGR2YFkoMFd2IpIoSqWVh6__oWhxOHY70hjPQM6I7RDZV0Es9PCnpdN2wjXJqCehawxjbfbhcSvQGjytNNU807vT8dKcZ80dq35cJ9Dq3ZeK5iwH0FaIuFk71nymTMq_VyjUVFcjAAKOFTQB5fhQdrFuPM1GLwHFZCmRNRYK-Fb2gt0_bzxmQ8fxcmW5LexrJhHeUozv0ahvGcRDjsYLqwBWqxQDiemCnmZn0zEk5Bvp2Ee6sqSMQEqjxzPQfMC7SeXtGIvIyB03odDHTbbUAoU17twGmgm9jJXfsaJyZn-zK8KSgZa6FWC96OrOjzGnp5gFWiaBKxBlbOSyBnfueMj-XS8kFqhZk9cAbPsD7rUi6Nn-MR0dGddl5ZxOtu5acPm6tXuff5mZUBoArRelPdRUnZVhpZ_OpBC3Xp9331mgbjke0GcFCDAiE65UCy2F55lZLP777XvyO7ldc_zBbRxoUtOuh6GAdFVRrxFo4I0is1MjcSj49ZSFZmpVeXEEDBB6VRwZEqYmLFwSadL16fqFLyCyHQD3WWkfsBVskeIh3LaJSP681D73scaWGAvINC9rrT9xyHbf_Uw6dtFp5fTcf8YVggiGzHsC8KlaqpLT3wUONC5crFWVtyxqo0guuU7p89wl3BI77RGk0_fUhH49TQ1XlVt-KL1wPHopS4DwFFprMeMPcFIHHdLWI0Rx9HdL1YTrcqwpyfku4OtmYLCVJtOAWbmiR4F-7qyit-CAXAmT6beILYLXSHQHkna7XlxG2XgYfMSngAPIm7e273gDguhCMgDrzERVY2WgcwZYmJEuMU63tzZZNxvukvr69FBCQOkdZOUONg6_KrbZ5gT4IMlKjmLiNX-dTtprLi3WNWp2ds8phYrx8iSrm1kGD7RfAyFOAa_P5rOK-MTo1VsMR0pYtGpyxvueWQtcmFI0mK5dwh-hN1IIoqqG9PdQX0rTCWIPkoINIkXVwFD6izPWZCu1HJvB-2x_Z_r0eXaqctqdSQkfrvxq9-MGukw_56QFetgqzSdeuTAkLiwGbGgUAn8aqz3azMxW39gVcYBp_UbOotRsM9LoELUZsp5a4bfz7qzBgHLC-rUwS7TDzNnVptGKZv7NfPLFNtHcnzUPfOaPgr3-DgsTO6cqprofz-FAMNGdw_zf50bP3RqcGX781dEBQPYmO9nCOl2QvaC4SAbIqaRj-jNsFgtpByvTYIs-15r3qwH43CbhnAFsdB85amAbJwUs2K4eZws61blBqqtr4aH8WaFe5VMkoUGJj3ymeYTxpo7Cq7pjwnQrawp1xkn2BfTXSuULAt7GTJy0MQp_RA461S2Yxeqw93CvBD6zq6ciKw89KiMcMOKENdG8HRc5VNuYLe5xDmCmcjPRNLMUdAHO_kQpud7zcJOtuSnmZVAnCS1JlJrh9GAWB6"/>
+<div class="rc-anchor rc-anchor-invisible rc-anchor-light rc-anchor-invisible-hover"><div aria-hidden="true" class="rc-anchor-aria-status" id="recaptcha-accessible-status">Recaptcha requires verification. </div><div class="rc-anchor-error-msg-container" style="display:none"><span aria-hidden="true" class="rc-anchor-error-msg"></span></div><div class="rc-anchor-normal-footer"><div class="rc-anchor-logo-large" role="presentation"><div class="rc-anchor-logo-img rc-anchor-logo-img-large"></div></div><div class="rc-anchor-pt"><a href="https://www.google.com/intl/en/policies/privacy/" target="_blank">Privacy</a><span aria-hidden="true" role="presentation"> - </span><a href="https://www.google.com/intl/en/policies/terms/" target="_blank">Terms</a></div></div><div class="rc-anchor-invisible-text"><span>protected by <strong>reCAPTCHA</strong></span><div class="rc-anchor-pt"><a href="https://www.google.com/intl/en/policies/privacy/" style="" target="_blank">Privacy</a><span aria-hidden="true" role="presentation"> - </span><a href="https://www.google.com/intl/en/policies/terms/" style="" target="_blank">Terms</a></div></div></div><iframe style="display: none;"></iframe></div></div><div class="grecaptcha-error"></div><textarea class="g-recaptcha-response" id="g-recaptcha-response-100000" name="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe data-unique-id="f2834e70-8f46-4a2b-aa72-53671425377b" style="display: none;"></iframe></div></body></html>
