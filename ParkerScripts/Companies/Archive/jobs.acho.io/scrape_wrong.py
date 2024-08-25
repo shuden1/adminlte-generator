@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import sys
@@ -13,17 +17,17 @@ job_link_selector = 'a'  # This is a placeholder since JavaScript click will be 
 # STEP 2: SELENIUM SCRIPT
 if len(sys.argv) > 1:
     target_html_file = sys.argv[1]
-    
+
     # Initialize WebDriver
     service = Service()
     driver = webdriver.Chrome(service=service)
 
     # Open the local HTML file
     driver.get(f"file://{target_html_file}")
-    
+
     # Find all job listing blocks
     job_blocks = driver.find_elements(By.CSS_SELECTOR, job_block_selector)
-    
+
     # Process job listings
     job_listings = []
     for job_block in job_blocks:
@@ -44,8 +48,8 @@ if len(sys.argv) > 1:
             driver.switch_to.window(original_window)
 
         job_listings.append({"Job-title": job_title, "URL": job_url})
-    
+
     driver.quit()
-    
+
     # Output result as JSON
     print(json.dumps(job_listings))

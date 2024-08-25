@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -15,16 +19,16 @@ job_url_data_attribute = "data-link"
 def scrape_job_listings(html_file):
     driver = webdriver.Chrome()
     driver.get(f"file://{html_file}")
-    
+
     job_elements = driver.find_elements(By.CSS_SELECTOR, job_block_selector)
     job_listings = []
-    
+
     for job_el in job_elements:
         job_title = job_el.find_element(By.CSS_SELECTOR, job_title_selector).text
         job_url = job_el.get_attribute(job_url_data_attribute)
-        
+
         job_listings.append({"Job-title": job_title, "URL": job_url})
-    
+
     driver.quit()
     return json.dumps(job_listings)
 

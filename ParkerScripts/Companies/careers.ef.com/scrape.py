@@ -2,6 +2,10 @@ import sys
 import json
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -16,7 +20,7 @@ def scrape_jobs(file_path):
     options.add_argument("--no-sandbox")
 
     # Initialize Chrome driver
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     driver = webdriver.Chrome(service=service, options=options)
 
     try:

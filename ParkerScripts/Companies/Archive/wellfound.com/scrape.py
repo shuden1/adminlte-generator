@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -13,13 +17,13 @@ job_url_attribute = "href"
 def scrape_job_listings(html_file):
     driver = webdriver.Chrome()
     driver.get(f"file:///{html_file}")
-    
+
     job_listings = []
     for job_el in driver.find_elements(By.CSS_SELECTOR, job_listing_selector):
         job_title = job_el.find_element(By.CSS_SELECTOR, job_title_selector).text
         job_url = job_el.get_attribute(job_url_attribute)
         job_listings.append({"Job-title": job_title, "URL": job_url})
-    
+
     driver.quit()
     return json.dumps(job_listings)
 

@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -21,7 +25,7 @@ for job_element in job_elements:
     job_title_element = job_element.find_element(By.CSS_SELECTOR, ".job-listing__title")
     # Extract the job title text
     job_title = job_title_element.text.strip()
-    
+
     # Extract the job URL from the 'href' attribute of the anchor tag surrounding the job title
     job_url = job_element.get_attribute('href').strip()
 

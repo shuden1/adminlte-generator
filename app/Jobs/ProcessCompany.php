@@ -51,7 +51,7 @@ class ProcessCompany implements ShouldQueue
         $this->company = $company;
         $this->forced = $forced;
         $this->hasJobs = $hasJobs;
-        $this->queue = 'ScriptGenerationQueue'.rand(1, 10);
+        $this->queue = 'ScriptGenerationQueue'.rand(1, env("SCRIPT_GENERATION_QUEUE_COUNT"));
     }
 
     public function failed(Exception $exception)
@@ -62,21 +62,22 @@ class ProcessCompany implements ShouldQueue
 
     public function getCleanHTML($inputFile, $outputFile, $careerPageURL, $domain)
     {
-        $pythonPath = "C:\\Python3";
-//        $pythonPath = "C:\Users\shuga\AppData\Local\Programs\Python\Python312";
+        $pythonPath = env('PYTHON_PATH');
 
         if (preg_match('/^hh\.[a-z]+$/', $domain)) {
-            $fetchScriptPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_HH.py";
+            $fetchScriptPath = env("HH_FETCH_SCRIPT_PATH");
         } else
-            $fetchScriptPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py";
+            $fetchScriptPath = env("FETCH_SCRIPT_PATH");
 
-
-        $command = $pythonPath."\\python.exe"." ".$fetchScriptPath." \"".$careerPageURL."\" \"".$inputFile."\"";
+        if ($this->company->proxy_country){
+            $command = $pythonPath." ".$fetchScriptPath." \"".$careerPageURL."\" \"".$inputFile."\" \"".$this->company->proxy_country."\"";
+        } else
+        $command = $pythonPath." ".$fetchScriptPath." \"".$careerPageURL."\" \"".$inputFile."\"";
         exec($command, $output1, $returnStatus1);
 
 
         // Call sculpting.py
-        $command2 = $pythonPath."\\python.exe D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\sculpting.py \"" . $inputFile . "\" \"" . $outputFile . "\"";
+        $command2 = $pythonPath." ".env("SCULPTING_SCRIPT_PATH")." \"" . $inputFile . "\" \"" . $outputFile . "\"";
 
 // Execute the second script and wait for it to finish
         exec($command2, $output2, $returnStatus2);
@@ -87,11 +88,11 @@ class ProcessCompany implements ShouldQueue
 
         $filesizeKB = filesize($outputFile) / 1024;
         if ($filesizeKB<3){
-            $command = $pythonPath."\\python.exe"." ".$fetchScriptPath." \"".$careerPageURL."\" \"".$inputFile."\"";
+            $command = $pythonPath." ".$fetchScriptPath." \"".$careerPageURL."\" \"".$inputFile."\"";
             exec($command, $output1, $returnStatus1);
 
             // Call sculpting.py
-            $command2 = $pythonPath."\\python.exe D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\sculpting.py \"" . $inputFile . "\" \"" . $outputFile . "\"";
+            $command2 = $pythonPath." ".env("SCULPTING_SCRIPT_PATH")." \"" . $inputFile . "\" \"" . $outputFile . "\"";
 
             // Execute the second script and wait for it to finish
             exec($command2, $output2, $returnStatus2);
@@ -282,11 +283,11 @@ class ProcessCompany implements ShouldQueue
             'content' => "Now create a Python + Selenium script using the latest best practices for ChromeDriver 120.0.6099.109 \n
             1. This script will be launched externally in a settled-up environment, DO NOT TEST THIS SCRIPT, CREATE IT: \n
             THE TARGET HTML FILE NAME SHOULD BE AN ARGUMENT SENT FROM AN EXTERNAL SOURCE THROUGH THE CONSOLE COMMAND AS THE SINGLE INPUT PARAMETER. DO NOT PUT ANY PLACEHOLDERS OR EXAMPLES! \n
-            2. Use from selenium.common.exceptions import NoSuchElementException to add a proper exception handling and avoid failing the script if the elements do not exist. \n
-            3. Initialise a headless webdriver, with this profile path, do not forget to create a relevant folder: profile_folder_path=\"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\\"+str(threading.get_ident()) use this service:
-            service=service(executable_path=r\"C:\\Python3\\chromedriver.exe\") add these options: options.add_argument(f\"user-data-dir={profile_folder_path}\") options.add_argument(\"--headless\") options.add_argument(\"--disable-gpu\") options.add_argument(\"--no-sandbox\") \n
+            2. Use from selenium.common.exceptions import NoSuchElementException to add a proper exception handling and avoid failing the script if the elements do not exist. import os, import dotenv and use load_dotenv() to get access to the .env parameters.\n
+            3. Initialise a headless webdriver, with this profile path, do not forget to create a relevant folder: profile_folder_path=\"os.getenv(\"CHROME_PROFILE_PATH\") + \"\\\" + str(threading.get_ident()). Use this service:
+            service=service(executable_path=r\"\"+os.getenv(\"CHROME_DRIVER_PATH\")+\"\"). Add these options: options.add_argument(f\"user-data-dir={profile_folder_path}\") options.add_argument(\"--headless\") options.add_argument(\"--disable-gpu\") options.add_argument(\"--no-sandbox\") \n
             4. USE THE SELECTORS AND CODE EXAMPLES YOU PREVIOUSLY DEFINED!!! and scrape all job listings. REMEMBER!!!! instead of an old find_elements_by_css_selector, you should use the find_elements method with By.CSS_SELECTOR. \n
-            5. To extract Job Titles try to use .text.strip() first, but if it's empty - use .get_attribute('innerHTML').strip() \n
+            5. To extract Job Titles try to use get_attribute('textContent').strip() first, but if it's empty - use .get_attribute('innerHTML').strip() \n
             6. In case there is no Job Opening URL defined in the HTML - use a \"#\", BUT ONLY IF THERE IS NO URL DEFINED WITHIN THE JOB POSTING ELEMENT \n
             7. NEVER IMPLEMENT EXAMPLE USAGE PARAMETERS AND SELECTORS, ONLY THE ONES EXISTING IN THE HTML \n
             8. Return a JSON with all job postings in the following format, DO NOT WRITE RESULT TO ANY FILE: { [\"Job-title\" :\"title1\", \"URL\":\"url1\"], [\"Job-title\" :\"title2\", \"URL\":\"url2\"], }",
@@ -357,8 +358,8 @@ class ProcessCompany implements ShouldQueue
             RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
             return;
         } else {
-            $companyPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\{$this->company->id}";
-            $domainPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}";
+            $companyPath = env("COMPANIES_BASE_PATH")."\\{$domain}\\{$this->company->id}";
+            $domainPath = env("COMPANIES_BASE_PATH")."\\{$domain}";
 
             $scriptPath = $domainPath . "\\scrape.py";
             $tempScriptPath = $domainPath . "\\scrape_temp.py";
@@ -405,7 +406,7 @@ class ProcessCompany implements ShouldQueue
                     $attempt = 1;
                     $success = false;
                     while (($attempt<3)&&(!$success)){
-                        $success = $this->generateScript($outputFile, $tempScriptPath, $inputFile);
+//                        $success = $this->generateScript($outputFile, $tempScriptPath, $inputFile);
                         $attempt++;
                     }
 

@@ -1,6 +1,10 @@
 from bs4 import BeautifulSoup
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 import json
 
 # Read the HTML content from the file passed as an argument

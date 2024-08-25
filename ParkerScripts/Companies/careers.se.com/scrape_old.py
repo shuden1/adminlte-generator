@@ -4,6 +4,10 @@ import shutil
 import sys
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -18,11 +22,11 @@ html_file_path = sys.argv[1]
 
 # Step 2 Script
 def scrape_job_openings(target_html):
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
     if not os.path.exists(profile_folder_path):
         os.makedirs(profile_folder_path)
 
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")

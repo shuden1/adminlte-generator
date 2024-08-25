@@ -3,6 +3,10 @@ import json
 import sys
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 
@@ -13,7 +17,7 @@ job_url_selector = "td.colTitle span.jobTitle a.jobTitle-link"
 
 # STEP 2 Script:
 def scrape_job_listings(html_file_name):
-    service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+    service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{str(threading.get_ident())}"
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_folder_path}")

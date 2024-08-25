@@ -1,13 +1,17 @@
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 import threading
 import json
 
 # Initialization of the headless ChromeDriver
-profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 options = webdriver.ChromeOptions()
 options.add_argument(f"user-data-dir={profile_folder_path}")
 options.add_argument("--headless")
@@ -20,7 +24,7 @@ driver = webdriver.Chrome(service=service, options=options)
 def scrape_job_listings(file_name):
     # Opening the file as provided by the argument from the external source
     driver.get(f"file:///{file_title}")
-    
+
     # Scraping job titles and URLs
     jobs_data = []
     job_elements = driver.find_elements(By.CSS_SELECTOR, ".job-innerwrap")
@@ -29,7 +33,7 @@ def scrape_job_listings(file_name):
         title = title_element.text
         url = title_element.get_attribute('href')
         jobs_data.append({"Job-title": title, "URL": url})
-    
+
     driver.quit()
     print(json.dumps(jobs_data))
 

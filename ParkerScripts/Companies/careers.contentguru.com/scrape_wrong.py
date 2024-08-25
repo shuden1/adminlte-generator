@@ -3,6 +3,10 @@ import json
 import shutil
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
@@ -10,7 +14,7 @@ def main(html_file_path):
     profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
     os.makedirs(profile_folder_path, exist_ok=True)
 
-    service_instance = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    service_instance = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")

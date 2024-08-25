@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import sys
 import json
@@ -18,10 +22,10 @@ jobs_data = []
 for offer in job_offers:
     title_element = offer.find_element(By.CSS_SELECTOR, '.factorial__headingFontFamily')
     url_element = offer.find_element(By.CSS_SELECTOR, 'a.buttonSecondary')
-    
+
     job_title = title_element.text.strip()
     job_url = url_element.get_attribute('href').strip()
-    
+
     jobs_data.append({"Job-title": job_title, "URL": job_url})
 
 # Close the driver

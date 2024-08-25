@@ -1,5 +1,9 @@
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import threading
@@ -26,7 +30,7 @@ def main():
     for element in job_elements:
         title_element = element.find_element(By.CSS_SELECTOR, "h2, .job-title")
         url_element = element.find_element(By.CSS_SELECTOR, "a")
-        
+
         job_title = title_element.text
         job_url = url_element.get_attribute("href")
 

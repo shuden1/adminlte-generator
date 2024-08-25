@@ -1,6 +1,10 @@
 import sys
 import json
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 
 # The target HTML file name is provided as a command-line argument

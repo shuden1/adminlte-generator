@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -24,10 +28,10 @@ def get_job_listings(html_file):
     for job_block in job_blocks:
         job_title_element = job_block.find_element(By.CSS_SELECTOR, job_title_selector)
         job_url_element = job_block.find_element(By.CSS_SELECTOR, job_url_selector)
-        
+
         job_title = job_title_element.text
         job_url = job_url_element.get_attribute('href')
-        
+
         job_listings.append({"Job-title": job_title, "URL": job_url})
 
     # Close the WebDriver session

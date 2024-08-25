@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import sys
 import json
@@ -38,7 +42,7 @@ def scrape_job_listings(html_filename):
 
     # Ensuring unique job listings
     job_listings = [dict(t) for t in {tuple(d.items()) for d in job_listings}]
-    
+
     # Output the final result
     return json.dumps(job_listings, indent=2)
 

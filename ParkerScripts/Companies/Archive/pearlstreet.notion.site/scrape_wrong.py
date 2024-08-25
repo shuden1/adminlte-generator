@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import sys
 import json
@@ -19,7 +23,7 @@ def scrape_job_listings(filename):
     options.add_argument('--disable-dev-shm-usage')
     with webdriver.Chrome(options=options) as driver:
         driver.get(f'file:///{filename}')
-        
+
         job_listings = []
         job_elements = driver.find_elements(By.CSS_SELECTOR, job_block_selector)
         for job_element in job_elements:

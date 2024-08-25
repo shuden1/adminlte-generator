@@ -1,12 +1,16 @@
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 import threading
 import json
 
 def scrape_jobs(target_html_file):
-    service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+    service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_folder_path}")

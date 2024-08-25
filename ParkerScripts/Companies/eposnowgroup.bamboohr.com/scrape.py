@@ -3,6 +3,10 @@ import shutil
 import sys
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service as service
 from selenium.webdriver.common.by import By
 
@@ -11,13 +15,13 @@ html_file = sys.argv[1]
 
 # Initialize a headless webdriver with the specified profile folder path
 profile_folder_path = (
-    "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\"
+    os.getenv("CHROME_PROFILE_PATH") + "\\"
     + str(threading.get_ident())
 )
 options = webdriver.ChromeOptions()
 options.add_argument("headless")
 options.add_argument(f"user-data-dir={profile_folder_path}")
-service = service(executable_path=r"C:\Python3\chromedriver.exe")
+service = service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 driver = webdriver.Chrome(service=service, options=options)
 
 # Load the HTML file into the webdriver

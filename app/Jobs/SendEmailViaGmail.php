@@ -74,13 +74,20 @@ class SendEmailViaGmail implements ShouldQueue
             $newJobs[$company->id]['today']['all'] = $jobs;
 
             $newJobs[$company->id]['today']['relevant'] = [];
-            foreach ($newJobs[$company->id]['today']['all'] as $job){
+            foreach ($newJobs[$company->id]['today']['all'] as $key => $job) {
                 if ($this->checkRelevance($job)) {
                     $newJobs[$company->id]['today']['relevant'][] = $job;
                     $this->user->jobs()->attach($job->id, ['provided_at' => Carbon::today()]);
                 }
+                if (!$job->created_at->isToday()) {
+                    unset($newJobs[$company->id]['today']['all'][$key]);
+                }
+
             }
             if (count($newJobs[$company->id]['today']['relevant'])>0) {
+                $company->contacted = \Carbon\Carbon::now();
+                $company->save();
+
                 $newJobs[$company->id]['week']['relevant'] = [];
                 $newJobs[$company->id]['week']['all'] = Job::withTrashed()
                     ->where('company_id', $company->id)

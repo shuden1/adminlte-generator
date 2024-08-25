@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -16,24 +20,24 @@ driver = webdriver.Chrome()
 try:
     # Open the HTML file
     driver.get(f'file:///{filename}')
-    
+
     # Find all job elements
     job_elements = driver.find_elements(By.CSS_SELECTOR, job_block_selector)
-    
+
     # Extract job titles and their associated URLs
     job_listings = []
     for job_element in job_elements:
         title_element = job_element.find_element(By.CSS_SELECTOR, job_title_selector)
         url_element = job_element.find_element(By.CSS_SELECTOR, job_url_selector)
-        
+
         job_listings.append({
             "Job-title": title_element.text,
             "URL": url_element.get_attribute('href')
         })
-    
+
     # Close the browser
     driver.quit()
-    
+
     # Convert job listings to JSON format and print
     print(json.dumps(job_listings))
 except Exception as e:

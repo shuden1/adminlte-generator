@@ -15,3 +15,4 @@ yarn-error.log
 /.vscode
 /chrome_profile
 /config/google_credentials.json
+proxies_config.json

@@ -1,16 +1,20 @@
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 import threading
 import json
 
-# No file analysis is possible as the browsing tool doesn't support direct analysis of user-uploaded files not accessed via URL. 
+# No file analysis is possible as the browsing tool doesn't support direct analysis of user-uploaded files not accessed via URL.
 # Therefore, assuming corrections based on common issues that could cause previous failures:
 
 def main(html_file):
     profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
-    service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+    service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     options = webdriver.ChromeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-logging"])  # Add this to prevent logging messages in the output
     options.add_argument(f"user-data-dir={profile_folder_path}")

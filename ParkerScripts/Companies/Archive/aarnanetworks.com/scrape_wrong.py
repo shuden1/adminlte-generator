@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 import json
 import sys
 
@@ -20,14 +24,14 @@ jobs = []
 for job_listing in job_listings:
     title_element = job_listing.find_element_by_tag_name('h3')
     url_element = title_element.find_element_by_tag_name('a')
-    
+
     job = {
         "Job-title": title_element.text.strip(),
         "URL": url_element.get_attribute('href').strip()
     }
-    
+
     jobs.append(job)
-    
+
 driver.quit()
 
 # Output the result as JSON

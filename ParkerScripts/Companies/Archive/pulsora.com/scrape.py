@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import sys
 import json
@@ -14,13 +18,13 @@ def scrape_job_listings(file_path):
     options.add_argument('--disable-gpu')
     options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
-    
+
     # Prepare URL from file path
     url = f"file:///{file_path}"
-    
+
     # Open the file via the driver
     driver.get(url)
-    
+
     # Locate the job listings block and job titles
     job_listings = []
     job_blocks = driver.find_elements(By.CSS_SELECTOR, job_listings_selector)

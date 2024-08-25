@@ -1,5 +1,9 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import threading
@@ -16,19 +20,19 @@ job_title_and_url_selector = "a"
 
 # STEP 2: Create a Python + Selenium script
 def scrape_job_listings(html_file_path):
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{str(threading.get_ident())}"
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-    
+
     driver = webdriver.Chrome(service=service, options=options)
-    
+
     # Open the local HTML file
     driver.get(f"file:///{html_file_path}")
-    
+
     # Scrape all job listings using the previously defined selectors
     job_listings = []
     openings = driver.find_elements(By.CSS_SELECTOR, job_opening_block_selector)
@@ -39,7 +43,7 @@ def scrape_job_listings(html_file_path):
         job_listings.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
-    
+
     return json.dumps(job_listings)
 
 # The HTML file path is provided as the first argument to the script

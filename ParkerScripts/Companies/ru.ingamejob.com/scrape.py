@@ -1,5 +1,9 @@
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 import threading
@@ -13,14 +17,14 @@ def scrape_job_listings(file_name):
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--no-sandbox")
-    
+
     # Initialize WebDriver
-    service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+    service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     driver = webdriver.Chrome(service=service, options=chrome_options)
-    
+
     # Load the HTML file
     driver.get(f"file:///{file_name}")
-    
+
     # Selectors from STEP 1
     job_blocks_selector = ".employer-job-listing-single.shadow-sm.bg-white"
     job_title_selector = "h5 a"
@@ -31,10 +35,10 @@ def scrape_job_listings(file_name):
     for block in job_blocks:
         title_element = block.find_element(By.CSS_SELECTOR, job_title_selector)
         job_listings.append({"Job-title": title_element.text, "URL": title_element.get_attribute("href")})
-    
+
     # Clean up
     driver.quit()
-    
+
     # Convert the list to JSON and print
     print(json.dumps(job_listings, indent=2))
 

@@ -1,15 +1,19 @@
 import json
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 
 # WebDriver Selenium script to scrape job listings
 def scrape_job_listings(file_name):
     driver = webdriver.Chrome()
-    
+
     # Open the local HTML file
     driver.get(f"file:///{file_name}")
-    
+
     # Selectors based on provided HTML structure
     job_blocks_selector = 'ul.accordion-items-container li.accordion-item'
     job_title_selector = 'span.accordion-item__title'
@@ -33,7 +37,7 @@ def scrape_job_listings(file_name):
         jobs_data.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
-    
+
     # Return the job data in JSON format
     return json.dumps(jobs_data)
 

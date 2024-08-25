@@ -1,6 +1,10 @@
 import json
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 
 # Use the selectors identified from the BeautifulSoup analysis

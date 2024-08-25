@@ -1,5 +1,9 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 import json, sys
 
 # Step 1: Identifying the selectors
@@ -18,10 +22,10 @@ def scrape_job_listings(html_file):
 
     # Use BeautifulSoup to parse the page
     soup = BeautifulSoup(driver.page_source, 'html.parser')
-    
+
     # Find all job opening blocks
     job_opening_blocks = soup.select(job_opening_block_selector)
-    
+
     # Scrape job titles and URLs
     job_listings = []
     for job_block in job_opening_blocks:
@@ -30,10 +34,10 @@ def scrape_job_listings(html_file):
             job_title = job_title_tag.get_text(strip=True)
             job_url = job_title_tag['href']
             job_listings.append({"Job-title": job_title, "URL": job_url})
-    
+
     # Close the WebDriver
     driver.quit()
-    
+
     # Return the JSON result
     return json.dumps(job_listings)
 

@@ -1,6 +1,10 @@
 import sys
 import json
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -8,13 +12,13 @@ import threading
 
 def scrape_job_listings(filepath):
     chrome_options = Options()
-    profile_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    profile_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
     chrome_options.add_argument(f"user-data-dir={profile_path}")
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--no-sandbox")
 
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
     driver.get(f"file:///{filepath}")

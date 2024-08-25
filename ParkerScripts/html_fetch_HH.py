@@ -6,7 +6,6 @@ from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 import sys
 import time
-import os
 import uuid
 import shutil
 
@@ -17,6 +16,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 def remove_script_tags(input_html_file):
     """
@@ -68,7 +70,7 @@ def click_buttons(browser):
 def get_dynamic_html(url, output_file, scrolls=2):
     options = Options()
 
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\"+str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
 
     os.makedirs(profile_folder_path, exist_ok=True)
 
@@ -78,7 +80,7 @@ def get_dynamic_html(url, output_file, scrolls=2):
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
     browser = webdriver.Chrome(service=service, options=options)
 

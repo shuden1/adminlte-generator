@@ -1,5 +1,9 @@
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 import threading
@@ -12,7 +16,7 @@ options.add_argument(f"user-data-dir={profile_folder_path}")
 options.add_argument("--headless")
 options.add_argument("--disable-gpu")
 options.add_argument("--no-sandbox")
-service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
 driver = webdriver.Chrome(service=service, options=options)
 
@@ -32,7 +36,7 @@ for job_element in job properties:
     job_link = job_element.find_element(By.CSS_SELECTOR, "a").get_attribute('href')
 
     jobs_list.append({"Job-title": job_title, "URL": job_link})
-    
+
 driver.quit()
 
 # Print the list of jobs in JSON format

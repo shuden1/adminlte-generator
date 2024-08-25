@@ -1,5 +1,9 @@
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 import threading
@@ -15,7 +19,7 @@ job_url_selector = "not directly available in the provided HTML snippet"
 # The target HTML file name is provided as a command line argument
 file_name = sys.argv[1]
 
-profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
 
 # Initialize chrome options
 options = webdriver.ChromeOptions()
@@ -25,7 +29,7 @@ options.add_argument("--disable-gpu")
 options.add_argument("--no-sandbox")
 
 # Set up service
-service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
 # Initialize the webdriver with the service and options specified
 driver = webdriver.Chrome(service=service, options=options)

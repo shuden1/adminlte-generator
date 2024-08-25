@@ -3,6 +3,10 @@ import sys
 import threading
 import shutil
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import json
@@ -20,7 +24,7 @@ def main(html_file_path):
     profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
 
     # Creating the service
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
     # Options for Chrome
     options = webdriver.ChromeOptions()

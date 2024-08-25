@@ -1,5 +1,9 @@
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -7,8 +11,8 @@ import json
 import threading
 
 def scrape_job_listings(html_file_path):
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
@@ -25,7 +29,7 @@ def scrape_job_listings(html_file_path):
         job_title = job_element.find_element(By.CSS_SELECTOR, "REPLACE_WITH_JOB_TITLE_SELECTOR").text
         job_url = job_element.find_element(By.CSS_SELECTOR, "REPLACE_WITH_JOB_URL_SELECTOR").get_attribute('href')
         jobs.append({"Job-title": job_title, "URL": job_url})
-    
+
     driver.quit()
     return jobs
 

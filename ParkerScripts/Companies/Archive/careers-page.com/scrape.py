@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import sys
 import json
@@ -28,7 +32,7 @@ def main():
             job_title = title_element.text.strip()
             job_url = url_element.get_attribute('href')
             jobs_list.append({"Job-title": job_title, "URL": job_url})
-        
+
         # Output the JSON result
         print(json.dumps(jobs_list))
 

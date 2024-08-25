@@ -3,6 +3,10 @@ import json
 import shutil
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -15,7 +19,7 @@ job_title_selector = 'h2.card-title.blue-text a'
 def scrape_job_listings(html_file):
 
     # Set up a new Chrome profile for the current thread
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
 
     # Set up Chrome options for headless execution
     options = Options()
@@ -26,7 +30,7 @@ def scrape_job_listings(html_file):
 
 
     # Set the service with the ChromeDriver path
-    service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+    service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
     # Initialize the WebDriver with the specified options, service, and profile
     options.add_argument(f"user-data-dir={profile_folder_path}")

@@ -2,6 +2,10 @@ from bs4 import BeautifulSoup
 import json
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 
 # Retrieve the file name from the command line argument
@@ -15,10 +19,10 @@ with open(file_name, 'r', encoding='utf-8') as file:
     # Job listing block
     job_blocks_selector = 'div.flex.w-full.flex-row.justify-between.py-4'
     job_blocks = soup.select(job_blocks_selector)
-    
+
     # Job title and URL
     job_title_selector = 'div.ycdc-with-link-color.pr-4.text-lg.font-bold > a'
-    
+
     # Proceed only if job titles and URLs are found
     job_titles_urls = []
     for job_block in job_blocks:

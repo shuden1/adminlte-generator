@@ -2,6 +2,10 @@ from bs4 import BeautifulSoup
 import json
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 
 # Step 1: Identifying the EXACT HTML selectors

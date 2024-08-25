@@ -2,6 +2,10 @@ import sys
 import json
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -21,7 +25,7 @@ def main():
     options.add_argument("--no-sandbox")
 
     # Set up Chrome service
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
     # Initialize the WebDriver
     driver = webdriver.Chrome(service=service, options=options)

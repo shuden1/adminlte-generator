@@ -2,6 +2,10 @@ import sys
 import threading
 import shutil
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -16,7 +20,7 @@ job_title_selector = "h3 .css-19uc56f"
 
 # Initialize the headless webdriver with specified options
 profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
-service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 options = Options()
 options.add_argument(f"user-data-dir={profile_folder_path}")
 options.add_argument("--headless")

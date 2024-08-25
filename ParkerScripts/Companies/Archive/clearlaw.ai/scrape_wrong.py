@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -13,7 +17,7 @@ def scrape_jobs(html_file_path):
 
     # Find the job listings container
     job_containers = driver.find_elements(By.CSS_SELECTOR, job_container_selector)
-    
+
     # Extract job titles and URLs
     jobs = []
     for container in job_containers:

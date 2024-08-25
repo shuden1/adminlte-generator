@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -10,7 +14,7 @@ def scrape_job_openings(html_file):
     options = webdriver.ChromeOptions()
     options.headless = True
     driver = webdriver.Chrome(service=service, options=options)
-    
+
     driver.get("file:///" + html_file)
 
     jobs = []

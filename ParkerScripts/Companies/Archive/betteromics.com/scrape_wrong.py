@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -23,7 +27,7 @@ job_listings = []
 for iframe in job_iframes:
     # Switch to the iframe context
     driver.switch_to.frame(iframe)
-    
+
     # Inside the iframe, retrieve job titles and their respective URLs
     job_links = driver.find_elements(By.CSS_SELECTOR, 'a[data-qa="job-name"]')
     for link in job_links:

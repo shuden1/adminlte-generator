@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import sys
 import json
@@ -29,7 +33,7 @@ def scrape_job_listings(html_file):
 
     # Close the WebDriver
     driver.quit()
-    
+
     # Return the job listings as JSON
     return job_listings
 

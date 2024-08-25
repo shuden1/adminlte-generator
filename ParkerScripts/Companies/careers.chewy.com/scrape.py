@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import threading
@@ -12,8 +16,8 @@ job_block_class = "jobs-list-item"
 job_title_selector = "div.job-title > span"
 job_url_selector = "a.au-target"
 
-profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
 options = webdriver.ChromeOptions()
 options.add_argument(f"user-data-dir={profile_folder_path}")

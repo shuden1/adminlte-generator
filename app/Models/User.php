@@ -25,6 +25,7 @@ class User extends Authenticatable
         'password',
         'requires_leads',
         'telegram_chat_id',
+        'is_active'
     ];
 
     /**

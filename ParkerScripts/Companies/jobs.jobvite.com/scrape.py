@@ -16,8 +16,8 @@ url_selector = ".jv-job-list-name a"
 html_file = sys.argv[1]
 
 # Create the profile folder
-profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
 # Initialise webdriver options
 options = webdriver.ChromeOptions()

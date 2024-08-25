@@ -2,6 +2,10 @@ import sys
 import json
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
@@ -12,7 +16,7 @@ def main():
     html_file = sys.argv[1]
 
     # Set up the Chrome profile path
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
 
     # Set up Chrome options
     options = Options()
@@ -22,7 +26,7 @@ def main():
     options.add_argument("--no-sandbox")
 
     # Set up the Chrome service
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
     # Initialize the WebDriver
     driver = webdriver.Chrome(service=service, options=options)
@@ -41,7 +45,7 @@ def main():
                 job_title = job.text.strip()
                 if not job_title:
                     job_title = job.get_attribute('innerHTML').strip()
-                
+
                 job_url_element = job.find_element(By.CSS_SELECTOR, "a")
                 job_url = job_url_element.get_attribute('href') if job_url_element else "#"
 

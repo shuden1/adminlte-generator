@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -12,7 +16,7 @@ def scrape_job_listings():
 
     # Open the local HTML file
     driver.get(f"file://{html_file_name}")
-    
+
     # Define selectors from the analysis of the HTML file
     job_block_selector = "section.elementor-section" # Assuming the job listings are within <section> tags
     job_title_selector = "div.job-listing h3 a"     # Updated for job title within <h3> and <a> tags inside a div with a class .job-listing
@@ -20,7 +24,7 @@ def scrape_job_listings():
 
     # Find job listing elements - assuming job listings are grouped in sections
     job_sections = driver.find_elements(By.CSS_SELECTOR, job_block_selector)
-    
+
     # Initialize result list
     job_details = []
 
@@ -31,10 +35,10 @@ def scrape_job_listings():
             # Extract job titles and URLs within the section
             for job in job_listings:
                 job_details.append({
-                    "Job-title": job.text.strip(), 
+                    "Job-title": job.text.strip(),
                     "URL": job.get_attribute('href').strip()
                 })
-    
+
     # Close the browser
     driver.quit()
 

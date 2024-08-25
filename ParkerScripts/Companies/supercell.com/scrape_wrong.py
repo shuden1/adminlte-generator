@@ -1,5 +1,9 @@
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 import threading
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
@@ -9,7 +13,7 @@ html_file_path = sys.argv[1]
 
 # Setup and options for headless ChromeDriver
 profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{str(threading.get_ident())}"
-service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 options = webdriver.ChromeOptions()
 options.add_argument(f"user-data-dir={profile_folder_path}")
 options.add_argument("--headless")
@@ -22,7 +26,7 @@ driver = webdriver.Chrome(service=service, options=options)
 try:
     # Open the local HTML file
     driver.get(f"file:///{html_file_path}")
-    
+
     # Correct the script to convert file:///D:/ URLs into valid HTTP URLs if necessary
     job_cards = driver.find_elements(By.CSS_SELECTOR, "div.featuredPositions_card__Wft_R")
     job_listings = []

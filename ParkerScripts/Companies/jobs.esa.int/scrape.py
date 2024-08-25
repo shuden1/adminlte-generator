@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import json
@@ -10,7 +14,7 @@ file_name = sys.argv[1]
 
 # Setting up the Chrome driver with specified options
 profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{str(threading.get_ident())}"
-service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 options = webdriver.ChromeOptions()
 options.add_argument(f"user-data-dir={profile_folder_path}")
 options.add_argument("--headless")
@@ -36,7 +40,7 @@ try:
         url = title_element.get_attribute('href')
 
         job_listings.append({"Job-title": title, "URL": url})
-    
+
     # Outputting the job listings in JSON format
     print(json.dumps(job_listings, ensure_ascii=False))
 

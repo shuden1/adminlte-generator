@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -24,7 +28,7 @@ def scrape_job_listings(html_file_path):
             job_titles_urls.append({"Job-title": job_title, "URL": job_url})
 
         # Convert the job listings to JSON and print
-        print(json.dumps(job_titles_urls))    
+        print(json.dumps(job_titles_urls))
     finally:
         # Close the WebDriver
         driver.quit()

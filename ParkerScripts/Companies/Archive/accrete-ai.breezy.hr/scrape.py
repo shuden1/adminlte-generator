@@ -1,5 +1,9 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import sys
 import json
@@ -21,14 +25,14 @@ if len(sys.argv) == 2:
     for job_block in job_blocks:
         job_title_element = job_block.find_element(By.CSS_SELECTOR, job_title_selector)
         job_title = job_title_element.text.strip()
-        
+
         job_url_element = job_block.find_element(By.CSS_SELECTOR, job_url_selector)
         job_url = job_url_element.get_attribute('href').strip()
-        
+
         job_listings.append({"Job-title": job_title, "URL": job_url})
-    
+
     driver.quit()
-    
+
     print(json.dumps(job_listings))
 else:
     print("Invalid number of arguments. Please provide the HTML file path as the only argument.")

@@ -2,6 +2,10 @@ import sys
 import json
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 
@@ -14,7 +18,7 @@ def main(target_html_file):
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
 
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     driver = webdriver.Chrome(service=service, options=options)
 
     driver.get(f"file:///{target_html_file}")

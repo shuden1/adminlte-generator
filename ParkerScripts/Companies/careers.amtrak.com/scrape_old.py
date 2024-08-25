@@ -2,6 +2,10 @@ import sys
 import json
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -19,7 +23,7 @@ def main():
     chrome_options.add_argument("--no-sandbox")
 
     # Set up Chrome service
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
     # Initialize the WebDriver
     driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -30,7 +34,7 @@ def main():
     # Define the selectors for job blocks, titles, and URLs
     job_block_selector = ".data-row"
     job_title_selector = ".jobTitle-link"
-    
+
     # Find all job blocks
     job_blocks = driver.find_elements(By.CSS_SELECTOR, job_block_selector)
 

@@ -1,5 +1,9 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 import sys
 import json
 
@@ -12,7 +16,7 @@ job_url_selectors = ".job-content-header .job-title-and-category a.mobile-apply-
 def scrape_job_listings(html_file):
     # Initialize the Chrome webdriver
     driver = webdriver.Chrome()
-    
+
     # Read the HTML content from file
     with open(html_file, 'r', encoding='utf-8') as file:
         html_content = file.read()

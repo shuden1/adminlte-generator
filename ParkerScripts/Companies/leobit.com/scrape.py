@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 import threading
@@ -7,9 +11,9 @@ import sys
 
 html_file_name = sys.argv[1]
 
-service=ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+service=ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 options = webdriver.ChromeOptions()
-profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
 options.add_argument(f"user-data-dir={profile_folder_path}")
 options.add_argument("--headless")
 options.add_argument("--disable-gpu")

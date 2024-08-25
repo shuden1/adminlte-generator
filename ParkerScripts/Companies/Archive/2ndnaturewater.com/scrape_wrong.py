@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -19,7 +23,7 @@ def extract_job_listings(driver, job_listings_selector, job_title_selector, job_
 
     # Find job listings section
     job_listings_section = driver.find_element(By.CSS_SELECTOR, job_listings_selector)
-    
+
     job_data = []
     job_cards = job_listings_section.find_elements(By.CSS_SELECTOR, '.fact-card')
     for job_card in job_cards:
@@ -29,7 +33,7 @@ def extract_job_listings(driver, job_listings_selector, job_title_selector, job_
             "Job-title": title_element.text,
             "URL": link_element.get_attribute("href")
         })
-    
+
     return job_data
 
 # Set up Chrome options for Selenium

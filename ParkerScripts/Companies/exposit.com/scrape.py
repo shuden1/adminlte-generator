@@ -1,5 +1,9 @@
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 import threading
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
@@ -9,7 +13,7 @@ import json
 target_html_file_name = sys.argv[1]
 
 # Setting the profile folder path for Chrome
-profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
 
 # Configuring ChromeDriver options
 options = webdriver.ChromeOptions()
@@ -19,7 +23,7 @@ options.add_argument("--disable-gpu")
 options.add_argument("--no-sandbox")
 
 # Setting the ChromeDriver service
-service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
 # Initializing the WebDriver with the specified service and options
 driver = webdriver.Chrome(service=service, options=options)
@@ -33,7 +37,7 @@ job_elements = driver.find_elements(By.CSS_SELECTOR, ".vacancies--vacancy-card")
 jobs = []
 for element in job_elements:
     title_element = element.find_element(By.CSS_SELECTOR, ".vacancy-title")
-    job_title = title_element.text 
+    job_title = title_element.text
     job_url = element.get_attribute('href')
     jobs.append({"Job-title": job_title, "URL": job_url})
 

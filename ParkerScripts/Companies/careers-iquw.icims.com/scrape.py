@@ -2,13 +2,17 @@ import sys
 import json
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
 def scrape_jobs(file_path):
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
@@ -26,10 +30,10 @@ def scrape_jobs(file_path):
             try:
                 title_element = job_element.find_element(By.CSS_SELECTOR, "div.col-xs-12.title > a.iCIMS_Anchor > h3")
                 url_element = job_element.find_element(By.CSS_SELECTOR, "div.col-xs-12.title > a.iCIMS_Anchor")
-                
+
                 job_title = title_element.text.strip() if title_element.text.strip() else title_element.get_attribute('innerHTML').strip()
                 job_url = url_element.get_attribute('href') if url_element.get_attribute('href') else "#"
-                
+
                 job_listings.append({"Job-title": job_title, "URL": job_url})
             except NoSuchElementException:
                 continue

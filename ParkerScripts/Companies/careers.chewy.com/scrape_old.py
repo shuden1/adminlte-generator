@@ -3,6 +3,10 @@ import shutil
 import sys
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 
@@ -22,7 +26,7 @@ def scrape_job_listings(html_file_name):
     options.add_argument("--headless")
 
     # Set ChromeDriver service
-    service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+    service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
     # Start headless WebDriver
     driver = webdriver.Chrome(service=service, options=options)

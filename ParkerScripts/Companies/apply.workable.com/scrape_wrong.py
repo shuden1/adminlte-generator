@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import shutil
@@ -9,7 +13,7 @@ import threading
 html_file = sys.argv[1]
 
 # Create a webdriver service
-service = webdriver.chrome.service.Service(executable_path=r"C:\Python3\chromedriver.exe")
+service = webdriver.chrome.service.Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
 # Set webdriver options
 options = webdriver.ChromeOptions()

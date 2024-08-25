@@ -20,7 +20,7 @@ class SendDailyEmails extends Command
         if ($userId) {
             $users = User::where('id', $userId)->get();
         } else {
-            $users = User::all(); // Fetch all users
+            $users = User::where('is_active', true)->get();  // Fetch all active users
         }
 
         foreach ($users as $user) {

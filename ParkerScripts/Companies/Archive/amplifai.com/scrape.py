@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -23,7 +27,7 @@ job_blocks = driver.find_elements(By.CSS_SELECTOR, job_block_selector)
 for job_block in job_blocks:
     job_titles = job_block.find_elements(By.CSS_SELECTOR, job_title_selector)
     job_urls = job_block.find_elements(By.CSS_SELECTOR, job_url_selector)
-    
+
     for title, url in zip(job_titles, job_urls):
         job_data = {
             "Job-title": title.text,

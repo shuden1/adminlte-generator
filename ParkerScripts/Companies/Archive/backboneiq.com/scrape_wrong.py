@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -27,7 +31,7 @@ def scrape_job_listings(html_file):
         job_listings.append({"Job-title": job_title, "URL": job_url})
 
     driver.quit()
-    
+
     return json.dumps(job_listings)
 
 if __name__ == "__main__":

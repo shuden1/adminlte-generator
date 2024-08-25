@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $careerPageUrl
  * @property string $contacted
  * @property boolean $sauroned
+ * @property string $proxy_country
  */
 class Company extends Model
 {
@@ -37,7 +38,8 @@ class Company extends Model
         'linkedin_id',
         'contacted',
         'sauroned',
-        'scripted'
+        'scripted',
+        'proxy_country'
     ];
 
     /**
@@ -52,7 +54,8 @@ class Company extends Model
         'linkedin_id' => 'string',
         'contacted' => 'date',
         'sauroned' => 'boolean',
-        'scripted' => 'boolean'
+        'scripted' => 'boolean',
+        'proxy_country' => 'string'
     ];
 
     /**

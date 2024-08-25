@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -12,7 +16,7 @@ job_url_selector = "div.ant-list-item-meta-avatar > a"
 def scrape_job_listings(html_file_path):
     driver = webdriver.Chrome()
     driver.get(f"file:///{html_file_path}")
-    
+
     job_blocks = driver.find_elements(By.CSS_SELECTOR, job_block_selector)
     job_listings = []
 

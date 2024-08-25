@@ -1,6 +1,10 @@
 import sys
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 
@@ -8,8 +12,8 @@ from selenium.webdriver.common.by import By
 html_file_path = sys.argv[1]
 
 # Initialize the headless WebDriver with the specified profile and options
-profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
-service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 options = webdriver.ChromeOptions()
 options.add_argument(f"user-data-dir={profile_folder_path}")
 options.add_argument("--headless")
@@ -21,13 +25,13 @@ driver = webdriver.Chrome(service=service, options=options)
 try:
     # Load the HTML file
     driver.get(f"file:///{html_file_path}")
-    
+
     # Define the selector for job listings from the refinement process
-    job_listings_selector = '.MuiBox-root'  
-    
+    job_listings_selector = '.MuiBox-root'
+
     # Use the selector to find all job elements
     job_elements = driver.find_elements(By.CSS_SELECTOR, job_listings_selector)
-    
+
     # Extract job titles and URLs
     job_listings = []
     for job_element in job_elements:
@@ -37,7 +41,7 @@ try:
             job_url = job_title_element.get_attribute('href')
             if '/careers' in job_url or 'job' in job_url:  # Filtering to ensure relevance to job listings
                 job_listings.append({"Job-title": job_title, "URL": job_url})
-    
+
     print(job_listings)
 
 finally:

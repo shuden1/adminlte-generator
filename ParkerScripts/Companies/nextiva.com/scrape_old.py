@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -12,14 +16,14 @@ job_title_selector = "h4.listing-title"
 job_url_selector = "a.listing-link"
 
 def scrape_jobs(html_file):
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
 
     try:
         chrome_options = Options()
         chrome_options.add_argument(f"user-data-dir={profile_folder_path}")
         chrome_options.add_argument("--headless")
 
-        service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+        service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
         driver = webdriver.Chrome(service=service, options=chrome_options)
         driver.get(f"file://{html_file}")

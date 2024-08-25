@@ -3,6 +3,10 @@ import shutil
 import sys
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -14,13 +18,13 @@ job_title_selector = "h3 > a"        # Placeholder selector for job titles withi
 if __name__ == "__main__":
     html_file_name = sys.argv[1]   # Filename from the external source as an argument
 
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
 
     options = Options()
     options.headless = True
     options.add_argument(f"user-data-dir={profile_folder_path}")
 
-    service = Service(executable_path=r"C:\Python3\chromedriver.exe")
+    service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(f"file://{html_file_name}")

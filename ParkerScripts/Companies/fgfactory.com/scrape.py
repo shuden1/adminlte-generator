@@ -1,5 +1,9 @@
 import sys
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 import threading
@@ -7,7 +11,7 @@ import json
 
 def scrape_job_openings(html_file):
     # Set up Chrome options
-    profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
@@ -15,7 +19,7 @@ def scrape_job_openings(html_file):
     options.add_argument("--no-sandbox")
 
     # Set up Chrome driver
-    service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+    service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     driver = webdriver.Chrome(service=service, options=options)
 
     # Open the target HTML file
@@ -34,7 +38,7 @@ def scrape_job_openings(html_file):
         })
 
     driver.quit()
-    
+
     return json.dumps(job_listings)
 
 if __name__ == '__main__':

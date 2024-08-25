@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options
@@ -14,8 +18,8 @@ job_url_selector = job_title_selector
 target_html_file = sys.argv[1]
 
 # Initialize a headless webdriver
-profile_folder_path="D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\"+str(threading.get_ident())
-service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+profile_folder_path=os.getenv("CHROME_PROFILE_PATH") + "\\"+str(threading.get_ident())
+service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 options = Options()
 options.add_argument(f"user-data-dir={profile_folder_path}")
 options.add_argument("--headless")

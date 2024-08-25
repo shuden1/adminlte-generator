@@ -3,6 +3,10 @@ import shutil
 import sys
 import threading
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import InvalidArgumentException
@@ -11,7 +15,7 @@ from selenium.common.exceptions import InvalidArgumentException
 target_html_file = sys.argv[1]
 
 # Define the profile folder path for Chrome
-profile_folder_path = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
 
 # Set the options for the headless browser
 options = webdriver.ChromeOptions()
@@ -19,7 +23,7 @@ options.add_argument(f"user-data-dir={profile_folder_path}")
 options.headless = True
 
 # Define the service for ChromeDriver
-service = ChromeService(executable_path=r"C:\Python3\chromedriver.exe")
+service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
 # Start the headless browser
 driver = webdriver.Chrome(service=service, options=options)

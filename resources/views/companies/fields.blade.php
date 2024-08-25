@@ -21,6 +21,11 @@
     {!! Form::text('contacted', null, ['class' => 'form-control','id'=>'contacted']) !!}
 </div>
 
+<div class="form-group col-sm-6">
+    {!! Form::label('proxy_country', 'Proxy Country:') !!}
+    {!! Form::text('proxy_country', null, ['class' => 'form-control']) !!}
+</div>
+
 @push('page_scripts')
     <script type="text/javascript">
         $('#contacted').datetimepicker({

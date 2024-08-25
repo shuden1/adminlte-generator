@@ -1,4 +1,8 @@
 from selenium import webdriver
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from selenium.webdriver.common.by import By
 import json
 import sys
@@ -7,7 +11,7 @@ import sys
 def scrape_job_listings(html_file):
     # Setup WebDriver
     driver = webdriver.Chrome()
-    
+
     try:
         # Open the local HTML file
         driver.get(f"file://{html_file}")

@@ -292,12 +292,24 @@ class RetrieveCompanyCareers implements ShouldQueue
 
         return $hasUpdate;
     }
+
+    public function getJobPages($basePathHtmls, $currentDate) {
+        $folderPath = $basePathHtmls . "\\" . $currentDate;
+
+        if (!is_dir($folderPath)) {
+            return [];
+        }
+
+        $files = array_diff(scandir($folderPath), ['.', '..']);
+        return array_values($files);
+    }
+
     public function handle()
     {
         $company = $this->company;
         $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
         $domain = str_replace('www.','',$domain);
-
+        $currentDate = date("d-m-y");
 
         if ($domain == "linkedin.com") {
             $this->retrieveLinkedIn();
@@ -305,7 +317,7 @@ class RetrieveCompanyCareers implements ShouldQueue
             RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue'.rand(1, 10))->delay($when);
         } else {
             // Creating a recent page image
-            $basePathHtmls = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\" . $domain . "\\HTMLs\\" . $company->id;
+            $basePathHtmls = env("COMPANIES_BASE_PATH")."\\" . $domain . "\\HTMLs\\" . $company->id;
 
 
             if (!is_dir($basePathHtmls)) {
@@ -314,39 +326,43 @@ class RetrieveCompanyCareers implements ShouldQueue
 
             $latestFile = $this->getLatestFile($basePathHtmls);
 
-        $pythonExecutable = "C:\\Python3\\python.exe";
 
-        //    $pythonExecutable = "C:\\Users\\shuga\\AppData\\Local\\Programs\\Python\\Python312\\python.exe";
-
+            $pythonExecutable = env("PYTHON_PATH");
 
 
-        if (preg_match('/^hh\.[a-z]+$/', $domain)) {
-            $scriptPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_HH.py";
-        } else
-        $scriptPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_iframes.py";
-        $careerPageUrl = $company->careerPageUrl;
-        $filePath = escapeshellarg($basePathHtmls."\\".date("d-m-y").".html");
 
-        $command = "{$pythonExecutable} {$scriptPath} \"{$careerPageUrl}\" {$filePath}";
-        var_dump($command);
-        shell_exec($command);
-        $scriptPath = base_path("\\ParkerScripts\\Companies\\".$domain."\\scrape.py");
+            if (preg_match('/^hh\.[a-z]+$/', $domain)) {
+                $scriptPath = env("HH_FETCH_SCRIPT_PATH");
+            }
+//            elseif (preg_match('/^careers\.tql\.com.+?$/', $domain)) {
+//                $scriptPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\html_fetch_tql.py";
+//            }
+        else{
+                $scriptPath = env("FETCH_SCRIPT_PATH");
+            }
+            $careerPageUrl = $company->careerPageUrl;
+            $filePath = escapeshellarg($basePathHtmls."\\".$currentDate.".html");
 
-        $activeJobs = Job::where('company_id', $company->id)->count();
-            $companyPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}\\{$company->id}";
-            $domainPath = "D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\ParkerScripts\\Companies\\{$domain}";
 
-            // Check if a scrape.py script exists in the company's folder
+            $command = "{$pythonExecutable} {$scriptPath} \"{$careerPageUrl}\" {$filePath}";
+            var_dump($command);
+            shell_exec($command);
+
+            $activeJobs = Job::where('company_id', $company->id)->count();
+            $companyPath = env("COMPANIES_BASE_PATH")."\\{$domain}\\{$company->id}";
+            $domainPath = env("COMPANIES_BASE_PATH")."\\{$domain}";
+
+
             if (file_exists("{$companyPath}\\scrape.py")) {
                 $scriptPath = $companyPath . "\\scrape.py";
             } else {
                 // If not, fall back to the scrape.py script in the domain folder
                 $scriptPath = $domainPath . "\\scrape.py";
             }
-            if (($latestFile) &&($activeJobs>0)){
-                $html1 = file_get_contents($basePathHtmls . "\\" . $latestFile);
-                $html2 = file_get_contents($basePathHtmls . "\\" . date("d-m-y") . ".html");
 
+            if (($latestFile) && ($activeJobs>0)){
+                $html1 = file_get_contents($basePathHtmls . "\\" . $latestFile);
+                $html2 = file_get_contents($basePathHtmls . "\\" . $currentDate . ".html");
                 if ($html1 === $html2) {
                     $updateTrigger = false;
                 } else {
@@ -356,94 +372,97 @@ class RetrieveCompanyCareers implements ShouldQueue
                 $updateTrigger = true;
             }
             $hasUpdate = false;
+
             if (file_exists($scriptPath) && ($updateTrigger)) {
-                $hasUpdate = false;
-                $process = shell_exec('python ' . escapeshellarg($scriptPath) . ' "' . $basePathHtmls . "\\" . date("d-m-y") . '.html"');
-                $jsonData = json_decode($process, true);
+
+                $jobPages = $this->getJobPages($basePathHtmls, $currentDate);
+                var_dump($jobPages);
+                $allJobs = [];
+                foreach ($jobPages as $jobPage) {
+                    $hasUpdate = false;
+                    $process = shell_exec(env("PYTHON_PATH").' ' . escapeshellarg($scriptPath) . ' "' . $basePathHtmls . "\\" . $currentDate . "\\" . $jobPage. '"');
+                    $jsonData = json_decode($process, true);
+                    $allJobs = array_merge($allJobs, $jsonData);
+                }
 
                 /*
-                 * ZERO POSTINGS CHECK
+ * ZERO POSTINGS CHECK
 
-                                if ($jsonData === null && json_last_error() !== JSON_ERROR_NONE) {
-                                    ProcessCompany::dispatch($company, false);
-                                    break;
-                                } else {
-                                    // Check if the result is empty
-                                    if (empty($jsonData)) {
-                                        ProcessCompany::dispatch($company, false);
-                                        break;
-                                    }
-                                }
-                */
-            $scheme = parse_url($company->careerPageUrl, PHP_URL_SCHEME);
-            $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
-
-                // Concatenate them to form the base URL
-            $baseUrl = $scheme . '://' . $domain;
-
-            if ($jsonData) {
-                foreach ($jsonData as $jobData) {
-                    if (substr($jobData['URL'], -1) === '#') {
-                        // Replace it with the company's careerPageUrl
-                        $jobData['URL'] = $this->company->careerPageUrl;
-                    }elseif (strpos($jobData['URL'], "file:///".$basePathHtmls) !== false) {
-                        $jobData['URL'] = str_replace("file:///".$basePathHtmls, $baseUrl, $jobData['URL']);
+                    // Check if the result is empty
+                    if (empty($allJobs)) {
+                        ProcessCompany::dispatch($company, false);
+                        break;
                     }
-                    elseif (strpos($jobData['URL'], "file:///D:") !== false) {
-                        $jobData['URL'] = str_replace("file:///D:", $baseUrl, $jobData['URL']);
+                }
+*/
+
+                $scheme = parse_url($company->careerPageUrl, PHP_URL_SCHEME);
+                $domain = parse_url($company->careerPageUrl, PHP_URL_HOST);
+                // Concatenate them to form the base URL
+                $baseUrl = $scheme . '://' . $domain;
+
+                if ($allJobs) {
+                    foreach ($allJobs as $jobData) {
+                        if (substr($jobData['URL'], -1) === '#') {
+                            // Replace it with the company's careerPageUrl
+                            $jobData['URL'] = $this->company->careerPageUrl;
+                        } elseif (strpos($jobData['URL'], "file:///" . $basePathHtmls) !== false) {
+                            $jobData['URL'] = str_replace("file:///" . $basePathHtmls, $baseUrl, $jobData['URL']);
+                        } elseif (strpos($jobData['URL'], "file:///D:") !== false) {
+                            $jobData['URL'] = str_replace("file:///D:", $baseUrl, $jobData['URL']);
 
                         } elseif (strpos($jobData['URL'], 'http://') === false && strpos($jobData['URL'], 'https://') === false) {
                             $jobData['URL'] = rtrim($baseUrl, '/') . '/' . ltrim($jobData['URL'], '/');
                         }
 
-                    $pattern = '/.*Mind\/CRA\/AI_Experiments\/Job_Crawlers\/Peter\/adminlte-generator\/ParkerScripts\/Companies\/[^\/]*\/HTMLs\/[0-9]*(\/[0-9]*-[0-9]*-[0-9]*\.html)?\//';
-                    $replacement = substr($careerPageUrl, 0, strrpos($careerPageUrl, '/')+1);
-                    $jobData['URL'] = preg_replace($pattern, $replacement, $jobData['URL']);
+                        $pattern = '/.*Mind\/CRA\/AI_Experiments\/Job_Crawlers\/Peter\/adminlte-generator\/ParkerScripts\/Companies\/[^\/]*\/HTMLs\/[0-9]*(\/[0-9]*-[0-9]*-[0-9]*.*\.html)?\//';
+                        $replacement = substr($careerPageUrl, 0, strrpos($careerPageUrl, '/') + 1);
+                        $jobData['URL'] = preg_replace($pattern, $replacement, $jobData['URL']);
 
-                    $pattern = '/[0-9]*-[0-9]*-[0-9]*\.html/';
-                    $jobData['URL'] = preg_replace($pattern, "", $jobData['URL']);
+                        $pattern = '/[0-9]*-[0-9]*-[0-9]*.*\.html/';
+                        $jobData['URL'] = preg_replace($pattern, "", $jobData['URL']);
 
 
-                    $existingJob = Job::withTrashed()
-                        ->where('url', $jobData['URL'])
-                        ->where('title', $jobData['Job-title'])
-                        ->latest('deleted_at')
-                        ->first();
-                    if ($existingJob) {
-                        if ($existingJob->trashed()) {
-                            $deletedAt = $existingJob->deleted_at; // assuming 'deleted_at' is the name of your soft delete timestamp column
-                            if ($deletedAt->isToday() || $deletedAt->isYesterday()) {
-                                $existingJob->restore(); // Restore the soft-deleted job
+                        $existingJob = Job::withTrashed()
+                            ->where('url', $jobData['URL'])
+                            ->where('title', $jobData['Job-title'])
+                            ->latest('deleted_at')
+                            ->first();
+                        if ($existingJob) {
+                            if ($existingJob->trashed()) {
+                                $deletedAt = $existingJob->deleted_at; // assuming 'deleted_at' is the name of your soft delete timestamp column
+                                if ($deletedAt->isToday() || $deletedAt->isYesterday()) {
+                                    $existingJob->restore(); // Restore the soft-deleted job
+                                } else {
+                                    $existingJob->forceDelete(); // Permanently delete the job if it was soft-deleted more than 2 days ago
+                                    Job::create([
+                                        'company_id' => $company->id,
+                                        'title' => $jobData['Job-title'],
+                                        'url' => $jobData['URL'],
+                                        'date' => Carbon::now(),
+                                    ]);
+                                    $hasUpdate = true; // Assuming this is a flag indicating that an update occurred.
+                                }
                             } else {
-                                $existingJob->forceDelete(); // Permanently delete the job if it was soft-deleted more than 2 days ago
-                                $newJob = Job::create([
-                                    'company_id' => $company->id,
-                                    'title' => $jobData['Job-title'],
-                                    'url' => $jobData['URL'],
-                                    'date' => Carbon::now(),
-                                ]);
-                                $hasUpdate = true; // Assuming this is a flag indicating that an update occurred.
+                                // If the job exists and is not soft-deleted, simply update its timestamp.
+                                $existingJob->touch();
                             }
                         } else {
-                            // If the job exists and is not soft-deleted, simply update its timestamp.
-                            $existingJob->touch();
+                            // Create a new job if no existing (including soft-deleted) job is found.
+                            Job::create([
+                                'company_id' => $company->id,
+                                'title' => $jobData['Job-title'],
+                                'url' => $jobData['URL'],
+                                'date' => Carbon::now(),
+                            ]);
+                            $hasUpdate = true; // Assuming this is a flag indicating that an update occurred.
                         }
-                    } else {
-                        // Create a new job if no existing (including soft-deleted) job is found.
-                        $newJob = Job::create([
-                            'company_id' => $company->id,
-                            'title' => $jobData['Job-title'],
-                            'url' => $jobData['URL'],
-                            'date' => Carbon::now(),
-                        ]);
-                        $hasUpdate = true; // Assuming this is a flag indicating that an update occurred.
                     }
                 }
-            }
-            $yesterday = Carbon::yesterday();
-            $jobsToDelete = $company->jobs()
-                ->whereDate('updated_at', '<=', $yesterday)
-                ->get();
+                $yesterday = Carbon::yesterday();
+                $jobsToDelete = $company->jobs()
+                    ->whereDate('updated_at', '<=', $yesterday)
+                    ->get();
 
 
                 // Loop through the jobs and safely delete each one
@@ -451,10 +470,10 @@ class RetrieveCompanyCareers implements ShouldQueue
                     $hasUpdate = true;
                     $job->delete(); // This will soft delete if SoftDeletes trait is used in Job model
                 }
-
             }
+
             if (!$hasUpdate) {
-                $this->safeDeleteFile($basePathHtmls . "\\" . date("d-m-y") . ".html");
+                $this->safeDeleteFile($basePathHtmls . "\\" . $currentDate . ".html");
                 var_dump("No updates on the webpage");
             }
 
