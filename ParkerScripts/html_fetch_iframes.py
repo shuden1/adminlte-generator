@@ -88,7 +88,7 @@ def create_proxy_extension(proxy_config, profile_folder_path):
     );
     """
 
-    pluginfile = profile_folder_path+'\\proxy_auth_plugin.zip'
+    pluginfile = profile_folder_path+os.path.sep+'proxy_auth_plugin.zip'
     with zipfile.ZipFile(pluginfile, 'w') as zp:
         zp.writestr("manifest.json", manifest_json)
         zp.writestr("background.js", background_js)
@@ -114,7 +114,7 @@ def remove_script_tags(input_html_file):
 
 def get_dynamic_html(url, output_file, scrolls=10, proxy_country=None):
     options = Options()
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
     os.makedirs(profile_folder_path, exist_ok=True)
 
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
