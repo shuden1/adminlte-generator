@@ -20,7 +20,7 @@ def scrape_job_listings(html_file_path):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" \
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep \
                           + str(threading.get_ident())
 
     chrome_options.add_argument(f"user-data-dir={profile_folder_path}")

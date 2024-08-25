@@ -20,7 +20,7 @@ job_title_selector = '.opening a'
 job_url_selector = '.opening a'
 
 # Set up a headless ChromeDriver.
-profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{str(threading.get_ident())}"
+profile_folder_path = f"{os.getenv("CHROME_PROFILE_PATH")}{os.path.sep}{str(threading.get_ident())}"
 service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
 options = Options()

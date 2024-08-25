@@ -294,7 +294,7 @@ class RetrieveCompanyCareers implements ShouldQueue
     }
 
     public function getJobPages($basePathHtmls, $currentDate) {
-        $folderPath = $basePathHtmls . "\\" . $currentDate;
+        $folderPath = $basePathHtmls . DIRECTORY_SEPARATOR . $currentDate;
 
         if (!is_dir($folderPath)) {
             return [];
@@ -317,7 +317,7 @@ class RetrieveCompanyCareers implements ShouldQueue
             RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue'.rand(1, 10))->delay($when);
         } else {
             // Creating a recent page image
-            $basePathHtmls = env("COMPANIES_BASE_PATH")."\\" . $domain . "\\HTMLs\\" . $company->id;
+            $basePathHtmls = env("COMPANIES_BASE_PATH"). DIRECTORY_SEPARATOR . $domain . DIRECTORY_SEPARATOR. "HTMLs". DIRECTORY_SEPARATOR . $company->id;
 
 
             if (!is_dir($basePathHtmls)) {
@@ -341,7 +341,7 @@ class RetrieveCompanyCareers implements ShouldQueue
                 $scriptPath = env("FETCH_SCRIPT_PATH");
             }
             $careerPageUrl = $company->careerPageUrl;
-            $filePath = escapeshellarg($basePathHtmls."\\".$currentDate.".html");
+            $filePath = escapeshellarg($basePathHtmls.DIRECTORY_SEPARATOR.$currentDate.".html");
 
 
             $command = "{$pythonExecutable} {$scriptPath} \"{$careerPageUrl}\" {$filePath}";
@@ -349,20 +349,20 @@ class RetrieveCompanyCareers implements ShouldQueue
             shell_exec($command);
 
             $activeJobs = Job::where('company_id', $company->id)->count();
-            $companyPath = env("COMPANIES_BASE_PATH")."\\{$domain}\\{$company->id}";
-            $domainPath = env("COMPANIES_BASE_PATH")."\\{$domain}";
+            $companyPath = env("COMPANIES_BASE_PATH").DIRECTORY_SEPARATOR.$domain.DIRECTORY_SEPARATOR.$company->id;
+            $domainPath = env("COMPANIES_BASE_PATH").DIRECTORY_SEPARATOR.$domain;
 
 
-            if (file_exists("{$companyPath}\\scrape.py")) {
-                $scriptPath = $companyPath . "\\scrape.py";
+            if (file_exists($companyPath.DIRECTORY_SEPARATOR."scrape.py")) {
+                $scriptPath = $companyPath . DIRECTORY_SEPARATOR. "scrape.py";
             } else {
                 // If not, fall back to the scrape.py script in the domain folder
-                $scriptPath = $domainPath . "\\scrape.py";
+                $scriptPath = $domainPath . DIRECTORY_SEPARATOR. "scrape.py";
             }
 
             if (($latestFile) && ($activeJobs>0)){
-                $html1 = file_get_contents($basePathHtmls . "\\" . $latestFile);
-                $html2 = file_get_contents($basePathHtmls . "\\" . $currentDate . ".html");
+                $html1 = file_get_contents($basePathHtmls . DIRECTORY_SEPARATOR . $latestFile);
+                $html2 = file_get_contents($basePathHtmls . DIRECTORY_SEPARATOR . $currentDate . ".html");
                 if ($html1 === $html2) {
                     $updateTrigger = false;
                 } else {
@@ -380,7 +380,7 @@ class RetrieveCompanyCareers implements ShouldQueue
                 $allJobs = [];
                 foreach ($jobPages as $jobPage) {
                     $hasUpdate = false;
-                    $process = shell_exec(env("PYTHON_PATH").' ' . escapeshellarg($scriptPath) . ' "' . $basePathHtmls . "\\" . $currentDate . "\\" . $jobPage. '"');
+                    $process = shell_exec(env("PYTHON_PATH").' ' . escapeshellarg($scriptPath) . ' "' . $basePathHtmls . DIRECTORY_SEPARATOR . $currentDate . DIRECTORY_SEPARATOR . $jobPage. '"');
                     $jsonData = json_decode($process, true);
                     $allJobs = array_merge($allJobs, $jsonData);
                 }
@@ -473,7 +473,7 @@ class RetrieveCompanyCareers implements ShouldQueue
             }
 
             if (!$hasUpdate) {
-                $this->safeDeleteFile($basePathHtmls . "\\" . $currentDate . ".html");
+                $this->safeDeleteFile($basePathHtmls . DIRECTORY_SEPARATOR . $currentDate . ".html");
                 var_dump("No updates on the webpage");
             }
 

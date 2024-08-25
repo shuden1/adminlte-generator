@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
 def scrape_job_listings(file_path):
-    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
+    profile_folder_path = f"{os.getenv("CHROME_PROFILE_PATH")}{os.path.sep}{threading.get_ident()}"
     service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_folder_path}")

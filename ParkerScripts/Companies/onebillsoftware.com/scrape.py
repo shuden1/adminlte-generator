@@ -14,7 +14,7 @@ from selenium.webdriver.chrome.service import Service
 html_file = sys.argv[1]
 
 # Initialize a headless webdriver with a profile path
-profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
+profile_folder_path = f"{os.getenv("CHROME_PROFILE_PATH")}{os.path.sep}{threading.get_ident()}"
 
 # Set up Chrome service
 service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")

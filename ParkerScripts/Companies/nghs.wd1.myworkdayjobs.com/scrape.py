@@ -10,7 +10,7 @@ import json
 
 def scrape_job_listings(target_html):
     # Profile path configuration
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 
     # Chrome options configuration
     options = webdriver.ChromeOptions()

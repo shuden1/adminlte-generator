@@ -16,7 +16,7 @@ def main():
     html_file_path = sys.argv[1]
 
     # Define the profile folder path
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 
     # Set up Chrome options
     options = Options()

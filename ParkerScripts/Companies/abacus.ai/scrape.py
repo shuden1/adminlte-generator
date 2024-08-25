@@ -17,7 +17,7 @@ def main(html_file_path):
 
     # Set up headless Chrome WebDriver
     profile_ident = str(threading.get_ident())
-    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{profile_ident}"
+    profile_folder_path = f"{os.getenv("CHROME_PROFILE_PATH")}{os.path.sep}{profile_ident}"
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")

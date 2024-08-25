@@ -19,7 +19,7 @@ job_title_selector = 'h2.card-title.blue-text a'
 def scrape_job_listings(html_file):
 
     # Set up a new Chrome profile for the current thread
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 
     # Set up Chrome options for headless execution
     options = Options()

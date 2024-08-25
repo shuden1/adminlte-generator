@@ -15,7 +15,7 @@ job_title_selector = ".title a h3"
 job_url_selector = ".title a"
 
 def scrape_job_listings(file_name):
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")

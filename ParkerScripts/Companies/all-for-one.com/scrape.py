@@ -13,7 +13,7 @@ import json
 target_html_file = sys.argv[1]
 
 # WebDriver profile path setup
-profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 
 # WebDriver option and service configuration
 options = webdriver.ChromeOptions()

@@ -14,7 +14,7 @@ import json
 html_file = sys.argv[1]
 
 # Define the profile path for the headless webdriver based on thread identity
-profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 
 # Initialise a headless webdriver
 service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")

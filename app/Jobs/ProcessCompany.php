@@ -284,8 +284,8 @@ class ProcessCompany implements ShouldQueue
             1. This script will be launched externally in a settled-up environment, DO NOT TEST THIS SCRIPT, CREATE IT: \n
             THE TARGET HTML FILE NAME SHOULD BE AN ARGUMENT SENT FROM AN EXTERNAL SOURCE THROUGH THE CONSOLE COMMAND AS THE SINGLE INPUT PARAMETER. DO NOT PUT ANY PLACEHOLDERS OR EXAMPLES! \n
             2. Use from selenium.common.exceptions import NoSuchElementException to add a proper exception handling and avoid failing the script if the elements do not exist. import os, import dotenv and use load_dotenv() to get access to the .env parameters.\n
-            3. Initialise a headless webdriver, with this profile path, do not forget to create a relevant folder: profile_folder_path=\"os.getenv(\"CHROME_PROFILE_PATH\") + \"\\\" + str(threading.get_ident()). Use this service:
-            service=service(executable_path=r\"\"+os.getenv(\"CHROME_DRIVER_PATH\")+\"\"). Add these options: options.add_argument(f\"user-data-dir={profile_folder_path}\") options.add_argument(\"--headless\") options.add_argument(\"--disable-gpu\") options.add_argument(\"--no-sandbox\") \n
+            3. Initialise a headless webdriver, with this profile path, do not forget to create a relevant folder: profile_folder_path=os.getenv(\"CHROME_PROFILE_PATH\") + os.path.sep + str(threading.get_ident()). Use this service:
+            service=service(executable_path=os.getenv(\"CHROME_DRIVER_PATH\")). Add these options: options.add_argument(f\"user-data-dir={profile_folder_path}\") options.add_argument(\"--headless\") options.add_argument(\"--disable-gpu\") options.add_argument(\"--no-sandbox\") \n
             4. USE THE SELECTORS AND CODE EXAMPLES YOU PREVIOUSLY DEFINED!!! and scrape all job listings. REMEMBER!!!! instead of an old find_elements_by_css_selector, you should use the find_elements method with By.CSS_SELECTOR. \n
             5. To extract Job Titles try to use get_attribute('textContent').strip() first, but if it's empty - use .get_attribute('innerHTML').strip() \n
             6. In case there is no Job Opening URL defined in the HTML - use a \"#\", BUT ONLY IF THERE IS NO URL DEFINED WITHIN THE JOB POSTING ELEMENT \n
@@ -358,11 +358,11 @@ class ProcessCompany implements ShouldQueue
             RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
             return;
         } else {
-            $companyPath = env("COMPANIES_BASE_PATH")."\\{$domain}\\{$this->company->id}";
-            $domainPath = env("COMPANIES_BASE_PATH")."\\{$domain}";
+            $companyPath = env("COMPANIES_BASE_PATH").DIRECTORY_SEPARATOR.$domain.DIRECTORY_SEPARATOR.$this->company->id;
+            $domainPath = env("COMPANIES_BASE_PATH").DIRECTORY_SEPARATOR.$domain;
 
-            $scriptPath = $domainPath . "\\scrape.py";
-            $tempScriptPath = $domainPath . "\\scrape_temp.py";
+            $scriptPath = $domainPath . DIRECTORY_SEPARATOR. "scrape.py";
+            $tempScriptPath = $domainPath . DIRECTORY_SEPARATOR. "scrape_temp.py";
             $shouldRegenerate = false;
 
             if (!is_dir($domainPath)) {
@@ -375,14 +375,14 @@ class ProcessCompany implements ShouldQueue
                 if (!is_dir($companyPath)) {
                     mkdir($companyPath, 0777, true);
                 }
-                $scriptPath = $companyPath . "\\scrape.py";
-                $tempScriptPath = $companyPath . "\\scrape_temp.py";
+                $scriptPath = $companyPath . DIRECTORY_SEPARATOR. "scrape.py";
+                $tempScriptPath = $companyPath . DIRECTORY_SEPARATOR. "scrape_temp.py";
                 $shouldRegenerate = true;
             }
 
             if ($shouldRegenerate || !file_exists($scriptPath)) {
                 $basePath = $domainPath;
-                $basePathHtmls = $basePath . "\\HTMLs";
+                $basePathHtmls = $basePath . DIRECTORY_SEPARATOR. "HTMLs";
                 if ($this->forced == 2) {
                     $basePath = $companyPath;
                     $basePathHtmls = $basePath;
@@ -395,9 +395,9 @@ class ProcessCompany implements ShouldQueue
                     mkdir($basePathHtmls, 0777, true);
                 }
 
-                $inputFile = $basePathHtmls . "\\template.html";
-                $outputFile = $basePathHtmls . "\\cleaned.html";
-                $tempScriptPath = $basePath . "\\scrape_temp.py";
+                $inputFile = $basePathHtmls . DIRECTORY_SEPARATOR. "template.html";
+                $outputFile = $basePathHtmls . DIRECTORY_SEPARATOR. "cleaned.html";
+                $tempScriptPath = $basePath . DIRECTORY_SEPARATOR. "scrape_temp.py";
 
 
                 $this->getCleanHTML($inputFile, $outputFile, $this->company->careerPageUrl, $domain);
@@ -413,13 +413,13 @@ class ProcessCompany implements ShouldQueue
                     $this->company->scripted = $success;
                     if (!$success) {
                         if (file_exists($tempScriptPath) && is_readable($tempScriptPath)) {
-                            rename($tempScriptPath, $basePath . "\\scrape_wrong.py");
+                            rename($tempScriptPath, $basePath . DIRECTORY_SEPARATOR. "scrape_wrong.py");
                         } else {
                             echo "File does not exist or is not readable: " . $tempScriptPath;
                         }
                     } else {
                         if (file_exists($scriptPath)) {
-                            rename($scriptPath, $basePath . "\\scrape_old.py");
+                            rename($scriptPath, $basePath . DIRECTORY_SEPARATOR. "scrape_old.py");
                         }
 
                         if (file_exists($tempScriptPath) && is_readable($tempScriptPath)) {

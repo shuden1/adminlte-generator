@@ -15,7 +15,7 @@ def main():
     html_file_path = sys.argv[1]
 
     # Set up the Chrome options
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
     chrome_options = Options()
     chrome_options.add_argument(f"user-data-dir={profile_folder_path}")
     chrome_options.add_argument("--headless")

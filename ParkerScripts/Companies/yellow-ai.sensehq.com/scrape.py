@@ -21,7 +21,7 @@ job_url_selector = ".css-1eijxws"
 # STEP 2: Python + Selenium script
 def main(html_file_path):
     # The path to the user's profile directory
-    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
+    profile_folder_path = f"{os.getenv("CHROME_PROFILE_PATH")}{os.path.sep}{threading.get_ident()}"
 
     # Creating the service
     service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")

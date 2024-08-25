@@ -23,7 +23,7 @@ job_url_selector = ".card-title a"
 target_html_file_name = sys.argv[1]
 
 # Initialize headless webdriver with profile
-profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 
 # Setting service
 service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")

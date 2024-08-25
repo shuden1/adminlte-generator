@@ -12,7 +12,7 @@ import json
 def scrape_job_listings(file_path):
     service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     options = webdriver.ChromeOptions()
-    profile_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
     options.add_argument(f"user-data-dir={profile_path}")
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")

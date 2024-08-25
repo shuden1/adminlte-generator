@@ -20,7 +20,7 @@ job_title_selector = 'h4.elementor-heading-title'
 job_url_selector = 'a.elementor-button-link'
 
 # Selenium config
-profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 options = Options()
 options.add_argument("--headless")

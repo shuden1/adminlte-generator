@@ -14,7 +14,7 @@ target_html_file = sys.argv[1]
 
 # Setting up Chrome options
 options = webdriver.ChromeOptions()
-profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 options.add_argument(f"user-data-dir={profile_folder_path}")
 options.add_argument("--headless")
 options.add_argument("--disable-gpu")

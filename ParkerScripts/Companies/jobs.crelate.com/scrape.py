@@ -19,7 +19,7 @@ job_url_selector = "a.portal-job-tile-link"
 # Step 2 script as per instructions
 def scrape_job_listings(html_filename):
     service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
     options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")

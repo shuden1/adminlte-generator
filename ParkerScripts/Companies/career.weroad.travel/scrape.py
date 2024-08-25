@@ -12,7 +12,7 @@ from selenium.webdriver.common.by import By
 
 def scrape_jobs(file_path):
     # Profile folder path
-    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
+    profile_folder_path = f"{os.getenv("CHROME_PROFILE_PATH")}{os.path.sep}{threading.get_ident()}"
 
     # Set up Chrome options
     options = Options()

@@ -17,7 +17,7 @@ def main():
 
     html_file_path = sys.argv[1]
 
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
     service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 
     options = Options()

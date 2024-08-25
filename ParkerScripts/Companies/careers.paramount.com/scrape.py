@@ -14,7 +14,7 @@ import json
 def scrape_job_listings(html_file_name):
     # ChromeDriver configuration
     options = webdriver.ChromeOptions()
-    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
+    profile_folder_path = f"{os.getenv("CHROME_PROFILE_PATH")}{os.path.sep}{threading.get_ident()}"
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")
     service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")

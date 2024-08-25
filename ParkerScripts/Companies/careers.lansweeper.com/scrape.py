@@ -20,7 +20,7 @@ job_title_selector = ".sc-6exb5d-3.gnPPfQ .sc-6exb5d-1.doUFBm"
 target_html_file_name = sys.argv[1]
 
 # Initialise a headless webdriver
-profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 service = Service(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 options = webdriver.ChromeOptions()
 options.add_argument(f"user-data-dir={profile_folder_path}")

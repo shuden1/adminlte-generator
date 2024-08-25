@@ -14,7 +14,7 @@ from selenium.webdriver.chrome.options import Options
 def scrape_jobs(html_file):
     # Set up the Chrome driver and options
     thread_id = threading.get_ident()
-    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{thread_id}"
+    profile_folder_path = f"{os.getenv("CHROME_PROFILE_PATH")}{os.path.sep}{thread_id}"
     options = Options()
     options.add_argument(f"user-data-dir={profile_folder_path}")
     options.add_argument("--headless")

@@ -17,7 +17,7 @@ job_url_selector = ".job-title a"  # The URL is the 'href' attribute of the 'a' 
 # Proceeding to STEP 2 with the identified selectors
 
 # 2) Initialise a headless webdriver, with this profile path
-profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
 options = webdriver.ChromeOptions()
 options.add_argument(f"user-data-dir={profile_folder_path}")

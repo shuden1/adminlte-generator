@@ -20,7 +20,7 @@ html_file_name = sys.argv[1]
 
 # STEP 2: Selenium Script
 def get_job_listings():
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 
     service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     options = webdriver.ChromeOptions()

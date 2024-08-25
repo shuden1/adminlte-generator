@@ -11,7 +11,7 @@ import json
 
 # Set up Selenium WebDriver
 options = webdriver.ChromeOptions()
-profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
+profile_folder_path = f"{os.getenv("CHROME_PROFILE_PATH")}{os.path.sep}{threading.get_ident()}"
 options.add_argument(f"user-data-dir={profile_folder_path}")
 options.add_argument("--headless")
 options.add_argument("--disable-gpu")

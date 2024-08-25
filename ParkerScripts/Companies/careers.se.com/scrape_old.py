@@ -22,7 +22,7 @@ html_file_path = sys.argv[1]
 
 # Step 2 Script
 def scrape_job_openings(target_html):
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
     if not os.path.exists(profile_folder_path):
         os.makedirs(profile_folder_path)
 

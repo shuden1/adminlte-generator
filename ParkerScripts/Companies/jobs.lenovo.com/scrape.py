@@ -13,7 +13,7 @@ import json
 # The target HTML file name, as an argument from the external source
 html_file_name = sys.argv[1]
 
-profile_folder_path=os.getenv("CHROME_PROFILE_PATH") + "\\"+str(threading.get_ident())
+profile_folder_path=os.getenv("CHROME_PROFILE_PATH") + os.path.sep+str(threading.get_ident())
 
 # Setting up Chrome options for headless browsing
 options = webdriver.ChromeOptions()

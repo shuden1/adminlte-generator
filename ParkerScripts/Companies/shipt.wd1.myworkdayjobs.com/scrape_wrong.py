@@ -18,7 +18,7 @@ job_title_selector = "h3 > a"        # Placeholder selector for job titles withi
 if __name__ == "__main__":
     html_file_name = sys.argv[1]   # Filename from the external source as an argument
 
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 
     options = Options()
     options.headless = True

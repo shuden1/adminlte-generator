@@ -16,7 +16,7 @@ job_title_selector = 'a[data-tag="displayJobTitle"] > p'
 job_url_selector = 'a[data-tag="displayJobTitle"]'
 
 def get_job_listings(html_file):
-    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
+    profile_folder_path = f"{os.getenv("CHROME_PROFILE_PATH")}{os.path.sep}{threading.get_ident()}"
     service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_folder_path}")

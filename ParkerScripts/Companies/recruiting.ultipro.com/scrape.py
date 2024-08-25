@@ -15,7 +15,7 @@ html_file = sys.argv[1]
 
 # Profile folder setup
 profile_folder_path = (
-    os.getenv("CHROME_PROFILE_PATH") + "\\"
+    os.getenv("CHROME_PROFILE_PATH") + os.path.sep
     + str(threading.get_ident())
 )
 # shutil.rmtree(profile_folder_path, ignore_errors=True)

@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 import json
 
 def scrape_job_listings(html_file_path):
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 
     # shutil.rmtree(profile_folder_path, ignore_errors=True)  # Clean profile directory in case it exists
 

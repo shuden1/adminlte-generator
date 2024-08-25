@@ -20,7 +20,7 @@ job_url_selector = ".card-content .positionListButtan"
 html_file_path = sys.argv[1]
 
 def scrape_job_listings(html_file_path):
-    profile_folder_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
+    profile_folder_path = f"{os.getenv("CHROME_PROFILE_PATH")}{os.path.sep}{threading.get_ident()}"
 
     # Create the profile directory if it does not exist
     os.makedirs(profile_folder_path, exist_ok=True)

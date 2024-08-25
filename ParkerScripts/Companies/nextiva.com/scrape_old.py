@@ -16,7 +16,7 @@ job_title_selector = "h4.listing-title"
 job_url_selector = "a.listing-link"
 
 def scrape_jobs(html_file):
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 
     try:
         chrome_options = Options()

@@ -19,7 +19,7 @@ job_url_selector = 'a'  # Placeholder selector for job URLs within job blocks
 
 def scrape_job_listings(html_file_name):
     # Profile path setup
-    profile_path = f"D:\\Mind\\CRA\\AI_Experiments\\Job_Crawlers\\Peter\\adminlte-generator\\chrome_profile\\{threading.get_ident()}"
+    profile_path = f"{os.getenv("CHROME_PROFILE_PATH")}{os.path.sep}{threading.get_ident()}"
 
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-data-dir={profile_path}")

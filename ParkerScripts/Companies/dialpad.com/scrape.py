@@ -26,7 +26,7 @@ def scrape_job_listings(html_file):
     job_urls_selector = ".buttons-wrapper a"
 
     # Initialize Selenium WebDriver
-    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+    profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 
     # Chrome service
     service = ChromeService(executable_path=r""+os.getenv("CHROME_DRIVER_PATH")+"")

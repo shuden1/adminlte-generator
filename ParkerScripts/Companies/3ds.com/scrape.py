@@ -19,7 +19,7 @@ job_url_selector = "not directly available in the provided HTML snippet"
 # The target HTML file name is provided as a command line argument
 file_name = sys.argv[1]
 
-profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 
 # Initialize chrome options
 options = webdriver.ChromeOptions()

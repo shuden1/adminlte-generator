@@ -12,7 +12,7 @@ from selenium.webdriver.common.by import By
 
 html_file = sys.argv[1]
 
-profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
+profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + os.path.sep + str(threading.get_ident())
 options = webdriver.ChromeOptions()
 options.add_argument(f"user-data-dir={profile_folder_path}")
 options.add_argument("--headless")
