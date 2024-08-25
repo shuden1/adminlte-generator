@@ -112,7 +112,7 @@ def remove_script_tags(input_html_file):
         file.write(str(soup))
 
 
-def get_dynamic_html(url, output_file, scrolls=2, proxy_country=None):
+def get_dynamic_html(url, output_file, scrolls=10, proxy_country=None):
     options = Options()
     profile_folder_path = os.getenv("CHROME_PROFILE_PATH") + "\\" + str(threading.get_ident())
     os.makedirs(profile_folder_path, exist_ok=True)
@@ -150,15 +150,24 @@ def get_dynamic_html(url, output_file, scrolls=2, proxy_country=None):
 
         while True:
             for i in range(scrolls):
+                previous_height = browser.execute_script("return document.body.scrollHeight")
                 browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
                 time.sleep(2)  # Wait 2 seconds between scrolls
+                new_height = browser.execute_script("return document.body.scrollHeight")
+                if new_height == previous_height:
+                    break  # Break the loop if there is nowhere else to scroll
+
 
             if not js_pagination:
                 browser.refresh()
-                time.sleep(3)  # Wait for the page to load after refresh
+                time.sleep(5)  # Wait for the page to load after refresh
                 for i in range(scrolls):
+                    previous_height = browser.execute_script("return document.body.scrollHeight")
                     browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
                     time.sleep(2)  # Wait 2 seconds between scrolls
+                    new_height = browser.execute_script("return document.body.scrollHeight")
+                    if new_height == previous_height:
+                        break  # Break the loop if there is nowhere else to scroll
 
             html_content = browser.page_source
             soup = BeautifulSoup(html_content, 'html.parser')
