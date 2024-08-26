@@ -243,10 +243,32 @@ def get_dynamic_html(url, output_file, scrolls=10, proxy_country=None):
 
             remove_script_tags(output_file_with_index)
 
-            pagination_element = f"//a[text()='{page_index + 1}']"
+
+            remove_hidden_elements_script = """
+var body = document.body;
+var elements = body.querySelectorAll('*');
+for (var i = 0; i < elements.length; i++) {
+    var el = elements[i];
+    var style = window.getComputedStyle(el);
+    var isHidden = style.display === 'none' ||
+                   style.visibility === 'hidden' ||
+                   style.clip === 'rect(0, 0, 0, 0)' ||
+                   style.clip === 'rect(0px, 0px, 0px, 0px)' ||
+                   style.opacity === '0' ||
+                   (style.position === 'absolute' && (style.left === '0px' || style.top === '0px') && style.overflow === 'hidden') ||
+                   (style.position === 'fixed' && (style.left === '0px' || style.top === '0px') && style.overflow === 'hidden') ||
+                   (style.transform && style.transform.includes('translateX') && style.transform.includes('translateY'));
+    if (isHidden) {
+        el.parentNode.removeChild(el);
+    }
+}
+            """
+            browser.execute_script(remove_hidden_elements_script)
+
+            pagination_element = f"//a[normalize-space(text())='{page_index + 1}']"
             next_page_link = browser.find_elements(By.XPATH, pagination_element)
             if not next_page_link:
-                pagination_element = f"//button[text()='{page_index + 1}']"
+                pagination_element = f"//button[normalize-space(text())='{page_index + 1}']"
                 next_page_link = browser.find_elements(By.XPATH, pagination_element)
                 if next_page_link:
                     browser.execute_script("arguments[0].setAttribute('href', '#');", next_page_link[0])
@@ -274,7 +296,57 @@ def get_dynamic_html(url, output_file, scrolls=10, proxy_country=None):
                 time.sleep(4)  # Wait for the page to load after refresh
                 page_index += 1
             else:
-                break
+                pagination_in_iframe = False
+                # Find all iframe elements
+                iframe_elements = browser.find_elements(By.TAG_NAME, 'iframe')
+
+                # Iterate through each iframe
+                for iframe in iframe_elements:
+                    # Switch to the iframe context
+                    browser.switch_to.frame(iframe)
+                    browser.execute_script(remove_hidden_elements_script)
+
+                    pagination_element = f"//a[descendant-or-self::text()[normalize-space(.)='{page_index + 1}']]"
+                    next_page_link = browser.find_elements(By.XPATH, pagination_element)
+                    print(next_page_link)
+                    if not next_page_link:
+                        pagination_element = f"//button[normalize-space(text())='{page_index + 1}']"
+                        next_page_link = browser.find_elements(By.XPATH, pagination_element)
+                        if next_page_link:
+                            browser.execute_script("arguments[0].setAttribute('href', '#');", next_page_link[0])
+                    if next_page_link:
+                        print(next_page_link[0].get_attribute('href'))
+                        href = next_page_link[0].get_attribute('href')
+                        original_href = next_page_link[0].get_dom_attribute('href')  # Get the original attribute value
+                        if original_href == '#':
+                            js_pagination = True
+
+                            browser.execute_script("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", next_page_link[0])
+                            time.sleep(1)
+
+                            # Wait until the element is clickable
+                            wait = WebDriverWait(browser, 2)
+                            wait.until(EC.element_to_be_clickable((By.XPATH, pagination_element)))
+
+                            # Attempt to click the element
+                            try:
+                                next_page_link[0].click()
+                            except Exception as e:
+                                print(f"Error clicking the element: {e}")
+                        else:
+                            js_pagination = False
+                            browser.get(href)
+                        time.sleep(4)  # Wait for the page to load after refresh
+                        page_index += 1
+                        pagination_in_iframe = True
+                        browser.switch_to.default_content()
+                        break
+                    else:
+                        browser.switch_to.default_content()
+
+
+                if not pagination_in_iframe:
+                    break
     finally:
         browser.quit()
 

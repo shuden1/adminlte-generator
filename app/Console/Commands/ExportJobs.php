@@ -33,9 +33,13 @@ class ExportJobs extends Command
             ->select('suitable_titles.title')  // Ensure the title column is selected
             ->get();
 
-        foreach ($suitableTitles as $suitableTitle) {
-            if (stripos($job->title, $suitableTitle->title) !== false) {
-                return true;
+        if ($suitableTitles->isEmpty()) {
+            return true;
+        } else {
+            foreach ($suitableTitles as $suitableTitle) {
+                if (stripos($job->title, $suitableTitle->title) !== false) {
+                    return true;
+                }
             }
         }
 
@@ -59,11 +63,11 @@ class ExportJobs extends Command
             ->where('company_user.user_id', $userId)
             ->whereNull('jobs.deleted_at')
             ->where('jobs.created_at', '<', $date)
-            ->select('companies.name as company_name', 'jobs.title as title', 'jobs.url as url')
+            ->select('companies.name as company_name', 'companies.website as company_website', 'jobs.title as title', 'jobs.url as url')
             ->get();
 
         $csv = Writer::createFromString('');
-        $csv->insertOne(['Company Name', 'Job Title', 'Job URL']);
+        $csv->insertOne(['Company Name', 'Website', 'Job Title', 'Job URL']);
 
         $groupedJobs = $jobs->groupBy('company_name');
 
@@ -77,10 +81,10 @@ class ExportJobs extends Command
             }
 
             foreach ($relevantJobs as $job) {
-                $csv->insertOne([$companyName, $job->title, $job->url]);
+                $csv->insertOne([$companyName, $job->company_website, $job->title, $job->url]);
             }
         }
 
-        file_put_contents('jobs.csv', $csv->getContent());
+        file_put_contents('Agency-LeadsJobs_08-26-24.csv', $csv->getContent());
     }
 }

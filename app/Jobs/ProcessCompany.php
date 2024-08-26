@@ -73,6 +73,7 @@ class ProcessCompany implements ShouldQueue
             $command = $pythonPath." ".$fetchScriptPath." \"".$careerPageURL."\" \"".$inputFile."\" \"".$this->company->proxy_country."\"";
         } else
         $command = $pythonPath." ".$fetchScriptPath." \"".$careerPageURL."\" \"".$inputFile."\"";
+
         exec($command, $output1, $returnStatus1);
 
 

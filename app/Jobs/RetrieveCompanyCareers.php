@@ -343,8 +343,11 @@ class RetrieveCompanyCareers implements ShouldQueue
             $careerPageUrl = $company->careerPageUrl;
             $filePath = escapeshellarg($basePathHtmls.DIRECTORY_SEPARATOR.$currentDate.".html");
 
-
-            $command = "{$pythonExecutable} {$scriptPath} \"{$careerPageUrl}\" {$filePath}";
+            if ($company->proxy_country){
+                $command = "{$pythonExecutable} {$scriptPath} \"{$careerPageUrl}\" {$filePath} {$company->proxy_country}";
+            } else {
+                $command = "{$pythonExecutable} {$scriptPath} \"{$careerPageUrl}\" {$filePath}";
+            }
             var_dump($command);
             shell_exec($command);
 
