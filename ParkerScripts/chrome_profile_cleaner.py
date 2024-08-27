@@ -1,6 +1,8 @@
 import os
 import shutil
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 def is_folder_in_use(folder_path):
     """Check if the folder is in use by attempting to rename it."""
@@ -22,5 +24,5 @@ def remove_unused_numeric_folders(directory):
                 print(f"Folder in use, skipped: {folder_path}")
 
 if __name__ == "__main__":
-    directory = r"D:\Mind\CRA\AI_Experiments\Job_Crawlers\Peter\adminlte-generator\chrome_profile"
+    directory = os.getenv("CHROME_PROFILE_PATH")
     remove_unused_numeric_folders(directory)
