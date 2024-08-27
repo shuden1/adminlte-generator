@@ -160,7 +160,7 @@ def get_dynamic_html(url, output_file, scrolls=10, proxy_country=None):
 
             if not js_pagination:
                 browser.refresh()
-                time.sleep(5)  # Wait for the page to load after refresh
+                time.sleep(8)  # Wait for the page to load after refresh
                 for i in range(scrolls):
                     previous_height = browser.execute_script("return document.body.scrollHeight")
                     browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
