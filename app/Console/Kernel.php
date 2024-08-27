@@ -17,8 +17,8 @@ class Kernel extends ConsoleKernel
     {
         //crontab -e
         //cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
-        $schedule->exec( env('PYTHON_PATH'). env('SCRIPTS_PATH') . DIRECTORY_SEPARATOR .'chrome_profile_cleaner.py')
-            ->everyTwentyMinutes();
+        $schedule->exec( env('PYTHON_PATH')." ".env('SCRIPTS_PATH') . DIRECTORY_SEPARATOR .'chrome_profile_cleaner.py')
+            ->cron('*/20 * * * *');
         $schedule->command('send:daily-emails')
             ->dailyAt('16:00');
 
