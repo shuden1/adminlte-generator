@@ -24,7 +24,7 @@ class RetrieveCompanyCareers implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     public $tries = 3; // Maximum number of attempts
-    public $timeout = 300; // Job can run for up to 120 seconds
+    public $timeout = 2000; // Job can run for up to 120 seconds
 
     protected $company;
 
@@ -36,7 +36,7 @@ class RetrieveCompanyCareers implements ShouldQueue
     public function __construct(Company $company)
     {
         $this->company = $company;
-        $this->queue = 'RetrieveCareersQueue';
+        $this->queue = 'RetrieveCareersQueue'.rand(1, env("SCRIPT_GENERATION_QUEUE_COUNT"));
     }
 
     public function getLatestFile($directoryPath)
@@ -314,7 +314,7 @@ class RetrieveCompanyCareers implements ShouldQueue
         if ($domain == "linkedin.com") {
             $this->retrieveLinkedIn();
             $when = Carbon::now()->addDay();
-            RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue'.rand(1, 10))->delay($when);
+            RetrieveCompanyCareers::dispatch($company)->delay($when);
         } else {
             // Creating a recent page image
             $basePathHtmls = env("COMPANIES_BASE_PATH"). DIRECTORY_SEPARATOR . $domain . DIRECTORY_SEPARATOR. "HTMLs". DIRECTORY_SEPARATOR . $company->id;
@@ -484,7 +484,7 @@ class RetrieveCompanyCareers implements ShouldQueue
                 ProcessCompany::dispatch($company, 1, 1);
             } else {
                 $when = Carbon::now()->addDay();
-                RetrieveCompanyCareers::dispatch($company)->onQueue('RetrieveCareersQueue'.rand(1, 10))->delay($when);
+                RetrieveCompanyCareers::dispatch($company)->delay($when);
             }
         }
     }

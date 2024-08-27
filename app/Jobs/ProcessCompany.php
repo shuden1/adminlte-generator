@@ -39,7 +39,7 @@ class ProcessCompany implements ShouldQueue
     protected $hasJobs;
 
     public $tries = 2;
-    public $timeout = 1200;
+    public $timeout = 2000;
 
     /**
      * Create a new job instance.
@@ -356,7 +356,7 @@ class ProcessCompany implements ShouldQueue
         if ($domain == "linkedin.com") {
             $this->company->scripted = 1;
             $this->company->save();
-            RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
+            RetrieveCompanyCareers::dispatch($this->company);
             return;
         } else {
             $companyPath = env("COMPANIES_BASE_PATH").DIRECTORY_SEPARATOR.$domain.DIRECTORY_SEPARATOR.$this->company->id;
@@ -428,10 +428,10 @@ class ProcessCompany implements ShouldQueue
                         } else {
                             echo "File does not exist or is not readable: " . $tempScriptPath;
                         }
-//                        RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
+//                        RetrieveCompanyCareers::dispatch($this->company);
                     }
                 } else {
-                    RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
+                    RetrieveCompanyCareers::dispatch($this->company);
                 }
             }
             var_dump($scriptPath);
@@ -439,7 +439,7 @@ class ProcessCompany implements ShouldQueue
             if (file_exists($scriptPath)) {
                 $this->company->scripted = true;
                 $this->company->save();
-                RetrieveCompanyCareers::dispatch($this->company)->onQueue('RetrieveCareersQueue'.rand(1, 10));
+                RetrieveCompanyCareers::dispatch($this->company);
             }
 
             $this->company->save();

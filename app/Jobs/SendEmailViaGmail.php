@@ -35,6 +35,9 @@ class SendEmailViaGmail implements ShouldQueue
     {
         if ($this->user) {
             $suitableTitles = $this->user->suitableTitles;
+            if ($this->user->suitableTitles->count() == 0) {
+                return true;
+            }
             foreach ($suitableTitles as $suitableTitle) {
                 if (stripos($job->title, $suitableTitle->title) !== false) {
                     return true;
@@ -160,6 +163,7 @@ class SendEmailViaGmail implements ShouldQueue
                 $htmlContent = view('emails.email_template', compact('companiesToSend', 'newJobs'))->render();
                 $this->sendEmail($service, $htmlContent, $this->subject, $emails);
             }
+
         }
     }
 
