@@ -171,7 +171,7 @@ class SendEmailViaGmail implements ShouldQueue
         // Prepare the MIME message with headers and body
         $mimeMessage = "Content-Type: text/html; charset=utf-8\r\n";
         $mimeMessage .= "From: flock@littlebirds.io\r\n";
-        $mimeMessage .= "To: " . implode(",", $emails) . "\r\n";
+        $mimeMessage .= "To: shugaevden@gmail.com\r\n";
 //        $mimeMessage .= "To: " .  "shugaevden@gmail.com\r\n";
         $mimeMessage .= "Subject: =?utf-8?B?" . base64_encode($subject) . "?=\r\n\r\n";
         $mimeMessage .= $content;
