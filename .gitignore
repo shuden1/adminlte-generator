@@ -16,3 +16,4 @@ yarn-error.log
 /chrome_profile
 /config/google_credentials.json
 proxies_config.json
+/ParkerScripts/news_scrapper.py
